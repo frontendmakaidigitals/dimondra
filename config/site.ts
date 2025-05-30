@@ -9,54 +9,56 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "About",
+      href: "/About",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Services",
+      services: [
+        {
+          label: "HR Outsourcing Services",
+          submenu: [
+            { label: "Talent Acquisition", link: "/" },
+            { label: "HR Operations", link: "/" },
+            { label: "Virtual Admin Support", link: "/" },
+            { label: "PRO & Government Services- ", link: "/" },
+          ],
+        },
+        {
+          label: "Business Services",
+          submenu: [
+            { label: "Call Center Support", link: "/" },
+            { label: "Facility Management", link: "/" },
+            { label: "IT Support", link: "/" },
+            { label: "Digital Services", link: "/" },
+          ],
+        },
+        {
+          label: "Career & Training",
+          submenu: [
+            { label: "HR Certifications (aPHRi, PHRi, SPHRi, GPHR)", link: "/" },
+            { label: "Career Advisory ", link: "/" },
+            { label: "Career Profile Development", link: "/" },
+          ],
+        },
+        {
+          label: "Strategy & Advisory",
+          submenu: [
+            { label: " Organizational Planning", link: "/" },
+            { label: "Talent Management", link: "/" },
+            { label: "Market Entry", link: "/" },
+            { label: "Legal Management", link: "/" },
+          ],
+        },
+      ],
     },
     {
-      label: "Blog",
+      label: "Resources",
       href: "/blog",
     },
     {
-      label: "About",
+      label: "Contact us",
       href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
     },
   ],
   links: {
