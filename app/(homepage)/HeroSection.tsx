@@ -13,7 +13,7 @@ const HeroSection = () => {
       <img
         className="w-full h-full object-cover object-top absolute inset-0"
         src={"media/homepage/hero/heroBg.jpg"}
-        alt={'hero Images'}
+        alt={"hero Images"}
       />
       <BgLayer />
       <div className="relative z-10 w-full h-full flex justify-center items-center flex-col">
@@ -37,7 +37,12 @@ const HeroSection = () => {
             key={idx}
             className={`bg-slate-50 p-5 border border-slate-400/20 rounded-xl shadow-lg`}
             whileInView={{ y: ["150px", "0px"], rotate: ["5deg", "0deg"] }}
-            transition={{ ease: [0.165, 0.84, 0.44, 1], duration:.4, delay: idx * 0.07 }}
+            transition={{
+              ease: [0.165, 0.84, 0.44, 1],
+              duration: 0.4,
+              delay: idx * 0.07,
+            }}
+            viewport={{ once: true }}
           >
             <span className="text-4xl font-[700] font-sans">{stat.num}</span>
             <span className="inline-block text-sm mt-2">{stat.label}</span>

@@ -87,11 +87,11 @@ const Service = () => {
                   <Icon className="size-[52px] text-dimondra-teal" />
                 </div>
 
-                <div>
+                <div className="mt-1">
                   <h2 className="text-2xl font-[600] max-w-sm">
                     {service.title}
                   </h2>
-                  <p className="text-sm">{service.description}</p>
+                  <p className="text-sm mt-2">{service.description}</p>
                 </div>
               </div>
             );

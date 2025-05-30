@@ -3,7 +3,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="bg-dimondra-teal/30 pt-40 pb-12">
+    <div className="bg-teal-400/10 pt-40 pb-12">
       <div className="container grid grid-cols-2 gap-5 ">
         <div className="h-[600px]">
           <img
@@ -11,11 +11,11 @@ const About = () => {
             src={
               "https://images.unsplash.com/photo-1593677193813-e99785037dfa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
-            alt="About us images"
+            alt={`About us images`}
           />
         </div>
         <div>
-          <span className="text-sm font-semibold">About us</span>
+          <span className="text-sm font-semibold">01. About us</span>
           <h2 className="text-5xl font-semibold mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
