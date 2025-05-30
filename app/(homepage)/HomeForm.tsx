@@ -8,7 +8,7 @@ const HomeForm = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-md">
           <span className="text-sm text-dimondra-dark">
-            We're here to help you
+            We&nbsp;re here to help you
           </span>
           <h1 className="text-6xl font-[600] text-dimondra-black mt-3">
             Get in Touch with Us
@@ -24,9 +24,7 @@ const HomeForm = () => {
               <Mail className="size-8 text-dimondra-tealDark" />
               <div>
                 <h4 className=" font-[400]">Email</h4>
-                <p className="text-lg text-muted-foreground">
-                  admin@gmail.com
-                </p>
+                <p className="text-lg text-muted-foreground">admin@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-5 mt-5">
@@ -43,60 +41,68 @@ const HomeForm = () => {
           <div className="bg-dimondra-white p-7 rounded-2xl shadow-sm">
             <form className=" ">
               <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">Name</label>
-                <Input
-                  isRequired
-                  className="w-full mt-[.4rem]"
-                  placeholder="junior@heroui.com"
-                  name="name"
-                  classNames={{
-                    inputWrapper: ["bg-slate-100 ", ""],
-                    input: [""],
-                  }}
-                  size={"lg"}
-                />
+                <label className="text-dimondra-black font-[500]">
+                  Name{" "}
+                  <Input
+                    isRequired
+                    className="w-full mt-[.4rem]"
+                    placeholder="junior@heroui.com"
+                    name="name"
+                    classNames={{
+                      inputWrapper: ["bg-slate-100 ", ""],
+                      input: [""],
+                    }}
+                    size={"lg"}
+                  />
+                </label>
               </div>
               <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">Email</label>
-                <Input
-                  classNames={{
-                    inputWrapper: ["bg-slate-100"],
-                    input: ["py-2"],
-                  }}
-                  isRequired
-                  className="w-full mt-[.4rem]"
-                  placeholder="junior@heroui.com"
-                  type="email"
-                  name="email"
-                  size={"lg"}
-                />
+                <label className="text-dimondra-black font-[500]">
+                  Email{" "}
+                  <Input
+                    classNames={{
+                      inputWrapper: ["bg-slate-100"],
+                      input: ["py-2"],
+                    }}
+                    isRequired
+                    className="w-full mt-[.4rem]"
+                    placeholder="junior@heroui.com"
+                    type="email"
+                    name="email"
+                    size={"lg"}
+                  />
+                </label>
               </div>
               <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">Phone</label>
-                <Input
-                  isRequired
-                  classNames={{
-                    inputWrapper: ["bg-slate-100"],
-                    input: ["py-2"],
-                  }}
-                  className="w-full mt-[.4rem]"
-                  placeholder="junior@heroui.com"
-                  type="number"
-                  name="contact"
-                  size={"lg"}
-                />
+                <label className="text-dimondra-black font-[500]">
+                  Phone{" "}
+                  <Input
+                    isRequired
+                    classNames={{
+                      inputWrapper: ["bg-slate-100"],
+                      input: ["py-2"],
+                    }}
+                    className="w-full mt-[.4rem]"
+                    placeholder="junior@heroui.com"
+                    type="number"
+                    name="contact"
+                    size={"lg"}
+                  />
+                </label>
               </div>
               <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">Message</label>
-                <Textarea
-                  className="w-full mt-[.4rem]"
-                  maxRows={13}
-                  minRows={5}
-                  placeholder="Enter your description"
-                  name="message"
-                  size={"lg"}
-                  classNames={{ inputWrapper: ["bg-slate-100 ", ""] }}
-                />
+                <label className="text-dimondra-black font-[500]">
+                  Message{" "}
+                  <Textarea
+                    className="w-full mt-[.4rem]"
+                    maxRows={13}
+                    minRows={5}
+                    placeholder="Enter your description"
+                    name="message"
+                    size={"lg"}
+                    classNames={{ inputWrapper: ["bg-slate-100 ", ""] }}
+                  />
+                </label>
               </div>
               <button className="mt-7 rounded-full group pl-1 pr-5 py-1 text-dimondra-black hover:bg-dimondra-teal hover:border-slate-300/0 transition-all duration-300 border border-dimondra-gray">
                 <span className="inline-block align-middle p-2 mr-3 bg-black group-hover:bg-white  text-dimondra-white rounded-full">

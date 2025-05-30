@@ -19,30 +19,30 @@ const Footer = () => {
             <div className="mt-8">
               <h4 className="text-lg font-semibold mb-3">Follow Us</h4>
               <div className="flex space-x-4 ">
-                <a
-                  href="#"
+                <Link
+                  href="/"
                   className="bg-teal-500/20 p-2 rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Facebook className="h-7 w-7 hover:text-amber-400" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/"
                   className="bg-teal-500/20 p-2 rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Instagram className="h-7 w-7 hover:text-amber-400" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/"
                   className="bg-teal-500/20 p-2 rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Linkedin className="h-7 w-7 hover:text-amber-400" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
