@@ -62,7 +62,7 @@ export default function AboutUs() {
         </p>
         <p>
           We&nbsp;re not just service providers, we&nbsp;re your trusted partners. Whether
-          you're a small business or a growing company, our solutions are
+          you&nbsp;re a small business or a growing company, our solutions are
           flexible, practical, and built to fit your needs. With us, you get
           clear communication, fast setup, and expert help every step of the
           way.
@@ -91,7 +91,7 @@ export default function AboutUs() {
         <p>
           We want to make your work easier by handling the complex parts - from
           HR and operations to IT and strategy. So you can focus on growing your
-          business. Whether you're a small company or a large organization,
+          business. Whether you&nbsp;re a small company or a large organization,
           we&nbsp;re here to help you become more efficient, more agile, and better
           prepared for the future. Our goal is to create real value through
           long-term support that helps you succeed.
@@ -130,7 +130,7 @@ export default function AboutUs() {
         </p>
         <p>
           We focus on real, practical results that help your business grow and
-          your team succeed. Whether it's HR support, legal help, IT services,
+          your team succeed. Whether it&nbsp;s HR support, legal help, IT services,
           or business strategy, our team brings both expertise and care to every
           project.
         </p>
@@ -172,7 +172,7 @@ export default function AboutUs() {
         <p className="italic mb-2">Local Insight. Global Expertise.</p>
         <p>
           At Dimondra, we work with businesses across different countries and
-          industries. Whether you're running operations locally or expanding
+          industries. Whether you&nbsp;re running operations locally or expanding
           into new markets, our team is here to support you. We combine our deep
           local understanding with global experience.
         </p>
