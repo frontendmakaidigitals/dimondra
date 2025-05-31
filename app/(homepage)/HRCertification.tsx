@@ -19,7 +19,7 @@ const HRCertification = () => {
           </h2>
           <p className="mt-6">
             Advance your professional journey with international HR
-            certifications delivered by industry experts. Whether you're just
+            certifications delivered by industry experts. Whether you&nbsp;re just
             starting or leveling up, we guide you every step of the way — from
             training to exam success.
           </p>
