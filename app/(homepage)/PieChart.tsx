@@ -2,17 +2,21 @@
 import * as React from "react";
 import { Label, Pie, PieChart } from "recharts";
 import { motion, useInView } from "motion/react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { TrendingUp } from "lucide-react";
+import clsx from "clsx";
 
 export const description = "A donut chart with text";
 
-const chartData = [
+type BrowserKey = "chrome" | "safari" | "firefox" | "edge" | "other";
+
+const chartData: { browser: BrowserKey; visitors: number; fill: string }[] = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
   { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
@@ -20,10 +24,7 @@ const chartData = [
   { browser: "other", visitors: 190, fill: "var(--color-other)" },
 ];
 
-const chartConfig = {
-  visitors: {
-    label: "Visitors",
-  },
+const chartConfig: Record<BrowserKey, { label: string; color: string }> = {
   chrome: {
     label: "Chrome",
     color: "#00838F",
@@ -44,18 +45,21 @@ const chartConfig = {
     label: "Other",
     color: "#4DD0E1",
   },
-} satisfies ChartConfig;
+};
 
 export function ChartPieDonutText() {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true });
   return (
-    <motion.div ref={ref}>
-      <Card className="flex justify-center items-center border-0 shadow-none">
+    <motion.div
+      ref={ref}
+      className="grid grid-cols-[1.5fr_.5fr] place-items-center container"
+    >
+      <Card className="border-0 shadow-none">
         <CardContent className="flex-1 pb-0">
           <ChartContainer
             config={chartConfig}
-            className="mx-auto aspect-square max-h-[750px]"
+            className="mx-auto aspect-square h-[500px]"
           >
             <PieChart>
               <ChartTooltip
@@ -67,7 +71,7 @@ export function ChartPieDonutText() {
                 data={chartData}
                 dataKey="visitors"
                 nameKey="browser"
-                innerRadius={180}
+                innerRadius={120}
                 strokeWidth={20}
               >
                 <Label
@@ -85,15 +89,13 @@ export function ChartPieDonutText() {
                             y={viewBox.cy}
                             className="fill-foreground text-2xl font-bold"
                           >
-                            Industry of recent Participants
+                            Industries
                           </tspan>
                           <tspan
                             x={viewBox.cx}
                             y={(viewBox.cy || 0) + 24}
                             className="fill-muted-foreground"
-                          >
-                            Industry
-                          </tspan>
+                          ></tspan>
                         </text>
                       );
                     }
@@ -103,7 +105,28 @@ export function ChartPieDonutText() {
             </PieChart>
           </ChartContainer>
         </CardContent>
+        <CardFooter className="flex-col gap-2 text-sm">
+          <div className="flex items-center gap-2 leading-none font-medium">
+            Trending up by 5.2% this month <TrendingUp />
+          </div>
+          <div className="text-muted-foreground leading-none">
+            Showing total visitors for the last 6 months
+          </div>
+        </CardFooter>
       </Card>
+      <div className=" flex justify-start w-full items-start flex-col gap-2">
+        {chartData.map((chart, idx) => (
+          <div key={chart.browser} className="flex items-center gap-2 text-sm">
+            <div
+              className="w-4 h-4 rounded-sm"
+              style={{
+                backgroundColor: chartConfig[chart.browser].color,
+              }}
+            />
+            <span className="text-muted-foreground">{chart.browser}</span>
+          </div>
+        ))}
+      </div>
     </motion.div>
   );
 }
