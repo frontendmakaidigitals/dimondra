@@ -1,13 +1,14 @@
 import { User } from "lucide-react";
 import React from "react";
-
+import ImageAnimationLayer from "../app_chunks/ImageAnimationLayer";
 const About = () => {
   return (
     <div className="bg-teal-400/10 pt-40 pb-12">
       <div className="container grid grid-cols-2 gap-5 ">
-        <div className="h-[600px]">
+        <div className="h-[600px] relative overflow-hidden">
+          <ImageAnimationLayer />
           <img
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover"
             src={
               "https://images.unsplash.com/photo-1593677193813-e99785037dfa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }

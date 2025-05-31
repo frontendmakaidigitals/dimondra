@@ -25,7 +25,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Facebook className="h-7 w-7 hover:text-amber-400" />
+                  <Facebook
+                    fill={""}
+                    className="h-7 w-7  hover:text-amber-400"
+                  />
                 </Link>
                 <Link
                   href="/"
@@ -33,7 +36,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Instagram className="h-7 w-7 hover:text-amber-400" />
+                  <Instagram
+                    fill={""}
+                    className="h-7 stroke-teal-100 w-7 hover:text-amber-400"
+                  />
                 </Link>
                 <Link
                   href="/"
@@ -41,7 +47,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin className="h-7 w-7 hover:text-amber-400" />
+                  <Linkedin
+                    fill={""}
+                    className="h-7 w-7  hover:text-amber-400"
+                  />
                 </Link>
               </div>
             </div>

@@ -1,98 +1,140 @@
+"use client";
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Briefcase,
   Users,
   ClipboardList,
   MonitorSmartphone,
-  GraduationCap,
-  BarChart3,
-  ShieldCheck,
 } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const Service = () => {
+  const imgAdd =
+    "https://images.unsplash.com/photo-1508921340878-ba53e1f016ec?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0";
+
   const services = [
     {
-      title: "HR Outsourcing",
+      title: "Business Analysis",
       description:
-        "End-to-end HR support for contracts, payroll, and employee management.",
-      col: "col-span-1",
+        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+      row: "row-span-1",
       icon: Briefcase,
+      pos: "left",
     },
     {
-      title: "Talent Solutions",
-      description:
-        "Executive hiring and recruitment are designed to find the right fit, fast.",
-      col: "col-span-2",
-      icon: Users,
+      img: imgAdd,
+      row: "row-span-2",
+      pos: "right",
     },
     {
-      title: "Business Support",
+      title: "Reports Analysis",
       description:
-        "Admin, PRO, and licensing services to keep operations smooth.",
-      col: "col-span-1",
+        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+      row: "row-span-1",
       icon: ClipboardList,
+      pos: "left",
     },
     {
-      title: "IT & Digital Services",
+      img: imgAdd,
+      row: "row-span-2",
+      pos: "left",
+    },
+    {
+      title: "IT Consulting",
       description:
-        "Tech support and digital marketing tailored for your business growth.",
-      col: "col-span-1",
+        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+      row: "row-span-1",
       icon: MonitorSmartphone,
+      pos: "right",
     },
+
     {
-      title: "Career & Development",
+      title: "Management Consulting",
       description:
-        "Coaching, certifications, and tools to help talent grow and succeed.",
-      col: "col-span-1",
-      icon: GraduationCap,
-    },
-    {
-      title: "Strategy & Advisory",
-      description:
-        "Smart planning and expert guidance to scale and strengthen your business.",
-      col: "col-span-1",
-      icon: BarChart3,
-    },
-    {
-      title: "Legal & Compliance",
-      description:
-        "Reliable legal support to keep your business secure and compliant.",
-      col: "col-span-1",
-      icon: ShieldCheck,
+        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+      row: "row-span-1",
+      icon: Users,
+      pos: "right",
     },
   ];
 
+  const itemsRef = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    itemsRef.current.forEach((el, idx) => {
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        {
+          opacity: 0,
+          x: services[idx].pos === "left" ? -100 : 100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            scrub: 1.1,
+          },
+          stagger: 0.15,
+        }
+      );
+    });
+  }, []);
+
   return (
     <div className="my-16">
-      <div className="container">
-        <div>
-          <p className="text-center text-sm">Diamondra</p>
-          <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
-            Inspiring You to Reach Your Goals
-          </h1>
-        </div>
+      <div className="container mx-auto px-4">
+        <p className="text-center text-sm text-gray-500">Our Services</p>
+        <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
+          Empowering Your Business Vision
+        </h1>
 
-        <div className="grid grid-cols-4 gap-5 mt-12">
+        <div className="grid grid-cols-2 gap-5 mt-12 auto-rows-[130px]">
           {services.map((service, idx) => {
             const Icon = service.icon;
+
             return (
               <div
                 key={idx}
+                ref={(el) => {
+                  itemsRef.current[idx] = el;
+                }}
                 className={clsx(
-                  `p-6 flex flex-col items-start rounded-xl border border-teal-400/10 gap-5 w-full bg-teal-50`
+                  service.img
+                    ? "overflow-hidden rounded-xl"
+                    : "p-6 flex items-start rounded-xl border border-teal-100/30 bg-teal-50/70 gap-5",
+                  service.row
                 )}
               >
-                <div className="">
-                  <Icon className="size-[52px] text-dimondra-teal" />
-                </div>
-
-                <div className="mt-1">
-                  <h2 className="text-2xl font-[600] max-w-sm">
-                    {service.title}
-                  </h2>
-                  <p className="text-sm mt-2">{service.description}</p>
-                </div>
+                {service.img ? (
+                  <img
+                    src={service.img}
+                    alt="Service visual"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <div className="shrink-0">
+                      {Icon && <Icon className="size-[48px] text-teal-600" />}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mt-2">
+                        {service.description}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             );
           })}

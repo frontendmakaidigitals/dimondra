@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import Header from "./Header/Header";
+import Backtotop from "./app_chunks/Backtotop";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -39,6 +40,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Header />
+          <Backtotop />
           {children}
         </Providers>
       </body>

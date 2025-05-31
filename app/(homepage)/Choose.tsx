@@ -46,13 +46,20 @@ const Choose = () => {
         <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
           Why Choose Dimondra
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-20">
           {highlights.map((item, index) => (
-            <div key={index} className="flex items-start gap-5">
-              <item.icon className="size-10 text-primary" />
-              <div>
-                <h4 className="text-xl font-semibold">{item.title}</h4>
-                <p className=" text-muted-foreground">{item.description}</p>
+            <div
+              key={index}
+              className="flex bg-slate-50 relative pt-8 pb-6 px-5 items-start gap-5"
+            >
+              <span className="text-5xl font-[600] text-dimondra-teal absolute top-0 -translate-y-1/2">
+                0{index + 1}
+              </span>
+              <div className="">
+                <h4 className="text-2xl font-semibold">{item.title}</h4>
+                <p className=" text-muted-foreground mt-2">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}

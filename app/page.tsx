@@ -4,6 +4,8 @@ import Service from "./(homepage)/Service";
 import Choose from "./(homepage)/Choose";
 import HomeForm from "./(homepage)/HomeForm";
 import Footer from "./Footer/Footer";
+import { ChartPieDonutText } from "./(homepage)/PieChart";
+import HRCertification from "./(homepage)/HRCertification";
 export default function Home() {
   return (
     <main>
@@ -11,6 +13,8 @@ export default function Home() {
       <About />
       <Service />
       <Choose />
+      <ChartPieDonutText />
+      <HRCertification />
       <HomeForm />
       <Footer />
     </main>
