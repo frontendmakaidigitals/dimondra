@@ -44,45 +44,63 @@ const HeroSection = () => {
     type: "chars, lines",
     trigger: ".trigger",
     linesClass: "line-wrapper++",
+    delay: 0.8,
   });
+
+  // <motion.img
+  //     initial={{ scale: 1.4 }}
+  //     animate={{ scale: 1 }}
+  //     transition={{
+  //       ease: [0.165, 0.84, 0.44, 1],
+  //       duration: 1.3,
+  //     }}
+  //     className="w-full h-full object-cover object-top absolute inset-0"
+  //     src={
+  //       "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  //     }
+  //     alt={"hero Images"}
+  //   />
   return (
-    <div className="h-screen relative w-full trigger">
-      <img
+    <div className="h-[90dvh] lg:h-[110vh] relative w-full trigger">
+      <video
         className="w-full h-full object-cover object-top absolute inset-0"
-        src={"media/homepage/hero/heroBg.jpg"}
-        alt={"hero Images"}
-      />
+        autoPlay
+        muted
+        playsInline
+      >
+        <source src={"media/homepage/hero/heroVideo.mp4"} />
+      </video>
+
       <BgLayer />
-      <div className="relative z-10 w-full h-full flex justify-center items-center flex-col">
+      <div className="relative z-10 container w-full h-full flex justify-center items-center flex-col">
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
         </p>
-        <h1
-          style={{ lineHeight: "5.2rem" }}
-          className="max-w-4xl heroText tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] "
-        >
+        <h1 className="max-w-4xl heroText leading-[3rem] lg:leading-[5.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] ">
           Empowering <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.
         </h1>
+
         <motion.h3
           initial={{ filter: "blur(5px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-          className="text-dimondra-dark text-sm px-3 py-1 bg-slate-100 rounded-lg font-medium mt-5"
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1 }}
+          className="text-dimondra-dark text-center text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
         >
           Expert support in HR, IT, operations, legal, and business strategy.
         </motion.h3>
+
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.1 }}
         >
           <button className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6">
             Book a Free Consultation
           </button>
         </motion.div>
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 grid grid-cols-3 gap-8 max-w-5xl w-full">
+      <div className="absolute container top-[105%] lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-y-1/2 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl w-full">
         {stats.map(({ title, description, icon }, idx) => {
           const Icon = icon;
           return (

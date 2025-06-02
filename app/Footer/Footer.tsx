@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="text-dimondra-black py-16">
       <div className="container">
-        <div className="grid grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <Logo className="w-52 " />
             <div className="mt-8">
@@ -55,7 +55,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-start gap-20">
+          <div className="flex lg:flex-row flex-col items-start gap-20">
             {" "}
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>

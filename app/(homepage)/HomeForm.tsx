@@ -10,7 +10,7 @@ const HomeForm = () => {
           <span className="text-sm text-dimondra-dark">
             We&nbsp;re here to help you
           </span>
-          <h1 className="text-6xl font-[600] text-dimondra-black mt-3">
+          <h1 className="text-5xl lg:text-6xl font-[600] text-dimondra-black mt-3">
             Get in Touch with Us
           </h1>
           <p className="text-dimondra-dark mt-4">

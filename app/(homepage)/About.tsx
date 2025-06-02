@@ -3,9 +3,9 @@ import React from "react";
 import ImageAnimationLayer from "../app_chunks/ImageAnimationLayer";
 const About = () => {
   return (
-    <div className="bg-teal-400/10 pt-52 pb-12">
-      <div className="container grid grid-cols-2 gap-5 ">
-        <div className="h-[650px] relative overflow-hidden">
+    <div className="bg-teal-400/10 pt-[55rem] lg:pt-52 pb-12">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-5 ">
+        <div className="h-[350px] lg:h-[650px] relative overflow-hidden">
           <ImageAnimationLayer />
           <img
             className="w-full h-full object-cover"

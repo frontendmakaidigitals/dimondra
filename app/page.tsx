@@ -3,7 +3,6 @@ import About from "./(homepage)/About";
 import Service from "./(homepage)/Service";
 import Choose from "./(homepage)/Choose";
 import HomeForm from "./(homepage)/HomeForm";
-import Footer from "./Footer/Footer";
 import { ChartPieDonutText } from "./(homepage)/PieChart";
 import HRCertification from "./(homepage)/HRCertification";
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
       <ChartPieDonutText />
       <HRCertification />
       <HomeForm />
-      <Footer />
+      
     </main>
   );
 }

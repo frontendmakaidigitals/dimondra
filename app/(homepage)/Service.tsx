@@ -71,7 +71,7 @@ const Service = () => {
         el,
         {
           opacity: 0,
-          x: services[idx].pos === "left" ? -100 : 100,
+          x: services[idx].pos === "left" ? -200 : 200,
         },
         {
           opacity: 1,
@@ -80,8 +80,9 @@ const Service = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top top",
-            scrub: 1.1,
+            start: "bottom bottom", // element's bottom hits viewport bottom
+            end: "bottom +70%",
+            scrub: 1.2,
           },
           stagger: 0.15,
         }
@@ -97,7 +98,7 @@ const Service = () => {
           Empowering Your Business Vision
         </h1>
 
-        <div className="grid grid-cols-2 gap-5 mt-12 auto-rows-[130px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-12 auto-rows-[130px]">
           {services.map((service, idx) => {
             const Icon = service.icon;
 

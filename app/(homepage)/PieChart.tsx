@@ -4,14 +4,12 @@ import { Label, Pie, PieChart } from "recharts";
 import { motion, useInView } from "motion/react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { TrendingUp } from "lucide-react";
-import clsx from "clsx";
-
+import useWindowSize from "../hooks/useWindowSize";
 export const description = "A donut chart with text";
 
 type BrowserKey = "chrome" | "safari" | "firefox" | "edge" | "other";
@@ -50,16 +48,21 @@ const chartConfig: Record<BrowserKey, { label: string; color: string }> = {
 export function ChartPieDonutText() {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true });
+  const windwoSize = useWindowSize();
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    if (windwoSize.width < 350) setIsMobile(true);
+  }, [windwoSize]);
   return (
     <motion.div
       ref={ref}
-      className="grid grid-cols-[1.5fr_.5fr] place-items-center container"
+      className="grid grid-cols-1 lg:grid-cols-[1.5fr_.5fr] place-items-center container"
     >
-      <Card className="border-0 shadow-none">
+      <Card className=" border-0 shadow-none">
         <CardContent className="flex-1 pb-0">
           <ChartContainer
             config={chartConfig}
-            className="mx-auto aspect-square h-[500px]"
+            className="mx-auto aspect-square w-full lg:h-[500px]"
           >
             <PieChart>
               <ChartTooltip
@@ -71,7 +74,7 @@ export function ChartPieDonutText() {
                 data={chartData}
                 dataKey="visitors"
                 nameKey="browser"
-                innerRadius={120}
+                innerRadius={isMobile ? 70 : 120}
                 strokeWidth={20}
               >
                 <Label

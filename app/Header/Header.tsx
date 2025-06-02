@@ -20,17 +20,18 @@ import { motion } from "motion/react";
 const Header = () => {
   const navMenu = siteConfig.navItems;
   const path = usePathname();
-  const { scrollVal, lastScrollVal } = useScrollPosition();
+  const { scrollVal } = useScrollPosition();
   return (
     <motion.header
-      className={`py-3 mx-auto  z-50 fixed origin-center h-fit  inset-0`}
+      className={`hidden lg:block py-3 mx-auto  z-50 fixed origin-center h-fit  inset-0`}
       animate={{
         boxShadow: scrollVal < 100 ? "0" : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
         width: scrollVal > 100 ? "1300px" : "100%",
         borderRadius: scrollVal < 100 ? " 0" : "0.6rem",
         top: scrollVal < 100 ? " 0" : "10px",
         backdropFilter: scrollVal < 100 ? "blur(0)" : "blur(.6rem)",
-        background: scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255, .8)",
+        background:
+          scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255, .8)",
       }}
       transition={{ ease: [0.165, 0.84, 0.44, 1], duration: 0.6 }}
     >
@@ -43,7 +44,7 @@ const Header = () => {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className={` ${path === item.href ? "bg-slate-100 hover:bg-slate-200" : "hover:bg-slate-100"} rounded-lg px-4 py-[.8rem]`}
+                  className={` ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg px-4 py-[.7rem]`}
                 >
                   {item.label}
                 </Link>
@@ -52,7 +53,7 @@ const Header = () => {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <button
-                        className={` ${path === item.href ? "bg-slate-100" : "hover:bg-slate-100"} rounded-lg px-4 py-[.8rem]`}
+                        className={` ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg px-4 py-[.7rem]`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown className="size-[20px] ml-2 inline-block " />

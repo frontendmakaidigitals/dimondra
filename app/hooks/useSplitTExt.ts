@@ -25,6 +25,7 @@ type SplitTextOptions = {
     | "words, chars"
     | "words, lines"
     | "chars, lines";
+  delay?: number;
 };
 
 export function useSplitText({
@@ -39,6 +40,7 @@ export function useSplitText({
   once = true,
   type = "words, chars",
   linesClass = "line-wrapper++",
+  delay = 0,
 }: SplitTextOptions = {}) {
   useEffect(() => {
     const split = new SplitText(selector, {
@@ -59,6 +61,7 @@ export function useSplitText({
       autoAlpha: alpha,
       stagger,
       ease: "power3.out",
+      delay,
       scrollTrigger: trigger
         ? {
             trigger,

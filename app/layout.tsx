@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import Header from "./Header/Header";
 import Backtotop from "./app_chunks/Backtotop";
+import Footer from "./Footer/Footer";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -42,6 +43,7 @@ export default function RootLayout({
           <Header />
           <Backtotop />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -14,14 +14,14 @@ const HRCertification = () => {
     <div className="my-32">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 ">
         <div>
-          <h2 className="text-6xl font-[500] text-dimondra-black">
+          <h2 className="text-5xl lg:text-6xl font-[500] text-dimondra-black">
             HR Certifications That Elevate Careers
           </h2>
           <p className="mt-6">
             Advance your professional journey with international HR
-            certifications delivered by industry experts. Whether you&nbsp;re just
-            starting or leveling up, we guide you every step of the way — from
-            training to exam success.
+            certifications delivered by industry experts. Whether you&nbsp;re
+            just starting or leveling up, we guide you every step of the way —
+            from training to exam success.
           </p>
           <div className="mt-8">
             <ul className="">
@@ -49,7 +49,7 @@ const HRCertification = () => {
             Start Your Certification
           </button>
         </div>
-        <div className="h-[600px] relative">
+        <div className="h-[350px] lg:h-[600px] relative">
           <ImageAnimationLayer />
           <img
             className="w-full h-full object-cover"
