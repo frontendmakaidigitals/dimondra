@@ -21,11 +21,16 @@ const About = () => {
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
           <p className="mt-5">
-            At Dimondra, we do more than just outsourcing. We provide smart,
-            practical solutions that help your business run smoothly, your team
-            work better, and your leaders focus on what matters most. <br />{" "}
-            <br /> We understand what businesses need, and we combine our global
-            experience with local know-how to help you grow in the right way.
+            At Dimondra, we&nbsp;re more than an outsourcing company, we’re your
+            business partner. We provide support across HR, recruitment, admin,
+            IT, legal, marketing, and government relations, helping you grow
+            efficiently and compliantly. Whether you're expanding, entering a
+            new market, or simplifying your operations, Dimondra is your
+            one-stop support hub. We blend global experience with local know-how
+            to reduce your workload and let your team focus on what matters
+            most. From startups to large enterprises, from admin support to
+            advisory, we are here to help you run better, hire smarter, and
+            achieve more. Dimondra: Empowering Businesses. Enabling People.
           </p>
           <div className="mt-8">
             <div className="flex items-start gap-4">
