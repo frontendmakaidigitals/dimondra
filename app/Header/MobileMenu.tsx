@@ -179,13 +179,13 @@ const AccordionMenu = ({
                   <AccordionContent>
                     {item.submenu.map(
                       (item: { label: string; href: string }, idx: number) => (
-                        <div
+                        <button
                           key={idx}
                           onClick={() => setShowMenu(false)}
                           className="pl-4 py-2 text-sm font-medium cursor-pointer"
                         >
                           {item.label}
-                        </div>
+                        </button>
                       )
                     )}
                   </AccordionContent>

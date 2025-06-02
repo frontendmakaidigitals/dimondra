@@ -24,7 +24,7 @@ const About = () => {
             At Dimondra, we&nbsp;re more than an outsourcing company, we’re your
             business partner. We provide support across HR, recruitment, admin,
             IT, legal, marketing, and government relations, helping you grow
-            efficiently and compliantly. Whether you're expanding, entering a
+            efficiently and compliantly. Whether you&nbsp;re expanding, entering a
             new market, or simplifying your operations, Dimondra is your
             one-stop support hub. We blend global experience with local know-how
             to reduce your workload and let your team focus on what matters
