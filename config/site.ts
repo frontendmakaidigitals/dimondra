@@ -1,4 +1,31 @@
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = {
+  name: string;
+  description: string;
+  navItems: NavItem[];
+  links: {
+    github: string;
+    twitter: string;
+    docs: string;
+    discord: string;
+    sponsor: string;
+  };
+};
+
+type NavItem =
+  | {
+      label: string;
+      href: string;
+    }
+  | {
+      label: string;
+      services: {
+        label: string;
+        submenu: {
+          label: string;
+          link: string;
+        }[];
+      }[];
+    };
 
 export const siteConfig = {
   name: "Next.js + HeroUI",
@@ -36,7 +63,10 @@ export const siteConfig = {
         {
           label: "Career & Training",
           submenu: [
-            { label: "HR Certifications (aPHRi, PHRi, SPHRi, GPHR)", link: "/" },
+            {
+              label: "HR Certifications (aPHRi, PHRi, SPHRi, GPHR)",
+              link: "/",
+            },
             { label: "Career Advisory ", link: "/" },
             { label: "Career Profile Development", link: "/" },
           ],

@@ -92,7 +92,7 @@ const Service = () => {
 
   return (
     <div className="my-16">
-      <div className="container mx-auto px-4">
+      <div className="container overflow-hidden mx-auto px-4">
         <p className="text-center text-sm text-gray-500">Our Services</p>
         <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
           Empowering Your Business Vision

@@ -41,7 +41,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Header />
-          <Backtotop />
+
           {children}
           <Footer />
         </Providers>

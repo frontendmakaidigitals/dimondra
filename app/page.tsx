@@ -12,10 +12,8 @@ export default function Home() {
       <About />
       <Service />
       <Choose />
-      <ChartPieDonutText />
       <HRCertification />
       <HomeForm />
-      
     </main>
   );
 }
