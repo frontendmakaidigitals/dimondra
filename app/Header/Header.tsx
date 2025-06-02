@@ -15,11 +15,25 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useScrollPosition } from "../hooks/useScrollVal";
+import { motion } from "motion/react";
 const Header = () => {
   const navMenu = siteConfig.navItems;
   const path = usePathname();
+  const { scrollVal, lastScrollVal } = useScrollPosition();
   return (
-    <header className="py-3 bg-white z-50 relative">
+    <motion.header
+      className={`py-3 mx-auto  z-50 fixed origin-center h-fit  inset-0`}
+      animate={{
+        boxShadow: scrollVal < 100 ? "0" : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+        width: scrollVal > 100 ? "1300px" : "100%",
+        borderRadius: scrollVal < 100 ? " 0" : "0.6rem",
+        top: scrollVal < 100 ? " 0" : "10px",
+        backdropFilter: scrollVal < 100 ? "blur(0)" : "blur(.6rem)",
+        background: scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255, .8)",
+      }}
+      transition={{ ease: [0.165, 0.84, 0.44, 1], duration: 0.6 }}
+    >
       <div className="container mx-auto flex justify-between items-center px-4">
         <Logo />
 
@@ -80,7 +94,7 @@ const Header = () => {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

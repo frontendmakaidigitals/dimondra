@@ -80,7 +80,7 @@ const Service = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
+            start: "top top",
             scrub: 1.1,
           },
           stagger: 0.15,

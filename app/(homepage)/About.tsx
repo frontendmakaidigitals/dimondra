@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="bg-teal-400/10 pt-52 pb-12">
       <div className="container grid grid-cols-2 gap-5 ">
-        <div className="h-[600px] relative overflow-hidden">
+        <div className="h-[650px] relative overflow-hidden">
           <ImageAnimationLayer />
           <img
             className="w-full h-full object-cover"
