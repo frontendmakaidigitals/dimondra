@@ -1,7 +1,7 @@
 "use client";
 import Logo from "../app_chunks/Logo";
 import { siteConfig } from "@/config/site";
-import { ChevronDown, Users } from "lucide-react";
+import { ChevronDown, Circle, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -41,7 +41,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <Logo className="w-36 realtive z-10" />
 
-        <nav className=" hidden lg:flex items-center space-x-6">
+        <div className=" hidden lg:flex items-center space-x-6">
           {navMenu.map((item, idx) => (
             <div key={idx} className="relative">
               {item.href ? (
@@ -63,31 +63,27 @@ const Header = () => {
                       </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="min-w-56 rounded-xl">
-                      <DropdownMenuGroup>
+                      <DropdownMenuGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
                         {item.services &&
                           item.services.map((subItem, index) => (
-                            <DropdownMenuSub key={index}>
-                              <DropdownMenuSubTrigger
-                                className={`py-4 px-3 rounded-lg`}
-                              >
-                                <span className="inline-block mr-3">
-                                  <Users className="!size-[22px] text-slate-700" />
-                                </span>
+                            <div key={index} className="space-y-4">
+                              <span className="font-[600] text-base">
                                 {subItem.label}
-                              </DropdownMenuSubTrigger>
-                              <DropdownMenuPortal>
-                                <DropdownMenuSubContent className="rounded-lg ">
-                                  {subItem.submenu.map((subSubItems, id) => (
-                                    <DropdownMenuItem
-                                      className="py-4 px-3 rounded-xl"
-                                      key={id}
-                                    >
-                                      {subSubItems.label}
-                                    </DropdownMenuItem>
-                                  ))}
-                                </DropdownMenuSubContent>
-                              </DropdownMenuPortal>
-                            </DropdownMenuSub>
+                              </span>
+                              <div className=" space-y-5 text-sm text-muted-foreground">
+                                {subItem.submenu.map((item, idx) => (
+                                  <p
+                                    key={idx}
+                                    className="flex items-start gap-2 max-w-48"
+                                  >
+                                    <span className="mt-[6px]">
+                                      <Circle className="size-[10px] fill-dimondra-black " />{" "}
+                                    </span>
+                                    {item.label}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
                           ))}
                       </DropdownMenuGroup>
                     </DropdownMenuContent>
@@ -96,7 +92,7 @@ const Header = () => {
               )}
             </div>
           ))}
-        </nav>
+        </div>
 
         <div className="block lg:hidden">
           <MobileMenu menu={navMenu} />
