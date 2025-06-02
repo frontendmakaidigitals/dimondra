@@ -17,16 +17,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useScrollPosition } from "../hooks/useScrollVal";
 import { motion } from "motion/react";
+import useWindowSize from "../hooks/useWindowSize";
 const Header = () => {
   const navMenu = siteConfig.navItems;
   const path = usePathname();
   const { scrollVal } = useScrollPosition();
+  const windowSize = useWindowSize();
   return (
     <motion.header
-      className={`hidden lg:block py-3 mx-auto  z-50 fixed origin-center h-fit  inset-0`}
+      className={`py-3 mx-auto z-50 fixed origin-center h-fit inset-0`}
       animate={{
         boxShadow: scrollVal < 100 ? "0" : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-        width: scrollVal > 100 ? "1300px" : "100%",
+        width: windowSize.width > 400 && scrollVal > 100 ? "1300px" : "100%",
         borderRadius: scrollVal < 100 ? " 0" : "0.6rem",
         top: scrollVal < 100 ? " 0" : "10px",
         backdropFilter: scrollVal < 100 ? "blur(0)" : "blur(.6rem)",

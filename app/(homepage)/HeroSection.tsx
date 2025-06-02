@@ -100,7 +100,7 @@ const HeroSection = () => {
           </button>
         </motion.div>
       </div>
-      <div className="absolute container top-[105%] lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-y-1/2 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl w-full">
+      <div className="absolute container -bottom-[105%] lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-y-1/2 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl w-full">
         {stats.map(({ title, description, icon }, idx) => {
           const Icon = icon;
           return (

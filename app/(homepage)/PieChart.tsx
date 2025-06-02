@@ -74,7 +74,7 @@ export function ChartPieDonutText() {
                 data={chartData}
                 dataKey="visitors"
                 nameKey="browser"
-                innerRadius={isMobile ? 70 : 120}
+                innerRadius={!isMobile ? 70 : 120}
                 strokeWidth={20}
               >
                 <Label
