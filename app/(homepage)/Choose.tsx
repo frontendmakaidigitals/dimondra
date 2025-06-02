@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import {
   Layers,
   Users2,
@@ -7,6 +8,8 @@ import {
   Headset,
   LineChart,
 } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const highlights = [
   {
     title: "End-to-End Services",
@@ -39,7 +42,33 @@ const highlights = [
     icon: LineChart,
   },
 ];
+gsap.registerPlugin(ScrollTrigger);
 const Choose = () => {
+  const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
+
+  useEffect(() => {
+    numbersRef.current.forEach((el, i) => {
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        { scale: 0, opacity: 0, y: 50 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          delay: i * 0.13,
+          duration: 0.75,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
   return (
     <div className="my-28">
       <div className="container">
@@ -52,7 +81,12 @@ const Choose = () => {
               key={index}
               className="flex bg-slate-50 relative pt-8 pb-6 px-5 items-start gap-5"
             >
-              <span className="text-5xl font-[600] text-dimondra-teal absolute top-0 -translate-y-1/2">
+              <span
+                ref={(el) => {
+                  numbersRef.current[index] = el;
+                }}
+                className="text-5xl font-[600] text-dimondra-teal absolute top-0 -translate-y-1/2"
+              >
                 0{index + 1}
               </span>
               <div className="">
