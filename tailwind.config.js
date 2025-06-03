@@ -12,10 +12,15 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
+        grand: ["var(--font-grand-hotel)"],
       },
       container: {
         center: true,
         padding: "1.2rem",
+        screens: {
+          sm: "100%",
+          lg: "1260px",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -102,7 +107,7 @@ const config = {
   plugins: [
     heroui(),
     require("tailwindcss-animate"),
-    require("@tailwindcss/line-clamp"), 
+    require("@tailwindcss/line-clamp"),
   ],
 };
 

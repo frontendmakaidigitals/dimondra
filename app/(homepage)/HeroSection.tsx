@@ -76,8 +76,9 @@ const HeroSection = () => {
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
         </p>
-        <h1 className="max-w-4xl heroText leading-[3rem] lg:leading-[5.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] ">
-          Empowering <span className="text-dimondra-teal">Businesses</span>,
+        <h1 className="max-w-4xl  heroText leading-[3rem] lg:leading-[5.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] ">
+          Empowering{" "}
+          <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.
         </h1>
 
