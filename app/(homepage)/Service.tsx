@@ -3,9 +3,7 @@ import clsx from "clsx";
 import React, { useEffect, useRef } from "react";
 import {
   Briefcase,
-  Users,
   ClipboardList,
-  MonitorSmartphone,
   Server,
   GraduationCap,
   BarChart3,
@@ -114,7 +112,7 @@ const Service = () => {
           Empowering Your Business Vision
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-12 auto-rows-[130px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-12 lg:auto-rows-[130px]">
           {services.map((service, idx) => {
             const Icon = service.icon;
 

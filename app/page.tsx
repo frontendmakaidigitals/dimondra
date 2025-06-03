@@ -5,6 +5,7 @@ import Choose from "./(homepage)/Choose";
 import HomeForm from "./(homepage)/HomeForm";
 import { ChartPieDonutText } from "./(homepage)/PieChart";
 import HRCertification from "./(homepage)/HRCertification";
+import Blogs from "./(homepage)/Blogs";
 export default function Home() {
   return (
     <main>
@@ -14,6 +15,7 @@ export default function Home() {
       <Choose />
       <ChartPieDonutText />
       <HRCertification />
+      <Blogs />
       <HomeForm />
     </main>
   );
