@@ -6,57 +6,73 @@ import {
   Users,
   ClipboardList,
   MonitorSmartphone,
+  Server,
+  GraduationCap,
+  BarChart3,
+  LifeBuoy,
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 const Service = () => {
-  const imgAdd =
-    "https://images.unsplash.com/photo-1508921340878-ba53e1f016ec?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0";
-
   const services = [
     {
-      title: "Business Analysis",
+      title: "HR Outsourcing",
       description:
-        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+        "Streamline your workforce management with tailored HR solutions, from recruitment to compliance.",
       row: "row-span-1",
       icon: Briefcase,
       pos: "left",
     },
     {
-      img: imgAdd,
+      img: "media/homepage/services/img1.jpg",
       row: "row-span-2",
       pos: "right",
     },
     {
-      title: "Reports Analysis",
+      title: "Talent Solutions",
       description:
-        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+        "Access a curated pool of skilled professionals and elevate your hiring strategy with precision.",
       row: "row-span-1",
       icon: ClipboardList,
       pos: "left",
     },
     {
-      img: imgAdd,
+      img: "media/homepage/services/img2.jpg",
       row: "row-span-2",
       pos: "left",
     },
     {
-      title: "IT Consulting",
+      title: "Business Support",
       description:
-        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+        "Enhance productivity with comprehensive back-office services including admin, payroll, and operations.",
       row: "row-span-1",
-      icon: MonitorSmartphone,
+      icon: LifeBuoy,
       pos: "right",
     },
-
     {
-      title: "Management Consulting",
+      title: "IT & Digital Services",
       description:
-        "Override the digital divide with additional clickthroughs from developers and nanodigital divide.",
+        "Empower your business with custom tech solutions, including cloud services, app development, and cybersecurity.",
       row: "row-span-1",
-      icon: Users,
+      icon: Server,
+      pos: "right",
+    },
+    {
+      title: "Career & Development",
+      description:
+        "Foster employee growth with training programs, career planning, and leadership development tools.",
+      row: "row-span-1",
+      icon: GraduationCap,
+      pos: "left",
+    },
+    {
+      title: "Strategy & Advisory",
+      description:
+        "Navigate complex challenges with expert consulting in business strategy, transformation, and growth planning.",
+      row: "row-span-1",
+      icon: BarChart3,
       pos: "right",
     },
   ];
@@ -91,8 +107,8 @@ const Service = () => {
   }, []);
 
   return (
-    <div className="my-16">
-      <div className="container overflow-hidden mx-auto px-4">
+    <div className="my-16 overflow-hidden">
+      <div className="container  mx-auto px-4">
         <p className="text-center text-sm text-gray-500">Our Services</p>
         <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
           Empowering Your Business Vision
