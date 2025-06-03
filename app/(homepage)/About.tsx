@@ -16,7 +16,6 @@ const About = () => {
           />
         </div>
         <div>
-          <span className="text-sm font-semibold">01. About us</span>
           <h2 className="text-5xl font-semibold mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
@@ -24,8 +23,8 @@ const About = () => {
             At Dimondra, we&nbsp;re more than an outsourcing company, we’re your
             business partner. We provide support across HR, recruitment, admin,
             IT, legal, marketing, and government relations, helping you grow
-            efficiently and compliantly. Whether you&nbsp;re expanding, entering a
-            new market, or simplifying your operations, Dimondra is your
+            efficiently and compliantly. Whether you&nbsp;re expanding, entering
+            a new market, or simplifying your operations, Dimondra is your
             one-stop support hub. We blend global experience with local know-how
             to reduce your workload and let your team focus on what matters
             most. From startups to large enterprises, from admin support to
@@ -70,7 +69,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <button className="px-5 py-2 bg-dimondra-tealDark text-dimondra-white rounded-xl mt-7">
+          <button className="px-5 py-[.7rem] bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white rounded-xl mt-7">
             Partner With Us
           </button>
         </div>

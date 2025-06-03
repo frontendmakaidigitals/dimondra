@@ -41,8 +41,13 @@ export function ChartPieDonutText() {
   const windwoSize = useWindowSize();
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
-    if (windwoSize.width < 350) setIsMobile(true);
+    if (windwoSize.width < 400) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
   }, [windwoSize]);
+  console.log(isMobile);
   return (
     <div>
       <h2 className="text-5xl mb-2 container text-center lg:text-6xl font-[500] text-dimondra-black">
@@ -68,7 +73,7 @@ export function ChartPieDonutText() {
                   data={chartData}
                   dataKey="visitors"
                   nameKey="Industry"
-                  innerRadius={!isMobile ? 70 : 120}
+                  innerRadius={isMobile ? 70 : 120}
                   strokeWidth={20}
                 ></Pie>
               </PieChart>

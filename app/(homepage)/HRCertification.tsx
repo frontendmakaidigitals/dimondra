@@ -45,7 +45,7 @@ const HRCertification = () => {
               ))}
             </ul>
           </div>
-          <button className="px-5 py-2 cursor-pointer border hover:text-dimondra-white border-dimondra-gray hover:bg-dimondra-teal transition-all duration-200 mt-10 rounded-xl">
+          <button className="px-5 py-2 cursor-pointer border bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white transition-all duration-200 mt-10 rounded-xl">
             Start Your Certification
           </button>
         </div>

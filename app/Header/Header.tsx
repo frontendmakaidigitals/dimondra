@@ -1,7 +1,13 @@
 "use client";
 import Logo from "../app_chunks/Logo";
 import { siteConfig } from "@/config/site";
-import { ChevronDown, Circle, Users } from "lucide-react";
+import {
+  ArrowBigRight,
+  ChevronDown,
+  Circle,
+  MoveUpRight,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -47,7 +53,7 @@ const Header = () => {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className={` ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg px-4 py-[.7rem]`}
+                  className={` text-sm ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg px-4 py-[.7rem]`}
                 >
                   {item.label}
                 </Link>
@@ -56,7 +62,7 @@ const Header = () => {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <button
-                        className={` ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg px-4 py-[.7rem]`}
+                        className={` ${path === item.href ? "bg-dimondra-black text-dimondra-white" : "hover:bg-slate-100"} rounded-lg text-sm px-4 py-[.7rem]`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown className="size-[20px] ml-2 inline-block " />
@@ -97,6 +103,15 @@ const Header = () => {
         <div className="block lg:hidden">
           <MobileMenu menu={navMenu} />
         </div>
+        <button className="hidden group text-[.9rem] relative lg:inline-flex h-11 items-center justify-center overflow-hidden rounded-md border-2  border-dimondra-teal  font-medium">
+          <div className="inline-flex h-11 translate-y-0 items-center justify-center px-5  bg-gradient-to-r   text-dimondra-black transition duration-500 group-hover:-translate-y-[150%]">
+            Get a Quote
+          </div>
+          <div className="absolute inline-flex h-11 w-full translate-y-[100%] items-center justify-center text-dimondra-white transition duration-500 group-hover:translate-y-0">
+            <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-dimondra-teal  transition duration-500 group-hover:translate-y-0 group-hover:scale-150"></span>
+            <span className="z-10">Get a Quote</span>
+          </div>
+        </button>
       </div>
     </motion.header>
   );
