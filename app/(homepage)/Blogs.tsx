@@ -63,7 +63,7 @@ const Blogs = () => {
                           <img
                             className="w-full h-full object-cover"
                             src={blog.img}
-                            alt={"Blog image"}
+                            alt={`blog ${index+1}`}
                           />
                         </div>
                         <div className="mt-3 px-2">
