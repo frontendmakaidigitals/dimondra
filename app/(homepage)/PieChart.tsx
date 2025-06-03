@@ -20,19 +20,19 @@ type IndustryKey =
   | "Technology & IT";
 
 const chartData = [
-  { Industry: "Healthcare", visitors: 275, fill: "#00838F" },
-  { Industry: "Real Estate", visitors: 200, fill: "#0097A7" },
-  { Industry: "Retail & E-commerce", visitors: 287, fill: "#00ACC1" },
+  { Industry: "Healthcare", visitors: 275, fill: "#FFB300" },
+  { Industry: "Real Estate", visitors: 200, fill: "#C0CA33" },
+  { Industry: "Retail & E-commerce", visitors: 287, fill: "#43A047" },
   { Industry: "Finance & Banking", visitors: 173, fill: "#26C6DA" },
-  { Industry: "Technology & IT", visitors: 190, fill: "#4DD0E1" },
+  { Industry: "Technology & IT", visitors: 190, fill: "#F4511E" },
 ];
 
 const chartConfig: Record<IndustryKey, { label: string; color: string }> = {
-  Healthcare: { label: "Healthcare", color: "#00838F" },
-  "Real Estate": { label: "Real Estate", color: "#0097A7" },
-  "Retail & E-commerce": { label: "Retail & E-commerce", color: "#00ACC1" },
+  Healthcare: { label: "Healthcare", color: "#FFB300" },
+  "Real Estate": { label: "Real Estate", color: "#C0CA33" },
+  "Retail & E-commerce": { label: "Retail & E-commerce", color: "#43A047" },
   "Finance & Banking": { label: "Finance & Banking", color: "#26C6DA" },
-  "Technology & IT": { label: "Technology & IT", color: "#4DD0E1" },
+  "Technology & IT": { label: "Technology & IT", color: "#F4511E" },
 };
 
 export function ChartPieDonutText() {
@@ -47,7 +47,6 @@ export function ChartPieDonutText() {
       setIsMobile(false);
     }
   }, [windwoSize]);
-  console.log(isMobile);
   return (
     <div>
       <h2 className="text-5xl mb-2 container text-center lg:text-6xl font-[500] text-dimondra-black">

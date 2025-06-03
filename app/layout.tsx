@@ -7,6 +7,8 @@ import { fontSans, grandHotel } from "@/config/fonts";
 import Header from "./Header/Header";
 import Backtotop from "./app_chunks/Backtotop";
 import Footer from "./Footer/Footer";
+import Loader from "./Loader";
+import { IsLoadedProvider } from "./context/isLoaded";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -41,10 +43,13 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <Header />
-          <Backtotop />
-          {children}
-          <Footer />
+          <IsLoadedProvider>
+            <Header />
+            <Loader />
+            <Backtotop />
+            {children}
+            <Footer />
+          </IsLoadedProvider>
         </Providers>
       </body>
     </html>
