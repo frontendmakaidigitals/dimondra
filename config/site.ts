@@ -88,7 +88,7 @@ export const siteConfig = {
     },
     {
       label: "Contact us",
-      href: "/about",
+      href: "/Contact",
     },
   ],
   links: {

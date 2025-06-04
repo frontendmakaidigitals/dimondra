@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AboutUs() {
+export default function Page() {
   return (
     <main className="about-us container mx-auto p-6 max-w-4xl space-y-12 font-sans text-gray-800">
       <section>

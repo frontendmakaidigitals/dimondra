@@ -63,7 +63,11 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         <motion.div
           animate={{ y: !isLoadingComplete ? -200 : 0 }}
-          transition={{ duration: 0.4, ease: [0.175, 0.885, 0.32, 1.1], delay:.2 }}
+          transition={{
+            duration: 0.4,
+            ease: [0.175, 0.885, 0.32, 1.1],
+            delay: 0.2,
+          }}
         >
           <Logo className="w-36 realtive z-10" />
         </motion.div>
@@ -136,7 +140,11 @@ const Header = () => {
         </div>
         <motion.button
           animate={{ y: !isLoadingComplete ? -200 : 0 }}
-          transition={{ duration: 0.4, ease: [0.175, 0.885, 0.32, 1.1],  delay:.2 }}
+          transition={{
+            duration: 0.4,
+            ease: [0.175, 0.885, 0.32, 1.1],
+            delay: 0.2,
+          }}
           className="hidden group text-[.9rem] relative lg:inline-flex h-11 items-center justify-center overflow-hidden rounded-md border-2  border-dimondra-teal  font-medium"
         >
           <div className="inline-flex h-11 translate-y-0 items-center justify-center px-5  bg-gradient-to-r   text-dimondra-black transition duration-500 group-hover:-translate-y-[150%]">

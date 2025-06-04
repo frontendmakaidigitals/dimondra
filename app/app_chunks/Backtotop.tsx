@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUp } from "lucide-react";
-
+import { ArrowDown, ArrowUp } from "lucide-react";
+import clsx from "clsx";
 const Backtotop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,21 +20,34 @@ const Backtotop = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const scrollToBottom = () => {
+    window.scrollTo({ top: 950, behavior: "smooth" });
+  };
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {isVisible && (
-          <motion.button
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            onClick={scrollToTop}
-            className="fixed overflow-hidden  z-[999] border border-slate-100/20 origin-center bottom-6 right-6 text-slate-700 bg-purple-100/30 font-[600] backdrop-filter backdrop-blur-xl px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 "
-          >
+        <motion.button
+          animate={{
+            width: isVisible ? "5.5rem" : "3rem",
+            height: isVisible ? "2.8rem" : "3rem",
+          }}
+          transition={{ duration: 0.6, ease: [0.19, 1.2, 0.4, 1] }}
+          onClick={isVisible ? scrollToTop : scrollToBottom}
+          className={clsx(
+            `fixed overflow-hidden z-[999] border border-slate-100/20 origin-center bottom-6 right-6 text-slate-700 bg-purple-100/30 backdrop-filter backdrop-blur-xl   rounded-full shadow-lg transition-opacity duration-300 `
+          )}
+        >
+          {isVisible ? (
+            <>
               <ArrowUp className="inline-block size-5" /> Top
-          </motion.button>
-        )}
+            </>
+          ) : (
+            <>
+              <ArrowDown className="inline-block size-5" />
+            </>
+          )}
+        </motion.button>
       </AnimatePresence>
     </>
   );

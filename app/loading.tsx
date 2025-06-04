@@ -7,6 +7,7 @@ import useElementHeight from "./hooks/useElementHeight";
 
 const Loader = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+
   const { setIsLoadingComplete, isLoadingComplete } = useIsLoaded();
   const { height } = useElementHeight({ className: "navMenu" });
   useEffect(() => {
