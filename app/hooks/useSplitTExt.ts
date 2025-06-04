@@ -61,7 +61,7 @@ export function useSplitText({
       autoAlpha: alpha,
       stagger,
       ease: "power3.out",
-      delay,
+      delay: delay,
       scrollTrigger: trigger
         ? {
             trigger,

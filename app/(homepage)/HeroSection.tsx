@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { useSplitText } from "../hooks/useSplitTExt";
 import "@/styles/globals.css";
 import { Briefcase, Globe, Headphones } from "lucide-react";
+import { useIsLoaded } from "../context/isLoaded";
 const HeroSection = () => {
   const stats = [
     {
@@ -35,6 +36,7 @@ const HeroSection = () => {
     trigger: ".trigger",
     type: "chars, lines",
     linesClass: "line-wrapper++",
+    delay: 2.5,
   });
   useSplitText({
     selector: ".heroText",
@@ -42,24 +44,10 @@ const HeroSection = () => {
     y: 500,
     stagger: 0.01,
     type: "chars, lines",
-    trigger: ".trigger",
     linesClass: "line-wrapper++",
-    delay: 0.8,
+    delay: 2.7,
   });
 
-  // <motion.img
-  //     initial={{ scale: 1.4 }}
-  //     animate={{ scale: 1 }}
-  //     transition={{
-  //       ease: [0.165, 0.84, 0.44, 1],
-  //       duration: 1.3,
-  //     }}
-  //     className="w-full h-full object-cover object-top absolute inset-0"
-  //     src={
-  //       "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  //     }
-  //     alt={"hero Images"}
-  //   />
   return (
     <div className="h-[90dvh] lg:h-[110vh] relative w-full trigger">
       <video
@@ -78,15 +66,14 @@ const HeroSection = () => {
           #1 in the Market: Dimondra
         </p>
         <h1 className="max-w-4xl  heroText leading-[3rem] lg:leading-[5.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] ">
-          Empowering{" "}
-          <span className="text-dimondra-teal">Businesses</span>,
+          Empowering <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.
         </h1>
 
         <motion.h3
           initial={{ filter: "blur(5px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 2.7 }}
           className="text-dimondra-dark text-center text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
         >
           Expert support in HR, IT, operations, legal, and business strategy.
@@ -95,7 +82,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.1 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 2.8 }}
         >
           <button className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6">
             Book a Free Consultation

@@ -25,7 +25,8 @@ const Header = () => {
   const path = usePathname();
   const { scrollVal } = useScrollPosition();
   const windowSize = useWindowSize();
-  const { isLoadingComplete } = useIsLoaded();
+  const { pageContext } = useIsLoaded();
+  console.log(pageContext.loadingAnimation);
   const parentVariants = {
     hidden: {},
     show: {
@@ -62,7 +63,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4">
         <motion.div
-          animate={{ y: !isLoadingComplete ? -200 : 0 }}
+          animate={{ y: !pageContext.loadingAnimation ? -200 : 0 }}
           transition={{
             duration: 0.4,
             ease: [0.175, 0.885, 0.32, 1.1],
@@ -76,7 +77,7 @@ const Header = () => {
           className="hidden lg:flex items-center space-x-6"
           variants={parentVariants}
           initial="hidden"
-          animate={isLoadingComplete ? "show" : "hidden"}
+          animate={pageContext.loadingAnimation ? "show" : "hidden"}
         >
           {navMenu.map((item, idx) => (
             <motion.div key={idx} variants={childVariants} className="relative">
@@ -139,7 +140,7 @@ const Header = () => {
           <MobileMenu menu={navMenu} />
         </div>
         <motion.button
-          animate={{ y: !isLoadingComplete ? -200 : 0 }}
+          animate={{ y: !pageContext.loadingAnimation ? -200 : 0 }}
           transition={{
             duration: 0.4,
             ease: [0.175, 0.885, 0.32, 1.1],

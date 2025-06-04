@@ -6,36 +6,39 @@ import { useIsLoaded } from "./context/isLoaded";
 import useElementHeight from "./hooks/useElementHeight";
 
 const Loader = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const { setIsLoadingComplete, isLoadingComplete } = useIsLoaded();
+  const { setPageContext, pageContext } = useIsLoaded();
   const { height } = useElementHeight({ className: "navMenu" });
   useEffect(() => {
-    const handleLoad = () => setIsLoaded(true);
-
+    const handleLoad = () =>
+      setPageContext((prev) => ({
+        ...prev,
+        pageLoad: true,
+      }));
     if (document.readyState === "complete") {
-      // already loaded
-      setIsLoaded(true);
+      setPageContext((prev) => ({
+        ...prev,
+        pageLoad: true,
+      }));
     } else {
       window.addEventListener("load", handleLoad);
     }
-
     return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   useEffect(() => {
-    if (isLoaded) {
+    if (pageContext.pageLoad) {
       gsap.to(".window", {
         height: height,
         duration: 2.2,
         ease: "power4.inOut",
         delay: 0.5,
-        onComplete: () => setIsLoadingComplete(true),
+        onComplete: () =>
+          setPageContext((prev) => ({ ...prev, loadingAnimation: true })),
       });
     }
-  }, [isLoaded, height]);
+  }, [pageContext.pageLoad, height]);
 
-  if (isLoadingComplete) return null;
+  if (pageContext.loadingAnimation) return null;
   return (
     <div className={clsx("fixed inset-0 z-[99] w-screen h-screen")}>
       <div className={clsx(`w-full h-full bg-white window origin-top`)} />
