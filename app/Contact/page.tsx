@@ -253,7 +253,7 @@ const Form = () => {
     e.preventDefault();
     setStatus("");
     if (!validate()) {
-      console.log("return", errors);
+      "return", errors;
       return;
     }
     setStatus("Sending...");

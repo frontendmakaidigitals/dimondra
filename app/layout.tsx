@@ -8,6 +8,7 @@ import Header from "./Header/Header";
 import Backtotop from "./app_chunks/Backtotop";
 import Footer from "./Footer/Footer";
 import Loader from "./loading";
+import FloatingSocialMediaIcons from "./app_chunks/FloatingSocialMediaIcons";
 import { IsLoadedProvider } from "./context/isLoaded";
 export const metadata: Metadata = {
   title: {
@@ -45,7 +46,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <IsLoadedProvider>
             <Header />
-
+            <FloatingSocialMediaIcons />
             <Loader />
             <Backtotop />
             {children}

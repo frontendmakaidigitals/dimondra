@@ -9,20 +9,26 @@ const Loader = () => {
   const { setPageContext, pageContext } = useIsLoaded();
   const { height } = useElementHeight({ className: "navMenu" });
   useEffect(() => {
-    const handleLoad = () =>
-      setPageContext((prev) => ({
-        ...prev,
-        pageLoad: true,
-      }));
+    const handleLoad = () => {
+      setTimeout(() => {
+        setPageContext((prev) => ({
+          ...prev,
+          pageLoad: true,
+        }));
+      }, 1850);
+    };
+
     if (document.readyState === "complete") {
-      setPageContext((prev) => ({
-        ...prev,
-        pageLoad: true,
-      }));
+      // If already loaded, run timeout immediately
+      handleLoad();
     } else {
+      // Otherwise, wait for the load event
       window.addEventListener("load", handleLoad);
     }
-    return () => window.removeEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   useEffect(() => {

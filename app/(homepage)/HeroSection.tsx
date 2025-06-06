@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import { useSplitText } from "../hooks/useSplitTExt";
 import "@/styles/globals.css";
 import { Briefcase, Globe, Headphones } from "lucide-react";
-import { useIsLoaded } from "../context/isLoaded";
 const HeroSection = () => {
   const stats = [
     {
@@ -36,7 +35,7 @@ const HeroSection = () => {
     trigger: ".trigger",
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 2.5,
+    delay: 3.4,
   });
   useSplitText({
     selector: ".heroText",
@@ -45,12 +44,15 @@ const HeroSection = () => {
     stagger: 0.01,
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 2.7,
+    delay: 3.5,
   });
 
   return (
     <div className="h-[90dvh] lg:h-[110vh] relative w-full trigger">
-      <video
+      <motion.video
+        initial={{ scale: 1.7 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 4.2, duration: 1.4, ease: "circOut" }}
         className="w-full h-full object-cover object-top absolute inset-0"
         autoPlay
         muted
@@ -58,9 +60,9 @@ const HeroSection = () => {
         loop
       >
         <source src={"media/homepage/hero/heroVideo.mp4"} />
-      </video>
+      </motion.video>
 
-      <BgLayer />
+      <BgLayer color="bg-slate-900/50" />
       <div className="relative z-10 container w-full h-full flex justify-center items-center flex-col">
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
@@ -73,7 +75,7 @@ const HeroSection = () => {
         <motion.h3
           initial={{ filter: "blur(5px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 2.7 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 3.4 }}
           className="text-dimondra-dark text-center text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
         >
           Expert support in HR, IT, operations, legal, and business strategy.
@@ -82,7 +84,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 2.8 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 3.4 }}
         >
           <button className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6">
             Book a Free Consultation
@@ -100,8 +102,8 @@ const HeroSection = () => {
               whileInView={{ y: "0px", rotate: ["5deg", "0deg"] }}
               transition={{
                 ease: [0.165, 0.84, 0.44, 1],
-                duration: 0.7,
-                delay: idx * 0.07,
+                duration: 0.5,
+                delay: idx * 0.055,
               }}
               viewport={{ once: true, amount: 0.2 }}
             >

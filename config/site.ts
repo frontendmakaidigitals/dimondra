@@ -43,7 +43,7 @@ export const siteConfig = {
       label: "Services",
       services: [
         {
-          label: "HR Outsourcing Services",
+          label: "HR Outsourcing",
           submenu: [
             { label: "Talent Acquisition", link: "/" },
             { label: "HR Operations", link: "/" },
@@ -64,7 +64,7 @@ export const siteConfig = {
           label: "Career & Training",
           submenu: [
             {
-              label: "HR Certifications (aPHRi, PHRi, SPHRi, GPHR)",
+              label: "HR Certifications",
               link: "/",
             },
             { label: "Career Advisory ", link: "/" },

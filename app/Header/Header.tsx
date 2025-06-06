@@ -1,32 +1,22 @@
 "use client";
 import Logo from "../app_chunks/Logo";
 import { siteConfig } from "@/config/site";
-import { ChevronDown, Circle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useScrollPosition } from "../hooks/useScrollVal";
-import { motion } from "motion/react";
-import useWindowSize from "../hooks/useWindowSize";
+import { motion, AnimatePresence } from "motion/react";
 import MobileMenu from "./MobileMenu";
 import { useIsLoaded } from "../context/isLoaded";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
 const Header = () => {
   const navMenu = siteConfig.navItems;
   const path = usePathname();
   const { scrollVal } = useScrollPosition();
-  const windowSize = useWindowSize();
+  const [isMenuShowing, setIsMenuShowing] = useState(false);
   const { pageContext } = useIsLoaded();
-  console.log(pageContext.loadingAnimation);
+  pageContext.loadingAnimation;
   const parentVariants = {
     hidden: {},
     show: {
@@ -44,20 +34,26 @@ const Header = () => {
       transition: { duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] },
     },
   };
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuShowing(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
   return (
     <motion.header
-      className={`py-3 navMenu mx-auto z-50 fixed origin-center h-fit inset-0`}
+      className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
       animate={{
-        boxShadow: scrollVal < 100 ? "0" : "rgba(0, 0, 0, 0.1) 0px 4px 12px",
-        width: windowSize.width > 400 && scrollVal > 100 ? "1300px" : "100%",
-        borderRadius: scrollVal < 100 ? " 0" : "0.6rem",
-        top: windowSize.width > 400 && scrollVal > 100 ? " 10px" : "0px",
-        backdropFilter:
-          scrollVal < 100
-            ? " saturate(180%) blur(10px)"
-            : " saturate(180%) blur(10px)",
         background:
-          scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255, .8)",
+          scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255)",
       }}
       transition={{ ease: [0.175, 0.885, 0.32, 1.1], duration: 0.6 }}
     >
@@ -80,57 +76,104 @@ const Header = () => {
           animate={pageContext.loadingAnimation ? "show" : "hidden"}
         >
           {navMenu.map((item, idx) => (
-            <motion.div key={idx} variants={childVariants} className="relative">
+            <motion.div
+              key={idx}
+              variants={childVariants}
+              className="relative text-sm"
+            >
               {item.href ? (
                 <Link
                   href={item.href}
-                  className={`text-sm ${
+                  className={` ${
                     path === item.href
                       ? "bg-dimondra-black text-dimondra-white"
                       : "hover:bg-slate-100"
-                  } rounded-lg px-4 py-[.7rem]`}
+                  } rounded-lg px-3 py-[.6rem]`}
                 >
                   {item.label}
                 </Link>
               ) : (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button
-                      className={`${
-                        path === item.href
-                          ? "bg-dimondra-black text-dimondra-white"
-                          : "hover:bg-slate-100"
-                      } rounded-lg text-sm px-4 py-[.7rem]`}
-                    >
-                      <span>{item.label}</span>
-                      <ChevronDown className="size-[20px] ml-2 inline-block" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="min-w-56 rounded-xl">
-                    <DropdownMenuGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
-                      {item.services?.map((subItem, index) => (
-                        <div key={index} className="space-y-4">
-                          <span className="font-[600] text-base">
-                            {subItem.label}
-                          </span>
-                          <div className="space-y-5 text-sm text-muted-foreground">
-                            {subItem.submenu.map((item, idx) => (
-                              <p
-                                key={idx}
-                                className="flex items-start gap-2 max-w-48"
+                <motion.div
+                  onMouseEnter={() => setIsMenuShowing(true)}
+                  onMouseLeave={() => setIsMenuShowing(false)}
+                >
+                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-slate-100">
+                    {item.label}{" "}
+                    <span className="inline-block ml-1 align-middle">
+                      {<ChevronDown className="size-[18px]" />}
+                    </span>
+                  </button>
+
+                  <AnimatePresence mode="wait">
+                    {isMenuShowing ? (
+                      <motion.div
+                        style={{ height: `calc(100vh - 72)px` }}
+                        className={clsx(
+                          ` fixed h-screen  top-[50px] left-0 z-[999999999] w-screen pt-5`
+                        )}
+                      >
+                        <div className="backdrop-filter h-full backdrop-blur-lg bg-white/30 ">
+                          <div onMouseLeave={() => setIsMenuShowing(false)}>
+                            {" "}
+                            <motion.div
+                              initial={{ height: "0" }}
+                              animate={{ height: "auto" }}
+                              exit={{ height: "0" }}
+                              transition={{
+                                duration: 0.3,
+                                ease: [0, 0, 0.19, 1],
+                              }}
+                              className={` w-full flex bg-white justify-center items-center`}
+                            >
+                              <div
+                                onMouseLeave={() => setIsMenuShowing(true)}
+                                className="w-fit overflow-hidden text-nowrap h-full"
                               >
-                                <span className="mt-[6px]">
-                                  <Circle className="size-[10px] fill-dimondra-black" />
-                                </span>
-                                {item.label}
-                              </p>
-                            ))}
+                                <div className="py-10 flex items-start gap-10">
+                                  {" "}
+                                  {item.services?.map((service, id) => (
+                                    <motion.div key={id}>
+                                      <motion.h4
+                                        initial={{ y: -4, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -4, opacity: 0 }}
+                                        transition={{
+                                          duration: 0.15,
+                                          ease: [0, 0, 0.19, 1],
+                                        }}
+                                        className="text-xl font-[500]"
+                                      >
+                                        {service.label}
+                                      </motion.h4>
+                                      <ul className="mt-4">
+                                        {service.submenu.map((child, index) => (
+                                          <motion.li
+                                            initial={{ y: -5, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -5, opacity: 0 }}
+                                            transition={{
+                                              duration: 0.2,
+                                              ease: [0, 0, 0.19, 1],
+                                              delay: 0.05 + index * 0.04,
+                                            }}
+                                            key={index}
+                                            className="mb-4"
+                                          >
+                                            {child.label}
+                                          </motion.li>
+                                        ))}
+                                      </ul>
+                                    </motion.div>
+                                  ))}
+                                </div>
+                              </div>
+                            </motion.div>
                           </div>
                         </div>
-                      ))}
-                    </DropdownMenuGroup>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </motion.div>
               )}
             </motion.div>
           ))}
