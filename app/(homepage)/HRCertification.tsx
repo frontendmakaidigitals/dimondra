@@ -1,6 +1,6 @@
 import { Circle, Sparkle, Star } from "lucide-react";
 import React from "react";
-import ImageAnimationLayer from "../app_chunks/ImageAnimationLayer";
+
 
 const HRCertification = () => {
   const hrCertifications = [
@@ -50,7 +50,7 @@ const HRCertification = () => {
           </button>
         </div>
         <div className="h-[350px] lg:h-[600px] relative">
-          <ImageAnimationLayer />
+
           <img
             className="w-full h-full object-cover"
             src={
