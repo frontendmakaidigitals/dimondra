@@ -9,7 +9,7 @@ import {
   LifeBuoy,
 } from "lucide-react";
 import { useSplitText } from "../hooks/useSplitTExt";
-const serviceRevamp = () => {
+const ServiceRevamp = () => {
   const services = [
     {
       title: "HR Outsourcing",
@@ -169,4 +169,4 @@ const serviceRevamp = () => {
   );
 };
 
-export default serviceRevamp;
+export default ServiceRevamp;
