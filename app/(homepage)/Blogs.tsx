@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { MoveUpRight } from "lucide-react";
+import { useSplitText } from "../hooks/useSplitTExt";
 const Blogs = () => {
   const articles = [
     {
@@ -37,10 +38,21 @@ const Blogs = () => {
     },
   ];
 
+   useSplitText({
+        selector: ".blogText",
+        duration: 0.8,
+        y: 80,
+        alpha: 0,
+        stagger: 0.01,
+        trigger: ".blogTrigger",
+        type: "chars, lines",
+        linesClass: "line-wrapper++",
+      });
+
   return (
     <div className="my-28">
-      <div className="container">
-        <h1 className="text-5xl lg:text-6xl mt-1  font-[600] text-dimondra-black">
+      <div className="container blogTrigger">
+        <h1 className="text-5xl blogText lg:text-6xl mt-1  font-[600] text-dimondra-black">
           Latest from the blog
         </h1>
         <div className="mt-14">

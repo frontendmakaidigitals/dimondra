@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/chart";
 import { TrendingUp } from "lucide-react";
 import useWindowSize from "../hooks/useWindowSize";
+import { useSplitText } from "../hooks/useSplitTExt";
 export const description = "A donut chart with text";
 
 type IndustryKey =
@@ -47,9 +48,20 @@ export function ChartPieDonutText() {
       setIsMobile(false);
     }
   }, [windwoSize]);
+
+   useSplitText({
+      selector: ".pieText",
+      duration: 0.8,
+      y: 80,
+      alpha: 0,
+      stagger: 0.01,
+      trigger: ".pieTrigger",
+      type: "chars, lines",
+      linesClass: "line-wrapper++",
+    });
   return (
-    <div>
-      <h2 className="text-5xl mb-2 container text-center lg:text-6xl font-[500] text-dimondra-black">
+    <div className={'pieTrigger'}>
+      <h2 className="text-5xl pieText mb-2 container text-center lg:text-6xl font-[500] text-dimondra-black">
         Our Industry Footprint
       </h2>
       <motion.div

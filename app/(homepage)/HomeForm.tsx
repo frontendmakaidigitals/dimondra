@@ -1,19 +1,52 @@
+"use client";
 import React from "react";
 import { Input } from "@heroui/input";
 import { Textarea } from "@heroui/input";
 import { ArrowRight, Headset, Mail } from "lucide-react";
+import { useSplitText } from "../hooks/useSplitTExt";
 const HomeForm = () => {
+  useSplitText({
+    selector: ".formText1",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".formTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+  useSplitText({
+    selector: ".formText2",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".formTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+  useSplitText({
+    selector: ".formText3",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".formTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+
   return (
     <div className="py-24 bg-slate-100">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="container formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-md">
-          <span className="text-sm text-dimondra-dark">
+          <span className="text-sm formText1 text-dimondra-dark">
             We&nbsp;re here to help you
           </span>
-          <h1 className="text-5xl lg:text-6xl font-[600] text-dimondra-black mt-3">
+          <h1 className="text-5xl formText2 lg:text-6xl font-[600] text-dimondra-black mt-3">
             Get in Touch with Us
           </h1>
-          <p className="text-dimondra-dark mt-4">
+          <p className="text-dimondra-dark mt-4 formText3">
             We&nbsp;d love to hear from you! Whether you&nbsp;re looking for a
             service, partnership, or simply have a question, reach out and
             we&nbsp;ll get back to you shortly.

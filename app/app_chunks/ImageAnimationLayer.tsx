@@ -1,51 +1,46 @@
 "use client";
-
 import React from "react";
-import { motion } from "framer-motion";
-import clsx from "clsx";
+type TriggerPosition = "top" | "center" | "bottom";
 
-export function useBottomHitsViewportCenter(
+export function useElementInViewport(
   ref: React.RefObject<HTMLElement>,
+  trigger: TriggerPosition = "center",
   once = true
 ) {
   const [inView, setInView] = React.useState(false);
 
   React.useEffect(() => {
-    if (!ref.current) return;
+    const checkInView = () => {
+      const el = ref.current;
+      if (!el) return;
 
-    const handleScroll = () => {
-      const rect = ref.current!.getBoundingClientRect();
-      const viewportCenter = window.innerHeight;
-      const isAtCenter = rect.bottom <= viewportCenter;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
 
-      if (isAtCenter) {
+      let isVisible = false;
+
+      if (trigger === "top") {
+        isVisible = rect.top <= vh && rect.bottom >= 0;
+      } else if (trigger === "center") {
+        const center = vh / 2;
+        isVisible = rect.top <= center && rect.bottom >= center;
+      } else if (trigger === "bottom") {
+        isVisible = rect.bottom <= vh && rect.bottom >= 0;
+      }
+
+      if (isVisible) {
         setInView(true);
-        if (once) window.removeEventListener("scroll", handleScroll);
+        if (once) window.removeEventListener("scroll", checkInView);
+      } else if (!once) {
+        setInView(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Run once initially
+    window.addEventListener("scroll", checkInView, { passive: true });
+    checkInView(); // initial check
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [ref, once]);
+    return () => window.removeEventListener("scroll", checkInView);
+  }, [ref, trigger, once]);
 
   return inView;
 }
-
-const ImageAnimationLayer = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const inView = useBottomHitsViewportCenter(ref, true);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={{ height: inView ? "0%" : "100%" }}
-      initial={{ height: "100%" }}
-      transition={{ duration: 1.6, ease: [0.19, 1, 0.22, 1] }}
-      className={clsx("absolute inset-0 w-full bg-teal-50")}
-    />
-  );
-};
-
-export default ImageAnimationLayer;

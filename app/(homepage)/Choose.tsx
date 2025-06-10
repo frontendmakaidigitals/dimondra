@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSplitText } from "../hooks/useSplitTExt";
 const highlights = [
   {
     title: "End-to-End Services",
@@ -69,10 +70,22 @@ const Choose = () => {
       );
     });
   }, []);
+
+  useSplitText({
+    selector: ".chooseText",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".chooseTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+
   return (
     <div className="my-28">
-      <div className="container">
-        <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
+      <div className="container chooseTrigger">
+        <h1 className="text-5xl chooseText mt-1 text-center  font-[600] text-dimondra-black">
           Why Choose Dimondra
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-20">

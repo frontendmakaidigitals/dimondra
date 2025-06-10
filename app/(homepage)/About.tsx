@@ -2,18 +2,29 @@
 import { User } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
-import { useBottomHitsViewportCenter } from "../app_chunks/ImageAnimationLayer";
+import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
+import { useSplitText } from "../hooks/useSplitTExt";
 const About = () => {
   const ref = React.useRef<HTMLDivElement>(null);
-  const inView = useBottomHitsViewportCenter(ref, false);
-  console.log(inView);
+  const inView = useElementInViewport(ref, "center");
+  useSplitText({
+    selector: ".aboutText",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".Abouttrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+
   return (
     <div className="bg-[#CDE8E5] pt-[55rem] lg:pt-52 pb-12">
       <div
-        ref={ref}
+        
         className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 "
       >
-        <div className="h-[350px] lg:h-[650px] relative overflow-hidden">
+        <div ref={ref} className="h-[350px] lg:h-[650px] relative overflow-hidden">
           <motion.div
             animate={{
               height: inView ? "100%" : "0%",
@@ -31,8 +42,8 @@ const About = () => {
             />
           </motion.div>
         </div>
-        <div>
-          <h2 className="text-5xl font-semibold mt-3">
+        <div className="Abouttrigger">
+          <h2 className="text-5xl leading-[3.4rem] aboutText font-semibold mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
           <p className="mt-5">
@@ -42,7 +53,7 @@ const About = () => {
             need, we deliver tailored solutions across HR, recruitment,
             administration, IT, legal, marketing, and government relations. Our
             mission is simple: to support your growth while enabling your people
-            to thrive. Whether you're scaling up, entering a new market, or
+            to thrive. Whether you&nbsp;re scaling up, entering a new market, or
             streamlining your operations, Dimondra offers a one-stop hub for
             integrated business support services. We combine global expertise
             with local insight to help you grow the right way — compliantly,

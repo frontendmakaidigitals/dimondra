@@ -160,7 +160,7 @@ const Page = () => {
           Reach Out to Us
         </p>
         <h1 className="mt-5 text-3xl font-[700]">
-          We'd Love to Hear From You.
+          We&nbsp;d Love to Hear From You.
         </h1>
         <p className=" mt-2">
           Or just reach out manually to{" "}
@@ -253,8 +253,7 @@ const Form = () => {
     e.preventDefault();
     setStatus("");
     if (!validate()) {
-      "return", errors;
-      return;
+      return errors;
     }
     setStatus("Sending...");
     try {
@@ -285,8 +284,9 @@ const Form = () => {
   return (
     <>
       <div className="w-full col-span-2 lg:col-span-1">
-        <label>First Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input
+          id={ 'firstName' }
           name={"firstName"}
           value={formData.firstName}
           onChange={handleChange}
@@ -298,8 +298,9 @@ const Form = () => {
         )}
       </div>
       <div className="w-full col-span-2 lg:col-span-1">
-        <label>Last Name</label>
+        <label htmlFor="lastName">Last Name</label>
         <input
+          id={'lastName'}
           name={"lastName"}
           value={formData.lastName}
           onChange={handleChange}
@@ -311,7 +312,7 @@ const Form = () => {
         )}
       </div>
       <div className="w-full col-span-2">
-        <label>Phone</label>
+        <label htmlFor="phone">Phone</label>
         <input
           id="phone"
           type={"number"}
@@ -324,10 +325,11 @@ const Form = () => {
         {errors.phone && <p className="text-red-600 text-sm">{errors.phone}</p>}
       </div>
       <div className="w-full col-span-2">
-        <label>Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type={"email"}
           name={"email"}
+          id={'email'}
           value={formData.email}
           onChange={handleChange}
           className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
@@ -336,8 +338,9 @@ const Form = () => {
         {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
       </div>
       <div className="w-full col-span-2">
-        <label>Message</label>
+        <label htmlFor="message">Message</label>
         <textarea
+          id='message'
           rows={6}
           className="text-sm mt-1 w-full resize-none bg-dimondra-teal/5 border dimondra-border-dimondra-gray/30/40 rounded-md px-3 block py-[.7rem]"
           placeholder="Leave us a message"
@@ -357,7 +360,7 @@ const Form = () => {
             onCheckedChange={() => {
               setErrors((prev) => ({
                 ...prev, // Keep existing errors
-                checked: false, // Update 'checked' error
+                checked: false, // Update checked error
               }));
               setCheckBox(!checkbox);
             }}
