@@ -1,37 +1,60 @@
+"use client";
 import { User } from "lucide-react";
 import React from "react";
-import ImageAnimationLayer from "../app_chunks/ImageAnimationLayer";
+import { motion } from "motion/react";
+import { useBottomHitsViewportCenter } from "../app_chunks/ImageAnimationLayer";
 const About = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const inView = useBottomHitsViewportCenter(ref, false);
+  console.log(inView);
   return (
-    <div className="bg-teal-400/10 pt-[55rem] lg:pt-52 pb-12">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-5 ">
+    <div className="bg-[#CDE8E5] pt-[55rem] lg:pt-52 pb-12">
+      <div
+        ref={ref}
+        className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 "
+      >
         <div className="h-[350px] lg:h-[650px] relative overflow-hidden">
-          <ImageAnimationLayer />
-          <img
-            className="w-full h-full object-cover"
-            src={
-              "https://images.unsplash.com/photo-1593677193813-e99785037dfa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            alt={`About us images`}
-          />
+          <motion.div
+            animate={{
+              height: inView ? "100%" : "0%",
+              scale: inView ? "1" : "2",
+            }}
+            transition={{ duration: 0.6, ease: [0.77, 0, 0.175, 1] }}
+            className="w-full"
+          >
+            <img
+              className="w-full h-full object-cover"
+              src={
+                "https://images.unsplash.com/photo-1665686308827-eb62e4f6604d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
+              alt={`About us images`}
+            />
+          </motion.div>
         </div>
         <div>
           <h2 className="text-5xl font-semibold mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
           <p className="mt-5">
-            At Dimondra, we&nbsp;re more than an outsourcing company, we’re your
-            business partner. We provide support across HR, recruitment, admin,
-            IT, legal, marketing, and government relations, helping you grow
-            efficiently and compliantly. Whether you&nbsp;re expanding, entering
-            a new market, or simplifying your operations, Dimondra is your
-            one-stop support hub. We blend global experience with local know-how
-            to reduce your workload and let your team focus on what matters
-            most. From startups to large enterprises, from admin support to
-            advisory, we are here to help you run better, hire smarter, and
-            achieve more. Dimondra: Empowering Businesses. Enabling People.
+            At Dimondra, we do more than just outsourcing — we partner with
+            businesses to build smarter, stronger, and more efficient
+            operations. With a deep understanding of what organizations truly
+            need, we deliver tailored solutions across HR, recruitment,
+            administration, IT, legal, marketing, and government relations. Our
+            mission is simple: to support your growth while enabling your people
+            to thrive. Whether you're scaling up, entering a new market, or
+            streamlining your operations, Dimondra offers a one-stop hub for
+            integrated business support services. We combine global expertise
+            with local insight to help you grow the right way — compliantly,
+            confidently, and competitively. We pride ourselves on being not just
+            a vendor, but a true extension of your team— working alongside you
+            to simplify the complex, reduce the operational load, and empower
+            your leaders to focus on strategic priorities. From startups to
+            large enterprises, from admin support to advisory — we are here to
+            help you run better, hire smarter, and achieve more. Dimondra —
+            Empowering Businesses. Enabling People
           </p>
-          <div className="mt-8">
+          <div className="mt-5">
             <div className="flex items-start gap-4">
               {/* Left: Icon */}
               <div className="text-blue-600 mt-1">

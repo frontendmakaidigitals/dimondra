@@ -15,25 +15,7 @@ const Header = () => {
   const path = usePathname();
   const { scrollVal } = useScrollPosition();
   const [isMenuShowing, setIsMenuShowing] = useState(false);
-  const { pageContext } = useIsLoaded();
-  pageContext.loadingAnimation;
-  const parentVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const childVariants = {
-    hidden: { y: -200, opacity: 0 },
-    show: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] },
-    },
-  };
+  const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -51,36 +33,27 @@ const Header = () => {
   return (
     <motion.header
       className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
+      transition={{ type: "linear", duration: 0.3 }}
       animate={{
-        background:
-          scrollVal < 100 ? "rgba(255, 255, 255)" : "rgba(255, 255, 255)",
+        backgroundColor:
+          scrollVal > 200 || isHovering ? "#EEF7FF" : "rgba(0, 0, 0, 0)",
+        color: scrollVal > 200 || isHovering ? "#000000" : "#ffffff",
+        boxShadow:
+          scrollVal > 200 || isHovering
+            ? "0 4px 12px rgba(0, 0, 0, 0.1)"
+            : "0 0 0 rgba(0,0,0,0)",
       }}
-      transition={{ ease: [0.175, 0.885, 0.32, 1.1], duration: 0.6 }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
     >
       <div className="container mx-auto flex justify-between items-center px-4">
-        <motion.div
-          animate={{ y: !pageContext.loadingAnimation ? -200 : 0 }}
-          transition={{
-            duration: 0.4,
-            ease: [0.175, 0.885, 0.32, 1.1],
-            delay: 0.2,
-          }}
-        >
+        <motion.div>
           <Logo className="w-36 realtive z-10" />
         </motion.div>
 
-        <motion.div
-          className="hidden lg:flex items-center space-x-6"
-          variants={parentVariants}
-          initial="hidden"
-          animate={pageContext.loadingAnimation ? "show" : "hidden"}
-        >
+        <motion.div className="hidden lg:flex items-center space-x-6">
           {navMenu.map((item, idx) => (
-            <motion.div
-              key={idx}
-              variants={childVariants}
-              className="relative text-sm"
-            >
+            <motion.div key={idx} className="relative text-sm">
               {item.href ? (
                 <Link
                   href={item.href}
@@ -107,13 +80,28 @@ const Header = () => {
                   <AnimatePresence mode="wait">
                     {isMenuShowing ? (
                       <motion.div
-                        style={{ height: `calc(100vh - 72)px` }}
                         className={clsx(
                           ` fixed h-screen  top-[50px] left-0 z-[999999999] w-screen pt-5`
                         )}
                       >
-                        <div className="backdrop-filter h-full backdrop-blur-lg bg-white/30 ">
-                          <div onMouseLeave={() => setIsMenuShowing(false)}>
+                        <motion.div
+                          animate={{
+                            backdropFilter: isMenuShowing
+                              ? "blur(.9rem) "
+                              : "blur(0rem)",
+                            background: isMenuShowing
+                              ? "rgba(255, 255, 255, .4) "
+                              : "rgba(255, 255, 255) ",
+                          }}
+                          transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
+                          className="backdrop-filter h-full "
+                        >
+                          <div
+                            onMouseLeave={() => {
+                              setIsMenuShowing(false);
+                              setIsHovering(false);
+                            }}
+                          >
                             {" "}
                             <motion.div
                               initial={{ height: "0" }}
@@ -123,7 +111,7 @@ const Header = () => {
                                 duration: 0.3,
                                 ease: [0, 0, 0.19, 1],
                               }}
-                              className={` w-full flex bg-white justify-center items-center`}
+                              className={` w-full flex bg-[#EEF7FF] justify-center items-center`}
                             >
                               <div
                                 onMouseLeave={() => setIsMenuShowing(true)}
@@ -141,7 +129,7 @@ const Header = () => {
                                           duration: 0.15,
                                           ease: [0, 0, 0.19, 1],
                                         }}
-                                        className="text-xl font-[500]"
+                                        className="text-xl font-[500] px-3"
                                       >
                                         {service.label}
                                       </motion.h4>
@@ -157,7 +145,7 @@ const Header = () => {
                                               delay: 0.05 + index * 0.04,
                                             }}
                                             key={index}
-                                            className="mb-4"
+                                            className="mb-2 hover:bg-slate-300 rounded-lg p-3"
                                           >
                                             {child.label}
                                           </motion.li>
@@ -169,7 +157,7 @@ const Header = () => {
                               </div>
                             </motion.div>
                           </div>
-                        </div>
+                        </motion.div>
                       </motion.div>
                     ) : null}
                   </AnimatePresence>
@@ -182,22 +170,12 @@ const Header = () => {
         <div className="block lg:hidden">
           <MobileMenu menu={navMenu} />
         </div>
-        <motion.button
-          animate={{ y: !pageContext.loadingAnimation ? -200 : 0 }}
-          transition={{
-            duration: 0.4,
-            ease: [0.175, 0.885, 0.32, 1.1],
-            delay: 0.2,
-          }}
-          className="hidden group text-[.9rem] relative lg:inline-flex h-11 items-center justify-center overflow-hidden rounded-md border-2  border-dimondra-teal  font-medium"
-        >
-          <div className="inline-flex h-11 translate-y-0 items-center justify-center px-5  bg-gradient-to-r   text-dimondra-black transition duration-500 group-hover:-translate-y-[150%]">
+
+        <motion.button className="relative inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#5eead4_0%,#0f766e_50%,#5eead4_100%)]" />
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#EEF7FF] hover:bg-dimondra-teal hover:text-dimondra-white transition-all duration-250 px-8 py-1 text-sm font-medium text-black backdrop-blur-3xl">
             Get a Quote
-          </div>
-          <div className="absolute inline-flex h-11 w-full translate-y-[100%] items-center justify-center text-dimondra-white transition duration-500 group-hover:translate-y-0">
-            <span className="absolute h-full w-full translate-y-full skew-y-12 scale-y-0 bg-dimondra-teal  transition duration-500 group-hover:translate-y-0 group-hover:scale-150"></span>
-            <span className="z-10">Get a Quote</span>
-          </div>
+          </span>
         </motion.button>
       </div>
     </motion.header>

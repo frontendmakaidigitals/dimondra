@@ -36,3 +36,8 @@
   overflow: hidden;
   display: block;
 }
+
+
+body{
+  background-color: #EEF7FF !important;
+}

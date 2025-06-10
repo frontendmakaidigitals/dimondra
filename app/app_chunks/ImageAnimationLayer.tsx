@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 
-function useBottomHitsViewportCenter(
+export function useBottomHitsViewportCenter(
   ref: React.RefObject<HTMLElement>,
   once = true
 ) {

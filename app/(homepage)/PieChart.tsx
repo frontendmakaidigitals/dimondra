@@ -56,7 +56,7 @@ export function ChartPieDonutText() {
         ref={ref}
         className="grid grid-cols-1 lg:grid-cols-[1.5fr_.5fr] place-items-center container"
       >
-        <Card className=" border-0 shadow-none">
+        <Card className=" border-0 shadow-none !bg-transparent">
           <CardContent className="flex-1 pb-0">
             <ChartContainer
               config={chartConfig}

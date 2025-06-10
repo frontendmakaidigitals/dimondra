@@ -35,7 +35,7 @@ const HeroSection = () => {
     trigger: ".trigger",
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 3.4,
+    delay: 0.4,
   });
   useSplitText({
     selector: ".heroText",
@@ -44,26 +44,33 @@ const HeroSection = () => {
     stagger: 0.01,
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 3.5,
+    delay: 0.5,
   });
 
   return (
     <div className="h-[90dvh] lg:h-[110vh] relative w-full trigger">
-      <motion.video
-        initial={{ scale: 1.7 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 4.2, duration: 1.4, ease: "circOut" }}
-        className="w-full h-full object-cover object-top absolute inset-0"
-        autoPlay
-        muted
-        playsInline
-        loop
-      >
-        <source src={"media/homepage/hero/heroVideo.mp4"} />
-      </motion.video>
+      <div className="absolute w-full h-full overflow-hidden inset-0">
+        {" "}
+        <motion.video
+          initial={{ scale: 1.7 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: .2, duration: 1.4, ease: "circOut" }}
+          className="w-full h-full object-cover object-top "
+          autoPlay
+          muted
+          playsInline
+          loop
+        >
+          <source
+            src={
+              "https://cdn.pixabay.com/video/2016/05/12/3174-166338976_large.mp4"
+            }
+          />
+        </motion.video>
+      </div>
 
       <BgLayer color="bg-slate-900/50" />
-      <div className="relative z-10 container w-full h-full flex justify-center items-center flex-col">
+      <div className="relative z-20 container w-full h-full flex justify-center items-center flex-col">
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
         </p>
@@ -84,14 +91,14 @@ const HeroSection = () => {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 3.4 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 0.4 }}
         >
           <button className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6">
             Book a Free Consultation
           </button>
         </motion.div>
       </div>
-      <div className="absolute container -bottom-[105%] lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-y-1/2 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl w-full">
+      <div className="absolute container -bottom-[105%] lg:bottom-0 z-20 left-1/2 -translate-x-1/2 lg:translate-y-1/2 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl w-full">
         {stats.map(({ title, description, icon }, idx) => {
           const Icon = icon;
           return (
@@ -99,11 +106,22 @@ const HeroSection = () => {
               key={idx}
               className={`bg-slate-50 p-5 border border-slate-400/20 shadow-lg`}
               initial={{ y: "200px" }}
-              whileInView={{ y: "0px", rotate: ["5deg", "0deg"] }}
-              transition={{
-                ease: [0.165, 0.84, 0.44, 1],
-                duration: 0.5,
-                delay: idx * 0.055,
+              whileInView={{
+                y: "0px",
+                rotate: ["5deg", "0deg"],
+                transition: {
+                  ease: [0.165, 0.84, 0.44, 1],
+                  duration: 0.5,
+                  delay: idx * 0.055,
+                },
+              }}
+              whileHover={{
+                x: [0, -5, 5, -5, 5, 0],
+                y: [0, -2, 2, -2, 2, 0],
+                transition: {
+                  duration: 0.6,
+                  ease: [0.19, 1, 0.22, 1],
+                },
               }}
               viewport={{ once: true, amount: 0.2 }}
             >

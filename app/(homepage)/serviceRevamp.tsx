@@ -1,0 +1,160 @@
+"use client";
+import React from "react";
+import {
+  Briefcase,
+  ClipboardList,
+  Server,
+  GraduationCap,
+  BarChart3,
+  LifeBuoy,
+} from "lucide-react";
+const serviceRevamp = () => {
+  const services = [
+    {
+      title: "HR Outsourcing",
+      description:
+        "Streamline HR. Enhance People. Scale Smarter — with outsourcing solutions that cover everything from policy and process optimization to daily HR operations, all delivered with a global mindset and local expertise. End-to-end HR support for contracts, payroll, and employee management",
+      row: "row-span-1",
+      icon: Briefcase,
+      pos: "left",
+      img: "media/homepage/services/img1.jpg",
+    },
+
+    {
+      title: "Remote Workforce",
+      description:
+        "Companies no longer need to be limited by geography when finding the perfect candidate. Across the globe organizations are now using a remote and hybrid workforce for both permanent employees and contract professionals. In doing this, they're discovering the hiring process is faster and allows them to attract a much larger talent pool",
+      row: "row-span-1",
+      icon: ClipboardList,
+      pos: "left",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "Executive Search",
+      description:
+        "Recruit Right. Move Fast. Grow Strong — with executive search, RPO, and recruitment solutions designed to deliver the right talent quickly and precisely",
+      row: "row-span-1",
+      icon: LifeBuoy,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "RPO",
+      description:
+        "RPO services in can be a game changer for businesses. By teaming up with an RPO Service provider, you can access specialized recruitment expertise for scalable talent acquisition and a better candidate experience. We act as an extension of your team, blending dedicated professionals, top notch tech, proven methods, and data insights. This helps us anticipate future talent needs and streamline every step of hiring, from sourcing to onboarding. Our goal is to align your workforce with your goals, ensuring you have the right talent to drive success.",
+      row: "row-span-1",
+      icon: Server,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "Government Relations ",
+      description:
+        "We provide comprehensive support to ensure your business stays compliant with local regulations. Our government relations team handles all essential documentation, licensing, and coordination with local authorities—saving you time and ensuring accuracy every step of the way. Whether you're establishing, growing, or maintaining your business, our team is here to support you with efficient, reliable, and compliant government liaison services. ",
+      row: "row-span-1",
+      icon: GraduationCap,
+      pos: "left",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "Business Support ",
+      description:
+        "Call centers, operational services, and business processing built for efficiency. Dimondra provides end-to-end business support solutions designed to keep your operations running smoothly. Our services include inbound and outbound call center management, customer support outsourcing, and business process outsourcing (BPO) across key functions such as admin, finance, and client handling. We act as an operational backbone that delivers reliability, responsiveness, and results — helping your teams focus on what matters most.",
+      row: "row-span-1",
+      icon: BarChart3,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "IT & Digital Services ",
+      description:
+        "IT & Digital Services Technology and digital marketing tailored for your business growth. At Dimondra, we combine IT expertise with creative digital strategy to help your business run smarter and grow faster. From setting up secure, scalable infrastructure to managing your digital presence, we deliver solutions that align with your goals and adapt to your needs.  Our IT team ensures seamless support across network setup, cloud services, cybersecurity, and day-to-day troubleshooting — while our digital specialists build impactful marketing campaigns through SEO, social media, paid ads, and analytics. Whether you're launching, expanding, or optimizing, we provide the digital foundation and visibility you need to succeed in today’s connected world.",
+      row: "row-span-1",
+      icon: BarChart3,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "Strategy & Advisory",
+      description:
+        "Smart planning and expert guidance to scale and strengthen your business. At Dimondra, our Strategy & Advisory services are built to support you at every step of your  business  lifecycle —  whether  you're  entering  a  new  market,  restructuring  your organization,   or   planning   for   sustainable   growth.   We   work   closely   with   you   to understand  your  vision,  assess  your  challenges,  and  design  solutions  that  are  both practical and strategic. With a global mindset and deep regional expertise, we help businesses navigate market entry requirements, align their operating models, and build organizational structures that are  agile,  scalable,  and  future-ready.  Our  advisory  support  extends  from  optimizingprocesses and workforce planning to enabling long-term business resilience. Whether you're a startup setting up your first office or an established firm looking to expand or evolve, we provide the insight, structure, and guidance you need to move forward with clarity and confidence",
+      row: "row-span-1",
+      icon: BarChart3,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+    {
+      title: "Workplace & Facilities Outsourcing Services ",
+      description:
+        "Our Workplace & Facilities Outsourcing Services offer end-to-end solutions to manage and support your office environment through experienced, outsourced staff. We help businesses maintain a professional, efficient, and welcoming workplace by handlingdaily operations and essential facility services, allowing you to focus on your core activities. From front desk to technical maintenance, our trained personnel ensure smooth execution, cost efficiency, and high service standards tailored to your business needs.We provide flexible outsourcing models to scale with your requirements—whether for a single service or a fully managed workplace solution. Explore Our Services ",
+      row: "row-span-1",
+      icon: BarChart3,
+      pos: "right",
+      img: "media/homepage/services/img1.jpg",
+    },
+  ];
+
+  return (
+    <div className="my-20">
+      <div className="container  mx-auto px-4">
+        <p className="text-center text-sm text-gray-500">Our Services</p>
+        <h1 className="text-5xl mt-1 text-center  font-[600] text-dimondra-black">
+          Empowering Your Business Vision
+        </h1>
+        <div className="grid grid-cols-1 gap-7 mt-12">
+          {services.map((service, index) => {
+            const isOdd = index % 2 !== 0;
+
+            return (
+              <div
+                key={index}
+                className={`
+          grid gap-7 p-7 from-[1%] from-dimondra-teal/20
+           
+          ${
+            isOdd
+              ? "grid-cols-[1.3fr_0.7fr] bg-gradient-to-l rounded-r-full"
+              : "grid-cols-[0.7fr_1.3fr] bg-gradient-to-r rounded-l-full"
+          }
+        `}
+              >
+                {/* Image */}
+                <div
+                  className={`
+            ${isOdd ? "order-2" : "order-1 "}
+         overflow-hidden rounded-full  w-full 
+          `}
+                >
+                  <img
+                    className={`
+              w-full h-full object-cover
+              rounded-full
+            `}
+                    src={service.img}
+                    alt={service.title}
+                  />
+                </div>
+
+                {/* Text */}
+                <div className={`${isOdd ? "order-1" : "order-2"} w-full `}>
+                  <h2 className="text-2xl font-bold">{service.title}</h2>
+                  <p className="mt-3">{service.description}</p>
+                  <div className="group mt-8 relative cursor-pointer p-2 w-32 border bg-white rounded-full overflow-hidden text-black text-center font-semibold">
+                    <span className="translate-y-0 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-300 inline-block">
+                      Learn more
+                    </span>
+                    <div className="flex gap-2 text-white bg-dimondra-teal z-10 items-center absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
+                      <span>Learn more</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default serviceRevamp;
