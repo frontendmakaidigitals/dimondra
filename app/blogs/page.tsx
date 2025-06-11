@@ -142,9 +142,9 @@ const BlogTopic = () => {
             key={topic}
             onClick={() => setActiveTopic(topic)}
             className={clsx(
-              "px-4 py-2 rounded-full text-sm font-medium border",
+              "px-4 py-2 rounded-lg text-sm font-medium border",
               activeTopic === topic
-                ? "bg-amber-600 text-white border-amber-600"
+                ? "bg-dimondra-teal text-dimondra-white border-dimondra-tealDark"
                 : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
             )}
           >
