@@ -156,7 +156,7 @@ const BlogTopic = () => {
       {/* Blog Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {filteredPosts.map((post) => (
-          <div className="p-1 w-full relative">
+          <div key={post.id} className="p-1 w-full relative">
             <Card className="w-full">
               <CardContent className="w-full px-1 pt-1 pb-5 ">
                 <div className="h-[250px] lg:h-[220px] w-full rounded-lg overflow-hidden">
