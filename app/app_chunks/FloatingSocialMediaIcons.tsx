@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "motion/react";
 const FloatingSocialMediaIcons = () => {
   const socialIcons = [
-    { link: "", icon: "icon/facebook.svg", color: "#1877F2" },
-    { link: "", icon: "icon/instagram.svg", color: "#E4405F" },
-    { link: "", icon: "icon/linkedin.svg", color: "#0A66C2" },
+    { link: "", icon: "/icon/facebook.svg", color: "#1877F2" },
+    { link: "", icon: "/icon/instagram.svg", color: "#E4405F" },
+    { link: "", icon: "/icon/linkedin.svg", color: "#0A66C2" },
   ];
   return (
     <div className="fixed top-1/2 z-[9] grid grid-cols-1 grid-rows-3 -translate-y-1/3 left-0 ">

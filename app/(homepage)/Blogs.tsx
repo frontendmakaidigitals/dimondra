@@ -52,10 +52,10 @@ const Blogs = () => {
   return (
     <div className="my-28">
       <div className="container blogTrigger">
-        <h1 className="text-5xl blogText lg:text-6xl mt-1  font-[600] text-dimondra-black">
+        <h1 className="text-5xl blogText lg:text-6xl mt-1 !leading-[5.3rem] font-[600] text-dimondra-black">
           Latest from the blog
         </h1>
-        <div className="mt-14">
+        <div className="mt-8">
           <Carousel
             opts={{
               align: "start",
