@@ -6,27 +6,22 @@ const Page = () => {
     <div>
       {" "}
       <div className="bg-teal-800">
-        <div className="h-[90dvh] container relative">
+        <div className="h-[90dvh] container w-full relative">
           <img
             src={
               "https://images.unsplash.com/photo-1723296050269-ef50cb0ad178?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt={"blogImage"}
-            className="w-full h-[650px] object-cover  absolute top-1/3  left-1/2 -translate-x-1/2"
+            className="w-full h-[650px] object-cover absolute top-1/3  left-1/2 -translate-x-1/2"
           />
         </div>
       </div>
-      <div className="mt-[250px] container">
+      <div className="mt-[250px] container ">
         <div className="flex items-center justify-between ">
-          <ul className="flex  items-center gap-4">
-            {Array.from({ length: 3 }).map((_, idx) => (
-              <li
-                key={idx}
-                className="p-2 text-sm bg-dimondra-black text-slate-50 rounded-lg"
-              >
-                Machine learning
-              </li>
-            ))}
+          <ul className="flex justify-start items-center gap-4">
+            <li className="p-2 text-xs bg-dimondra-black text-slate-50 rounded-lg">
+              Machine learning
+            </li>
           </ul>
           <p>11 June 2024</p>
         </div>
