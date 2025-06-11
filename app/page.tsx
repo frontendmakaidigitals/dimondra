@@ -1,11 +1,11 @@
 import HeroSection from "./(homepage)/HeroSection";
 import About from "./(homepage)/About";
-import Service from "./(homepage)/Service";
 import Choose from "./(homepage)/Choose";
 import HomeForm from "./(homepage)/HomeForm";
 import { ChartPieDonutText } from "./(homepage)/PieChart";
 import ServiceRevamp from "./(homepage)/serviceRevamp";
 import Blogs from "./(homepage)/Blogs";
+import Sector from "./(homepage)/Sector";
 export default function Home() {
   return (
     <main>
@@ -14,7 +14,7 @@ export default function Home() {
       <ServiceRevamp />
       <Choose />
       <ChartPieDonutText />
-
+      <Sector />
       <Blogs />
       <HomeForm />
     </main>
