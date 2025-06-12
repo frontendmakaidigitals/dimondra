@@ -1,15 +1,6 @@
-import {
-  Globe,
-  MapPin,
-  Languages,
-  Building2,
-  Settings,
-  Users2,
-  BarChart4,
-  FileSearch2,
-  MonitorSmartphone,
-} from "lucide-react";
-
+"use client";
+import { Settings, Users2, BarChart4, MonitorSmartphone } from "lucide-react";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 const problems = [
   {
     icon: Users2,
@@ -31,28 +22,90 @@ const problems = [
     title: "Expansion Challenges",
     desc: "Entering new markets? We guide your growth with proven strategy and execution.",
   },
- 
 ];
 
 const GlobalAndProblems = () => {
+  useSplitText({
+    selector: ".globalHead",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".globalTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+  useSplitText({
+    selector: ".globalSpan",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".globalTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+    delay: 0.2,
+  });
+  useSplitText({
+    selector: ".globalPara1",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".globalTrigger",
+    type: "words, lines",
+    linesClass: "line-wrapper++",
+    delay: 0.4,
+  });
+  useSplitText({
+    selector: ".globalPara2",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".globalTrigger",
+    type: "words, lines",
+    linesClass: "line-wrapper++",
+    delay: 0.4,
+  });
+  useSplitText({
+    selector: ".problemHead",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".problemTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+  useSplitText({
+    selector: ".problemPara",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".problemTrigger",
+    type: "words, lines",
+    linesClass: "line-wrapper++",
+  });
   return (
     <section className="bg-gray-50 py-24 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto space-y-28">
         {/* Global Reach */}
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+        <div className="grid globalTrigger md:grid-cols-2 gap-14 items-center">
           <div className="space-y-5">
-            <h2 className="text-4xl lg:text-5xl font-bold text-dimondra-black">
+            <h2 className="text-4xl globalHead !leading-[3.5rem] lg:text-5xl font-bold text-dimondra-black">
               Global Reach, Local Insight
             </h2>
-            <p className="text-xl text-dimondra-tealDark font-semibold">
+            <p className="text-xl text-dimondra-tealDark globalSpan font-semibold">
               Local Insight. Global Expertise.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed globalPara1">
               At Dimondra, we serve businesses across borders and industries.
-              Whether you&nbsp;re operating locally or expanding globally, our team
-              brings strategic insight and localized execution.
+              Whether you&nbsp;re operating locally or expanding globally, our
+              team brings strategic insight and localized execution.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed globalPara2">
               With multilingual teams and delivery hubs worldwide, we ensure
               your business remains compliant and competitive — wherever you
               are.
@@ -72,11 +125,11 @@ const GlobalAndProblems = () => {
 
         {/* Problems We Solve */}
         <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <div className="text-center max-w-3xl problemTrigger mx-auto space-y-4">
+            <h3 className="text-3xl sm:text-4xl  problemHead font-bold text-gray-900">
               Problems We Solve at Dimondra
             </h3>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg problemPara">
               Businesses face real challenges — and we provide practical,
               people-first solutions.
             </p>
