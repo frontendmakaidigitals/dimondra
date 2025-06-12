@@ -1,0 +1,99 @@
+import { Check } from "lucide-react";
+import React from "react";
+import {
+  Users,
+  Globe,
+  Building2,
+  ShieldCheck,
+  MessageCircle,
+  FileCheck,
+} from "lucide-react";
+const list = [
+  {
+    label: "One partner for HR, IT, admin, legal & strategy",
+    icon: Users,
+  },
+  {
+    label: "Deep market knowledge with personalized service",
+    icon: Globe,
+  },
+  {
+    label: "Solutions for all business sizes",
+    icon: Building2,
+  },
+  {
+    label: "Reliable support for local and international operations",
+    icon: ShieldCheck,
+  },
+  {
+    label: "Fast setup and clear communication.",
+    icon: MessageCircle,
+  },
+  {
+    label: "Compliance with all local regulations",
+    icon: FileCheck,
+  },
+];
+const Choose = () => {
+  return (
+    <div className="py-14 bg-teal-800">
+      <div className="container grid grid-cols-[1fr_1fr] gap-6">
+        <div>
+          <h1 className="text-[3.5rem] text-dimondra-white font-[500] tracking-tighter">
+            Why Choose Dimondra?
+          </h1>
+          <p className="mt-1 text-dimondra-white">
+            At Dimondra, we make business easier. We offer all the support you
+            need. HR, IT, admin, legal, and strategy — in one place. Our team
+            understands your goals and works with you to achieve them. \n
+            We&nbsp;re not just service providers, we&nbsp;re your trusted
+            partners. Whether you're a small business or a growing company, our
+            solutions are flexible, practical, and built to fit your needs. With
+            us, you get clear communication, fast setup, and expert help every
+            step of the way.
+          </p>
+          <div className="mt-8">
+            <h3 className="text-lg font-[500] tracking-tight text-dimondra-white">
+              We make operations easier and more effective every step of the
+              way.
+            </h3>
+            <ul className="mt-4 space-y-6">
+              {list.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <li key={idx} className=" flex items-start gap-3">
+                    <div>
+                      <div className="bg-dimondra-white rounded-sm">
+                        <Icon className="size-[24px] p-1 text-teal-950 mt-[1px]" />
+                      </div>
+                    </div>
+                    <span className="text-dimondra-white">{item.label}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+        <div className="h-[600px] w-full relative z-10">
+          <div className=" absolute h-[500px] top-5 left-0 w-[280px] overflow-hidden rounded-[90px]">
+            <img
+              src="https://images.unsplash.com/photo-1627397159237-d2acb7f500af?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // replace with your local asset or URL
+              alt="Team High Five"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="absolute h-[500px] top-28 right-0 w-[280px] overflow-hidden rounded-[90px] grayscale">
+            <img
+              src="https://images.unsplash.com/photo-1470608756445-2c9906b0680f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // replace with your local asset or URL
+              alt="Designer Portrait"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Choose;
