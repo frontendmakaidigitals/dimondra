@@ -1,22 +1,68 @@
-import React from "react";
-
+"use client";
+import React, { useRef, useEffect } from "react";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 const MissionVision = () => {
+  useSplitText({
+    selector: ".missionhead",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".missionTrigger",
+    type: "chars, lines",
+    linesClass: "line-wrapper++",
+  });
+  useSplitText({
+    selector: ".missionhead",
+    duration: 0.8,
+    y: 80,
+    alpha: 0,
+    stagger: 0.01,
+    trigger: ".missionPara",
+    type: "words, lines",
+    linesClass: "line-wrapper++",
+  });
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (gridRef.current) {
+      const cards = gridRef.current.querySelectorAll(".card");
+
+      cards.forEach((card, index) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%", // triggers as each card enters
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          x: index % 2 === 0 ? -200 : 200, // even index: from left, odd index: from right
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      });
+    }
+  }, []);
+
   return (
     <section className="relative bg-gradient-to-b from-[10%]  from-teal-800 to-[90%] to-[#EEF7FF] py-20 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl missionTrigger mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl text-center font-[600] text-dimondra-white mb-4">
+          <h2 className="text-5xl missionhead text-center font-[600] text-dimondra-white mb-4">
             Our Mission & Vision
           </h2>
-          <p className="text-slate-100 max-w-2xl mx-auto">
+          <p className="text-slate-100 missionPara max-w-2xl mx-auto">
             Helping businesses grow smarter and stronger with modern,
             people-first solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Mission */}
-          <div className="p-6 bg-white/30 backdrop-filter backdrop-blur-md rounded-2xl shadow-sm border border-gray-200/40">
+          <div className="card p-6 bg-white/30 backdrop-filter backdrop-blur-md rounded-2xl shadow-sm border border-gray-200/40">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-6 bg-dimondra-tealDark rounded" />
               <h3 className="text-3xl font-semibold text-gray-800">
@@ -32,14 +78,15 @@ const MissionVision = () => {
               We want to make your work easier by handling the complex parts –
               from HR and operations to IT and strategy – so you can focus on
               growing your business. Whether you're a small company or a large
-              organization, we&nbsp;re here to help you become more efficient, more
-              agile, and better prepared for the future. Our goal is to create
-              real value through long-term support that helps you succeed.
+              organization, we&nbsp;re here to help you become more efficient,
+              more agile, and better prepared for the future. Our goal is to
+              create real value through long-term support that helps you
+              succeed.
             </p>
           </div>
 
           {/* Vision */}
-          <div className="p-6 bg-white/30 backdrop-filter backdrop-blur-md rounded-2xl shadow-sm border border-gray-200/40">
+          <div className="card p-6 bg-white/30 backdrop-filter backdrop-blur-md rounded-2xl shadow-sm border border-gray-200/40">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-1 h-6 bg-dimondra-tealDark rounded" />
               <h3 className="text-3xl font-semibold text-gray-800">

@@ -2,16 +2,69 @@
 import React, { useRef } from "react";
 import { useSplitText } from "../hooks/useSplitTExt";
 import { motion } from "motion/react";
-import {
-  PiggyBank,
-  Hammer,
-  BriefcaseBusiness,
-  Handshake,
-  Wine,
-  Truck,
-  Stethoscope,
-} from "lucide-react";
 import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
+import {
+  Banknote,
+  Hammer,
+  Briefcase,
+  ShoppingCart,
+  Hotel,
+  Stethoscope,
+  Truck,
+} from "lucide-react";
+
+
+const sectors = [
+  {
+    title: "Banking & Financial Services",
+    description:
+      "The financial sector is undergoing rapid change, requiring skilled professionals in areas like banking operations, wealth management, risk & compliance, and fintech solutions.",
+    linkText: "Learn more →",
+    icon: Banknote,
+  },
+  {
+    title: "Construction & Engineering",
+    description:
+      "We support major infrastructure, construction, and engineering projects by supplying skilled talent that drives progress and supports urban development across the region.",
+    linkText: "Learn more →",
+    icon: Hammer,
+  },
+  {
+    title: "Corporate Services",
+    description:
+      "Our team specializes in placing top-tier talent across finance, HR, legal, strategy, and executive support roles—ensuring your core functions run seamlessly.",
+    linkText: "Learn more →",
+    icon: Briefcase,
+  },
+  {
+    title: "Commercial & Sales",
+    description:
+      "Dimondra supports businesses by placing result-driven professionals in sales, account management, business development, and customer service to boost commercial growth.",
+    linkText: "Learn more →",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Hospitality, Retail & Events",
+    description:
+      "With deep roots in the region’s vibrant service sectors, we provide tailored staffing solutions for hotels, restaurants, retail chains, and live event operations.",
+    linkText: "Learn more →",
+    icon: Hotel,
+  },
+  {
+    title: "Pharmaceutical & Healthcare",
+    description:
+      "Our healthcare and life sciences recruitment team connects providers with top professionals in clinical, regulatory, research, and pharmaceutical fields.",
+    linkText: "Learn more →",
+    icon: Stethoscope,
+  },
+  {
+    title: "Logistics & Supply Chain",
+    description:
+      "We provide end-to-end recruitment solutions for logistics, warehousing, procurement, and distribution—helping businesses streamline operations and meet global demands.",
+    linkText: "Learn more →",
+    icon: Truck,
+  },
+];
 
 const Sector = () => {
   useSplitText({
@@ -34,36 +87,7 @@ const Sector = () => {
     type: "words, lines",
     linesClass: "line-wrapper++",
   });
-  const sectors = [
-    {
-      title: "Banking",
-      icon: PiggyBank,
-    },
-    {
-      title: "Construction and Engineering",
-      icon: Hammer,
-    },
-    {
-      title: "Corporate",
-      icon: BriefcaseBusiness,
-    },
-    {
-      title: "Commercial and Sales",
-      icon: Handshake,
-    },
-    {
-      title: "Hospitality, Retail and Events",
-      icon: Wine,
-    },
-    {
-      title: "Logistics",
-      icon: Truck,
-    },
-    {
-      title: "Pharmaceutical and Healthcare",
-      icon: Stethoscope,
-    },
-  ];
+
   const sectorRef = useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(sectorRef, "center", true);
   return (
@@ -80,15 +104,17 @@ const Sector = () => {
             Sectors
           </h1>
           <p className="text-slate-50 sectorPara">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sint
-            cumque illo optio enim sit, dicta repellendus atque et iste ipsa
-            facilis tempore deleniti esse, vero mollitia, inventore consequuntur
-            magnam.
+            From technology to logistics, construction to finance, Dimondra
+            delivers strategic recruitment and workforce solutions across a wide
+            array of industries. We understand the unique demands of each sector
+            and tailor our approach to meet the evolving needs of our clients.
+            Here&nbsp;s a glimpse into some of the industries where Dimondra
+            excels:
           </p>
         </div>
         <div
           ref={sectorRef}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-14"
         >
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
@@ -106,7 +132,7 @@ const Sector = () => {
               >
                 <div className="flex flex-col items-center">
                   <Icon className="w-16 h-16 text-teal-500 mb-4" />
-                  <h2 className="text-xl text-slate-50 font-semibold serviceText">
+                  <h2 className="text-xl text-slate-50 font-semibold">
                     {sector.title}
                   </h2>
                 </div>
