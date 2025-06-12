@@ -54,7 +54,6 @@ const HeroSection = () => {
     },
   };
 
-
   return (
     <div className="relative h-[95vh]  w-full">
       <motion.div
@@ -69,6 +68,7 @@ const HeroSection = () => {
             src={
               "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
+            alt={"Hero 1"}
           />
         </motion.div>
         <motion.div variants={item} className="w-full h-full overflow-hidden">
@@ -77,11 +77,13 @@ const HeroSection = () => {
             src={
               "https://images.unsplash.com/photo-1709715357479-591f9971fb05?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
+            alt={"Hero 2"}
           />
         </motion.div>
         <motion.div variants={item} className="w-full h-full overflow-hidden">
           {" "}
-          <img
+                  <img
+                      alt={'Hero 3'}
             className="w-full h-full object-cover"
             src={
               "https://images.unsplash.com/photo-1541726260-e6b6a6a08b27?q=80&w=2959&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

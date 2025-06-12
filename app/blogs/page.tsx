@@ -36,7 +36,7 @@ const Page = () => {
                       src={
                         "https://images.unsplash.com/photo-1738491096331-cffcf91bcf5b?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       }
-                      alt={"blog Image"}
+                      alt={"blog"}
                     />
                   </div>
                   <BgLayer color="bg-slate-900/20" />

@@ -49,7 +49,7 @@ const GlobalAndProblems = () => {
             </p>
             <p className="text-gray-700 leading-relaxed">
               At Dimondra, we serve businesses across borders and industries.
-              Whether you're operating locally or expanding globally, our team
+              Whether you&nbsp;re operating locally or expanding globally, our team
               brings strategic insight and localized execution.
             </p>
             <p className="text-gray-700 leading-relaxed">

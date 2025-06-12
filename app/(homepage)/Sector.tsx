@@ -70,7 +70,7 @@ const Sector = () => {
     <div className="py-20 relative">
       <img
         src={"sector.jpg"}
-        alt={"sector image bg"}
+        alt={"sector bg"}
         className="w-full absolute inset-0 h-full object-cover"
       />
       <div className="container  relative mx-auto px-4">

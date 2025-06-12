@@ -47,7 +47,7 @@ const Choose = () => {
             need. HR, IT, admin, legal, and strategy — in one place. Our team
             understands your goals and works with you to achieve them. \n
             We&nbsp;re not just service providers, we&nbsp;re your trusted
-            partners. Whether you're a small business or a growing company, our
+            partners. Whether you&nbsp;re a small business or a growing company, our
             solutions are flexible, practical, and built to fit your needs. With
             us, you get clear communication, fast setup, and expert help every
             step of the way.
