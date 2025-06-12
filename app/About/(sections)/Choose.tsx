@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BgLayer from "@/app/app_chunks/BgLayer";
 
 gsap.registerPlugin(ScrollTrigger);
 const list = [
@@ -121,6 +122,7 @@ const Choose = () => {
           </div>
         </div>
         <div className="h-[600px] w-full relative z-10">
+          <BgLayer color={"bg-lime-300/30 blur-[12rem]"} />
           <div className=" absolute h-[500px] top-5 left-0 w-[280px] overflow-hidden rounded-[90px]">
             <img
               src="https://images.unsplash.com/photo-1627397159237-d2acb7f500af?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // replace with your local asset or URL
