@@ -77,7 +77,7 @@ const MissionVision = () => {
             <p className="text-gray-700">
               We want to make your work easier by handling the complex parts –
               from HR and operations to IT and strategy – so you can focus on
-              growing your business. Whether you're a small company or a large
+              growing your business. Whether you&nbsp;re a small company or a large
               organization, we&nbsp;re here to help you become more efficient,
               more agile, and better prepared for the future. Our goal is to
               create real value through long-term support that helps you
