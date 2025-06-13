@@ -29,6 +29,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <img
+        alt={''}
         src={"/login.svg"}
         className="opacity-[.7] w-full absolute h-full object-cover inset-0 "
       />
