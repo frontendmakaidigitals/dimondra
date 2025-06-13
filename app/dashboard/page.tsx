@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@heroui/button";
 
 const DashboardPage = () => {
   const router = useRouter();
