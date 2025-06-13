@@ -137,8 +137,7 @@ const Sector = () => {
                   </h2>
                 </div>
                 <p className="text-slate-50 mt-3">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dicta quasi officiis aut illum.
+                 {sector.description}
                 </p>
               </motion.div>
             );
