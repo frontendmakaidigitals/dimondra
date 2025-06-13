@@ -3,7 +3,7 @@ import React from "react";
 import { Input } from "@heroui/input";
 import { Textarea } from "@heroui/input";
 import { ArrowRight, Headset, Mail } from "lucide-react";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 const HomeForm = () => {
   useSplitText({
     selector: ".formText1",

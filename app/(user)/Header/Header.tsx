@@ -4,10 +4,10 @@ import { siteConfig } from "@/config/site";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useScrollPosition } from "../hooks/useScrollVal";
+import { useScrollPosition } from "@/app/hooks/useScrollVal";
 import { motion, AnimatePresence } from "motion/react";
 import MobileMenu from "./MobileMenu";
-import { useIsLoaded } from "../context/isLoaded";
+
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 const Header = () => {

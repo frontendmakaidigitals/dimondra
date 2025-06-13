@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import BgLayer from "@/app/app_chunks/BgLayer";
+import BgLayer from "../../app_chunks/BgLayer";
 
 gsap.registerPlugin(ScrollTrigger);
 const list = [

@@ -2,7 +2,7 @@
 import React from "react";
 import BgLayer from "../app_chunks/BgLayer";
 import { motion } from "motion/react";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 import "@/styles/globals.css";
 import { Briefcase, Globe, Headphones } from "lucide-react";
 const HeroSection = () => {
@@ -63,7 +63,7 @@ const HeroSection = () => {
         >
           <source
             src={
-              "https://cdn.pixabay.com/video/2016/05/12/3174-166338976_large.mp4"
+              "https://videos.pexels.com/video-files/5725960/5725960-uhd_2560_1440_30fps.mp4"
             }
           />
         </motion.video>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { motion } from "motion/react";
 import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
 import {

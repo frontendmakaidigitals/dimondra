@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 const highlights = [
   {
     title: "End-to-End Services",

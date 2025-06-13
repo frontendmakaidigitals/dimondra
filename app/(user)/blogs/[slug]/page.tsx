@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import React from "react";
-import Blogs from "@/app/(homepage)/Blogs";
+import Blogs from "../../(homepage)/Blogs";
 const Page = () => {
   return (
     <div>

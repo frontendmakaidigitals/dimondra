@@ -1,5 +1,5 @@
 "use client";
-import BgLayer from "@/app/app_chunks/BgLayer";
+import BgLayer from "../../app_chunks/BgLayer";
 import React from "react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { motion } from "motion/react";

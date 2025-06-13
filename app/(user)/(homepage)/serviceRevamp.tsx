@@ -8,7 +8,7 @@ import {
   BarChart3,
   LifeBuoy,
 } from "lucide-react";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 const ServiceRevamp = () => {
   const services = [
     {

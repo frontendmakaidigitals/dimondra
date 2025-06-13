@@ -3,7 +3,7 @@ import { User } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
 import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
-import { useSplitText } from "../hooks/useSplitTExt";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 const About = () => {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(ref, "center");

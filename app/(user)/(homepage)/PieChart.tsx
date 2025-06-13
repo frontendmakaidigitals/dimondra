@@ -9,8 +9,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { TrendingUp } from "lucide-react";
-import useWindowSize from "../hooks/useWindowSize";
-import { useSplitText } from "../hooks/useSplitTExt";
+import useWindowSize from "@/app/hooks/useWindowSize";
+import { useSplitText } from "@/app/hooks/useSplitTExt";
 export const description = "A donut chart with text";
 
 type IndustryKey =

@@ -1,8 +1,14 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+import { Providers } from "../providers";
 import { siteConfig } from "@/config/site";
 import { fontSans, grandHotel } from "@/config/fonts";
+import Header from "../(user)/Header/Header";
+import Backtotop from "../(user)/app_chunks/Backtotop";
+import Footer from "../(user)/Footer/Footer";
+import { AuthContextProvider } from "../context/AuthContext";
+import FloatingSocialMediaIcons from "../(user)/app_chunks/FloatingSocialMediaIcons";
 
 export const metadata: Metadata = {
   title: {
@@ -28,17 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head />
-      <body
-        className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
-          fontSans.variable,
-          grandHotel.variable
-        )}
-      >
+    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+      <AuthContextProvider>
+        <Header />
+        <FloatingSocialMediaIcons />
+
+        <Backtotop />
         {children}
-      </body>
-    </html>
+        <Footer />
+      </AuthContextProvider>
+    </Providers>
   );
 }
