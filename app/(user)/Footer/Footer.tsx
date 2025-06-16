@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   Facebook,
   Instagram,
@@ -12,7 +12,7 @@ import Logo from "../app_chunks/Logo";
 
 const Footer = () => {
   return (
-    <footer className="text-dimondra-black py-16">
+    <footer className="text-dimondra-white bg-teal-950 py-16">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -26,10 +26,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Facebook
-                    fill={""}
-                    className="h-7 w-7  hover:text-amber-400"
-                  />
+                  <Facebook className="h-7 w-7 fill-teal-800  hover:text-amber-400" />
                 </Link>
                 <Link
                   href="/"
@@ -37,14 +34,11 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Instagram
-                    fill={""}
-                    className="h-7 stroke-teal-100 w-7 hover:text-amber-400"
-                  />
+                  <Instagram className="h-7 stroke-teal-100 fill-teal-800 w-7 hover:text-amber-400" />
                 </Link>
                 <Link
                   href="/"
-                  className="bg-teal-500/20 p-2 rounded-xl"
+                  className="bg-teal-500/20 fill-teal-800 p-2 rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

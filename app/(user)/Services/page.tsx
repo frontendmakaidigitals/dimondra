@@ -6,6 +6,10 @@ import Industries from "./(sections)/Industries";
 import HomeForm from "../(homepage)/HomeForm";
 import Process from "./(sections)/process";
 import Services from "./(sections)/services";
+import CTA from "../app_chunks/CTA";
+import FAQ from "../app_chunks/FAQ";
+import Choose from "./(sections)/choose";
+
 const Page = () => {
   useSplitText({
     selector: ".talentHead",
@@ -59,9 +63,12 @@ const Page = () => {
         </div>
       </div>
       <Services />
-      <Process />
       <Industries />
+      <Process />
+      <Choose />
+      <FAQ />
       <HomeForm />
+      <CTA />
     </>
   );
 };
