@@ -4,6 +4,8 @@ import BgLayer from "../app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import Industries from "./(sections)/Industries";
 import HomeForm from "../(homepage)/HomeForm";
+import Process from "./(sections)/process";
+import Services from "./(sections)/services";
 const Page = () => {
   useSplitText({
     selector: ".talentHead",
@@ -27,7 +29,7 @@ const Page = () => {
   return (
     <>
       <div className="h-[85vh] relative">
-        <BgLayer color={"bg-black/50 z-10 "} />
+        <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
           src={
@@ -56,6 +58,8 @@ const Page = () => {
           </button>
         </div>
       </div>
+      <Services />
+      <Process />
       <Industries />
       <HomeForm />
     </>
