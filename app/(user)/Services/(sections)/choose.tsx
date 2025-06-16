@@ -46,7 +46,7 @@ const Choose = () => {
             tailored solutions that streamline your workforce management. With a
             commitment to excellence, we provide expert recruitment, seamless
             onboarding, and end-to-end HR support to help your business thrive.
-            Whether you're a startup or a growing enterprise, our personalized
+            Whether you&nbsp;re a startup or a growing enterprise, our personalized
             approach ensures you get the right talent and strategic guidance to
             drive long-term success.
           </p>
