@@ -62,7 +62,7 @@ export default function IndustriesSection() {
     <div className="py-24 bg-teal-800">
       <div className="container IndustryTrigger">
         <h1 className="text-5xl industryHead text-center tracking-tighter text-dimondra-white font-[600]">
-          Industries we serve
+          Industries we serve 
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1 mt-12">
           {industries.map((industry, i) => (
