@@ -7,13 +7,7 @@ import { Select, SelectItem } from "@heroui/select";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { AnimatePresence, motion } from "motion/react";
 import { Editor } from "@/components/blocks/editor-00/editor";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { useParams } from "next/navigation";
 import { db } from "@/config/firebase";
 
