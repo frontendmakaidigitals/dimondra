@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Input } from "@heroui/input";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog"; // For popup`
@@ -223,25 +223,25 @@ export default function AddBlogPage() {
             </Select>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">
+            <label
+              htmlFor="fileAd"
+              className="block text-sm font-medium mb-[6px]"
+            >
               Upload Image
             </label>
-            <div className="relative">
+            <div className="relative flex items-center gap-3 line-clamp-1 bg-white w-full px-3 py-[.22rem] rounded-lg">
+              <label
+                htmlFor="fileAdd"
+                className="px-3 rounded-md py-2 bg-slate-100"
+              >
+                Choose
+              </label>
+              <p className="max-w-xs">
+                {blogData.image ? blogData.image.name : null}
+              </p>
               <Input
-                classNames={{
-                  inputWrapper: ["bg-white"],
-                  input: [
-                    "file:bg-slate-200",
-                    "file:text-black",
-                    "file:rounded-md",
-                    "file:px-3",
-                    "file:py-2",
-                    "file:border-0",
-                    "file:mr-3",
-                    "cursor-pointer",
-                    "file:text-sm",
-                  ],
-                }}
+                id="fileAdd"
+                className="hidden"
                 size="lg"
                 radius="sm"
                 type="file"
@@ -280,7 +280,10 @@ export default function AddBlogPage() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-3xl text-white max-h-[90vh] overflow-auto p-4 !border-transparent !bg-transparent">
-          <DialogTitle>Image name</DialogTitle>
+          <DialogTitle>
+            {" "}
+            {blogData.image ? blogData.image.name : null}
+          </DialogTitle>
           {imagePreview && (
             <img
               src={imagePreview}

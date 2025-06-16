@@ -7,7 +7,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { User } from "lucide-react";
 import BgLayer from "../../app_chunks/BgLayer";
 const Process = () => {
   return (

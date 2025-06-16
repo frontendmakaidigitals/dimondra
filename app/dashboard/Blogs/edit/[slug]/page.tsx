@@ -232,7 +232,10 @@ export default function AddBlogPage() {
               </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-[6px]">
+              <label
+                htmlFor="fileAd"
+                className="block text-sm font-medium mb-[6px]"
+              >
                 Upload Image
               </label>
               <div className="relative flex items-center gap-3 line-clamp-1 bg-white w-full px-3 py-[.22rem] rounded-lg">
