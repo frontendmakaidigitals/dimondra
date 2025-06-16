@@ -13,10 +13,10 @@ const Process = () => {
   return (
     <div className="my-28">
       <div className="container blogTrigger">
-        <h1 className="text-5xl blogText lg:text-6xl mt-1 !leading-[5.3rem] font-[600] text-dimondra-black">
+        <h1 className="text-5xl blogText mt-1 !leading-[5.3rem] font-[600] text-dimondra-black">
           Title for the work process
         </h1>
-        <div className="mt-8">
+        <div className="mt-4">
           <Carousel
             opts={{
               align: "start",
