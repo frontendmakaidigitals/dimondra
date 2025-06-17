@@ -108,7 +108,11 @@ const HomeForm = () => {
                 </label>
               </div>
               <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">
+                <label
+                  htmlFor="tempInput"
+                  className="text-dimondra-black font-[500]"
+                >
+                  <input className="hidden" id="tempInput" />
                   <PhoneInput placeholder="+123 456 789" />
                 </label>
               </div>
