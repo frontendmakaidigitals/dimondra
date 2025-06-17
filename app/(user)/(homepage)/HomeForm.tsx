@@ -4,6 +4,7 @@ import { Input } from "@heroui/input";
 import { Textarea } from "@heroui/input";
 import { ArrowRight, Headset, Mail } from "lucide-react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
+import { PhoneInput } from "../app_chunks/phone-input";
 const HomeForm = () => {
   useSplitText({
     selector: ".formText1",
@@ -108,19 +109,7 @@ const HomeForm = () => {
               </div>
               <div className="mt-5">
                 <label className="text-dimondra-black font-[500]">
-                  Phone{" "}
-                  <Input
-                    isRequired
-                    classNames={{
-                      inputWrapper: ["bg-slate-100"],
-                      input: ["py-2"],
-                    }}
-                    className="w-full mt-[.4rem]"
-                    placeholder="junior@heroui.com"
-                    type="number"
-                    name="contact"
-                    size={"lg"}
-                  />
+                  <PhoneInput placeholder="+123 456 789" />
                 </label>
               </div>
               <div className="mt-5">

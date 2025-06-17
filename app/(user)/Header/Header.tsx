@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <motion.header
       className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
-      transition={{ type: "linear", duration: 0.3 }}
+      transition={{ ease: [0, 0, 1, 1], duration: 0.3 }}
       animate={{
         backgroundColor:
           scrollVal > 200 || isHovering ? "#EEF7FF" : "rgba(0, 0, 0, 0)",
@@ -135,20 +135,22 @@ const Header = () => {
                                       </motion.h4>
                                       <ul className="mt-4">
                                         {service.submenu.map((child, index) => (
-                                          <motion.li
-                                            initial={{ y: -5, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            exit={{ y: -5, opacity: 0 }}
-                                            transition={{
-                                              duration: 0.2,
-                                              ease: [0, 0, 0.19, 1],
-                                              delay: 0.05 + index * 0.04,
-                                            }}
-                                            key={index}
-                                            className="mb-2 hover:bg-slate-300 rounded-lg p-3"
-                                          >
-                                            {child.label}
-                                          </motion.li>
+                                          <Link key={index} href={child.link}>
+                                            <motion.li
+                                              initial={{ y: -5, opacity: 0 }}
+                                              animate={{ y: 0, opacity: 1 }}
+                                              exit={{ y: -5, opacity: 0 }}
+                                              transition={{
+                                                duration: 0.2,
+                                                ease: [0, 0, 0.19, 1],
+                                                delay: 0.05 + index * 0.04,
+                                              }}
+                                              className="mb-2 hover:bg-slate-300 rounded-lg p-3"
+                                            >
+                                              {" "}
+                                              {child.label}
+                                            </motion.li>
+                                          </Link>
                                         ))}
                                       </ul>
                                     </motion.div>

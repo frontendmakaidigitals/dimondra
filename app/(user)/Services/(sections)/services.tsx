@@ -2,44 +2,53 @@
 import { User } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
-const Services = () => {
+
+export interface serviceType {
+  title: string;
+  desc: string;
+  icon: React.ElementType;
+}
+
+const Services = ({
+  data,
+  heading,
+  subHeading,
+}: {
+  data: serviceType[];
+  heading: string;
+  subHeading: string;
+}) => {
   return (
     <div className="my-24">
-      <div className="container grid grid-cols-3 gap-5">
+      <div className="container">
         <div className="py-5">
-          <h2 className="text-4xl font-[600]">Our Services</h2>
-          <p className="mt-3">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
-            illum adipisci fuga id rem sequi quidem, laudantium esse.
-          </p>
+          <h2 className="text-4xl text-center font-[600]">{heading}</h2>
+          <p className="mt-3 text-center">{subHeading}</p>
         </div>
-        {Array.from({ length: 5 }).map((_, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{
-              rotate: (Math.random() - 0.5) * 10,
-              transition: { duration: 0.3, ease: "backOut" },
-              scale: 1.05,
-            }}
-            className="p-5 hover:bg-[#c1dad1] bg-[#d6eae3] rounded-lg"
-          >
-            <div className="flex items-center  justify-start gap-4">
-              <div className=" rounded-full ">
-                <User className="size-[28px]" />
+        <div className="grid mt-5 grid-cols-1 lg:grid-cols-3 gap-5">
+          {data.map(({ icon: Icon, title, desc }, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ y: -200 }}
+              animate={{ y: 0, transition: { duration: 0.8 } }}
+              whileHover={{
+                rotate: (Math.random() - 0.5) * 10,
+                transition: { duration: 0.3, ease: "backOut" },
+                scale: 1.05,
+              }}
+              className="p-5 group hover:bg-dimondra-teal border border-slate-300 rounded-lg"
+            >
+              <div className=" rounded-lg p-2 w-fit bg-teal-100">
+                <Icon className="size-[42px] stroke-dimondra-teal" />
               </div>
-              <p className="text-xl font-[500]">Google Ads</p>
-            </div>
-            <p className="mt-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reiciendis vero molestias sint error suscipit, atque impedit dicta
-              totam quis recusandae, ratione sapiente soluta pariatur excepturi
-              necessitatibus?
-            </p>
-            <button className="px-3 py-2 text-white bg-dimondra-tealDark mt-3 text-sm rounded-md">
-              Get a quote
-            </button>
-          </motion.div>
-        ))}
+
+              <p className="text-2xl text-dimondra-black group-hover:text-dimondra-white mt-8 font-[600]">
+                {title}
+              </p>
+              <p className="mt-2 group-hover:text-dimondra-white">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -45,10 +45,22 @@ export const siteConfig = {
         {
           label: "HR Outsourcing",
           submenu: [
-            { label: "Talent Acquisition", link: "/" },
-            { label: "HR Operations", link: "/" },
-            { label: "Virtual Admin Support", link: "/" },
-            { label: "PRO & Government Services- ", link: "/" },
+            {
+              label: "Talent Acquisition",
+              link: "/Services/Hr-Outsourcing/Talent-Acquisition",
+            },
+            {
+              label: "HR Operations",
+              link: "/Services/Hr-Outsourcing/Hr-Operations",
+            },
+            {
+              label: "Virtual Admin Support",
+              link: "/Services/Hr-Outsourcing/Virtual-Admin-Support",
+            },
+            {
+              label: "PRO & Government Services",
+              link: "/Services/Hr-Outsourcing/PRO-Services",
+            },
           ],
         },
         {
