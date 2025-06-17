@@ -25,10 +25,12 @@ const Process = ({
   return (
     <div className="my-28">
       <div className="container blogTrigger">
-        <h1 className="text-5xl blogText mt-1 !leading-[5.3rem] font-[600] text-dimondra-black">
-          {heading}
-        </h1>
-        <p className="text-center ">{subHeading}</p>
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-5xl blogText text-center mt-1 !leading-[3.4rem] font-[600] text-dimondra-black">
+            {heading}
+          </h1>
+          <p className="text-center ">{subHeading}</p>
+        </div>
         <div className="mt-4">
           <Carousel
             opts={{

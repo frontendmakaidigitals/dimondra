@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Users,
-  UserMinus,
-  Database,
-  Globe,
-  Handshake,
-  Building2,
-} from "lucide-react";
+
 import type { LucideIcon } from "lucide-react";
 
 interface chooseProps {
@@ -25,8 +18,8 @@ const Choose = ({
   return (
     <div className="py-20 bg-gray-300">
       <div className="flex items-start gap-16 container">
-        <div className="flex-1">
-          <h1 className="text-5xl font-[600] tracking-tight">{title}</h1>
+        <div className="max-w-4xl">
+          <h1 className="text-5xl font-[600] tracking-tight">{title}?</h1>
           <p className="mt-4">{desc}</p>
           <button className="px-5 py-2 bg-white mt-8 rounded-lg">
             Get a Quote

@@ -22,7 +22,9 @@ const Services = ({
     <div className="my-24">
       <div className="container">
         <div className="py-5">
-          <h2 className="text-4xl text-center font-[600]">{heading}</h2>
+          <h2 className="text-5xl text-dimondra-black text-center font-[600]">
+            {heading}
+          </h2>
           <p className="mt-3 text-center">{subHeading}</p>
         </div>
         <div className="grid mt-5 grid-cols-1 lg:grid-cols-3 gap-5">
