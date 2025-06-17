@@ -94,7 +94,7 @@ const Page = () => {
       title: "Bank Account Opening",
       description:
         "We guide you through opening your corporate bank account, helping you prepare the documents and meet the bank’s requirements for a smooth process.",
-      imgUrl: "/services/bankAccount.jpg.jpg",
+      imgUrl: "/services/bankAccount.jpg",
     },
     {
       title: "Staying Compliant",
