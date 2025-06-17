@@ -11,8 +11,8 @@ import {
   Hotel,
   Stethoscope,
   Truck,
+  Cpu
 } from "lucide-react";
-
 
 const sectors = [
   {
@@ -63,6 +63,13 @@ const sectors = [
       "We provide end-to-end recruitment solutions for logistics, warehousing, procurement, and distribution—helping businesses streamline operations and meet global demands.",
     linkText: "Learn more →",
     icon: Truck,
+  },
+  {
+    title: "Technology & Digital",
+    description:
+      "Dimondra helps businesses stay ahead in the digital age by sourcing talent across software development, cybersecurity, data analytics, cloud solutions, and emerging tech, powering innovation and digital transformation. ",
+    linkText: "Learn more →",
+    icon: Cpu,
   },
 ];
 
@@ -136,9 +143,7 @@ const Sector = () => {
                     {sector.title}
                   </h2>
                 </div>
-                <p className="text-slate-50 mt-3">
-                 {sector.description}
-                </p>
+                <p className="text-slate-50 mt-3">{sector.description}</p>
               </motion.div>
             );
           })}

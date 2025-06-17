@@ -5,6 +5,7 @@ import Stats from "./(sections)/Stats";
 import MissionVision from "./(sections)/MissionVision";
 import ApproachAndValues from "./(sections)/ApproachAndValues";
 import GlobalAndProblems from "./(sections)/GlobalAndProblems";
+import HomeForm from "../(homepage)/HomeForm";
 export default function Page() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Page() {
       <Stats />
       <ApproachAndValues />
       <GlobalAndProblems />
+      <HomeForm />
     </>
   );
 }

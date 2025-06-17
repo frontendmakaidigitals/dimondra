@@ -24,6 +24,7 @@ const FAQ = ({
                 aria-label={faq.question}
                 title={faq.question}
                 indicator={<Plus />}
+                className="bg-white text-black [&_.accordion-item]:bg-white [&_.accordion-item]:text-black"
               >
                 {faq.answer}
               </AccordionItem>
