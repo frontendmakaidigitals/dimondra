@@ -188,7 +188,7 @@ const Page = () => {
             reliable, efficient support for all your government liaison and
             legal clearance needs. Our experienced professionals ensure smooth
             handling of approvals, documentation, and regulatory processes so
-            you can focus on your business. \n With Dimondra, getting PRO
+            you can focus on your business. With Dimondra, getting PRO
             services is simple, effective, and designed for results.
           </p>
           <button
