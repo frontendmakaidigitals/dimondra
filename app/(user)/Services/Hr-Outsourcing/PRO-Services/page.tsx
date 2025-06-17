@@ -188,8 +188,8 @@ const Page = () => {
             reliable, efficient support for all your government liaison and
             legal clearance needs. Our experienced professionals ensure smooth
             handling of approvals, documentation, and regulatory processes so
-            you can focus on your business. With Dimondra, getting PRO
-            services is simple, effective, and designed for results.
+            you can focus on your business. With Dimondra, getting PRO services
+            is simple, effective, and designed for results.
           </p>
           <button
             className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
@@ -229,6 +229,7 @@ const Page = () => {
         desc={
           "Let Dimondra handle your government paperwork, approvals, and legal formalities—so you can focus on growing your business. Our team is here to provide fast, reliable, and cost-effective PRO solutions tailored to your needs. \nGet in touch today and experience hassle-free PRO services in the UAE."
         }
+        button="Make an Enquiry"
       />
     </>
   );

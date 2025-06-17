@@ -306,6 +306,7 @@ const Page = () => {
         desc={
           "Let Dimondra’s expert Virtual Assistants handle your administrative tasks so you can focus on what matters most: growing your business."
         }
+        button="Contact us now"
       />
     </>
   );

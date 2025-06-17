@@ -237,10 +237,11 @@ const Page = () => {
       />
       <HomeForm />
       <CTA
-        title={"Ready to Find Your Next Great Hire?"}
+        title={"Let’s Make HR Simple for Your Business"}
         desc={
-          "Connect with Dimondra's expert team today and discover how our talent solutions can empower your business growth."
+          "Take the stress out of managing HR. Whether you need ongoing support or help with a specific project, Dimondra is here to help you focus on what matters most — growing your business."
         }
+        button={"Get a free consultation"}
       />
     </>
   );

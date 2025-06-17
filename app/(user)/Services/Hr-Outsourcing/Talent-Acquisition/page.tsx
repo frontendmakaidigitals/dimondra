@@ -272,6 +272,7 @@ const Page = () => {
         desc={
           "Connect with Dimondra's expert team today and discover how our talent solutions can empower your business growth."
         }
+        button=" Get Started Now"
       />
     </>
   );

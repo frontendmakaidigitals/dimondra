@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import React from "react";
 
-const CTA = ({ title, desc }: { title: String; desc: String }) => {
+const CTA = ({ title, desc, button }: { title: String; desc: String, button:string }) => {
   return (
     <div className=" relative max-w-6xl mx-auto gap-9 mb-20 mt-10 flex overflow-hidden flex-row-reverse items-center  justify-between border border-slate-200 rounded-2xl">
       <img
@@ -17,7 +17,7 @@ const CTA = ({ title, desc }: { title: String; desc: String }) => {
         <h2 className="mt-4 text-3xl font-[600]">{title}</h2>
         <p className="mt-3">{desc}</p>
         <button className="flex text-sm items-center gap-2 bg-teal-700 text-slate-50 px-4 rounded-md mt-4 py-2">
-          Get started now <ArrowRight className="size-[18px]" />
+          {button} <ArrowRight className="size-[18px]" />
         </button>
       </div>
       <div className="w-[300px] relative z-10">
