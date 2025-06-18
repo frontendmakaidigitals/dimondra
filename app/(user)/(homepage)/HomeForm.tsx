@@ -56,7 +56,7 @@ const HomeForm = () => {
     phone: { country: string; contact: string };
     message: string;
   }
-  const [phoneError, setPhoneError] = useState(true);
+  const [phoneError, setPhoneError] = useState(false);
   const handleSubmit = async (e: FormEvent) => {
     setLoading(true);
     e.preventDefault();
@@ -92,7 +92,7 @@ const HomeForm = () => {
       setLoading(false);
     }
   };
-  console.log(phoneError);
+
   return (
     <div className="py-24 bg-slate-100">
       <div className="container formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
