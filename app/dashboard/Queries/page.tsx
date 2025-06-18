@@ -21,7 +21,7 @@ export interface contacts {
   name: string;
 }
 
-const page = () => {
+const Page = () => {
   const [contact, setContact] = useState<contacts[]>([]);
   useEffect(() => {
     const fetchContact = async () => {
@@ -77,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

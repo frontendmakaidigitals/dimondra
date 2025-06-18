@@ -132,7 +132,7 @@ const HomeForm = () => {
             <form onSubmit={(e) => handleSubmit(e)} className=" ">
               <div className="mt-5">
                 <label className="text-dimondra-black font-[500]">
-                  Name
+                  Name{" "}
                   <Input
                     isRequired
                     onChange={(e) =>
@@ -190,7 +190,7 @@ const HomeForm = () => {
                           contact: e,
                         },
                       }));
-                      setPhoneError(false)
+                      setPhoneError(false);
                     }}
                     onCountryChange={(e) => {
                       if (e) {
