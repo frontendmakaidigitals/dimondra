@@ -30,6 +30,15 @@ type PhoneInputProps = Omit<
     phoneError?: boolean;
   };
 
+const ForwardedInputComponent = React.forwardRef<
+  React.ElementRef<typeof InputComponent>,
+  React.ComponentProps<typeof InputComponent>
+>((props, ref) => {
+  return <InputComponent {...props} ref={ref} phoneError={props.phoneError} />;
+});
+
+ForwardedInputComponent.displayName = "ForwardedInputComponent";
+
 const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
   React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
     ({ className, onChange, phoneError, value, ...props }, ref) => {
@@ -40,30 +49,16 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
           className={cn("flex", className)}
           flagComponent={FlagComponent}
           countrySelectComponent={CountrySelect}
-          inputComponent={React.forwardRef((inputProps, inputRef) => (
-            <InputComponent
-              {...inputProps}
-              ref={inputRef}
-              phoneError={phoneError}
-            />
-          ))}
+          inputComponent={ForwardedInputComponent}
           smartCaret={false}
           value={value || undefined}
-          /**
-           * Handles the onChange event.
-           *
-           * react-phone-number-input might trigger the onChange event as undefined
-           * when a valid phone number is not entered. To prevent this,
-           * the value is coerced to an empty string.
-           *
-           * @param {E164Number | undefined} value - The entered value
-           */
           onChange={(value) => onChange?.(value || ("" as RPNInput.Value))}
           {...props}
         />
       );
     }
   );
+
 PhoneInput.displayName = "PhoneInput";
 
 interface InputComponentProps extends React.ComponentProps<"input"> {
