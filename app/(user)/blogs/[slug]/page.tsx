@@ -78,7 +78,7 @@ const Page = () => {
           <img
             src={blog?.imageURL}
             alt={blog?.title}
-            className="w-full h-[650px] object-cover absolute top-1/3  left-1/2 -translate-x-1/2"
+            className="w-full rounded-lg h-[650px] object-cover absolute top-1/3  left-1/2 -translate-x-1/2"
           />
         </div>
       </div>

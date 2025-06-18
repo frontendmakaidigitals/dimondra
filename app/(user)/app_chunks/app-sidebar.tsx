@@ -1,4 +1,4 @@
-import { Home, Play, Book } from "lucide-react";
+import { Home, Play, Book, MessageSquareQuote } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import Link from "next/link";
 import {
@@ -29,6 +29,11 @@ const items = [
     title: "Videos",
     url: "/",
     icon: Play,
+  },
+  {
+    title: "Queries",
+    url: "/Queries",
+    icon: MessageSquareQuote,
   },
 ];
 

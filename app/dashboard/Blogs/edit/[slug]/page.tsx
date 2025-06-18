@@ -10,11 +10,15 @@ import { Editor } from "@/components/blocks/editor-00/editor";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { useParams } from "next/navigation";
 import { db } from "@/config/firebase";
-
+import { useRouter } from "next/navigation";
+import { Spinner } from "@heroui/react";
+import { addToast } from "@heroui/react";
 const CLOUDINARY_UPLOAD_PRESET = "BlogsImages"; // 🔁 Replace this
 const CLOUDINARY_CLOUD_NAME = "dkqbwxnhs"; // 🔁 Replace this
 
 export default function AddBlogPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [blogData, setBlogData] = useState({
@@ -26,11 +30,13 @@ export default function AddBlogPage() {
     content: "",
     image: null as File | null | string,
   });
-  const [isBlogFetched, setIsBlogFetched] = useState(false);
+  const [isBlogFetched, setIsBlogFetched] = useState(true);
+  const [pageLoader, setPageLoader] = useState(false);
   //update partcon
   const params = useParams();
   useEffect(() => {
     const fetchBlogs = async () => {
+      setPageLoader(true);
       try {
         const snapshot = await getDocs(collection(db, "blogs"));
 
@@ -53,8 +59,10 @@ export default function AddBlogPage() {
         setBlogData(blogsData[0]);
         setImagePreview(blogsData[0].image);
         if (blogsData.length > 0) setIsBlogFetched(true);
+        setPageLoader(false);
       } catch (error) {
         console.error("Error fetching blogs:", error);
+        setPageLoader(false);
       }
     };
 
@@ -96,13 +104,14 @@ export default function AddBlogPage() {
   };
 
   const handleSubmit = async (e: FormEvent) => {
+    setLoading(true);
     e.preventDefault();
 
     const { title, metaTitle, metaDesc, author, category, content, image } =
       blogData;
 
     if (!title || !metaTitle || !metaDesc || !author || !category || !content) {
-      alert("Please fill in all fields.");
+      addToast({ title: "Please fill in all fields.", color: "danger" });
       return;
     }
 
@@ -133,7 +142,7 @@ export default function AddBlogPage() {
       }
 
       if (!imageURL) {
-        alert("Please upload an image.");
+        addToast({ title: "Please upload image", color: "danger" });
         return;
       }
 
@@ -150,18 +159,28 @@ export default function AddBlogPage() {
         updatedAt: new Date(),
       });
 
-      alert("Blog updated successfully!");
+      setLoading(false);
+      router.push("/dashboard/Blogs");
+      addToast({
+        title: "Update sucessfull",
+        description: "Blog was updated",
+        color: "success",
+      });
     } catch (err) {
+      setLoading(false);
       console.error("Update failed:", err);
-      alert("Error updating blog. Check console for details.");
+      addToast({
+        title: "Update sucessfull",
+        description: "Blog was updated",
+        color: "success",
+      });
     }
   };
 
-  console.log(blogData);
   return (
     <div className="pb-10">
       <h1 className="text-2xl font-semibold">Add New Blog</h1>
-      {isBlogFetched ? (
+      {!pageLoader && isBlogFetched ? (
         <form className="grid  space-y-8 !mt-8">
           <div className="grid grid-cols-2 gap-5">
             <div>
@@ -280,23 +299,42 @@ export default function AddBlogPage() {
             </div>
             <div className="col-span-2">
               <div className="bg-gray-50  w-full overflow-hidden rounded-lg border">
-                <Editor
-                  onSerializedChange={(val) =>
-                    handleChange("content", JSON.stringify(val))
-                  }
-                  editorSerializedState={
-                    typeof blogData.content === "string"
-                      ? JSON.parse(blogData.content)
-                      : blogData.content
-                  }
-                />
+                {blogData.content ? (
+                  <Editor
+                    onSerializedChange={(val) =>
+                      handleChange("content", JSON.stringify(val))
+                    }
+                    editorSerializedState={
+                      typeof blogData.content === "string"
+                        ? JSON.parse(blogData.content)
+                        : blogData.content
+                    }
+                  />
+                ) : null}
               </div>
             </div>
           </div>
-          <Button type="submit" onClick={handleSubmit}>
-            Submit
+          <Button
+            disabled={loading}
+            type="submit"
+            onClick={handleSubmit}
+            size="lg"
+            className="py-6"
+          >
+            {loading ? (
+              <span className="flex items-center gap-2">
+                <Spinner color="default" size={"md"} variant="spinner" />
+                Uploading
+              </span>
+            ) : (
+              "Submit"
+            )}
           </Button>
         </form>
+      ) : pageLoader ? (
+        <div className="flex w-full min-h-[80vh] h-full justify-center items-center">
+          <Spinner size="lg" variant="gradient" />
+        </div>
       ) : (
         <div className="flex w-full min-h-[80vh] h-full justify-center items-center">
           <h1>No Blog found with this Id</h1>

@@ -37,6 +37,7 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --danger-color: 339.2 90.36% 51.18%
   }
   .dark {
     --sidebar-background: 240 5.9% 10%;
@@ -55,14 +56,9 @@
   display: block;
 }
 
-
-body{
-  background-color: #EEF7FF !important;
+body {
+  background-color: #eef7ff !important;
 }
-
-
-
-
 
 @layer base {
   * {
@@ -72,3 +68,5 @@ body{
     @apply bg-background text-foreground;
   }
 }
+
+

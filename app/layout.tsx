@@ -3,7 +3,7 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { fontSans, grandHotel } from "@/config/fonts";
-
+import { ToastProvider } from "@heroui/toast";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -37,6 +37,7 @@ export default function RootLayout({
           grandHotel.variable
         )}
       >
+        <ToastProvider />
         {children}
       </body>
     </html>

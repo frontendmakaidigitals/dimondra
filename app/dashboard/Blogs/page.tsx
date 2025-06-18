@@ -3,7 +3,14 @@ import { Plus } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { collection, getDocs, deleteDoc, doc, Firestore, Timestamp, } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  doc,
+  Firestore,
+  Timestamp,
+} from "firebase/firestore";
 import { db } from "@/config/firebase";
 const BlogListPage = () => {
   const router = useRouter();
@@ -108,6 +115,7 @@ const BlogListPage = () => {
                 </td>
                 <td className="px-6 py-4 font-medium">{blog.title}</td>
                 <td className="px-6 py-4">
+                  ``
                   {blog.createdAt.toDate().toLocaleDateString()}
                 </td>
                 <td className="px-6 py-4">
@@ -116,21 +124,24 @@ const BlogListPage = () => {
                   </span>
                 </td>
                 <td className="px-6 py-4">{blog.author}</td>
-                <td className="px-6 py-4 space-x-2">
-                  <button
-                    onClick={() =>
-                      router.push(`/dashboard/Blogs/edit/${blog.id}`)
-                    }
-                    className="px-3 py-1 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDeleteBlog(blog.id)} // Replace with your delete handler
-                    className="px-3 py-1 text-xs font-medium text-white bg-red-600 hover:bg-red-700 rounded"
-                  >
-                    Delete
-                  </button>
+                <td className="px-6 py-4 ">
+                  <div className="flex flex-wrap gap-2">
+                    {" "}
+                    <button
+                      onClick={() =>
+                        router.push(`/dashboard/Blogs/edit/${blog.id}`)
+                      }
+                      className="px-3 py-1 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDeleteBlog(blog.id)} // Replace with your delete handler
+                      className="px-3 py-1 text-xs font-medium text-white bg-red-600 hover:bg-red-700 rounded"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}

@@ -98,6 +98,10 @@ export const siteConfig = {
       label: "Resources",
       href: "/blog",
     },
+    {
+      label: "Contact",
+      href: "/Contact",
+    },
   ],
   links: {
     github: "https://github.com/heroui-inc/heroui",

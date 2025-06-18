@@ -8,11 +8,15 @@ import { DialogTitle } from "@radix-ui/react-dialog";
 import { AnimatePresence, motion } from "motion/react";
 import { Editor } from "@/components/blocks/editor-00/editor";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-
+import { Spinner } from "@heroui/react";
+import { useRouter } from "next/navigation";
+import { addToast } from "@heroui/react";
 const CLOUDINARY_UPLOAD_PRESET = "BlogsImages"; // 🔁 Replace this
 const CLOUDINARY_CLOUD_NAME = "dkqbwxnhs"; // 🔁 Replace this
 
 export default function AddBlogPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [blogData, setBlogData] = useState({
@@ -59,9 +63,9 @@ export default function AddBlogPage() {
   };
 
   const handleSubmit = async (e: FormEvent) => {
+    setLoading(true);
     e.preventDefault();
 
-    // Manually create FormData and append fields
     const formData = new FormData();
     formData.append("title", blogData.title);
     formData.append("metaTitle", blogData.metaTitle);
@@ -114,10 +118,9 @@ export default function AddBlogPage() {
       if (!cloudinaryData.secure_url) {
         throw new Error("Image upload to Cloudinary failed.");
       }
-      console.log(cloudinaryData);
+
       const imageURL = cloudinaryData.secure_url;
 
-      // Step 2: Upload blog post to Firestore
       const db = getFirestore();
       const blogRef = collection(db, "blogs");
 
@@ -132,8 +135,6 @@ export default function AddBlogPage() {
         createdAt: new Date(),
       });
 
-      alert("Blog uploaded successfully!");
-
       // Reset form
       setBlogData({
         title: "",
@@ -144,9 +145,22 @@ export default function AddBlogPage() {
         content: "",
         image: null,
       });
+      router.push("/dashboard/Blogs");
+      setLoading(false);
+      addToast({
+        title: "Upload sucessfull",
+        description: "Blog was uploaded",
+        color: "success",
+      });
     } catch (err) {
       console.error("Upload failed:", err);
-      alert("Error uploading blog. Check console for details.");
+
+      setLoading(false);
+      addToast({
+        title: "Upload Error",
+        description: "Something went wrong",
+        color: "danger",
+      });
     }
   };
 
@@ -273,8 +287,21 @@ export default function AddBlogPage() {
             </div>
           </div>
         </div>
-        <Button type="submit" onClick={handleSubmit}>
-          Submit
+        <Button
+          disabled={loading}
+          type="submit"
+          onClick={handleSubmit}
+          size="lg"
+          className="py-6"
+        >
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <Spinner color="default" size={"md"} variant="spinner" />
+              Uploading
+            </span>
+          ) : (
+            "Submit"
+          )}
         </Button>
       </form>
 
