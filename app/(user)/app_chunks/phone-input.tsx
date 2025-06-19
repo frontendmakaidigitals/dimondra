@@ -44,7 +44,7 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
     ({ className, onChange, phoneError, value, ...props }, ref) => {
       return (
         <RPNInput.default
-          phoneError 
+          phoneError={phoneError}
           ref={ref}
           className={cn("flex", className)}
           flagComponent={FlagComponent}
@@ -66,19 +66,22 @@ interface InputComponentProps extends React.ComponentProps<"input"> {
 }
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
-  ({ className, phoneError, ...props }, ref) => (
-    <Input
-      className={cn(
-        "rounded-s-none rounded-e-xl bg-slate-100 h-12 border border-transparent px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-0 focus:outline-none",
-        className,
-        phoneError
-          ? "bg-[hsl(var(--danger-color))]/10 hover:bg-[hsl(var(--danger-color))]/20"
-          : "bg-slate-100"
-      )}
-      {...props}
-      ref={ref}
-    />
-  )
+  ({ className, phoneError, ...props }, ref) => {
+    console.log(phoneError);
+    return (
+      <Input
+        className={cn(
+          "rounded-s-none rounded-e-xl h-12 border border-transparent px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-0 focus:outline-none",
+          className,
+          phoneError
+            ? "bg-[hsl(var(--danger-color))]/10 hover:bg-[hsl(var(--danger-color))]/20"
+            : "bg-slate-100"
+        )}
+        {...props}
+        ref={ref}
+      />
+    );
+  }
 );
 InputComponent.displayName = "InputComponent";
 

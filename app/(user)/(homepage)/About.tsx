@@ -20,11 +20,11 @@ const About = () => {
 
   return (
     <div className="bg-[#CDE8E5] pt-[55rem] lg:pt-52 pb-12">
-      <div
-        
-        className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 "
-      >
-        <div ref={ref} className="h-[350px] lg:h-[650px] relative overflow-hidden">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 ">
+        <div
+          ref={ref}
+          className="h-[350px] lg:h-[650px] relative overflow-hidden"
+        >
           <motion.div
             animate={{
               height: inView ? "100%" : "0%",
@@ -43,7 +43,7 @@ const About = () => {
           </motion.div>
         </div>
         <div className="Abouttrigger">
-          <h2 className="text-5xl leading-[3.4rem] aboutText font-semibold mt-3">
+          <h2 className="text-5xl leading-[3.4rem] aboutText font-[600] mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
           <p className="mt-5">

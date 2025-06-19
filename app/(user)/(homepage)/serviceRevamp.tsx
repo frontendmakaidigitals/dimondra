@@ -110,7 +110,7 @@ const ServiceRevamp = () => {
     <div className="my-20">
       <div className="container serviceTrigger mx-auto px-4">
         <p className="text-center  text-sm text-gray-500">Our Services</p>
-        <h1 className="text-5xl serviceText leading-[5.3rem] mt-1 text-center font-[600] text-dimondra-black">
+        <h1 className="text-5xl serviceText leading-[3.6rem] lg:leading-[5.3rem] mt-1 text-center font-[600] text-dimondra-black">
           Empowering Your Business Vision
         </h1>
         <div className="grid grid-cols-1 gap-7 mt-12">
@@ -121,26 +121,25 @@ const ServiceRevamp = () => {
               <div
                 key={index}
                 className={`
-          grid gap-7 p-7 from-[1%] from-dimondra-teal/20
+          grid gap-7 p-3 lg:p-7 from-[1%] from-dimondra-teal/20
            
           ${
             isOdd
-              ? "grid-cols-[1.3fr_0.7fr] bg-gradient-to-l rounded-r-full"
-              : "grid-cols-[0.7fr_1.3fr] bg-gradient-to-r rounded-l-full"
+              ? "grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] bg-gradient-to-l lg:rounded-r-full"
+              : "grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] bg-gradient-to-r lg:rounded-l-full"
           }
         `}
               >
                 {/* Image */}
                 <div
                   className={`
-            ${isOdd ? "order-2" : "order-1 "}
-         overflow-hidden rounded-full  w-full 
+          order-1 lg:order-${isOdd ? "2" : "1"}
+         overflow-hidden rounded-lg lg:rounded-full  w-full 
           `}
                 >
                   <img
                     className={`
               w-full h-full object-cover
-              rounded-full
             `}
                     src={service.img}
                     alt={service.title}
@@ -148,7 +147,9 @@ const ServiceRevamp = () => {
                 </div>
 
                 {/* Text */}
-                <div className={`${isOdd ? "order-1" : "order-2"} w-full `}>
+                <div
+                  className={`  order-2 lg:order-${isOdd ? "1" : "2"} w-full `}
+                >
                   <h2 className="text-2xl font-bold">{service.title}</h2>
                   <p className="mt-3">{service.description}</p>
                   <div className="group mt-8 relative cursor-pointer p-2 w-32 border bg-white rounded-full overflow-hidden text-black text-center font-semibold">

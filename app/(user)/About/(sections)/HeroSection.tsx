@@ -82,8 +82,8 @@ const HeroSection = () => {
         </motion.div>
         <motion.div variants={item} className="w-full h-full overflow-hidden">
           {" "}
-                  <img
-                      alt={'Hero 3'}
+          <img
+            alt={"Hero 3"}
             className="w-full h-full object-cover"
             src={
               "https://images.unsplash.com/photo-1541726260-e6b6a6a08b27?q=80&w=2959&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -98,7 +98,7 @@ const HeroSection = () => {
           <p className="aboutHead px-2 flex items-center gap-2 text-xs text-white rounded-md">
             About Us
           </p>
-          <h1 className="text-6xl  text-center font-[600]  leading-[4.3rem] aboutText max-w-3xl mt-2">
+          <h1 className="text-4xl lg:text-6xl  text-center font-[600] leading-[2.4rem] lg:leading-[4.3rem] aboutText max-w-3xl mt-2">
             Simplifying Business with Expert Support Services
           </h1>
           <p className="max-w-3xl mt-3 text-center aboutPara">

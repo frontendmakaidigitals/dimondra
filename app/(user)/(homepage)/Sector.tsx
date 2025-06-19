@@ -11,7 +11,7 @@ import {
   Hotel,
   Stethoscope,
   Truck,
-  Cpu
+  Cpu,
 } from "lucide-react";
 
 const sectors = [
@@ -93,6 +93,7 @@ const Sector = () => {
     trigger: ".sectorTrigger",
     type: "words, lines",
     linesClass: "line-wrapper++",
+    delay: 1,
   });
 
   const sectorRef = useRef<HTMLDivElement>(null);
@@ -107,10 +108,10 @@ const Sector = () => {
       <div className="container  relative mx-auto px-4">
         <div className="max-w-2xl sectorTrigger">
           {" "}
-          <h1 className="text-5xl sectorText leading-[5.3rem] mt-1 text-start font-[600] text-dimondra-white">
+          <h1 className="text-5xl sectorText leading-[5.3rem] mt-1 text-center lg:text-start font-[600] text-dimondra-white">
             Sectors
           </h1>
-          <p className="text-slate-50 sectorPara">
+          <p className="text-slate-50 sectorPara text-center lg:text-start">
             From technology to logistics, construction to finance, Dimondra
             delivers strategic recruitment and workforce solutions across a wide
             array of industries. We understand the unique demands of each sector

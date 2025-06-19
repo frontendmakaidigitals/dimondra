@@ -55,7 +55,7 @@ const HeroSection = () => {
           initial={{ scale: 1.7 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 1.4, ease: "circOut" }}
-          className="w-full h-full object-cover object-top "
+          className="w-full h-full object-cover lg:object-top object-right "
           autoPlay
           muted
           playsInline
@@ -74,7 +74,7 @@ const HeroSection = () => {
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
         </p>
-        <h1 className="max-w-4xl  heroText leading-[3rem] lg:leading-[4.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-6xl font-[600] ">
+        <h1 className="max-w-4xl  heroText leading-[2.4rem] lg:leading-[4.3rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-6xl font-[600] ">
           Empowering <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.
         </h1>

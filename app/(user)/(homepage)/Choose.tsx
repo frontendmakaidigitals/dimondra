@@ -85,7 +85,7 @@ const Choose = () => {
   return (
     <div className="my-28">
       <div className="container chooseTrigger">
-        <h1 className="text-5xl chooseText mt-1 text-center  font-[600] text-dimondra-black">
+        <h1 className="text-5xl leading-[3.5rem] chooseText mt-1 text-center  font-[600] text-dimondra-black">
           Why Choose Dimondra
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-20">
