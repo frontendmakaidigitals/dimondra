@@ -223,7 +223,7 @@ const Page = () => {
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">
-          <h2 className="text-5xl leading-[3.5rem] max-w-2xl talentHead font-[600]">
+          <h2 className="text-4xl lg:text-5xl leading-[3rem] lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
             Secure Top Talent. Drive Business Success with Dimondra
           </h2>
           <p className=" talentPara max-w-3xl mt-2 text-slate-100">

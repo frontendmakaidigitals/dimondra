@@ -74,11 +74,11 @@ const Page = () => {
     <div>
       {" "}
       <div className="bg-teal-800">
-        <div className="h-[90dvh] container w-full relative">
+        <div className="h-[45vh] lg:h-[90dvh] max-w-xs lg:max-w-full container w-full relative">
           <img
             src={blog?.imageURL}
             alt={blog?.title}
-            className="w-full rounded-lg h-[650px] object-cover absolute top-1/3  left-1/2 -translate-x-1/2"
+            className="w-full rounded-lg h-[320px] lg:h-[650px] object-cover absolute bottom-0 translate-y-1/2 lg:translate-y-0 lg:top-1/3  left-1/2 -translate-x-1/2"
           />
         </div>
       </div>

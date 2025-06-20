@@ -17,7 +17,7 @@ const Choose = ({
 }) => {
   return (
     <div className="py-20 bg-gray-300">
-      <div className="flex items-start gap-16 container">
+      <div className="flex flex-col lg:flex-row items-start gap-16 container">
         <div className="max-w-4xl">
           <h1 className="text-5xl font-[600] tracking-tight">{title}?</h1>
           <p className="mt-4">{desc}</p>

@@ -1,9 +1,8 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import clsx from "clsx";
 import { Providers } from "../providers";
 import { siteConfig } from "@/config/site";
-import { fontSans, grandHotel } from "@/config/fonts";
+import PageLoader from "./app_chunks/PageLoader";
 import Header from "../(user)/Header/Header";
 import Backtotop from "../(user)/app_chunks/Backtotop";
 import Footer from "../(user)/Footer/Footer";
@@ -38,7 +37,7 @@ export default function RootLayout({
       <AuthContextProvider>
         <Header />
         <FloatingSocialMediaIcons />
-
+        <PageLoader />
         <Backtotop />
         {children}
         <Footer />

@@ -67,7 +67,7 @@ const Page = () => {
           onMouseLeave={plugin.current.reset}
           className="w-full"
         >
-          <CarouselContent className="h-[95vh] p-1 rounded-xl">
+          <CarouselContent className="h-[70vh] lg:h-[95vh] p-1 rounded-xl">
             {blogs
               .sort((a, b) => {
                 const aTime =
@@ -95,12 +95,12 @@ const Page = () => {
                         />
                       </div>
                       <BgLayer color="bg-slate-900/20" />
-                      <div className="relative  z-20 flex items-end justify-between container py-9 w-full h-full">
+                      <div className="relative  z-20 flex flex-col lg:flex-row items-end justify-end container py-9 w-full h-full">
                         <div>
                           <span className="p-2 text-xs bg-dimondra-black text-slate-50 rounded-lg">
                             {blog.category}
                           </span>
-                          <h1 className="text-6xl max-w-2xl mt-3 text-slate-50 tracking-tighter font-[500]">
+                          <h1 className="text-4xl lg:text-6xl max-w-2xl mt-3 text-slate-50 tracking-tighter font-[500]">
                             {blog.title}
                           </h1>
                           <div>
@@ -120,8 +120,8 @@ const Page = () => {
                             </div>
                           </div>
                         </div>
-                        <div>
-                          <div className="flex items-center gap-4">
+                        <div className="mt-5 lg:mt-0">
+                          <div className=" flex items-center gap-4">
                             <div className="p-2 bg-slate-200 rounded-full">
                               <User className="size-[16px]" />
                             </div>
@@ -143,8 +143,12 @@ const Page = () => {
               ))}
           </CarouselContent>
 
-          <CarouselPrevious />
-          <CarouselNext />
+          <div className="absolute top-1/2 left-2 lg:-left-10 flex items-center justify-center">
+            <CarouselPrevious className="relative left-0 translate-x-0 hover:translate-x-0 hover:bg-primary/90" />
+          </div>
+          <div className="absolute top-1/2 right-2 lg:-right-10 flex items-center justify-center">
+            <CarouselNext className="relative right-0 translate-x-0 hover:translate-x-0 hover:bg-primary/90" />
+          </div>
         </Carousel>
       </div>
       <div className="container my-10">
@@ -258,7 +262,7 @@ const BlogTopic = ({ blogs }: { blogs: Blog[] }) => {
         </>
       ) : (
         <div className="w-full flex justify-center items-center h-[150px]">
-          <h3>No Blogs Found</h3>
+          <h3>No new Blogs Found</h3>
         </div>
       )}
     </div>

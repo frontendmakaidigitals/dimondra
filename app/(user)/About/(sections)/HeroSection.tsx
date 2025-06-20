@@ -3,7 +3,7 @@ import BgLayer from "../../app_chunks/BgLayer";
 import React from "react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { motion } from "motion/react";
-import { Circle } from "lucide-react";
+
 const HeroSection = () => {
   useSplitText({
     selector: ".aboutHead",

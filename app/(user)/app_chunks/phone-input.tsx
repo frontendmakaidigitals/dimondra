@@ -4,6 +4,7 @@ import * as RPNInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 import "@/styles/globals.css";
 import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 import {
   Command,
   CommandEmpty,
@@ -203,8 +204,8 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className="flex h-8 w-12 overflow-hidden rounded-lg bg-foreground/20 [&_svg:not([class*='size-'])]:size-full">
-      {Flag && <Flag title={countryName} />}
+    <span className="flex h-8 w-12 overflow-hidden rounded-lg  [&_svg:not([class*='size-'])]:size-full">
+      {Flag ? <Flag title={countryName} /> : <Globe className="" />}
     </span>
   );
 };

@@ -10,7 +10,7 @@ const FAQ = ({
 }) => {
   return (
     <div className="bg-white py-20">
-      <div className="grid container grid-cols-[.7fr_1.3fr] gap-8">
+      <div className="grid container grid-cols-1 lg:grid-cols-[.7fr_1.3fr] gap-8">
         <div>
           <span>Support</span>
           <h2 className="text-3xl font-[600] mb-2 mt-2">FAQs</h2>
