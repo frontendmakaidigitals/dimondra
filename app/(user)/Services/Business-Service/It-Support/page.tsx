@@ -278,7 +278,7 @@ const Page = () => {
             <p className=" talentPara max-w-3xl mt-2 text-slate-50">
               Stay focused on growth while we handle your IT. At Dimondra, we
               offer flexible Annual Maintenance Contracts (AMC) and on-demand IT
-              outsourcing tailored to your business. Whether you're a startup or
+              outsourcing tailored to your business. Whether you&nbsp;re a startup or
               an enterprise, our expert team ensures minimal downtime, enhanced
               productivity, and dependable tech support whenever and wherever
               you need it.
