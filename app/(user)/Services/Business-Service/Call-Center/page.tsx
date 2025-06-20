@@ -295,9 +295,9 @@ const Page = () => {
           }
         />
         <img
-          className="absolute inset-0 object-top w-full h-full object-cover"
+          className="absolute inset-0 object-right-top w-full h-full object-cover"
           src={
-            "https://images.unsplash.com/photo-1573495804669-ec82ad00f327?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            '/Services/callCenterHero.jpg'
           }
           alt={"Talent Acquisition"}
         />
@@ -340,6 +340,8 @@ const Page = () => {
         }
       />
       <Advantage
+        img1="/Services/CallCenter1.jpg"
+        img2="/Services/CallCenter2.jpg"
         data={advantage}
         title={"Dimondra – Your Trusted Call Center Outsourcing Partner"}
         description={

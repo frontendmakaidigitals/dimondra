@@ -23,6 +23,7 @@ const Advantage = ({ data, title, description, img1, img2 }: props) => {
                   <div className="bg-green-500 rounded-md p-1">
                     <Check className="stroke-white size-4" />
                   </div>
+                  <p>{_}</p>
                 </div>
               </li>
             ))}

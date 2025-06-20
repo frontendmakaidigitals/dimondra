@@ -132,25 +132,25 @@ const Page = () => {
       title: "Assessment & Planning",
       description:
         "We audit your current IT environment, identify gaps, and build a tailored support plan.",
-      imgUrl: "/images/assessment-planning.jpg", // Replace with your actual image path
+      imgUrl: "/Services/consultation.jpg", // Replace with your actual image path
     },
     {
       title: "Onboarding",
       description:
         "A seamless transition process with full documentation, system handover, and user alignment.",
-      imgUrl: "/images/onboarding.jpg",
+      imgUrl: "/Services/onBoard.jpg",
     },
     {
       title: "Monitoring & Support",
       description:
         "Our helpdesk and onsite engineers proactively monitor and resolve issues to minimize downtime.",
-      imgUrl: "/images/monitoring-support.jpg",
+      imgUrl: "/Services/support.jpg",
     },
     {
       title: "Reporting",
       description:
         "Get regular reports, performance reviews, and service insights to keep you informed and in control.",
-      imgUrl: "/images/reporting.jpg",
+      imgUrl: "/Services/talentHero.jpg",
     },
   ];
   const itBenefits = [
@@ -258,9 +258,7 @@ const Page = () => {
         />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={
-            "https://images.unsplash.com/photo-1573495804669-ec82ad00f327?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+          src={"/Services/itSupport.jpg"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -312,6 +310,8 @@ const Page = () => {
         description={
           "Dimondra provides reliable, flexible, and cost-effective IT services tailored to your business needs. Whether you require ongoing IT support, infrastructure management, or cybersecurity solutions, our expert teams deliver seamless service with minimal disruption. We help you stay focused on your core business while we take care of the technology that powers it."
         }
+        img1="/Services/It1.jpg"
+        img2="/Services/It2.jpg"
       />
       <FAQ data={itAmcFAQs} desc={""} />
       <HomeForm />
