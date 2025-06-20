@@ -1,26 +1,51 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import React, { Suspense, useState, useEffect } from "react";
 import CubeLoader from "./Loading";
+const PageLoader = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Loader />
+    </Suspense>
+  );
+};
 
-export default function PageLoader() {
+export default PageLoader;
+
+const Loader = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 1200); // artificial delay
-    return () => clearTimeout(timeout);
+    setIsLoading(true);
+
+    if (document.readyState === "complete") {
+      setIsLoading(false);
+      return;
+    }
+
+    // Otherwise, wait for the window "load" event
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, [pathname]);
 
-  if (!loading) return null;
-
   return (
-    <div className="fixed inset-0 w-screen h-screen z-50 bg-white backdrop-blur-sm flex items-center justify-center">
-      <div>
-        <CubeLoader />
-      </div>
-    </div>
+    <AnimatePresence mode="wait">
+      {isLoading && (
+        <div className="fixed flex justify-center items-center overflow-hidden top-0 left-0 bg-white z-[99999] w-screen h-screen">
+          <div>
+            <CubeLoader />r
+          </div>
+        </div>
+      )}
+    </AnimatePresence>
   );
-}
+};

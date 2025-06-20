@@ -66,10 +66,22 @@ export const siteConfig = {
         {
           label: "Business Services",
           submenu: [
-            { label: "Call Center Support", link: "/" },
-            { label: "Facility Management", link: "/" },
-            { label: "IT Support", link: "/" },
-            { label: "Digital Services", link: "/" },
+            {
+              label: "Call Center Support",
+              link: "/Services/Business-Service/Call-Center",
+            },
+            {
+              label: "Facility Management",
+              link: "/Services/Business-Service/Facility-Management",
+            },
+            {
+              label: "IT Support",
+              link: "/Services/Business-Service/It-Support",
+            },
+            {
+              label: "Digital Services",
+              link: "/Services/Business-Service/Digital-Marketing",
+            },
           ],
         },
         {
