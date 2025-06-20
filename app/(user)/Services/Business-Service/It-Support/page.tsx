@@ -5,20 +5,13 @@ import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import { motion } from "motion/react";
 import Service from "../../(business-service-section)/service";
-import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../../app_chunks/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
 import Process from "../../(sections)/process";
 import {
   ShieldCheck,
-  Leaf,
   PiggyBank,
-  GraduationCap,
-  Clock,
-  Layers3,
-  Cpu,
-  SlidersHorizontal,
   Monitor,
   Network,
   Code,
@@ -278,10 +271,10 @@ const Page = () => {
             <p className=" talentPara max-w-3xl mt-2 text-slate-50">
               Stay focused on growth while we handle your IT. At Dimondra, we
               offer flexible Annual Maintenance Contracts (AMC) and on-demand IT
-              outsourcing tailored to your business. Whether you&nbsp;re a startup or
-              an enterprise, our expert team ensures minimal downtime, enhanced
-              productivity, and dependable tech support whenever and wherever
-              you need it.
+              outsourcing tailored to your business. Whether you&nbsp;re a
+              startup or an enterprise, our expert team ensures minimal
+              downtime, enhanced productivity, and dependable tech support
+              whenever and wherever you need it.
             </p>
             <button
               className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200

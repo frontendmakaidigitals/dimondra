@@ -20,19 +20,22 @@ const Loader = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    if (document.readyState === "complete") {
+    const timeout = setTimeout(() => {
       setIsLoading(false);
-      return;
-    }
+    }, 1200);
 
-    // Otherwise, wait for the window "load" event
     const handleLoad = () => {
       setIsLoading(false);
     };
 
-    window.addEventListener("load", handleLoad);
+    if (document.readyState !== "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
 
     return () => {
+      clearTimeout(timeout);
       window.removeEventListener("load", handleLoad);
     };
   }, [pathname]);
