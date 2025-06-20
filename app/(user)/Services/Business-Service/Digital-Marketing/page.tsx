@@ -134,41 +134,30 @@ const Page = () => {
     },
   ];
 
-  const advantage = [
-    "End-to-End IT Management",
-    "24/7 Helpdesk & Remote Support",
-    "Proactive Monitoring & Maintenance",
-    "Cybersecurity & Threat Protection",
-    "Cloud Services & Backup Solutions",
-    "Network & Infrastructure Management",
-    "Software & Hardware Support",
-    "Scalable & Customizable Plans",
-  ];
-
   const marketingProcessSteps = [
     {
       title: "Discovery & Strategy",
       description:
         "We dive deep into your business, audience, and goals to build a custom digital marketing strategy that fits.",
-      imgUrl: "/images/process/discovery-strategy.jpg",
+      imgUrl: "/Services/assesment.jpg",
     },
     {
       title: "Agile Execution",
       description:
         "Our team rapidly launches and iterates campaigns, ensuring quality and speed without sacrificing results.",
-      imgUrl: "/images/process/agile-execution.jpg",
+      imgUrl: "/Services/business-development.jpg",
     },
     {
       title: "Transparent Reporting",
       description:
         "Stay informed with clear performance reports, real-time tracking, and regular check-ins.",
-      imgUrl: "/images/process/transparent-reporting.jpg",
+      imgUrl: "/Services/virtualAssistant.jpg",
     },
     {
       title: "Performance Optimization",
       description:
         "We continuously analyze and optimize for better engagement, traffic, and ROI, all aligned with your KPIs.",
-      imgUrl: "/images/process/performance-optimization.jpg",
+      imgUrl: "/Services/performance.jpg",
     },
   ];
 
@@ -220,37 +209,37 @@ const Page = () => {
       title: "Healthcare",
       description:
         "Helping healthcare providers strengthen brand trust, generate leads, and increase patient engagement through targeted digital strategies.",
-      imgUrl: "/images/industries/healthcare.jpg",
+      imgUrl: "/Services/healthcare.jpg",
     },
     {
       title: "Finance",
       description:
         "Supporting financial institutions, credit unions, and advisors with campaigns that build authority, attract qualified leads, and drive ROI.",
-      imgUrl: "/images/industries/finance.jpg",
+      imgUrl: "/Services/financial-services.jpg",
     },
     {
       title: "Infrastructure",
       description:
         "Boosting online visibility for infrastructure and construction businesses with efficient, budget-friendly marketing strategies.",
-      imgUrl: "/images/industries/infrastructure.jpg",
+      imgUrl: "/Services/infrastructure.jpg",
     },
     {
       title: "Government",
       description:
         "Delivering secure and effective digital marketing support for government bodies to improve citizen engagement and online communication.",
-      imgUrl: "/images/industries/government.jpg",
+      imgUrl: "/Services/govt.jpg",
     },
     {
       title: "Entertainment",
       description:
         "Empowering entertainment brands to grow their fan base, increase content visibility, and drive digital revenue.",
-      imgUrl: "/images/industries/entertainment.jpg",
+      imgUrl: "/Services/entertainment.jpg",
     },
     {
       title: "Automotive",
       description:
         "Helping automotive businesses accelerate long-term growth with SEO, social media, and lead generation strategies tailored to the industry.",
-      imgUrl: "/images/industries/automotive.jpg",
+      imgUrl: "/Services/automotive.jpg",
     },
   ];
 
@@ -320,10 +309,8 @@ const Page = () => {
           }
         />
         <img
-          className="absolute inset-0 object-top w-full h-full object-cover"
-          src={
-            "https://images.unsplash.com/photo-1573495804669-ec82ad00f327?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+          className="absolute inset-0 object-bottom w-full h-full object-cover"
+          src={"/Services/digitalMarketing.jpg"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -381,6 +368,8 @@ const Page = () => {
         description={
           "Dimondra delivers comprehensive, results-driven digital marketing solutions tailored to your business goals. From building brand awareness to driving conversions, our expert team uses data-backed strategies to help you connect with your audience, increase traffic, and grow revenue. Focus on your business while we amplify your digital presence."
         }
+        img1="/Services/digitalMarketing1.jpg"
+        img2="/Services/digitalMarketing2.jpg"
       />
       <FAQ data={digitalMarketingFAQs} desc={""} />
       <HomeForm />

@@ -29,9 +29,9 @@ const Process = ({
           <h1 className="text-5xl blogText text-center mt-1 !leading-[3.4rem] font-[600] text-dimondra-black">
             {heading}
           </h1>
-          <p className="text-center ">{subHeading}</p>
+          <p className="text-center mt-2 text-sm ">{subHeading}</p>
         </div>
-        <div className="mt-4">
+        <div className="mt-8">
           <Carousel
             opts={{
               align: "start",
@@ -46,7 +46,7 @@ const Process = ({
                 >
                   <div className="p-1 w-full relative">
                     <Card className="w-full">
-                      <CardContent className="w-full h-[400px] overflow-hidden !px-0 !py-0 flex flex-col justify-between relative">
+                      <CardContent className="w-full h-[350px] overflow-hidden !px-0 !py-0 flex flex-col justify-between relative">
                         <img
                           src={process.imgUrl}
                           alt={"prcoess"}

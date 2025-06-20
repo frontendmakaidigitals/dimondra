@@ -13,12 +13,19 @@ const FloatingSocialMediaIcons = () => {
     <div className="fixed top-1/2 z-[50] grid grid-cols-1 grid-rows-3 -translate-y-1/2 left-0 ">
       {socialIcons.map(({ icon, link, color }, idx) => (
         <motion.div
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
-          transition={{
-            duration: 1.1,
-            delay: 5.5 + idx * 0.13,
-            ease: [0.86, 0, 0.07, 1],
+          initial={{ x: -100, scale: 1 }}
+          animate={{
+            x: 0,
+            scale: 1,
+            transition: {
+              duration: 1.1,
+              delay: .5 + idx * 0.13,
+              ease: [0.86, 0, 0.07, 1],
+            },
+          }}
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 0.2, type: "spring", delay: 0 },
           }}
           key={idx}
           style={{ backgroundColor: color }}

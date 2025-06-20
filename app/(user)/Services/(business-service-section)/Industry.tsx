@@ -1,5 +1,5 @@
-import React from "react";
-import { Headphones } from "lucide-react";
+import React, { useState } from "react";
+import { motion } from "motion/react";
 interface dataType {
   title: string;
   description: string;
@@ -14,26 +14,43 @@ const Industry = ({
   title?: string;
   desc?: string;
 }) => {
+  const [hoverId, setHoverId] = useState<Number | null>(0);
   return (
     <div className="container mt-20 mb-40">
       <h1 className="text-center text-5xl font-[600]">{title}</h1>
       <p className="text-center mt-2">{desc}</p>
-      <div className="grid grid-cols-1 gap-52 lg:gap-x-5  mt-12 lg:grid-cols-4">
+      <motion.div className="grid grid-cols-1 gap-10  mt-12 lg:grid-cols-4">
         {data.map(({ title, description, imgUrl }, idx) => (
-          <div key={idx} className="w-full relative h-[300px] ">
+          <motion.div
+            onMouseEnter={() => setHoverId(idx)}
+            onMouseLeave={() => setHoverId(null)}
+            key={idx}
+            className="w-full relative h-[300px] "
+          >
             <img
               src={imgUrl}
               className="w-full h-full rounded-lg object-cover"
               alt={""}
             />
-            <div className="absolute w-[95%] left-1/2 -translate-x-1/2 shadow-md rounded-lg  top-[45%] p-4 bg-white">
-              <Headphones className="absolute stroke-white size-12 right-2 bg-dimondra-teal rounded-full p-2 -top-6" />
+            <motion.div
+              layout
+              className="absolute w-full left-0 shadow-md rounded-lg  bottom-0 p-4 bg-gradient-to-t from-slate-950 to-[100%] text-slate-50 to-transparent"
+            >
               <h3 className="text-xl font-[600]"> {title}</h3>
-              <p className="mt-2">{description}</p>
-            </div>
-          </div>
+              {hoverId == idx ? (
+                <motion.p
+                  className="text-sm mt-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0 }}
+                >
+                  {description}
+                </motion.p>
+              ) : null}
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

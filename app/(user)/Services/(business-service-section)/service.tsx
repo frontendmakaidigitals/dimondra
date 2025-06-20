@@ -23,10 +23,10 @@ const Service = ({
         {data.map(({ title, description, icon: Icon }, idx) => (
           <div className="" key={idx}>
             <div className="flex items-start gap-5">
-              <div className=" bg-slate-200 rounded-lg p-2">
-                <Icon className="size-[40px] stroke-dimondra-teal" />
+              <div className=" bg-green-100 rounded-lg p-2">
+                <Icon className="size-[32px] stroke-dimondra-teal" />
               </div>
-              <h2 className="mt-3 text-2xl font-[600]">{title}</h2>
+              <h2 className="mt-2 text-2xl font-[600]">{title}</h2>
             </div>
             <p className="mt-4">{description}</p>
           </div>
