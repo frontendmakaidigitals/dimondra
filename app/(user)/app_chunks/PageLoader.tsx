@@ -43,9 +43,9 @@ const Loader = () => {
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
-        <div className="fixed flex justify-center items-center overflow-hidden top-0 left-0 bg-white z-[99999] w-screen h-screen">
+        <div className="fixed flex justify-center items-center overflow-hidden inset-0 bg-white z-[99999] w-screen h-screen">
           <div>
-            <CubeLoader />r
+            <CubeLoader />
           </div>
         </div>
       )}
