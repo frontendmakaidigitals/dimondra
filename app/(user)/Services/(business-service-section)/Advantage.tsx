@@ -18,7 +18,7 @@ const Advantage = ({ data, title, description }: props) => {
             {data.map((_, idx) => (
               <li key={idx} className="mt-4">
                 <div className="flex items-start gap-4">
-                  <div className="bg-green-500 rounded-md p-1">
+                  <div className="bg-slate-300 rounded-md p-1">
                     <Check className="stroke-white size-4" />
                   </div>
                   <p>{_}</p>

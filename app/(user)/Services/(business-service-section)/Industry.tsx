@@ -5,17 +5,24 @@ interface dataType {
   description: string;
   imgUrl: string;
 }
-const Industry = ({ data }: { data: dataType[] }) => {
+const Industry = ({
+  data,
+  title = "Industry we serve",
+  desc = "",
+}: {
+  data: dataType[];
+  title?: string;
+  desc?: string;
+}) => {
   return (
     <div className="container mt-20 mb-40">
-      <h1 className="text-center text-5xl font-[600]">Industry we serve</h1>
+      <h1 className="text-center text-5xl font-[600]">{title}</h1>
+      <p className="text-center mt-2">{desc}</p>
       <div className="grid grid-cols-1 gap-52 lg:gap-x-5  mt-12 lg:grid-cols-4">
         {data.map(({ title, description, imgUrl }, idx) => (
           <div key={idx} className="w-full relative h-[300px] ">
             <img
-              src={
-                "https://images.unsplash.com/photo-1670851810697-68ddb4ecae1c?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={imgUrl}
               className="w-full h-full rounded-lg object-cover"
               alt={""}
             />
