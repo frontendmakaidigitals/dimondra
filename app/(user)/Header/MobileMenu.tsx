@@ -180,11 +180,13 @@ const AccordionMenu = ({
                     {item.submenu.map(
                       (item: { label: string; href: string }, idx: number) => (
                         <button
+                          onClick={() => {
+                            setTimeout(() => setShowMenu(false), 300);
+                          }}
+                          className="pl-4 py-2 text-sm block font-medium cursor-pointer"
                           key={idx}
-                          onClick={() => setShowMenu(false)}
-                          className="pl-4 py-2 text-sm font-medium cursor-pointer"
                         >
-                          {item.label}
+                          <Link href={item.href}>{item.label}</Link>
                         </button>
                       )
                     )}

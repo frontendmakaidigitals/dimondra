@@ -10,7 +10,7 @@ const FloatingSocialMediaIcons = () => {
     { link: "", icon: "/icon/email.svg", color: "#ffffff" },
   ];
   return (
-    <div className="fixed top-1/2 z-[50] grid grid-cols-1 grid-rows-3 -translate-y-1/2 left-0 ">
+    <div className="fixed top-1/2 z-[40] grid grid-cols-1 grid-rows-3 -translate-y-1/2 left-0 ">
       {socialIcons.map(({ icon, link, color }, idx) => (
         <motion.div
           initial={{ x: -100, scale: 1 }}
