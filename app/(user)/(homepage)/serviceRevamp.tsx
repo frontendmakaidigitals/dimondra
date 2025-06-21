@@ -107,28 +107,32 @@ const ServiceRevamp = () => {
   });
 
   return (
-    <section className="my-24 bg-gradient-to-b from-slate-50 to-white">
-      <div className="container mx-auto px-4 serviceTrigger">
-        <p className="text-center text-sm text-gray-500 uppercase tracking-wide">
-          Our Services
-        </p>
-        <h1 className="text-4xl lg:text-5xl font-semibold text-center text-dimondra-black serviceText leading-snug mt-2">
+    <div className="my-20">
+      <div className="container serviceTrigger mx-auto px-4">
+        <p className="text-center text-sm text-gray-500">Our Services</p>
+        <h1 className="text-5xl serviceText leading-[3.6rem] lg:leading-[5.3rem] mt-1 text-center font-[600] text-dimondra-black">
           Empowering Your Business Vision
         </h1>
-
-        <div className="mt-16 grid grid-cols-1 gap-14">
+        <div className="grid grid-cols-1 gap-12 mt-12">
           {services.map((service, index) => {
             const isOdd = index % 2 !== 0;
 
             return (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 items-center gap-10 lg:gap-16 px-6 py-8 rounded-3xl shadow-sm transition-all duration-300 bg-white hover:shadow-lg
-                  ${isOdd ? "lg:flex-row-reverse bg-gradient-to-l from-dimondra-teal/10" : "bg-gradient-to-r from-dimondra-teal/10"}
-                `}
+                className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-10 p-6 rounded-3xl shadow-sm 
+                  ${
+                    isOdd
+                      ? "lg:flex-row-reverse lg:bg-gradient-to-l from-dimondra-teal/10"
+                      : "lg:bg-gradient-to-r from-dimondra-teal/10"
+                  }`}
               >
                 {/* Image */}
-                <div className="overflow-hidden rounded-2xl shadow-md">
+                <div
+                  className={`overflow-hidden rounded-2xl shadow-md ${
+                    isOdd ? "order-2 lg:order-1" : "order-1 lg:order-2"
+                  }`}
+                >
                   <img
                     src={service.img}
                     alt={service.title}
@@ -137,7 +141,11 @@ const ServiceRevamp = () => {
                 </div>
 
                 {/* Text */}
-                <div className="flex flex-col gap-4">
+                <div
+                  className={`flex flex-col gap-4 ${
+                    isOdd ? "order-2 lg:pr-8" : "order-1 lg:pl-8"
+                  }`}
+                >
                   <h2 className="text-2xl font-bold text-slate-900">
                     {service.title}
                   </h2>
@@ -157,7 +165,7 @@ const ServiceRevamp = () => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
