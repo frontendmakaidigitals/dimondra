@@ -338,8 +338,8 @@ const Page = () => {
         }
       />
       <Advantage
-        img1="/services/CallCenter1.jpg"
-        img2="/services/CallCenter2.jpg"
+        img1="/services/callCenter1.jpg"
+        img2="/services/callCenter2.jpg"
         data={advantage}
         title={"Dimondra – Your Trusted Call Center Outsourcing Partner"}
         description={

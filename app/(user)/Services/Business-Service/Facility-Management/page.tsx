@@ -213,7 +213,7 @@ const Page = () => {
       title: "Rail",
       description:
         "Offering specialized services, including assistance for passengers with restricted mobility.",
-      imgUrl: "/services/Train.jpg",
+      imgUrl: "/services/train.jpg",
     },
     {
       title: "Media & Broadcast",

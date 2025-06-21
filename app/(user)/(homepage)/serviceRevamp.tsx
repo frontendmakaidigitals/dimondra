@@ -18,7 +18,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Briefcase,
       pos: "left",
-      img: "https://images.unsplash.com/photo-1573496130407-57329f01f769?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/hrOutsource.avif",
     },
 
     {
@@ -28,7 +28,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: ClipboardList,
       pos: "left",
-      img: "https://images.unsplash.com/photo-1674471361339-2e1e1dbd3e73?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/remote-workforce.avif",
     },
     {
       title: "Executive Search",
@@ -37,7 +37,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: LifeBuoy,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1518644730709-0835105d9daa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/executive-research/avif",
     },
     {
       title: "RPO",
@@ -46,7 +46,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Server,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/rpo.avif",
     },
     {
       title: "Government Relations ",
@@ -55,7 +55,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: GraduationCap,
       pos: "left",
-      img: "https://images.unsplash.com/photo-1640200330428-9fe2ab926de1?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/govt-relation.avif",
     },
     {
       title: "Business Support ",
@@ -64,7 +64,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/business-support.avif",
     },
     {
       title: "IT & Digital Services ",
@@ -73,7 +73,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/it-digital.avif",
     },
     {
       title: "Strategy & Advisory",
@@ -82,7 +82,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/strategy-advisory.avif",
     },
     {
       title: "Workplace & Facilities Outsourcing Services ",
@@ -91,7 +91,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "https://images.unsplash.com/photo-1549637642-90187f64f420?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/media/services/workplace-facilities.avif",
     },
   ];
 
