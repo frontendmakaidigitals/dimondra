@@ -18,7 +18,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Briefcase,
       pos: "left",
-      img: "/media/services/hrOutsource.avif",
+      img: "/media/homepage/services/hrOutsource.avif",
     },
 
     {
@@ -28,7 +28,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: ClipboardList,
       pos: "left",
-      img: "/media/services/remote-workforce.avif",
+      img: "/media/homepage/services/remote-workforce.avif",
     },
     {
       title: "Executive Search",
@@ -37,7 +37,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: LifeBuoy,
       pos: "right",
-      img: "/media/services/executive-research/avif",
+      img: "/media/homepage/services/executive-research/avif",
     },
     {
       title: "RPO",
@@ -46,7 +46,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Server,
       pos: "right",
-      img: "/media/services/rpo.avif",
+      img: "/media/homepage/services/rpo.avif",
     },
     {
       title: "Government Relations ",
@@ -55,7 +55,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: GraduationCap,
       pos: "left",
-      img: "/media/services/govt-relation.avif",
+      img: "/media/homepage/services/govt-relation.avif",
     },
     {
       title: "Business Support ",
@@ -64,7 +64,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/services/business-support.avif",
+      img: "/media/homepage/services/business-support.avif",
     },
     {
       title: "IT & Digital Services ",
@@ -73,7 +73,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/services/it-digital.avif",
+      img: "/media/homepage/services/it-digital.avif",
     },
     {
       title: "Strategy & Advisory",
@@ -82,7 +82,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/services/strategy-advisory.avif",
+      img: "/media/homepage/services/strategy-advisory.avif",
     },
     {
       title: "Workplace & Facilities Outsourcing Services ",
@@ -91,7 +91,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/services/workplace-facilities.avif",
+      img: "/media/homepage/services/workplace-facilities.avif",
     },
   ];
 

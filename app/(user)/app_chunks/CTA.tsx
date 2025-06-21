@@ -22,9 +22,7 @@ const CTA = ({
       <div className="relative z-10 p-6 lg:p-0">
         {" "}
         <div className=" w-full flex justify-center lg:justify-start">
-          <p className=" text-center bg-white  lg:text-start  px-4 text-sm">
-            Tags a big
-          </p>
+         
         </div>
         <h2 className="mt-4 text-3xl font-[600] text-center lg:text-start">
           {title}

@@ -6,7 +6,7 @@ import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import { motion } from "motion/react";
 import Service from "../../(business-service-section)/service";
 import Industry from "../../(business-service-section)/Industry";
-import CTA from "../../../app_chunks/CTA";
+import CTA from "../../(business-service-section)/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
 import {
