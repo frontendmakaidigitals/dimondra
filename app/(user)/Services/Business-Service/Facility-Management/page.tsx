@@ -153,91 +153,91 @@ const Page = () => {
       title: "Aviation",
       description:
         "Specialized services for the aviation sector, including dedicated support for Passengers with Reduced Mobility (PRM).",
-      imgUrl: "/Services/aviation.jpg",
+      imgUrl: "/services/aviation.jpg",
     },
     {
       title: "Commercial",
       description:
         "Creating enhanced workplace environments that boost productivity and improve employee retention.",
-      imgUrl: "/Services/workplace.jpg",
+      imgUrl: "/services/workplace.jpg",
     },
     {
       title: "Distribution & Logistics",
       description:
         "Optimizing logistics hubs to keep operations moving smoothly and commitments on track.",
-      imgUrl: "/Services/distribution.jpg",
+      imgUrl: "/services/distribution.jpg",
     },
     {
       title: "Education",
       description:
         "Designing and maintaining inspiring environments where learning and development flourish.",
-      imgUrl: "/Services/education.jpg",
+      imgUrl: "/services/education.jpg",
     },
     {
       title: "Healthcare",
       description:
         "Supporting healthcare teams with facilities management that promotes both mental and physical well-being.",
-      imgUrl: "/Services/healthcare.jpg",
+      imgUrl: "/services/healthcare.jpg",
     },
     {
       title: "Government",
       description:
         "Delivering safety, security, and operational continuity for public sector organizations through proven best practices.",
-      imgUrl: "/Services/govt.jpg",
+      imgUrl: "/services/govt.jpg",
     },
     {
       title: "Manufacturing",
       description:
         "Ensuring the efficient operation of plants and production lines within the manufacturing industry.",
-      imgUrl: "/Services/manufacturing.jpg",
+      imgUrl: "/services/manufacturing.jpg",
     },
     {
       title: "Venues & Events",
       description:
         "Providing reliable services that guarantee excellent experiences for attendees, fans, and participants.",
-      imgUrl: "/Services/venue.jpg",
+      imgUrl: "/services/venue.jpg",
     },
     {
       title: "Retail",
       description:
         "Maintaining retail spaces to meet customer expectations and create inviting shopping environments.",
-      imgUrl: "/Services/retail.jpg",
+      imgUrl: "/services/retail.jpg",
     },
     {
       title: "Data Centres",
       description:
         "Supporting business continuity by maintaining critical infrastructure and avoiding interruptions.",
-      imgUrl: "/Services/data-centers.jpg",
+      imgUrl: "/services/data-centers.jpg",
     },
     {
       title: "Rail",
       description:
         "Offering specialized services, including assistance for passengers with restricted mobility.",
-      imgUrl: "/Services/Train.jpg",
+      imgUrl: "/services/Train.jpg",
     },
     {
       title: "Media & Broadcast",
       description:
         "Ensuring uninterrupted operations to support teams, viewers, listeners, and fans.",
-      imgUrl: "/Services/media.jpg",
+      imgUrl: "/services/media.jpg",
     },
     {
       title: "Transport",
       description:
         "Helping manage the smooth movement of people, teams, packages, and passengers.",
-      imgUrl: "/Services/bus.jpg",
+      imgUrl: "/services/bus.jpg",
     },
     {
       title: "Hospitality",
       description:
         "Creating welcoming first impressions to ensure positive and memorable guest experiences.",
-      imgUrl: "/Services/hospitality.jpg",
+      imgUrl: "/services/hospitality.jpg",
     },
     {
       title: "Construction",
       description:
         "Providing safety, security, and continuity solutions tailored for the construction industry.",
-      imgUrl: "/Services/construction.jpg",
+      imgUrl: "/services/construction.jpg",
     },
   ];
 
@@ -314,7 +314,7 @@ const Page = () => {
         />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/Services/facilityhero.jpg"}
+          src={"/services/facilityhero.jpg"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -357,8 +357,8 @@ const Page = () => {
         description={
           "At Dimondra, we don’t just maintain spaces, we create environments where people and businesses thrive. As your dedicated facility management partner, we combine industry expertise with tailored service delivery to meet the unique needs of every site we manage. Whether it’s a high-traffic venue, a critical healthcare facility, or a fast-paced commercial space, we ensure everything runs efficiently, safely, and sustainably. From day-to-day operations to long-term infrastructure improvements, Dimondra is committed to raising standards and delivering results that support your success."
         }
-        img1={"/Services/facility1.jpg"}
-        img2={"/Services/facility2.jpg"}
+        img1={"/services/facility1.jpg"}
+        img2={"/services/facility2.jpg"}
       />
       <FAQ data={facilityManagementFAQs} desc={""} />
       <HomeForm />

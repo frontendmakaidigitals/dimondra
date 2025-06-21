@@ -150,49 +150,49 @@ const Page = () => {
       title: "Banking, Financial Services & Insurance",
       description:
         "We help financial institutions deliver secure, reliable, and fast customer support. Whether it’s banking services, loans, or insurance queries, our trained teams ensure smooth communication, improved efficiency, and greater customer trust.",
-      imgUrl: "/Services/financial-services.jpg",
+      imgUrl: "/services/financial-services.jpg",
     },
     {
       title: "Retail & Ecommerce",
       description:
         "From helping shoppers find the right product to handling returns, we offer full-service customer support that keeps buyers satisfied. Our solutions help online and retail businesses boost sales, build loyalty, and deliver a better shopping experience.",
-      imgUrl: "/Services/ecommerce.jpg",
+      imgUrl: "/services/ecommerce.jpg",
     },
     {
       title: "Telecommunications",
       description:
         "We manage service requests, troubleshoot issues, and support billing or subscription queries—so telecom companies can stay connected with their customers and reduce churn with ease.",
-      imgUrl: "/Services/telelcommunication.jpg",
+      imgUrl: "/services/telelcommunication.jpg",
     },
     {
       title: "Travel, Tourism & Hospitality",
       description:
         "Dimondra’s support services help your guests and travelers with bookings, changes, and questions, delivering smooth, friendly, and stress-free experiences. Whether it’s hotels, airlines, or travel agencies, we make sure your customers feel taken care of.",
-      imgUrl: "/Services/travel-tourism.jpg",
+      imgUrl: "/services/travel-tourism.jpg",
     },
     {
       title: "Healthcare",
       description:
         "We support healthcare providers with reliable patient services, like appointment scheduling, claims processing, and inquiry handling. Our services improve communication, reduce wait times, and help deliver better care experiences.",
-      imgUrl: "/Services/healthcare.jpg",
+      imgUrl: "/services/healthcare.jpg",
     },
     {
       title: "Technology & Software",
       description:
         "Tech companies rely on us to manage customer service, tech support, and lead generation. Our flexible and scalable support allows high-growth businesses to stay focused on innovation while we handle user engagement.",
-      imgUrl: "/Services/Technology.jpg",
+      imgUrl: "/services/Technology.jpg",
     },
     {
       title: "Utilities & Energy Providers",
       description:
         "From billing questions to service changes, we help utility companies deliver consistent and professional customer support. Our goal is to ensure smooth service operations and satisfied end-users.",
-      imgUrl: "/Services/utilities.jpg",
+      imgUrl: "/services/utilities.jpg",
     },
     {
       title: "Home Improvement & Services",
       description:
         "We support brands in the home improvement space by handling inquiries, orders, and post-sale service. Whether your customers are homeowners or contractors, we ensure they get the help they need quickly and professionally.",
-      imgUrl: "/Services/home.jpg",
+      imgUrl: "/services/home.jpg",
     },
   ];
   const callCenterFAQs = [
@@ -296,9 +296,7 @@ const Page = () => {
         />
         <img
           className="absolute inset-0 object-right-top w-full h-full object-cover"
-          src={
-            '/Services/callCenterHero.jpg'
-          }
+          src={"/services/callCenterHero.jpg"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -340,8 +338,8 @@ const Page = () => {
         }
       />
       <Advantage
-        img1="/Services/CallCenter1.jpg"
-        img2="/Services/CallCenter2.jpg"
+        img1="/services/CallCenter1.jpg"
+        img2="/services/CallCenter2.jpg"
         data={advantage}
         title={"Dimondra – Your Trusted Call Center Outsourcing Partner"}
         description={
