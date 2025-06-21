@@ -107,57 +107,48 @@ const ServiceRevamp = () => {
   });
 
   return (
-    <div className="my-20">
-      <div className="container serviceTrigger mx-auto px-4">
-        <p className="text-center  text-sm text-gray-500">Our Services</p>
-        <h1 className="text-5xl serviceText leading-[3.6rem] lg:leading-[5.3rem] mt-1 text-center font-[600] text-dimondra-black">
+    <section className="my-24 bg-gradient-to-b from-slate-50 to-white">
+      <div className="container mx-auto px-4 serviceTrigger">
+        <p className="text-center text-sm text-gray-500 uppercase tracking-wide">
+          Our Services
+        </p>
+        <h1 className="text-4xl lg:text-5xl font-semibold text-center text-dimondra-black serviceText leading-snug mt-2">
           Empowering Your Business Vision
         </h1>
-        <div className="grid grid-cols-1 gap-7 mt-12">
+
+        <div className="mt-16 grid grid-cols-1 gap-14">
           {services.map((service, index) => {
             const isOdd = index % 2 !== 0;
 
             return (
               <div
                 key={index}
-                className={`
-          grid gap-7 p-3 lg:p-7 from-[1%] from-dimondra-teal/20
-           
-          ${
-            isOdd
-              ? "grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] bg-gradient-to-l lg:rounded-r-full"
-              : "grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] bg-gradient-to-r lg:rounded-l-full"
-          }
-        `}
+                className={`grid lg:grid-cols-2 items-center gap-10 lg:gap-16 px-6 py-8 rounded-3xl shadow-sm transition-all duration-300 bg-white hover:shadow-lg
+                  ${isOdd ? "lg:flex-row-reverse bg-gradient-to-l from-dimondra-teal/10" : "bg-gradient-to-r from-dimondra-teal/10"}
+                `}
               >
                 {/* Image */}
-                <div
-                  className={`
-          order-1 lg:order-${isOdd ? "2" : "1"}
-         overflow-hidden rounded-lg lg:rounded-full  w-full 
-          `}
-                >
+                <div className="overflow-hidden rounded-2xl shadow-md">
                   <img
-                    className={`
-              w-full h-full object-cover
-            `}
                     src={service.img}
                     alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
 
                 {/* Text */}
-                <div
-                  className={`  order-2 lg:order-${isOdd ? "1" : "2"} w-full `}
-                >
-                  <h2 className="text-2xl font-bold">{service.title}</h2>
-                  <p className="mt-3">{service.description}</p>
-                  <div className="group mt-8 relative cursor-pointer p-2 w-32 border bg-white rounded-full overflow-hidden text-black text-center font-semibold">
-                    <span className="translate-y-0 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-300 inline-block">
+                <div className="flex flex-col gap-4">
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    {service.title}
+                  </h2>
+                  <p className="text-slate-700">{service.description}</p>
+
+                  <div className="group mt-6 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium shadow-sm">
+                    <span className="px-6 py-2 inline-block transition-all duration-300 group-hover:-translate-y-10 group-hover:opacity-0">
                       Learn more
                     </span>
-                    <div className="flex gap-2 text-white bg-dimondra-teal z-10 items-center absolute left-0 top-0 h-full w-full justify-center translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 rounded-full group-hover:rounded-none ">
-                      <span>Learn more</span>
+                    <div className="absolute inset-0 flex items-center justify-center bg-dimondra-teal text-white rounded-full group-hover:rounded-none translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      Learn more
                     </div>
                   </div>
                 </div>
@@ -166,7 +157,7 @@ const ServiceRevamp = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
