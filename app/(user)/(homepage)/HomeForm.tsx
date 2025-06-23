@@ -101,7 +101,7 @@ const HomeForm = () => {
           <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-dark">
             We&nbsp;re here to help you
           </span>
-          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tight font-[600] text-dimondra-black mt-3">
+          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tighter font-[600] text-dimondra-black mt-3">
             Get in Touch with Us
           </h1>
           <p className="text-dimondra-dark font-quicksand font-[600] mt-4 formText3">

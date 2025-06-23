@@ -110,7 +110,7 @@ const ServiceRevamp = () => {
     <div className="my-20">
       <div className="container serviceTrigger mx-auto px-4">
         <p className="text-center text-sm text-gray-500">Our Services</p>
-        <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] text-center font-[600] text-dimondra-black">
+        <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] tracking-tighter text-center font-[600] text-dimondra-black">
           Empowering Your Business Vision
         </h1>
         <div className="grid grid-cols-1 gap-12 mt-12">

@@ -37,16 +37,16 @@ const Stats = () => {
 
   return (
     <div className="py-16" ref={containerRef}>
-      <h1 className="text-5xl text-center font-[600] text-dimondra-black container mb-10">
+      <h1 className="text-5xl font-dmSans tracking-tighter text-center font-[600] text-dimondra-black container mb-10">
         By the Numbers in Dimondra
       </h1>
       <div className="container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {stats.map((stat, idx) => (
           <div key={idx} className="bg-slate-200 rounded-lg p-5 stat-card">
-            <h2 className="text-5xl text-center font-[600] text-dimondra-black">
+            <h2 className="text-5xl font-rubik text-center font-[500] text-dimondra-tealDark">
               {stat.value}
             </h2>
-            <p className="text-dimondra-dark mt-2 text-center">{stat.label}</p>
+            <p className="text-dimondra-dark mt-2 text-center font-quicksand font-[600]">{stat.label}</p>
           </div>
         ))}
       </div>

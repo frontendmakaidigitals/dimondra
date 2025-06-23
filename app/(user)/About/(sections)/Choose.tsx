@@ -86,10 +86,10 @@ const Choose = () => {
     <div className="py-14 bg-teal-800">
       <div className="container grid chooseTrigger grid-cols-1  lg:grid-cols-[1fr_1fr] gap-6">
         <div className="w-full">
-          <h1 className="text-[3.5rem] chooseHead text-dimondra-white font-[500] tracking-tighter">
+          <h1 className="text-[3.5rem] font-dmSans chooseHead text-dimondra-white font-[600] tracking-tighter">
             Why Choose Dimondra?
           </h1>
-          <p className="mt-1 choosePara text-dimondra-white">
+          <p className="mt-1 choosePara font-quicksand font-[600] text-dimondra-white">
             At Dimondra, we make business easier. We offer all the support you
             need. HR, IT, admin, legal, and strategy — in one place. Our team
             understands your goals and works with you to achieve them. \n
@@ -100,11 +100,11 @@ const Choose = () => {
             every step of the way.
           </p>
           <div className="mt-6">
-            <h3 className="text-lg font-[600] tracking-tight text-dimondra-white">
+            <h3 className="text-lg font-rubik font-[600] tracking-tight text-dimondra-white">
               We make operations easier and more effective every step of the
               way.
             </h3>
-            <ul ref={ulRef} className="mt-6 space-y-6">
+            <ul ref={ulRef} className="mt-5 space-y-6">
               {list.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -114,7 +114,7 @@ const Choose = () => {
                         <Icon className="size-[24px] p-1 text-teal-950 mt-[1px]" />
                       </div>
                     </div>
-                    <span className="text-dimondra-white">{item.label}</span>
+                    <span className="text-dimondra-white font-quicksand font-[500]">{item.label}</span>
                   </li>
                 );
               })}

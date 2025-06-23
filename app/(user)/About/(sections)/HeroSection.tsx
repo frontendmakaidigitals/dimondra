@@ -98,10 +98,10 @@ const HeroSection = () => {
           <p className="aboutHead px-2 flex items-center gap-2 text-xs text-white rounded-md">
             About Us
           </p>
-          <h1 className="text-4xl lg:text-6xl  text-center font-[600] leading-[2.4rem] lg:leading-[4.3rem] aboutText max-w-3xl mt-2">
+          <h1 className="text-4xl lg:text-6xl text-dimondra-white/75 font-dmSans text-center tracking-tight font-[600] leading-[2.4rem] lg:leading-[4.3rem] aboutText max-w-3xl mt-2">
             Simplifying Business with Expert Support Services
           </h1>
-          <p className="max-w-3xl mt-3 text-center aboutPara">
+          <p className="max-w-3xl mt-3 text-center font-quicksand font-[600] aboutPara">
             Dimondra is a multi-service business support company that provides
             solutions across HR, IT, digital, legal, and strategic
             operations.{" "}

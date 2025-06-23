@@ -66,7 +66,7 @@ const Blogs = () => {
   return (
     <div className="my-28">
       <div className="container blogTrigger">
-        <h1 className="text-5xl blogText font-dmSans tracking-tight lg:text-6xl mt-1 !leading-[5rem] font-[600] text-dimondra-black">
+        <h1 className="text-5xl blogText font-dmSans tracking-tighter lg:text-6xl mt-1 !leading-[5rem] font-[600] text-dimondra-black">
           Latest from the blog
         </h1>
         <div className="mt-8">

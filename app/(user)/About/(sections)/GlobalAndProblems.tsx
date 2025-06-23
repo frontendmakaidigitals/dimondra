@@ -94,18 +94,18 @@ const GlobalAndProblems = () => {
         {/* Global Reach */}
         <div className="grid globalTrigger md:grid-cols-2 gap-14 items-center">
           <div className="space-y-5">
-            <h2 className="text-4xl globalHead !leading-[3.5rem] lg:text-5xl font-bold text-dimondra-black">
+            <h2 className="text-4xl globalHead font-dmSans font-[600] tracking-tight !leading-[3.5rem] lg:text-5xl text-dimondra-black">
               Global Reach, Local Insight
             </h2>
-            <p className="text-xl text-dimondra-tealDark globalSpan font-semibold">
+            <p className="text-xl text-dimondra-tealDark font-rubik globalSpan font-semibold">
               Local Insight. Global Expertise.
             </p>
-            <p className="text-gray-700 leading-relaxed globalPara1">
+            <p className="text-gray-700 font-quicksand font-[600] leading-relaxed globalPara1">
               At Dimondra, we serve businesses across borders and industries.
               Whether you&nbsp;re operating locally or expanding globally, our
               team brings strategic insight and localized execution.
             </p>
-            <p className="text-gray-700 leading-relaxed globalPara2">
+            <p className="text-gray-700 font-quicksand font-[600] leading-relaxed globalPara2">
               With multilingual teams and delivery hubs worldwide, we ensure
               your business remains compliant and competitive — wherever you
               are.
@@ -125,11 +125,11 @@ const GlobalAndProblems = () => {
 
         {/* Problems We Solve */}
         <div className="space-y-12">
-          <div className="text-center max-w-3xl problemTrigger mx-auto space-y-4">
-            <h3 className="text-3xl sm:text-4xl  problemHead font-bold text-gray-900">
+          <div className="text-center max-w-3xl problemTrigger mx-auto space-y-2">
+            <h3 className="text-3xl sm:text-4xl font-dmSans tracking-tighter font-[600] problemHead text-gray-900">
               Problems We Solve at Dimondra
             </h3>
-            <p className="text-gray-600 text-lg problemPara">
+            <p className="text-gray-600 problemPara font-quicksand font-[600]">
               Businesses face real challenges — and we provide practical,
               people-first solutions.
             </p>
@@ -151,13 +151,13 @@ const GlobalAndProblems = () => {
                     />
                   </div>
                   <h4
-                    className={`text-xl mt-4 ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} font-semibold text-dimondra-black`}
+                    className={`text-xl mt-4 ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} font-rubik font-[500] text-dimondra-black`}
                   >
                     {title}
                   </h4>
                 </div>
                 <p
-                  className={` ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} text-sm leading-relaxed`}
+                  className={` ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} text-sm font-quicksand font-[600] leading-relaxed`}
                 >
                   {desc}
                 </p>
