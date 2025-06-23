@@ -28,25 +28,25 @@ export default function IndustriesSection({
   return (
     <div className="py-24 bg-teal-800">
       <div className="container IndustryTrigger">
-        <h1 className="text-5xl industryHead text-center tracking-tighter text-dimondra-white font-[600]">
+        <h1 className="text-6xl industryHead text-center font-dmSans tracking-tighter text-dimondra-white/75 font-[500]">
           {heading}
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1 mt-12">
           {data.map((industry, i) => (
             <div
               key={i}
-              className="bg-white/50 border border-white/10 backdrop-blur-md backdrop-filter rounded-lg p-1 overflow-hidden"
+              className="bg-white/30 border border-white/10 backdrop-blur-lg backdrop-filter rounded-lg p-1 overflow-hidden"
             >
               <img
                 src={industry.imgUrl}
                 alt={industry.title}
                 className="w-full h-[250px] rounded-md object-cover"
               />
-              <div className="p-3 mt-1 text-dimondra-black">
-                <h3 className="text-xl font-semibold  mb-3">
+              <div className="p-3 mt-1 text-dimondra-white ">
+                <h3 className="text-xl font-semibold  mb-2 font-rubik">
                   {industry.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 text-dimondra-white">
+                <p className="text-sm text-dimondra-white font-quicksand font-[600]">
                   {industry.description}
                 </p>
               </div>

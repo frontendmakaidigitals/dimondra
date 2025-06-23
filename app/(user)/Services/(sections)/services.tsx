@@ -22,10 +22,12 @@ const Services = ({
     <div className="my-24">
       <div className="container">
         <div className="py-5">
-          <h2 className="text-4xl lg:text-5xl text-dimondra-black text-center font-[600]">
+          <h2 className="text-4xl max-w-3xl mx-auto lg:text-5xl text-dimondra-black text-center font-[600]">
             {heading}
           </h2>
-          <p className="mt-3 text-center">{subHeading}</p>
+          <p className="mt-3 text-center font-quicksand font-[600]">
+            {subHeading}
+          </p>
         </div>
         <div className="grid mt-5 grid-cols-1 lg:grid-cols-3 gap-5">
           {data.map(({ icon: Icon, title, desc }, idx) => (
@@ -44,10 +46,10 @@ const Services = ({
                 <Icon className="size-[42px] stroke-dimondra-teal" />
               </div>
 
-              <p className="text-2xl text-dimondra-black group-hover:text-dimondra-white mt-8 font-[600]">
+              <p className="text-2xl text-dimondra-black font-rubik group-hover:text-dimondra-white mt-8 font-[500]">
                 {title}
               </p>
-              <p className="mt-2 group-hover:text-dimondra-white">{desc}</p>
+              <p className="mt-2 group-hover:text-dimondra-white font-quicksand font-[500]">{desc}</p>
             </motion.div>
           ))}
         </div>

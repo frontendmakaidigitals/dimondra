@@ -19,8 +19,8 @@ const Choose = ({
     <div className="py-20 bg-gray-300">
       <div className="flex flex-col lg:flex-row items-start gap-16 container">
         <div className="max-w-4xl">
-          <h1 className="text-5xl font-[600] tracking-tight">{title}?</h1>
-          <p className="mt-4">{desc}</p>
+          <h1 className="text-5xl font-[600] tracking-tight font-dmSans ">{title}</h1>
+          <p className="mt-4 font-quicksand font-[500]">{desc}</p>
           <button className="px-5 py-2 bg-white mt-8 rounded-lg">
             Get a Quote
           </button>

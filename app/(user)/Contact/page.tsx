@@ -112,7 +112,9 @@ const Page = () => {
   ];
 
   return (
-    <div className="mb-28 relative pt-32 ">
+    <div className="pb-28 relative pt-32">
+      <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-slate-800/70 via-slate-800/40 to-transparent from-[1%] via-[1%] to-[98%]" />
+
       <div
         className="absolute inset-0 
                 bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] 
@@ -128,8 +130,10 @@ const Page = () => {
       <div className="container relative z-10 max-w-5xl grid-cols-1 grid lg:grid-cols-[1fr_1fr] gap-12 ">
         <div>
           <div>
-            <h2 className="text-5xl font-[600] ">Get in Touch</h2>
-            <p className="mt-2 mb-9">
+            <h2 className="text-5xl font-[600] font-dmSans tracking-tighter">
+              Get in Touch
+            </h2>
+            <p className="mt-2 mb-9 font-quicksand font-[600]">
               If you have any question. Feel free to write.
             </p>
           </div>
@@ -147,9 +151,13 @@ const Page = () => {
               >
                 <div className="flex items-center gap-3">
                   <Icon className="w-6 h-6 text-teal-50" />
-                  <p className="font-semibold text-lg text-teal-50">{title}</p>
+                  <p className="font-semibold text-lg text-teal-50 font-rubik">
+                    {title}
+                  </p>
                 </div>
-                <p className="text-sm text-teal-50">{desc}</p>
+                <p className="text-sm text-teal-50 font-quicksand font-[600]">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
@@ -286,7 +294,7 @@ const Form = () => {
       <div className="w-full col-span-2 lg:col-span-1">
         <label htmlFor="firstName">First Name</label>
         <input
-          id={ 'firstName' }
+          id={"firstName"}
           name={"firstName"}
           value={formData.firstName}
           onChange={handleChange}
@@ -300,7 +308,7 @@ const Form = () => {
       <div className="w-full col-span-2 lg:col-span-1">
         <label htmlFor="lastName">Last Name</label>
         <input
-          id={'lastName'}
+          id={"lastName"}
           name={"lastName"}
           value={formData.lastName}
           onChange={handleChange}
@@ -329,7 +337,7 @@ const Form = () => {
         <input
           type={"email"}
           name={"email"}
-          id={'email'}
+          id={"email"}
           value={formData.email}
           onChange={handleChange}
           className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
@@ -340,7 +348,7 @@ const Form = () => {
       <div className="w-full col-span-2">
         <label htmlFor="message">Message</label>
         <textarea
-          id='message'
+          id="message"
           rows={6}
           className="text-sm mt-1 w-full resize-none bg-dimondra-teal/5 border dimondra-border-dimondra-gray/30/40 rounded-md px-3 block py-[.7rem]"
           placeholder="Leave us a message"

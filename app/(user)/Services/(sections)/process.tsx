@@ -26,10 +26,12 @@ const Process = ({
     <div className="my-28">
       <div className="container blogTrigger">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl blogText text-center mt-1 !leading-[3.4rem] font-[600] text-dimondra-black">
+          <h1 className="text-5xl font-dmSans tracking-tighter blogText text-center mt-1 !leading-[3.4rem] font-[600] text-dimondra-black">
             {heading}
           </h1>
-          <p className="text-center mt-2 text-sm ">{subHeading}</p>
+          <p className="text-center mt-2 text-sm font-quicksand font-[600]">
+            {subHeading}
+          </p>
         </div>
         <div className="mt-8">
           <Carousel
@@ -56,12 +58,12 @@ const Process = ({
                         <p className="text-5xl font-[600] relative z-10 text-white/80 p-3">
                           0{index + 1}
                         </p>
-                        <div className="relative z-10 bg-gradient-to-t from-white/90 from-[80%] to-transparent p-3">
+                        <div className="relative z-10 bg-gradient-to-t from-slate-950/80 via-slate-800/80 to-transparent p-3">
                           <div className="mt-3 ">
-                            <h3 className=" font-bold text-lg">
+                            <h3 className=" font-semibold text-dimondra-white font-rubik text-xl">
                               {process.title}
                             </h3>
-                            <p className="text-sm mt-2">
+                            <p className="text-sm mt-2 font-quicksand text-dimondra-white font-[500]">
                               {process.description}
                             </p>
                           </div>
