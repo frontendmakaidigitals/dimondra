@@ -85,8 +85,8 @@ const Choose = () => {
   return (
     <div className="my-28">
       <div className="container chooseTrigger">
-        <h1 className="text-5xl leading-[3.5rem] chooseText mt-1 text-center  font-[600] text-dimondra-black">
-          Why Choose Dimondra
+        <h1 className="text-5xl leading-[3.5rem] font-dmSans tracking-tight chooseText mt-1 text-center  font-[600] text-dimondra-black">
+          Why Choose <span className="text-dimondra-teal">Dimondra?</span>
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-20">
           {highlights.map((item, index) => (
@@ -98,13 +98,15 @@ const Choose = () => {
                 ref={(el) => {
                   numbersRef.current[index] = el;
                 }}
-                className="text-5xl font-[600] text-dimondra-teal absolute top-0 -translate-y-1/2"
+                className="text-5xl font-[500] text-teal-700 font-rubik absolute top-0 -translate-y-1/2"
               >
                 0{index + 1}
               </span>
               <div className="">
-                <h4 className="text-2xl font-semibold">{item.title}</h4>
-                <p className=" text-muted-foreground mt-2">
+                <h4 className="text-2xl font-semibold font-dmSans tracking-tight">
+                  {item.title}
+                </h4>
+                <p className=" text-slate-600 mt-2 font-quicksand font-[600]">
                   {item.description}
                 </p>
               </div>

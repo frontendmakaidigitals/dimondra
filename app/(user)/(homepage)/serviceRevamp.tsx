@@ -37,7 +37,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: LifeBuoy,
       pos: "right",
-      img: "/media/homepage/services/executive-research/avif",
+      img: "/media/homepage/services/executive-research.avif",
     },
     {
       title: "RPO",
@@ -110,7 +110,7 @@ const ServiceRevamp = () => {
     <div className="my-20">
       <div className="container serviceTrigger mx-auto px-4">
         <p className="text-center text-sm text-gray-500">Our Services</p>
-        <h1 className="text-5xl serviceText leading-[3.6rem] lg:leading-[5.3rem] mt-1 text-center font-[600] text-dimondra-black">
+        <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] text-center font-[600] text-dimondra-black">
           Empowering Your Business Vision
         </h1>
         <div className="grid grid-cols-1 gap-12 mt-12">
@@ -146,12 +146,12 @@ const ServiceRevamp = () => {
                     isOdd ? "order-2 lg:pr-8" : "order-1 lg:pl-8"
                   }`}
                 >
-                  <h2 className="text-2xl font-bold text-slate-900">
+                  <h2 className="text-2xl font-dmSans font-bold text-slate-900">
                     {service.title}
                   </h2>
-                  <p className="text-slate-700">{service.description}</p>
+                  <p className="text-slate-700 font-quicksand font-[600]">{service.description}</p>
 
-                  <div className="group mt-6 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium shadow-sm">
+                  <div className="group mt-3 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium text-sm shadow-sm">
                     <span className="px-6 py-2 inline-block transition-all duration-300 group-hover:-translate-y-10 group-hover:opacity-0">
                       Learn more
                     </span>

@@ -13,6 +13,9 @@ const config = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
         grand: ["var(--font-grand-hotel)"],
+        rubik: ["var(--font-rubik)"],
+        dmSans: ["var(--font-dm-sans)"],
+        quicksand: ["var(--font-quicksand)"],
       },
       container: {
         center: true,

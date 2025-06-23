@@ -13,7 +13,6 @@ export default function Home() {
       <About />
       <ServiceRevamp />
       <Choose />
-
       <Sector />
       <Blogs />
       <HomeForm />

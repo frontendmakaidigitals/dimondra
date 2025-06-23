@@ -41,10 +41,10 @@ const About = () => {
           </motion.div>
         </div>
         <div className="Abouttrigger">
-          <h2 className="text-5xl leading-[3.4rem] aboutText font-[600] mt-3">
+          <h2 className="text-5xl tracking-tighter font-dmSans leading-[3.4rem] aboutText font-[500] mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
-          <p className="mt-5">
+          <p className="mt-5 font-quicksand font-[500]">
             At Dimondra, we do more than just outsourcing — we partner with
             businesses to build smarter, stronger, and more efficient
             operations. With a deep understanding of what organizations truly
@@ -73,10 +73,10 @@ const About = () => {
 
               {/* Right: Heading + Description */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-dmSans font-semibold text-gray-900">
                   Global Capability, Local Focus
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 font-quicksand font-[600]">
                   Serving clients across the UAE, GCC, and beyond with
                   region-specific insights
                 </p>
@@ -91,17 +91,17 @@ const About = () => {
 
               {/* Right: Heading + Description */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 font-dmSans">
                   Experienced Specialists
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 font-quicksand font-[600]">
                   A team of trusted experts bringing deep industry knowledge and
                   hands-on experience
                 </p>
               </div>
             </div>
           </div>
-          <button className="px-5 py-[.7rem] bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white rounded-xl mt-7">
+          <button className="px-4 py-[.6rem] text-sm font-quicksand font-[600] bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white rounded-xl mt-7">
             Partner With Us
           </button>
         </div>

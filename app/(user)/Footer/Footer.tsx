@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="text-dimondra-white bg-teal-950 py-16">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[.8fr_1.2fr] gap-16">
           <div>
             <Logo className="w-52 " />
             <div className="mt-8">
@@ -51,7 +51,36 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex lg:flex-row flex-col items-start gap-20">
-            {" "}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Most Visits</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/services" className="hover:underline">
+                    Hr Operations
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:underline">
+                    IT Support
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:underline">
+                    Digital Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:underline">
+                    Career Advisory
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:underline">
+                    Market Advisory
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
@@ -74,11 +103,11 @@ const Footer = () => {
             </div>
             <div className="md:col-span-1">
               <h4 className="text-lg font-semibold mb-4">Our Office</h4>
-              <div className="space-y-4">
-                <div>
+              <div >
+                <div className="space-y-3">
                   <div className="flex items-start gap-2">
                     <MapPin className="w-5 h-5 mt-1 " />
-                    <p>Office: 123 Sheikh Zayed Rd, Dubai, UAE</p>
+                    <p className="max-w-[250px]">Office: 123 Sheikh Zayed Rd, Dubai, UAE</p>
                   </div>
                   <div className="flex items-center gap-2 mt-2 ">
                     <Phone className="w-4 h-4" />

@@ -108,10 +108,10 @@ const Sector = () => {
       <div className="container  relative mx-auto px-4">
         <div className="max-w-2xl sectorTrigger">
           {" "}
-          <h1 className="text-5xl sectorText leading-[5.3rem] mt-1 text-center lg:text-start font-[600] text-dimondra-white">
+          <h1 className="text-5xl sectorText font-dmSans tracking-tighter leading-[4.5rem] mt-1 text-center lg:text-start font-[600] text-dimondra-white">
             Sectors
           </h1>
-          <p className="text-slate-50 sectorPara text-center lg:text-start">
+          <p className="text-slate-50 sectorPara text-center font-quicksand font-[600] lg:text-start">
             From technology to logistics, construction to finance, Dimondra
             delivers strategic recruitment and workforce solutions across a wide
             array of industries. We understand the unique demands of each sector
@@ -140,11 +140,13 @@ const Sector = () => {
               >
                 <div className="flex flex-col items-center">
                   <Icon className="w-16 h-16 text-teal-500 mb-4" />
-                  <h2 className="text-xl text-slate-50 font-semibold">
+                  <h2 className="text-xl text-slate-50 font-semibold font-dmSans tracking-tight">
                     {sector.title}
                   </h2>
                 </div>
-                <p className="text-slate-50 mt-3">{sector.description}</p>
+                <p className="text-slate-50 mt-3 font-quicksand font-[600]">
+                  {sector.description}
+                </p>
               </motion.div>
             );
           })}

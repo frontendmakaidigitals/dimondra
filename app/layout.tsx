@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { siteConfig } from "@/config/site";
-import { fontSans, grandHotel } from "@/config/fonts";
+import { fontSans, grandHotel, rubik, dmSans, quicksand } from "@/config/fonts";
 import { ToastProvider } from "@heroui/toast";
 
 export const metadata: Metadata = {
@@ -35,7 +35,10 @@ export default function RootLayout({
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
           fontSans.variable,
-          grandHotel.variable
+          grandHotel.variable,
+          rubik.variable,
+          dmSans.variable,
+          quicksand.variable
         )}
       >
         <ToastProvider />
