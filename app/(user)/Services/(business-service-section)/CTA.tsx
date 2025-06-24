@@ -28,7 +28,7 @@ const CTA = ({
               height="140%"
               filterUnits="objectBoundingBox"
               primitiveUnits="userSpaceOnUse"
-              color-interpolation-filters="linearRGB"
+              colorInterpolationFilters="linearRGB"
             >
               <feTurbulence
                 type="fractalNoise"
@@ -46,7 +46,7 @@ const CTA = ({
                 surfaceScale="15"
                 specularConstant="0.75"
                 specularExponent="20"
-                lighting-color="#9013fe"
+                lightingColor="#9013fe"
                 x="0%"
                 y="0%"
                 width="100%"
