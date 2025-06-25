@@ -473,7 +473,7 @@ const Page: React.FC = () => {
                 End of Employment in Saudi Arabia
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Every working relationship comes to an end, and it’s important
+                Every working relationship comes to an end, and it&nbsp;s important
                 to know what to expect when that time comes. Check out our guide
                 to learn what employers need to know before ending an employment
                 relationship in Saudi Arabia.

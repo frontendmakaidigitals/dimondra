@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
-import { Plus } from "lucide-react";
+import { Check, Circle, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
 const indiaOverview = [
@@ -39,7 +39,7 @@ const Page: React.FC = () => {
           </div>
           <img
             src={
-              "https://images.unsplash.com/photo-1732360489182-4ecc94d72b7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt={""}
             className="w-full rounded-lg h-[380px] shadow-orange-50/20 shadow-[0px_0px_15px_1px]"
@@ -100,10 +100,25 @@ const Page: React.FC = () => {
                   >
                     This amendment enhances protections for contract labourers,
                     including temporary agency workers. Key changes include:
-                    <ul>
-                      <li>Stronger wage protection</li>
-                      <li>Improved working conditions</li>
-                      <li>Faster and more effective dispute resolution</li>
+                    <ul className="mt-2">
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>{" "}
+                        Stronger wage protection
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>{" "}
+                        Improved working conditions
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Faster and more effective dispute resolution
+                      </li>
                     </ul>
                   </AccordionItem>
                   <AccordionItem
@@ -115,10 +130,25 @@ const Page: React.FC = () => {
                   >
                     This amendment enhances protections for contract labourers,
                     including temporary agency workers. Key changes include:
-                    <ul>
-                      <li>Stronger wage protection</li>
-                      <li>Improved working conditions</li>
-                      <li>Faster and more effective dispute resolution</li>
+                    <ul className="mt-2">
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Stronger wage protection
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Improved working conditions
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Faster and more effective dispute resolution
+                      </li>
                     </ul>
                   </AccordionItem>
                   <AccordionItem
@@ -131,10 +161,25 @@ const Page: React.FC = () => {
                     <div>
                       A new law focused on temporary and agency workers. It
                       mandates:
-                      <ul>
-                        <li>Compulsory health insurance</li>
-                        <li>Access to social security benefits</li>
-                        <li>Guaranteed minimum wages</li>
+                      <ul className="mt-2">
+                        <li className="flex  items-start gap-2">
+                          <span>
+                            <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                          </span>
+                          Compulsory health insurance
+                        </li>
+                        <li className="flex  items-start gap-2">
+                          <span>
+                            <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                          </span>
+                          Access to social security benefits
+                        </li>
+                        <li className="flex  items-start gap-2">
+                          <span>
+                            <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                          </span>
+                          Guaranteed minimum wages
+                        </li>
                       </ul>
                     </div>
                   </AccordionItem>
@@ -148,10 +193,16 @@ const Page: React.FC = () => {
                     <div>
                       This act strengthens job security across all worker
                       categories, especially temporary hires. It introduces:
-                      <ul>
-                        <li>Stricter layoff regulations</li>
-                        <li>Mandatory severance packages</li>
-                        <li>Legal remedies for wrongful termination</li>
+                      <ul className="mt-2">
+                        <li className="flex  items-start gap-2">
+                          Stricter layoff regulations
+                        </li>
+                        <li className="flex  items-start gap-2">
+                          Mandatory severance packages
+                        </li>
+                        <li className="flex  items-start gap-2">
+                          Legal remedies for wrongful termination
+                        </li>
                       </ul>
                     </div>
                   </AccordionItem>
@@ -166,10 +217,16 @@ const Page: React.FC = () => {
                   >
                     This legislation governs the employment of Indian nationals
                     abroad and foreign nationals in India. It provides:
-                    <ul>
-                      <li>Clearer visa processing</li>
-                      <li>Worker protections through bilateral agreements</li>
-                      <li>Structured support for cross-border employment</li>
+                    <ul className="mt-2">
+                      <li className="flex  items-start gap-2">
+                        Clearer visa processing
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        Worker protections through bilateral agreements
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        Structured support for cross-border employment
+                      </li>
                     </ul>
                   </AccordionItem>
                   <AccordionItem
@@ -183,10 +240,23 @@ const Page: React.FC = () => {
                   >
                     Designed to align India&nbsp;s labour laws with global best
                     practices, this act enforces:
-                    <ul>
-                      <li>Compliance with ILO guidelines</li>
-                      <li>Equal pay for equal work</li>
-                      <li>
+                    <ul className="mt-2">
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Compliance with ILO guidelines
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
+                        Equal pay for equal work
+                      </li>
+                      <li className="flex  items-start gap-2">
+                        <span>
+                          <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
+                        </span>
                         Non-discrimination and fair treatment for all workers,
                         including temporary and agency staff
                       </li>
@@ -197,7 +267,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[500px] object-cover place-items-start"
@@ -228,43 +298,13 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
-          <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
-              <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
-                Employer of Record in India
-              </h2>
-              <p className="font-quicksand font-[600] mt-3">
-                Expanding into India doesn't have to mean setting up a legal
-                entity, a process that can be expensive, time-consuming, and
-                complex. <br /> <br /> At Dimondra, we act as your Employer of
-                Record (EOR) in India, enabling you to legally and efficiently
-                hire employees without establishing a local company. We take
-                care of all compliance, payroll, HR administration, and local
-                labour law obligations — so you can focus on growing your
-                business. <br /> <br /> Hiring through an EoR gives you the
-                flexibility to build your team in India while we handle the
-                complexities behind the scenes.
-              </p>
 
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
-                Speak to our team
-              </button>
-            </div>
-            <img
-              src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
-              alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
-            />
-          </div>
           <Divider />
           <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2 lg:order-1">
@@ -280,11 +320,31 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 We cover key areas such as:
               </h2>
-              <ul>
-                <li>Contract terms and conditions</li>
-                <li>Fixed-term contracts and extensions</li>
-                <li>Remote work regulations</li>
-                <li>Working hours and overtime rules</li>
+              <ul className="mt-2">
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Contract terms and conditions
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Fixed-term contracts and extensions
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Remote work regulations
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Working hours and overtime rules
+                </li>
               </ul>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
@@ -292,15 +352,15 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1664463760781-f159dfe3af30?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[400px] object-cover order-1 lg:order-2 place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-1 lg:order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Payroll & Benefits in India
               </h2>
@@ -314,13 +374,26 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 Key areas include:
               </h2>
-              <ul>
-                <li>Minimum wage requirement</li>
-                <li>
+              <ul className="mt-2">
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Minimum wage requirement
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
                   Mandatory statutory benefits like Provident Fund and Employee
                   State Insurance
                 </li>
-                <li>Common allowances and bonuses expected by employees</li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Common allowances and bonuses expected by employees
+                </li>
               </ul>
               <p>
                 At Dimondra, we help you navigate payroll processing and
@@ -333,15 +406,15 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1676151863834-b9b162faa8ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
+              className="w-full h-[400px] order-2 lg:order-1 object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+            <div className="">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Leave and Time Off in India
               </h2>
@@ -354,11 +427,32 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 We cover key areas such as:
               </h2>
-              <ul>
-                <li>Statutory leave benefits</li>
-                <li>Maternity, paternity, and parental leave</li>
-                <li>Public holidays</li>
-                <li>Paid holidays and other leave types</li>
+              <ul className="mt-2">
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Statutory leave benefits
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Maternity, paternity, and parental leave
+                </li>
+                <li className="flex  items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Public holidays
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Paid holidays and other leave types
+                </li>
               </ul>
               <p>
                 At Dimondra, we help you manage leave policies effectively and
@@ -370,7 +464,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1499290731724-12e120cfaef3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px]  object-cover place-items-start"
@@ -391,12 +485,37 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 We cover key areas such as:
               </h2>
-              <ul>
-                <li>Whistleblower protections</li>
-                <li>Data privacy regulations</li>
-                <li>Equal treatment for temporary and agency workers</li>
-                <li>Anti-discrimination laws</li>
-                <li>Pay equity legislation</li>
+              <ul className="mt-2">
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Whistleblower protections
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Data privacy regulations
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Equal treatment for temporary and agency workers
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Anti-discrimination laws
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Pay equity legislation
+                </li>
               </ul>
               <p>
                 At Dimondra, we guide you through India&nbsp;s employee
@@ -409,15 +528,15 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
               }
               alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
+              className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+            <div className="">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 End of Employment in India
               </h2>
@@ -430,13 +549,31 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 We cover important topics including:
               </h2>
-              <ul>
-                <li>Notice periods</li>
-                <li>Termination rules and procedures</li>
-                <li>
+              <ul className="mt-2">
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Notice periods
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Termination rules and procedures
+                </li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
                   Post-termination restraints (such as non-compete clauses)
                 </li>
-                <li>Transfers of undertakings</li>
+                <li className="flex  items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Transfers of undertakings
+                </li>
               </ul>
               <p>
                 At Dimondra, we help you navigate India’s offboarding
@@ -448,10 +585,10 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
               }
               alt={""}
-              className="w-full h-[400px] order-2 lg:order-1 object-cover place-items-start"
+              className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
         </div>
