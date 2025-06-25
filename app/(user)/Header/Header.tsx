@@ -16,6 +16,7 @@ const Header = () => {
   const { scrollVal } = useScrollPosition();
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -30,6 +31,7 @@ const Header = () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
+  const [locationHovering, setLocationhovering] = useState(false);
   return (
     <motion.header
       className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
@@ -65,6 +67,99 @@ const Header = () => {
                 >
                   {item.label}
                 </Link>
+              ) : item.label === "Locations" ? (
+                <motion.div
+                  onMouseEnter={() => setLocationhovering(true)}
+                  onMouseLeave={() => setLocationhovering(false)}
+                >
+                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-slate-100">
+                    {item.label}{" "}
+                    <span className="inline-block ml-1 align-middle">
+                      {<ChevronDown className="size-[18px]" />}
+                    </span>
+                  </button>
+
+                  <AnimatePresence mode="wait">
+                    {locationHovering ? (
+                      <motion.div
+                        className={clsx(
+                          ` fixed h-screen  top-[50px] left-0 z-[999999999] w-screen pt-5`
+                        )}
+                      >
+                        <motion.div
+                          animate={{
+                            backdropFilter: locationHovering
+                              ? "blur(.9rem) "
+                              : "blur(0rem)",
+                            background: locationHovering
+                              ? "rgba(255, 255, 255, .4) "
+                              : "rgba(255, 255, 255) ",
+                          }}
+                          transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
+                          className="backdrop-filter h-full "
+                        >
+                          <div
+                            onMouseLeave={() => {
+                              setLocationhovering(false);
+                              setIsHovering(false);
+                            }}
+                          >
+                            {" "}
+                            <motion.div
+                              initial={{ height: "0" }}
+                              animate={{ height: "auto" }}
+                              exit={{ height: "0" }}
+                              transition={{
+                                duration: 0.3,
+                                ease: [0, 0, 0.19, 1],
+                              }}
+                              className={` w-full flex bg-[#EEF7FF] justify-center items-center`}
+                            >
+                              <div
+                                onMouseLeave={() => setLocationhovering(true)}
+                                className="w-full overflow-hidden  text-nowrap container h-full"
+                              >
+                                <div className="py-10 grid md:grid-cols-2 w-full lg:grid-cols-4 gap-8">
+                                  {item.locations?.map((location, id) => (
+                                    <Link
+                                      href={location.link}
+                                      className=" w-full group"
+                                      key={id}
+                                    >
+                                      <motion.div className=" w-full ">
+                                        <div className="w-full">
+                                          <div className="w-full h-[350px] overflow-hidden transition-transform duration-250 group-hover:scale-[1.07]">
+                                            <img
+                                              className="h-full w-full object-cover"
+                                              src={location.img}
+                                              alt={""}
+                                            />
+                                          </div>
+                                          <motion.h4
+                                            initial={{ y: -4, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -4, opacity: 0 }}
+                                            transition={{
+                                              duration: 0.15,
+                                              ease: [0, 0, 0.19, 1],
+                                            }}
+                                            className="text-xl font-[500] px-3 text-dimondra-black mt-3"
+                                          >
+                                            {location.label}
+                                          </motion.h4>
+                                        </div>
+                                      </motion.div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </motion.div>
               ) : (
                 <motion.div
                   onMouseEnter={() => setIsMenuShowing(true)}
@@ -137,7 +232,10 @@ const Header = () => {
                                         {service.submenu.map((child, index) => (
                                           <Link key={index} href={child.link}>
                                             <motion.li
-                                              initial={{ y: -5, opacity: 0 }}
+                                              initial={{
+                                                y: -5,
+                                                opacity: 0,
+                                              }}
                                               animate={{ y: 0, opacity: 1 }}
                                               exit={{ y: -5, opacity: 0 }}
                                               transition={{

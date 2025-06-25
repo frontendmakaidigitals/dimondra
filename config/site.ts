@@ -111,6 +111,23 @@ export const siteConfig = {
       href: "/blog",
     },
     {
+      label: "Locations",
+      locations: [
+        { label: " KSA", link: "/Locations/KSA", img: "/locations/ksa.jpg" },
+        { label: "UAE", link: "/Locations/UAE", img: "/locations/uae.jpg" },
+        {
+          label: " India",
+          link: "/Locations/India",
+          img: "/locations/red-fort.jpg",
+        },
+        {
+          label: " Egypt",
+          link: "/Locations/Egypt",
+          img: "/locations/egypt.jpg",
+        },
+      ],
+    },
+    {
       label: "Contact",
       href: "/Contact",
     },
