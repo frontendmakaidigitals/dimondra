@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
-import { Plus } from "lucide-react";
+import { Check, Circle, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
 const uaeOverview = [
@@ -49,7 +49,7 @@ const Page: React.FC = () => {
           </div>
           <img
             src={
-              "https://images.unsplash.com/photo-1732360489182-4ecc94d72b7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1640239699318-13d6d5230cc4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt={""}
             className="w-full rounded-lg h-[380px] shadow-orange-50/20 shadow-[0px_0px_15px_1px]"
@@ -79,7 +79,7 @@ const Page: React.FC = () => {
       <section>
         <div className="my-20  container">
           <h1 className="max-w-3xl mx-auto text-5xl font-dmSans font-[600] text-dimondra-black text-center">
-            Everything You Need to Know to Hire Compliantly in Saudi Arabia
+            Everything You Need to Know to Hire Compliantly in UAE
           </h1>
 
           <div className="grid grid-cols-2 gap-10 py-14">
@@ -169,7 +169,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[500px] object-cover place-items-start"
@@ -190,16 +190,16 @@ const Page: React.FC = () => {
                 handle contracts, payroll, and compliance, so you can focus on
                 scaling with confidence.
               </p>
-              <strong>
+              <h2 className="text-lg font-quicksand font-[600]">
                 Want to hire in the UAE without setting up a legal entity?
-              </strong>
+              </h2>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Talk to our team
               </button>
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px] object-cover place-items-start"
@@ -222,11 +222,35 @@ const Page: React.FC = () => {
                 At Dimondra, we help you structure clear, compliant contracts
                 that align with local laws and best practices, covering:
               </h2>
-              <ul>
-                <li>Defining roles, responsibilities, and contract terms</li>
-                <li>Managing fixed-term contracts and renewals</li>
-                <li>Complying with remote work regulations</li>
-                <li>Outlining working hours, rest days, and overtime rules</li>
+              <ul className="mt-2">
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Defining roles, responsibilities, and contract terms
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Managing fixed-term contracts and renewals
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Complying with remote work regulations
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Outlining working hours, rest days, and overtime rules
+                </li>
               </ul>
 
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
@@ -235,7 +259,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1664463760781-f159dfe3af30?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
@@ -266,7 +290,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1676151863834-b9b162faa8ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px] object-cover place-items-start"
@@ -295,7 +319,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1499290731724-12e120cfaef3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
@@ -318,12 +342,42 @@ const Page: React.FC = () => {
                 At Dimondra, we help you stay aligned with local employment
                 laws, including:
               </h2>
-              <ul>
-                <li>Safeguards for whistleblowers</li>
-                <li>Employee data protection regulations</li>
-                <li>Fair treatment for agency and temporary workers</li>
-                <li>Anti-discrimination standards in hiring and at work</li>
-                <li>Pay equity and fair compensation practices</li>
+              <ul className="mt-2">
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Safeguards for whistleblowers
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Employee data protection regulations
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Fair treatment for agency and temporary workers
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Anti-discrimination standards in hiring and at work
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Pay equity and fair compensation practices
+                </li>
               </ul>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Talk to our team
@@ -331,7 +385,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
               }
               alt={""}
               className="w-full h-[400px]  object-cover place-items-start"
@@ -353,13 +407,37 @@ const Page: React.FC = () => {
                 <br /> <br />
               </p>
               <h2 className="text-lg font-quicksand font-[600]">
-                Here&nbsp;s what we help you navigate:
+                Here's what we help you navigate:
               </h2>
-              <ul>
-                <li>Termination procedures and valid grounds</li>
-                <li>Required notice periods and final settlements</li>
-                <li>Non-compete clauses and post-exit restrictions</li>
-                <li>Legal steps in business transfers and restructuring</li>
+              <ul className="mt-2">
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Termination procedures and valid grounds
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Required notice periods and final settlements
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Non-compete clauses and post-exit restrictions
+                </li>
+                <li className="flex items-start gap-2">
+                  {" "}
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Legal steps in business transfers and restructuring
+                </li>
               </ul>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
@@ -367,7 +445,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
               }
               alt={""}
               className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"

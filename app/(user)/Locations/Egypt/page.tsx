@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
-import { Plus } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
 const egyptOverview = [
@@ -38,7 +38,7 @@ const Page: React.FC = () => {
           </div>
           <img
             src={
-              "https://images.unsplash.com/photo-1732360489182-4ecc94d72b7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt={""}
             className="w-full rounded-lg h-[380px] shadow-orange-50/20 shadow-[0px_0px_15px_1px]"
@@ -68,7 +68,7 @@ const Page: React.FC = () => {
       <section>
         <div className="my-20  container">
           <h1 className="max-w-3xl mx-auto text-5xl font-dmSans font-[600] text-dimondra-black text-center">
-            Everything You Need to Know to Hire Compliantly in Saudi Arabia
+            Everything You Need to Know to Hire Compliantly in Egypt
           </h1>
 
           <div className="grid grid-cols-2 gap-10 py-14">
@@ -78,11 +78,10 @@ const Page: React.FC = () => {
               </h2>
               <p className="font-quicksand font-[600] mt-3">
                 Employment law is always evolving, and staying compliant means
-                staying informed. At{" "}
-                <span className="text-blue-600 font-semibold">Dimondra</span>,
-                we continuously monitor legislative updates, so you don’t have
-                to. Here are the most notable changes shaping Egypt’s employment
-                landscape in 2025:
+                staying informed. At Dimondra, we continuously monitor
+                legislative updates, so you don&nbsp;t have to. Here are the
+                most notable changes shaping Egypt&nbsp;s employment landscape
+                in 2025:
               </p>
 
               <div className="mt-5">
@@ -164,7 +163,7 @@ const Page: React.FC = () => {
 
             <img
               src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
               className="w-full h-[500px] object-cover place-items-start"
@@ -177,20 +176,22 @@ const Page: React.FC = () => {
                 Employer of Record in Egypt
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Expanding your team in Egypt doesn’t have to mean opening a
-                local entity, a process that’s often costly and time-consuming.
-                Using an Employer of Record (EOR) lets you hire talent in Egypt
-                quickly and compliantly, without the need to establish a legal
-                presence. It’s a smart, efficient way to handle onboarding,
-                payroll, contracts, and local compliance, all while reducing
-                risk and saving resources.
+                Expanding your team in Egypt doesn&nbsp;t have to mean opening a
+                local entity, a process that&nbsp;s often costly and
+                time-consuming. Using an Employer of Record (EOR) lets you hire
+                talent in Egypt quickly and compliantly, without the need to
+                establish a legal presence. It&nbsp;s a smart, efficient way to
+                handle onboarding, payroll, contracts, and local compliance, all
+                while reducing risk and saving resources.
               </p>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1564849444446-f876dcef378e?q=80&w=2000"
+              src={
+                "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
               alt="EOR Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
@@ -207,15 +208,36 @@ const Page: React.FC = () => {
                 cultural standards, and getting them right is essential to
                 staying compliant and avoiding disputes. At Dimondra, we help
                 you navigate everything from contract structure to local
-                expectations. Whether you’re hiring on a fixed-term basis or
-                offering remote roles, we ensure your agreements meet Egyptian
-                labor laws.
+                expectations. Whether you&nbsp;re hiring on a fixed-term basis
+                or offering remote roles, we ensure your agreements meet
+                Egyptian labor laws.
               </p>
-              <ul className="list-disc ml-5 mt-3 text-gray-700 font-quicksand font-[600]">
-                <li>Setting clear and lawful contract terms</li>
-                <li>Managing fixed-term contracts and renewals</li>
-                <li>Understanding requirements for remote work arrangements</li>
-                <li>
+              <h2 className="text-lg font-[500] font-rubik mt-3">
+                We&nbsp;ll assist with:
+              </h2>
+              <ul className=" mt-1 text-gray-700 font-quicksand font-[600]">
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Setting clear and lawful contract terms
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Managing fixed-term contracts and renewals
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Understanding requirements for remote work arrangements
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
                   Defining working hours, overtime rules, and entitlements
                 </li>
               </ul>
@@ -224,7 +246,9 @@ const Page: React.FC = () => {
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=2000"
+              src={
+                "https://images.unsplash.com/photo-1664463760781-f159dfe3af30?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
               alt="Contracts Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
@@ -253,53 +277,14 @@ const Page: React.FC = () => {
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1605902711622-cfb43c4437f0?q=80&w=2000"
+              src={
+                "https://images.unsplash.com/photo-1676151863834-b9b162faa8ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
               alt="Payroll Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
 
-          <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
-                Leave & Time Off in Saudi Arabia
-              </h2>
-              <p className="font-quicksand font-[600] mt-3">
-                Understanding employee leave entitlements is key to staying
-                compliant and building a positive workplace culture. At
-                Dimondra, we help you manage statutory and optional leave with
-                ease.
-                <br /> <br />
-              </p>
-              <h2 className="text-lg font-quicksand font-[600]">
-                Key entitlements include:
-              </h2>
-              <ul>
-                <li>Annual leave: Minimum 21 days, increasing with service</li>
-                <li>
-                  Sick leave: Paid based on duration and medical documentation
-                </li>
-                <li>
-                  Maternity & paternity leave: Recently expanded under new laws
-                </li>
-                <li>
-                  Public holidays: Based on the Islamic calendar, they vary each
-                  year
-                </li>
-              </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
-                Connect with us
-              </button>
-            </div>
-            <img
-              src={
-                "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
-              alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
-            />
-          </div>
           <Divider />
           <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
             <div>
@@ -323,7 +308,9 @@ const Page: React.FC = () => {
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1611336529963-e407f66b7fa1?q=80&w=2000"
+              src={
+                "https://images.unsplash.com/photo-1499290731724-12e120cfaef3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              }
               alt="Leave Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
@@ -341,19 +328,49 @@ const Page: React.FC = () => {
                 regulations can put your business at serious risk, but staying
                 compliant helps you build trust and a stronger team.
               </p>
-              <ul className="list-disc ml-5 mt-3 text-gray-700 font-quicksand font-[600]">
-                <li>Whistleblower rights and protections</li>
-                <li>Employee data handling and privacy</li>
-                <li>Fair treatment of temporary and agency workers</li>
-                <li>Anti-discrimination rules in hiring and the workplace</li>
-                <li>Equal pay requirements across roles and genders</li>
+              <h2 className="text-lg font-rubik font-[500]">
+                Egyptian labor law includes clear standards around:
+              </h2>
+              <ul className=" mt-1 text-gray-700 font-quicksand font-[600]">
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Whistleblower rights and protections
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Employee data handling and privacy
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Fair treatment of temporary and agency workers
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Anti-discrimination rules in hiring and the workplace
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
+                  Equal pay requirements across roles and genders
+                </li>
               </ul>
               <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1605792657660-596af9009e7b?q=80&w=2000"
+              src={
+                "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
+              }
               alt="Protections Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
@@ -370,11 +387,33 @@ const Page: React.FC = () => {
                 you need to follow when it comes to terminations, notice
                 periods, and employee rights after leaving.
               </p>
-              <ul className="list-disc ml-5 mt-3 text-gray-700 font-quicksand font-[600]">
-                <li>Required notice periods</li>
-                <li>Lawful grounds and procedures for termination</li>
-                <li>Restrictions after employment ends (non-competes, etc.)</li>
-                <li>
+              <h2 className="font-rubik font-[500] text-lg">
+                At Dimondra, we help you manage exits smoothly and legally, with
+                guidance on:
+              </h2>
+              <ul className=" mt-1 text-gray-700 font-quicksand font-[600]">
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Required notice periods
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Lawful grounds and procedures for termination
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>{" "}
+                  Restrictions after employment ends (non-competes, etc.)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="">
+                    <Check className="size-[18px] stroke-green-600 mt-1" />
+                  </span>
                   Employee rights during business transfers or restructuring
                 </li>
               </ul>
@@ -383,15 +422,17 @@ const Page: React.FC = () => {
               </button>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=2000"
+              src={
+                "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
+              }
               alt="Termination Egypt"
               className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
         </div>
         <CTA
-          title="Let’s Simplify the Complex World of Work"
-          desc="Our solutions help you source, engage, manage, and pay workers anywhere in the world, without the hassle of compliance concerns."
+          title="Let’s Work Together to Simplify the Complex World of Work"
+          desc="Hiring globally doesn’t have to be complicated. With Dimondra, you can confidently source, engage, manage, and pay talent anywhere, without the stress of compliance and legal hurdles."
           button={"Get in touch with our team"}
         />
       </section>
