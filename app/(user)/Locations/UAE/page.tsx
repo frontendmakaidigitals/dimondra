@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
-import { Check, Circle, Plus } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
 const uaeOverview = [
@@ -34,7 +34,7 @@ const Page: React.FC = () => {
       <section className="relative bg-dimondra-black">
         <div className="container place-items-center pt-28 pb-20 gap-10 text-slate-50 grid grid-cols-1 lg:grid-cols-2 relative z-10">
           <div className="">
-            <h1 className="text-5xl font-[600] font-dmSans tracking-tight">
+            <h1 className="text-4xl lg:text-5xl font-[600] font-dmSans tracking-tight">
               Hire & Manage Talent in the UAE
             </h1>
             <p className="mt-5 font-quicksand font-[600]">
@@ -52,14 +52,14 @@ const Page: React.FC = () => {
               "https://images.unsplash.com/photo-1640239699318-13d6d5230cc4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt={""}
-            className="w-full rounded-lg h-[380px] shadow-orange-50/20 shadow-[0px_0px_15px_1px]"
+            className="w-full rounded-lg h-[300px] lg:h-[380px] shadow-orange-50/20 shadow-[0px_0px_15px_1px]"
           />
         </div>
       </section>
 
       <section className="my-20">
         <div className="container">
-          <h1 className="text-center font-[600] text-5xl font-dmSans tracking-tight">
+          <h1 className="text-center font-[600] text-4xl lg:text-5xl font-dmSans tracking-tight">
             United Arab Emirates at a Glance
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
@@ -78,12 +78,12 @@ const Page: React.FC = () => {
       </section>
       <section>
         <div className="my-20  container">
-          <h1 className="max-w-3xl mx-auto text-5xl font-dmSans font-[600] text-dimondra-black text-center">
+          <h1 className="max-w-3xl mx-auto text-4xl lg:text-5xl font-dmSans font-[600] text-dimondra-black text-center">
             Everything You Need to Know to Hire Compliantly in UAE
           </h1>
 
-          <div className="grid grid-cols-2 gap-10 py-14">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14">
+            <div className="order-1 lg:order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Recent Developments in the United Arab Emirates
               </h2>
@@ -176,7 +176,7 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employer of Record in the United Arab Emirates
@@ -206,8 +206,8 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employment Contracts in the United Arab Emirates
               </h2>
@@ -266,7 +266,7 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Payroll & Benefits in the United Arab Emirates
@@ -297,7 +297,7 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Leave and Time Off in the United Arab Emirates
@@ -326,7 +326,7 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-1 lg:order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employee Protections in the United Arab Emirates
@@ -392,7 +392,7 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-1 lg:order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 End of Employment in the United Arab Emirates
@@ -448,7 +448,7 @@ const Page: React.FC = () => {
                 "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
               }
               alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
+              className="w-full h-[400px] object-cover place-items-start"
             />
           </div>
         </div>
