@@ -35,9 +35,9 @@ const Page: React.FC = () => {
             </h1>
             <p className="mt-5 font-quicksand font-[600]">
               Hiring internationally can be complex, but with Dimondra, it
-              doesn&nbsp;t have to be. We simplify the process of sourcing,
+              doesn&apos;t have to be. We simplify the process of sourcing,
               engaging, managing, and paying workers in Saudi Arabia with full
-              compliance and efficiency. <br /> <br /> Whether you&nbsp;re
+              compliance and efficiency. <br /> <br /> Whether you&apos;re
               hiring a single remote employee or building a full team, our
               end-to-end workforce solutions help you expand confidently across
               Saudi Arabia and the GCC.
@@ -109,7 +109,7 @@ const Page: React.FC = () => {
                     Employers are now required to issue written, fixed-term
                     contracts for all non-Saudi nationals. If no specific
                     duration is mentioned, the contract will automatically be
-                    considered valid for one year from the employee&nbsp;s start
+                    considered valid for one year from the employee&apos;s start
                     date. If employment continues beyond that period, the
                     contract renews for the same duration by default.
                   </AccordionItem>
@@ -145,14 +145,14 @@ const Page: React.FC = () => {
                           <span>
                             <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
                           </span>{" "}
-                          Employees must give at least 30 days&nbsp; notice
+                          Employees must give at least 30 days&apos; notice
                           before resigning from indefinite contracts.
                         </li>
                         <li className="flex  items-start gap-2">
                           <span>
                             <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
                           </span>{" "}
-                          Employers are now required to give 60 days&nbsp;
+                          Employers are now required to give 60 days&apos;
                           notice before terminating such contracts, allowing
                           more time for transition planning on both sides.
                         </li>
@@ -187,14 +187,14 @@ const Page: React.FC = () => {
                           </span>{" "}
                           Paternity Leave has been officially introduced,
                           granting fathers three days of paid leave within the
-                          first week of their child&nbsp;s birth.
+                          first week of their child&apos;s birth.
                         </li>
                         <li className="flex  items-start gap-2">
                           <span>
                             <Circle className="fill-dimondra-black size-[12px] mt-[5px]" />
                           </span>{" "}
                           Bereavement Leave now includes three days of paid
-                          leave in the event of a sibling&nbsp;s passing.
+                          leave in the event of a sibling&apos;s passing.
                         </li>
                       </ul>
                     </div>
@@ -238,7 +238,7 @@ const Page: React.FC = () => {
                 compliance, contracts, payroll, and statutory obligations so you
                 can focus entirely on growing your operations and building your
                 team, without the stress of setting up a legal presence in the
-                Kingdom. Whether you&nbsp;re hiring one employee or building an
+                Kingdom. Whether you&apos;re hiring one employee or building an
                 entire team, Dimondra enables fast, compliant, and seamless
                 onboarding in Saudi Arabia.
               </p>
@@ -261,7 +261,7 @@ const Page: React.FC = () => {
                 Employment Contracts in Saudi Arabia{" "}
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                To hire talent in Saudi Arabia, it&nbsp;s essential that your
+                To hire talent in Saudi Arabia, it&apos;s essential that your
                 employment contracts follow local labor laws and meet legal
                 standards. At Dimondra, we ensure every agreement you issue is
                 compliant, clearly structured, and fully enforceable under Saudi
@@ -321,7 +321,7 @@ const Page: React.FC = () => {
                 <br /> <br />
               </p>
               <h2 className="text-lg font-quicksand font-[600]">
-                We&nbsp;ll help you navigate
+                We&apos;ll help you navigate
               </h2>
               <ul className="mt-2">
                 <li className="flex  items-start gap-2">
@@ -420,7 +420,7 @@ const Page: React.FC = () => {
               </h2>
               <p className="font-quicksand font-[600] mt-3">
                 Saudi labor laws provide a strong framework to safeguard
-                employees&nbsp; rights. At Dimondra, we ensure your employment
+                employees&apos; rights. At Dimondra, we ensure your employment
                 practices respect these protections while supporting your
                 business goals.
                 <br /> <br />
@@ -473,14 +473,14 @@ const Page: React.FC = () => {
                 End of Employment in Saudi Arabia
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Every working relationship comes to an end, and it&nbsp;s important
+                Every working relationship comes to an end, and it&apos;s important
                 to know what to expect when that time comes. Check out our guide
                 to learn what employers need to know before ending an employment
                 relationship in Saudi Arabia.
                 <br /> <br />
               </p>
               <h2 className="text-lg font-quicksand font-[600]">
-                We&nbsp;ll talk about
+                We&apos;ll talk about
               </h2>
               <ul className="mt-2">
                 <li className="flex  items-start gap-2">

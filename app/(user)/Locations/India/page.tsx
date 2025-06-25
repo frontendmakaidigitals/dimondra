@@ -26,7 +26,7 @@ const Page: React.FC = () => {
               Hiring in India
             </h1>
             <p className="mt-5 font-quicksand font-[600]">
-              Hiring internationally can be complex, but it doesn&nbsp;t have to
+              Hiring internationally can be complex, but it doesn&apos;t have to
               be. Dimondra makes it easy to compliantly source, engage, manage,
               and pay workers in India — without the need to set up a local
               entity. <br /> <br /> Our solutions ensure full compliance with
@@ -78,7 +78,7 @@ const Page: React.FC = () => {
                 Recent Developments in India
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                We understand the challenges of keeping up with India&nbsp;s
+                We understand the challenges of keeping up with India&apos;s
                 evolving labour laws and compliance requirements. At Dimondra,
                 we actively track regulatory changes so you can stay focused on
                 growing your workforce, without compliance concerns.
@@ -238,7 +238,7 @@ const Page: React.FC = () => {
                     indicator={<Plus />}
                     className=" text-black  [&_.accordion-item]:text-black"
                   >
-                    Designed to align India&nbsp;s labour laws with global best
+                    Designed to align India&apos;s labour laws with global best
                     practices, this act enforces:
                     <ul className="mt-2">
                       <li className="flex  items-start gap-2">
@@ -288,7 +288,7 @@ const Page: React.FC = () => {
                 compliance, contracts, payroll, and statutory obligations so you
                 can focus entirely on growing your operations and building your
                 team, without the stress of setting up a legal presence in the
-                Kingdom. Whether you&nbsp;re hiring one employee or building an
+                Kingdom. Whether you&apos;re hiring one employee or building an
                 entire team, Dimondra enables fast, compliant, and seamless
                 onboarding in Saudi Arabia.
               </p>
@@ -419,7 +419,7 @@ const Page: React.FC = () => {
                 Leave and Time Off in India
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Understanding your employees&nbsp; leave entitlements is
+                Understanding your employees&apos; leave entitlements is
                 essential to ensure compliance and avoid legal risks. In India,
                 several types of paid time off are protected by law and custom.
                 <br /> <br />
@@ -518,7 +518,7 @@ const Page: React.FC = () => {
                 </li>
               </ul>
               <p>
-                At Dimondra, we guide you through India&nbsp;s employee
+                At Dimondra, we guide you through India&apos;s employee
                 protection laws to reduce risk and promote a positive work
                 environment.
               </p>

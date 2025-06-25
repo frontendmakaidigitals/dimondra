@@ -27,7 +27,7 @@ const Page: React.FC = () => {
             </h1>
             <p className="mt-5 font-quicksand font-[600]">
               Hiring internationally can be complex, but with Dimondra,
-              it&nbsp;s simple. We help you compliantly source, onboard, manage,
+              it&apos;s simple. We help you compliantly source, onboard, manage,
               and pay talent in Egypt with zero hassle. From contracts and
               compliance to local insights and payroll, we handle it all so your
               business can grow faster and smarter.
@@ -79,8 +79,8 @@ const Page: React.FC = () => {
               <p className="font-quicksand font-[600] mt-3">
                 Employment law is always evolving, and staying compliant means
                 staying informed. At Dimondra, we continuously monitor
-                legislative updates, so you don&nbsp;t have to. Here are the
-                most notable changes shaping Egypt&nbsp;s employment landscape
+                legislative updates, so you don&apos;t have to. Here are the
+                most notable changes shaping Egypt&apos;s employment landscape
                 in 2025:
               </p>
 
@@ -138,7 +138,7 @@ const Page: React.FC = () => {
                   >
                     Under the proposed changes, employees on indefinite
                     contracts may be entitled to{" "}
-                    <strong>two months' salary per year of service</strong> if
+                    <strong>two months&apos; salary per year of service</strong> if
                     dismissed without just cause. This aims to offer stronger
                     job protection and align with international standards.
                   </AccordionItem>
@@ -176,11 +176,11 @@ const Page: React.FC = () => {
                 Employer of Record in Egypt
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Expanding your team in Egypt doesn&nbsp;t have to mean opening a
-                local entity, a process that&nbsp;s often costly and
+                Expanding your team in Egypt doesn&apos;t have to mean opening a
+                local entity, a process that&apos;s often costly and
                 time-consuming. Using an Employer of Record (EOR) lets you hire
                 talent in Egypt quickly and compliantly, without the need to
-                establish a legal presence. It&nbsp;s a smart, efficient way to
+                establish a legal presence. It&apos;s a smart, efficient way to
                 handle onboarding, payroll, contracts, and local compliance, all
                 while reducing risk and saving resources.
               </p>
@@ -208,12 +208,12 @@ const Page: React.FC = () => {
                 cultural standards, and getting them right is essential to
                 staying compliant and avoiding disputes. At Dimondra, we help
                 you navigate everything from contract structure to local
-                expectations. Whether you&nbsp;re hiring on a fixed-term basis
+                expectations. Whether you&apos;re hiring on a fixed-term basis
                 or offering remote roles, we ensure your agreements meet
                 Egyptian labor laws.
               </p>
               <h2 className="text-lg font-[500] font-rubik mt-3">
-                We&nbsp;ll assist with:
+                We&apos;ll assist with:
               </h2>
               <ul className=" mt-1 text-gray-700 font-quicksand font-[600]">
                 <li className="flex items-start gap-2">
@@ -262,9 +262,9 @@ const Page: React.FC = () => {
               </h2>
               <p className="font-quicksand font-[600] mt-3">
                 Managing employee compensation in Egypt means more than just
-                meeting legal requirements—it's about understanding the full
+                meeting legal requirements—it&apos;s about understanding the full
                 picture. From minimum wage and mandatory benefits to local
-                customs around pay and bonuses, there’s a lot to consider to
+                customs around pay and bonuses, there&apos;s a lot to consider to
                 keep your workforce satisfied and your business compliant.
               </p>
               <p className="font-quicksand font-[600] mt-3">

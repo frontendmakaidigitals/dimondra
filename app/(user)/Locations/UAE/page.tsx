@@ -148,7 +148,7 @@ const Page: React.FC = () => {
                     The UAE has intensified oversight of its Wage Protection
                     System (WPS) to ensure salaries are paid on time.
                     Non-compliant companies risk license suspensions and
-                    penalties, underlining the country's continued focus on
+                    penalties, underlining the country&apos;s continued focus on
                     labor rights.
                   </AccordionItem>
 
@@ -182,7 +182,7 @@ const Page: React.FC = () => {
                 Employer of Record in the United Arab Emirates
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Building your team in the UAE doesn&nbsp;t have to involve
+                Building your team in the UAE doesn&apos;t have to involve
                 setting up a local entity. That route can be costly, complex,
                 and slow your business down. <br /> <br /> With Dimondra as your
                 Employer of Record (EoR), you can quickly and compliantly hire
@@ -276,7 +276,7 @@ const Page: React.FC = () => {
                 compliance — it demands an understanding of both local laws and
                 workplace expectations. From payroll timelines and
                 end-of-service benefits to health coverage and bonus norms,
-                knowing what&nbsp;s expected can make all the difference in
+                knowing what&apos;s expected can make all the difference in
                 attracting and retaining top talent. <br /> <br /> At Dimondra,
                 we help you manage payroll accurately and deliver competitive
                 benefits that meet both legal obligations and employee
@@ -334,7 +334,7 @@ const Page: React.FC = () => {
               <p className="font-quicksand font-[600] mt-3">
                 Employers in the UAE are expected to uphold a growing set of
                 legal protections for their workforce. Understanding these rules
-                isn&nbsp;t optional — it&nbsp;s essential to staying compliant
+                isn&apos;t optional — it&apos;s essential to staying compliant
                 and building a responsible, inclusive workplace.
                 <br /> <br />
               </p>
@@ -407,7 +407,7 @@ const Page: React.FC = () => {
                 <br /> <br />
               </p>
               <h2 className="text-lg font-quicksand font-[600]">
-                Here's what we help you navigate:
+                Here&apos;s what we help you navigate:
               </h2>
               <ul className="mt-2">
                 <li className="flex items-start gap-2">
