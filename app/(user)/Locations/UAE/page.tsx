@@ -83,7 +83,7 @@ const Page: React.FC = () => {
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14">
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Recent Developments in the United Arab Emirates
               </h2>
@@ -172,12 +172,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[500px] object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[500px] order-1 lg:order-2 object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employer of Record in the United Arab Emirates
               </h2>
@@ -202,12 +202,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1 object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-1 lg:order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employment Contracts in the United Arab Emirates
               </h2>
@@ -262,12 +262,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1664463760781-f159dfe3af30?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1 lg:order-2 object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 ">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Payroll & Benefits in the United Arab Emirates
               </h2>
@@ -293,7 +293,7 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1676151863834-b9b162faa8ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1 object-cover place-items-start"
             />
           </div>
           <Divider />
@@ -322,12 +322,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1499290731724-12e120cfaef3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] order-1 lg:order-2 object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1 lg:order-2 object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+            <div className="order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employee Protections in the United Arab Emirates
               </h2>
@@ -388,12 +388,12 @@ const Page: React.FC = () => {
                 "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
               }
               alt={""}
-              className="w-full h-[400px]  object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1  object-cover place-items-start"
             />
           </div>
           <Divider />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 End of Employment in the United Arab Emirates
               </h2>
@@ -448,7 +448,7 @@ const Page: React.FC = () => {
                 "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[330px] lg:h-[400px] order-1 lg:order-2 object-cover place-items-start"
             />
           </div>
         </div>

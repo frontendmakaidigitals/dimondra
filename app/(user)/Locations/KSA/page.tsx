@@ -30,7 +30,7 @@ const Page: React.FC = () => {
       <section className="relative bg-dimondra-black">
         <div className="container place-items-center pt-28 pb-20 gap-10 text-slate-50 grid grid-cols-1 lg:grid-cols-2 relative z-10">
           <div className="">
-            <h1 className="text-5xl font-[600] font-dmSans tracking-tight">
+            <h1 className="text-4xl lg:text-5xl font-[600] font-dmSans tracking-tight">
               Hiring in Saudi Arabia
             </h1>
             <p className="mt-5 font-quicksand font-[600]">
@@ -58,7 +58,7 @@ const Page: React.FC = () => {
 
       <section className="my-20">
         <div className="container">
-          <h1 className="text-center font-[600] text-5xl font-dmSans tracking-tight">
+          <h1 className="text-center font-[600] text-4xl lg:text-5xl font-dmSans tracking-tight">
             Overview
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
@@ -77,12 +77,12 @@ const Page: React.FC = () => {
       </section>
       <section>
         <div className="my-20  container">
-          <h1 className="max-w-3xl mx-auto text-5xl font-dmSans font-[600] text-dimondra-black text-center">
+          <h1 className="max-w-3xl mx-auto text-4xl lg:text-5xl font-dmSans font-[600] text-dimondra-black text-center">
             Everything You Need to Know to Hire Compliantly in Saudi Arabia
           </h1>
 
-          <div className="grid grid-cols-2 gap-10 py-14">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Recent Changes to Employment Law in Saudi Arabia (2025)
               </h2>
@@ -220,12 +220,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[500px] object-cover place-items-start"
+              className="w-full h-[500px] order-1 lg:order-2 object-cover place-items-start"
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 ">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employer of Record (EOR) Services in Saudi Arabia
               </h2>
@@ -251,12 +251,12 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[400px] order-1 object-cover place-items-start"
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employment Contracts in Saudi Arabia{" "}
               </h2>
@@ -307,8 +307,8 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 ">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Payroll & Benefits in Saudi Arabia
               </h2>
@@ -354,11 +354,11 @@ const Page: React.FC = () => {
                 "https://images.unsplash.com/photo-1676151863834-b9b162faa8ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
               alt={""}
-              className="w-full h-[400px] object-cover place-items-start"
+              className="w-full h-[400px] order-1  object-cover place-items-start"
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Leave & Time Off in Saudi Arabia
@@ -413,8 +413,8 @@ const Page: React.FC = () => {
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 ">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 Employee Protections in Saudi Arabia
               </h2>
@@ -463,20 +463,20 @@ const Page: React.FC = () => {
                 "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
               }
               alt={""}
-              className="w-full h-[400px]  object-cover place-items-start"
+              className="w-full h-[400px] order-1 object-cover place-items-start"
             />
           </div>
           <Divider />
-          <div className="grid grid-cols-2 gap-10 py-14 place-items-center">
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
+            <div className="order-2 lg:order-1">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
                 End of Employment in Saudi Arabia
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Every working relationship comes to an end, and it&apos;s important
-                to know what to expect when that time comes. Check out our guide
-                to learn what employers need to know before ending an employment
-                relationship in Saudi Arabia.
+                Every working relationship comes to an end, and it&apos;s
+                important to know what to expect when that time comes. Check out
+                our guide to learn what employers need to know before ending an
+                employment relationship in Saudi Arabia.
                 <br /> <br />
               </p>
               <h2 className="text-lg font-quicksand font-[600]">
