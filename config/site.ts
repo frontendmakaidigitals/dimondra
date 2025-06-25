@@ -25,6 +25,14 @@ type NavItem =
           link: string;
         }[];
       }[];
+    }
+  | {
+      label: string;
+      locations: {
+        label: string;
+        img: string;
+        link: string;
+      }[];
     };
 
 export const siteConfig = {
@@ -126,10 +134,6 @@ export const siteConfig = {
           img: "/locations/egypt.jpg",
         },
       ],
-    },
-    {
-      label: "Contact",
-      href: "/Contact",
     },
   ],
   links: {
