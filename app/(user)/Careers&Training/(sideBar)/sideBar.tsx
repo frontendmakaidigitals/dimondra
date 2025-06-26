@@ -22,15 +22,16 @@ const sideBar = () => {
         <ul className="space-y-1 mt-5 w-full">
           {links.map((link, idx) => (
             <React.Fragment key={idx}>
-              <li
-                className={`p-2  rounded-lg w-full ${path == link.link ? "bg-dimondra-tealDark text-slate-50" : " hover:bg-dimondra-teal/40"}`}
-              >
-                <Link href={link.link} className="w-full">
-                  {link.title}
+              <li>
+                <Link href={link.link} className="!w-full !h-full">
+                  <button
+                    className={`p-2  text-start rounded-lg w-full ${path == link.link ? "bg-dimondra-tealDark text-slate-50" : " hover:bg-dimondra-teal/40"}`}
+                  >
+                    {link.title}
+                  </button>
                 </Link>
               </li>
 
-              {/* Conditionally render <hr> after a specific link */}
               {link.title === "GPHRi™" && (
                 <hr className="my-4 border-dimondra-tealDark" />
               )}
