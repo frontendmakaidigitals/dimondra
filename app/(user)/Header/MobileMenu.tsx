@@ -111,7 +111,9 @@ const Menu = ({ setShowMenu, menu }: { setShowMenu: any; menu: NavItem[] }) => {
               <Link
                 key={index}
                 href={menu.href}
-                ref={(el) => el && (itemsRef.current[index] = el)}
+                ref={(el) => {
+                  if (el) itemsRef.current[index] = el;
+                }}
                 className="text-lg font-semibold p-2 w-full text-left"
                 onClick={() => setTimeout(() => setShowMenu(false), 500)}
               >
@@ -122,7 +124,9 @@ const Menu = ({ setShowMenu, menu }: { setShowMenu: any; menu: NavItem[] }) => {
             return (
               <div
                 key={index}
-                ref={(el) => el && (itemsRef.current[index] = el)}
+                ref={(el) => {
+                  if (el) itemsRef.current[index] = el;
+                }}
               >
                 <AccordionMenu menu={menu} setShowMenu={setShowMenu} />
               </div>
@@ -131,7 +135,9 @@ const Menu = ({ setShowMenu, menu }: { setShowMenu: any; menu: NavItem[] }) => {
             return (
               <div
                 key={index}
-                ref={(el) => el && (itemsRef.current[index] = el)}
+                ref={(el) => {
+                  if (el) itemsRef.current[index] = el;
+                }}
               >
                 <AccordionLocations menu={menu} setShowMenu={setShowMenu} />
               </div>

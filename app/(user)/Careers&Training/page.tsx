@@ -1,0 +1,186 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import BgLayer from "../app_chunks/BgLayer";
+import { motion, useScroll, useTransform } from "motion/react";
+import Link from "next/link";
+import HomeForm from "../(homepage)/HomeForm";
+const Page = () => {
+  const [sectionTop, setSectionTop] = useState(0);
+  const sectionRef = React.useRef<HTMLElement>(null);
+  const certifications = [
+    {
+      title: "aPHRi",
+      fullForm: "Associate Professional in Human Resources - International™",
+      description:
+        "Perfect for newcomers to the HR profession, this is the first global certification specifically created for early-career HR professionals.",
+    },
+    {
+      title: "PHRi",
+      fullForm: "Professional in Human Resources - International™",
+      description:
+        "This certification affirms your grasp of core HR technical and operational practices, designed independently of any specific country’s laws or policies.",
+    },
+    {
+      title: "SPHRi",
+      fullForm: "Senior Professional in Human Resources - International™",
+      description:
+        "Aimed at seasoned professionals, this certification showcases your strategic and policy-level HR competencies, applicable across global markets.",
+    },
+    {
+      title: "GPHR",
+      fullForm: "Global Professional in Human Resources®",
+      description:
+        "This advanced credential verifies your expertise in global HR operations, including cross-border HR strategy, mobility, and compliance.",
+    },
+  ];
+
+  const { scrollY } = useScroll();
+  const yTransform = useTransform(
+    scrollY,
+    [sectionTop, sectionTop + 400],
+    [0, 100]
+  );
+
+  useEffect(() => {
+    const top = sectionRef.current?.offsetTop || 0;
+    setSectionTop(top);
+  }, []);
+
+  return (
+    <main>
+      <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
+        {/* Parallax Background */}
+        <motion.img
+          style={{ y: yTransform }}
+          src="https://images.unsplash.com/photo-1698047681452-08eba22d0c64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="w-full h-full object-cover object-top absolute inset-0 z-0"
+        />
+
+        <BgLayer />
+
+        {/* Foreground Text Content */}
+        <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
+          <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
+            Advance Your HR Career with Industry-Leading Certifications
+          </h1>
+          <p className="text-slate-50 mt-3 max-w-2xl">
+            Gain the skills, credentials, and confidence to excel in
+            today&apos;s dynamic HR landscape. Whether you&apos;re starting out
+            or looking to move up, Dimondra offers comprehensive HR
+            certification programs according to your goals.
+          </p>
+          <ul className="flex text-slate-50 mt-3 justify-start gap-2">
+            <li>Flexible courses |</li>
+            <li>Expert trainers |</li>
+            <li>Globally recognized credential</li>
+          </ul>
+          <div className="flex justify-start">
+            <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
+              Get certified today
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14">
+        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
+          <aside className="bg-white sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
+            <nav className="text-gray-800 text-sm">
+              <h2 className="font-bold text-dimondra-tealDark mb-2">
+                About HRCI Certifications
+              </h2>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#overview">Overview</Link>
+                </li>
+                <li>
+                  <Link href="#apHri">aPHRi™</Link>
+                </li>
+                <li>
+                  <Link href="#phri">PHRi™</Link>
+                </li>
+                <li>
+                  <Link href="#sphri">SPHRi™</Link>
+                </li>
+                <li>
+                  <Link href="#gphr">GPHR®</Link>
+                </li>
+              </ul>
+              <hr className="my-4 border-dimondra-tealDark" />
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#benefits">Certification Benefits</Link>
+                </li>
+                <li>
+                  <Link href="#preparation">HRCI Preparation Courses</Link>
+                </li>
+                <li>
+                  <Link href="#recertification">About Recertification</Link>
+                </li>
+                <li>
+                  <Link href="#faqs">FAQs</Link>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <div>
+            <h1 className="text-4xl font-dmSans text-dimondra-black font-[600]">
+              Overview
+            </h1>
+            <p className="font-quicksand font-500] mt-4">
+              If earning certifications like ACCA or CPA is the pathway to
+              becoming a global expert in Finance and Auditing, then HRCI
+              credentials are your passport to becoming a world-class HR
+              professional!
+              <br /> <br /> Recognized as the most trusted HR certification
+              authority globally,{" "}
+              <strong>HRCI (HR Certification Institute)</strong> has been
+              leading the industry for over four decades. With a portfolio of
+              well-established certifications, including four internationally
+              respected credentials, HRCI equips professionals at every stage of
+              their HR career with qualifications that truly stand out.
+              <br />
+              <br /> In partnership with <strong>VHRS</strong>, HRCI&apos;s
+              exclusive representative in Vietnam, we offer the following four
+              international certifications tailored to different levels of HR
+              experience:
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mt-12">
+              {certifications.map((certification, idx) => (
+                <div key={idx} className="">
+                  <div>
+                    <div className="relative w-48 h-48 rounded-full bg-teal-500 bg-gradient-to-br from-teal-500 to-teal-700 shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-center group">
+                      {/* Inner ring with dots */}
+                      <div className="absolute inset-4 rounded-full border-[3px] border-dotted border-slate-400 opacity-80 animate-spin-slow group-hover:animate-none" />
+
+                      {/* Frosted overlay */}
+                      <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-sm pointer-events-none" />
+
+                      {/* Central text */}
+                      <span className="z-10 text-white text-[1.75rem] md:text-3xl font-bold tracking-wider drop-shadow-md text-center">
+                        {certification.title}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-[500] font-dmSans mt-5">
+                      {certification.title} ({certification.fullForm})
+                    </h2>
+                    <p className="mt-3">{certification.description}</p>
+                  </div>
+                  <button className="mt-4 px-4 py-[.4rem] rounded-md bg-dimondra-black text-dimondra-white">
+                    Learn more
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <HomeForm />
+    </main>
+  );
+};
+
+export default Page;

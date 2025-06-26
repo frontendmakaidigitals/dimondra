@@ -38,10 +38,10 @@ const Header = () => {
       transition={{ ease: [0, 0, 1, 1], duration: 0.3 }}
       animate={{
         backgroundColor:
-          scrollVal > 200 || isHovering ? "#EEF7FF" : "rgba(0, 0, 0, 0)",
-        color: scrollVal > 200 || isHovering ? "#000000" : "#ffffff",
+          scrollVal > 10 || isHovering ? "#EEF7FF" : "rgba(0, 0, 0, 0)",
+        color: scrollVal > 10 || isHovering ? "#000000" : "#ffffff",
         boxShadow:
-          scrollVal > 200 || isHovering
+          scrollVal > 10 || isHovering
             ? "0 4px 12px rgba(0, 0, 0, 0.1)"
             : "0 0 0 rgba(0,0,0,0)",
       }}

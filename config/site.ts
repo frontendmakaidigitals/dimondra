@@ -96,11 +96,10 @@ export const siteConfig = {
           label: "Career & Training",
           submenu: [
             {
-              label: "HR Certifications",
+              label: "HR Certifications (aPHRi, PHRi...)",
               link: "/",
             },
             { label: "Career Advisory ", link: "/" },
-            { label: "Career Profile Development", link: "/" },
           ],
         },
         {
