@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import BgLayer from "../app_chunks/BgLayer";
 import { motion, useScroll, useTransform } from "motion/react";
-import Link from "next/link";
+import SideBar from "./(sideBar)/sideBar";
 import HomeForm from "../(homepage)/HomeForm";
 const Page = () => {
   const [sectionTop, setSectionTop] = useState(0);
@@ -85,45 +85,7 @@ const Page = () => {
 
       <section className="py-14">
         <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
-          <aside className="bg-white sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
-            <nav className="text-gray-800 text-sm">
-              <h2 className="font-bold text-dimondra-tealDark mb-2">
-                About HRCI Certifications
-              </h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#overview">Overview</Link>
-                </li>
-                <li>
-                  <Link href="#apHri">aPHRi™</Link>
-                </li>
-                <li>
-                  <Link href="#phri">PHRi™</Link>
-                </li>
-                <li>
-                  <Link href="#sphri">SPHRi™</Link>
-                </li>
-                <li>
-                  <Link href="#gphr">GPHR®</Link>
-                </li>
-              </ul>
-              <hr className="my-4 border-dimondra-tealDark" />
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#benefits">Certification Benefits</Link>
-                </li>
-                <li>
-                  <Link href="#preparation">HRCI Preparation Courses</Link>
-                </li>
-                <li>
-                  <Link href="#recertification">About Recertification</Link>
-                </li>
-                <li>
-                  <Link href="#faqs">FAQs</Link>
-                </li>
-              </ul>
-            </nav>
-          </aside>
+          <SideBar />
           <div>
             <h1 className="text-4xl font-dmSans text-dimondra-black font-[600]">
               Overview
