@@ -7,13 +7,11 @@ const sideBar = () => {
   const links = [
     { title: "Overview", link: "/Careers&Training" },
     { title: "aPHRi™", link: "/Careers&Training/aPhri" },
-    { title: "PHRi™", link: "" },
-    { title: "SPHRi™", link: "" },
-    { title: "GPHRi™", link: "" },
-    { title: "Certification Benefits", link: "" },
-    { title: "HRCI Preparation Courses", link: "" },
-    { title: "About Recertification", link: "" },
-    { title: "FAQs", link: "" },
+    { title: "PHRi™", link: "/Careers&Training/phri" },
+    { title: "SPHRi™", link: "/Careers&Training/sphri" },
+    { title: "GPHR™", link: "/Careers&Training/gphr" },
+    { title: "HRCI Preparation", link: "/Careers&Training/hrci" },
+    { title: "FAQs", link: "/Careers&Training/FAQs" },
   ];
   return (
     <aside className="bg-white sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
@@ -25,9 +23,11 @@ const sideBar = () => {
           {links.map((link, idx) => (
             <React.Fragment key={idx}>
               <li
-                className={`p-2 hover:bg-dimondra-teal/40 rounded-lg w-full ${path == link.link ? "bg-dimondra-tealDark text-slate-50" : " "}`}
+                className={`p-2  rounded-lg w-full ${path == link.link ? "bg-dimondra-tealDark text-slate-50" : " hover:bg-dimondra-teal/40"}`}
               >
-                <Link href={link.link}>{link.title}</Link>
+                <Link href={link.link} className="w-full">
+                  {link.title}
+                </Link>
               </li>
 
               {/* Conditionally render <hr> after a specific link */}
