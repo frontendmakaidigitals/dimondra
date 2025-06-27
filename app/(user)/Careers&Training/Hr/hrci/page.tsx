@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../(homepage)/HomeForm";
+import HomeForm from "../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
-import BgLayer from "../../app_chunks/BgLayer";
+import BgLayer from "../../../app_chunks/BgLayer";
+import CTA from "../../../Services/(business-service-section)/CTA";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -60,84 +61,71 @@ const Page = () => {
           <SideBar />
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
-              aPHRi (Associate Professional in Human Resources – International)
+              HRCI® Certification
             </h1>
-            <img src={"/PHRI.png"} className="" />
+
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
-                  Is this Certification Right for Me?
+                  Why an HRCI Certification
                 </h2>
                 <p className="font-rubik">
-                  {" "}
-                  If you're just starting out in human resources, the &nbsp;
-                  <strong>
-                    Associate Professional in Human Resources – International™
-                    (aPHRi™)
-                  </strong>{" "}
-                  is a great way to kick off your career with global
-                  recognition. It&apos;s ideal for recent graduates, junior HR
-                  staff, and those switching into HR who want a strong
-                  foundation in international HR principles and practices. This
-                  certification builds your confidence while helping you stand
-                  out in a competitive job market.
+                  Earning a certification from{" "}
+                  <strong>HR Certification Institute® (HRCI®)</strong>{" "}
+                  isn&apos;t just a career move — it&apos;s a statement of your
+                  expertise, credibility, and dedication to the HR profession.
+                  Whether you're looking to advance your current role or explore
+                  international opportunities, an HRCI credential sets you apart
+                  in a competitive global workforce.
                 </p>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
-                  Am I Eligible?
+                  What Makes HRCI® Certification Stand Out?
                 </h2>
-                <p className="font-rubik">
-                  To apply for the aPHRi™, you must have at least a high school
-                  diploma or the global equivalent. No prior HR experience is
-                  required, making this an excellent entry-level certification.
-                </p>
-              </li>
-              <li className="space-y-2">
-                <h2 className="text-xl font-[500] font-rubik">
-                  What Is the Exam Format & Length?
-                </h2>
-                <ul className="list-disc ml-4">
+
+                <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    Exam Length: 100 scored multiple-choice questions + 25
-                    pretest questions.
+                    Globally Accredited & Recognized All core HRCI
+                    certifications meet the National Commission for Certifying
+                    Agencies (NCCA) standards. The PHRi™ and SPHRi™ are the
+                    first and only HR certifications to be accredited under
+                    ISO/IEC 17024 by the International Accreditation Service
+                    (IAS).
                   </li>
-                  <li>Duration: 2 hours and 15 minutes.</li>
                   <li>
-                    Delivery: Computer-based test at Pearson VUE centers or
-                    online.
+                    Proof of Professional Competence HRCI certifications
+                    validate your technical and strategic HR skills, showcasing
+                    your ability to deliver results, reduce risk, and support
+                    organizational goals.
+                  </li>
+                  <li>
+                    Join a Global Network Be part of a prestigious community of
+                    nearly 140,000 certified professionals across 100+
+                    countries, all dedicated to shaping the future of HR.
+                  </li>
+                  <li>
+                    Built on 40+ Years of Trust Since 1976, HRCI has been the
+                    world's most established and respected HR certification
+                    body.
+                  </li>
+                  <li>
+                    Recognized by Employers Worldwide Certified HR professionals
+                    are seen by organizations as more motivated, knowledgeable,
+                    and committed, often leading to greater trust and leadership
+                    opportunities.
                   </li>
                 </ul>
-              </li>
-              <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
-                  How Much Does the aPHRi™ Cost?
-                </h2>
-                <p>
-                  <strong>Total Cost:</strong> USD $400 &nbsp;
-                  <span className="inline-block text-sm font-quicksand">
-                    (This includes both the application and exam fees.)
-                  </span>
-                </p>
-                <p className="text-sm font-quicksand">
-                  **Note: Once your exam application is approved, fees are
-                  non-refundable regardless of changes to your testing plans.
-                </p>
-              </li>
-              <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
-                  When Can I Take the Exam?
-                </h2>
-                <p>
-                  {" "}
-                  The aPHRi™ exam is available year-round, based on test center
-                  or online availability.
-                </p>
               </li>
             </ul>
           </div>
         </div>
       </section>
+      <CTA
+        title="Start Your Certification Journey Today"
+        desc="Take the next step in your HR career with a globally respected HRCI® credential. Whether you're entering the field or stepping into a strategic leadership role, our internationally recognized certifications will help you gain confidence, earn credibility, and make a lasting impact."
+        button="Get Certified"
+      />
       <HomeForm />
     </main>
   );

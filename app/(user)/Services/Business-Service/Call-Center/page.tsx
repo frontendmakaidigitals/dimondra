@@ -26,39 +26,7 @@ import {
   Globe,
   ShieldCheck,
 } from "lucide-react";
-const hrFaqs = [
-  {
-    question: "What is HR outsourcing and how can it help my business?",
-    answer:
-      "HR outsourcing means letting an external team handle some or all of your HR tasks. This helps reduce costs, save time, and ensure your business stays compliant with UAE laws.",
-  },
-  {
-    question: "Is HR outsourcing suitable for small businesses or startups?",
-    answer:
-      "Yes. HR outsourcing is ideal for small businesses and startups because it provides expert support without the cost of a full-time in-house HR team.",
-  },
-  {
-    question: "Can I choose which HR tasks to outsource?",
-    answer:
-      "Absolutely. Our services are flexible — you can outsource as much or as little as you need, from payroll to performance appraisals or employee onboarding.",
-  },
-  {
-    question: "Will my business stay compliant with UAE employment laws?",
-    answer:
-      "Yes. Our team stays up-to-date on UAE labor laws to ensure that your HR processes follow all legal requirements.",
-  },
-  {
-    question: "How do you ensure data privacy and confidentiality?",
-    answer:
-      "We take data protection seriously. All employee and company information is handled securely, with strict confidentiality at every step.",
-  },
-  {
-    question:
-      "Can Dimondra support us with short-term or project-based HR needs?",
-    answer:
-      "Yes, we offer both ongoing HR support and short-term solutions for specific projects, depending on what your business requires.",
-  },
-];
+
 import FAQ from "../../../app_chunks/FAQ";
 const Page = () => {
   useSplitText({

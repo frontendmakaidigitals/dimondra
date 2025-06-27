@@ -13,11 +13,13 @@ const FAQ = ({
       <div className="grid container grid-cols-1 lg:grid-cols-[.7fr_1.3fr] gap-8">
         <div>
           <span>Support</span>
-          <h2 className="text-3xl font-[600] mb-2 mt-2">FAQs</h2>
+          <h2 className="text-5xl font-dmSans tracking-tight font-[600] mb-2 mt-2">
+            FAQs
+          </h2>
           <p>{desc}</p>
         </div>
         <div>
-          <Accordion variant="splitted" className="">
+          <Accordion variant="splitted">
             {data.map((faq, idx) => (
               <AccordionItem
                 key={idx}

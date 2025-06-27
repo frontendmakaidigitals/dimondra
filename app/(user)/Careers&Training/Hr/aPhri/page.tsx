@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../(homepage)/HomeForm";
+import HomeForm from "../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
-import BgLayer from "../../app_chunks/BgLayer";
+import RightSide from "../(sideBar)/RightSide";
+import BgLayer from "../../../app_chunks/BgLayer";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -56,11 +57,10 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
-          <SideBar />
+        <div className="container grid place-items-start grid-cols-[1.3fr_.7fr] gap-8">
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
-              PHRi (Professional in Human Resources – International)
+              aPHRi (Associate Professional in Human Resources – International)
             </h1>
             <img src={"/PHRI.png"} className="" />
             <ul className="space-y-7">
@@ -69,18 +69,18 @@ const Page = () => {
                   Is this Certification Right for Me?
                 </h2>
                 <p className="font-rubik">
-                  Advance your HR career with global recognition through the
-                  &nbsp;
+                  {" "}
+                  If you're just starting out in human resources, the &nbsp;
                   <strong>
-                    Professional in Human Resources – International™ (PHRi™)
+                    Associate Professional in Human Resources – International™
+                    (aPHRi™)
                   </strong>{" "}
-                  &nbsp; certification. Designed for current HR practitioners,
-                  the PHRi focuses on practical, operational HR functions
-                  including recruitment, employee relations, compensation, and
-                  HR administration within an international framework. This
-                  certification is ideal for professionals aiming to validate
-                  their knowledge and move into mid- to senior-level HR roles
-                  globally.
+                  is a great way to kick off your career with global
+                  recognition. It&apos;s ideal for recent graduates, junior HR
+                  staff, and those switching into HR who want a strong
+                  foundation in international HR principles and practices. This
+                  certification builds your confidence while helping you stand
+                  out in a competitive job market.
                 </p>
               </li>
               <li className="space-y-2">
@@ -88,42 +88,33 @@ const Page = () => {
                   Am I Eligible?
                 </h2>
                 <p className="font-rubik">
-                  To be eligible for the PHRi™, you must meet one of the
-                  following criteria based on your education and experience:
+                  To apply for the aPHRi™, you must have at least a high school
+                  diploma or the global equivalent. No prior HR experience is
+                  required, making this an excellent entry-level certification.
                 </p>
-                <ul className="list-disc ml-4 space-y-1">
-                  <li>
-                    At least 1 year of professional-level HR experience with a
-                    Master&apos;s degree or higher
-                  </li>
-                  <li>
-                    At least 2 years of experience with a Bachelor&apos;s degree
-                  </li>
-                  <li>
-                    At least 4 years of experience with less than a
-                    Bachelor&apos;s degree.
-                  </li>
-                </ul>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-[500] font-rubik">
                   What Is the Exam Format & Length?
                 </h2>
-                <ul className="list-disc ml-4 space-y-1">
-                  <li>Exam Length: 145 multiple-choice questions</li>
-                  <li>Duration: 3 hours </li>
+                <ul className="list-disc ml-4">
                   <li>
-                    Delivery: Computer-based test available online or at
-                    approved global test centers.
+                    Exam Length: 100 scored multiple-choice questions + 25
+                    pretest questions.
+                  </li>
+                  <li>Duration: 2 hours and 15 minutes.</li>
+                  <li>
+                    Delivery: Computer-based test at Pearson VUE centers or
+                    online.
                   </li>
                 </ul>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
-                  How Much Does the PHRi™ Cost?
+                  How Much Does the aPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $495 &nbsp;
+                  <strong>Total Cost:</strong> USD $400 &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -139,24 +130,13 @@ const Page = () => {
                 </h2>
                 <p>
                   {" "}
-                  PHRi™ testing is offered year-round, depending on the
-                  availability of test centers or online testing slots.
+                  The aPHRi™ exam is available year-round, based on test center
+                  or online availability.
                 </p>
-              </li>
-              <li className="space-y-2">
-                <p>
-                  The PHRi™ credential is valid for{" "}
-                  <strong>three years</strong>. To maintain it, you must either:
-                </p>
-                <ul className="space-y-1 ml-4 list-disc">
-                  <li>Earn 60 recertification credits over three years, or</li>
-                  <li>
-                    Retake and pass the exam before your certification expires.
-                  </li>
-                </ul>
               </li>
             </ul>
           </div>
+          <RightSide />
         </div>
       </section>
       <HomeForm />
