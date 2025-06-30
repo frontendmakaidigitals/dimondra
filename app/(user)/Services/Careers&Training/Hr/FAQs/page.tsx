@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../../(homepage)/HomeForm";
+import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Plus } from "lucide-react";
-import BgLayer from "../../../app_chunks/BgLayer";
+import BgLayer from "../../../../app_chunks/BgLayer";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);

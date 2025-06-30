@@ -97,18 +97,33 @@ export const siteConfig = {
           submenu: [
             {
               label: "HR Certifications (aPHRi, PHRi...)",
-              link: "/",
+              link: "/Services/Careers&Training/Hr",
             },
-            { label: "Career Advisory ", link: "/" },
+            {
+              label: "Career Advisory ",
+              link: "/Services/Careers&Training/Career-advisory",
+            },
           ],
         },
         {
           label: "Strategy & Advisory",
           submenu: [
-            { label: " Organizational Planning", link: "/" },
-            { label: "Talent Management", link: "/" },
-            { label: "Market Entry", link: "/" },
-            { label: "Legal Management", link: "/" },
+            {
+              label: " Organizational Planning",
+              link: "/Services/Strategy&Advisory/Organisational-planning",
+            },
+            {
+              label: "Talent Management",
+              link: "/Services/Strategy&Advisory/Talent-Management",
+            },
+            {
+              label: "Business Management",
+              link: "/Services/Strategy&Advisory/Business-Management",
+            },
+            {
+              label: "Legal Management",
+              link: "/Services/Strategy&Advisory/Legal-Management",
+            },
           ],
         },
       ],

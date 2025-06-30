@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../../(homepage)/HomeForm";
+import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
-import BgLayer from "../../../app_chunks/BgLayer";
+import BgLayer from "../../../../app_chunks/BgLayer";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -60,7 +60,7 @@ const Page = () => {
           <SideBar />
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
-              PHRi (Professional in Human Resources – International)
+              GPHR (Global Professional in Human Resources)
             </h1>
             <img src={"/PHRI.png"} className="" />
             <ul className="space-y-7">
@@ -69,18 +69,17 @@ const Page = () => {
                   Is this Certification Right for Me?
                 </h2>
                 <p className="font-rubik">
-                  Advance your HR career with global recognition through the
-                  &nbsp;
+                  Showcase your global HR leadership with the{" "}
                   <strong>
-                    Professional in Human Resources – International™ (PHRi™)
+                    Global Professional in Human Resources® (GPHR®)
                   </strong>{" "}
-                  &nbsp; certification. Designed for current HR practitioners,
-                  the PHRi focuses on practical, operational HR functions
-                  including recruitment, employee relations, compensation, and
-                  HR administration within an international framework. This
-                  certification is ideal for professionals aiming to validate
-                  their knowledge and move into mid- to senior-level HR roles
-                  globally.
+                  certification. Designed for HR professionals managing
+                  cross-border strategies and international teams, the GPHR®
+                  validates your ability to handle global workforce planning,
+                  international labor law compliance, and multinational HR
+                  practices. Whether you’re overseeing global HR operations or
+                  supporting international expansion, this credential proves
+                  your expertise in managing HR at a worldwide level.
                 </p>
               </li>
               <li className="space-y-2">
@@ -88,42 +87,48 @@ const Page = () => {
                   Am I Eligible?
                 </h2>
                 <p className="font-rubik">
-                  To be eligible for the PHRi™, you must meet one of the
-                  following criteria based on your education and experience:
+                  To be eligible for the GPHR®, you must meet one of the
+                  following criteria based on your education and global HR
+                  experience:
                 </p>
                 <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    At least 1 year of professional-level HR experience with a
-                    Master&apos;s degree or higher
+                    2 years of global professional-level HR experience with a
+                    Master’s degree or higher
                   </li>
                   <li>
-                    At least 2 years of experience with a Bachelor&apos;s degree
+                    3 years of experience (including 2 years in global HR) with
+                    a Bachelor’s degree
                   </li>
                   <li>
-                    At least 4 years of experience with less than a
-                    Bachelor&apos;s degree.
+                    4 years of experience (including 2 years in global HR) with
+                    less than a Bachelor’s degree
                   </li>
                 </ul>
+                <p className="text-sm font-quicksand">
+                  Note: Global HR experience means direct, cross-border HR
+                  responsibilities across two or more countries or regions.
+                </p>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-[500] font-rubik">
                   What Is the Exam Format & Length?
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
-                  <li>Exam Length: 145 multiple-choice questions</li>
-                  <li>Duration: 3 hours </li>
                   <li>
-                    Delivery: Computer-based test available online or at
-                    approved global test centers.
+                    Exam Length: 140 multiple-choice questions (including 25
+                    pretest questions)
                   </li>
+                  <li>Duration: 3 hours </li>
+                  <li>Delivery: Online or at certified global test centers</li>
                 </ul>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
-                  How Much Does the PHRi™ Cost?
+                  How Much Does the GPHR™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $495 &nbsp;
+                  <strong>Total Cost:</strong> USD $595 &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -139,19 +144,25 @@ const Page = () => {
                 </h2>
                 <p>
                   {" "}
-                  PHRi™ testing is offered year-round, depending on the
-                  availability of test centers or online testing slots.
+                  The GPHR® exam is available year-round, depending on the
+                  availability of testing centers or online exam appointments.
                 </p>
               </li>
               <li className="space-y-2">
+                <h2 className="text-2xl font-rubik font-[500]">
+                  How Do You Remain Certified?
+                </h2>
                 <p>
-                  The PHRi™ credential is valid for{" "}
-                  <strong>three years</strong>. To maintain it, you must either:
+                  The GPHR® exam is available year-round, depending on the
+                  availability of testing centers or online exam appointments.
                 </p>
                 <ul className="space-y-1 ml-4 list-disc">
-                  <li>Earn 60 recertification credits over three years, or</li>
                   <li>
-                    Retake and pass the exam before your certification expires.
+                    Earn 60 recertification credits within the three-year
+                    period, or
+                  </li>
+                  <li>
+                    Retake and pass the exam before your certification expires
                   </li>
                 </ul>
               </li>

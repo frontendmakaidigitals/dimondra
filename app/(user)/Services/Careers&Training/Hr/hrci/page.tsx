@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../../(homepage)/HomeForm";
+import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
-import BgLayer from "../../../app_chunks/BgLayer";
-import CTA from "../../../Services/(business-service-section)/CTA";
+import BgLayer from "../../../../app_chunks/BgLayer";
+import CTA from "../../../(business-service-section)/CTA";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);

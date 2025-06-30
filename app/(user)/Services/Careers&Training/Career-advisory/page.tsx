@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Clock, Users, Star } from "lucide-react";
-import CTA from "../../Services/(business-service-section)/CTA";
-import FAQ from "../../app_chunks/FAQ";
+import CTA from "../../(business-service-section)/CTA";
+import FAQ from "../../../app_chunks/FAQ";
 const Page = () => {
   const careerCoachingFAQs = [
     {
@@ -330,7 +330,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-14 container">
+      <section className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-8 py-14 container">
         <div>
           <h1 className="text-4xl font-[500] font-dmSans tracking-tight">
             Did You Know Most Careers Happen by Accident?
@@ -355,10 +355,23 @@ const Page = () => {
           </p>
           <img />
         </div>
+        <img
+          src={
+            "https://images.unsplash.com/photo-1723296050269-ef50cb0ad178?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+          alt={""}
+          className="h-[500px]"
+        />
       </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-14 container">
-        <img />
+      <section className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-8 py-14 container mt-8">
+        <img
+          src={
+            "https://images.unsplash.com/photo-1723296050269-ef50cb0ad178?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+          alt={""}
+          className="h-[640px]"
+        />
         <div className="">
           <h1 className="text-4xl font-dmSans font-[500]">
             What Is the Role of a Career Coach?
@@ -402,7 +415,8 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="container grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <section className="container grid place-items-center grid-cols-1 mt-16 lg:grid-cols-2 gap-8 pb-24">
         <div>
           <h1 className="text-3xl ">
             What Can You Expect From Our Advisory Services?
@@ -421,6 +435,13 @@ const Page = () => {
             <li>Outplacement support for employees</li>
           </ul>
         </div>
+        <img
+          src={
+            "https://images.unsplash.com/photo-1741687290557-052d0e9c37bb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
+          alt={""}
+          className="h-[450px]"
+        />
       </section>
 
       <FAQ desc={""} data={careerCoachingFAQs} />

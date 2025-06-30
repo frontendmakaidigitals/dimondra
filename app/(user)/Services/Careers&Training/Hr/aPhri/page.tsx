@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
-import HomeForm from "../../../(homepage)/HomeForm";
+import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
-import BgLayer from "../../../app_chunks/BgLayer";
+import RightSide from "../(sideBar)/RightSide";
+import BgLayer from "../../../../app_chunks/BgLayer";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -56,11 +57,10 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
-          <SideBar />
+        <div className="container grid place-items-start grid-cols-[1.3fr_.7fr] gap-8">
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
-              GPHR (Global Professional in Human Resources)
+              aPHRi (Associate Professional in Human Resources – International)
             </h1>
             <img src={"/PHRI.png"} className="" />
             <ul className="space-y-7">
@@ -69,17 +69,18 @@ const Page = () => {
                   Is this Certification Right for Me?
                 </h2>
                 <p className="font-rubik">
-                  Showcase your global HR leadership with the{" "}
+                  {" "}
+                  If you're just starting out in human resources, the &nbsp;
                   <strong>
-                    Global Professional in Human Resources® (GPHR®)
+                    Associate Professional in Human Resources – International™
+                    (aPHRi™)
                   </strong>{" "}
-                  certification. Designed for HR professionals managing
-                  cross-border strategies and international teams, the GPHR®
-                  validates your ability to handle global workforce planning,
-                  international labor law compliance, and multinational HR
-                  practices. Whether you’re overseeing global HR operations or
-                  supporting international expansion, this credential proves
-                  your expertise in managing HR at a worldwide level.
+                  is a great way to kick off your career with global
+                  recognition. It&apos;s ideal for recent graduates, junior HR
+                  staff, and those switching into HR who want a strong
+                  foundation in international HR principles and practices. This
+                  certification builds your confidence while helping you stand
+                  out in a competitive job market.
                 </p>
               </li>
               <li className="space-y-2">
@@ -87,48 +88,33 @@ const Page = () => {
                   Am I Eligible?
                 </h2>
                 <p className="font-rubik">
-                  To be eligible for the GPHR®, you must meet one of the
-                  following criteria based on your education and global HR
-                  experience:
-                </p>
-                <ul className="list-disc ml-4 space-y-1">
-                  <li>
-                    2 years of global professional-level HR experience with a
-                    Master’s degree or higher
-                  </li>
-                  <li>
-                    3 years of experience (including 2 years in global HR) with
-                    a Bachelor’s degree
-                  </li>
-                  <li>
-                    4 years of experience (including 2 years in global HR) with
-                    less than a Bachelor’s degree
-                  </li>
-                </ul>
-                <p className="text-sm font-quicksand">
-                  Note: Global HR experience means direct, cross-border HR
-                  responsibilities across two or more countries or regions.
+                  To apply for the aPHRi™, you must have at least a high school
+                  diploma or the global equivalent. No prior HR experience is
+                  required, making this an excellent entry-level certification.
                 </p>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-[500] font-rubik">
                   What Is the Exam Format & Length?
                 </h2>
-                <ul className="list-disc ml-4 space-y-1">
+                <ul className="list-disc ml-4">
                   <li>
-                    Exam Length: 140 multiple-choice questions (including 25
-                    pretest questions)
+                    Exam Length: 100 scored multiple-choice questions + 25
+                    pretest questions.
                   </li>
-                  <li>Duration: 3 hours </li>
-                  <li>Delivery: Online or at certified global test centers</li>
+                  <li>Duration: 2 hours and 15 minutes.</li>
+                  <li>
+                    Delivery: Computer-based test at Pearson VUE centers or
+                    online.
+                  </li>
                 </ul>
               </li>
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
-                  How Much Does the GPHR™ Cost?
+                  How Much Does the aPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $595 &nbsp;
+                  <strong>Total Cost:</strong> USD $400 &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -144,30 +130,13 @@ const Page = () => {
                 </h2>
                 <p>
                   {" "}
-                  The GPHR® exam is available year-round, depending on the
-                  availability of testing centers or online exam appointments.
+                  The aPHRi™ exam is available year-round, based on test center
+                  or online availability.
                 </p>
-              </li>
-              <li className="space-y-2">
-                <h2 className="text-2xl font-rubik font-[500]">
-                  How Do You Remain Certified?
-                </h2>
-                <p>
-                  The GPHR® exam is available year-round, depending on the
-                  availability of testing centers or online exam appointments.
-                </p>
-                <ul className="space-y-1 ml-4 list-disc">
-                  <li>
-                    Earn 60 recertification credits within the three-year
-                    period, or
-                  </li>
-                  <li>
-                    Retake and pass the exam before your certification expires
-                  </li>
-                </ul>
               </li>
             </ul>
           </div>
+          <RightSide />
         </div>
       </section>
       <HomeForm />
