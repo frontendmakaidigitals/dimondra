@@ -1,12 +1,15 @@
 "use client";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import React from "react";
-
+import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../(business-service-section)/CTA";
 import FAQ from "@/app/(user)/app_chunks/FAQ";
+import Service from "../(sections)/service";
 import "@/styles/globals.css";
-
+import About from "../(sections)/About";
+import { Compass, Settings, GraduationCap, Map } from "lucide-react";
+import AreaOfExpertise from "../(sections)/AreaOfExpertise";
 const industrySectors = [
   {
     title: "Professional Services",
@@ -107,11 +110,8 @@ const serviceObj = [
         title: "Stakeholder & Invested-Party Engagement",
         desc: "Facilitate inclusive discussions and engagement with key stakeholders to build consensus, alignment, and commitment.",
       },
-      {
-        title: "Strategy",
-        desc: "",
-      },
     ],
+    img: "",
   },
   {
     title: "Operational Improvement",
@@ -130,6 +130,7 @@ const serviceObj = [
         desc: "We help you measure, monitor, and optimize your outcomes to ensure long-term, sustainable success.",
       },
     ],
+    img: "",
   },
   {
     title: "Structural Design",
@@ -144,6 +145,7 @@ const serviceObj = [
         desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
       },
     ],
+    img: "",
   },
   {
     title: "Education and Training",
@@ -162,9 +164,32 @@ const serviceObj = [
         desc: "We maximize talent development investments by delivering focused training that enhances skills, boosts productivity, and supports long-term growth.",
       },
     ],
+    img: "",
   },
 ];
 
+const AOE = [
+  {
+    title: "Direction Setting",
+    desc: "Our direction-setting services help you define where you're going and how to get there. We assess current capabilities, engage stakeholders, build strategic plans, and manage change effectively. With our support, leadership can make confident, informed decisions that drive alignment and long-term success.",
+    icon: Compass,
+  },
+  {
+    title: "Operational Improvement",
+    desc: "We work closely with your teams to identify gaps, reduce inefficiencies, and enhance productivity. By redesigning workflows and applying continuous improvement methods, we help your organization operate at its highest potential while ensuring measurable, lasting outcomes.",
+    icon: Settings,
+  },
+  {
+    title: "Structural Design",
+    desc: "Your organizational structure should serve your goals, not hinder them. We evaluate your current framework and design a structure that enhances collaboration, accountability, and agility. The result? A more engaged and effective team, aligned with your strategic direction.",
+    icon: Map,
+  },
+  {
+    title: "Education and Training",
+    desc: "We develop customized training programs that combine engaging eLearning with impactful instructor-led sessions. Our programs are tailored to your team’s needs and designed to improve knowledge retention, reduce training costs, and support long-term growth and performance.",
+    icon: GraduationCap,
+  },
+];
 const Page = () => {
   return (
     <main>
@@ -195,11 +220,25 @@ const Page = () => {
           </button>
         </div>
       </section>
-
+      <About
+        title={"Develop an Organizational Roadmap for Lasting Success"}
+        desc={
+          "At Dimondra, we help organizations grow with purpose. Our approach combines strategic insight, continuous development, and people-focused planning to unlock long-term success. By aligning leadership, teams, and operational goals, we guide you in creating a clear roadmap for positive outcomes. Our focus on collaboration, adaptability, and a culture of continuous learning ensures your organization is not only prepared for change but positioned to thrive through it."
+        }
+        img={""}
+      />
+      <AreaOfExpertise
+        title="Areas of Expertise"
+        desc="At Dimondra, we believe organizational excellence is an ongoing journey, not a one-size-fits-all solution. That’s why our approach is flexible and customized. Whether you need full-scale transformation or targeted support in key areas, we provide strategic expertise that aligns with your goals. F"
+        data={AOE}
+      />
+      <Service data={serviceObj} />
       <div className="py-5 bg-dimondra-white">
         <Industry data={industrySectors} desc="" />
       </div>
+
       <FAQ desc="" data={organizationalFAQs} />
+      <HomeForm />
       <CTA
         title={"Let’s Build Your Organization’s Future"}
         desc={
