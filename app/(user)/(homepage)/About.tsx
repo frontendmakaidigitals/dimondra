@@ -51,7 +51,7 @@ const About = () => {
             deliver tailored solutions across HR, recruitment, administration,
             IT, legal, marketing, and government relations. Our mission is
             simple: to support your growth while enabling your people to thrive.
-            Whether you're scaling up, entering a new market, or streamlining
+            Whether you&apos;re scaling up, entering a new market, or streamlining
             operations, Dimondra offers a one-stop hub for integrated business
             support. We combine global expertise with local insight to help you
             grow compliantly, confidently, and competitively. More than a

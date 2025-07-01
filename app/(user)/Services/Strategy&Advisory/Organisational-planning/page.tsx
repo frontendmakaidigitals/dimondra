@@ -165,7 +165,6 @@ const serviceObj = [
   },
 ];
 
-
 const Page = () => {
   return (
     <main>
@@ -175,6 +174,7 @@ const Page = () => {
             src={
               "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
             }
+            alt={""}
           />
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />

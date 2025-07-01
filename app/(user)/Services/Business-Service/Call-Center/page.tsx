@@ -259,7 +259,7 @@ const Page = () => {
       <motion.div className="w-full h-[90vh] relative">
         <BgLayer
           color={
-            "bg-slate-900/40 lg:bg-gradient-to-l from-transparent from-[0%] to-teal-950 to-[60%] z-[2] "
+            "bg-slate-900/60 lg:bg-gradient-to-l from-transparent from-[0%] to-teal-950 to-[60%] z-[2] "
           }
         />
         <img
@@ -270,7 +270,7 @@ const Page = () => {
         <div className=" relative  z-[3] w-full h-full">
           <div className="container tracking-tighter h-full flex flex-col items-start justify-center py-16 relative z-10 text-dimondra-white">
             <p className="text-sm">HR Outsourcing Services in Dubai</p>
-            <h2 className="text-5xl leading-[3.5rem] max-w-2xl talentHead font-[600]">
+           <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
               Enhance Customer Experience with World-Class Call Center Support
             </h2>
             <p className=" talentPara max-w-3xl mt-2 text-slate-50">

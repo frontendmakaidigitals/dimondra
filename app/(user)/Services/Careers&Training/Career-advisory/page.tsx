@@ -161,9 +161,10 @@ const Page = () => {
               setting achievable goals, and addressing areas for development.
               <br /> <br />
               At Dimondra, we take this process a step further. Our coaching is
-              not just supportive, it's strategic. Every session is tailored to
-              your specific ambitions, challenges, and opportunities, empowering
-              you to move forward with purpose and confidence.
+              not just supportive, it&apos;s strategic. Every session is
+              tailored to your specific ambitions, challenges, and
+              opportunities, empowering you to move forward with purpose and
+              confidence.
               <br /> <br />
               At Dimondra, we refine this process to match your goals and the
               evolving job market, creating a strategy that’s both personal and
@@ -237,8 +238,8 @@ const Page = () => {
 
             <p className="mt-4 font-quicksand font-[600] ">
               At Dimondra, our career development programmes seamlessly combine
-              theory with hands-on application, so you're not just learning
-              concepts, you're building real-world skills from day one.
+              theory with hands-on application, so you&apos;re not just learning
+              concepts, you&apos;re building real-world skills from day one.
               <br />
               Through interactive simulations, role-plays, and collaborative
               exercises, participants gain practical tools to manage their
@@ -247,9 +248,9 @@ const Page = () => {
               personal contexts.
               <br /> <br />
               Whether you attend in-person or virtually, by the end of our
-              coaching journey, you'll walk away with a powerful toolkit, ready
-              to take control of your career and navigate every stage of your
-              professional growth with purpose.
+              coaching journey, you&apos;ll walk away with a powerful toolkit,
+              ready to take control of your career and navigate every stage of
+              your professional growth with purpose.
             </p>
           </div>
           <div className="order-1 lg:order-2 h-[550px] overflow-hidden rounded-lg">
@@ -271,7 +272,7 @@ const Page = () => {
 
             <p className="mt-4 font-quicksand font-[600] ">
               Partnering with a Dimondra career coach gives you a competitive
-              edge in today&apos;s fast-moving job market. Whether you're
+              edge in today&apos;s fast-moving job market. Whether you&apos;re
               transitioning, aiming for a promotion, or seeking clarity, our
               coaching is designed to unlock your potential and drive meaningful
               progress. Our coaching can help you:
@@ -353,7 +354,7 @@ const Page = () => {
             equipping you to take control of your career journey and shape the
             future you want.
           </p>
-          <img />
+          <img alt={""} src={""} />
         </div>
         <img
           src={

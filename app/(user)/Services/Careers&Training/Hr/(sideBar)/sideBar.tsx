@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-const sideBar = () => {
+const Sidebar = () => {
   const path = usePathname();
   const links = [
     { title: "Overview", link: "/Services/Careers&Training/Hr" },
@@ -43,4 +43,4 @@ const sideBar = () => {
   );
 };
 
-export default sideBar;
+export default Sidebar;

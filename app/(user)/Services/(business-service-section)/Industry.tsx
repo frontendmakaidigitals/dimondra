@@ -16,9 +16,11 @@ const Industry = ({
 }) => {
   const [hoverId, setHoverId] = useState<Number | null>(0);
   return (
-    <div className="container mt-20 mb-40">
-      <h1 className="text-center text-5xl font-[600]">{title}</h1>
-      <p className="text-center mt-2">{desc}</p>
+    <div className="container mt-32 mb-40">
+      <h1 className="text-4xl lg:text-5xl font-[600] text-dimondra-black tracking-tight max-w-3xl mx-auto text-center">
+        {title}
+      </h1>
+      {desc ? <p className="text-center mt-2">{desc}</p> : null}
       <motion.div className="grid grid-cols-1 gap-10  mt-12 lg:grid-cols-4">
         {data.map(({ title, description, imgUrl }, idx) => (
           <motion.div

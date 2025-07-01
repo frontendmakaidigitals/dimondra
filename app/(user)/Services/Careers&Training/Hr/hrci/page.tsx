@@ -74,7 +74,7 @@ const Page = () => {
                   <strong>HR Certification Institute® (HRCI®)</strong>{" "}
                   isn&apos;t just a career move — it&apos;s a statement of your
                   expertise, credibility, and dedication to the HR profession.
-                  Whether you're looking to advance your current role or explore
+                  Whether you&apos;re looking to advance your current role or explore
                   international opportunities, an HRCI credential sets you apart
                   in a competitive global workforce.
                 </p>
@@ -106,7 +106,7 @@ const Page = () => {
                   </li>
                   <li>
                     Built on 40+ Years of Trust Since 1976, HRCI has been the
-                    world's most established and respected HR certification
+                    world&apos;s most established and respected HR certification
                     body.
                   </li>
                   <li>

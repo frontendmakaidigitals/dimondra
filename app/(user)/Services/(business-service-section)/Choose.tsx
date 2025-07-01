@@ -15,7 +15,7 @@ const Choose = ({ data, title, desc }: propsType) => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-5xl font-bold text-dimondra-black mb-4 text-center max-w-3xl mx-auto">
+        <h2 className="text-4xl lg:text-5xl font-bold text-dimondra-black mb-4 text-center max-w-3xl mx-auto">
           {title}
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-12">{desc}</p>

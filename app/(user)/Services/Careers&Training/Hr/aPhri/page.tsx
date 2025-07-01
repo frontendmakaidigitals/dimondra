@@ -62,7 +62,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               aPHRi (Associate Professional in Human Resources – International)
             </h1>
-            <img src={"/PHRI.png"} className="" />
+            <img src={"/PHRI.png"} alt={''} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
@@ -70,7 +70,7 @@ const Page = () => {
                 </h2>
                 <p className="font-rubik">
                   {" "}
-                  If you're just starting out in human resources, the &nbsp;
+                  If you&apos;re just starting out in human resources, the &nbsp;
                   <strong>
                     Associate Professional in Human Resources – International™
                     (aPHRi™)

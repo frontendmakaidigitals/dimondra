@@ -18,7 +18,7 @@ const RightSide = () => {
           success.
         </p>
 
-        <h3 className="border-[.04px] border-teal-50" />
+        <hr className="border-[.04px] border-teal-50" />
 
         <div className="py-4">
           <h2 className="text-lg font-dmSans font-[600] mb-1">
@@ -51,7 +51,7 @@ const RightSide = () => {
             </li>
           </ul>
         </div>
-        <h3 className="border-[.04px] border-teal-50" />
+        <hr className="border-[.04px] border-teal-50" />
         <div className="pt-4">
           <h2 className="text-lg mb-1">Package Includes:</h2>
           <ul className="space-y-2">

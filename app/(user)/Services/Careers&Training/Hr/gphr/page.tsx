@@ -62,7 +62,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               GPHR (Global Professional in Human Resources)
             </h1>
-            <img src={"/PHRI.png"} className="" />
+            <img src={"/PHRI.png"} alt={""} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
@@ -77,7 +77,7 @@ const Page = () => {
                   cross-border strategies and international teams, the GPHR®
                   validates your ability to handle global workforce planning,
                   international labor law compliance, and multinational HR
-                  practices. Whether you’re overseeing global HR operations or
+                  practices. Whether you&apos;re overseeing global HR operations or
                   supporting international expansion, this credential proves
                   your expertise in managing HR at a worldwide level.
                 </p>
