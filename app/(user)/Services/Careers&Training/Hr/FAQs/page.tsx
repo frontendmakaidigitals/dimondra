@@ -166,7 +166,7 @@ const Page = () => {
                     It depends on your current HR experience and career goals:
                   </p>
                   <ul className="ml-4 list-disc mt-2 space-y-2">
-                    <li>If you're just starting out, go for aPHRi™.</li>
+                    <li>If you&apos;re just starting out, go for aPHRi™.</li>
                     <li>
                       If you have a few years of experience, PHRi™ is ideal.
                     </li>
