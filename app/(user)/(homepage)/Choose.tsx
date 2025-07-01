@@ -48,10 +48,12 @@ const Choose = () => {
   const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
+    const triggers: ScrollTrigger[] = [];
+
     numbersRef.current.forEach((el, i) => {
       if (!el) return;
 
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         el,
         { scale: 0, opacity: 0, y: 50 },
         {
@@ -68,7 +70,15 @@ const Choose = () => {
           },
         }
       );
+
+      if (tween.scrollTrigger) {
+        triggers.push(tween.scrollTrigger);
+      }
     });
+
+    return () => {
+      triggers.forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   useSplitText({

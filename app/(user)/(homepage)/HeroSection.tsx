@@ -35,7 +35,7 @@ const HeroSection = () => {
     trigger: ".trigger",
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 0.4,
+    delay: 1,
   });
   useSplitText({
     selector: ".heroText",
@@ -44,7 +44,7 @@ const HeroSection = () => {
     stagger: 0.01,
     type: "chars, lines",
     linesClass: "line-wrapper++",
-    delay: 0.5,
+    delay: 1.2,
   });
 
   return (
@@ -70,7 +70,7 @@ const HeroSection = () => {
         <p className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
         </p>
-        <h1 className="max-w-4xl font-dmSans heroText leading-[2.4rem] lg:leading-[5.2rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[600] ">
+        <h1 className="max-w-4xl font-dmSans heroText leading-[2.4rem] lg:leading-[5.2rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[700] ">
           Empowering <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.
         </h1>
@@ -78,8 +78,8 @@ const HeroSection = () => {
         <motion.h3
           initial={{ filter: "blur(5px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 3.4 }}
-          className="text-dimondra-dark text-center text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.7 }}
+          className="text-dimondra-dark text-center text-xs lg:text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
         >
           Expert support in HR, IT, operations, legal, and business strategy.
         </motion.h3>

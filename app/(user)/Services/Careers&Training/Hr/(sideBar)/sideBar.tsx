@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 const sideBar = () => {
   const path = usePathname();
   const links = [
-    { title: "Overview", link: "/Careers&Training" },
-    { title: "aPHRi™", link: "/Careers&Training/aPhri" },
-    { title: "PHRi™", link: "/Careers&Training/phri" },
-    { title: "SPHRi™", link: "/Careers&Training/sphri" },
-    { title: "GPHR™", link: "/Careers&Training/gphr" },
-    { title: "HRCI Preparation", link: "/Careers&Training/hrci" },
-    { title: "FAQs", link: "/Careers&Training/FAQs" },
+    { title: "Overview", link: "/Services/Careers&Training/Hr" },
+    { title: "aPHRi™", link: "/Services/Careers&Training/Hr/aPhri" },
+    { title: "PHRi™", link: "/Services/Careers&Training/Hr/phri" },
+    { title: "SPHRi™", link: "/Services/Careers&Training/Hr/sphri" },
+    { title: "GPHR™", link: "/Services/Careers&Training/Hr/gphr" },
+    { title: "HRCI Preparation", link: "/Services/Careers&Training/Hr/hrci" },
+    { title: "FAQs", link: "/Services/Careers&Training/Hr/FAQs" },
   ];
   return (
     <aside className="bg-white sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">

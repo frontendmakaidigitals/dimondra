@@ -1,5 +1,5 @@
 "use client";
-import { User } from "lucide-react";
+import { Globe, Users } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
 import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
@@ -23,7 +23,7 @@ const About = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 ">
         <div
           ref={ref}
-          className="h-[350px] lg:h-[650px] relative overflow-hidden"
+          className="h-[350px] lg:h-[630px] relative overflow-hidden"
         >
           <motion.div
             animate={{
@@ -45,29 +45,25 @@ const About = () => {
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
           <p className="mt-5 font-quicksand font-[500]">
-            At Dimondra, we do more than just outsourcing — we partner with
+            At Dimondra, we do more than just outsourcing; we partner with
             businesses to build smarter, stronger, and more efficient
-            operations. With a deep understanding of what organizations truly
-            need, we deliver tailored solutions across HR, recruitment,
-            administration, IT, legal, marketing, and government relations. Our
-            mission is simple: to support your growth while enabling your people
-            to thrive. Whether you&nbsp;re scaling up, entering a new market, or
-            streamlining your operations, Dimondra offers a one-stop hub for
-            integrated business support services. We combine global expertise
-            with local insight to help you grow the right way — compliantly,
-            confidently, and competitively. We pride ourselves on being not just
-            a vendor, but a true extension of your team— working alongside you
-            to simplify the complex, reduce the operational load, and empower
-            your leaders to focus on strategic priorities. From startups to
-            large enterprises, from admin support to advisory — we are here to
-            help you run better, hire smarter, and achieve more. Dimondra —
-            Empowering Businesses. Enabling People
+            operations. With a deep understanding of what organizations need, we
+            deliver tailored solutions across HR, recruitment, administration,
+            IT, legal, marketing, and government relations. Our mission is
+            simple: to support your growth while enabling your people to thrive.
+            Whether you're scaling up, entering a new market, or streamlining
+            operations, Dimondra offers a one-stop hub for integrated business
+            support. We combine global expertise with local insight to help you
+            grow compliantly, confidently, and competitively. More than a
+            vendor, we act as a true extension of your team, simplifying the
+            complex, reducing operational load, and empowering your leaders to
+            focus on what matters most.
           </p>
           <div className="mt-5">
             <div className="flex items-start gap-4">
               {/* Left: Icon */}
               <div className="text-blue-600 mt-1">
-                <User className="w-6 h-6" />
+                <Globe className="w-6 h-6" />
                 {/* Replace with your actual icon */}
               </div>
 
@@ -85,7 +81,7 @@ const About = () => {
             <div className="flex mt-5 items-start gap-4">
               {/* Left: Icon */}
               <div className="text-blue-600 mt-1">
-                <User className="w-6 h-6" />
+                <Users className="w-6 h-6" />
                 {/* Replace with your actual icon */}
               </div>
 
