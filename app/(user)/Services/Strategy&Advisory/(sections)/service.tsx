@@ -54,7 +54,7 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
             <div className={clsx(`mt-20 container`)}>
               <Carousel className="w-full">
                 <CarouselContent className="-ml-1">
-                  {data.map((item, index) => (
+                  {item.arr.map((item, index) => (
                     <CarouselItem key={index} className="pl-1 lg:basis-1/3 ">
                       <div className="p-1 h-full">
                         <Card className="h-full flex flex-col">
