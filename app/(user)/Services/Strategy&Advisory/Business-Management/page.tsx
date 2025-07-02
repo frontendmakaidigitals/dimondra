@@ -318,7 +318,7 @@ const Page = () => {
               just enter new markets, it thrives in them
             </p>
           </div>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ul className="grid grid-cols-3 gap-6">
             {[
               {
                 text: "Risk Management",
@@ -343,7 +343,7 @@ const Page = () => {
                 <div className="bg-blue-50 rounded-full w-full h-full flex justify-center items-center">
                   {" "}
                   <p
-                    className={`text-center inline-block bg-clip-text text-transparent text-2xl font-dmSans font-[500] px-4 ${text.gradient}`}
+                    className={`text-center inline-block bg-clip-text text-transparent text-sm lg:text-2xl font-dmSans font-[500] px-4 ${text.gradient}`}
                   >
                     {text.text}
                   </p>
