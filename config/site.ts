@@ -130,7 +130,7 @@ export const siteConfig = {
     },
     {
       label: "Resources",
-      href: "/blog",
+      href: "/blogs",
     },
     {
       label: "Locations",
