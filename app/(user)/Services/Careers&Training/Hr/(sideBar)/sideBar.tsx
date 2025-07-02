@@ -14,7 +14,7 @@ const Sidebar = () => {
     { title: "FAQs", link: "/Services/Careers&Training/Hr/FAQs" },
   ];
   return (
-    <aside className="bg-white sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
+    <aside className="bg-white lg:sticky w-full z-20 left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
       <nav className="text-gray-800 text-sm">
         <h2 className="font-bold text-dimondra-tealDark mb-2">
           About HRCI Certifications

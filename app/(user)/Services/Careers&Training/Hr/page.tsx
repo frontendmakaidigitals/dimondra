@@ -49,17 +49,16 @@ const Page = () => {
   return (
     <main>
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
-        
         <motion.img
           style={{ y: yTransform }}
           src="/overview.jpg"
           alt=""
           className="w-full h-full object-cover object-top absolute inset-0 z-0"
         />
-      <BgLayer color="bg-slate-900/70" />
+        <BgLayer color="bg-slate-900/70" />
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
-          <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
+          <h1 className="text-3xl lg:text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
             Advance Your HR Career with Industry-Leading Certifications
           </h1>
           <p className="text-slate-50 mt-3 max-w-2xl">
@@ -68,9 +67,15 @@ const Page = () => {
             or looking to move up, Dimondra offers comprehensive HR
             certification programs according to your goals.
           </p>
-          <ul className="flex text-slate-50 mt-3 justify-start gap-2">
-            <li>Flexible courses |</li>
-            <li>Expert trainers |</li>
+          <ul className="flex ml-4 lg:ml-0 flex-col list-disc lg:list-none lg:flex-row text-slate-50 mt-3 justify-start gap-2">
+            <li>
+              Flexible courses
+              <span className="hidden lg:inline-block">|</span>{" "}
+            </li>
+            <li>
+              Expert trainers
+              <span className="hidden lg:inline-block">|</span>{" "}
+            </li>
             <li>Globally recognized credential</li>
           </ul>
           <div className="flex justify-start">
@@ -82,7 +87,7 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
+        <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[.4fr_1.6fr] gap-5">
           <SideBar />
           <div>
             <h1 className="text-4xl font-dmSans text-dimondra-black font-[600]">

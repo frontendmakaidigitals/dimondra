@@ -64,7 +64,7 @@ const Page = () => {
             <img alt={""} src={"/PHRI.png"} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   Is this Certification Right for Me?
                 </h2>
                 <p className="font-rubik">
@@ -83,7 +83,7 @@ const Page = () => {
                 </p>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   Am I Eligible?
                 </h2>
                 <p className="font-rubik">
@@ -106,7 +106,7 @@ const Page = () => {
                 </p>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-[500] font-rubik">
+                <h2 className="text-xl font-rubik font-[600]">
                   What Is the Exam Format & Length?
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
@@ -122,7 +122,7 @@ const Page = () => {
                 </ul>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   How Much Does the SPHRi™ Cost?
                 </h2>
                 <p>
@@ -142,7 +142,7 @@ const Page = () => {
                 </p>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   When Can You Take the Exam?
                 </h2>
                 <p>
@@ -152,7 +152,7 @@ const Page = () => {
                 </p>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   How Do You Remain Certified?
                 </h2>
                 <p>
