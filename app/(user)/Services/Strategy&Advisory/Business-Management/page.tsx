@@ -93,7 +93,7 @@ const businessFAQs = [
 const serviceObj = [
   {
     title: "Feasibility & Market Analysis",
-    desc: "Our feasibility and market analysis services provide a complete picture of the risks, opportunities, and viability of your expansion plans. We assess demand, competition, regulation, cost, and profitability so you can move forward with clarity and confidence.",
+    desc: "Launching a business or entering a new market requires insight, not guesswork. Our feasibility and market analysis services provide a complete picture of the risks, opportunities, and viability of your expansion plans. We assess demand, competition, regulation, cost, and profitability so you can move forward with clarity and confidence.",
     img: "/services/retail.jpg",
     arr: [
       {
@@ -120,7 +120,7 @@ const serviceObj = [
   },
   {
     title: "New Market Entry Advisory (UAE, KSA, GCC)",
-    desc: "Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success when entering the UAE, Saudi Arabia, or GCC markets.",
+    desc: "Expanding into the UAE, Saudi Arabia, or GCC markets involves navigating unique cultural, legal, and operational environments. Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success.",
     img: "/services/map.jpeg",
     arr: [
       {
@@ -143,7 +143,7 @@ const serviceObj = [
   },
   {
     title: "Business Setup Strategy & Structuring Guidance",
-    desc: "We guide you through each strategic and legal decision to ensure your business is positioned for sustainable growth from day one.",
+    desc: "Setting up a business is more than paperwork’s about building a structure that supports long-term success. At Dimondra, we guide you through each strategic and legal decision to make sure your business is positioned for sustainable growth from day one.",
     img: "/services/consultation.jpg",
     arr: [
       {
@@ -166,7 +166,7 @@ const serviceObj = [
   },
   {
     title: "Regulatory & Licensing Requirements Consulting",
-    desc: "Dimondra helps you stay on top of every requirement with end-to-end regulatory support and expert guidance.",
+    desc: "Every market has its own legal frameworks and licensing procedures, especially in highly regulated environments like the UAE, Saudi Arabia, and the GCC. Dimondra helps you stay on top of every requirement with end-to-end regulatory support and expert guidance.",
     img: "/services/govt.jpg",
     arr: [
       {
