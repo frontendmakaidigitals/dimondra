@@ -53,7 +53,7 @@ const Page = () => {
 
         <div className="container grid grid-cols-1 lg:grid-cols-2 place-items-center gap-6 ">
           <div>
-            <h1 className="text-5xl font-dmSans font-[600] tracking-tight">
+            <h1 className="text-4xl lg:text-5xl font-dmSans font-[600] tracking-tight">
               Personalised Career Advisory in Dubai for Long-Term Success
             </h1>
             <p className="mt-2 font-quicksand font-[500]">
@@ -83,7 +83,7 @@ const Page = () => {
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/services/business-development.jpg"
               alt=""
               className="rounded-lg"
               style={{
@@ -99,7 +99,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-12 container mb-[300px]">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 container mb-[300px]">
         <div className="order-1 lg:order-2">
           <h2 className="text-5xl font-[500] font-dmSans tracking-tight">
             Guiding You to Success with Career Coaching in Dubai
@@ -128,19 +128,17 @@ const Page = () => {
             Start your career
           </button>
         </div>
-        <div className="order-2 lg:order-1 h-[520px] overflow-hidden rounded-lg">
+        <div className="order-2 lg:order-1 h-[320px] lg:h-[520px] overflow-hidden rounded-lg">
           <img
-            src={
-              "https://plus.unsplash.com/premium_photo-1679936310269-c9c95a120c65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
+            src={"/services/consultation.jpg"}
             alt={""}
             className="w-full h-full object-cover"
           />
         </div>
       </section>
 
-      <section className=" mb-24 relative  bg-[#004D40]">
-        <div className="absolute top-0 left-0 w-full z-20 overflow-hidden leading-none rotate-180 -translate-y-full">
+      <section className=" mb-24  relative  bg-[#004D40]">
+        <div className="absolute  top-0 left-0 w-full z-20 overflow-hidden leading-none rotate-180 -translate-y-full">
           <img
             src={"/smooth-top-wave.svg"}
             alt={""}
@@ -155,7 +153,7 @@ const Page = () => {
             className="w-full h-auto inset-0"
           />
         </div>
-        <div className="grid grid-cols-2 pt-[150px]  gap-12 container relative z-20 text-slate-50">
+        <div className="grid grid-cols-1 lg:grid-cols-2  pt-[150px]  gap-12 container relative z-20 text-slate-50">
           <div className="order-2 lg:order-1">
             <h2 className="text-5xl font-[500] font-dmSans tracking-tight">
               Unlock the Power of Career Coaching
@@ -187,11 +185,9 @@ const Page = () => {
               Start your career
             </button>
           </div>
-          <div className="order-1 lg:order-2 h-[520px] overflow-hidden rounded-lg">
+          <div className="order-1 lg:order-2 h-[320px] lg:h-[520px] overflow-hidden rounded-lg">
             <img
-              src={
-                "https://images.unsplash.com/photo-1716703742154-8a90c9563eed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={"/services/consultation2.jpg"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -200,7 +196,7 @@ const Page = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-[140px] place-items-center gap-12 container text-slate-50">
           {" "}
-          <div className="order-1 lg:order-2">
+          <div className="order-2 lg:order-1">
             <h2 className="text-5xl font-[500] font-dmSans tracking-tight">
               The Role of Our Expert Career Coaches
             </h2>
@@ -231,11 +227,9 @@ const Page = () => {
               <li>Professional confidence and self-awareness</li>
             </ul>
           </div>
-          <div className="order-2 lg:order-1 h-[680px] overflow-hidden rounded-lg">
+          <div className=" h-[320px] lg:h-[680px] overflow-hidden rounded-lg">
             <img
-              src={
-                "https://plus.unsplash.com/premium_photo-1679936310269-c9c95a120c65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={"/services/facilityhero.jpg"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -266,11 +260,9 @@ const Page = () => {
               your professional growth with purpose.
             </p>
           </div>
-          <div className="order-1 lg:order-2 h-[550px] overflow-hidden rounded-lg">
+          <div className="order-1 lg:order-2 h-[320px] lg:h-[550px] overflow-hidden rounded-lg">
             <img
-              src={
-                "https://plus.unsplash.com/premium_photo-1679936310269-c9c95a120c65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={"/services/processManangement.jpg"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -278,7 +270,7 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-[140px] place-items-center gap-12 container text-slate-50">
           {" "}
-          <div className="order-1 lg:order-2">
+          <div className="order-2 lg:order-1">
             <h2 className="text-5xl font-[500] font-dmSans tracking-tight">
               Why Work With a Career Coach?
             </h2>
@@ -301,11 +293,9 @@ const Page = () => {
               <li>Develop a long-term career roadmap</li>
             </ul>
           </div>
-          <div className="order-2 lg:order-1 h-[550px] overflow-hidden rounded-lg">
+          <div className=" h-[320px] lg:h-[550px] overflow-hidden rounded-lg">
             <img
-              src={
-                "https://plus.unsplash.com/premium_photo-1679936310269-c9c95a120c65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={"/services/why.jpg"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -313,8 +303,14 @@ const Page = () => {
         </div>
 
         <div className="grid grid-cols-1 pb-[140px] lg:grid-cols-2 mt-[140px] place-items-center gap-12 container text-slate-50">
-          {" "}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 h-[320px] lg:h-[550px] rounded-lg">
+            <img
+              src={"/services/compliant.jpg"}
+              alt={""}
+              className="w-full object-cover h-[320px] lg:h-[550px] rounded-lg"
+            />
+          </div>
+          <div className="">
             <h2 className="text-5xl font-[500] font-dmSans tracking-tight">
               Proven Success. Global Impact.
             </h2>
@@ -332,20 +328,11 @@ const Page = () => {
               lives and careers with measurable outcomes.
             </p>
           </div>
-          <div className="order-1 lg:order-2 h-[550px] overflow-hidden rounded-lg">
-            <img
-              src={
-                "https://plus.unsplash.com/premium_photo-1679936310269-c9c95a120c65?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
-              alt={""}
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </section>
 
       <section className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-8 py-14 container">
-        <div>
+        <div className="order-2 lg:order-1">
           <h1 className="text-4xl font-[500] font-dmSans tracking-tight">
             Did You Know Most Careers Happen by Accident?
           </h1>
@@ -367,25 +354,22 @@ const Page = () => {
             equipping you to take control of your career journey and shape the
             future you want.
           </p>
-          <img alt={""} src={""} />
         </div>
         <img
-          src={
-            "https://images.unsplash.com/photo-1723296050269-ef50cb0ad178?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+          src={"/services/career.jpg"}
           alt={""}
-          className="h-[500px]"
+          className="h-[320px] lg:h-[500px] "
         />
       </section>
 
       <section className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-8 py-14 container mt-8">
-        <img
-          src={
-            "https://images.unsplash.com/photo-1723296050269-ef50cb0ad178?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
-          alt={""}
-          className="h-[640px]"
-        />
+        <div className="h-[320px] order-2 lg:order-1 lg:h-[640px]">
+          <img
+            src={"/services/career-role.jpg"}
+            alt={""}
+            className=" w-full h-full object-cover object-right"
+          />
+        </div>
         <div className="">
           <h1 className="text-4xl font-dmSans font-[500]">
             What Is the Role of a Career Coach?
@@ -431,7 +415,12 @@ const Page = () => {
       </section>
 
       <section className="container grid place-items-center grid-cols-1 mt-16 lg:grid-cols-2 gap-8 pb-24">
-        <div>
+        <img
+          src={"/services/advisory.jpg"}
+          alt={""}
+          className="h-[320px] lg:h-[450px]  object-cover"
+        />
+        <div className="">
           <h1 className="text-3xl ">
             What Can You Expect From Our Advisory Services?
           </h1>
@@ -449,13 +438,6 @@ const Page = () => {
             <li>Outplacement support for employees</li>
           </ul>
         </div>
-        <img
-          src={
-            "https://images.unsplash.com/photo-1741687290557-052d0e9c37bb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
-          alt={""}
-          className="h-[450px]"
-        />
       </section>
 
       <FAQ desc={""} data={careerCoachingFAQs} />
