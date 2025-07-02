@@ -94,7 +94,10 @@ const CTA = ({
             {desc}
           </p>
           <div className="flex justify-center mt-5 ">
-            <button onClick={()=>setIsOpen(true)} className="px-4 bg-dimondra-black py-2 text-dimondra-white rounded-lg text-sm">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="px-4 bg-dimondra-black py-2 text-dimondra-white rounded-lg text-sm"
+            >
               {button}
             </button>
           </div>
