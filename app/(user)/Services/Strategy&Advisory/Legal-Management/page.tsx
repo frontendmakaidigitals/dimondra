@@ -207,7 +207,7 @@ const Page = () => {
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-6xl font-dmSans font-[600] max-w-4xl">
+          <h1 className="text-4xl lg:text-6xl font-dmSans font-[600] max-w-4xl">
             Legal Management That Protects and Empowers
           </h1>
 
