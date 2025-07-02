@@ -92,7 +92,7 @@ const Choose = () => {
           <p className="mt-1 choosePara font-quicksand font-[600] text-dimondra-white">
             At Dimondra, we make business easier. We offer all the support you
             need. HR, IT, admin, legal, and strategy — in one place. Our team
-            understands your goals and works with you to achieve them. \n
+            understands your goals and works with you to achieve them.
             We&nbsp;re not just service providers, we&nbsp;re your trusted
             partners. Whether you&nbsp;re a small business or a growing company,
             our solutions are flexible, practical, and built to fit your needs.

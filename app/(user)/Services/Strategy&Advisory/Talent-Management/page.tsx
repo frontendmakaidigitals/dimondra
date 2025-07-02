@@ -243,7 +243,7 @@ const Page = () => {
       <About
         title={"Build a Workforce That Grows With You"}
         desc={
-          "Your people are the foundation of your organization’s success. At Dimondra, we partner with you to create talent strategies that not only meet today’s needs but support future growth. Our comprehensive approach brings together workforce planning, performance management, leadership development, and employee engagement, helping you build a resilient, motivated, and future-ready team. \n We tailor our solutions to fit your unique culture and goals, whether you're scaling rapidly, navigating change, or strengthening leadership pipelines."
+          "Your people are the foundation of your organization’s success. At Dimondra, we partner with you to create talent strategies that not only meet today’s needs but support future growth. Our comprehensive approach brings together workforce planning, performance management, leadership development, and employee engagement, helping you build a resilient, motivated, and future-ready team. We tailor our solutions to fit your unique culture and goals, whether you're scaling rapidly, navigating change, or strengthening leadership pipelines."
         }
         img={"/services/callCenter2.jpg"}
       />

@@ -362,7 +362,7 @@ const Page = () => {
       <CTA
         title={"Let’s Turn Opportunities Into Outcomes"}
         desc={
-          "Partner with Dimondra to enter new markets with clarity, structure, and confidence. \n Whether it’s your first market expansion or one of many, we help you grow smarter, faster, and with fewer obstacles."
+          "Partner with Dimondra to enter new markets with clarity, structure, and confidence.  Whether it’s your first market expansion or one of many, we help you grow smarter, faster, and with fewer obstacles."
         }
         button="Talk to a Business Consultant"
       />

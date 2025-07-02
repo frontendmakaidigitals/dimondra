@@ -363,7 +363,7 @@ const Page = () => {
       <Choose
         title={"Why Choose Dimondra for Virtual Admin Support"}
         desc={
-          "Finding the right virtual admin support partner is key to freeing up your time and improving your business efficiency. At Dimondra, we combine a team of highly skilled professionals with flexible and cost-effective solutions tailored specifically to your needs. Our virtual assistants are experienced, reliable, and trained to handle a wide range of administrative tasks with accuracy and discretion. \nWe prioritize security and confidentiality, ensuring your business information is always protected. With fast onboarding and personalized service, we make it easy for you to get started and scale support as your business grows. Let us take care of your day-to-day operations so you can focus on what truly matters: growing your business and achieving your goals."
+          "Finding the right virtual admin support partner is key to freeing up your time and improving your business efficiency. At Dimondra, we combine a team of highly skilled professionals with flexible and cost-effective solutions tailored specifically to your needs. Our virtual assistants are experienced, reliable, and trained to handle a wide range of administrative tasks with accuracy and discretion. We prioritize security and confidentiality, ensuring your business information is always protected. With fast onboarding and personalized service, we make it easy for you to get started and scale support as your business grows. Let us take care of your day-to-day operations so you can focus on what truly matters: growing your business and achieving your goals."
         }
         data={serviceBenefits}
       />

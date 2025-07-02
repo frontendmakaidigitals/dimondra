@@ -229,7 +229,7 @@ const Page = () => {
       <CTA
         title={"Ready to Simplify Your PRO Tasks?"}
         desc={
-          "Let Dimondra handle your government paperwork, approvals, and legal formalities—so you can focus on growing your business. Our team is here to provide fast, reliable, and cost-effective PRO solutions tailored to your needs. \nGet in touch today and experience hassle-free PRO services in the UAE."
+          "Let Dimondra handle your government paperwork, approvals, and legal formalities—so you can focus on growing your business. Our team is here to provide fast, reliable, and cost-effective PRO solutions tailored to your needs. Get in touch today and experience hassle-free PRO services in the UAE."
         }
         button="Make an Enquiry"
       />
