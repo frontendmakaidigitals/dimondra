@@ -16,7 +16,7 @@ const industrySectors = [
     title: "Technology & Software",
     description:
       "We help SaaS companies, IT service providers, and tech startups scale into new markets with robust go-to-market plans, compliance support, and partner networks.",
-    imgUrl: "/services/technology.jpg",
+    imgUrl: "/services/Technology.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
@@ -314,8 +314,8 @@ const Page = () => {
               maximizes growth potential. We don&apos;t just advise, we become
               partners in your success, helping you make data-driven decisions,
               build compliant and scalable structures, and foster local
-              relationships that last. With Dimondra, your business doesn&apos;t just
-              enter new markets, it thrives in them
+              relationships that last. With Dimondra, your business doesn&apos;t
+              just enter new markets, it thrives in them
             </p>
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

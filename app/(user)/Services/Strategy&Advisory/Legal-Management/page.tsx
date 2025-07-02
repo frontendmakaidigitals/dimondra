@@ -22,7 +22,7 @@ const industrySectors = [
     title: "Technology & Startups",
     description:
       "Navigate IP protection, data privacy, and contract structuring with confidence in fast-paced innovation environments.",
-    imgUrl: "/services/technology.jpg",
+    imgUrl: "/services/Technology.jpg",
   },
   {
     title: "Retail & E-commerce",
@@ -192,7 +192,6 @@ const AOE = [
   },
 ];
 
-
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -215,11 +214,11 @@ const Page = () => {
           <p className="max-w-4xl font-quicksand font-[600] mt-3">
             At Dimondra, we provide end-to-end legal management solutions
             tailored to businesses operating in the UAE and beyond. Whether
-            you&apos;re launching a startup, expanding across borders, or refining
-            your internal policies, we ensure your operations stay legally
-            compliant, protected, and resilient. With our support, you can
-            confidently focus on growth while we manage the legal complexities
-            behind the scenes.
+            you&apos;re launching a startup, expanding across borders, or
+            refining your internal policies, we ensure your operations stay
+            legally compliant, protected, and resilient. With our support, you
+            can confidently focus on growth while we manage the legal
+            complexities behind the scenes.
           </p>
           <button
             onClick={() => setIsOpen(true)}

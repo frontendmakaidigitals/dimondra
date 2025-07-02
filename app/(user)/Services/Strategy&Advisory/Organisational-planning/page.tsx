@@ -34,7 +34,7 @@ const industrySectors = [
     title: "Technology & Software",
     description:
       "SaaS companies, software development teams, and IT departments—enhancing productivity, cross-functional collaboration, and scaling practices.",
-    imgUrl: "/services/technology.jpg",
+    imgUrl: "/services/Technology.jpg",
   },
   {
     title: "Manufacturing & Industrial",
