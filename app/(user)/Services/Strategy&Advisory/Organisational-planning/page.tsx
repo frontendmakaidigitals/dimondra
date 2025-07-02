@@ -146,7 +146,7 @@ const serviceObj = [
         desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
       },
     ],
-    img: "/services/technology.jpg",
+    img: "/services/growth-people.jpg",
   },
   {
     title: "Education and Training",
