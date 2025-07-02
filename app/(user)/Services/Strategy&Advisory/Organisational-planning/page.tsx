@@ -15,49 +15,49 @@ const industrySectors = [
     title: "Professional Services",
     description:
       "Strategy firms, consultancies, marketing agencies, and legal practices—helping them grow through optimized processes and strategic alignment.",
-    imgUrl: "/images/sectors/professional-services.jpg",
+    imgUrl: "/services/topTalentHero.jpg",
   },
   {
     title: "Financial Services & Fintech",
     description:
       "Banking, insurance, finance, and financial technology firms—empowering teams to adapt in a changing regulatory and tech-driven landscape.",
-    imgUrl: "/images/sectors/financial-services.jpg",
+    imgUrl: "/services/financial-services.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Providers, labs, hospitals, and biotech companies—supporting quality improvement, training, and agile leadership in mission-driven environments.",
-    imgUrl: "/images/sectors/healthcare-life-sciences.jpg",
+    imgUrl: "/services/healthcare.jpg",
   },
   {
     title: "Technology & Software",
     description:
       "SaaS companies, software development teams, and IT departments—enhancing productivity, cross-functional collaboration, and scaling practices.",
-    imgUrl: "/images/sectors/technology-software.jpg",
+    imgUrl: "/services/technology.jpg",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "Production plants, industrial operations, and supply-chain organizations—streamlining workflows and improving operational outcomes.",
-    imgUrl: "/images/sectors/manufacturing-industrial.jpg",
+    imgUrl: "/services/manufacturing.jpg",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "E‑commerce, retail chains, and consumer product companies—aligning people, structure, and processes to support customer‑centric growth.",
-    imgUrl: "/images/sectors/retail-consumer-goods.jpg",
+    imgUrl: "/services/retail.jpg",
   },
   {
     title: "Education & Nonprofit",
     description:
       "Educational institutions, nonprofit organizations, and mission-driven groups—building organizational resilience and optimizing resource allocation.",
-    imgUrl: "/images/sectors/education-nonprofit.jpg",
+    imgUrl: "/services/education.jpg",
   },
   {
     title: "Government & Public Sector",
     description:
       "Federal, state, and municipal agencies, strengthening organizational strategy, change readiness, training, and performance measurement.",
-    imgUrl: "/images/sectors/government-public-sector.jpg",
+    imgUrl: "/services/govt.jpg",
   },
 ];
 
@@ -111,7 +111,7 @@ const serviceObj = [
         desc: "Facilitate inclusive discussions and engagement with key stakeholders to build consensus, alignment, and commitment.",
       },
     ],
-    img: "",
+    img: "/services/consultation.jpg",
   },
   {
     title: "Operational Improvement",
@@ -130,7 +130,7 @@ const serviceObj = [
         desc: "We help you measure, monitor, and optimize your outcomes to ensure long-term, sustainable success.",
       },
     ],
-    img: "",
+    img: "/services/processManangement.jpg",
   },
   {
     title: "Structural Design",
@@ -145,7 +145,7 @@ const serviceObj = [
         desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
       },
     ],
-    img: "",
+    img: "/services/technology.jpg",
   },
   {
     title: "Education and Training",
@@ -164,7 +164,7 @@ const serviceObj = [
         desc: "We maximize talent development investments by delivering focused training that enhances skills, boosts productivity, and supports long-term growth.",
       },
     ],
-    img: "",
+    img: "/services/education.jpg",
   },
 ];
 
@@ -196,20 +196,18 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={
-              "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
-            }
+            src={"/bg-2.jpg"}
             alt={""}
             className="w-full h-full  object-cover"
           />
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-6xl font-dmSans font-[600] max-w-4xl">
+          <h1 className="text-6xl font-dmSans font-[600] max-w-3xl">
             Organizational Planning That Drives Sustainable Growth
           </h1>
 
-          <p className="max-w-4xl font-quicksand font-[600] mt-3">
+          <p className="max-w-3xl font-quicksand font-[600] mt-3">
             At Dimondra, we help you align your people, processes, and
             priorities to build a stronger, more agile organization. Through
             tailored planning, we guide your leadership teams in creating a
@@ -226,7 +224,7 @@ const Page = () => {
         desc={
           "At Dimondra, we help organizations grow with purpose. Our approach combines strategic insight, continuous development, and people-focused planning to unlock long-term success. By aligning leadership, teams, and operational goals, we guide you in creating a clear roadmap for positive outcomes. Our focus on collaboration, adaptability, and a culture of continuous learning ensures your organization is not only prepared for change but positioned to thrive through it."
         }
-        img={""}
+        img={"/services/roadmap.jpg"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"

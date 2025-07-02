@@ -9,6 +9,7 @@ import Service from "../(sections)/service";
 import "@/styles/globals.css";
 import About from "../(sections)/About";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
+import { AnimatePresence } from "framer-motion";
 import {
   Users,
   UserPlus,
@@ -24,49 +25,49 @@ const industrySectors = [
     title: "Professional Services",
     description:
       "Helping consultancies, legal firms, and agencies recruit and retain high-impact talent.",
-    imgUrl: "/images/industries/professional-services.jpg",
+    imgUrl: "/services/callCenter.jpg",
   },
   {
     title: "Financial Services & Fintech",
     description:
       "Supporting agile workforce strategies in fast-paced, regulated environments.",
-    imgUrl: "/images/industries/financial-services.jpg",
+    imgUrl: "/services/financial-services.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Building clinical and non-clinical talent pipelines for resilient care delivery.",
-    imgUrl: "/images/industries/healthcare-life-sciences.jpg",
+    imgUrl: "/services/healthcare.jpg",
   },
   {
     title: "Technology & Software",
     description:
       "Driving skills development and engagement in competitive, innovation-driven teams.",
-    imgUrl: "/images/industries/technology-software.jpg",
+    imgUrl: "/services/it2.jpg",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "Enhancing workforce planning, safety training, and performance management.",
-    imgUrl: "/images/industries/manufacturing-industrial.jpg",
+    imgUrl: "/services/manufacturing.jpg",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "Aligning people, customer experience, and brand through strategic talent planning.",
-    imgUrl: "/images/industries/retail-consumer-goods.jpg",
+    imgUrl: "/services/retail.jpg",
   },
   {
     title: "Education & Nonprofit",
     description:
       "Strengthening mission-aligned hiring, leadership development, and retention.",
-    imgUrl: "/images/industries/education-nonprofit.jpg",
+    imgUrl: "/services/education.jpg",
   },
   {
     title: "Government & Public Sector",
     description:
       "Enhancing performance and accountability through workforce modernization.",
-    imgUrl: "/images/industries/government-public-sector.jpg",
+    imgUrl: "/services/govt.jpg",
   },
 ];
 
@@ -102,7 +103,7 @@ const serviceObj = [
   {
     title: "Talent Management Services",
     desc: "We offer a robust suite of Talent Management solutions designed to align people strategies with organizational goals:",
-    img: "/images/services/talent-management.jpg",
+    img: "/services/talent-management.jpg",
     arr: [
       {
         title: "Strategic Workforce Planning",
@@ -121,7 +122,7 @@ const serviceObj = [
   {
     title: "Leadership & Talent Growth Solutions",
     desc: "Empower your organization from the inside out. Dimondra’s solutions help you identify future leaders, develop key talent, and foster a culture where growth and engagement thrive.",
-    img: "/images/services/leadership-growth.jpg",
+    img: "/services/growth-people.jpg",
     arr: [
       {
         title: "Succession Planning",
@@ -144,7 +145,7 @@ const serviceObj = [
   {
     title: "In-house Training Academy & Learning Needs Analysis",
     desc: "We help organizations design and implement in-house training academies tailored to their strategic goals. Our structured approach ensures relevant, high-impact learning experiences that strengthen skills, support growth, and enhance performance.",
-    img: "/images/services/training-academy.jpg",
+    img: "/services/training.jpg",
     arr: [
       {
         title: "Training Academy Design & Implementation",
@@ -207,24 +208,25 @@ const Page = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <main className="relative">
-      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
+      <AnimatePresence mode="wait">
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
+      </AnimatePresence>
+
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={
-              "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
-            }
+            src={"/bg-strategy.jpg"}
             alt={""}
-            className="w-full h-full  object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-6xl font-dmSans font-[600] max-w-4xl">
+          <h1 className="text-6xl font-dmSans font-[600] max-w-3xl">
             Talent Management Consulting
           </h1>
 
-          <p className="max-w-4xl font-quicksand font-[600] mt-3">
+          <p className="max-w-3xl font-quicksand font-[600] mt-3">
             Talent management blends both strategic insight and practical tools,
             and every organization&apos;s needs are unique; there is no
             “one-size-fits-all.” Dimondra offers customized consulting solutions
@@ -232,7 +234,10 @@ const Page = () => {
             years of experience and proven frameworks to help you achieve
             lasting success.
           </p>
-          <button className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50"
+          >
             Get started
           </button>
         </div>
@@ -242,7 +247,7 @@ const Page = () => {
         desc={
           "Your people are the foundation of your organization’s success. At Dimondra, we partner with you to create talent strategies that not only meet today’s needs but support future growth. Our comprehensive approach brings together workforce planning, performance management, leadership development, and employee engagement, helping you build a resilient, motivated, and future-ready team. \n We tailor our solutions to fit your unique culture and goals, whether you're scaling rapidly, navigating change, or strengthening leadership pipelines."
         }
-        img={""}
+        img={"/services/callCenter2.jpg"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"

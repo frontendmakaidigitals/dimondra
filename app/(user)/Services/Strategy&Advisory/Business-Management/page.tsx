@@ -15,49 +15,49 @@ const industrySectors = [
     title: "Technology & Software",
     description:
       "We help SaaS companies, IT service providers, and tech startups scale into new markets with robust go-to-market plans, compliance support, and partner networks.",
-    imgUrl: "/images/industries/technology-software.jpg",
+    imgUrl: "/services/technology.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Our team works with hospitals, clinics, pharma companies, and biotech firms to navigate complex regulatory frameworks and deliver high-impact market strategies.",
-    imgUrl: "/images/industries/healthcare-life-sciences.jpg",
+    imgUrl: "/services/healthcare.jpg",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "Whether you're launching a D2C brand or scaling a retail chain, we help align your business with local consumer behaviors and optimize your supply chain.",
-    imgUrl: "/images/industries/retail-consumer-goods.jpg",
+    imgUrl: "/services/retail.jpg",
   },
   {
     title: "Professional Services",
     description:
       "From legal firms to consultancies and agencies, we support knowledge-based businesses in building scalable structures and accessing new client markets.",
-    imgUrl: "/images/industries/professional-services.jpg",
+    imgUrl: "/services/talenthero.jpg",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "We support manufacturers and supply chain operators with location analysis, licensing compliance, and strategic expansion into high-demand regions.",
-    imgUrl: "/images/industries/manufacturing-industrial.jpg",
+    imgUrl: "/services/manufacturing.jpg",
   },
   {
     title: "Financial Services",
     description:
       "Our consulting services help banks, fintech startups, and financial institutions navigate regulatory environments and launch with confidence across the GCC.",
-    imgUrl: "/images/industries/financial-services.jpg",
+    imgUrl: "/services/financial-services.jpg",
   },
   {
     title: "Education & Training",
     description:
       "We assist educational institutions, e-learning companies, and training providers in expanding their reach while ensuring content and delivery are locally relevant.",
-    imgUrl: "/images/industries/education-training.jpg",
+    imgUrl: "/services/education.jpg",
   },
   {
     title: "Energy & Sustainability",
     description:
       "For companies working in renewable energy, environmental tech, or infrastructure, we offer guidance on local policy, strategic partnerships, and project setup.",
-    imgUrl: "/images/industries/energy-sustainability.jpg",
+    imgUrl: "/services/telelcommunication.jpg",
   },
 ];
 
@@ -93,7 +93,7 @@ const serviceObj = [
   {
     title: "Feasibility & Market Analysis",
     desc: "Our feasibility and market analysis services provide a complete picture of the risks, opportunities, and viability of your expansion plans. We assess demand, competition, regulation, cost, and profitability so you can move forward with clarity and confidence.",
-    img: "/images/services/feasibility-analysis.jpg",
+    img: "/services/retail.jpg",
     arr: [
       {
         title: "Market Demand & Opportunity Assessment",
@@ -120,7 +120,7 @@ const serviceObj = [
   {
     title: "New Market Entry Advisory (UAE, KSA, GCC)",
     desc: "Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success when entering the UAE, Saudi Arabia, or GCC markets.",
-    img: "/images/services/new-market-entry.jpg",
+    img: "/services/map.jpeg",
     arr: [
       {
         title: "Local Market Landscape Analysis",
@@ -143,7 +143,7 @@ const serviceObj = [
   {
     title: "Business Setup Strategy & Structuring Guidance",
     desc: "We guide you through each strategic and legal decision to ensure your business is positioned for sustainable growth from day one.",
-    img: "/images/services/business-setup.jpg",
+    img: "/services/consultation.jpg",
     arr: [
       {
         title: "Company Formation Strategy",
@@ -166,7 +166,7 @@ const serviceObj = [
   {
     title: "Regulatory & Licensing Requirements Consulting",
     desc: "Dimondra helps you stay on top of every requirement with end-to-end regulatory support and expert guidance.",
-    img: "/images/services/licensing-compliance.jpg",
+    img: "/services/govt.jpg",
     arr: [
       {
         title: "Trade License Selection & Guidance",
@@ -193,7 +193,7 @@ const serviceObj = [
   {
     title: "Go-to-Market Planning & Localization Strategy",
     desc: "Dimondra builds customized go-to-market plans that combine strategic positioning with cultural relevance to ensure your message, offer, and delivery resonate with local customers.",
-    img: "/images/services/go-to-market.jpg",
+    img: "/services/facilityhero.jpg",
     arr: [
       {
         title: "Go-to-Market Strategy Design",
@@ -256,9 +256,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={
-              "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
-            }
+            src={"/bg-2.jpg"}
             className="w-full h-full  object-cover"
             alt={""}
           />
@@ -287,7 +285,7 @@ const Page = () => {
         desc={
           "Dimondra empowers you to move into new markets with clarity and confidence. We provide expert support through feasibility studies, setup planning, licensing, go-to-market strategy, and local partnerships. With our guidance, you’ll enter new regions ready to succeed, backed by facts, not guesswork."
         }
-        img={""}
+        img={"/services/Consultation2.jpg"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"
