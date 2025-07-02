@@ -36,7 +36,10 @@ const Page: React.FC = () => {
               local employment laws, tax regulations, and worker classification,
               so you can grow your team in India with confidence.
             </p>
-            <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md"
+            >
               Speak to our team
             </button>
           </div>
@@ -280,22 +283,25 @@ const Page: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 place-items-center">
             <div className="order-2">
               <h2 className="font-rubik font-[500] text-3xl text-dimondra-black">
-                Employer of Record (EOR) Services in Saudi Arabia
+                Employer of Record in India
               </h2>
               <p className="font-quicksand font-[600] mt-3">
-                Expanding your workforce into Saudi Arabia can be a complex
-                process, often requiring you to set up a local entity, navigate
-                legal frameworks, and handle ongoing administrative
-                responsibilities. With Dimondra as your Employer of Record (EOR)
-                partner, you can bypass these challenges. We take care of
-                compliance, contracts, payroll, and statutory obligations so you
-                can focus entirely on growing your operations and building your
-                team, without the stress of setting up a legal presence in the
-                Kingdom. Whether you&apos;re hiring one employee or building an
-                entire team, Dimondra enables fast, compliant, and seamless
-                onboarding in Saudi Arabia.
+                Expanding into India doesn&apos;t have to mean setting up a
+                legal entity, a process that can be expensive, time-consuming,
+                and complex. <br /> At Dimondra, we act as your Employer of
+                Record (EOR) in India, enabling you to legally and efficiently
+                hire employees without establishing a local company. We take
+                care of all compliance, payroll, HR administration, and local
+                labour law obligations — so you can focus on growing your
+                business. <br />
+                <br /> Hiring through an EoR gives you the flexibility to build
+                your team in India while we handle the complexities behind the
+                scenes.
               </p>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -349,7 +355,10 @@ const Page: React.FC = () => {
                   Working hours and overtime rules
                 </li>
               </ul>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>
@@ -403,7 +412,10 @@ const Page: React.FC = () => {
                 benefits administration, so you can focus on growing your
                 business with confidence.
               </p>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Connect with us
               </button>
             </div>
@@ -461,7 +473,10 @@ const Page: React.FC = () => {
                 At Dimondra, we help you manage leave policies effectively and
                 compliantly.
               </p>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -525,7 +540,10 @@ const Page: React.FC = () => {
                 protection laws to reduce risk and promote a positive work
                 environment.
               </p>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>
@@ -582,7 +600,10 @@ const Page: React.FC = () => {
                 At Dimondra, we help you navigate India’s offboarding
                 requirements smoothly and compliantly.
               </p>
-              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>
