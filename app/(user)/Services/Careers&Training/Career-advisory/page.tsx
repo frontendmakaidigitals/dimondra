@@ -446,7 +446,7 @@ const Page = () => {
         desc={
           "In addition to ongoing coaching, Dimondra offers a Career Kickstarter Series, a fast-track plan designed for recent grads, career returners, and early professionals. You’ll receive focused guidance, tools, and direction to land roles that match your potential."
         }
-        button=""
+        button="Get started now"
       />
     </>
   );

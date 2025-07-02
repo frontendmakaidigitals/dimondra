@@ -1,5 +1,6 @@
-import React from "react";
-
+"use client";
+import React, { useState } from "react";
+import PopForm from "../../app_chunks/PopFrom";
 const CTA = ({
   title,
   desc,
@@ -9,8 +10,10 @@ const CTA = ({
   desc: string;
   button: string;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="container ">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="relative  rounded-xl overflow-hidden  w-full  mt-10 mb-20">
         <div className="absolute inset-0 w-full h-full z-50">
           <svg
