@@ -34,19 +34,18 @@ const Page = () => {
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
           <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
-            Advance Your HR Career with Industry-Leading Certifications
+            Master Global HR Strategy with the GPHR Certification
           </h1>
           <p className="text-slate-50 mt-3 max-w-2xl">
-            Gain the skills, credentials, and confidence to excel in
-            today&apos;s dynamic HR landscape. Whether you&apos;re starting out
-            or looking to move up, Dimondra offers comprehensive HR
-            certification programs according to your goals.
+            The GPHR is a prestigious certification designed for HR
+            professionals who manage international human resources operations.
+            Offered by HRCI®, it validates your ability to develop and
+            implement global HR strategies, manage cross-border talent mobility,
+            and navigate international legal and cultural complexities. Ideal
+            for seasoned professionals overseeing global workforces, this
+            credential sets you apart as a true expert in global HR leadership.
           </p>
-          <ul className="flex text-slate-50 mt-3 justify-start gap-2">
-            <li>Flexible courses |</li>
-            <li>Expert trainers |</li>
-            <li>Globally recognized credential</li>
-          </ul>
+          
           <div className="flex justify-start">
             <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
               Get certified today
@@ -77,8 +76,8 @@ const Page = () => {
                   cross-border strategies and international teams, the GPHR®
                   validates your ability to handle global workforce planning,
                   international labor law compliance, and multinational HR
-                  practices. Whether you&apos;re overseeing global HR operations or
-                  supporting international expansion, this credential proves
+                  practices. Whether you&apos;re overseeing global HR operations
+                  or supporting international expansion, this credential proves
                   your expertise in managing HR at a worldwide level.
                 </p>
               </li>

@@ -49,16 +49,14 @@ const Page = () => {
   return (
     <main>
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
-        {/* Parallax Background */}
+        
         <motion.img
           style={{ y: yTransform }}
-          src="https://images.unsplash.com/photo-1698047681452-08eba22d0c64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/overview.jpg"
           alt=""
           className="w-full h-full object-cover object-top absolute inset-0 z-0"
         />
-
-        <BgLayer />
-
+      <BgLayer color="bg-slate-900/70" />
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
           <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">

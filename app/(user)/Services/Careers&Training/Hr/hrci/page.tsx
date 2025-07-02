@@ -64,9 +64,9 @@ const Page = () => {
               HRCI® Certification
             </h1>
 
-            <ul className="space-y-7">
+            <ul className="space-y-7 mt-6">
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   Why an HRCI Certification
                 </h2>
                 <p className="font-rubik">
@@ -74,17 +74,17 @@ const Page = () => {
                   <strong>HR Certification Institute® (HRCI®)</strong>{" "}
                   isn&apos;t just a career move — it&apos;s a statement of your
                   expertise, credibility, and dedication to the HR profession.
-                  Whether you&apos;re looking to advance your current role or explore
-                  international opportunities, an HRCI credential sets you apart
-                  in a competitive global workforce.
+                  Whether you&apos;re looking to advance your current role or
+                  explore international opportunities, an HRCI credential sets
+                  you apart in a competitive global workforce.
                 </p>
               </li>
               <li className="space-y-2">
-                <h2 className="text-xl font-rubik font-[500]">
+                <h2 className="text-xl font-rubik font-[600]">
                   What Makes HRCI® Certification Stand Out?
                 </h2>
 
-                <ul className="list-disc ml-4 space-y-1">
+                <ul className="list-disc ml-4 space-y-2">
                   <li>
                     Globally Accredited & Recognized All core HRCI
                     certifications meet the National Commission for Certifying

@@ -25,29 +25,27 @@ const Page = () => {
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
         <motion.img
           style={{ y: yTransform }}
-          src="https://images.unsplash.com/photo-1698047681452-08eba22d0c64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/certificaiton.jpg"
           alt=""
           className="w-full h-full object-cover object-top absolute inset-0 z-0"
         />
 
-        <BgLayer />
+        <BgLayer color={"bg-slate-900/50"} />
 
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
           <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
-            Advance Your HR Career with Industry-Leading Certifications
+            Kickstart Your Global HR Career with the aPHRi Certification
           </h1>
           <p className="text-slate-50 mt-3 max-w-2xl">
-            Gain the skills, credentials, and confidence to excel in
-            today&apos;s dynamic HR landscape. Whether you&apos;re starting out
-            or looking to move up, Dimondra offers comprehensive HR
-            certification programs according to your goals.
+            The aPHRi is an internationally recognized certification designed
+            for individuals beginning their career in human resources. Offered
+            by HRCI®, it validates foundational HR knowledge and demonstrates
+            your commitment to the profession, even without prior work
+            experience. Ideal for early-career professionals, recent graduates,
+            or those transitioning into HR roles globally.
           </p>
-          <ul className="flex text-slate-50 mt-3 justify-start gap-2">
-            <li>Flexible courses |</li>
-            <li>Expert trainers |</li>
-            <li>Globally recognized credential</li>
-          </ul>
+
           <div className="flex justify-start">
             <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
               Get certified today
@@ -62,7 +60,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               aPHRi (Associate Professional in Human Resources – International)
             </h1>
-            <img src={"/PHRI.png"} alt={''} className="" />
+            <img src={"/PHRI.png"} alt={""} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
@@ -70,7 +68,8 @@ const Page = () => {
                 </h2>
                 <p className="font-rubik">
                   {" "}
-                  If you&apos;re just starting out in human resources, the &nbsp;
+                  If you&apos;re just starting out in human resources, the
+                  &nbsp;
                   <strong>
                     Associate Professional in Human Resources – International™
                     (aPHRi™)

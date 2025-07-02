@@ -34,19 +34,17 @@ const Page = () => {
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
           <h1 className="text-5xl font-dmSans font-[600] text-slate-50 max-w-3xl">
-            Advance Your HR Career with Industry-Leading Certifications
+            Advance Your Global HR Expertise with the PHRi Certification
           </h1>
           <p className="text-slate-50 mt-3 max-w-2xl">
-            Gain the skills, credentials, and confidence to excel in
-            today&apos;s dynamic HR landscape. Whether you&apos;re starting out
-            or looking to move up, Dimondra offers comprehensive HR
-            certification programs according to your goals.
+            The PHRi is a globally recognized credential for HR professionals
+            with operational and tactical experience. Offered by HRCI®, it
+            validates your ability to implement HR programs, interpret policy,
+            and manage key HR functions across international contexts. Ideal for
+            mid-level HR professionals looking to enhance their credibility and
+            advance their careers in a global environment.
           </p>
-          <ul className="flex text-slate-50 mt-3 justify-start gap-2">
-            <li>Flexible courses |</li>
-            <li>Expert trainers |</li>
-            <li>Globally recognized credential</li>
-          </ul>
+          
           <div className="flex justify-start">
             <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
               Get certified today
@@ -62,7 +60,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               PHRi (Professional in Human Resources – International)
             </h1>
-            <img src={"/PHRI.png"} alt={''} className="" />
+            <img src={"/PHRI.png"} alt={""} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[500]">
