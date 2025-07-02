@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentType } from "react";
 
 const AreaOfExpertise = ({
   title,
@@ -7,7 +7,7 @@ const AreaOfExpertise = ({
 }: {
   title: string;
   desc: string;
-  data: { icon: React.ReactElement; title: string; desc: string }[];
+  data: { icon: ComponentType<React.SVGProps<SVGSVGElement>>; title: string; desc: string }[];
 }) => {
   return (
     <section className=" py-28 bg-dimondra-black">

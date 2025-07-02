@@ -8,169 +8,248 @@ import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Service from "../(sections)/service";
 import "@/styles/globals.css";
 import About from "../(sections)/About";
+import { LineChart, Map, Building2, FileBadge, Megaphone } from "lucide-react";
 import AreaOfExpertise from "../(sections)/AreaOfExpertise";
 const industrySectors = [
   {
-    title: "Professional Services",
+    title: "Technology & Software",
     description:
-      "Strategy firms, consultancies, marketing agencies, and legal practices—helping them grow through optimized processes and strategic alignment.",
-    imgUrl: "/images/sectors/professional-services.jpg",
-  },
-  {
-    title: "Financial Services & Fintech",
-    description:
-      "Banking, insurance, finance, and financial technology firms—empowering teams to adapt in a changing regulatory and tech-driven landscape.",
-    imgUrl: "/images/sectors/financial-services.jpg",
+      "We help SaaS companies, IT service providers, and tech startups scale into new markets with robust go-to-market plans, compliance support, and partner networks.",
+    imgUrl: "/images/industries/technology-software.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
-      "Providers, labs, hospitals, and biotech companies—supporting quality improvement, training, and agile leadership in mission-driven environments.",
-    imgUrl: "/images/sectors/healthcare-life-sciences.jpg",
-  },
-  {
-    title: "Technology & Software",
-    description:
-      "SaaS companies, software development teams, and IT departments—enhancing productivity, cross-functional collaboration, and scaling practices.",
-    imgUrl: "/images/sectors/technology-software.jpg",
-  },
-  {
-    title: "Manufacturing & Industrial",
-    description:
-      "Production plants, industrial operations, and supply-chain organizations—streamlining workflows and improving operational outcomes.",
-    imgUrl: "/images/sectors/manufacturing-industrial.jpg",
+      "Our team works with hospitals, clinics, pharma companies, and biotech firms to navigate complex regulatory frameworks and deliver high-impact market strategies.",
+    imgUrl: "/images/industries/healthcare-life-sciences.jpg",
   },
   {
     title: "Retail & Consumer Goods",
     description:
-      "E‑commerce, retail chains, and consumer product companies—aligning people, structure, and processes to support customer‑centric growth.",
-    imgUrl: "/images/sectors/retail-consumer-goods.jpg",
+      "Whether you're launching a D2C brand or scaling a retail chain, we help align your business with local consumer behaviors and optimize your supply chain.",
+    imgUrl: "/images/industries/retail-consumer-goods.jpg",
   },
   {
-    title: "Education & Nonprofit",
+    title: "Professional Services",
     description:
-      "Educational institutions, nonprofit organizations, and mission-driven groups—building organizational resilience and optimizing resource allocation.",
-    imgUrl: "/images/sectors/education-nonprofit.jpg",
+      "From legal firms to consultancies and agencies, we support knowledge-based businesses in building scalable structures and accessing new client markets.",
+    imgUrl: "/images/industries/professional-services.jpg",
   },
   {
-    title: "Government & Public Sector",
+    title: "Manufacturing & Industrial",
     description:
-      "Federal, state, and municipal agencies, strengthening organizational strategy, change readiness, training, and performance measurement.",
-    imgUrl: "/images/sectors/government-public-sector.jpg",
+      "We support manufacturers and supply chain operators with location analysis, licensing compliance, and strategic expansion into high-demand regions.",
+    imgUrl: "/images/industries/manufacturing-industrial.jpg",
+  },
+  {
+    title: "Financial Services",
+    description:
+      "Our consulting services help banks, fintech startups, and financial institutions navigate regulatory environments and launch with confidence across the GCC.",
+    imgUrl: "/images/industries/financial-services.jpg",
+  },
+  {
+    title: "Education & Training",
+    description:
+      "We assist educational institutions, e-learning companies, and training providers in expanding their reach while ensuring content and delivery are locally relevant.",
+    imgUrl: "/images/industries/education-training.jpg",
+  },
+  {
+    title: "Energy & Sustainability",
+    description:
+      "For companies working in renewable energy, environmental tech, or infrastructure, we offer guidance on local policy, strategic partnerships, and project setup.",
+    imgUrl: "/images/industries/energy-sustainability.jpg",
   },
 ];
 
-const organizationalFAQs = [
+const businessFAQs = [
   {
-    question: "What is organizational planning and why is it important?",
+    question: "What makes Dimondra’s business consulting different?",
     answer:
-      "Organizational planning aligns your strategy, structure, and people to improve performance and adaptability. It helps ensure that every part of your business works toward a common goal.",
+      "We combine strategic analysis with local expertise in GCC markets, offering actionable advice with a practical path forward.",
   },
   {
-    question: "How do you tailor your services for different industries?",
+    question: "Can you help with both legal setup and market strategy?",
     answer:
-      "We begin by understanding your unique context—industry, goals, challenges—then customize strategies that are relevant, actionable, and measurable.",
+      "Yes, we provide end-to-end support, from legal structuring to branding and go-to-market execution.",
   },
   {
-    question: "Can you support us through just one part of the process?",
+    question: "Do you only work with large companies?",
     answer:
-      "Yes. Whether you need help with strategic planning, process improvement, or team training, we offer flexible, targeted support based on where you need it most.",
+      "Not at all. We support startups, SMEs, and multinational firms alike.",
   },
   {
-    question: "Do you offer in-person or remote consulting?",
+    question: "How long does a market entry project usually take?",
     answer:
-      "We offer both. Our team can work onsite or virtually—whatever suits your organization best.",
+      "Timelines vary depending on your goals, industry, and jurisdiction, but we’ll define clear milestones and keep things moving.",
   },
   {
-    question: "What types of organizations do you typically work with?",
+    question: "Do you assist with post-entry support?",
     answer:
-      "We partner with clients across various sectors, including technology, healthcare, government, education, finance, and more.",
+      "Yes, we provide ongoing support, including compliance, talent advisory, and partner relationship management.",
   },
 ];
 
 const serviceObj = [
   {
-    title: "Direction Setting Services",
-    desc: "Our organizational development services include a comprehensive suite of direction-setting capabilities to establish a clear, actionable path forward:",
+    title: "Feasibility & Market Analysis",
+    desc: "Our feasibility and market analysis services provide a complete picture of the risks, opportunities, and viability of your expansion plans. We assess demand, competition, regulation, cost, and profitability so you can move forward with clarity and confidence.",
+    img: "/images/services/feasibility-analysis.jpg",
     arr: [
       {
-        title: "Organizational Analysis and Diagnosis",
-        desc: "Conduct a deep dive assessment of your current state to pinpoint strengths, gaps, and strategic opportunities.",
+        title: "Market Demand & Opportunity Assessment",
+        desc: "We evaluate customer needs, preferences, and trends in your target market to determine real demand and potential for your product or service.",
       },
       {
-        title: "Strategic Planning",
-        desc: "Collaborate with your leadership to craft a strategic blueprint aligned with long‑term vision and business objectives.",
+        title: "Competitive Landscape Analysis",
+        desc: "Gain insight into your direct and indirect competitors, market saturation levels, and potential gaps that your business can fill.",
       },
       {
-        title: "Change Management",
-        desc: "Identify potential resistance, design effective mitigation strategies, and guide your organization through transitions with minimal disruption.",
+        title: "Regulatory & Legal Considerations",
+        desc: "We highlight the relevant regulatory environment and business laws to ensure your market entry aligns with local requirements.",
       },
       {
-        title: "Stakeholder & Invested-Party Engagement",
-        desc: "Facilitate inclusive discussions and engagement with key stakeholders to build consensus, alignment, and commitment.",
+        title: "Cost & Financial Projections",
+        desc: "From startup to ongoing operations, we provide financial modeling to assess ROI and break-even points, helping you plan smart investments.",
       },
       {
-        title: "Strategy",
-        desc: "",
+        title: "Risk Identification & Mitigation Planning",
+        desc: "We proactively identify risks that could derail your plans and help you build strategic responses to reduce uncertainty.",
       },
     ],
-    img: "",
   },
   {
-    title: "Operational Improvement",
-    desc: "We focus on driving continuous improvement across all areas of your organization. At Dimondra, we help streamline workflows, eliminate inefficiencies, enhance productivity, and ensure your operations deliver measurable outcomes.",
+    title: "New Market Entry Advisory (UAE, KSA, GCC)",
+    desc: "Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success when entering the UAE, Saudi Arabia, or GCC markets.",
+    img: "/images/services/new-market-entry.jpg",
     arr: [
       {
-        title: "Process Improvement",
-        desc: "We support you in developing better processes, policies, and technologies to strengthen operations and boost efficiency.",
+        title: "Local Market Landscape Analysis",
+        desc: "We provide deep insight into regional market trends, customer behavior, and economic indicators to help you determine the best fit for your products or services.",
       },
       {
-        title: "Business Process Mapping",
-        desc: "Our team reviews and maps your workflows to uncover bottlenecks, identify gaps, and reveal opportunities for improvement.",
+        title: "Cultural & Consumer Behavior Guidance",
+        desc: "Understand regional cultural nuances and customer expectations to ensure your strategy resonates with local audiences.",
       },
       {
-        title: "Performance and Quality Management",
-        desc: "We help you measure, monitor, and optimize your outcomes to ensure long-term, sustainable success.",
+        title: "Business Environment & Regulatory Navigation",
+        desc: "We guide you through the specific business practices, legal requirements, and governmental structures of each country to avoid delays and ensure compliance.",
+      },
+      {
+        title: "Strategic Location & Entity Type Advisory",
+        desc: "Based on your goals, we help you choose the optimal location and business structure (mainland, free zone, offshore) for smooth operations and market access.",
       },
     ],
-    img: "",
   },
   {
-    title: "Structural Design",
-    desc: "A well-aligned organizational structure boosts engagement, decision-making, and overall efficiency. At Dimondra, we help you build a framework that reflects your team’s needs and supports your strategic goals.",
+    title: "Business Setup Strategy & Structuring Guidance",
+    desc: "We guide you through each strategic and legal decision to ensure your business is positioned for sustainable growth from day one.",
+    img: "/images/services/business-setup.jpg",
     arr: [
       {
-        title: "Organization Design",
-        desc: "From redefining reporting lines to optimizing team configurations and enhancing decision-making, we ensure your structure supports growth and clarity.",
+        title: "Company Formation Strategy",
+        desc: "We help you choose the best formation route, whether mainland, free zone, or offshore—based on your business model, goals, and expansion plans.",
       },
       {
-        title: "Supporting HR Programs and Metrics",
-        desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
+        title: "Ownership & Entity Structuring",
+        desc: "Our team assists in defining the optimal ownership structure that complies with local laws and aligns with your risk, tax, and investment objectives.",
+      },
+      {
+        title: "Jurisdiction & Location Selection",
+        desc: "We evaluate key jurisdiction factors such as cost, infrastructure, access to customers, and legal framework to guide your location decision.",
+      },
+      {
+        title: "Corporate Governance Advisory",
+        desc: "Dimondra offers expertise in developing governance models, board composition, and policy structures that promote transparency and accountability.",
       },
     ],
-    img: "",
   },
   {
-    title: "Education and Training",
-    desc: "At Dimondra, we deliver impactful learning experiences that empower teams and leaders. Our customized eLearning programs, paired with instructor-led sessions, offer cost-effective, high-quality training. We tailor content to fit your needs, ensuring engagement, knowledge retention, and measurable outcomes.",
+    title: "Regulatory & Licensing Requirements Consulting",
+    desc: "Dimondra helps you stay on top of every requirement with end-to-end regulatory support and expert guidance.",
+    img: "/images/services/licensing-compliance.jpg",
     arr: [
       {
-        title: "Leadership Development",
-        desc: "We help leaders grow through targeted learning in decision-making, communication, and strategic thinking, supported by coaching and mentorship.",
+        title: "Trade License Selection & Guidance",
+        desc: "We help you determine the correct trade license for your business activity and jurisdiction, ensuring you meet all eligibility and documentation requirements.",
       },
       {
-        title: "New Employee Onboarding and Training",
-        desc: "Our onboarding programs create a smooth, structured entry for new hires, helping them integrate quickly and confidently.",
+        title: "Permit & Approval Coordination",
+        desc: "Our consultants coordinate with relevant authorities to acquire necessary permits, zoning clearances, environmental approvals, and more.",
       },
       {
-        title: "Job Skill Development",
-        desc: "We maximize talent development investments by delivering focused training that enhances skills, boosts productivity, and supports long-term growth.",
+        title: "Regulatory Compliance Reviews",
+        desc: "We conduct thorough reviews to ensure your operations comply with current regulations, reducing risk and avoiding penalties.",
+      },
+      {
+        title: "Industry-Specific Licensing Support",
+        desc: "From healthcare and education to fintech and manufacturing, we provide tailored licensing guidance aligned to your industry’s specific requirements.",
+      },
+      {
+        title: "Ongoing Compliance Monitoring",
+        desc: "We offer continuous regulatory support to keep your business compliant as laws and guidelines evolve, so you’re never caught off guard.",
       },
     ],
-    img: "",
+  },
+  {
+    title: "Go-to-Market Planning & Localization Strategy",
+    desc: "Dimondra builds customized go-to-market plans that combine strategic positioning with cultural relevance to ensure your message, offer, and delivery resonate with local customers.",
+    img: "/images/services/go-to-market.jpg",
+    arr: [
+      {
+        title: "Go-to-Market Strategy Design",
+        desc: "We develop a tailored entry roadmap that covers launch timing, marketing strategy, pricing, distribution channels, and key performance indicators.",
+      },
+      {
+        title: "Customer Segmentation & Targeting",
+        desc: "Identify and understand the ideal customer groups within the new market to focus efforts on high-potential segments.",
+      },
+      {
+        title: "Sales & Distribution Planning",
+        desc: "We help establish efficient distribution and sales models tailored to your product, region, and available infrastructure.",
+      },
+      {
+        title: "Localization of Messaging & Branding",
+        desc: "Adapt your brand messaging, visuals, and tone of voice to resonate with the cultural and language preferences of your new audience.",
+      },
+      {
+        title: "Product Adaptation Strategy",
+        desc: "Where needed, we support modifications to packaging, product features, and positioning to meet local compliance or appeal to local tastes.",
+      },
+      {
+        title: "Launch Execution Support",
+        desc: "Dimondra can support the coordination of product launches, including campaign timelines, vendor involvement, promotional efforts, and in-market feedback loops.",
+      },
+    ],
   },
 ];
 
+const AOE = [
+  {
+    title: "Feasibility & Market Analysis",
+    desc: "Evaluate business potential, minimize risks, and validate your idea with detailed feasibility and investment assessments.",
+    icon: LineChart,
+  },
+  {
+    title: "New Market Entry Strategy",
+    desc: "Navigate cultural, legal, and business landscapes to ensure a smooth and successful entry into the UAE, Saudi Arabia, and GCC markets.",
+    icon: Map,
+  },
+  {
+    title: "Business Setup & Structuring",
+    desc: "Get expert guidance on forming the right legal entity, structuring ownership, and launching operations with clarity and compliance.",
+    icon: Building2,
+  },
+  {
+    title: "Licensing & Regulatory Compliance",
+    desc: "Understand and fulfill all licensing and legal requirements to avoid costly delays and operate confidently within local frameworks.",
+    icon: FileBadge,
+  },
+  {
+    title: "Go-to-Market & Localization",
+    desc: "Customize your product and brand approach to resonate with local audiences and drive adoption from day one.",
+    icon: Megaphone,
+  },
+];
 const Page = () => {
   return (
     <main>
@@ -180,52 +259,107 @@ const Page = () => {
             src={
               "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
             }
+            className="w-full h-full  object-cover"
             alt={""}
           />
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-6xl font-dmSans font-[600] max-w-4xl">
-            Organizational Planning That Drives Sustainable Growth
+          <h1 className="text-4xl lg:text-6xl font-dmSans font-[600] max-w-4xl">
+            Business Consulting That Powers Confident Expansion
           </h1>
 
           <p className="max-w-4xl font-quicksand font-[600] mt-3">
-            At Dimondra, we help you align your people, processes, and
-            priorities to build a stronger, more agile organization. Through
-            tailored planning, we guide your leadership teams in creating a
-            roadmap that supports long-term goals, drives performance, and
-            adapts to change.
+            At Dimondra, we help businesses unlock new opportunities through
+            strategic consulting to market entry and expansion across the UAE,
+            Saudi Arabia, and the GCC region. Whether you're a startup or a
+            global brand, we provide data-driven insights, regulatory guidance,
+            and structured planning to reduce risk, ensure compliance, and
+            accelerate growth.
           </p>
           <button className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50">
             Get started
           </button>
         </div>
       </section>
-      <AreaOfExpertise
-        title="Areas of Expertise"
-        desc="At Dimondra, we believe organizational excellence is an ongoing journey, not a one-size-fits-all solution. That’s why our approach is flexible and customized. Whether you need full-scale transformation or targeted support in key areas, we provide strategic expertise that aligns with your goals."
-        data={}
-      />
       <About
-        title={"Develop an Organizational Roadmap for Lasting Success"}
+        title={"Our Business Consulting Approach"}
         desc={
-          "At Dimondra, we help organizations grow with purpose. Our approach combines strategic insight, continuous development, and people-focused planning to unlock long-term success. By aligning leadership, teams, and operational goals, we guide you in creating a clear roadmap for positive outcomes. Our focus on collaboration, adaptability, and a culture of continuous learning ensures your organization is not only prepared for change but positioned to thrive through it."
+          "Dimondra empowers you to move into new markets with clarity and confidence. We provide expert support through feasibility studies, setup planning, licensing, go-to-market strategy, and local partnerships. With our guidance, you’ll enter new regions ready to succeed, backed by facts, not guesswork."
         }
         img={""}
       />
+      <AreaOfExpertise
+        title="Areas of Expertise"
+        desc="Business expansion is not one-size-fits-all. Our services are flexible and adapted to your goals, whether you need complete market entry support or targeted help in specific areas."
+        data={AOE}
+      />
       <Service data={serviceObj} />
+      <section className="py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center container gap-10">
+          <div>
+            <h2 className="text-5xl font-dmSans font-[500]">
+              Our Business Consulting Mission
+            </h2>
+            <p className="mt-3">
+              At Dimondra, we believe business expansion should be strategic,
+              efficient, and grounded in local insight. Our mission is to
+              empower companies to confidently navigate complex markets by
+              offering tailored, end-to-end consulting that minimizes risk and
+              maximizes growth potential. We don&apos;t just advise, we become
+              partners in your success, helping you make data-driven decisions,
+              build compliant and scalable structures, and foster local
+              relationships that last. With Dimondra, your business doesn't just
+              enter new markets, it thrives in them
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                text: "Risk Management",
+                gradient:
+                  "bg-gradient-to-b from-[#818cf8] via-[#6366f1] to-[#2563eb]",
+              },
+              {
+                text: "Client Relations",
+                gradient:
+                  "bg-gradient-to-bl from-[#65a30d] via-[#16a34a] to-[#15803d]",
+              },
+              {
+                text: "Innovation",
+                gradient:
+                  "bg-gradient-to-tl from-[#c2410c] via-[#f97316] to-[#fdba74]",
+              },
+            ].map((text, idx) => (
+              <li
+                key={idx}
+                className={`w-full aspect-square  rounded-full p-[2px] ${text.gradient} shadow-md`}
+              >
+                <div className="bg-blue-50 rounded-full w-full h-full flex justify-center items-center">
+                  {" "}
+                  <p
+                    className={`text-center inline-block bg-clip-text text-transparent text-2xl font-dmSans font-[500] px-4 ${text.gradient}`}
+                  >
+                    {text.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <div className="py-5 bg-dimondra-white">
         <Industry data={industrySectors} desc="" />
       </div>
 
-      <FAQ desc="" data={organizationalFAQs} />
+      <FAQ desc="" data={businessFAQs} />
       <HomeForm />
       <CTA
-        title={"Let’s Build Your Organization’s Future"}
+        title={"Let’s Turn Opportunities Into Outcomes"}
         desc={
-          " Whether you`re restructuring, scaling, or aligning your teams for the future, Dimondra is here to guide you. Our experts are ready to help you create a roadmap that drives impact."
+          "Partner with Dimondra to enter new markets with clarity, structure, and confidence. \n Whether it’s your first market expansion or one of many, we help you grow smarter, faster, and with fewer obstacles."
         }
-        button="Book a Free Consultation"
+        button="Talk to a Business Consultant"
       />
     </main>
   );

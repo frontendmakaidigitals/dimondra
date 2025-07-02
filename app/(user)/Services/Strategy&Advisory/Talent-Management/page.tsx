@@ -8,169 +8,200 @@ import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Service from "../(sections)/service";
 import "@/styles/globals.css";
 import About from "../(sections)/About";
-
+import {
+  Users,
+  UserPlus,
+  GaugeCircle,
+  BriefcaseBusiness,
+  BookOpenCheck,
+  Smile,
+  Repeat,
+} from "lucide-react";
+import AreaOfExpertise from "../(sections)/AreaOfExpertise";
 const industrySectors = [
   {
     title: "Professional Services",
     description:
-      "Strategy firms, consultancies, marketing agencies, and legal practices—helping them grow through optimized processes and strategic alignment.",
-    imgUrl: "/images/sectors/professional-services.jpg",
+      "Helping consultancies, legal firms, and agencies recruit and retain high-impact talent.",
+    imgUrl: "/images/industries/professional-services.jpg",
   },
   {
     title: "Financial Services & Fintech",
     description:
-      "Banking, insurance, finance, and financial technology firms—empowering teams to adapt in a changing regulatory and tech-driven landscape.",
-    imgUrl: "/images/sectors/financial-services.jpg",
+      "Supporting agile workforce strategies in fast-paced, regulated environments.",
+    imgUrl: "/images/industries/financial-services.jpg",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
-      "Providers, labs, hospitals, and biotech companies—supporting quality improvement, training, and agile leadership in mission-driven environments.",
-    imgUrl: "/images/sectors/healthcare-life-sciences.jpg",
+      "Building clinical and non-clinical talent pipelines for resilient care delivery.",
+    imgUrl: "/images/industries/healthcare-life-sciences.jpg",
   },
   {
     title: "Technology & Software",
     description:
-      "SaaS companies, software development teams, and IT departments—enhancing productivity, cross-functional collaboration, and scaling practices.",
-    imgUrl: "/images/sectors/technology-software.jpg",
+      "Driving skills development and engagement in competitive, innovation-driven teams.",
+    imgUrl: "/images/industries/technology-software.jpg",
   },
   {
     title: "Manufacturing & Industrial",
     description:
-      "Production plants, industrial operations, and supply-chain organizations—streamlining workflows and improving operational outcomes.",
-    imgUrl: "/images/sectors/manufacturing-industrial.jpg",
+      "Enhancing workforce planning, safety training, and performance management.",
+    imgUrl: "/images/industries/manufacturing-industrial.jpg",
   },
   {
     title: "Retail & Consumer Goods",
     description:
-      "E‑commerce, retail chains, and consumer product companies—aligning people, structure, and processes to support customer‑centric growth.",
-    imgUrl: "/images/sectors/retail-consumer-goods.jpg",
+      "Aligning people, customer experience, and brand through strategic talent planning.",
+    imgUrl: "/images/industries/retail-consumer-goods.jpg",
   },
   {
     title: "Education & Nonprofit",
     description:
-      "Educational institutions, nonprofit organizations, and mission-driven groups—building organizational resilience and optimizing resource allocation.",
-    imgUrl: "/images/sectors/education-nonprofit.jpg",
+      "Strengthening mission-aligned hiring, leadership development, and retention.",
+    imgUrl: "/images/industries/education-nonprofit.jpg",
   },
   {
     title: "Government & Public Sector",
     description:
-      "Federal, state, and municipal agencies, strengthening organizational strategy, change readiness, training, and performance measurement.",
-    imgUrl: "/images/sectors/government-public-sector.jpg",
+      "Enhancing performance and accountability through workforce modernization.",
+    imgUrl: "/images/industries/government-public-sector.jpg",
   },
 ];
 
-const organizationalFAQs = [
+const TalentFAQs = [
   {
-    question: "What is organizational planning and why is it important?",
+    question: "What industries does Dimondra serve?",
     answer:
-      "Organizational planning aligns your strategy, structure, and people to improve performance and adaptability. It helps ensure that every part of your business works toward a common goal.",
+      "We work across a variety of sectors, including tech, finance, healthcare, education, and manufacturing. Our solutions are adaptable to your specific organizational needs.",
   },
   {
-    question: "How do you tailor your services for different industries?",
+    question: "How are your consulting services delivered?",
     answer:
-      "We begin by understanding your unique context—industry, goals, challenges—then customize strategies that are relevant, actionable, and measurable.",
+      "Our services are available in-person, virtually, or in hybrid formats based on your preference and location.",
   },
   {
-    question: "Can you support us through just one part of the process?",
+    question: "Do you offer customized talent solutions?",
     answer:
-      "Yes. Whether you need help with strategic planning, process improvement, or team training, we offer flexible, targeted support based on where you need it most.",
+      "Yes. Every organization is unique, so we tailor our approach to align with your strategy, structure, and goals.",
   },
   {
-    question: "Do you offer in-person or remote consulting?",
+    question: "How soon can we start?",
     answer:
-      "We offer both. Our team can work onsite or virtually—whatever suits your organization best.",
+      "After an initial consultation, we can typically begin within 1–2 weeks, depending on your requirements.",
   },
   {
-    question: "What types of organizations do you typically work with?",
+    question: "Is there support after implementation?",
     answer:
-      "We partner with clients across various sectors, including technology, healthcare, government, education, finance, and more.",
+      "Absolutely. We offer ongoing support, coaching, and training to ensure long-term impact and success.",
   },
 ];
 
 const serviceObj = [
   {
-    title: "Direction Setting Services",
-    desc: "Our organizational development services include a comprehensive suite of direction-setting capabilities to establish a clear, actionable path forward:",
+    title: "Talent Management Services",
+    desc: "We offer a robust suite of Talent Management solutions designed to align people strategies with organizational goals:",
+    img: "/images/services/talent-management.jpg",
     arr: [
       {
-        title: "Organizational Analysis and Diagnosis",
-        desc: "Conduct a deep dive assessment of your current state to pinpoint strengths, gaps, and strategic opportunities.",
+        title: "Strategic Workforce Planning",
+        desc: "Develop forward-looking talent strategies based on business goals, market trends, and internal capabilities.",
       },
       {
-        title: "Strategic Planning",
-        desc: "Collaborate with your leadership to craft a strategic blueprint aligned with long‑term vision and business objectives.",
+        title: "Full-Cycle Recruitment Support",
+        desc: "Design efficient, equitable hiring processes that enhance candidate experience and employer brand.",
       },
       {
-        title: "Change Management",
-        desc: "Identify potential resistance, design effective mitigation strategies, and guide your organization through transitions with minimal disruption.",
-      },
-      {
-        title: "Stakeholder & Invested-Party Engagement",
-        desc: "Facilitate inclusive discussions and engagement with key stakeholders to build consensus, alignment, and commitment.",
-      },
-      {
-        title: "Strategy",
-        desc: "",
+        title: "Performance Management System Design",
+        desc: "Create systems that support meaningful feedback, goal alignment, and development at every level.",
       },
     ],
-    img: "",
   },
   {
-    title: "Operational Improvement",
-    desc: "We focus on driving continuous improvement across all areas of your organization. At Dimondra, we help streamline workflows, eliminate inefficiencies, enhance productivity, and ensure your operations deliver measurable outcomes.",
+    title: "Leadership & Talent Growth Solutions",
+    desc: "Empower your organization from the inside out. Dimondra’s solutions help you identify future leaders, develop key talent, and foster a culture where growth and engagement thrive.",
+    img: "/images/services/leadership-growth.jpg",
     arr: [
       {
-        title: "Process Improvement",
-        desc: "We support you in developing better processes, policies, and technologies to strengthen operations and boost efficiency.",
+        title: "Succession Planning",
+        desc: "Identify, assess, and develop internal talent pipelines to support business continuity and growth.",
       },
       {
-        title: "Business Process Mapping",
-        desc: "Our team reviews and maps your workflows to uncover bottlenecks, identify gaps, and reveal opportunities for improvement.",
+        title: "Leadership Coaching & Training",
+        desc: "Provide leaders with practical tools, real-time feedback, and personalized development plans.",
       },
       {
-        title: "Performance and Quality Management",
-        desc: "We help you measure, monitor, and optimize your outcomes to ensure long-term, sustainable success.",
+        title: "Competency Frameworks & Career Pathing",
+        desc: "Clarify role expectations and career progression to increase engagement and development.",
+      },
+      {
+        title: "Culture & Engagement Strategies",
+        desc: "Measure engagement, strengthen communication, and foster inclusive, purpose-driven workplaces.",
       },
     ],
-    img: "",
   },
   {
-    title: "Structural Design",
-    desc: "A well-aligned organizational structure boosts engagement, decision-making, and overall efficiency. At Dimondra, we help you build a framework that reflects your team’s needs and supports your strategic goals.",
+    title: "In-house Training Academy & Learning Needs Analysis",
+    desc: "We help organizations design and implement in-house training academies tailored to their strategic goals. Our structured approach ensures relevant, high-impact learning experiences that strengthen skills, support growth, and enhance performance.",
+    img: "/images/services/training-academy.jpg",
     arr: [
       {
-        title: "Organization Design",
-        desc: "From redefining reporting lines to optimizing team configurations and enhancing decision-making, we ensure your structure supports growth and clarity.",
+        title: "Training Academy Design & Implementation",
+        desc: "We support you in establishing an in-house training academy, from governance and curriculum planning to digital infrastructure and content development, designed to build internal capability at scale.",
       },
       {
-        title: "Supporting HR Programs and Metrics",
-        desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
+        title: "Learning Needs Analysis",
+        desc: "Our consultants assess organizational needs, team capabilities, and individual learning priorities to shape a training roadmap that delivers impact and supports long-term performance.",
+      },
+      {
+        title: "Customized Curriculum Development",
+        desc: "We design targeted learning modules, including eLearning, workshops, and hybrid formats, tailored to your industry, roles, and business objectives.",
+      },
+      {
+        title: "Learning Technology Integration",
+        desc: "From LMS selection to content digitization, we help integrate technology that enhances accessibility, engagement, and learning measurement.",
       },
     ],
-    img: "",
-  },
-  {
-    title: "Education and Training",
-    desc: "At Dimondra, we deliver impactful learning experiences that empower teams and leaders. Our customized eLearning programs, paired with instructor-led sessions, offer cost-effective, high-quality training. We tailor content to fit your needs, ensuring engagement, knowledge retention, and measurable outcomes.",
-    arr: [
-      {
-        title: "Leadership Development",
-        desc: "We help leaders grow through targeted learning in decision-making, communication, and strategic thinking, supported by coaching and mentorship.",
-      },
-      {
-        title: "New Employee Onboarding and Training",
-        desc: "Our onboarding programs create a smooth, structured entry for new hires, helping them integrate quickly and confidently.",
-      },
-      {
-        title: "Job Skill Development",
-        desc: "We maximize talent development investments by delivering focused training that enhances skills, boosts productivity, and supports long-term growth.",
-      },
-    ],
-    img: "",
   },
 ];
 
+const AOE = [
+  {
+    title: "Workforce Planning",
+    desc: "We help you forecast talent needs, identify critical roles, and create scalable workforce plans. Our data-informed planning ensures you have the right people, in the right roles, at the right time.",
+    icon: Users,
+  },
+  {
+    title: "Talent Acquisition",
+    desc: "From employer branding to interview design, we support you in building a hiring process that is inclusive, effective, and competitive, so you can consistently bring in the talent your organization needs to thrive.",
+    icon: UserPlus,
+  },
+  {
+    title: "Performance Management",
+    desc: "We help design and implement performance systems that reinforce goals, encourage feedback, and support employee development, fostering a culture of high performance and continuous improvement.",
+    icon: GaugeCircle,
+  },
+  {
+    title: "Leadership Development",
+    desc: "Through coaching, workshops, and strategic mentoring programs, we help emerging and senior leaders build the skills, mindsets, and resilience they need to lead with impact.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Learning & Development",
+    desc: "Our learning programs combine eLearning, instructor-led training, and on-the-job support. Whether you're upskilling employees or strengthening cross-functional capabilities, we help make learning part of your culture.",
+    icon: BookOpenCheck,
+  },
+  {
+    title: "Employee Engagement & Retention",
+    desc: "We analyze engagement trends, identify turnover risks, and develop programs to enhance employee satisfaction. From culture-building to recognition programs, we help you create an environment where people want to stay.",
+    icon: Smile,
+  },
+  {
+    title: "Change Management",
+    desc: "Whether you're launching new systems or restructuring teams, we help you manage the people side of change. Our approach emphasizes communication, readiness, and adoption, minimizing disruption and building buy-in.",
+    icon: Repeat,
+  },
+];
 const Page = () => {
   return (
     <main>
@@ -181,71 +212,101 @@ const Page = () => {
               "https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?t=st=1751102008~exp=1751105608~hmac=131041420dd9f797c023992a02d4a2fc8f1b8397a4296bcf2a8ee60d07400323&w=2000"
             }
             alt={""}
+            className="w-full h-full  object-cover"
           />
         </div>
         <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
           <h1 className="text-6xl font-dmSans font-[600] max-w-4xl">
-            Organizational Planning That Drives Sustainable Growth
+            Talent Management Consulting
           </h1>
 
           <p className="max-w-4xl font-quicksand font-[600] mt-3">
-            At Dimondra, we help you align your people, processes, and
-            priorities to build a stronger, more agile organization. Through
-            tailored planning, we guide your leadership teams in creating a
-            roadmap that supports long-term goals, drives performance, and
-            adapts to change.
+            Talent management blends both strategic insight and practical tools,
+            and every organization&apos;s needs are unique; there is no
+            “one-size-fits-all.” Dimondra offers customized consulting solutions
+            designed to align with your organization&apos;s goals, backed by
+            years of experience and proven frameworks to help you achieve
+            lasting success.
           </p>
           <button className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50">
             Get started
           </button>
         </div>
       </section>
-      <About title={""} desc={""} img={""} />
+      <About
+        title={"Build a Workforce That Grows With You"}
+        desc={
+          "Your people are the foundation of your organization’s success. At Dimondra, we partner with you to create talent strategies that not only meet today’s needs but support future growth. Our comprehensive approach brings together workforce planning, performance management, leadership development, and employee engagement, helping you build a resilient, motivated, and future-ready team. \n We tailor our solutions to fit your unique culture and goals, whether you're scaling rapidly, navigating change, or strengthening leadership pipelines."
+        }
+        img={""}
+      />
+      <AreaOfExpertise
+        title="Areas of Expertise"
+        desc="At Dimondra, we understand that Talent Management is not one-size-fits-all. That’s why we offer a flexible, modular approach, providing targeted solutions and strategic guidance to help you meet workforce challenges with confidence."
+        data={AOE}
+      />
       <Service data={serviceObj} />
+      <section className="py-24">
+        <div className="grid grid-cols-2 place-items-center container gap-10">
+          <div>
+            <h2 className="text-5xl font-dmSans font-[500]">
+              Our Talent Management Mission
+            </h2>
+            <p className="mt-3">
+              At Dimondra, our mission is to help organizations thrive through
+              better people practices. We believe that when individuals succeed,
+              organizations succeed. That’s why our work focuses on aligning
+              talent with purpose through smart strategy, empowering tools, and
+              human-centered design. We help build workplaces where people grow,
+              teams perform, and organizations lead with clarity and confidence.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                text: "Identify and attract talents",
+                gradient:
+                  "bg-gradient-to-b from-[#818cf8] via-[#6366f1] to-[#2563eb]",
+              },
+              {
+                text: "Build a talent management policy",
+                gradient:
+                  "bg-gradient-to-bl from-[#65a30d] via-[#16a34a] to-[#15803d]",
+              },
+              {
+                text: "Support talent growth",
+                gradient:
+                  "bg-gradient-to-tl from-[#c2410c] via-[#f97316] to-[#fdba74]",
+              },
+            ].map((text, idx) => (
+              <li
+                key={idx}
+                className={`w-full aspect-square  rounded-full p-[2px] ${text.gradient} shadow-md`}
+              >
+                <div className="bg-blue-50 rounded-full w-full h-full flex justify-center items-center">
+                  {" "}
+                  <p
+                    className={`text-center inline-block bg-clip-text text-transparent text-2xl font-dmSans font-[500] px-4 ${text.gradient}`}
+                  >
+                    {text.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <div className="py-5 bg-dimondra-white">
         <Industry data={industrySectors} desc="" />
       </div>
-      <section className=" py-28 bg-dimondra-black">
-        <div className="container">
-          <h1 className="text-5xl text-center text-dimondra-white font-dmSans font-[500]">
-            Areas of Expertise
-          </h1>
-          <p className="mt-3 text-slate-50 max-w-4xl text-center mx-auto text-sm">
-            At Dimondra, we believe organizational excellence is an ongoing
-            journey, not a one-size-fits-all solution. That&apos;s why our
-            approach is flexible and customized. Whether you need full-scale
-            transformation or targeted support in key areas, we provide
-            strategic expertise that aligns with your goals.{" "}
-          </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2  mt-12 border-[.5px] border-slate-800/30 rounded-xl">
-            {strategyServices.map(({ title, description, icon: Icon }, idx) => (
-              <div
-                key={idx}
-                className={`border-[.5px] bg-dimondra-grayDark border-slate-800/30  p-7 ${idx === 0 && "rounded-tl-xl"} ${idx === 1 && "rounded-tr-xl"} ${idx === 2 && "rounded-bl-xl"} ${idx === 3 && "rounded-br-xl"} `}
-              >
-                <div className="bg-teal-600 w-fit p-3  rounded-xl">
-                  <Icon className="size-[55px] stroke-slate-200" />
-                </div>
-                <div className="space-y-2 mt-6">
-                  <h3 className="text-2xl text-dimondra-black font-[600] font-dmSans">
-                    {title}
-                  </h3>
-                  <p className="font-quicksand text-dimondra-black/90 font-[500]">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <FAQ desc="" data={organizationalFAQs} />
+
+      <FAQ desc="" data={TalentFAQs} />
       <HomeForm />
       <CTA
-        title={"Let’s Build Your Organization’s Future"}
+        title={"Ready to Transform Your Talent Strategy?"}
         desc={
-          " Whether you`re restructuring, scaling, or aligning your teams for the future, Dimondra is here to guide you. Our experts are ready to help you create a roadmap that drives impact."
+          "Let Dimondra be your trusted partner in unlocking growth, engagement, and leadership potential."
         }
         button="Book a Free Consultation"
       />

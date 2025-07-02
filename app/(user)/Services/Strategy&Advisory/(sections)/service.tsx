@@ -19,8 +19,6 @@ type ServiceCategory = {
   desc: string;
   arr: ServiceItem[];
   img: string;
-  grid: string;
-  wifth: string;
 };
 
 const Service = ({ data }: { data: ServiceCategory[] }) => {
@@ -33,10 +31,10 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
         >
           <div className="grid container place-items-center grid-cols-1 lg:grid-cols-2 gap-16">
             <div
-              className={`${idx % 2 == 0 ? "order-1 lg:order-2" : "order-2 lg:order-1"}`}
+              className={`mt-16 lg:mt-0 ${idx % 2 == 0 ? "order-1 lg:order-2" : "order-2 lg:order-1"}`}
             >
               {" "}
-              <h1 className="text-5xl font-[500] font-dmSans">{item.title}</h1>
+              <h1 className="text-5xl font-[600] font-dmSans">{item.title}</h1>
               <p className=" mx-auto mt-2 ">{item.desc}</p>
             </div>
             <img
@@ -57,10 +55,7 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
               <Carousel className="w-full">
                 <CarouselContent className="-ml-1">
                   {data.map((item, index) => (
-                    <CarouselItem
-                      key={index}
-                      className="pl-1 md:basis-1/2  lg:basis-1/3 "
-                    >
+                    <CarouselItem key={index} className="pl-1 lg:basis-1/3 ">
                       <div className="p-1 h-full">
                         <Card className="h-full flex flex-col">
                           <CardContent className="p-6 flex flex-col h-full">
@@ -76,8 +71,8 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="absolute -left-3" />
+                <CarouselNext className="absolute -right-3 " />
               </Carousel>
             </div>
           </div>
