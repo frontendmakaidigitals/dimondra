@@ -86,17 +86,17 @@ const CTA = ({
           alt={""}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="relative z-20 px-6 py-12">
+        <div className="relative z-[99] px-6 py-12">
           <h2 className="text-center font-dmSans  text-3xl tracking-tight font-[600]">
             {title}
           </h2>
           <p className="text-center mt-3 text-sm max-w-3xl font-quicksand font-[600] mx-auto">
             {desc}
           </p>
-          <div className="flex justify-center mt-5 ">
+          <div className="flex  justify-center mt-5 ">
             <button
               onClick={() => setIsOpen(true)}
-              className="px-4 bg-dimondra-black py-2 text-dimondra-white rounded-lg text-sm"
+              className="px-4 bg-dimondra-black hover:bg-black py-2 text-dimondra-white rounded-lg text-sm"
             >
               {button}
             </button>
