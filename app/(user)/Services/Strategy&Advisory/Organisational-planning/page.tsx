@@ -191,8 +191,8 @@ const AOE = [
     icon: GraduationCap,
   },
 ];
-const [isOpen, setIsOpen] = useState(false);
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <main>
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />

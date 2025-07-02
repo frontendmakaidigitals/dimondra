@@ -251,8 +251,9 @@ const AOE = [
     icon: Megaphone,
   },
 ];
-const [isOpen, setIsOpen] = useState(false);
+
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <main>
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -273,7 +274,7 @@ const Page = () => {
           <p className="max-w-4xl font-quicksand font-[600] mt-3">
             At Dimondra, we help businesses unlock new opportunities through
             strategic consulting to market entry and expansion across the UAE,
-            Saudi Arabia, and the GCC region. Whether you're a startup or a
+            Saudi Arabia, and the GCC region. Whether you&apos;re a startup or a
             global brand, we provide data-driven insights, regulatory guidance,
             and structured planning to reduce risk, ensure compliance, and
             accelerate growth.
@@ -313,7 +314,7 @@ const Page = () => {
               maximizes growth potential. We don&apos;t just advise, we become
               partners in your success, helping you make data-driven decisions,
               build compliant and scalable structures, and foster local
-              relationships that last. With Dimondra, your business doesn't just
+              relationships that last. With Dimondra, your business doesn&apos;t just
               enter new markets, it thrives in them
             </p>
           </div>

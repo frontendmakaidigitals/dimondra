@@ -192,9 +192,9 @@ const AOE = [
   },
 ];
 
-const [isOpen, setIsOpen] = useState(false);
 
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <main>
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -215,7 +215,7 @@ const Page = () => {
           <p className="max-w-4xl font-quicksand font-[600] mt-3">
             At Dimondra, we provide end-to-end legal management solutions
             tailored to businesses operating in the UAE and beyond. Whether
-            you're launching a startup, expanding across borders, or refining
+            you&apos;re launching a startup, expanding across borders, or refining
             your internal policies, we ensure your operations stay legally
             compliant, protected, and resilient. With our support, you can
             confidently focus on growth while we manage the legal complexities
