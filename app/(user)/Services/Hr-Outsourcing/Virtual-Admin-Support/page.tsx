@@ -30,7 +30,11 @@ import {
   ShieldCheck,
   Rocket,
   Handshake,
+  ArrowRight,
+  Check,
+  ArrowUpRight,
 } from "lucide-react";
+import clsx from "clsx";
 
 const Page = () => {
   useSplitText({
@@ -241,6 +245,70 @@ const Page = () => {
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
+  const packages = [
+    {
+      name: "Full Time",
+      price: "899",
+      buttonText: "Start with Free",
+      features: [
+        "160 Hours per month",
+        "Dedicated Assistant",
+        "Free replacement",
+        "Email and Chat Support",
+        "Phone Call Support",
+        "Customer Success Manager",
+        "Rigorous quality control and supervision",
+        "Your timezone – Any hours you want",
+      ],
+
+      orgPrice: "1999",
+    },
+    {
+      name: "Part Time",
+      price: "499",
+      buttonText: "Upgrade to Pro",
+      features: [
+        "80 Hours per month",
+        "Dedicated Assistant",
+        "Free replacement",
+        "Email and Chat Support",
+        "Phone Call Support",
+        "Customer Success Manager",
+        "Rigorous quality control and supervision",
+        "Your timezone – Any hours you want",
+      ],
+      orgPrice: "599",
+    },
+    {
+      name: "40 hours",
+      price: "299",
+      buttonText: "Contact Sales",
+      features: [
+        "40 Hours per month",
+        "Free replacement",
+        "Email and Chat Support",
+        "Phone Call Support",
+        "Customer Success Manager",
+        "Rigorous quality control and supervision",
+        "Your timezone – Any hours you want",
+      ],
+    },
+    {
+      name: "20 hours",
+      price: "199",
+      buttonText: "Contact Sales",
+      features: [
+        "40 Hours per month",
+        "Free replacement",
+        "Email and Chat Support",
+        "Phone Call Support",
+        "Customer Success Manager",
+        "Rigorous quality control and supervision",
+        "Your timezone – Any hours you want",
+      ],
+    },
+  ];
+
   return (
     <>
       <motion.div
@@ -299,11 +367,113 @@ const Page = () => {
         }
         data={serviceBenefits}
       />
+      <section className="py-12 relative">
+        <div className="absolute top-1/2 left-1/5 bg-dimondra-teal/20 blur-3xl size-[300px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/5 bg-dimondra-tealDark/20 blur-3xl size-[300px] rounded-full" />
+        <h1 className="max-w-4xl mb-9 mx-auto text-center font-[600] text-6xl font-sans text-dimondra-black">
+          Transparent Pricing
+        </h1>
+        <div className="grid relative z-10 container grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
+          {packages.map((item, idx) => (
+            <motion.div
+              initial={{ y: 120, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.165, 0.84, 0.44, 1],
+                delay: 0.15 * idx,
+              }}
+              viewport={{ once: true }}
+              key={idx}
+              className={`rounded-xl overflow-hidden p-4 relative  backdrop-filter backdrop-blur-lg border border-slate-700 ${item.price.toLowerCase() === "custom" ? "bg-dimondra-tealDark text-slate-50" : "bg-white/40 text-black"}`}
+            >
+              <div className="w-[800px] h-[70px] bg-white/50 blur-3xl rotate-[-20deg] top-12 absolute left-1/2 -translate-x-1/2" />
+              <div className="w-[800px] h-[100px] bg-white/50 blur-3xl rotate-[-20deg] bottom-10 absolute left-1/2 -translate-x-1/2" />
+              <div className="flex justify-between items-center relative z-10">
+                <h2 className="font-dmSans font-[600] text-lg">{item.name}</h2>
+                {item.name.toLowerCase() === "full time" && (
+                  <p
+                    className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-bl
+                    from-[#84cc16]
+                    via-[#16a34a]
+                    to-[#0f766e]"
+                  >
+                    Best Value
+                  </p>
+                )}
+                {item.name.toLowerCase() === "part time" && (
+                  <p
+                    className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-b
+                    from-[#06b6d4]
+                    via-[#2563eb]
+                    to-[#6366f1]"
+                  >
+                    Most Popular
+                  </p>
+                )}
+              </div>
+              <h2
+                className={`text-5xl relative z-10 font-quicksand flex items-start gap-[2px] font-[500] mt-5`}
+              >
+                {item.orgPrice && (
+                  <><span className="text-lg text-red-500 line-through">${item.orgPrice}</span> &nbsp;</>
+                )}
+                <span className="text-xl mt-[2px] font-[400]">$</span>
+                {item.price}
+                <span className="text-xl mt-[6px] font-[400]">/month</span>
+              </h2>
+
+              <motion.button
+                initial={{
+                  scale: 1,
+                  backgroundColor: "transparent",
+                  color: "#000000",
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "#00929b",
+                  color: "#ffffff",
+                }}
+                transition={{ duration: 0.4, ease: [0.165, 0.84, 0.44, 1] }}
+                style={{
+                  boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
+                }}
+                className={clsx(
+                  `w-full relative z-10 bg-dimondra-white font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/30`
+                )}
+              >
+                Get Started Today
+                <ArrowUpRight />
+              </motion.button>
+              <hr className="border-slate-800/30 my-6" />
+              <p className="mb-4 relative z-10 font-rubik font-[400]">
+                Starter plan includes:
+              </p>
+              <ul className="space-y-3">
+                {item.features.map((arr, id) => (
+                  <li
+                    key={id}
+                    className="flex font-quicksand font-[500] relative z-10 items-start gap-2"
+                  >
+                    <div
+                      className={clsx(`mt-[2px] rounded-full p-1 bg-green-400`)}
+                    >
+                      <Check className={clsx(`size-[12px] stroke-green-100`)} />
+                    </div>{" "}
+                    {arr}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
       <FAQ
         data={faqs}
         desc="At Dimondra, we understand you may have questions about how our talent solutions can benefit your business. We've compiled some of the most common inquiries to provide clarity on our services, process, and the value we bring to your recruitment efforts in the UAE."
       />
       <HomeForm />
+
       <CTA
         title={"Ready to Simplify Your Workday?"}
         desc={
