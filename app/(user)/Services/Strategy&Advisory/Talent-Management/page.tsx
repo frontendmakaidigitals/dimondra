@@ -1,6 +1,6 @@
 "use client";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
-import React from "react";
+import React, { useState } from "react";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../(business-service-section)/CTA";
@@ -8,6 +8,7 @@ import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Service from "../(sections)/service";
 import "@/styles/globals.css";
 import About from "../(sections)/About";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   Users,
   UserPlus,
@@ -203,8 +204,10 @@ const AOE = [
   },
 ];
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
-    <main>
+    <main className="relative">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
