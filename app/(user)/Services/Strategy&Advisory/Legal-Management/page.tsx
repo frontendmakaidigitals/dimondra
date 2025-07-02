@@ -243,7 +243,7 @@ const Page = () => {
       />
       <Service data={serviceObj} />
       <section className="py-24">
-        <div className="grid grid-cols-2 place-items-center container gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center container gap-10">
           <div>
             <h2 className="text-5xl font-dmSans font-[500]">
               Our Legal Management Mission
