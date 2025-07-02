@@ -55,7 +55,7 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[1.3fr_.7fr] gap-8">
+        <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[1.3fr_.7fr] gap-8">
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               aPHRi (Associate Professional in Human Resources – International)

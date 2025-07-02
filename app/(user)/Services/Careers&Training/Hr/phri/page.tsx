@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SideBar from "../(sideBar)/sideBar";
+import RightSide from "../(sideBar)/RightSide";
 import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
 import BgLayer from "../../../../app_chunks/BgLayer";
@@ -54,8 +55,7 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
-          <SideBar />
+        <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[1.3fr_.7fr] gap-5">
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               PHRi (Professional in Human Resources – International)
@@ -155,6 +155,7 @@ const Page = () => {
               </li>
             </ul>
           </div>
+          <RightSide />
         </div>
       </section>
       <HomeForm />

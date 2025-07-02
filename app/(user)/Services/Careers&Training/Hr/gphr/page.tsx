@@ -4,6 +4,7 @@ import SideBar from "../(sideBar)/sideBar";
 import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
 import BgLayer from "../../../../app_chunks/BgLayer";
+import RightSide from "../(sideBar)/RightSide";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -55,8 +56,8 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-        <div className="container grid place-items-start grid-cols-[.4fr_1.6fr] gap-5">
-          <SideBar />
+        <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[1.3fr_.7fr] gap-5">
+          
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               GPHR (Global Professional in Human Resources)
@@ -167,6 +168,7 @@ const Page = () => {
               </li>
             </ul>
           </div>
+          <RightSide />
         </div>
       </section>
       <HomeForm />
