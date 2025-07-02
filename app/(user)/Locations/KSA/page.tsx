@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Check, Circle, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
+import PopForm from "../../app_chunks/PopFrom";
 const saudiOverview = [
   { key: "Currency", value: "Saudi Riyal (SAR)" },
   { key: "Capital", value: "Riyadh" },
@@ -25,9 +26,11 @@ const saudiOverview = [
   { key: "Date Format", value: "dd/mm/yyyy" },
 ];
 const Page: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <section className="relative bg-dimondra-black">
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="container place-items-center pt-28 pb-20 gap-10 text-slate-50 grid grid-cols-1 lg:grid-cols-2 relative z-10">
           <div className="">
             <h1 className="text-4xl lg:text-5xl font-[600] font-dmSans tracking-tight">
@@ -42,7 +45,10 @@ const Page: React.FC = () => {
               end-to-end workforce solutions help you expand confidently across
               Saudi Arabia and the GCC.
             </p>
-            <button className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md"
+            >
               Get in touch
             </button>
           </div>
@@ -242,7 +248,10 @@ const Page: React.FC = () => {
                 entire team, Dimondra enables fast, compliant, and seamless
                 onboarding in Saudi Arabia.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -294,7 +303,10 @@ const Page: React.FC = () => {
                 With Dimondra, your contracts are more than paperwork, they’re a
                 foundation for secure, professional working relationships.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -345,7 +357,10 @@ const Page: React.FC = () => {
                   market
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>
@@ -400,7 +415,10 @@ const Page: React.FC = () => {
                   year
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Connect with us
               </button>
             </div>
@@ -454,7 +472,10 @@ const Page: React.FC = () => {
                   Whistleblower protections and workplace safety regulations
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -516,7 +537,10 @@ const Page: React.FC = () => {
                   Contract terms
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>

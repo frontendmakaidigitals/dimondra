@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import PopForm from "../app_chunks/PopFrom";
 import {
   Briefcase,
   ClipboardList,
@@ -9,6 +10,7 @@ import {
   LifeBuoy,
 } from "lucide-react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
+import { useState } from "react";
 const ServiceRevamp = () => {
   const services = [
     {
@@ -105,9 +107,10 @@ const ServiceRevamp = () => {
     type: "chars, lines",
     linesClass: "line-wrapper++",
   });
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="my-20">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="container serviceTrigger mx-auto px-4">
         <p className="text-center text-sm text-gray-500">Our Services</p>
         <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] tracking-tighter text-center font-[600] text-dimondra-black">
@@ -149,16 +152,21 @@ const ServiceRevamp = () => {
                   <h2 className="text-2xl font-dmSans font-bold text-slate-900">
                     {service.title}
                   </h2>
-                  <p className="text-slate-700 font-quicksand font-[600]">{service.description}</p>
+                  <p className="text-slate-700 font-quicksand font-[600]">
+                    {service.description}
+                  </p>
 
-                  <div className="group mt-3 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium text-sm shadow-sm">
+                  <button
+                    onClick={() => setIsOpen(true)}
+                    className="group mt-3 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium text-sm shadow-sm"
+                  >
                     <span className="px-6 py-2 inline-block transition-all duration-300 group-hover:-translate-y-10 group-hover:opacity-0">
                       Learn more
                     </span>
                     <div className="absolute inset-0 flex items-center justify-center bg-dimondra-teal text-white rounded-full group-hover:rounded-none translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                       Learn more
                     </div>
-                  </div>
+                  </button>
                 </div>
               </div>
             );

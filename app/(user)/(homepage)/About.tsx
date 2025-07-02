@@ -1,9 +1,10 @@
 "use client";
 import { Globe, Users } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import { useElementInViewport } from "../app_chunks/ImageAnimationLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
+import PopForm from "../app_chunks/PopFrom";
 const About = () => {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(ref, "center");
@@ -17,9 +18,10 @@ const About = () => {
     type: "chars, lines",
     linesClass: "line-wrapper++",
   });
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-[#CDE8E5] pt-[55rem] lg:pt-52 pb-12">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-5 ">
         <div
           ref={ref}
@@ -51,13 +53,13 @@ const About = () => {
             deliver tailored solutions across HR, recruitment, administration,
             IT, legal, marketing, and government relations. Our mission is
             simple: to support your growth while enabling your people to thrive.
-            Whether you&apos;re scaling up, entering a new market, or streamlining
-            operations, Dimondra offers a one-stop hub for integrated business
-            support. We combine global expertise with local insight to help you
-            grow compliantly, confidently, and competitively. More than a
-            vendor, we act as a true extension of your team, simplifying the
-            complex, reducing operational load, and empowering your leaders to
-            focus on what matters most.
+            Whether you&apos;re scaling up, entering a new market, or
+            streamlining operations, Dimondra offers a one-stop hub for
+            integrated business support. We combine global expertise with local
+            insight to help you grow compliantly, confidently, and
+            competitively. More than a vendor, we act as a true extension of
+            your team, simplifying the complex, reducing operational load, and
+            empowering your leaders to focus on what matters most.
           </p>
           <div className="mt-5">
             <div className="flex items-start gap-4">
@@ -97,7 +99,10 @@ const About = () => {
               </div>
             </div>
           </div>
-          <button className="px-4 py-[.6rem] text-sm font-quicksand font-[600] bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white rounded-xl mt-7">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-4 py-[.6rem] text-sm font-quicksand font-[600] bg-dimondra-tealDark hover:bg-dimondra-teal text-dimondra-white rounded-xl mt-7"
+          >
             Partner With Us
           </button>
         </div>

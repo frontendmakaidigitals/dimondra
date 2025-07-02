@@ -55,28 +55,43 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Most Visits</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/services" className="hover:underline">
+                  <Link
+                    href="/Services/Hr-Outsourcing/Hr-Operations"
+                    className="hover:underline"
+                  >
                     Hr Operations
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:underline">
+                  <Link
+                    href="/Services/Business-Service/It-Support"
+                    className="hover:underline"
+                  >
                     IT Support
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:underline">
-                    Digital Services
+                  <Link
+                    href="/Services/Business-Service/Facility-Management"
+                    className="hover:underline"
+                  >
+                    Facility Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:underline">
+                  <Link
+                    href="/Services/Careers&Training/Career-advisory"
+                    className="hover:underline"
+                  >
                     Career Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:underline">
-                    Market Advisory
+                  <Link
+                    href="/Services/Business-Service/Digital-Marketing"
+                    className="hover:underline"
+                  >
+                    Digital Services
                   </Link>
                 </li>
               </ul>
@@ -103,11 +118,13 @@ const Footer = () => {
             </div>
             <div className="md:col-span-1">
               <h4 className="text-lg font-semibold mb-4">Our Office</h4>
-              <div >
+              <div>
                 <div className="space-y-3">
                   <div className="flex items-start gap-2">
                     <MapPin className="w-5 h-5 mt-1 " />
-                    <p className="max-w-[250px]">Office: 123 Sheikh Zayed Rd, Dubai, UAE</p>
+                    <p className="max-w-[250px]">
+                      Office: 123 Sheikh Zayed Rd, Dubai, UAE
+                    </p>
                   </div>
                   <div className="flex items-center gap-2 mt-2 ">
                     <Phone className="w-4 h-4" />

@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Check, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
 import { Divider } from "@heroui/react";
+import PopForm from "../../app_chunks/PopFrom";
 const uaeOverview = [
   { key: "Currency", value: "UAE Dirham (AED)" },
   { key: "Capital", value: "Abu Dhabi" },
@@ -29,9 +30,11 @@ const uaeOverview = [
 ];
 
 const Page: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <section className="relative bg-dimondra-black">
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="container place-items-center pt-28 pb-20 gap-10 text-slate-50 grid grid-cols-1 lg:grid-cols-2 relative z-10">
           <div className="">
             <h1 className="text-4xl lg:text-5xl font-[600] font-dmSans tracking-tight">
@@ -43,7 +46,10 @@ const Page: React.FC = () => {
               We handle contracts, payroll, and compliance, so you can focus on
               scaling your business across the Emirates and beyond.
             </p>
-            <button className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md"
+            >
               Ready to hire in the UAE?
             </button>
           </div>
@@ -193,7 +199,10 @@ const Page: React.FC = () => {
               <h2 className="text-lg font-quicksand font-[600]">
                 Want to hire in the UAE without setting up a legal entity?
               </h2>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -253,7 +262,10 @@ const Page: React.FC = () => {
                 </li>
               </ul>
 
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -284,7 +296,10 @@ const Page: React.FC = () => {
                 <br />
               </p>
 
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>
@@ -313,7 +328,10 @@ const Page: React.FC = () => {
                 your team stays supported.
               </p>
 
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Connect with us
               </button>
             </div>
@@ -379,7 +397,10 @@ const Page: React.FC = () => {
                   Pay equity and fair compensation practices
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Talk to our team
               </button>
             </div>
@@ -439,7 +460,10 @@ const Page: React.FC = () => {
                   Legal steps in business transfers and restructuring
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5"
+              >
                 Speak to our team
               </button>
             </div>

@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "../app_chunks/BgLayer";
 import { motion } from "motion/react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import "@/styles/globals.css";
 import { Briefcase, Globe, Headphones } from "lucide-react";
+import PopForm from "../app_chunks/PopFrom";
 const HeroSection = () => {
   const stats = [
     {
@@ -46,9 +47,10 @@ const HeroSection = () => {
     linesClass: "line-wrapper++",
     delay: 1.2,
   });
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="h-[90dvh] lg:h-[110vh] relative w-full trigger">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="absolute w-full h-full overflow-hidden inset-0">
         {" "}
         <motion.video
@@ -89,7 +91,10 @@ const HeroSection = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 0.4 }}
         >
-          <button className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-5 py-3 text-sm transition-all duration-200 text-dimondra-white border-dimondra-gray/70  hover:bg-dimondra-tealDark hover:border-slate-50/0  border rounded-xl mt-6"
+          >
             Book a Free Consultation
           </button>
         </motion.div>

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useScrollPosition } from "@/app/hooks/useScrollVal";
 import { motion, AnimatePresence } from "motion/react";
 import MobileMenu from "./MobileMenu";
-
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
   const { scrollVal } = useScrollPosition();
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -271,7 +271,10 @@ const Header = () => {
           <MobileMenu menu={navMenu} />
         </div>
 
-        <motion.button className="relative hidden lg:inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+        <motion.button
+          onClick={() => router.push("/Contact")}
+          className="relative hidden lg:inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+        >
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#5eead4_0%,#0f766e_50%,#5eead4_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#EEF7FF] hover:bg-dimondra-teal hover:text-dimondra-white transition-all duration-250 px-8 py-1 text-sm font-medium text-black backdrop-blur-3xl">
             Get a Quote

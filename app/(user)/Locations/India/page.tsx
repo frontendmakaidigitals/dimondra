@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Check, Circle, Plus } from "lucide-react";
 import CTA from "../../Services/(business-service-section)/CTA";
+import PopForm from "../../app_chunks/PopFrom";
 import { Divider } from "@heroui/react";
 const indiaOverview = [
   { key: "Currency", value: "Indian Rupee (INR)" },
@@ -17,9 +18,11 @@ const indiaOverview = [
 ];
 
 const Page: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <section className="relative bg-dimondra-black">
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="container place-items-center pt-28 pb-20 gap-10 text-slate-50 grid grid-cols-1 lg:grid-cols-2 relative z-10">
           <div className="">
             <h1 className="text-4xl lg:text-5xl font-[600] font-dmSans tracking-tight">
@@ -33,7 +36,7 @@ const Page: React.FC = () => {
               local employment laws, tax regulations, and worker classification,
               so you can grow your team in India with confidence.
             </p>
-            <button className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md">
+            <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 px-4 py-2 mt-6 rounded-md">
               Speak to our team
             </button>
           </div>
@@ -292,7 +295,7 @@ const Page: React.FC = () => {
                 entire team, Dimondra enables fast, compliant, and seamless
                 onboarding in Saudi Arabia.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Talk to our team
               </button>
             </div>
@@ -346,7 +349,7 @@ const Page: React.FC = () => {
                   Working hours and overtime rules
                 </li>
               </ul>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
               </button>
             </div>
@@ -400,7 +403,7 @@ const Page: React.FC = () => {
                 benefits administration, so you can focus on growing your
                 business with confidence.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Connect with us
               </button>
             </div>
@@ -458,7 +461,7 @@ const Page: React.FC = () => {
                 At Dimondra, we help you manage leave policies effectively and
                 compliantly.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Talk to our team
               </button>
             </div>
@@ -522,7 +525,7 @@ const Page: React.FC = () => {
                 protection laws to reduce risk and promote a positive work
                 environment.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
               </button>
             </div>
@@ -579,7 +582,7 @@ const Page: React.FC = () => {
                 At Dimondra, we help you navigate India’s offboarding
                 requirements smoothly and compliantly.
               </p>
-              <button className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
+              <button onClick={() => setIsOpen(true)} className="bg-dimondra-tealDark text-slate-50 rounded-md px-4 py-2 mt-5">
                 Speak to our team
               </button>
             </div>

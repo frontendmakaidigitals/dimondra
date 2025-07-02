@@ -1,9 +1,9 @@
 "use client";
 import BgLayer from "../../app_chunks/BgLayer";
-import React from "react";
+import React, { useState } from "react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { motion } from "motion/react";
-
+import PopForm from "../../app_chunks/PopFrom";
 const HeroSection = () => {
   useSplitText({
     selector: ".aboutHead",
@@ -53,9 +53,10 @@ const HeroSection = () => {
       ease: [0.86, 0, 0.07, 1],
     },
   };
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="relative h-[95vh]  w-full">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <motion.div
         variants={container}
         initial="hidden"
@@ -110,6 +111,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, ease: [0.86, 0, 0.07, 1], delay: 1.2 }}
+            onClick={()=>setIsOpen(true)}
             className="group relative mt-4 inline-flex h-10 text-sm items-center justify-center overflow-hidden bg-dimondra-teal border rounded-md font-medium"
           >
             <div className="inline-flex h-10 translate-y-0 items-center justify-center px-4  bg-gradient-to-r text-slate-50 transition duration-500 group-hover:-translate-y-[150%]">
