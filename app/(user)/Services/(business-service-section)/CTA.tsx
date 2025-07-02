@@ -15,7 +15,7 @@ const CTA = ({
     <div className="container ">
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="relative  rounded-xl overflow-hidden  w-full  mt-10 mb-20">
-        <div className="absolute inset-0 w-full h-full z-50">
+        <div className="absolute inset-0 w-full h-full z-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -86,7 +86,7 @@ const CTA = ({
           alt={""}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="relative z-[99] px-6 py-12">
+        <div className="relative z-[12] px-6 py-12">
           <h2 className="text-center font-dmSans  text-3xl tracking-tight font-[600]">
             {title}
           </h2>
