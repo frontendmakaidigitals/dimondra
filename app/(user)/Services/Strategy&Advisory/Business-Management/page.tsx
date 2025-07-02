@@ -292,7 +292,7 @@ const Page = () => {
         desc={
           "Dimondra empowers you to move into new markets with clarity and confidence. We provide expert support through feasibility studies, setup planning, licensing, go-to-market strategy, and local partnerships. With our guidance, you’ll enter new regions ready to succeed, backed by facts, not guesswork."
         }
-        img={"/services/Consultation2.jpg"}
+        img={"/services/consultation2.jpg"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"
