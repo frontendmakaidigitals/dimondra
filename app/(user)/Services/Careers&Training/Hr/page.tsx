@@ -4,6 +4,7 @@ import BgLayer from "../../../app_chunks/BgLayer";
 import { motion, useScroll, useTransform } from "motion/react";
 import SideBar from "./(sideBar)/sideBar";
 import HomeForm from "../../../(homepage)/HomeForm";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 const Page = () => {
   const [sectionTop, setSectionTop] = useState(0);
   const sectionRef = React.useRef<HTMLElement>(null);
@@ -45,9 +46,11 @@ const Page = () => {
     const top = sectionRef.current?.offsetTop || 0;
     setSectionTop(top);
   }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <main>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
         <motion.img
           style={{ y: yTransform }}
@@ -79,7 +82,10 @@ const Page = () => {
             <li>Globally recognized credential</li>
           </ul>
           <div className="flex justify-start">
-            <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2"
+            >
               Get certified today
             </button>
           </div>
@@ -134,7 +140,10 @@ const Page = () => {
                     </h2>
                     <p className="mt-3">{certification.description}</p>
                   </div>
-                  <button className="mt-4 px-4 py-[.4rem] rounded-md bg-dimondra-black text-dimondra-white">
+                  <button
+                    onClick={() => setIsOpen(true)}
+                    className="mt-4 px-4 py-[.4rem] rounded-md bg-dimondra-black text-dimondra-white"
+                  >
                     Learn more
                   </button>
                 </div>

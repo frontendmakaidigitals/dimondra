@@ -1,6 +1,7 @@
 "use client";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
-import React from "react";
+import React, { useState } from "react";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../(business-service-section)/CTA";
@@ -190,9 +191,11 @@ const AOE = [
     icon: GraduationCap,
   },
 ];
+const [isOpen, setIsOpen] = useState(false);
 const Page = () => {
   return (
     <main>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
@@ -214,7 +217,10 @@ const Page = () => {
             roadmap that supports long-term goals, drives performance, and
             adapts to change.
           </p>
-          <button className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50"
+          >
             Get started
           </button>
         </div>

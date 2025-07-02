@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
@@ -9,6 +9,7 @@ import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../(business-service-section)/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   Headphones,
   HandCoins,
@@ -254,8 +255,10 @@ const Page = () => {
       icon: ShieldCheck,
     },
   ];
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <motion.div className="w-full h-[90vh] relative">
         <BgLayer
           color={
@@ -270,7 +273,7 @@ const Page = () => {
         <div className=" relative  z-[3] w-full h-full">
           <div className="container tracking-tighter h-full flex flex-col items-start justify-center py-16 relative z-10 text-dimondra-white">
             <p className="text-sm">HR Outsourcing Services in Dubai</p>
-           <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
+            <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
               Enhance Customer Experience with World-Class Call Center Support
             </h2>
             <p className=" talentPara max-w-3xl mt-2 text-slate-50">
@@ -283,6 +286,7 @@ const Page = () => {
               clock.
             </p>
             <button
+              onClick={() => setIsOpen(true)}
               className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
             >

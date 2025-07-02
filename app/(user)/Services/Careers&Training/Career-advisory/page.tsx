@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Clock, Users, Star } from "lucide-react";
 import CTA from "../../(business-service-section)/CTA";
 import FAQ from "../../../app_chunks/FAQ";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 const Page = () => {
   const careerCoachingFAQs = [
     {
@@ -42,8 +43,11 @@ const Page = () => {
     },
   ];
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className="pt-32 pb-28 relative">
         <div className="absolute inset-0 w-full h-[120px] bg-gradient-to-b from-slate-400 bg-[#edf6fd]" />
 
@@ -70,7 +74,10 @@ const Page = () => {
                 Rated 4.9/5 by professional across the region
               </li>
             </ul>
-            <button className="px-5 py-[.45rem] bg-dimondra-tealDark mt-6 text-slate-50 rounded-md">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="px-5 py-[.45rem] bg-dimondra-tealDark mt-6 text-slate-50 rounded-md"
+            >
               Register now
             </button>
           </div>
@@ -114,7 +121,10 @@ const Page = () => {
             breaking through mid-career challenges, we tailor every session to
             your individual goals.
           </p>
-          <button className="px-4 rounded-md py-[.4rem] bg-dimondra-tealDark text-slate-50 mt-6">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-4 rounded-md py-[.4rem] bg-dimondra-tealDark text-slate-50 mt-6"
+          >
             Start your career
           </button>
         </div>
@@ -170,7 +180,10 @@ const Page = () => {
               evolving job market, creating a strategy that’s both personal and
               results-driven.
             </p>
-            <button className="px-4 rounded-md py-[.4rem] bg-dimondra-white text-dimondra-black mt-6">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="px-4 rounded-md py-[.4rem] bg-dimondra-white text-dimondra-black mt-6"
+            >
               Start your career
             </button>
           </div>

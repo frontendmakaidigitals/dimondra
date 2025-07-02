@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import IndustriesSection from "../../(sections)/Industries";
@@ -10,6 +10,7 @@ import CTA from "@/app/(user)/app_chunks/CTA";
 import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   CalendarDays,
   Mail,
@@ -239,6 +240,7 @@ const Page = () => {
         "We offer a satisfaction guarantee. If your assigned VA doesn’t meet your expectations, we’ll work with you to find a better fit.",
     },
   ];
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <motion.div
@@ -250,6 +252,7 @@ const Page = () => {
         }}
         className=" relative"
       >
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-left-top w-full h-full object-cover"

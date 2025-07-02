@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import IndustriesSection from "../../(sections)/Industries";
@@ -10,6 +10,7 @@ import CTA from "@/app/(user)/app_chunks/CTA";
 import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   Workflow,
   UserPlus,
@@ -205,6 +206,7 @@ const Page = () => {
         "Our unique approach lies in our blend of a deeply personalized methodology, extensive local market insight, and a commitment to process efficiency. We act as a true strategic partner, not just a vendor, focusing on understanding your unique vision and delivering talent that genuinely drives your business growth.",
     },
   ];
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <motion.div
@@ -216,6 +218,7 @@ const Page = () => {
         }}
         className=" relative"
       >
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
@@ -233,6 +236,7 @@ const Page = () => {
             extraordinary professionals, transforming your workforce for growth.
           </p>
           <button
+            onClick={() => setIsOpen(true)}
             className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
           >

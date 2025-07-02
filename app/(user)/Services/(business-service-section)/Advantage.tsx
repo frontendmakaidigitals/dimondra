@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Check, ArrowRight } from "lucide-react";
-import { description } from "../../(homepage)/PieChart";
+import PopForm from "../../app_chunks/PopFrom";
 interface props {
   title: string;
   description: string;
@@ -9,8 +10,10 @@ interface props {
   img2: string;
 }
 const Advantage = ({ data, title, description, img1, img2 }: props) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="my-20 lg:my-56 container grid  grid-cols-1 gap-14 lg:grid-cols-2 ">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="lg:order-2 order-1 ">
         <h1 className="text-4xl lg:text-5xl font-dmSans font-[600]">{title}</h1>
         <div>
@@ -28,7 +31,10 @@ const Advantage = ({ data, title, description, img1, img2 }: props) => {
               </li>
             ))}
           </ul>
-          <button className="mt-8 border-2 pl-4 rounded-lg border-black  flex items-center gap-2">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="mt-8 border-2 pl-4 rounded-lg border-black  flex items-center gap-2"
+          >
             Learn more{" "}
             <span className="bg-black p-2">
               <ArrowRight className="stroke-white" />

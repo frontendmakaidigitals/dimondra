@@ -208,9 +208,7 @@ const Page = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <main className="relative">
-      <AnimatePresence mode="wait">
-        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
-      </AnimatePresence>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">

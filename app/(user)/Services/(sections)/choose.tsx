@@ -1,5 +1,6 @@
-import React from "react";
-
+"use client";
+import React, { useState } from "react";
+import PopForm from "../../app_chunks/PopFrom";
 import type { LucideIcon } from "lucide-react";
 
 interface chooseProps {
@@ -15,13 +16,20 @@ const Choose = ({
   desc: string;
   data: chooseProps[];
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="py-20 bg-gray-300">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="flex flex-col lg:flex-row items-start gap-16 container">
         <div className="max-w-4xl">
-          <h1 className="text-5xl font-[600] tracking-tight font-dmSans ">{title}</h1>
+          <h1 className="text-5xl font-[600] tracking-tight font-dmSans ">
+            {title}
+          </h1>
           <p className="mt-4 font-quicksand font-[500]">{desc}</p>
-          <button className="px-5 py-2 bg-white mt-8 rounded-lg">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-5 py-2 bg-white mt-8 rounded-lg"
+          >
             Get a Quote
           </button>
         </div>

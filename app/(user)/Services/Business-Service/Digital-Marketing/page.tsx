@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
@@ -10,6 +10,7 @@ import CTA from "../../../app_chunks/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
 import Process from "../../(sections)/process";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   PiggyBank,
   TrendingUp,
@@ -300,8 +301,11 @@ const Page = () => {
     "Dedicated account management",
   ];
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <motion.div className="w-full h-[90vh] relative">
         <BgLayer
           color={
@@ -327,6 +331,7 @@ const Page = () => {
               digital experts are here to make it happen.
             </p>
             <button
+              onClick={() => setIsOpen(true)}
               className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
             >

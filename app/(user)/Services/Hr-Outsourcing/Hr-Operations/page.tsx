@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
-
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Process from "../../(sections)/process";
 import Services from "../../(sections)/services";
@@ -10,6 +9,7 @@ import CTA from "@/app/(user)/app_chunks/CTA";
 import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
   UserPlus,
   ServerCog,
@@ -165,7 +165,7 @@ const Page = () => {
         "Yes, we offer both ongoing HR support and short-term solutions for specific projects, depending on what your business requires.",
     },
   ];
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <motion.div
@@ -177,6 +177,7 @@ const Page = () => {
         }}
         className=" relative"
       >
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
@@ -194,6 +195,7 @@ const Page = () => {
             into a key strength that supports your company&nbsp;s success.
           </p>
           <button
+            onClick={() => setIsOpen(true)}
             className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
           >

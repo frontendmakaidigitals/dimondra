@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
@@ -23,7 +23,7 @@ import {
   Sliders,
   Headset,
 } from "lucide-react";
-
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 const Page = () => {
   useSplitText({
     selector: ".talentHead",
@@ -161,7 +161,7 @@ const Page = () => {
         "Simply contact us for a consultation. Our team will assess your needs, explain the process, and provide a clear plan and cost structure to get started.",
     },
   ];
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <motion.div
@@ -173,6 +173,7 @@ const Page = () => {
         }}
         className=" relative"
       >
+        <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
@@ -192,6 +193,7 @@ const Page = () => {
             is simple, effective, and designed for results.
           </p>
           <button
+            onClick={() => setIsOpen(true)}
             className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
           >

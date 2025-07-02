@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
@@ -248,8 +249,11 @@ const Page = () => {
     },
   ];
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <motion.div className="w-full h-[90vh] relative">
         <BgLayer
           color={
@@ -263,7 +267,7 @@ const Page = () => {
         />
         <div className=" relative  z-[3] w-full h-full">
           <div className="container tracking-tighter h-full flex flex-col items-start justify-center py-16 relative z-10 text-dimondra-white">
-           <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
+            <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
               Reliable IT Support That Keeps Your Business Moving
             </h2>
             <p className=" talentPara max-w-3xl mt-2 text-slate-50">
@@ -275,6 +279,7 @@ const Page = () => {
               whenever and wherever you need it.
             </p>
             <button
+              onClick={() => setIsOpen(true)}
               className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
          hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
             >

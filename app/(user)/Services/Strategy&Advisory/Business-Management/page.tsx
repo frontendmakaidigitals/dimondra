@@ -1,6 +1,6 @@
 "use client";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
-import React from "react";
+import React, { useState } from "react";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Industry from "../../(business-service-section)/Industry";
 import CTA from "../../(business-service-section)/CTA";
@@ -10,6 +10,7 @@ import "@/styles/globals.css";
 import About from "../(sections)/About";
 import { LineChart, Map, Building2, FileBadge, Megaphone } from "lucide-react";
 import AreaOfExpertise from "../(sections)/AreaOfExpertise";
+import PopForm from "@/app/(user)/app_chunks/PopFrom";
 const industrySectors = [
   {
     title: "Technology & Software",
@@ -250,9 +251,11 @@ const AOE = [
     icon: Megaphone,
   },
 ];
+const [isOpen, setIsOpen] = useState(false);
 const Page = () => {
   return (
     <main>
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
@@ -275,7 +278,10 @@ const Page = () => {
             and structured planning to reduce risk, ensure compliance, and
             accelerate growth.
           </p>
-          <button className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50"
+          >
             Get started
           </button>
         </div>
