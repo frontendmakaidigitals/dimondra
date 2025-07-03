@@ -86,6 +86,12 @@ const HomeForm = () => {
       });
 
       setLoading(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: { country: "", contact: "" },
+        message: "",
+      });
       addToast({ title: "Form Sucessfully submitted", color: "success" });
     } catch (err) {
       console.error("Upload failed:", err);
