@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 
 type SelectorType = { className?: string; id?: string };
 
-const useElementHeight = <T extends HTMLElement>(selector?: SelectorType) => {
+const useElementSize = <T extends HTMLElement>(selector?: SelectorType) => {
   const internalRef = useRef<T | null>(null);
-  const [height, setHeight] = useState(0);
+  const [size, setSize] = useState({ height: 0, width: 0 });
 
   useEffect(() => {
     let element: T | null = null;
@@ -20,21 +20,25 @@ const useElementHeight = <T extends HTMLElement>(selector?: SelectorType) => {
 
     if (!element) return;
 
-    const updateHeight = () => {
-      setHeight(element?.clientHeight ?? 0);
+    const updateSize = () => {
+      setSize({
+        height: element?.clientHeight ?? 0,
+        width: element?.clientWidth ?? 0,
+      });
     };
 
-    const observer = new ResizeObserver(updateHeight);
+    const observer = new ResizeObserver(updateSize);
     observer.observe(element);
-    updateHeight();
+    updateSize();
 
     return () => observer.disconnect();
   }, [selector?.className, selector?.id]);
 
   return {
     ref: selector ? null : internalRef,
-    height,
+    height: size.height,
+    width: size.width,
   };
 };
 
-export default useElementHeight;
+export default useElementSize;

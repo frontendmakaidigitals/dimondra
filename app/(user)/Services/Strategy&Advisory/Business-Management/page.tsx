@@ -121,7 +121,7 @@ const serviceObj = [
   {
     title: "New Market Entry Advisory (UAE, KSA, GCC)",
     desc: "Expanding into the UAE, Saudi Arabia, or GCC markets involves navigating unique cultural, legal, and operational environments. Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success.",
-    img: "/services/map.jpeg",
+    img: "/services/map.jpg",
     arr: [
       {
         title: "Local Market Landscape Analysis",
