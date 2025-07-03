@@ -267,7 +267,7 @@ const Form = () => {
     >
       <div className="w-full col-span-2 lg:col-span-1">
         <label className="text-dimondra-black font-[500]">
-          First Name
+          First Name{" "}
           <Input
             isRequired
             onChange={(e) =>
@@ -290,7 +290,7 @@ const Form = () => {
       </div>
       <div className="w-full col-span-2 lg:col-span-1">
         <label className="text-dimondra-black font-[500]">
-          Last Name
+          Last Name{" "}
           <Input
             isRequired
             onChange={(e) =>
