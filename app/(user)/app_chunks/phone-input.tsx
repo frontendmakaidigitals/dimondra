@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/popover";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import clsx from "clsx";
 
 type PhoneInputProps = Omit<
   React.ComponentProps<"input">,
@@ -29,6 +30,7 @@ type PhoneInputProps = Omit<
   Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
     onChange?: (value: RPNInput.Value) => void;
     phoneError?: boolean;
+    bgColor?: string;
   };
 
 const ForwardedInputComponent = React.forwardRef<
@@ -42,10 +44,21 @@ ForwardedInputComponent.displayName = "ForwardedInputComponent";
 
 const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
   React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
-    ({ className, onChange, phoneError, value, ...props }, ref) => {
+    (
+      {
+        className,
+        onChange,
+        phoneError,
+        value,
+        bgColor = "bg-slate-100",
+        ...props
+      },
+      ref
+    ) => {
       return (
         <RPNInput.default
           phoneError={phoneError}
+          bgColor={bgColor}
           ref={ref}
           className={cn("flex", className)}
           flagComponent={FlagComponent}
@@ -64,10 +77,11 @@ PhoneInput.displayName = "PhoneInput";
 
 interface InputComponentProps extends React.ComponentProps<"input"> {
   phoneError?: boolean;
+  bgColor?: string;
 }
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
-  ({ className, phoneError, ...props }, ref) => {
+  ({ className, phoneError, bgColor, ...props }, ref) => {
     console.log(phoneError);
     return (
       <Input
@@ -76,7 +90,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
           className,
           phoneError
             ? "bg-[hsl(var(--danger-color))]/10 hover:bg-[hsl(var(--danger-color))]/20"
-            : "bg-slate-100"
+            : bgColor
         )}
         {...props}
         ref={ref}
@@ -93,6 +107,7 @@ type CountrySelectProps = {
   value: RPNInput.Country;
   options: CountryEntry[];
   onChange: (country: RPNInput.Country) => void;
+  bgColor?: string;
 };
 
 const CountrySelect = ({
@@ -100,6 +115,7 @@ const CountrySelect = ({
   value: selectedCountry,
   options: countryList,
   onChange,
+  bgColor = "bg-slate-100",
 }: CountrySelectProps) => {
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = React.useState("");
@@ -111,7 +127,10 @@ const CountrySelect = ({
         <Button
           type="button"
           variant="outline"
-          className={`flex gap-1 h-12  !border-l-0 !border-b-0 border-r !border-t-0 rounded-e-none rounded-s-xl bg-slate-100 px-3 focus:z-10`}
+          className={clsx(
+            `flex gap-1 h-12  !border-l-0 !border-b-0 border-r !border-t-0 rounded-e-none rounded-s-xl px-3 focus:z-10`,
+            bgColor
+          )}
           disabled={disabled}
         >
           <FlagComponent

@@ -2,10 +2,17 @@
 import React, { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
-import SmallLoadingSpinner from "../app_chunks/Spinner";
-import { cn } from "@/lib/utils";
+import { FormEvent } from "react";
+import { ArrowRight } from "lucide-react";
 import { Mail, Building, Phone } from "lucide-react";
 import { Settings, Code, LifeBuoy } from "lucide-react";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { PhoneInput } from "../app_chunks/phone-input";
+import { addToast } from "@heroui/toast";
+import { Input } from "@heroui/input";
+import { Textarea } from "@heroui/input";
+import { motion, AnimatePresence } from "motion/react";
+import { Spinner } from "@heroui/spinner";
 const Page = () => {
   const social = [
     <>
@@ -137,7 +144,7 @@ const Page = () => {
               If you have any question. Feel free to write.
             </p>
           </div>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-8 ">
+          <div className=" ">
             <Form />
           </div>
         </div>
@@ -199,211 +206,250 @@ const Page = () => {
 export default Page;
 
 const Form = () => {
-  const [formData, setFormData] = useState({
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = React.useState({
     firstName: "",
     lastName: "",
-    phone: "",
     email: "",
+    phone: { country: "", contact: "" },
     message: "",
   });
-  const [checkbox, setCheckBox] = useState(false);
+  interface formData {
+    name: string;
+    email: string;
+    phone: { country: string; contact: string };
+    message: string;
+  }
+  const [phoneError, setPhoneError] = useState(false);
 
-  const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    message: "",
-    checked: false,
-  });
-  const [status, setStatus] = useState("");
-
-  const validate = () => {
-    const tempErrors = {
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      message: "",
-      checked: false,
-    };
-    if (!formData.firstName.trim())
-      tempErrors.firstName = "First Name is required";
-    if (!formData.lastName.trim())
-      tempErrors.lastName = "Last Name is required";
-    if (!formData.phone.trim()) {
-      tempErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      tempErrors.phone = "Phone number must be 10 digits";
-    }
-    if (!formData.email.trim()) {
-      tempErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      tempErrors.email = "Invalid email format";
-    }
-    if (!formData.message.trim()) tempErrors.message = "Message is required";
-    if (!checkbox) tempErrors.checked = true;
-    setErrors(tempErrors);
-    const hasErrors = Object.values(tempErrors).some(
-      (error) => error !== "" && error !== false
-    );
-    return !hasErrors;
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
-  };
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent) => {
+    setLoading(true);
     e.preventDefault();
-    setStatus("");
-    if (!validate()) {
-      return errors;
+    if (!formData.phone.contact) {
+      setPhoneError(true);
+      setLoading(false);
+      return;
     }
-    setStatus("Sending...");
+    const data = new FormData();
+    data.append("name", formData.firstName + " " + formData.lastName);
+    data.append("email", formData.email);
+    data.append("countryCode", formData.phone.country);
+    data.append("contact", formData.phone.contact);
+    data.append("message", formData.message);
+
     try {
-      const response = await fetch("/api/email", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+      const db = getFirestore();
+      const blogRef = collection(db, "contact");
+
+      await addDoc(blogRef, {
+        name: formData.firstName + " " + formData.lastName,
+        email: formData.email,
+        countryCode: formData.phone.country,
+        contact: formData.phone.contact,
+        message: formData.message,
+        createdAt: new Date(),
       });
 
-      if (response.ok) {
-        setStatus("ok");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          phone: "",
-          email: "",
-          message: "",
-        }); // Reset form
-        setCheckBox(false);
-      } else {
-        setStatus("Failed to send email");
-      }
-    } catch (error) {
-      setStatus("Failed to send email");
+      setLoading(false);
+      addToast({ title: "Form Sucessfully submitted", color: "success" });
+    } catch (err) {
+      console.error("Upload failed:", err);
+      addToast({ title: "Something went wrong", color: "danger" });
+      setLoading(false);
     }
   };
 
   return (
-    <>
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-8"
+    >
       <div className="w-full col-span-2 lg:col-span-1">
-        <label htmlFor="firstName">First Name</label>
-        <input
-          id={"firstName"}
-          name={"firstName"}
-          value={formData.firstName}
-          onChange={handleChange}
-          className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
-          placeholder="First name"
-        />
-        {errors.firstName && (
-          <p className="text-red-600 text-sm">{errors.firstName}</p>
-        )}
+        <label className="text-dimondra-black font-[500]">
+          First Name
+          <Input
+            isRequired
+            onChange={(e) =>
+              setFormData({ ...formData, firstName: e.target.value })
+            }
+            value={formData.firstName}
+            className="w-full mt-[.4rem]"
+            placeholder="John wick"
+            name="name"
+            classNames={{
+              inputWrapper: [
+                " border bg-dimondra-teal/5 border-dimondra-gray/30",
+                "",
+              ],
+              input: [""],
+            }}
+            size={"lg"}
+          />
+        </label>
       </div>
       <div className="w-full col-span-2 lg:col-span-1">
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          id={"lastName"}
-          name={"lastName"}
-          value={formData.lastName}
-          onChange={handleChange}
-          className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
-          placeholder="Last name"
-        />
-        {errors.lastName && (
-          <p className="text-red-600 text-sm">{errors.lastName}</p>
-        )}
+        <label className="text-dimondra-black font-[500]">
+          Last Name
+          <Input
+            isRequired
+            onChange={(e) =>
+              setFormData({ ...formData, lastName: e.target.value })
+            }
+            value={formData.lastName}
+            className="w-full mt-[.4rem]"
+            placeholder="John wick"
+            name="name"
+            classNames={{
+              inputWrapper: [
+                " border bg-dimondra-teal/5 border-dimondra-gray/30",
+                "",
+              ],
+              input: [""],
+            }}
+            size={"lg"}
+          />
+        </label>
+      </div>
+
+      <div className="w-full col-span-2">
+        <label htmlFor="tempInput" className="text-dimondra-black font-[500]">
+          Phone
+          <input className="hidden" id="tempInput" />
+          <PhoneInput
+            bgColor="border bg-dimondra-teal/5 border-dimondra-gray/30"
+            phoneError={phoneError}
+            placeholder="+123 456 789"
+            className="mt-[.4rem]"
+            onChange={(e) => {
+              setFormData((prev) => ({
+                ...prev,
+                phone: {
+                  ...prev.phone,
+                  contact: e,
+                },
+              }));
+              setPhoneError(false);
+            }}
+            onCountryChange={(e) => {
+              if (e) {
+                setFormData((prev) => ({
+                  ...prev,
+                  phone: {
+                    ...prev.phone,
+                    country: e,
+                  },
+                }));
+              }
+            }}
+            value={formData.phone.contact}
+          />
+          {phoneError ? (
+            <span className="text-xs pl-1 text-danger">
+              Please fill this field
+            </span>
+          ) : (
+            ""
+          )}
+        </label>
       </div>
       <div className="w-full col-span-2">
-        <label htmlFor="phone">Phone</label>
-        <input
-          id="phone"
-          type={"number"}
-          onChange={handleChange}
-          placeholder="+000000"
-          name="phone"
-          value={formData.phone}
-          className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
-        />
-        {errors.phone && <p className="text-red-600 text-sm">{errors.phone}</p>}
+        <label className="text-dimondra-black font-[500]">
+          Email{" "}
+          <Input
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+            value={formData.email}
+            classNames={{
+              inputWrapper: [
+                " border bg-dimondra-teal/5 border-dimondra-gray/30",
+              ],
+              input: ["py-2"],
+            }}
+            isRequired
+            className="w-full mt-[.4rem]"
+            placeholder="junior@heroui.com"
+            type="email"
+            name="email"
+            size={"lg"}
+          />
+        </label>
       </div>
       <div className="w-full col-span-2">
-        <label htmlFor="email">Email</label>
-        <input
-          type={"email"}
-          name={"email"}
-          id={"email"}
-          value={formData.email}
-          onChange={handleChange}
-          className="text-sm mt-1 w-full border bg-dimondra-teal/5 border-dimondra-gray/30 rounded-md px-3 block py-[.7rem]"
-          placeholder="you@email.com"
-        />
-        {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
-      </div>
-      <div className="w-full col-span-2">
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          rows={6}
-          className="text-sm mt-1 w-full resize-none bg-dimondra-teal/5 border dimondra-border-dimondra-gray/30/40 rounded-md px-3 block py-[.7rem]"
-          placeholder="Leave us a message"
-          value={formData.message}
-          name={"message"}
-          onChange={handleChange}
-        />
-        {errors.message && (
-          <p className="text-red-600 text-sm">{errors.message}</p>
-        )}
+        <label className="text-dimondra-black font-[500]">
+          Message{" "}
+          <Textarea
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
+            value={formData.message}
+            className="w-full mt-[.4rem]"
+            maxRows={13}
+            minRows={5}
+            placeholder="Enter your description"
+            isRequired
+            name="message"
+            size={"lg"}
+            classNames={{
+              inputWrapper: [
+                " border bg-dimondra-teal/5 border-dimondra-gray/30",
+                "",
+              ],
+            }}
+          />
+        </label>
       </div>
       <div className="col-span-2">
         <div className="flex items-center space-x-2">
-          <Checkbox
-            id="terms"
-            checked={checkbox}
-            onCheckedChange={() => {
-              setErrors((prev) => ({
-                ...prev, // Keep existing errors
-                checked: false, // Update checked error
-              }));
-              setCheckBox(!checkbox);
-            }}
-          />
+          <Checkbox id="terms" required />
           <label
             htmlFor="terms"
-            className={`${
-              errors.checked ? "text-red-500" : ""
-            } text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
+            className={` text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
           >
             Accept terms and conditions
           </label>
         </div>
-        <button
-          type="submit"
-          className={cn(
-            `border border-slate-400 w-full transition-all duration-200 hover:bg-Palette-20 hover:text-indigo-50 cursor-pointer mt-10 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
-            status === "ok" && "bg-Palette-20 text-indigo-200",
-            status === "Failed to send email" && "border-red-500"
-          )}
-          disabled={status === "Sending..." || status === "ok"}
-          onClick={handleSubmit}
-        >
-          {status === "Sending..." ? (
-            <>
-              <SmallLoadingSpinner />
-              Sending...
-            </>
-          ) : status === "ok" ? (
-            "Submitted Sucessfully"
-          ) : (
-            "Submit"
-          )}
-        </button>
+
+        <AnimatePresence mode="wait">
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-7 flex items-center rounded-full group pl-1 pr-5 py-1 text-dimondra-black hover:bg-dimondra-teal hover:border-slate-300/0 transition-all duration-300 border border-dimondra-gray"
+          >
+            <motion.span className=" size-11 flex justify-center items-center  mr-3 bg-black group-hover:bg-white  text-dimondra-white rounded-full">
+              {!loading ? (
+                <motion.span
+                  key="arrow"
+                  initial={{ rotate: 0 }}
+                  exit={{ rotate: 180 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                >
+                  <ArrowRight className="group-hover:-rotate-45 transition-all group-hover:text-dimondra-black duration-300" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="spinner"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.3 }}
+                >
+                  <Spinner color="default" variant="gradient" size="sm" />
+                </motion.span>
+              )}
+            </motion.span>
+            {!loading ? (
+              <span className="inline-block align-middle group-hover:text-dimondra-white">
+                Get a Solution
+              </span>
+            ) : (
+              <span className="inline-block align-middle group-hover:text-dimondra-white">
+                Submitting
+              </span>
+            )}
+          </button>
+        </AnimatePresence>
       </div>
-    </>
+    </form>
   );
 };

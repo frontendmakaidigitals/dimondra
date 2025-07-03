@@ -9,7 +9,6 @@ import Service from "../(sections)/service";
 import "@/styles/globals.css";
 import About from "../(sections)/About";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
-import { AnimatePresence } from "framer-motion";
 import {
   Users,
   UserPlus,
