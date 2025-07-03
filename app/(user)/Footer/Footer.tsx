@@ -59,7 +59,7 @@ const Footer = () => {
                     href="/Services/Hr-Outsourcing/Hr-Operations"
                     className="hover:underline"
                   >
-                    Hr Operations
+                    HR Operations
                   </Link>
                 </li>
                 <li>
