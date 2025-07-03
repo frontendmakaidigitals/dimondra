@@ -276,7 +276,7 @@ const Form = () => {
             value={formData.firstName}
             className="w-full mt-[.4rem]"
             placeholder="John wick"
-            name="name"
+            name="firstName"
             classNames={{
               inputWrapper: [
                 " border bg-dimondra-teal/5 border-dimondra-gray/30",
@@ -299,7 +299,7 @@ const Form = () => {
             value={formData.lastName}
             className="w-full mt-[.4rem]"
             placeholder="John wick"
-            name="name"
+            name="lastName"
             classNames={{
               inputWrapper: [
                 " border bg-dimondra-teal/5 border-dimondra-gray/30",
