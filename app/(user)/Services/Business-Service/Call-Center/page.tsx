@@ -321,11 +321,11 @@ const Page = () => {
       <FAQ data={callCenterFAQs} desc={""} />
       <HomeForm />
       <CTA
-        title={"Let’s Make HR Simple for Your Business"}
+        title={"Ready to improve your customer service experience?"}
         desc={
-          "Take the stress out of managing HR. Whether you need ongoing support or help with a specific project, Dimondra is here to help you focus on what matters most — growing your business."
+          "Let Dimondra handle your customer service and contact center operations so you can focus on growing your business. With professional agents, smart technology, and flexible solutions, we help you deliver excellent support at every touchpoint."
         }
-        button={"Get a free consultation"}
+        button={"Contact us today "}
       />
     </>
   );

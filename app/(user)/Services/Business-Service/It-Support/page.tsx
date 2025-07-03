@@ -6,7 +6,7 @@ import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import { motion } from "motion/react";
 import Service from "../../(business-service-section)/service";
-import CTA from "../../../app_chunks/CTA";
+import CTA from "../../(business-service-section)/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
 import Process from "../../(sections)/process";
@@ -321,11 +321,11 @@ const Page = () => {
       <FAQ data={itAmcFAQs} desc={""} />
       <HomeForm />
       <CTA
-        title={"Let’s Make HR Simple for Your Business"}
+        title={"Let’s Simplify Your IT Operations"}
         desc={
-          "Take the stress out of managing HR. Whether you need ongoing support or help with a specific project, Dimondra is here to help you focus on what matters most — growing your business."
+          "Don’t let IT challenges slow down your business. With Dimondra’s expert support and scalable solutions, you get peace of mind knowing your tech is in good hands."
         }
-        button={"Get a free consultation"}
+        button={"Contact us today"}
       />
     </>
   );

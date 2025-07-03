@@ -6,7 +6,7 @@ import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import { motion } from "motion/react";
 import Service from "../../(business-service-section)/service";
 import Industry from "../../(business-service-section)/Industry";
-import CTA from "../../../app_chunks/CTA";
+import CTA from "../../(business-service-section)/CTA";
 import Advantage from "../../(business-service-section)/Advantage";
 import Choose from "../../(business-service-section)/Choose";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
@@ -367,11 +367,11 @@ const Page = () => {
       <FAQ data={facilityManagementFAQs} desc={""} />
       <HomeForm />
       <CTA
-        title={"Let’s Make HR Simple for Your Business"}
+        title={"Ready to Simplify Your Office Operations?"}
         desc={
-          "Take the stress out of managing HR. Whether you need ongoing support or help with a specific project, Dimondra is here to help you focus on what matters most — growing your business."
+          " Let Dimondra take care of your workplace and facility needs, so you can focus on growing your business. Whether it’s reception, maintenance, cleaning, or technical support, we’ve got you covered with reliable, professional service."
         }
-        button={"Get a free consultation"}
+        button={"Get a Customized Facilities Plan"}
       />
     </>
   );
