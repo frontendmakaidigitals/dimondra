@@ -48,6 +48,7 @@ const Page = () => {
 
     fetchContact();
   }, []);
+  console.log(contact)
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-6">All Queries</h1>
