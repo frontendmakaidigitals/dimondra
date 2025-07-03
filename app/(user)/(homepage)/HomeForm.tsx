@@ -144,8 +144,8 @@ const HomeForm = () => {
                     placeholder="John wick"
                     name="name"
                     classNames={{
-                      inputWrapper: ["bg-slate-100 dark:text-slate-900 ", ""],
-                      input: ["dark:text-slate-900"],
+                      inputWrapper: ["bg-slate-100 ", ""],
+                      input: [""],
                     }}
                     size={"lg"}
                   />
@@ -160,8 +160,8 @@ const HomeForm = () => {
                     }
                     value={formData.email}
                     classNames={{
-                      inputWrapper: ["bg-slate-100 dark:text-slate-900"],
-                      input: ["py-2 dark:text-slate-900"],
+                      inputWrapper: ["bg-slate-100"],
+                      input: ["py-2"],
                     }}
                     isRequired
                     className="w-full mt-[.4rem]"
@@ -230,7 +230,7 @@ const HomeForm = () => {
                     isRequired
                     name="message"
                     size={"lg"}
-                    classNames={{ inputWrapper: ["bg-slate-100 dark:text-slate-900", "dark:text-slate-900"] }}
+                    classNames={{ inputWrapper: ["bg-slate-100 ", ""] }}
                   />
                 </label>
               </div>

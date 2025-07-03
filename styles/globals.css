@@ -38,6 +38,8 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     --danger-color: 339.2 90.36% 51.18%;
+    --heroui-default-foreground: 222 47% 11%;
+    --heroui-default-foreground-opacity: 1;
   }
   .dark {
     --sidebar-background: 240 5.9% 10%;
