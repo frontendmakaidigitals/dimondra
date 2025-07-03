@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @layer base {
   :root {
     --background: 0 0% 100%;

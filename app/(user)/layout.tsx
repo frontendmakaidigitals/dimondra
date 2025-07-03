@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
       <AuthContextProvider>
         <Header />
         <FloatingSocialMediaIcons />
