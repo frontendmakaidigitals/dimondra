@@ -84,16 +84,7 @@ const DashboardPage = () => {
             </span>
           </Link>
         </div>
-        <div className="border border-slate-900/40 rounded-3xl p-4">
-          <h2 className="text-lg font-[600]">Videos</h2>
-          <p className="text-7xl mt-4">0</p>
-          <button className="flex items-center mt-6 gap-3 rounded-2xl bg-teal-800 hover:bg-teal-700  text-dimondra-white px-4  py-2">
-            <span>View All</span>
-            <span>
-              <ArrowUpRight className="" />
-            </span>
-          </button>
-        </div>
+       
         <div className="border border-slate-900/40 rounded-3xl p-4">
           <h2 className="text-lg font-[600]">Queries</h2>
           <p className="text-7xl mt-4">{contact.length}</p>

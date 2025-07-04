@@ -26,11 +26,6 @@ const items = [
     icon: Book,
   },
   {
-    title: "Videos",
-    url: "/",
-    icon: Play,
-  },
-  {
     title: "Queries",
     url: "/Queries",
     icon: MessageSquareQuote,
