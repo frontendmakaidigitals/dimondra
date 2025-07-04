@@ -34,7 +34,7 @@ const industrySectors = [
     title: "Professional Services",
     description:
       "From legal firms to consultancies and agencies, we support knowledge-based businesses in building scalable structures and accessing new client markets.",
-    imgUrl: "/services/talenthero.jpg",
+    imgUrl: "/services/talentHero.jpg",
   },
   {
     title: "Manufacturing & Industrial",
