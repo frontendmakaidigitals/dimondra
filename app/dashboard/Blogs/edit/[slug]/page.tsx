@@ -112,6 +112,7 @@ export default function AddBlogPage() {
 
     if (!title || !metaTitle || !metaDesc || !author || !category || !content) {
       addToast({ title: "Please fill in all fields.", color: "danger" });
+      setLoading(false);
       return;
     }
 

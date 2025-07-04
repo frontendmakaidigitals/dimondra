@@ -95,6 +95,7 @@ export default function AddBlogPage() {
       !imageFile
     ) {
       alert("Please fill in all fields and upload an image.");
+      setLoading(false);
       return;
     }
 
@@ -103,7 +104,6 @@ export default function AddBlogPage() {
       imageFormData.append("file", imageFile);
       imageFormData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
       imageFormData.append("cloud_name", "");
-      console.log(imageFormData);
 
       const cloudinaryRes = await fetch(
         `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
