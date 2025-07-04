@@ -42,7 +42,7 @@ const industrySectors = [
     title: "Technology & Software",
     description:
       "Driving skills development and engagement in competitive, innovation-driven teams.",
-    imgUrl: "/services/it2.jpg",
+    imgUrl: "/services/It2.jpg",
   },
   {
     title: "Manufacturing & Industrial",
