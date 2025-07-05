@@ -9,43 +9,67 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "../app_chunks/Logo";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Set initial width (in case SSR or hydration mismatch)
+    handleResize();
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <footer className="text-dimondra-white bg-teal-950 py-16">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-[.8fr_1.2fr] gap-16">
+    <footer className="text-dimondra-white overflow-hidden bg-gradient-to-tr to-gray-500 from-dimondra-black  relative">
+      <div className="absolute inset-0 w-full h-full">
+        <img src={"/topography.svg"} className="w-full h-full object-cover opacity-[.025]" />
+      </div>
+      <div className="container relative z-10 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[.5fr_1.5fr] gap-16 place-items-start justify-items-end">
           <div>
             <Logo className="w-52 " />
+            <p className="text-sm mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              maxime odio laboriosam expedita cumque pariatur at, placeat sed
+              debitis harum voluptates!
+            </p>
             <div className="mt-8">
               <h4 className="text-lg font-semibold mb-3">Follow Us</h4>
               <div className="flex space-x-4 ">
                 <Link
                   href="/"
-                  className="bg-teal-500/20 p-2 rounded-xl"
+                  className=" rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Facebook className="h-7 w-7 fill-teal-800  hover:text-amber-400" />
+                  <Facebook className="h-7 w-7 " />
                 </Link>
                 <Link
                   href="/"
-                  className="bg-teal-500/20 p-2 rounded-xl"
+                  className=" rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Instagram className="h-7 stroke-teal-100 fill-teal-800 w-7 hover:text-amber-400" />
+                  <Instagram className="h-7  w-7 " />
                 </Link>
                 <Link
                   href="/"
-                  className="bg-teal-500/20 fill-teal-800 p-2 rounded-xl"
+                  className="rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin
-                    fill={""}
-                    className="h-7 w-7  hover:text-amber-400"
-                  />
+                  <Linkedin fill={""} className="h-7 w-7  " />
                 </Link>
               </div>
             </div>
@@ -139,10 +163,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="mt-10 border-t border-slate-700 pt-4 text-sm text-center text-dimondra-grayDark">
-          &copy; {new Date().getFullYear()} Dimondra. All rights reserved.
-        </div>
+      </div>
+      <div className="mt-3 py-3 relative z-10 bg-dimondra-tealDark text-slate-50 text-sm text-center">
+        &copy; {new Date().getFullYear()} Dimondra. All rights reserved.
       </div>
     </footer>
   );

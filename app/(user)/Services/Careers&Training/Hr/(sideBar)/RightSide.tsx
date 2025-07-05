@@ -79,7 +79,7 @@ const RightSide = () => {
               <div>
                 <Train className="size-[16px] mt-[2px]" />
               </div>
-              Exam Strategy Tiops and Guidance
+              Exam Strategy Tips and Guidance
             </li>
           </ul>
         </div>

@@ -35,7 +35,7 @@ const ServiceRevamp = () => {
     {
       title: "Executive Search",
       description:
-        "Recruit Right. Move Fast. Grow Strong — with executive search, RPO, and recruitment solutions designed to deliver the right talent quickly and precisely",
+        "Dimondra’s Executive Search service helps organizations identify and attract top-tier leadership talent that drives business growth and transformation. We specialize in sourcing high-caliber executives with the right expertise, cultural fit, and vision to meet your strategic goals.",
       row: "row-span-1",
       icon: LifeBuoy,
       pos: "right",
@@ -71,7 +71,7 @@ const ServiceRevamp = () => {
     {
       title: "IT & Digital Services ",
       description:
-        "IT & Digital Services Technology and digital marketing tailored for your business growth. At Dimondra, we combine IT expertise with creative digital strategy to help your business run smarter and grow faster. From setting up secure, scalable infrastructure to managing your digital presence, we deliver solutions that align with your goals and adapt to your needs.  Our IT team ensures seamless support across network setup, cloud services, cybersecurity, and day-to-day troubleshooting — while our digital specialists build impactful marketing campaigns through SEO, social media, paid ads, and analytics. Whether you're launching, expanding, or optimizing, we provide the digital foundation and visibility you need to succeed in today’s connected world.",
+        "IT & Digital Services Technology and digital marketing tailored for your business growth. At Dimondra, we combine IT expertise with creative digital strategy to help your business run smarter and grow faster. From setting up secure, scalable infrastructure to managing your digital presence, we deliver solutions that align with your goals and adapt to your needs. ",
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
@@ -80,7 +80,7 @@ const ServiceRevamp = () => {
     {
       title: "Strategy & Advisory",
       description:
-        "Smart planning and expert guidance to scale and strengthen your business. At Dimondra, our Strategy & Advisory services are built to support you at every step of your  business  lifecycle —  whether  you're  entering  a  new  market,  restructuring  your organization,   or   planning   for   sustainable   growth.   We   work   closely   with   you   to understand  your  vision,  assess  your  challenges,  and  design  solutions  that  are  both practical and strategic. With a global mindset and deep regional expertise, we help businesses navigate market entry requirements, align their operating models, and build organizational structures that are  agile,  scalable,  and  future-ready.  Our  advisory  support  extends  from  optimizingprocesses and workforce planning to enabling long-term business resilience. Whether you're a startup setting up your first office or an established firm looking to expand or evolve, we provide the insight, structure, and guidance you need to move forward with clarity and confidence",
+        "Smart planning and expert guidance to scale and strengthen your business. At Dimondra, our Strategy & Advisory services are built to support you at every step of your  business  lifecycle —  whether  you're  entering  a  new  market,  restructuring  your organization,   or   planning   for   sustainable   growth.   We   work   closely   with   you   to understand  your  vision,  assess  your  challenges,  and  design  solutions  that  are  both practical and strategic. ",
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
@@ -89,7 +89,7 @@ const ServiceRevamp = () => {
     {
       title: "Workplace & Facilities Outsourcing Services ",
       description:
-        "Our Workplace & Facilities Outsourcing Services offer end-to-end solutions to manage and support your office environment through experienced, outsourced staff. We help businesses maintain a professional, efficient, and welcoming workplace by handlingdaily operations and essential facility services, allowing you to focus on your core activities. From front desk to technical maintenance, our trained personnel ensure smooth execution, cost efficiency, and high service standards tailored to your business needs.We provide flexible outsourcing models to scale with your requirements—whether for a single service or a fully managed workplace solution. Explore Our Services ",
+        "Our Workplace & Facilities Outsourcing Services offer end-to-end solutions to manage and support your office environment through experienced, outsourced staff. We help businesses maintain a professional, efficient, and welcoming workplace by handlingdaily operations and essential facility services, allowing you to focus on your core activities.",
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",

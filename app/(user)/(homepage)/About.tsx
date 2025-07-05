@@ -57,9 +57,7 @@ const About = () => {
             streamlining operations, Dimondra offers a one-stop hub for
             integrated business support. We combine global expertise with local
             insight to help you grow compliantly, confidently, and
-            competitively. More than a vendor, we act as a true extension of
-            your team, simplifying the complex, reducing operational load, and
-            empowering your leaders to focus on what matters most.
+            competitively.
           </p>
           <div className="mt-5">
             <div className="flex items-start gap-4">
