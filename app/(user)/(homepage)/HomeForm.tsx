@@ -102,7 +102,7 @@ const HomeForm = () => {
 
   return (
     <div className="py-24 bg-gradient-to-tr from-teal-800">
-      <div className="container formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="container max-w-7xl formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-md">
           <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-white">
             We&nbsp;re here to help you
