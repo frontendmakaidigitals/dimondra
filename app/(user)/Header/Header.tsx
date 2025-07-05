@@ -162,8 +162,13 @@ const Header = () => {
                 </motion.div>
               ) : (
                 <motion.div
-                  onMouseEnter={() => setIsMenuShowing(true)}
-                  onMouseLeave={() => setIsMenuShowing(false)}
+                  onMouseEnter={() => {
+                    setIsMenuShowing(true);
+                    setIsHovering(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsMenuShowing(false);
+                  }}
                 >
                   <button className="rounded-lg px-3 py-[.6rem] hover:bg-slate-100">
                     {item.label}{" "}
