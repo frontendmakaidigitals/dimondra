@@ -50,7 +50,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4">
         <motion.div>
-          <Logo className="w-36 realtive z-10" />
+          <Logo className="w-32 realtive z-10" />
         </motion.div>
 
         <motion.div className="hidden lg:flex items-center space-x-6">

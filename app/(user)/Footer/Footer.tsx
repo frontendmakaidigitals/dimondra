@@ -33,7 +33,10 @@ const Footer = () => {
   return (
     <footer className="text-dimondra-white overflow-hidden bg-gradient-to-tr to-gray-500 from-dimondra-black  relative">
       <div className="absolute inset-0 w-full h-full">
-        <img src={"/topography.svg"} className="w-full h-full object-cover opacity-[.025]" />
+        <img
+          src={"/topography.svg"}
+          className="w-full h-full object-cover opacity-[.025]"
+        />
       </div>
       <div className="container relative z-10 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[.5fr_1.5fr] gap-16 place-items-start justify-items-end">

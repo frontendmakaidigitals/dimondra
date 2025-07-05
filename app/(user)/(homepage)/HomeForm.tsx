@@ -135,7 +135,7 @@ const HomeForm = () => {
         </div>
 
         <div className="">
-          <div className="bg-dimondra-white p-7 rounded-2xl shadow-sm">
+          <div className="bg-dimondra-white border border-slate-400 p-7 rounded-3xl shadow-sm">
             <form onSubmit={(e) => handleSubmit(e)} className=" space-y-8">
               <div className="">
                 <label className="text-dimondra-black font-rubik text-lg font-[500]">
