@@ -35,6 +35,7 @@ const Footer = () => {
       <div className="absolute inset-0 w-full h-full">
         <img
           src={"/topography.svg"}
+          alt={''}
           className="w-full h-full object-cover opacity-[.025]"
         />
       </div>

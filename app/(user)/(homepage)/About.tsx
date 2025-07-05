@@ -63,7 +63,7 @@ const About = () => {
             <img
               className="w-full h-full object-cover"
               src="/media/homepage/aboutHero.avif"
-              alt="About us image"
+              alt=""
             />
           </motion.div>
         </div>
