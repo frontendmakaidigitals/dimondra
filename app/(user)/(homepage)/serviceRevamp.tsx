@@ -126,8 +126,8 @@ const ServiceRevamp = () => {
                 className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-10 p-6 rounded-3xl shadow-sm 
                   ${
                     isOdd
-                      ? "lg:flex-row-reverse lg:bg-gradient-to-l from-dimondra-teal/10"
-                      : "lg:bg-gradient-to-r from-dimondra-teal/10"
+                      ? "lg:flex-row-reverse lg:bg-gradient-to-l from-dimondra-black/10"
+                      : "lg:bg-gradient-to-r from-dimondra-black/10"
                   }`}
               >
                 {/* Image */}
@@ -149,7 +149,7 @@ const ServiceRevamp = () => {
                     isOdd ? "order-2 lg:pr-8" : "order-1 lg:pl-8"
                   }`}
                 >
-                  <h2 className="text-2xl font-dmSans font-bold text-slate-900">
+                  <h2 className="text-3xl font-dmSans font-bold text-slate-900">
                     {service.title}
                   </h2>
                   <p className="text-slate-700 font-quicksand font-[600]">

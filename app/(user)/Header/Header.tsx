@@ -62,7 +62,7 @@ const Header = () => {
                   className={` ${
                     path === item.href
                       ? "bg-dimondra-black text-dimondra-white"
-                      : "hover:bg-slate-100"
+                      : "hover:bg-dimondra-black hover:text-dimondra-white"
                   } rounded-lg px-3 py-[.6rem]`}
                 >
                   {item.label}
@@ -72,7 +72,7 @@ const Header = () => {
                   onMouseEnter={() => setLocationhovering(true)}
                   onMouseLeave={() => setLocationhovering(false)}
                 >
-                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-slate-100">
+                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-dimondra-black hover:text-dimondra-white">
                     {item.label}{" "}
                     <span className="inline-block ml-1 align-middle">
                       {<ChevronDown className="size-[18px]" />}
@@ -170,7 +170,7 @@ const Header = () => {
                     setIsMenuShowing(false);
                   }}
                 >
-                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-slate-100">
+                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-dimondra-black hover:text-dimondra-white">
                     {item.label}{" "}
                     <span className="inline-block ml-1 align-middle">
                       {<ChevronDown className="size-[18px]" />}

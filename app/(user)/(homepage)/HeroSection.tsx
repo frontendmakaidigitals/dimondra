@@ -105,7 +105,7 @@ const HeroSection = () => {
           return (
             <motion.div
               key={idx}
-              className={`bg-slate-50 p-5 border border-slate-400/20 shadow-lg`}
+              className={`bg-slate-50 rounded-xl p-5 border border-slate-400/20 shadow-lg`}
               initial={{ y: "200px" }}
               whileInView={{
                 y: "0px",

@@ -11,6 +11,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
+import BgLayer from "../app_chunks/BgLayer";
 const highlights = [
   {
     title: "End-to-End Services",
@@ -95,28 +96,34 @@ const Choose = () => {
   return (
     <div className="my-28">
       <div className="container chooseTrigger">
-        <h1 className="text-5xl leading-[3.5rem] font-dmSans tracking-tighter chooseText mt-1 text-center  font-[600] text-dimondra-black">
+        <h1 className="text-6xl leading-[3.5rem] font-dmSans tracking-tighter chooseText mt-1 text-center  font-[600] text-dimondra-black">
           Why Choose <span className="text-dimondra-teal">Dimondra?</span>
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 mt-16">
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="flex bg-slate-50 relative pt-8 pb-6 px-5 items-start gap-5"
+              className=" rounded-2xl relative pt-8 pb-6 px-5 overflow-hidden gap-5"
             >
+              <BgLayer color="z-10 bg-black/50" />
+              <img
+                src={`/choose${index + 1}.jpg`}
+                className="w-full h-full object-cover absolute inset-0"
+                alt={""}
+              />
               <span
                 ref={(el) => {
                   numbersRef.current[index] = el;
                 }}
-                className="text-5xl font-[500] text-teal-700 font-rubik absolute top-0 -translate-y-1/2"
+                className="text-5xl relative z-10 font-[500] text-dimondra-white/70 font-rubik"
               >
                 0{index + 1}
               </span>
-              <div className="">
-                <h4 className="text-2xl font-semibold font-dmSans tracking-tight">
+              <div className="mt-3 relative z-10">
+                <h4 className="text-2xl text-dimondra-white font-[600] font-dmSans tracking-tight">
                   {item.title}
                 </h4>
-                <p className=" text-slate-600 mt-2 font-quicksand font-[600]">
+                <p className=" text-dimondra-white/90 mt-2 font-quicksand font-[600]">
                   {item.description}
                 </p>
               </div>
