@@ -101,16 +101,16 @@ const HomeForm = () => {
   };
 
   return (
-    <div className="py-24 bg-slate-100">
+    <div className="py-24 bg-gradient-to-tr from-teal-800">
       <div className="container formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-md">
-          <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-dark">
+          <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-white">
             We&nbsp;re here to help you
           </span>
-          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tighter font-[600] text-dimondra-black mt-3">
+          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tighter font-[600] text-dimondra-white mt-3">
             Get in Touch with Us
           </h1>
-          <p className="text-dimondra-dark font-quicksand font-[600] mt-4 formText3">
+          <p className="text-dimondra-white font-quicksand font-[600] mt-4 formText3">
             We&nbsp;d love to hear from you! Whether you&nbsp;re looking for a
             service, partnership, or simply have a question, reach out and
             we&nbsp;ll get back to you shortly.
@@ -118,17 +118,17 @@ const HomeForm = () => {
 
           <div className="mt-14">
             <div className="flex items-start gap-5">
-              <Mail className="size-8 text-dimondra-tealDark" />
-              <div>
-                <h4 className=" font-[400]">Email</h4>
-                <p className="text-lg text-muted-foreground">admin@gmail.com</p>
+              <Mail className="size-8 text-dimondra-black" />
+              <div className="text-dimondra-white">
+                <h4 className=" font-[600] text-lg">Email</h4>
+                <p className="text-sm ">admin@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-5 mt-5">
-              <Headset className="size-8 text-dimondra-tealDark" />
-              <div>
-                <h4 className=" font-[400]">Phone Number</h4>
-                <p className="text-lg text-muted-foreground">+12 12345 67890</p>
+              <Headset className="size-8 text-dimondra-black" />
+              <div className="text-dimondra-white">
+                <h4 className=" font-[600] text-lg">Phone Number</h4>
+                <p className="text-sm ">+12 12345 67890</p>
               </div>
             </div>
           </div>
@@ -136,9 +136,9 @@ const HomeForm = () => {
 
         <div className="">
           <div className="bg-dimondra-white p-7 rounded-2xl shadow-sm">
-            <form onSubmit={(e) => handleSubmit(e)} className=" ">
-              <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">
+            <form onSubmit={(e) => handleSubmit(e)} className=" space-y-8">
+              <div className="">
+                <label className="text-dimondra-black font-rubik text-lg font-[500]">
                   Name{" "}
                   <Input
                     isRequired
@@ -157,8 +157,8 @@ const HomeForm = () => {
                   />
                 </label>
               </div>
-              <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">
+              <div className="">
+                <label className="text-dimondra-black font-rubik font-[500] text-lg">
                   Email{" "}
                   <Input
                     onChange={(e) =>
@@ -178,10 +178,10 @@ const HomeForm = () => {
                   />
                 </label>
               </div>
-              <div className="mt-5">
+              <div className="">
                 <label
                   htmlFor="tempInput"
-                  className="text-dimondra-black font-[500]"
+                  className="text-dimondra-black font-rubik font-[500] text-lg"
                 >
                   Phone
                   <input className="hidden" id="tempInput" />
@@ -221,8 +221,8 @@ const HomeForm = () => {
                   )}
                 </label>
               </div>
-              <div className="mt-5">
-                <label className="text-dimondra-black font-[500]">
+              <div className="">
+                <label className="text-dimondra-black font-rubik font-[500] text-lg">
                   Message{" "}
                   <Textarea
                     onChange={(e) =>

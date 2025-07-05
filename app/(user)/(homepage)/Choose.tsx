@@ -115,7 +115,7 @@ const Choose = () => {
                 ref={(el) => {
                   numbersRef.current[index] = el;
                 }}
-                className="text-5xl relative z-10 font-[500] text-dimondra-white/70 font-rubik"
+                className="text-4xl lg:text-6xl relative z-10 font-[500] text-dimondra-white/70 font-rubik"
               >
                 0{index + 1}
               </span>
