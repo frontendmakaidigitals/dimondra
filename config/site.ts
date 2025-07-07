@@ -51,23 +51,58 @@ export const siteConfig = {
       label: "Services",
       services: [
         {
-          label: "HR Outsourcing",
+          label: "HR Services",
           submenu: [
             {
               label: "Talent Acquisition",
-              link: "/Services/Hr-Outsourcing/Talent-Acquisition",
+              link: "/Services/HR Services/Talent-Acquisition",
             },
             {
               label: "HR Operations",
-              link: "/Services/Hr-Outsourcing/Hr-Operations",
+              link: "/Services/HR Services/Hr-Operations",
             },
             {
               label: "Virtual Admin Support",
-              link: "/Services/Hr-Outsourcing/Virtual-Admin-Support",
+              link: "/Services/HR Services/Virtual-Admin-Support",
             },
             {
               label: "PRO & Government Services",
-              link: "/Services/Hr-Outsourcing/PRO-Services",
+              link: "/Services/HR Services/PRO-Services",
+            },
+          ],
+        },
+        ,
+        {
+          label: "Organization Consulting",
+          submenu: [
+            {
+              label: " Organizational Planning",
+              link: "/Services/Organization Consulting/Organisational-planning",
+            },
+            {
+              label: "Talent Management",
+              link: "/Services/Organization Consulting/Talent-Management",
+            },
+            {
+              label: "Business Management",
+              link: "/Services/Organization Consulting/Business-Management",
+            },
+            {
+              label: "Legal Management",
+              link: "/Services/Organization Consulting/Legal-Management",
+            },
+          ],
+        },
+        {
+          label: "Career Development",
+          submenu: [
+            {
+              label: "HR Certifications (aPHRi, PHRi...)",
+              link: "/Services/Career Development/Hr",
+            },
+            {
+              label: "Career Advisory ",
+              link: "/Services/Career Development/Career-advisory",
             },
           ],
         },
@@ -76,53 +111,19 @@ export const siteConfig = {
           submenu: [
             {
               label: "Call Center Support",
-              link: "/Services/Business-Service/Call-Center",
+              link: "/Services/Business-Services/Call-Center",
             },
             {
               label: "Facility Management",
-              link: "/Services/Business-Service/Facility-Management",
+              link: "/Services/Business-Services/Facility-Management",
             },
             {
               label: "IT Support",
-              link: "/Services/Business-Service/It-Support",
+              link: "/Services/Business-Services/It-Support",
             },
             {
               label: "Digital Services",
-              link: "/Services/Business-Service/Digital-Marketing",
-            },
-          ],
-        },
-        {
-          label: "Career & Training",
-          submenu: [
-            {
-              label: "HR Certifications (aPHRi, PHRi...)",
-              link: "/Services/Careers&Training/Hr",
-            },
-            {
-              label: "Career Advisory ",
-              link: "/Services/Careers&Training/Career-advisory",
-            },
-          ],
-        },
-        {
-          label: "Strategy & Advisory",
-          submenu: [
-            {
-              label: " Organizational Planning",
-              link: "/Services/Strategy&Advisory/Organisational-planning",
-            },
-            {
-              label: "Talent Management",
-              link: "/Services/Strategy&Advisory/Talent-Management",
-            },
-            {
-              label: "Business Management",
-              link: "/Services/Strategy&Advisory/Business-Management",
-            },
-            {
-              label: "Legal Management",
-              link: "/Services/Strategy&Advisory/Legal-Management",
+              link: "/Services/Business-Services/Digital-Marketing",
             },
           ],
         },

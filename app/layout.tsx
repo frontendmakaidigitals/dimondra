@@ -1,16 +1,13 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-import { siteConfig } from "@/config/site";
 import { fontSans, grandHotel, rubik, dmSans, quicksand } from "@/config/fonts";
 import { ToastProvider } from "@heroui/toast";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
+  title: "Dimondra | HR, Business, and Digital Solutions in UAE",
+  description:
+    "Dimondra offers end-to-end HR, business management, digital services, and staffing solutions to help organizations in the UAE grow efficiently and sustainably.",
   icons: {
     icon: "/favicon.ico",
   },
