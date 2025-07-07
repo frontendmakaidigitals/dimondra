@@ -123,12 +123,12 @@ const Page = () => {
           <RightSide />
         </div>
       </section>
+      <HomeForm />
       <CTA
         title="Start Your Certification Journey Today"
         desc="Take the next step in your HR career with a globally respected HRCI® credential. Whether you're entering the field or stepping into a strategic leadership role, our internationally recognized certifications will help you gain confidence, earn credibility, and make a lasting impact."
         button="Get Certified"
       />
-      <HomeForm />
     </main>
   );
 };
