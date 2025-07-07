@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import BgLayer from "../../../app_chunks/BgLayer";
 import { motion, useScroll, useTransform } from "motion/react";
 import SideBar from "./(sideBar)/sideBar";
@@ -11,24 +12,28 @@ const Page = () => {
   const certifications = [
     {
       title: "aPHRi",
+      link: "/Services/Career-Development/Hr/aPhri",
       fullForm: "Associate Professional in Human Resources - International™",
       description:
         "Perfect for newcomers to the HR profession, this is the first global certification specifically created for early-career HR professionals.",
     },
     {
       title: "PHRi",
+      link: "/Services/Career-Development/Hr/phri",
       fullForm: "Professional in Human Resources - International™",
       description:
         "This certification affirms your grasp of core HR technical and operational practices, designed independently of any specific country’s laws or policies.",
     },
     {
       title: "SPHRi",
+      link: "/Services/Career-Development/Hr/sphri",
       fullForm: "Senior Professional in Human Resources - International™",
       description:
         "Aimed at seasoned professionals, this certification showcases your strategic and policy-level HR competencies, applicable across global markets.",
     },
     {
       title: "GPHR",
+      link: "/Services/Career-Development/Hr/gphr",
       fullForm: "Global Professional in Human Resources®",
       description:
         "This advanced credential verifies your expertise in global HR operations, including cross-border HR strategy, mobility, and compliance.",
@@ -47,7 +52,7 @@ const Page = () => {
     setSectionTop(top);
   }, []);
   const [isOpen, setIsOpen] = useState(false);
-
+  const router = useRouter();
   return (
     <main>
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -141,7 +146,7 @@ const Page = () => {
                     <p className="mt-3">{certification.description}</p>
                   </div>
                   <button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => router.push(certification.link)}
                     className="mt-4 px-4 py-[.4rem] rounded-md bg-dimondra-black text-dimondra-white"
                   >
                     Learn more

@@ -1,6 +1,5 @@
-import { Circle, Sparkle, Star } from "lucide-react";
+import { Circle } from "lucide-react";
 import React from "react";
-
 
 const HRCertification = () => {
   const hrCertifications = [
@@ -50,7 +49,6 @@ const HRCertification = () => {
           </button>
         </div>
         <div className="h-[350px] lg:h-[600px] relative">
-
           <img
             className="w-full h-full object-cover"
             src={

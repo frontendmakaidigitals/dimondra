@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const path = usePathname();
   const links = [
-    { title: "Overview", link: "/Services/Careers&Training/Hr" },
-    { title: "aPHRi™", link: "/Services/Careers&Training/Hr/aPhri" },
-    { title: "PHRi™", link: "/Services/Careers&Training/Hr/phri" },
-    { title: "SPHRi™", link: "/Services/Careers&Training/Hr/sphri" },
-    { title: "GPHR™", link: "/Services/Careers&Training/Hr/gphr" },
-    { title: "HRCI Preparation", link: "/Services/Careers&Training/Hr/hrci" },
-    { title: "FAQs", link: "/Services/Careers&Training/Hr/FAQs" },
+    { title: "Overview", link: "/Services/Career-Development/Hr" },
+    { title: "aPHRi™", link: "/Services/Career-Development/Hr/aPhri" },
+    { title: "PHRi™", link: "/Services/Career-Development/Hr/phri" },
+    { title: "SPHRi™", link: "/Services/Career-Development/Hr/sphri" },
+    { title: "GPHR™", link: "/Services/Career-Development/Hr/gphr" },
+    { title: "HRCI Preparation", link: "/Services/Career-Development/Hr/hrci" },
+    { title: "FAQs", link: "/Services/Career-Development/Hr/FAQs" },
   ];
   return (
     <aside className="bg-white lg:sticky w-full z-20 left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
