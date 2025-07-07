@@ -294,12 +294,7 @@ const Page = () => {
           </ul>
         </div>
       </section>
-      <div className="py-5 bg-dimondra-white">
-        <Industry
-          data={industrySectors}
-          desc="Our Legal Management services are designed to meet the unique regulatory, operational, and compliance needs of diverse sectors. Whether you're launching, scaling, or restructuring, we offer tailored legal support that aligns with your industry landscape."
-        />
-      </div>
+    
 
       <FAQ desc="" data={legalFAQs} />
       <HomeForm />

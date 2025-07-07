@@ -347,13 +347,7 @@ const Page = () => {
           "Build Trust & Credibility with Smart Digital Marketing Strategies"
         }
       />
-      <Industry
-        title={"Industry We Serve"}
-        desc={
-          "Every industry has unique goals, and at Dimondra, we tailor digital marketing solutions to meet them. Whether you`re building trust, driving traffic, or increasing conversions, we help businesses across sectors grow online with precision and impact."
-        }
-        data={industryMarketingServices}
-      />
+    
       <Process
         data={marketingProcessSteps}
         heading="How We Work"

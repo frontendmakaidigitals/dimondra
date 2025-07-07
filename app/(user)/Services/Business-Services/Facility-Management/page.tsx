@@ -347,7 +347,7 @@ const Page = () => {
         desc={""}
         title={"Facility Services as a single-line solution"}
       />
-      <Industry data={industries} />
+     
       <Choose
         data={features}
         title={"Why Outsource Your Call Center to Dimondra?"}

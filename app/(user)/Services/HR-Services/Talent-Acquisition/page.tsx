@@ -251,7 +251,7 @@ const Page = () => {
         }
         data={recruitmentServices}
       />
-      <IndustriesSection data={industries} heading={"Industries we serve"} />
+       
       <Process
         data={recruitmentSteps}
         heading={"Our Work Process at Dimondra Talent Solutions"}

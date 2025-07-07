@@ -289,9 +289,7 @@ const Page = () => {
           </ul>
         </div>
       </section>
-      <div className="py-5 bg-dimondra-white">
-        <Industry data={industrySectors} desc="" />
-      </div>
+      
 
       <FAQ desc="" data={organizationalFAQs} />
       <HomeForm />

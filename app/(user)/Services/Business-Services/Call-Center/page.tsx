@@ -301,7 +301,7 @@ const Page = () => {
           "At Dimondra, our call center support solutions are designed to help your business run smoother, grow faster, and keep customers happy. Here`s how we can support you:"
         }
       />
-      <Industry data={industryServices} />
+      
       <Choose
         data={features}
         title={"Why Outsource Your Call Center to Dimondra?"}

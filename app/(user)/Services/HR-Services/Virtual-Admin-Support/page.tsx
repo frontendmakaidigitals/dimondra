@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
-import IndustriesSection from "../../(sections)/Industries";
+
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Process from "../../(sections)/process";
 import Services from "../../(sections)/services";
@@ -356,10 +356,7 @@ const Page = () => {
         heading={"Our Work Process"}
         subHeading={""}
       />
-      <IndustriesSection
-        data={industriesServed}
-        heading={"Industries we serve"}
-      />
+
       <Choose
         title={"Why Choose Dimondra for Virtual Admin Support"}
         desc={
@@ -416,7 +413,12 @@ const Page = () => {
                 className={`text-5xl relative z-10 font-quicksand flex items-start gap-[2px] font-[500] mt-5`}
               >
                 {item.orgPrice && (
-                  <><span className="text-lg text-red-500 line-through">${item.orgPrice}</span> &nbsp;</>
+                  <>
+                    <span className="text-lg text-red-500 line-through">
+                      ${item.orgPrice}
+                    </span>{" "}
+                    &nbsp;
+                  </>
                 )}
                 <span className="text-xl mt-[2px] font-[400]">$</span>
                 {item.price}
