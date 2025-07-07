@@ -22,7 +22,7 @@ const config = {
         padding: "1.2rem",
         screens: {
           sm: "100%",
-          lg: "1400px",
+          lg: "1250px",
         },
       },
       borderRadius: {
