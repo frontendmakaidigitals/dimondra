@@ -44,9 +44,9 @@ const Footer = () => {
           <div>
             <Logo className="w-52 " />
             <p className="text-sm mt-5">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              maxime odio laboriosam expedita cumque pariatur at, placeat sed
-              debitis harum voluptates!
+              Your One-Stop BPO Station for Efficient Back Office Support.
+              Expert Solutions in Recruitment, HR Operations, IT, Operations,
+              Marketing, and Business Strategy.
             </p>
             <div className="mt-8">
               <h4 className="text-lg font-semibold mb-3">Follow Us</h4>
