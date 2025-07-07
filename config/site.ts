@@ -54,8 +54,8 @@ export const siteConfig = {
           label: "HR Services",
           submenu: [
             {
-              label: "Talent Acquisition",
-              link: "/Services/HR-Services/Talent-Acquisition",
+              label: "Staffing Solution",
+              link: "/Services/HR-Services/Staffing-Solution",
             },
             {
               label: "HR Operations",
