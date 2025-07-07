@@ -71,7 +71,6 @@ export const siteConfig = {
             },
           ],
         },
-        ,
         {
           label: "Organization Consulting",
           submenu: [

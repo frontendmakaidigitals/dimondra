@@ -74,15 +74,6 @@ const MissionVision = () => {
               stronger teams through expert-led services in HR, operations,
               digital, and strategic planning.
             </p>
-            <p className="text-gray-700 font-quicksand font-[600]">
-              We want to make your work easier by handling the complex parts –
-              from HR and operations to IT and strategy – so you can focus on
-              growing your business. Whether you&nbsp;re a small company or a large
-              organization, we&nbsp;re here to help you become more efficient,
-              more agile, and better prepared for the future. Our goal is to
-              create real value through long-term support that helps you
-              succeed.
-            </p>
           </div>
 
           {/* Vision */}
@@ -97,16 +88,6 @@ const MissionVision = () => {
               We aim to create a future where businesses of all sizes can
               operate efficiently and confidently, powered by the right support
               systems.
-            </p>
-            <p className="text-gray-700 font-quicksand font-[600]">
-              We see Dimondra becoming a trusted name in the world of
-              outsourcing, consulting, and workforce transformation. Our vision
-              is to help businesses of all sizes run better, grow faster, and
-              manage change more confidently. We want to be the partner that
-              companies rely on — not just for services, but for insights,
-              ideas, and solutions that truly make a difference. Through our
-              work, we aim to lift both business performance and the potential
-              of the people behind it.
             </p>
           </div>
         </div>
