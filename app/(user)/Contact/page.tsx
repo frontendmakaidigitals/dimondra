@@ -102,7 +102,7 @@ const Page = () => {
       title: "Email Support",
       desc: "Our Team responds in real time.",
       icon: Mail,
-      contact: "company@example.com",
+      contact: "Connect@dimondra.com",
     },
     {
       title: "Visit Our Office",
@@ -114,7 +114,7 @@ const Page = () => {
       title: "Call Us Directly",
       desc: "Available during working hours.",
       icon: Phone,
-      contact: "+97 1234 5678",
+      contact: "0562787553",
     },
   ];
 

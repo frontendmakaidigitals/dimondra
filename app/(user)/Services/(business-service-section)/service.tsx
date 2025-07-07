@@ -31,8 +31,6 @@ const Service = ({
           {data.map(({ title, description, icon: Icon }, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
               className=" backdrop-blur-lg bg-[#C2D8AD] group hover:text-[#D9E2C9] hover:bg-[#012F13] rounded-2xl p-6 shadow-xl border-green-700/5 border-2  hover:shadow-2xl transition-all"
             >
               <div className="rounded-full bg-dimondra-100 text-dimondra-800  mb-6">

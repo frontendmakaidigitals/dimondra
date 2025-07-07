@@ -35,7 +35,7 @@ const Footer = () => {
       <div className="absolute inset-0 w-full h-full">
         <img
           src={"/topography.svg"}
-          alt={''}
+          alt={""}
           className="w-full h-full object-cover opacity-[.025]"
         />
       </div>
@@ -156,11 +156,11 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center gap-2 mt-2 ">
                     <Phone className="w-4 h-4" />
-                    <span>+971 55 123 4567</span>
+                    <span>0562787553</span>
                   </div>
                   <div className="flex items-center gap-2 mt-1">
                     <Mail className="w-4 h-4" />
-                    <span>dubai@company.com</span>
+                    <span>Connect@dimondra.com</span>
                   </div>
                 </div>
               </div>
