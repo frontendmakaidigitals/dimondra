@@ -61,7 +61,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               PHRi (Professional in Human Resources – International)
             </h1>
-            <img src={"/PHRI.png"} alt={""} className="" />
+            <img src={"/PHRI.png"} alt={""} className="py-12" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[600]">
@@ -122,7 +122,7 @@ const Page = () => {
                   How Much Does the PHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $495 &nbsp;
+                  <strong>Total Cost:</strong> USD $400 &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
