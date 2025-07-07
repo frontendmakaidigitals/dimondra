@@ -55,19 +55,19 @@ export const siteConfig = {
           submenu: [
             {
               label: "Talent Acquisition",
-              link: "/Services/HR Services/Talent-Acquisition",
+              link: "/Services/HR-Services/Talent-Acquisition",
             },
             {
               label: "HR Operations",
-              link: "/Services/HR Services/Hr-Operations",
+              link: "/Services/HR-Services/Hr-Operations",
             },
             {
               label: "Virtual Admin Support",
-              link: "/Services/HR Services/Virtual-Admin-Support",
+              link: "/Services/HR-Services/Virtual-Admin-Support",
             },
             {
               label: "PRO & Government Services",
-              link: "/Services/HR Services/PRO-Services",
+              link: "/Services/HR-Services/PRO-Services",
             },
           ],
         },
@@ -77,19 +77,19 @@ export const siteConfig = {
           submenu: [
             {
               label: " Organizational Planning",
-              link: "/Services/Organization Consulting/Organisational-planning",
+              link: "/Services/Organization-Consulting/Organisational-planning",
             },
             {
               label: "Talent Management",
-              link: "/Services/Organization Consulting/Talent-Management",
+              link: "/Services/Organization-Consulting/Talent-Management",
             },
             {
               label: "Business Management",
-              link: "/Services/Organization Consulting/Business-Management",
+              link: "/Services/Organization-Consulting/Business-Management",
             },
             {
               label: "Legal Management",
-              link: "/Services/Organization Consulting/Legal-Management",
+              link: "/Services/Organization-Consulting/Legal-Management",
             },
           ],
         },
@@ -98,11 +98,11 @@ export const siteConfig = {
           submenu: [
             {
               label: "HR Certifications (aPHRi, PHRi...)",
-              link: "/Services/Career Development/Hr",
+              link: "/Services/Career-Development/Hr",
             },
             {
               label: "Career Advisory ",
-              link: "/Services/Career Development/Career-advisory",
+              link: "/Services/Career-Development/Career-advisory",
             },
           ],
         },

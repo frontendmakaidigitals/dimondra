@@ -1,16 +1,46 @@
-// This is the layout for the contact page
-export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
-  description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+import { Metadata, Viewport } from "next";
+import { Providers } from "../providers";
+import { siteConfig } from "@/config/site";
+import PageLoader from "./app_chunks/PageLoader";
+import Header from "../(user)/Header/Header";
+import Backtotop from "../(user)/app_chunks/Backtotop";
+import Footer from "../(user)/Footer/Footer";
+import { AuthContextProvider } from "../context/AuthContext";
+import FloatingSocialMediaIcons from "../(user)/app_chunks/FloatingSocialMediaIcons";
+
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-import { ReactNode } from "react";
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
-interface ContactLayoutProps {
-  children: ReactNode;
-}
-
-export default function ContactLayout({ children }: ContactLayoutProps) {
-  return <>{children}</>;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+      <AuthContextProvider>
+        <Header />
+        <FloatingSocialMediaIcons />
+        <PageLoader />
+        <Backtotop />
+        {children}
+        <Footer />
+      </AuthContextProvider>
+    </Providers>
+  );
 }

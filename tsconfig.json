@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "app/(user)/Services/HR Services/Hr-Operations", "app/(user)/Services/Organization Consulting/Business-Management", "app/(user)/Services/Organization Consulting/Talent-Management"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "app/(user)/Services/HR-Services/Hr-Operations", "app/(user)/Services/Organization-Consulting/Business-Management", "app/(user)/Services/Organization-Consulting/Talent-Management"],
   "exclude": ["node_modules"]
 }
