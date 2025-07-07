@@ -113,7 +113,7 @@ const GlobalAndProblems = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1467251589161-f9c68fa14c59?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/services/global.jpg"
               alt="Global Reach"
               className="w-full h-full object-cover"
             />
