@@ -62,7 +62,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               GPHR (Global Professional in Human Resources)
             </h1>
-            <img src={"/PHRI.png"} alt={""} className="" />
+            <img src={"/gphr.png"} alt={""} className="" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[600]">
