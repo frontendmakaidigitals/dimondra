@@ -83,7 +83,8 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.7 }}
           className="text-dimondra-dark text-center text-xs lg:text-sm px-3 py-1  rounded-lg font-medium mt-5 bg-slate-50"
         >
-          Expert support in HR, IT, operations, legal, and business strategy.
+          Comprehensive Back Office Solutions with Offshoring, Virtual Support,
+          HR Excellence, Strategic Consulting, and Business Growth.
         </motion.h3>
 
         <motion.div
