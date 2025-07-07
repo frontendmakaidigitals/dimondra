@@ -121,14 +121,14 @@ const HomeForm = () => {
               <Mail className="size-8 text-dimondra-black" />
               <div className="text-dimondra-white">
                 <h4 className=" font-[600] text-lg">Email</h4>
-                <p className="text-sm ">admin@gmail.com</p>
+                <p className="text-sm ">Connect@dimondra.com</p>
               </div>
             </div>
             <div className="flex items-start gap-5 mt-5">
               <Headset className="size-8 text-dimondra-black" />
               <div className="text-dimondra-white">
                 <h4 className=" font-[600] text-lg">Phone Number</h4>
-                <p className="text-sm ">+12 12345 67890</p>
+                <p className="text-sm ">0562787553</p>
               </div>
             </div>
           </div>
