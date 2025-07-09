@@ -128,34 +128,22 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Locations</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    href="/Services/Hr-Outsourcing/Hr-Operations"
-                    className="hover:underline"
-                  >
+                  <Link href="/Locations/KSA" className="hover:underline">
                     KSA
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Services/Business-Service/It-Support"
-                    className="hover:underline"
-                  >
+                  <Link href="/Locations/India" className="hover:underline">
                     India
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Services/Business-Service/Facility-Management"
-                    className="hover:underline"
-                  >
+                  <Link href="/Locations/Egypt" className="hover:underline">
                     Egypt
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Services/Careers&Training/Career-advisory"
-                    className="hover:underline"
-                  >
+                  <Link href="/Locations/UAE" className="hover:underline">
                     UAE
                   </Link>
                 </li>
