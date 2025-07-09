@@ -61,6 +61,7 @@ export function Editor({
   readOnly = false,
   clampLines = 2,
   blogPage = false,
+  text = "text-slate-900",
 }: {
   editorState?: EditorState;
   editorSerializedState?: SerializedEditorState;
@@ -69,6 +70,7 @@ export function Editor({
   readOnly?: boolean;
   clampLines?: number;
   blogPage?: boolean;
+  text?: string;
 }) {
   return (
     <div
@@ -90,6 +92,7 @@ export function Editor({
             serialized={editorSerializedState}
             clampLines={clampLines}
             blogPage={blogPage}
+            text={text}
           />
           <OnChangePlugin
             ignoreSelectionChange={true}
@@ -111,11 +114,13 @@ export function Plugins({
   serialized,
   clampLines = 2,
   blogPage = false,
+  text = "text-slate-900",
 }: {
   readOnly?: boolean;
   serialized?: SerializedEditorState;
   clampLines?: number;
   blogPage?: boolean;
+  text?: string;
 }) {
   return (
     <div className="relative">
@@ -148,7 +153,7 @@ export function Plugins({
       <div className="relative">
         {readOnly && blogPage === false ? (
           <div
-            className={`${blogPage ? "" : `line-clamp-${clampLines}`} text-sm text-slate-700`}
+            className={`${blogPage ? "" : `line-clamp-${clampLines}`} text-sm ${text}`}
           >
             {renderPlainTextFromEditorState(serialized)}
           </div>

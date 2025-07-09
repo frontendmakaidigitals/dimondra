@@ -74,7 +74,7 @@ const Page = () => {
     <div>
       {" "}
       <div className="bg-teal-800">
-        <div className="h-[45vh] lg:h-[90dvh] max-w-xs lg:max-w-full container w-full relative">
+        <div className="h-[45vh] lg:h-[90dvh] max-w-xs lg:max-w-7xl container w-full relative">
           <img
             src={blog?.imageURL}
             alt={blog?.title}

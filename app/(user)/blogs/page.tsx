@@ -87,6 +87,7 @@ const Page = () => {
                     href={`/blogs/${encodeURIComponent(blog.title.toLowerCase().replace(/\s+/g, "-"))}`}
                   >
                     <div className=" w-full h-full relative">
+                      <BgLayer color={"bg-slate-900/40 z-10"} />
                       <div className="absolute inset-0 w-full rounded-lg overflow-hidden h-full">
                         <img
                           className="w-full h-full object-cover"
@@ -95,16 +96,16 @@ const Page = () => {
                         />
                       </div>
                       <BgLayer color="bg-slate-900/20" />
-                      <div className="relative  z-20 flex flex-col lg:flex-row items-end justify-end container py-9 w-full h-full">
+                      <div className="relative  z-20 flex flex-col lg:flex-row items-end justify-end lg:justify-between container py-9 w-full h-full">
                         <div>
-                          <span className="p-2 text-xs bg-dimondra-black text-slate-50 rounded-lg">
+                          <span className="p-2 text-xs bg-dimondra-white text-slate-900 rounded-lg">
                             {blog.category}
                           </span>
                           <h1 className="text-4xl lg:text-6xl max-w-2xl mt-3 text-slate-50 tracking-tighter font-[500]">
                             {blog.title}
                           </h1>
                           <div>
-                            <div className="mt-1 max-w-3xl">
+                            <div className="mt-1 max-w-3xl ">
                               {blog.content ? (
                                 <Editor
                                   editorSerializedState={
@@ -115,6 +116,7 @@ const Page = () => {
                                   readOnly
                                   clampLines={2}
                                   blogPage={false}
+                                  text="text-slate-50"
                                 />
                               ) : null}
                             </div>
