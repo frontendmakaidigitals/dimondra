@@ -80,6 +80,44 @@ const Footer = () => {
           </div>
           <div className="flex lg:flex-row flex-col items-start gap-20">
             <div>
+              <h4 className="text-lg font-semibold mb-4">Locations</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/Services/Hr-Outsourcing/Hr-Operations"
+                    className="hover:underline"
+                  >
+                    KSA
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/Services/Business-Service/It-Support"
+                    className="hover:underline"
+                  >
+                    India
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/Services/Business-Service/Facility-Management"
+                    className="hover:underline"
+                  >
+                    Egypt
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/Services/Careers&Training/Career-advisory"
+                    className="hover:underline"
+                  >
+                    UAE
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
               <h4 className="text-lg font-semibold mb-4">Most Visits</h4>
               <ul className="space-y-2">
                 <li>

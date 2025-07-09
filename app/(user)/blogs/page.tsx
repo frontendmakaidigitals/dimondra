@@ -114,7 +114,7 @@ const Page = () => {
                                       : blog.content
                                   }
                                   readOnly
-                                  clampLines={2}
+                                  clampLines={4}
                                   blogPage={false}
                                   text="text-slate-50"
                                 />
