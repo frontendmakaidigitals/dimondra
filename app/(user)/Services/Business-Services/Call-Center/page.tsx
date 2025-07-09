@@ -4,12 +4,35 @@ import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import { motion } from "motion/react";
+import Service from "../../(business-service-section)/service";
 import CTA from "../../(business-service-section)/CTA";
-
+import Advantage from "../../(business-service-section)/Advantage";
+import Choose from "../../(business-service-section)/Choose";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
+import {
+  DollarSign,
+  Building2,
+  MessageCircle,
+  Users,
+  PhoneCall,
+  Bot,
+  Clock,
+  ShoppingCart,
+  Calendar,
+  RotateCcw,
+  Gift,
+  Settings,
+  PackageCheck,
+  AlertCircle,
+  HandCoins,
+  Globe,
+  ShieldCheck,
+} from "lucide-react";
+import FAQ from "@/app/(user)/app_chunks/FAQ";
 
-import FAQ from "../../../app_chunks/FAQ";
 const Page = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   useSplitText({
     selector: ".talentHead",
     duration: 0.8,
@@ -30,6 +53,150 @@ const Page = () => {
     linesClass: "line-wrapper++",
     delay: 1.5,
   });
+
+  const advantage = [
+    "Omnichannel Customer Support",
+    "Operational Flexibility",
+    "AI-Powered Efficiency",
+    "Insight-Driven Strategy",
+    "Multilingual Capapbilities",
+    "Scalable Service Models",
+    "Trusted Data Protection",
+    "Business Continuity",
+  ];
+
+  const features = [
+    {
+      title: "Cost Efficiency",
+      description:
+        "Lower your operational costs by up to 50% without compromising service quality. Our outsourcing model allows you to scale your support team affordably while maintaining excellent performance and customer care.",
+      icon: DollarSign,
+    },
+    {
+      title: "Business-Friendly Environment",
+      description:
+        "Work with a partner backed by a strong operational infrastructure and a business-first mindset. At Dimondra, we invest in systems, technology, and practices that help our clients grow smoothly and sustainably.",
+      icon: Building2,
+    },
+    {
+      title: "Excellent Communication Skills",
+      description:
+        "Our support teams are fluent in English and trained in customer-first communication, making it easy to serve global audiences and provide a seamless experience across languages and time zones.",
+      icon: MessageCircle,
+    },
+    {
+      title: "Experienced & Skilled Teams",
+      description:
+        "We bring you access to well-trained professionals with a strong background in customer service, sales, and technical support. Our team adapts quickly to your business needs and consistently delivers top-tier service.",
+      icon: Users,
+    },
+    {
+      title: "Cultural Understanding",
+      description:
+        "We hire teams with strong cultural awareness and alignment to Western markets. This results in more natural interactions, improved customer satisfaction, and fewer communication barriers.",
+      icon: Globe,
+    },
+    {
+      title: "Data Security & Compliance",
+      description:
+        "Your business and customer data are safe with us. Dimondra complies with global standards such as ISO, PCI, SOC II, and HIPAA, ensuring complete security and privacy at every step.",
+      icon: ShieldCheck,
+    },
+  ];
+
+  const services = [
+    {
+      title: "Inbound Call Center Services",
+      tagline: "Turning every inquiry into a connection.",
+      description: `Dimondra provides reliable inbound call center solutions that elevate your customer service and drive meaningful engagement. Our skilled agents ensure every call is handled with care, turning inquiries into loyalty and building trust at every touchpoint.`,
+      icon: PhoneCall,
+      img: "/services/inbound.jpg",
+    },
+    {
+      title: "Outbound Call Center Solutions",
+      tagline: "Reach the right people at the right time.",
+      description: `Our Outbound Call Center Services are designed to connect your business with the right audience, boosting customer acquisition, accelerating revenue, and enhancing loyalty. Whether you're a startup or a growing enterprise, our team helps you reach prospects and existing customers through targeted, high-impact calling strategies.`,
+      icon: MessageCircle,
+      img: "/services/outbound.jpg",
+    },
+    {
+      title: "AI-Powered Call Centers",
+      tagline: "Smarter support through AI innovation.",
+      description: `As one of the leading BPO companies in the region, Dimondra combines human expertise with cutting-edge AI tools like MindVoice and MindSpeech. These advanced technologies help harmonize accents, predict customer needs in real-time, and deliver an exceptional customer experience, every time.`,
+      icon: Bot,
+      img: "/services/ai-support.jpg",
+    },
+    {
+      title: "24/7 Customer Support / Helpdesk",
+      tagline: "Always available, always helpful.",
+      description: `We offer round-the-clock customer service to handle questions, complaints, and requests whenever your customers need help. Our friendly and well-trained agents make sure every caller feels heard, valued, and supported, helping you build strong, lasting relationships.`,
+      icon: Clock,
+      img: "/services/helpdesk.jpg",
+    },
+    {
+      title: "Sales Support – Before & After Purchase",
+      tagline: "Support that sells—and retains.",
+      description: `From helping potential buyers understand your products to following up after a sale, our team provides full support throughout the customer journey. We help boost conversions, answer questions, and create trust that leads to repeat business.`,
+      icon: ShoppingCart,
+      img: "/services/sales-support.jpg",
+    },
+    {
+      title: "Appointment Scheduling",
+      tagline: "Keep calendars full and customers informed.",
+      description: `Our agents can manage your bookings and follow-ups, making sure appointments are set smoothly and on time. With professional handling, your team stays organized and your customers stay informed.`,
+      icon: Calendar,
+      img: "/services/appointments.jpg",
+    },
+    {
+      title: "Refund & Claims Handling",
+      tagline: "Hassle-free resolutions for all.",
+      description: `We make returns and claims easier for both you and your customers. Our support team handles each case carefully and efficiently, ensuring quick resolutions and protecting your brand’s reputation.`,
+      icon: RotateCcw,
+      img: "/services/refunds.jpg",
+    },
+    {
+      title: "Loyalty Program Management",
+      tagline: "Turn customers into brand advocates.",
+      description: `Keep your customers coming back with engaging loyalty programs. We help you create and manage reward systems that make your audience feel appreciated and connected to your brand.`,
+      icon: Gift,
+      img: "/services/loyalty.jpg",
+    },
+    {
+      title: "Technical Support",
+      tagline: "Expert help when it matters most.",
+      description: `Got a product issue? Our skilled agents are ready to solve technical problems, whether it's software or hardware, ensuring your customers get the help they need without long wait times or confusion.`,
+      icon: Settings,
+      img: "/services/tech-support.jpg",
+    },
+    {
+      title: "Lead Generation",
+      tagline: "Feed your funnel with qualified prospects.",
+      description: `Let us help you find and qualify the right prospects. Our lead generation services feed your sales team with high-potential leads so they can focus on closing deals and growing your business.`,
+      icon: Users,
+      img: "/services/leads.jpg",
+    },
+    {
+      title: "Order Processing & Fulfillment",
+      tagline: "Seamless service from cart to delivery.",
+      description: `We take care of the behind-the-scenes work, from order tracking to delivery coordination, so your customers enjoy a smooth and reliable shopping experience.`,
+      icon: PackageCheck,
+      img: "/services/order.jpg",
+    },
+    {
+      title: "Customer Complaints & Escalations",
+      tagline: "Every complaint is an opportunity.",
+      description: `Every complaint is a chance to improve. Our support team handles concerns with care and professionalism, resolving issues quickly and turning unhappy customers into loyal ones.`,
+      icon: AlertCircle,
+      img: "/services/escalations.jpg",
+    },
+    {
+      title: "Debt Collection Support",
+      tagline: "Recover payments, preserve relationships.",
+      description: `Recovering payments doesn’t have to damage relationships. Our team handles collections respectfully and effectively, helping you improve your cash flow while maintaining a positive image.`,
+      icon: HandCoins,
+      img: "/services/debt-collection.jpg",
+    },
+  ];
 
   const callCenterFAQs = [
     {
@@ -74,146 +241,75 @@ const Page = () => {
     },
   ];
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const services = [
-    {
-      title: "Inbound & Outbound Customer Support",
-      tagline: "Always connected, always responsive.",
-      description: `At Dimondra, we offer complete inbound and outbound customer support services to help your business stay connected with customers at every step. Our trained customer service agents are ready to manage incoming calls, answer questions, solve problems, and handle requests in a friendly and professional way. We also handle outbound services like feedback calls, follow-ups, appointment reminders, and order confirmations to improve your customer experience and keep your brand top of mind. Whether it's voice calls, email support, live chat, or social media messaging, we make sure every communication is fast, accurate, and on-brand. We also manage escalations and tough conversations with care, so your customers always feel heard and supported. Our 24/7 availability means your customers can reach you anytime, which builds trust.`,
-      img: "/services/callCenter.jpg",
-    },
-    {
-      title: "Multilingual Support Solutions",
-      tagline: "Speak Every Customer's Language with Confidence",
-      description: `At Dimondra, we understand that great customer service starts with clear communication. That’s why we offer multilingual support solutions to help your business connect with customers from different language backgrounds. Our trained contact center agents speak multiple languages fluently, making it easier for your customers to explain their concerns and feel heard. Whether you're serving international clients or a diverse local audience, our team ensures every interaction is culturally appropriate, respectful, and efficient. By offering language-specific teams, we help reduce misunderstandings, speed up resolution times, and provide a more personalized customer experience. This leads to higher customer satisfaction, increased loyalty, and better business outcomes. Our multilingual customer service ensures that language is never a barrier between you and your clients, helping your brand grow across regions with trust and clarity.`,
-      img: "/services/callCenter2.jpg",
-    },
-    {
-      title: "Technical Helpdesk & Product Support",
-      tagline: "Reliable Technical Support That Keeps Your Customers Confident",
-      description: `At Dimondra, we provide technical helpdesk and product support services that make it easy for businesses to deliver fast, accurate, and friendly assistance. Our trained support agents are equipped to handle everything from basic tech queries to more complex product issues. Whether your customers need help setting up a product, fixing a software glitch, or understanding a feature, we’re here to guide them with step-by-step solutions. We manage both Level 1 and Level 2 technical support, ensuring that basic and advanced issues are resolved quickly. From creating support tickets and managing escalations to offering remote troubleshooting and walkthroughs, our team works as an extension of your brand. With our technical customer support, your customers get timely, knowledgeable help, improving satisfaction, building trust, and reducing product returns or complaints. Our goal is to keep your users happy, confident, and loyal.`,
-      img: "/services/callCenterHero.jpg",
-    },
-    {
-      title: "Customer Retention & Loyalty Programs",
-      tagline: "Keep Your Customers Coming Back with Proactive Support",
-      description: `At Dimondra, we help businesses retain customers and build long-term relationships through smart customer retention strategies and well-managed loyalty programs. Our team works closely with your customers to make sure they feel valued, heard, and appreciated—key elements for turning one-time buyers into loyal brand supporters. We use proactive engagement, like friendly follow-ups, helpful recommendations, and personalized offers, to keep your audience interested and involved. Our agents are also trained in upselling and cross-selling, making sure your customers are introduced to the right products or services at the right time. We also run win-back campaigns to re-engage customers who haven’t interacted in a while, and collect useful feedback to improve our services. With our support, your business can increase repeat sales, improve customer satisfaction, and build a stronger, more loyal customer base. Our customer retention and loyalty services are designed to grow your brand and boost long-term success.`,
-      img: "/services/hroperationshero.jpg",
-    },
-  ];
-
   return (
     <>
+      {/* Pop-up Form */}
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
+
+      {/* Hero Section */}
       <motion.div className="w-full h-[90vh] relative">
-        <BgLayer
-          color={
-            "bg-slate-900/60 lg:bg-gradient-to-l from-transparent from-[0%] to-teal-950 to-[60%] z-[2] "
-          }
-        />
+        <BgLayer color="bg-slate-900/60 lg:bg-gradient-to-l from-transparent from-[0%] to-teal-950 to-[60%] z-[2]" />
         <img
           className="absolute inset-0 object-right-top w-full h-full object-cover"
-          src={"/services/callCenterHero.jpg"}
-          alt={"Talent Acquisition"}
+          src="/services/callCenterHero.jpg"
+          alt="Talent Acquisition"
         />
-        <div className=" relative  z-[3] w-full h-full">
-          <div className="container tracking-tighter h-full flex flex-col items-start justify-center py-16 relative z-10 text-dimondra-white">
+        <div className="relative z-[3] w-full h-full">
+          <div className="container tracking-tighter h-full flex flex-col items-start justify-end py-16 text-dimondra-white">
+            <p className="text-sm">HR Outsourcing Services in Dubai</p>
             <p className="text-sm">
               Customer Service & Contact Center Management
             </p>
             <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
-              We Help You Take Better Care of Your Customers
+              Enhance Customer Experience with World-Class Call Center Support
             </h2>
-            <p className=" talentPara max-w-3xl mt-2 text-slate-50">
-              At Dimondra, we make it easy for businesses to give great customer
-              service. Whether you need help answering customer questions,
-              managing high call volumes, or running your entire support center,
-              we&nbsp;ve got you covered. Our trained team, smart tools, and
-              smooth processes ensure every customer interaction is polite,
-              professional, and helpful. With our support, you can keep your
-              customers happy and focus more on growing your business.
+            <p className="talentPara max-w-3xl mt-2 text-slate-50">
+              Delivering exceptional customer interactions starts with the right
+              support partner. At Dimondra, we provide scalable, cost-effective
+              call center solutions that help businesses streamline operations
+              and exceed customer expectations. From technical support to sales
+              assistance and inbound service queries, our expert teams are
+              trained to deliver consistent, high-quality service around the
+              clock.
             </p>
             <button
               onClick={() => setIsOpen(true)}
-              className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200
-                        hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
+              className="px-5 py-2 rounded-lg border border-dimondra-white transition-colors duration-200 hover:border-dimondra-tealDark hover:bg-dimondra-tealDark mt-5"
             >
               Discover Our Services
             </button>
           </div>
         </div>
       </motion.div>
-      <div className="container serviceTrigger mx-auto px-4 py-14">
-        <p className="text-center text-sm text-gray-500">Our Services</p>
-        <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] tracking-tighter text-center font-[600] text-dimondra-black">
-          Empowering Your Business Vision
-        </h1>
-        <div className="grid grid-cols-1 gap-12 mt-12">
-          {services.map((service, index) => {
-            const isOdd = index % 2 !== 0;
 
-            return (
-              <div
-                key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-10 p-6 rounded-3xl shadow-sm 
-                  ${
-                    isOdd
-                      ? "lg:flex-row-reverse lg:bg-gradient-to-l from-dimondra-black/10"
-                      : "lg:bg-gradient-to-r from-dimondra-black/10"
-                  }`}
-              >
-                {/* Image */}
-                <div
-                  className={`overflow-hidden rounded-2xl shadow-md ${
-                    isOdd ? "order-2 lg:order-1" : "order-1 lg:order-2"
-                  }`}
-                >
-                  <img
-                    src={service.img}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
+      {/* Services Section */}
+      <Service
+        data={services}
+        desc="At Dimondra, our call center support solutions are designed to help your business run smoother, grow faster, and keep customers happy. Here's how we can support you:"
+      />
 
-                {/* Text */}
-                <div
-                  className={`flex flex-col gap-4 ${
-                    isOdd ? "order-2 lg:pr-8" : "order-1 lg:pl-8"
-                  }`}
-                >
-                  <h2 className="text-3xl font-dmSans font-bold text-slate-900">
-                    {service.title}
-                  </h2>
-                  <p className="text-slate-700 font-quicksand font-[600]">
-                    {service.description}
-                  </p>
+      <Choose
+        data={features}
+        title="Why Outsource Your Call Center to Dimondra?"
+        desc="Outsourcing your customer support to Dimondra gives you access to cost-effective, scalable, and high-quality solutions..."
+      />
 
-                  <button
-                    onClick={() => setIsOpen(true)}
-                    className="group mt-3 relative cursor-pointer w-fit border border-slate-300 bg-white rounded-full overflow-hidden text-black text-center font-medium text-sm shadow-sm"
-                  >
-                    <span className="px-6 py-2 inline-block transition-all duration-300 group-hover:-translate-y-10 group-hover:opacity-0">
-                      Learn more
-                    </span>
-                    <div className="absolute inset-0 flex items-center justify-center bg-dimondra-teal text-white rounded-full group-hover:rounded-none translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                      Learn more
-                    </div>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <FAQ data={callCenterFAQs} desc={""} />
+      <Advantage
+        img1="/services/callCenter1.jpg"
+        img2="/services/callCenter2.jpg"
+        data={advantage}
+        title="Dimondra – Your Trusted Call Center Outsourcing Partner"
+        description="Dimondra is your trusted partner for reliable and future-ready call center outsourcing..."
+      />
+
+      <FAQ data={callCenterFAQs} desc="" />
+
       <HomeForm />
+
       <CTA
-        title={"Ready to improve your customer service experience?"}
-        desc={
-          "Let Dimondra handle your customer service and contact center operations so you can focus on growing your business. With professional agents, smart technology, and flexible solutions, we help you deliver excellent support at every touchpoint."
-        }
-        button={"Contact us today "}
+        title="Ready to improve your customer service experience?"
+        desc="Let Dimondra handle your customer service and contact center operations..."
+        button="Contact us today"
       />
     </>
   );
