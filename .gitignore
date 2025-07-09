@@ -36,3 +36,5 @@ next-env.d.ts
 
 
 public/serviceAccount.json
+deploy-key
+deploy-key.pub

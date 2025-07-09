@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
-import serviceAccount from "@/public/serviceAccount.json";
+
 import nodemailer from "nodemailer";
 export const runtime = "nodejs";
 const transporter = nodemailer.createTransport({
@@ -22,7 +22,19 @@ export const config = {
 
 if (!admin.apps.length) {
   initializeApp({
-    credential: cert(serviceAccount as ServiceAccount),
+    credential: cert({
+      type: process.env.GOOGLE_TYPE,
+      project_id: process.env.GOOGLE_PROJECT_ID,
+      private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      auth_uri: process.env.GOOGLE_AUTH_URI,
+      token_uri: process.env.GOOGLE_TOKEN_URI,
+      auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_CERT_URL,
+      client_x509_cert_url: process.env.GOOGLE_CLIENT_CERT_URL,
+      universe_domain: process.env.GOOGLE_UNIVERSE_DOMAIN,
+    } as ServiceAccount),
   });
 }
 
