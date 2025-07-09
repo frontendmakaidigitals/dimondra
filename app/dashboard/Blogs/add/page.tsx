@@ -30,20 +30,40 @@ export default function AddBlogPage() {
   });
 
   const topics = [
-    { key: "cat", label: "Cat" },
-    { key: "dog", label: "Dog" },
-    { key: "elephant", label: "Elephant" },
-    { key: "lion", label: "Lion" },
-    { key: "tiger", label: "Tiger" },
-    { key: "giraffe", label: "Giraffe" },
-    { key: "dolphin", label: "Dolphin" },
-    { key: "penguin", label: "Penguin" },
-    { key: "zebra", label: "Zebra" },
-    { key: "shark", label: "Shark" },
-    { key: "whale", label: "Whale" },
-    { key: "otter", label: "Otter" },
-    { key: "crocodile", label: "Crocodile" },
+    {
+      key: "Banking ",
+      label: "Banking",
+    },
+    {
+      key: "Engineering",
+      label: "Engineering",
+    },
+    {
+      key: "Corporate",
+      label: "Corporate",
+    },
+    {
+      key: "Commercial",
+      label: "Commercial",
+    },
+    {
+      key: "Hospitality",
+      label: "Hospitality",
+    },
+    {
+      key: "Pharmaceutical",
+      label: "Pharmaceutical",
+    },
+    {
+      key: "Logistics",
+      label: "Logistics",
+    },
+    {
+      key: "Technology",
+      label: "Technology",
+    },
   ];
+
   const handleChange = (
     key: keyof typeof blogData,
     value: string | File | null
