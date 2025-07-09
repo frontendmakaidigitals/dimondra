@@ -1,14 +1,19 @@
 "use client";
 import Logo from "../app_chunks/Logo";
 import { siteConfig } from "@/config/site";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useScrollPosition } from "@/app/hooks/useScrollVal";
 import { motion, AnimatePresence } from "motion/react";
 import MobileMenu from "./MobileMenu";
-import { useRouter } from "next/navigation";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/app/context/AuthContext";
 import clsx from "clsx";
 const Header = () => {
   const navMenu = siteConfig.navItems;
@@ -16,7 +21,21 @@ const Header = () => {
   const { scrollVal } = useScrollPosition();
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const router = useRouter();
+  const { googleSignIn, user, logOut } = useAuth();
+  const handleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -276,15 +295,51 @@ const Header = () => {
           <MobileMenu menu={navMenu} />
         </div>
 
-        <motion.button
-          onClick={() => router.push("/Contact")}
-          className="relative hidden lg:inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-50"
-        >
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#5eead4_0%,#0f766e_50%,#5eead4_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#EEF7FF] hover:bg-dimondra-teal hover:text-dimondra-white transition-all duration-250 px-8 py-1 text-sm font-medium text-black backdrop-blur-3xl">
-            Get a Quote
-          </span>
-        </motion.button>
+        {!user ? (
+          <motion.button
+            onClick={googleSignIn}
+            className="relative hidden lg:inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#5eead4_0%,#0f766e_50%,#5eead4_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#EEF7FF] hover:bg-dimondra-teal hover:text-dimondra-white transition-all duration-250 px-8 py-1 text-sm font-medium text-black backdrop-blur-3xl">
+              Sign in
+            </span>
+          </motion.button>
+        ) : (
+          <motion.div className="hidden lg:inline-flex items-center gap-3 size-10 rounded-full bg-dimondra-teal text-white font-medium hover:bg-teal-700 transition-all">
+            {user.photoURL ? (
+              <>
+                <Popover>
+                  <PopoverTrigger asChild className="cursor-pointer">
+                    <img
+                      src={user.photoURL}
+                      alt="User Avatar"
+                      className="rounded-full object-cover"
+                    />
+                  </PopoverTrigger>
+                  <PopoverContent className="max-w-60">
+                    <div className="grid gap-3">
+                      <div className="space-y-2">
+                        <h4 className="text-muted-foreground text-sm">Menu</h4>
+                      </div>
+                      <div className="grid gap-1 hover:bg-slate-100 rounded-lg">
+                        <div
+                          onClick={handleSignOut}
+                          className="flex w-full p-2  gap-5"
+                        >
+                          <label htmlFor="width">
+                            <LogOut />
+                          </label>
+                          <button>Sign out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </>
+            ) : null}
+          </motion.div>
+        )}
       </div>
     </motion.header>
   );

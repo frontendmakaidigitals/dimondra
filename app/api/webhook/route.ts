@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import * as admin from "firebase-admin";
 import serviceAccount from "@/public/serviceAccount.json";
-
 export const runtime = "nodejs";
 export const config = {
   api: {
@@ -11,7 +10,7 @@ export const config = {
 };
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-04-30.basil",
+  apiVersion: "2025-06-30.basil",
 });
 
 // Initialize Firebase Admin if not already initialized

@@ -82,7 +82,7 @@ interface InputComponentProps extends React.ComponentProps<"input"> {
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
   ({ className, phoneError, bgColor, ...props }, ref) => {
-    console.log(phoneError);
+
     return (
       <Input
         className={cn(

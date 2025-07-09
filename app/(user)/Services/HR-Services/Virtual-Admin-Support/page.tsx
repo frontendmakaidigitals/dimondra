@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
-
+import { useAuth } from "@/app/context/AuthContext";
 import HomeForm from "@/app/(user)/(homepage)/HomeForm";
 import Process from "../../(sections)/process";
 import Services from "../../(sections)/services";
@@ -11,6 +11,8 @@ import FAQ from "@/app/(user)/app_chunks/FAQ";
 import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
+import { loadStripe } from "@stripe/stripe-js";
+
 import {
   CalendarDays,
   Mail,
@@ -30,12 +32,14 @@ import {
   ShieldCheck,
   Rocket,
   Handshake,
-  ArrowRight,
   Check,
   ArrowUpRight,
 } from "lucide-react";
 import clsx from "clsx";
-
+if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
+  throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
+}
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 const Page = () => {
   useSplitText({
     selector: ".talentHead",
@@ -117,45 +121,6 @@ const Page = () => {
       title: "Simple Customer Support & Reminders",
       desc: "We help with basic customer queries and send reminders. Your clients and tasks stay on track.",
       icon: Headphones,
-    },
-  ];
-
-  const industriesServed = [
-    {
-      title: "Small & Medium Businesses",
-      description:
-        "We support SMBs by handling daily admin tasks, helping them focus on growth and customer satisfaction without getting bogged down in routine work.",
-      imgUrl: "/services/business.jpg",
-    },
-    {
-      title: "Startups & Entrepreneurs",
-      description:
-        "Our virtual assistants provide flexible support to startups, enabling founders to save time and scale efficiently while managing critical operations.",
-      imgUrl: "/services/startup.jpg",
-    },
-    {
-      title: "Real Estate",
-      description:
-        "From scheduling property viewings to managing client communications, we assist real estate professionals in staying organized and responsive.",
-      imgUrl: "/services/realestate.jpg",
-    },
-    {
-      title: "Professional Services",
-      description:
-        "Lawyers, consultants, and accountants benefit from our reliable admin support, freeing them to focus on delivering expert services.",
-      imgUrl: "/services/professional.jpg",
-    },
-    {
-      title: "E-commerce & Retail",
-      description:
-        "We help online and retail businesses manage order processing, customer inquiries, and inventory tracking smoothly and efficiently.",
-      imgUrl: "/services/ecommerce.jpg",
-    },
-    {
-      title: "Healthcare & Wellness",
-      description:
-        "Our assistants support healthcare providers and wellness professionals with appointment scheduling, patient communications, and administrative tasks.",
-      imgUrl: "/services/healthcare.jpg",
     },
   ];
 
@@ -309,6 +274,44 @@ const Page = () => {
     },
   ];
 
+  const { user, loading, googleSignIn, logOut, userCollection } = useAuth();
+
+  if (loading) return <div>Loading...</div>;
+  const handleCheckout = async (price: string | number, name: string) => {
+    const stripe = await stripePromise;
+
+    const response = await fetch("/api/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: user?.email,
+        name: name,
+        price: price,
+      }),
+    });
+
+    if (!response.ok) {
+      // Get raw text of error response for debugging
+      const errorText = await response.text();
+      console.error("API error:", errorText);
+      alert(`Error: ${errorText}`);
+      return; // stop further execution
+    }
+
+    const { id } = await response.json();
+
+    if (!stripe) {
+      alert("Stripe failed to load.");
+      return;
+    }
+
+    const { error } = await stripe.redirectToCheckout({ sessionId: id });
+
+    if (error) alert(error.message);
+  };
+
   return (
     <>
       <motion.div
@@ -367,7 +370,7 @@ const Page = () => {
       <section className="py-12 relative">
         <div className="absolute top-1/2 left-1/5 bg-dimondra-teal/20 blur-3xl size-[300px] rounded-full" />
         <div className="absolute top-0 left-1/2 -translate-x-1/5 bg-dimondra-tealDark/20 blur-3xl size-[300px] rounded-full" />
-        <h1 className="max-w-4xl mb-9 mx-auto text-center font-[600] text-6xl font-sans text-dimondra-black">
+        <h1 className="max-w-4xl relative z-10 mb-9 mx-auto text-center font-[600] text-6xl font-sans text-dimondra-black">
           Transparent Pricing
         </h1>
         <div className="grid relative z-10 container grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
@@ -426,6 +429,7 @@ const Page = () => {
               </h2>
 
               <motion.button
+                onClick={() => handleCheckout(item.price, item.name)}
                 initial={{
                   scale: 1,
                   backgroundColor: "transparent",

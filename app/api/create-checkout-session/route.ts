@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-04-30.basil",
+  apiVersion: "2025-06-30.basil",
 });
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, videoId } = await request.json();
+    const { email, price, name } = await request.json();
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -16,9 +16,9 @@ export async function POST(request: NextRequest) {
         {
           price_data: {
             currency: "usd",
-            unit_amount: 2000, // $20
+            unit_amount: Number(price) * 100,
             product_data: {
-              name: "Cool T-shirt",
+              name: name,
             },
           },
           quantity: 1,
@@ -28,17 +28,20 @@ export async function POST(request: NextRequest) {
       cancel_url: "http://localhost:3000/cancel",
 
       customer_email: email,
-    
-
+      
       metadata: {
         email: email,
-        videoId: videoId
+        name: name,
+        price: price,
       },
     });
 
     return NextResponse.json({ id: session.id });
   } catch (err) {
     console.error("Stripe checkout session error", err);
-    return NextResponse.json({ error: "Stripe checkout failed" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Stripe checkout failed" },
+      { status: 500 }
+    );
   }
 }

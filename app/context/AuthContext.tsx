@@ -41,35 +41,26 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     await signOut(auth);
   };
 
- useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-    setUser(currentUser);
-    setLoading(false);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
 
-    if (currentUser?.email) {
-      const email = currentUser.email;
-      const name = currentUser.displayName || "Unnamed";
-      const userRef = doc(db, "userPaymentInfo", email);
-      const userSnap = await getDoc(userRef);
+      if (currentUser?.email) {
+        const email = currentUser.email;
+        const userRef = doc(db, "userPaymentInfo", email);
+        const userSnap = await getDoc(userRef);
 
-      if (!userSnap.exists()) {
-        await setDoc(
-          userRef,
-          {
+        if (!userSnap.exists()) {
+          await setDoc(userRef, {
             email,
-            name,
-            // Initialize payment fields if needed
-            videoId1: false,
-            videoId2: false,
-          }
-        );
+          });
+        }
       }
-    }
-  });
+    });
 
-  return () => unsubscribe();
-}, []);
-
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -78,7 +69,6 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
       try {
         const userDocRef = doc(db, "userPaymentInfo", user.email);
         const userDocSnap = await getDoc(userDocRef);
-        console.log(userDocSnap.data());
         if (userDocSnap.exists()) {
           setItems([{ id: userDocSnap.id, ...userDocSnap.data() }]);
         }

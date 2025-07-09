@@ -149,6 +149,10 @@ export const siteConfig = {
         },
       ],
     },
+    {
+      label: "Contact",
+      href: "/Contact",
+    },
   ],
   links: {
     github: "https://github.com/heroui-inc/heroui",
