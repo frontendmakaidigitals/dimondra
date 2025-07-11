@@ -324,6 +324,8 @@ const Header = () => {
                       </div>
                       <div className="grid gap-1 hover:bg-slate-100 rounded-lg">
                         <div
+                          role="button"
+                          tabIndex={0}
                           onClick={handleSignOut}
                           className="flex w-full p-2  gap-5"
                         >
