@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { App, ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
 import serviceAccount from "@/public/serviceAccount.json";
 export const runtime = "nodejs";
@@ -8,15 +9,13 @@ export const config = {
     bodyParser: false,
   },
 };
-
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2025-06-30.basil",
 });
 
-// Initialize Firebase Admin if not already initialized
 if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
+  initializeApp({
+    credential: cert(serviceAccount as ServiceAccount),
   });
 }
 const firestore = admin.firestore();
@@ -55,19 +54,21 @@ export async function POST(request: NextRequest) {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
 
-    const email = session.customer_email || session?.metadata?.email;
-    const videoId = session?.metadata?.videoId;
+    const email = session.customer_email;
+    const name = session.metadata?.name;
+    const price = session.metadata?.price;
 
-    if (!email) {
-      console.warn("No email found in session, cannot update Firestore.");
-    } else {
-      try {
-        const userRef = firestore.collection("userPaymentInfo").doc(email);
-        await userRef.update({ [`videoId${videoId}`]: true });
-        console.log(`Firestore updated for user: ${email} videoId${videoId}`);
-      } catch (err) {
-        console.error("❌ Failed to update Firestore:", err);
-      }
+    if (email && name && price) {
+      const userRef = firestore.collection("userPaymentInfo").doc(email);
+      const purchasesRef = userRef.collection("purchases");
+
+      await purchasesRef.add({
+        name,
+        price,
+        purchasedAt: new Date().toISOString(),
+      });
+
+      console.log(`✅ Purchase stored under user: ${email}`);
     }
   }
 

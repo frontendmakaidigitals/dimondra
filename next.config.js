@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["example.com", "cdn.example.org", "images.unsplash.com"], // Add allowed image domains here
+    domains: [
+      "example.com",
+      "cdn.example.org",
+      "images.unsplash.com",
+      "lh3.googleusercontent",
+    ], // Add allowed image domains here
   },
   async headers() {
     return [
@@ -10,7 +15,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*",  
+            value: "*",
           },
         ],
       },

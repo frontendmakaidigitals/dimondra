@@ -313,7 +313,7 @@ const Header = () => {
                   <PopoverTrigger asChild className="cursor-pointer">
                     <img
                       src={user.photoURL}
-                      alt="User Avatar"
+                      alt="User"
                       className="rounded-full object-cover"
                     />
                   </PopoverTrigger>

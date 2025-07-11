@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BgLayer from "@/app/(user)/app_chunks/BgLayer";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { useAuth } from "@/app/context/AuthContext";
@@ -12,7 +12,6 @@ import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import { loadStripe } from "@stripe/stripe-js";
-
 import {
   CalendarDays,
   Mail,
@@ -36,6 +35,9 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import clsx from "clsx";
+import { db } from "@/config/firebase";
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
+
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
 }
@@ -123,6 +125,37 @@ const Page = () => {
       icon: Headphones,
     },
   ];
+  const { user, loading } = useAuth();
+  interface purchaseType {
+    id: string;
+    name: string;
+  }
+  const [purchases, setPurchases] = useState<purchaseType[]>([]);
+  useEffect(() => {
+    if (user?.email) {
+      const getUserPurchases = async () => {
+        try {
+          const purchasesSnapshot = await getDocs(
+            collection(db, "userPaymentInfo", user.email ?? "", "purchases")
+          );
+
+          const allPurchases = purchasesSnapshot.docs.map((doc) => {
+            const data = doc.data();
+            return {
+              id: doc.id,
+              name: data.name ?? "",
+            };
+          });
+
+          setPurchases(allPurchases);
+        } catch (err) {
+          console.error("Error fetching user purchases:", err);
+        }
+      };
+
+      getUserPurchases();
+    }
+  }, [user]);
 
   const onboardingSteps = [
     {
@@ -274,8 +307,6 @@ const Page = () => {
     },
   ];
 
-  const { user, loading, googleSignIn, logOut, userCollection } = useAuth();
-
   if (loading) return <div>Loading...</div>;
   const handleCheckout = async (price: string | number, name: string) => {
     const stripe = await stripePromise;
@@ -293,7 +324,6 @@ const Page = () => {
     });
 
     if (!response.ok) {
-      // Get raw text of error response for debugging
       const errorText = await response.text();
       console.error("API error:", errorText);
       alert(`Error: ${errorText}`);
@@ -312,6 +342,7 @@ const Page = () => {
     if (error) alert(error.message);
   };
 
+  console.log(purchases);
   return (
     <>
       <motion.div
@@ -428,34 +459,48 @@ const Page = () => {
                 <span className="text-xl mt-[6px] font-[400]">/month</span>
               </h2>
 
-              <motion.button
-                onClick={() => handleCheckout(item.price, item.name)}
-                initial={{
-                  scale: 1,
-                  backgroundColor: "transparent",
-                  color: "#000000",
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "#00929b",
-                  color: "#ffffff",
-                }}
-                transition={{ duration: 0.4, ease: [0.165, 0.84, 0.44, 1] }}
-                style={{
-                  boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
-                }}
-                className={clsx(
-                  `w-full relative z-10 bg-dimondra-white font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/30`
-                )}
-              >
-                Get Started Today
-                <ArrowUpRight />
-              </motion.button>
               <hr className="border-slate-800/30 my-6" />
-              <p className="mb-4 relative z-10 font-rubik font-[400]">
-                Starter plan includes:
-              </p>
-              <ul className="space-y-3">
+              {purchases.some(
+                (purchase) =>
+                  purchase?.name?.toLowerCase() === item.name.toLowerCase()
+              ) ? (
+                <motion.button
+                  style={{
+                    boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
+                  }}
+                  disabled
+                  className={clsx(
+                    `w-full !bg-[#00929b] !text-[#ffffff] relative z-10 font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/10`
+                  )}
+                >
+                  Already Purchased
+                </motion.button>
+              ) : (
+                <motion.button
+                  onClick={() => handleCheckout(item.price, item.name)}
+                  initial={{
+                    scale: 1,
+                    backgroundColor: "transparent",
+                    color: "#000000",
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "#00929b",
+                    color: "#ffffff",
+                  }}
+                  transition={{ duration: 0.4, ease: [0.165, 0.84, 0.44, 1] }}
+                  style={{
+                    boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
+                  }}
+                  className={clsx(
+                    `w-full relative z-10 bg-dimondra-white font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/30`
+                  )}
+                >
+                  Get Started Today
+                  <ArrowUpRight />
+                </motion.button>
+              )}
+              <ul className="space-y-3 mt-6">
                 {item.features.map((arr, id) => (
                   <li
                     key={id}

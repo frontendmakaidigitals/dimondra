@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
       cancel_url: "http://localhost:3000/cancel",
 
       customer_email: email,
-      
+
       metadata: {
         email: email,
         name: name,
