@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { App, ServiceAccount, initializeApp, cert } from "firebase-admin/app";
+import {  ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
 export const runtime = "nodejs";
 export const config = {
@@ -8,9 +8,6 @@ export const config = {
     bodyParser: false,
   },
 };
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-06-30.basil",
-});
 
 const serviceAccount = {
   type: "service_account",
@@ -42,6 +39,9 @@ async function buffer(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2025-06-30.basil",
+  });
   const buf = await buffer(request);
   const sig = request.headers.get("stripe-signature");
 
