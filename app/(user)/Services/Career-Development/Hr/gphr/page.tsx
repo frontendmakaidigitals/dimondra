@@ -46,7 +46,7 @@ const Page = () => {
             for seasoned professionals overseeing global workforces, this
             credential sets you apart as a true expert in global HR leadership.
           </p>
-          
+
           <div className="flex justify-start">
             <button className="text-slate-50 rounded-md mt-5 bg-dimondra-tealDark px-5 py-2">
               Get certified today
@@ -56,7 +56,7 @@ const Page = () => {
       </section>
 
       <section className="py-14">
-      <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[.4fr_1.3fr_.7fr] gap-8">
+        <div className="container grid place-items-start grid-cols-1 lg:grid-cols-[.4fr_1.3fr_.7fr] gap-8">
           <SideBar />
           <div>
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
@@ -116,10 +116,13 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    Exam Length: 140 multiple-choice questions (including 25
-                    pretest questions)
+                    Exam Length: 100 score questions (mostly multiple-choice) +
+                    (including 25 pretest questions)
                   </li>
-                  <li>Duration: 3 hours </li>
+                  <li>
+                    Duration: 2 hours adn 15 minutes (plus 30 minutes
+                    administration time){" "}
+                  </li>
                   <li>Delivery: Online or at certified global test centers</li>
                 </ul>
               </li>
@@ -128,7 +131,11 @@ const Page = () => {
                   How Much Does the GPHR™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $400 &nbsp;
+                  <strong>Total Cost:</strong> USD{" "}
+                  <span className="line-through  text-red-500 border-red-400">
+                    $500
+                  </span>{" "}
+                  <span>$400</span> &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>

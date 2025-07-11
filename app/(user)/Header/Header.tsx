@@ -306,16 +306,21 @@ const Header = () => {
             </span>
           </motion.button>
         ) : (
-          <motion.div className="hidden lg:inline-flex items-center gap-3 size-10 rounded-full bg-dimondra-teal text-white font-medium hover:bg-teal-700 transition-all">
+          <motion.div className="hidden lg:inline-flex items-center rounded-full  text-white font-medium hover:bg-teal-700 transition-all">
             {user.photoURL ? (
               <>
                 <Popover>
                   <PopoverTrigger asChild className="cursor-pointer">
-                    <img
-                      src={user.photoURL}
-                      alt="User"
-                      className="rounded-full object-cover"
-                    />
+                    <div className="flex items-center gap-2 bg-dimondra-black pl-1 py-1 pr-4 rounded-full">
+                      <div className="size-10">
+                        <img
+                          src={user.photoURL}
+                          alt="User"
+                          className="rounded-full object-cover"
+                        />
+                      </div>
+                      <p className="text-sm">{user?.displayName?.split(" ")[0]}</p>
+                    </div>
                   </PopoverTrigger>
                   <PopoverContent className="max-w-60">
                     <div className="grid gap-3">

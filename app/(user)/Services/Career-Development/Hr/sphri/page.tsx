@@ -112,10 +112,13 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    Exam Length: 30 scored multiple-choice questions + 25
-                    pretest questions
+                    Exam Length: 15 scored questions (multiple-choice questions)
+                    + 25 pretest questions
                   </li>
-                  <li>Duration: 2 hours 30 minutes</li>
+                  <li>
+                    Duration: 2 hours and 45 minutes (plus 30 minutes
+                    administration time)
+                  </li>
                   <li>Delivery: Online or at approved test centers globally</li>
                   <li>
                     Language: English (with Spanish translation aid available)
@@ -127,7 +130,11 @@ const Page = () => {
                   How Much Does the SPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $400 &nbsp;
+                  <strong>Total Cost:</strong> USD{" "}
+                  <span className="line-through  text-red-500 border-red-400">
+                    $500
+                  </span>{" "}
+                  <span>$400</span> &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -161,15 +168,8 @@ const Page = () => {
                   Your SPHRi™ credential is valid for three years. To maintain
                   it, you must:
                 </p>
-                <ul className="space-y-1 ml-4 list-disc">
-                  <li>
-                    Earn 60 recertification credits within the three-year period
-                  </li>
-                  <li>
-                    Of these, 15 credits must be in Business Management &
-                    Strategy
-                  </li>
-                </ul>
+                Earn 45 HR and 15 Business recertification credits over a
+                three-year period
               </li>
             </ul>
           </div>

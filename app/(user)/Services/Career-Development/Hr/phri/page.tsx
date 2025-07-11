@@ -109,8 +109,14 @@ const Page = () => {
                   What Is the Exam Format & Length?
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
-                  <li>Exam Length: 145 multiple-choice questions</li>
-                  <li>Duration: 3 hours </li>
+                  <li>
+                    Exam Length: 90 scored questions (multiple-choice questions)
+                    + 25 pretest questions
+                  </li>
+                  <li>
+                    Duration: 2 hours and 15 minutes (plus 30 minutes
+                    administration time){" "}
+                  </li>
                   <li>
                     Delivery: Computer-based test available online or at
                     approved global test centers.
@@ -122,7 +128,11 @@ const Page = () => {
                   How Much Does the PHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $400 &nbsp;
+                  <strong>Total Cost:</strong> USD{" "}
+                  <span className="line-through  text-red-500 border-red-400">
+                    $500
+                  </span>{" "}
+                  <span>$400</span> &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>

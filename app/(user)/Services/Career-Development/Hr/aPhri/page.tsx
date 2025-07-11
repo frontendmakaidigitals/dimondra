@@ -99,10 +99,12 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4">
                   <li>
-                    Exam Length: 100 scored multiple-choice questions + 25
-                    pretest questions.
+                    Exam Length: 65 scored questions + 25 pretest questions
                   </li>
-                  <li>Duration: 2 hours and 15 minutes.</li>
+                  <li>
+                    Duration: 1 hours and 45 minutes (plus 30 minutes
+                    administration time)
+                  </li>
                   <li>
                     Delivery: Computer-based test at Pearson VUE centers or
                     online.
@@ -114,7 +116,11 @@ const Page = () => {
                   How Much Does the aPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD $300 &nbsp;
+                  <strong>Total Cost:</strong> USD{" "}
+                  <span className="text-red-500 line-through border-red-400">
+                    300$
+                  </span>{" "}
+                  <span>400$</span> &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
