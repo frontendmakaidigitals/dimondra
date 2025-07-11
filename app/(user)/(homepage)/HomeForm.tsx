@@ -101,16 +101,16 @@ const HomeForm = () => {
   };
 
   return (
-    <div className="py-24 bg-gradient-to-tr from-teal-800">
+    <div className="pb-16">
       <div className="container max-w-7xl formTrigger grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-md">
-          <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-white">
+          <span className="text-sm font-quicksand font-[500] formText1 text-dimondra-black">
             We&nbsp;re here to help you
           </span>
-          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tighter font-[600] text-dimondra-white mt-3">
+          <h1 className="text-5xl formText2 lg:text-6xl font-dmSans tracking-tighter font-[600] text-dimondra-black mt-3">
             Get in Touch with Us
           </h1>
-          <p className="text-dimondra-white font-quicksand font-[600] mt-4 formText3">
+          <p className="text-dimondra-black font-quicksand font-[600] mt-4 formText3">
             We&nbsp;d love to hear from you! Whether you&nbsp;re looking for a
             service, partnership, or simply have a question, reach out and
             we&nbsp;ll get back to you shortly.
@@ -119,14 +119,14 @@ const HomeForm = () => {
           <div className="mt-14">
             <div className="flex items-start gap-5">
               <Mail className="size-8 text-dimondra-black" />
-              <div className="text-dimondra-white">
+              <div className="text-dimondra-black">
                 <h4 className=" font-[600] text-lg">Email</h4>
                 <p className="text-sm ">Connect@dimondra.com</p>
               </div>
             </div>
             <div className="flex items-start gap-5 mt-5">
               <Headset className="size-8 text-dimondra-black" />
-              <div className="text-dimondra-white">
+              <div className="text-dimondra-black">
                 <h4 className=" font-[600] text-lg">Phone Number</h4>
                 <p className="text-sm ">0562787553</p>
               </div>
@@ -135,10 +135,10 @@ const HomeForm = () => {
         </div>
 
         <div className="">
-          <div className="bg-dimondra-white border border-slate-400 p-7 rounded-3xl shadow-sm">
+          <div className="bg-dimondra-black border border-slate-400 p-7 rounded-3xl shadow-sm">
             <form onSubmit={(e) => handleSubmit(e)} className=" space-y-8">
               <div className="">
-                <label className="text-dimondra-black font-rubik text-lg font-[500]">
+                <label className="text-dimondra-white font-rubik text-lg font-[500]">
                   Name{" "}
                   <Input
                     isRequired
@@ -150,7 +150,7 @@ const HomeForm = () => {
                     placeholder="John wick"
                     name="name"
                     classNames={{
-                      inputWrapper: ["bg-slate-100 ", ""],
+                      inputWrapper: ["bg-dimondra-white", ""],
                       input: [""],
                     }}
                     size={"lg"}
@@ -158,7 +158,7 @@ const HomeForm = () => {
                 </label>
               </div>
               <div className="">
-                <label className="text-dimondra-black font-rubik font-[500] text-lg">
+                <label className="text-dimondra-white font-rubik font-[500] text-lg">
                   Email{" "}
                   <Input
                     onChange={(e) =>
@@ -166,7 +166,7 @@ const HomeForm = () => {
                     }
                     value={formData.email}
                     classNames={{
-                      inputWrapper: ["bg-slate-100"],
+                      inputWrapper: ["bg-dimondra-white"],
                       input: ["py-2"],
                     }}
                     isRequired
@@ -181,14 +181,16 @@ const HomeForm = () => {
               <div className="">
                 <label
                   htmlFor="tempInput"
-                  className="text-dimondra-black font-rubik font-[500] text-lg"
+                  className="text-dimondra-white font-rubik font-[500] text-lg"
                 >
                   Phone
                   <input className="hidden" id="tempInput" />
                   <PhoneInput
                     phoneError={phoneError}
                     placeholder="+123 456 789"
-                    className="mt-[.4rem]"
+                    className="mt-[.4rem] text-dimondra-black"
+                    bgColor="bg-dimondra-white"
+                    color="text-red-500"
                     onChange={(e) => {
                       setFormData((prev) => ({
                         ...prev,
@@ -222,7 +224,7 @@ const HomeForm = () => {
                 </label>
               </div>
               <div className="">
-                <label className="text-dimondra-black font-rubik font-[500] text-lg">
+                <label className="text-dimondra-white font-rubik font-[500] text-lg">
                   Message{" "}
                   <Textarea
                     onChange={(e) =>
@@ -236,7 +238,7 @@ const HomeForm = () => {
                     isRequired
                     name="message"
                     size={"lg"}
-                    classNames={{ inputWrapper: ["bg-slate-100 ", ""] }}
+                    classNames={{ inputWrapper: ["bg-dimondra-white", ""] }}
                   />
                 </label>
               </div>
@@ -244,9 +246,9 @@ const HomeForm = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-7 flex items-center rounded-full group pl-1 pr-5 py-1 text-dimondra-black hover:bg-dimondra-teal hover:border-slate-300/0 transition-all duration-300 border border-dimondra-gray"
+                  className="mt-7 flex items-center rounded-full group pl-1 pr-5 py-1 text-dimondra-white hover:bg-dimondra-teal hover:border-slate-300/0 transition-all duration-300 border border-dimondra-gray"
                 >
-                  <motion.span className=" size-11 flex justify-center items-center  mr-3 bg-black group-hover:bg-white  text-dimondra-white rounded-full">
+                  <motion.span className=" size-11 flex justify-center items-center  mr-3 bg-white group-hover:bg-black  text-dimondra-black rounded-full">
                     {!loading ? (
                       <motion.span
                         key="arrow"
@@ -254,7 +256,7 @@ const HomeForm = () => {
                         exit={{ rotate: 180 }}
                         transition={{ duration: 1.2, ease: "easeInOut" }}
                       >
-                        <ArrowRight className="group-hover:-rotate-45 transition-all group-hover:text-dimondra-black duration-300" />
+                        <ArrowRight className="group-hover:-rotate-45 transition-all group-hover:text-dimondra-white  duration-300" />
                       </motion.span>
                     ) : (
                       <motion.span
@@ -268,11 +270,11 @@ const HomeForm = () => {
                     )}
                   </motion.span>
                   {!loading ? (
-                    <span className="inline-block align-middle group-hover:text-dimondra-white">
+                    <span className="inline-block align-middle group-hover:text-dimondra-black">
                       Get a Solution
                     </span>
                   ) : (
-                    <span className="inline-block align-middle group-hover:text-dimondra-white">
+                    <span className="inline-block align-middle group-hover:text-dimondra-black">
                       Submitting
                     </span>
                   )}

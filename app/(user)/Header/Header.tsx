@@ -312,7 +312,7 @@ const Header = () => {
                 <Popover>
                   <PopoverTrigger asChild className="cursor-pointer">
                     <div className="flex items-center gap-2 bg-dimondra-black pl-1 py-1 pr-4 rounded-full">
-                      <div className="size-10">
+                      <div className="size-9">
                         <img
                           src={user.photoURL}
                           alt="User"
