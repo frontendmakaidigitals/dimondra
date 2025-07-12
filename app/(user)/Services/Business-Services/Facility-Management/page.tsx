@@ -91,154 +91,61 @@ const Page = () => {
       title: "Cleaning Services",
       description:
         "Providing thorough and consistent cleaning to keep your environment safe, hygienic, and welcoming.",
-      icon: BrushCleaning,
+      img: "",
     },
     {
       title: "Hard Services",
       description:
         "Maintaining your buildings through planned preventative maintenance, reactive repairs, and infrastructure improvements.",
-      icon: Wrench,
+      img: "",
     },
     {
       title: "Pest Control",
       description:
         "Tailored pest management solutions to protect your facility from pests and maintain health standards.",
-      icon: Bug,
+      img: "",
     },
     {
       title: "Security Services",
       description:
         "Comprehensive security covering access control, visitor screening, monitoring, and emergency response.",
-      icon: ShieldCheck,
+      img: "",
     },
     {
       title: "Passenger Services",
       description:
         "Professional assistance for passengers, including wayfinding, customer support, and smooth facility navigation.",
-      icon: Navigation,
+      img: "",
     },
     {
       title: "Carbon & Energy Management",
       description:
         "Optimizing energy consumption and managing carbon emissions to support sustainability goals.",
-      icon: Leaf,
+      img: "",
     },
     {
       title: "Waste Management & Recycling",
       description:
         "Efficient collection, disposal, and recycling processes to minimize environmental impact and ensure compliance.",
-      icon: Recycle,
+      img: "",
     },
     {
       title: "Reception & Visitor Management",
       description:
         "Welcoming visitors with organized reception, screening, and guest services that enhance their experience.",
-      icon: UserCheck,
+      img: "",
     },
     {
       title: "Minor Works & Repairs",
       description:
         "Handling small-scale repairs and refurbishments to keep your facility functional and attractive.",
-      icon: Hammer,
+      img: "",
     },
     {
       title: "Capital Projects & Upgrades",
       description:
         "Managing large-scale renovations and improvements to modernize and future-proof your facility.",
-      icon: Building2,
-    },
-  ];
-
-  const industries = [
-    {
-      title: "Aviation",
-      description:
-        "Specialized services for the aviation sector, including dedicated support for Passengers with Reduced Mobility (PRM).",
-      imgUrl: "/services/aviation.jpg",
-    },
-    {
-      title: "Commercial",
-      description:
-        "Creating enhanced workplace environments that boost productivity and improve employee retention.",
-      imgUrl: "/services/workplace.jpg",
-    },
-    {
-      title: "Distribution & Logistics",
-      description:
-        "Optimizing logistics hubs to keep operations moving smoothly and commitments on track.",
-      imgUrl: "/services/distribution.jpg",
-    },
-    {
-      title: "Education",
-      description:
-        "Designing and maintaining inspiring environments where learning and development flourish.",
-      imgUrl: "/services/education.jpg",
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Supporting healthcare teams with facilities management that promotes both mental and physical well-being.",
-      imgUrl: "/services/healthcare.jpg",
-    },
-    {
-      title: "Government",
-      description:
-        "Delivering safety, security, and operational continuity for public sector organizations through proven best practices.",
-      imgUrl: "/services/govt.jpg",
-    },
-    {
-      title: "Manufacturing",
-      description:
-        "Ensuring the efficient operation of plants and production lines within the manufacturing industry.",
-      imgUrl: "/services/manufacturing.jpg",
-    },
-    {
-      title: "Venues & Events",
-      description:
-        "Providing reliable services that guarantee excellent experiences for attendees, fans, and participants.",
-      imgUrl: "/services/venue.jpg",
-    },
-    {
-      title: "Retail",
-      description:
-        "Maintaining retail spaces to meet customer expectations and create inviting shopping environments.",
-      imgUrl: "/services/retail.jpg",
-    },
-    {
-      title: "Data Centres",
-      description:
-        "Supporting business continuity by maintaining critical infrastructure and avoiding interruptions.",
-      imgUrl: "/services/data-centers.jpg",
-    },
-    {
-      title: "Rail",
-      description:
-        "Offering specialized services, including assistance for passengers with restricted mobility.",
-      imgUrl: "/services/train.jpg",
-    },
-    {
-      title: "Media & Broadcast",
-      description:
-        "Ensuring uninterrupted operations to support teams, viewers, listeners, and fans.",
-      imgUrl: "/services/media.jpg",
-    },
-    {
-      title: "Transport",
-      description:
-        "Helping manage the smooth movement of people, teams, packages, and passengers.",
-      imgUrl: "/services/bus.jpg",
-    },
-    {
-      title: "Hospitality",
-      description:
-        "Creating welcoming first impressions to ensure positive and memorable guest experiences.",
-      imgUrl: "/services/hospitality.jpg",
-    },
-    {
-      title: "Construction",
-      description:
-        "Providing safety, security, and continuity solutions tailored for the construction industry.",
-      imgUrl: "/services/construction.jpg",
+      img: "",
     },
   ];
 
@@ -347,12 +254,12 @@ const Page = () => {
         desc={""}
         title={"Facility Services as a single-line solution"}
       />
-     
+
       <Choose
         data={features}
-        title={"Why Outsource Your Call Center to Dimondra?"}
+        title={"Why Outsource Your Facility Management to Dimondra?"}
         desc={
-          "Outsourcing your customer support to Dimondra gives you access to cost-effective, scalable, and high-quality solutions, so you can focus on growing your business while we handle the conversations that matter."
+          "At Dimondra, we go beyond traditional facility management by aligning our services with your business goals. Outsourcing to us means gaining a strategic partner committed to efficiency, safety, and long-term value. Our integrated approach allows you to focus on your core operations while we ensure your environments run smoothly, safely, and sustainably."
         }
       />
       <Advantage

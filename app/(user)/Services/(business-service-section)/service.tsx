@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface ServiceItem {
   title: string;
   description: string;
-  image: string; // Image URL or path
+  img: string; // Image URL or path
 }
 
 const Service = ({
@@ -49,7 +49,7 @@ const Service = ({
                   className={`w-full  h-[400px] lg:h-[500px] rounded-3xl overflow-hidden ${idx % 2 === 0 ? "order-1 lg:order-2" : ""} shadow-xl`}
                 >
                   <img
-                    src={item.image}
+                    src={item.img}
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />

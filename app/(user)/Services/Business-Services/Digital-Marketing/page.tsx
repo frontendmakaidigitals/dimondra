@@ -65,73 +65,73 @@ const Page = () => {
       title: "Search Engine Optimization (SEO)",
       description:
         "Improve your visibility on search engines and attract high-intent organic traffic with proven SEO tactics.",
-      icon: TrendingUp,
+      img: "",
     },
     {
       title: "Search Engine Marketing (SEM / PPC)",
       description:
         "Generate instant traffic and leads with paid search campaigns, including Google Ads and display advertising.",
-      icon: DollarSign,
+      img: "",
     },
     {
       title: "Social Media Marketing (SMM)",
       description:
         "Build brand awareness, community engagement, and lead generation across platforms like Instagram, Facebook, LinkedIn, and X.",
-      icon: Users,
+      img: "",
     },
     {
       title: "Mobile App Marketing (ASO)",
       description:
         "Boost your app’s performance with App Store Optimization strategies that drive more installs and better rankings.",
-      icon: Smartphone,
+      img: "",
     },
     {
       title: "Guest Posting",
       description:
         "Strengthen your SEO with high-authority backlinks through our premium guest post services.",
-      icon: Link,
+      img: "",
     },
     {
       title: "Content Marketing",
       description:
         "Craft engaging and SEO-rich content that builds brand authority and nurtures potential customers.",
-      icon: FileText,
+      img: "",
     },
     {
       title: "Email Marketing",
       description:
         "Deliver personalized email campaigns that drive conversions, retention, and long-term customer relationships.",
-      icon: Mail,
+      img: "",
     },
     {
       title: "Influencer Marketing",
       description:
         "Partner with trusted influencers to amplify your message and build authentic connections with your target audience.",
-      icon: Megaphone,
+      img: "",
     },
     {
       title: "Online Reputation Management (ORM)",
       description:
         "Protect and enhance your brand’s online presence with strategic reputation and review management.",
-      icon: ShieldCheck,
+      img: "",
     },
     {
       title: "Conversion Rate Optimization (CRO)",
       description:
         "Turn more website visitors into paying customers with data-driven UX improvements and A/B testing.",
-      icon: Repeat,
+      img: "",
     },
     {
       title: "Web Analytics & Reporting",
       description:
         "Track, measure, and optimize your marketing performance with actionable insights and custom reports.",
-      icon: BarChart,
+      img: "",
     },
     {
       title: "Marketing Automation",
       description:
         "Streamline your campaigns with automation tools that save time and maximize impact across channels.",
-      icon: Zap,
+      img: "",
     },
   ];
 
@@ -202,45 +202,6 @@ const Page = () => {
       question: "How do you handle communication and reporting?",
       answer:
         "You’ll receive regular updates, performance reports, and have direct access to your dedicated account manager.",
-    },
-  ];
-
-  const industryMarketingServices = [
-    {
-      title: "Healthcare",
-      description:
-        "Helping healthcare providers strengthen brand trust, generate leads, and increase patient engagement through targeted digital strategies.",
-      imgUrl: "/services/healthcare.jpg",
-    },
-    {
-      title: "Finance",
-      description:
-        "Supporting financial institutions, credit unions, and advisors with campaigns that build authority, attract qualified leads, and drive ROI.",
-      imgUrl: "/services/financial-services.jpg",
-    },
-    {
-      title: "Infrastructure",
-      description:
-        "Boosting online visibility for infrastructure and construction businesses with efficient, budget-friendly marketing strategies.",
-      imgUrl: "/services/infrastructure.jpg",
-    },
-    {
-      title: "Government",
-      description:
-        "Delivering secure and effective digital marketing support for government bodies to improve citizen engagement and online communication.",
-      imgUrl: "/services/govt.jpg",
-    },
-    {
-      title: "Entertainment",
-      description:
-        "Empowering entertainment brands to grow their fan base, increase content visibility, and drive digital revenue.",
-      imgUrl: "/services/entertainment.jpg",
-    },
-    {
-      title: "Automotive",
-      description:
-        "Helping automotive businesses accelerate long-term growth with SEO, social media, and lead generation strategies tailored to the industry.",
-      imgUrl: "/services/automotive.jpg",
     },
   ];
 
@@ -347,7 +308,7 @@ const Page = () => {
           "Build Trust & Credibility with Smart Digital Marketing Strategies"
         }
       />
-    
+
       <Process
         data={marketingProcessSteps}
         heading="How We Work"

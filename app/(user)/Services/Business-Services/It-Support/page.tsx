@@ -59,61 +59,61 @@ const Page = () => {
       title: "Hardware Support",
       description:
         "Installation, troubleshooting, upgrades, and maintenance of desktops, laptops, servers, and other hardware devices.",
-      icon: Monitor,
+      img: "",
     },
     {
       title: "Network Management",
       description:
         "Monitoring, configuration, and optimization of your business network for seamless connectivity and performance.",
-      icon: Network,
+      img: "",
     },
     {
       title: "Software Support",
       description:
         "Installation, updates, issue resolution, and license management for your critical business applications.",
-      icon: Code,
+      img: "",
     },
     {
       title: "Security Management",
       description:
         "Firewall setup, threat detection, antivirus management, and data protection solutions to safeguard your systems.",
-      icon: Shield,
+      img: "",
     },
     {
       title: "Cloud Services",
       description:
         "Cloud migration, storage, and management solutions to ensure accessibility, scalability, and security.",
-      icon: Cloud,
+      img: "",
     },
     {
       title: "24/7 Help Desk",
       description:
         "Round-the-clock technical support for any IT-related issues, ensuring minimal downtime and fast resolutions.",
-      icon: Headphones,
+      img: "",
     },
     {
       title: "IT Consultancy & Planning",
       description:
         "Strategic guidance to align your IT infrastructure with business goals, ensuring efficiency and scalability.",
-      icon: Compass,
+      img: "",
     },
     {
       title: "Backup & Disaster Recovery",
       description:
         "Regular data backups and recovery plans to protect your business against unexpected data loss or system failures.",
-      icon: RotateCcw,
+      img: "",
     },
     {
       title: "IT Infrastructure Setup",
       description:
         "End-to-end setup of new office or remote IT infrastructure, including cabling, systems, and configuration.",
-      icon: ServerCog,
+      img: "",
     },
     {
       title: "Vendor & License Management",
       description:
         "Handling of third-party software licenses, renewals, and vendor coordination for seamless operations.",
-      icon: FileCheck2,
+      img: "",
     },
   ];
 
