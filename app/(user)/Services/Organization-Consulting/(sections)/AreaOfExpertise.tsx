@@ -1,5 +1,4 @@
 "use client";
-
 import React, { ComponentType } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Optional: if you're using a utility for classNames
@@ -39,7 +38,7 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
     <section className="relative py-28 bg-gradient-to-br from-[#0f172a] via-[#0f172a] to-[#1e293b] overflow-hidden">
       {/* Decorative Background Gradient Circles */}
       <div className="absolute top-[-100px] left-[20%] w-[400px] h-[400px] bg-gradient-to-tr from-teal-500/30 to-indigo-500/20 blur-[120px] rounded-full z-0" />
-      <div className="absolute bottom-[-120px] right-[10%] w-[300px] h-[300px] bg-gradient-to-tr from-purple-500/30 to-pink-500/20 blur-[100px] rounded-full z-0" />
+      <div className="absolute bottom-[-120px] right-[10%] w-[300px] h-[300px] bg-gradient-to-tr from-emerald-500/30 to-emerald-500/20 blur-[100px] rounded-full z-0" />
 
       <div className="container relative z-10">
         <motion.h2

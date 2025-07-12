@@ -129,7 +129,7 @@ export const siteConfig = {
       ],
     },
     {
-      label: "Resources",
+      label: "Blogs",
       href: "/blogs",
     },
     {

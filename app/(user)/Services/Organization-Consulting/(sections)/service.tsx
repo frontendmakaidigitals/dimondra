@@ -40,7 +40,7 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
             <img
               src={item.img}
               alt={""}
-              className={`h-[400px] ${idx % 2 == 0 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}
+              className={`h-[400px] ${idx % 2 == 0 ? "order-2 -scale-x-[100%] lg:order-1" : "order-1 lg:order-2"}`}
               style={{
                 objectFit: "cover",
                 maskImage: "url('/strategyMask.svg')",

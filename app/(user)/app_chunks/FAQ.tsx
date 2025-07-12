@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Plus } from "lucide-react";
+
 const FAQ = ({
   data,
   desc,
@@ -9,15 +12,24 @@ const FAQ = ({
   data: { question: string; answer: string }[];
 }) => {
   return (
-    <div className="bg-white py-20">
-      <div className="grid container grid-cols-1 lg:grid-cols-[.7fr_1.3fr] gap-8">
+    <div className="bg-[#083f3e] py-20">
+      {" "}
+      {/* Dark teal background */}
+      <div className="grid container grid-cols-1 lg:grid-cols-[.7fr_1.3fr] gap-10">
+        {/* Left Column */}
         <div>
-          <span>Support</span>
-          <h2 className="text-5xl font-dmSans tracking-tight font-[600] mb-2 mt-2">
+          <span className="uppercase text-sm font-semibold text-teal-200 tracking-wide">
+            Support
+          </span>
+          <h2 className="text-5xl font-dmSans tracking-tight font-bold text-white mt-2 mb-4">
             FAQs
           </h2>
-          <p>{desc}</p>
+          <p className="text-teal-100 leading-relaxed max-w-xl text-base">
+            {desc}
+          </p>
         </div>
+
+        {/* Right Column */}
         <div>
           <Accordion variant="splitted">
             {data.map((faq, idx) => (
@@ -25,10 +37,12 @@ const FAQ = ({
                 key={idx}
                 aria-label={faq.question}
                 title={faq.question}
-                indicator={<Plus />}
-                className="bg-white text-black [&_.accordion-item]:bg-white [&_.accordion-item]:text-black"
+                indicator={<Plus className="stroke-white" />}
+                className="bg-[#0f4f4e] border border-teal-700 rounded-xl shadow-md hover:shadow-lg transition-all duration-300
+                [&_.accordion-item-title]:text-slate-50 [&_.accordion-item-title]:font-medium"
+                classNames={{title:'text-white'}}
               >
-                {faq.answer}
+                <p className="text-teal-100">{faq.answer}</p>
               </AccordionItem>
             ))}
           </Accordion>
