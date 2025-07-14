@@ -75,7 +75,21 @@ const HomeForm = () => {
     try {
       const db = getFirestore();
       const blogRef = collection(db, "contact");
-
+      const resp = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          contact: formData.phone.contact,
+          createdAt: new Date(),
+          countryCode: formData.phone.country,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(resp, "resp");
       await addDoc(blogRef, {
         name: formData.name,
         email: formData.email,

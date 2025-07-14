@@ -97,29 +97,29 @@ const Page = () => {
     {
       title: "Inbound Call Center Services",
       description: `Dimondra provides reliable inbound call center solutions that elevate your customer service and drive meaningful engagement. Our skilled agents ensure every call is handled with care, turning inquiries into loyalty and building trust at every touchpoint.`,
-      img: "/services/inbound.jpg",
+      img: "/services/callCenter.jpg",
     },
     {
       title: "Outbound Call Center Solutions",
       description: `Our Outbound Call Center Services are designed to connect your business with the right audience, boosting customer acquisition, accelerating revenue, and enhancing loyalty. Whether you're a startup or a growing enterprise, our team helps you reach prospects and existing customers through targeted, high-impact calling strategies.`,
-      img: "/services/outbound.jpg",
+      img: "/services/callCenter2.jpg",
     },
     {
       title: "AI-Powered Call Centers",
 
       description: `As one of the leading BPO companies in the region, Dimondra combines human expertise with cutting-edge AI tools like MindVoice and MindSpeech. These advanced technologies help harmonize accents, predict customer needs in real-time, and deliver an exceptional customer experience, every time.`,
-      img: "/services/ai-support.jpg",
+      img: "/services/data-centers.jpg",
     },
     {
       title: "24/7 Customer Support / Helpdesk",
       description: `We offer round-the-clock customer service to handle questions, complaints, and requests whenever your customers need help. Our friendly and well-trained agents make sure every caller feels heard, valued, and supported, helping you build strong, lasting relationships.`,
 
-      img: "/services/helpdesk.jpg",
+      img: "/services/callCenter1.jpg",
     },
     {
       title: "Sales Support – Before & After Purchase",
       description: `From helping potential buyers understand your products to following up after a sale, our team provides full support throughout the customer journey. We help boost conversions, answer questions, and create trust that leads to repeat business.`,
-      img: "/services/sales-support.jpg",
+      img: "/services/consultation.jpg",
     },
     {
       title: "Appointment Scheduling",
@@ -129,17 +129,17 @@ const Page = () => {
     {
       title: "Refund & Claims Handling",
       description: `We make returns and claims easier for both you and your customers. Our support team handles each case carefully and efficiently, ensuring quick resolutions and protecting your brand’s reputation.`,
-      img: "/services/refunds.jpg",
+      img: "/services/processManangement.jpg",
     },
     {
       title: "Loyalty Program Management",
       description: `Keep your customers coming back with engaging loyalty programs. We help you create and manage reward systems that make your audience feel appreciated and connected to your brand.`,
-      img: "/services/loyalty.jpg",
+      img: "/services/financial-services.jpg",
     },
     {
       title: "Technical Support",
       description: `Got a product issue? Our skilled agents are ready to solve technical problems, whether it's software or hardware, ensuring your customers get the help they need without long wait times or confusion.`,
-      img: "/services/tech-support.jpg",
+      img: "/services/It2.jpg",
     },
     {
       title: "Lead Generation",

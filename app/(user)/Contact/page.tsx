@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import { Mail, Building, Phone } from "lucide-react";
-import { Settings, Code, LifeBuoy } from "lucide-react";
+import { UserPlus, GraduationCap, ShieldCheck } from "lucide-react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { PhoneInput } from "../app_chunks/phone-input";
 import { addToast } from "@heroui/toast";
@@ -82,21 +82,22 @@ const Page = () => {
 
   const ourFeature = [
     {
-      title: "Customized software solutions",
-      desc: "Tailor-made applications designed to meet your unique business needs and scale as you grow.",
-      icon: Settings,
+      title: "Tailored Talent Acquisition",
+      desc: "We identify and recruit top talent aligned with your organizational goals, ensuring cultural and skill fit.",
+      icon: UserPlus, // Consider using an appropriate icon here
     },
     {
-      title: "Expertise in latest technologies",
-      desc: "Leverage modern frameworks and tools for faster development, better performance, and future-proof solutions.",
-      icon: Code,
+      title: "Employee Onboarding & Training",
+      desc: "Streamlined onboarding processes and skill enhancement programs to help new hires integrate smoothly and grow quickly.",
+      icon: GraduationCap, // Use a training/learning related icon
     },
     {
-      title: "Support and maintenance",
-      desc: "Ongoing support and regular updates to ensure your software remains secure, efficient, and up-to-date.",
-      icon: LifeBuoy,
+      title: "Compliance & HR Support",
+      desc: "Ensure your HR policies are compliant with labor laws while we provide continued HR support and conflict resolution.",
+      icon: ShieldCheck, // Icon indicating protection/compliance
     },
   ];
+
   const contact = [
     {
       title: "Email Support",
