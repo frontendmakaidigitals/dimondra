@@ -59,7 +59,20 @@ const PopForm = ({
         message: formData.message,
         createdAt: new Date(),
       });
-
+      const resp = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          contact: formData.phone.contact,
+          createdAt: new Date(),
+          countryCode: formData.phone.country,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       setLoading(false);
       setIsOpen(false);
       addToast({ title: "Form Sucessfully submitted", color: "success" });
@@ -120,9 +133,7 @@ const PopForm = ({
             </button>
             <img
               alt={""}
-              src={
-                "/services/facilityhero.jpg"
-              }
+              src={"/services/facilityhero.jpg"}
               className="w-full hidden lg:block h-full object-cover"
             />
 
