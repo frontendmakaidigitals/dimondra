@@ -12,22 +12,6 @@ import Choose from "../../(business-service-section)/Choose";
 import Process from "../../(sections)/process";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
-  PiggyBank,
-  TrendingUp,
-  DollarSign,
-  Smartphone,
-  Link,
-  FileText,
-  Mail,
-  Megaphone,
-  ShieldCheck,
-  Repeat,
-  BarChart,
-  Zap,
-  Activity,
-  Expand,
-  AlarmClock,
-  Map,
   Briefcase,
   Scale,
   Users,
@@ -65,73 +49,73 @@ const Page = () => {
       title: "Search Engine Optimization (SEO)",
       description:
         "Improve your visibility on search engines and attract high-intent organic traffic with proven SEO tactics.",
-      img: "",
+      img: "/services/seo.jpg",
     },
     {
       title: "Search Engine Marketing (SEM / PPC)",
       description:
         "Generate instant traffic and leads with paid search campaigns, including Google Ads and display advertising.",
-      img: "",
+      img: "/services/sem.jpg",
     },
     {
       title: "Social Media Marketing (SMM)",
       description:
         "Build brand awareness, community engagement, and lead generation across platforms like Instagram, Facebook, LinkedIn, and X.",
-      img: "",
+      img: "/services/social-media.jpg",
     },
     {
       title: "Mobile App Marketing (ASO)",
       description:
         "Boost your app’s performance with App Store Optimization strategies that drive more installs and better rankings.",
-      img: "",
+      img: "/services/app-marketing.jpg",
     },
     {
       title: "Guest Posting",
       description:
         "Strengthen your SEO with high-authority backlinks through our premium guest post services.",
-      img: "",
+      img: "/services/gues-post.jpeg",
     },
     {
       title: "Content Marketing",
       description:
         "Craft engaging and SEO-rich content that builds brand authority and nurtures potential customers.",
-      img: "",
+      img: "/services/content-marketing.jpg",
     },
     {
       title: "Email Marketing",
       description:
         "Deliver personalized email campaigns that drive conversions, retention, and long-term customer relationships.",
-      img: "",
+      img: "/services/email.jpg",
     },
     {
       title: "Influencer Marketing",
       description:
         "Partner with trusted influencers to amplify your message and build authentic connections with your target audience.",
-      img: "",
+      img: "/services/influencer.jpg",
     },
     {
       title: "Online Reputation Management (ORM)",
       description:
         "Protect and enhance your brand’s online presence with strategic reputation and review management.",
-      img: "",
+      img: "/services/review-managment.webp",
     },
     {
       title: "Conversion Rate Optimization (CRO)",
       description:
         "Turn more website visitors into paying customers with data-driven UX improvements and A/B testing.",
-      img: "",
+      img: "/services/optimisation.jpg",
     },
     {
       title: "Web Analytics & Reporting",
       description:
         "Track, measure, and optimize your marketing performance with actionable insights and custom reports.",
-      img: "",
+      img: "/services/web-analytics.jpg",
     },
     {
       title: "Marketing Automation",
       description:
         "Streamline your campaigns with automation tools that save time and maximize impact across channels.",
-      img: "",
+      img: "/services/marketing.jpg",
     },
   ];
 
