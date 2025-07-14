@@ -3,7 +3,17 @@ import Stripe from "stripe";
 import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
 import serviceAccount from "@/public/serviceAccount.json";
+import nodemailer from "nodemailer";
 export const runtime = "nodejs";
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || "587"),
+  secure: false, // true if port is 465
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 export const config = {
   api: {
     bodyParser: false,
@@ -58,6 +68,7 @@ export async function POST(request: NextRequest) {
     const email = session.customer_email;
     const name = session.metadata?.name;
     const price = session.metadata?.price;
+    const packageName = session.metadata?.packageName;
 
     if (email && name && price) {
       const userRef = firestore.collection("userPaymentInfo").doc(email);
@@ -66,10 +77,44 @@ export async function POST(request: NextRequest) {
       await purchasesRef.add({
         name,
         price,
+        packageName,
         purchasedAt: new Date().toISOString(),
       });
 
-      console.log(`✅ Purchase stored under user: ${email}`);
+      await transporter.sendMail({
+        from: `"Your Company" <${process.env.SMTP_USER}>`,
+        to: email,
+        subject: "✅ Payment Successful",
+        html: `
+            <h3>Hi ${name},</h3>
+            <p>Thank you for your payment of <strong>$${price}</strong>.</p>
+            <p>Your transaction has been successfully processed.</p>
+          `,
+      });
+    }
+  }
+  if (
+    event.type === "checkout.session.async_payment_failed" ||
+    event.type === "payment_intent.payment_failed"
+  ) {
+    const session = event.data.object as Stripe.Checkout.Session;
+    const email = session.customer_email;
+    const name = session.metadata?.name;
+    const packageName = session.metadata?.packageName;
+
+    if (email && name) {
+      await transporter.sendMail({
+        from: `"Your Company" <${process.env.SMTP_USER}>`,
+        to: email,
+        subject: "❌ Payment Failed",
+        html: `
+          <h3>Hi ${name},</h3>
+          <p>Unfortunately, your payment could not be processed.</p>
+          <p>Please try again or contact support.</p>
+        `,
+      });
+
+      console.log(`❌ Payment failed email sent to ${email}`);
     }
   }
 

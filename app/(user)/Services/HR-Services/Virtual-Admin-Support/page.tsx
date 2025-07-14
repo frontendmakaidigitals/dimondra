@@ -128,7 +128,7 @@ const Page = () => {
   const { user, loading, googleSignIn } = useAuth();
   interface purchaseType {
     id: string;
-    name: string;
+    packageName: string;
   }
   const [purchases, setPurchases] = useState<purchaseType[]>([]);
   useEffect(() => {
@@ -143,7 +143,7 @@ const Page = () => {
             const data = doc.data();
             return {
               id: doc.id,
-              name: data.name ?? "",
+              packageName: data.packageName ?? "",
             };
           });
 
@@ -330,8 +330,9 @@ const Page = () => {
       },
       body: JSON.stringify({
         email: user?.email,
-        name: name,
+        name: user?.displayName,
         price: price,
+        packageName: name,
       }),
     });
 
@@ -363,7 +364,7 @@ const Page = () => {
       handleCheckout(price, name);
     }
   };
-
+  console.log(purchases, "purchases");
   return (
     <>
       <motion.div
@@ -483,7 +484,8 @@ const Page = () => {
               <hr className="border-slate-800/30 my-6" />
               {purchases.some(
                 (purchase) =>
-                  purchase?.name?.toLowerCase() === item.name.toLowerCase()
+                  purchase?.packageName?.toLowerCase() ===
+                  item.name.toLowerCase()
               ) ? (
                 <motion.button
                   style={{

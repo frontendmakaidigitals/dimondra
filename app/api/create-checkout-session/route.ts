@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     apiVersion: "2025-06-30.basil",
   });
   try {
-    const { email, price, name } = await request.json();
+    const { email, price, name, packageName } = await request.json();
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -16,13 +16,13 @@ export async function POST(request: NextRequest) {
             currency: "usd",
             unit_amount: Number(price) * 100,
             product_data: {
-              name: name,
+              name: packageName,
             },
           },
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000",
+      success_url: "http://localhost:3000/Services/HR-Services/Virtual-Admin-Support",
       cancel_url: "http://localhost:3000/cancel",
 
       customer_email: email,
@@ -31,6 +31,7 @@ export async function POST(request: NextRequest) {
         email: email,
         name: name,
         price: price,
+        packageName: packageName,
       },
     });
 
