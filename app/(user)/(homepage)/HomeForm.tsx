@@ -89,7 +89,6 @@ const HomeForm = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(resp, "resp");
       await addDoc(blogRef, {
         name: formData.name,
         email: formData.email,

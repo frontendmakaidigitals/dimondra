@@ -62,7 +62,9 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
           ref={ref}
           className={cn("flex", className)}
           flagComponent={FlagComponent}
-          countrySelectComponent={CountrySelect}
+          countrySelectComponent={(props) => (
+            <CountrySelect {...props} bgColor={bgColor} />
+          )}
           inputComponent={ForwardedInputComponent}
           smartCaret={false}
           value={value || undefined}
@@ -82,7 +84,6 @@ interface InputComponentProps extends React.ComponentProps<"input"> {
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
   ({ className, phoneError, bgColor, ...props }, ref) => {
-
     return (
       <Input
         className={cn(
@@ -115,12 +116,12 @@ const CountrySelect = ({
   value: selectedCountry,
   options: countryList,
   onChange,
-  bgColor = "bg-slate-100",
+  bgColor,
 }: CountrySelectProps) => {
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
-
+ 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen} modal>
       <PopoverTrigger asChild>
@@ -128,7 +129,7 @@ const CountrySelect = ({
           type="button"
           variant="outline"
           className={clsx(
-            `flex gap-1 h-12  !border-l-0 !border-b-0 border-r !border-t-0 rounded-e-none rounded-s-xl px-3 focus:z-10`,
+            `flex gap-1 h-12 !border-l-0 !border-b-0 border-r !border-t-0 rounded-e-none rounded-s-xl px-3 focus:z-10`,
             bgColor
           )}
           disabled={disabled}

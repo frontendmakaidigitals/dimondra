@@ -176,18 +176,18 @@ const Page = () => {
           Reach Out to Us
         </p>
         <h1 className="mt-5 text-3xl font-[700]">
-          We&nbsp;d Love to Hear From You.
+          We&apos;d Love to Hear From You.
         </h1>
         <p className=" mt-2">
           Or just reach out manually to{" "}
-          <span className="text-indigo-500">company@example.com</span>
+          <span className="text-indigo-500">connect@dimondra.com</span>
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 mt-11">
           {contact.map(({ title, desc, icon: Icon, contact }, idx) => {
             return (
               <div key={idx} className="">
-                <div className="bg-dimondra-teal p-2 w-fit rounded-full">
+                <div className="bg-dimondra-tealDark p-2 w-fit rounded-full">
                   <Icon className="w-6 h-6 text-dimondra-white" />
                 </div>
                 <div className="mt-4">
@@ -318,7 +318,7 @@ const Form = () => {
           Phone
           <input className="hidden" id="tempInput" />
           <PhoneInput
-            bgColor="border bg-dimondra-teal/5 border-dimondra-gray/30"
+            bgColor="!border bg-dimondra-teal/5 border-dimondra-gray/30"
             phoneError={phoneError}
             placeholder="+123 456 789"
             className="mt-[.4rem]"
@@ -344,6 +344,7 @@ const Form = () => {
               }
             }}
             value={formData.phone.contact}
+          
           />
           {phoneError ? (
             <span className="text-xs pl-1 text-danger">
