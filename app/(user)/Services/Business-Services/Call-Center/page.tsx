@@ -124,7 +124,7 @@ const Page = () => {
     {
       title: "Appointment Scheduling",
       description: `Our agents can manage your bookings and follow-ups, making sure appointments are set smoothly and on time. With professional handling, your team stays organized and your customers stay informed.`,
-      img: "/services/appointments.jpg",
+      img: "/services/legal-management.jpg",
     },
     {
       title: "Refund & Claims Handling",
@@ -144,17 +144,17 @@ const Page = () => {
     {
       title: "Lead Generation",
       description: `Let us help you find and qualify the right prospects. Our lead generation services feed your sales team with high-potential leads so they can focus on closing deals and growing your business.`,
-      img: "/services/leads.jpg",
+      img: "/services/facilityhero.jpg",
     },
     {
       title: "Order Processing & Fulfillment",
       description: `We take care of the behind-the-scenes work, from order tracking to delivery coordination, so your customers enjoy a smooth and reliable shopping experience.`,
-      img: "/services/order.jpg",
+      img: "/services/facility2.jpg",
     },
     {
       title: "Customer Complaints & Escalations",
       description: `Every complaint is a chance to improve. Our support team handles concerns with care and professionalism, resolving issues quickly and turning unhappy customers into loyal ones.`,
-      img: "/services/escalations.jpg",
+      img: "/services/support.jpg",
     },
     {
       title: "Debt Collection Support",

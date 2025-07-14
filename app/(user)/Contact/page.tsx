@@ -344,7 +344,6 @@ const Form = () => {
               }
             }}
             value={formData.phone.contact}
-          
           />
           {phoneError ? (
             <span className="text-xs pl-1 text-danger">

@@ -91,61 +91,61 @@ const Page = () => {
       title: "Cleaning Services",
       description:
         "Providing thorough and consistent cleaning to keep your environment safe, hygienic, and welcoming.",
-      img: "",
+      img: "/services/cleaning-services.jpg",
     },
     {
       title: "Hard Services",
       description:
         "Maintaining your buildings through planned preventative maintenance, reactive repairs, and infrastructure improvements.",
-      img: "",
+      img: "/services/maintenance.jpg",
     },
     {
       title: "Pest Control",
       description:
         "Tailored pest management solutions to protect your facility from pests and maintain health standards.",
-      img: "",
+      img: "/services/pest-control.jpg",
     },
     {
       title: "Security Services",
       description:
         "Comprehensive security covering access control, visitor screening, monitoring, and emergency response.",
-      img: "",
+      img: "/services/security.jpg",
     },
     {
       title: "Passenger Services",
       description:
         "Professional assistance for passengers, including wayfinding, customer support, and smooth facility navigation.",
-      img: "",
+      img: "/services/support.jpg",
     },
     {
       title: "Carbon & Energy Management",
       description:
         "Optimizing energy consumption and managing carbon emissions to support sustainability goals.",
-      img: "",
+      img: "/services/energy.jpg",
     },
     {
       title: "Waste Management & Recycling",
       description:
         "Efficient collection, disposal, and recycling processes to minimize environmental impact and ensure compliance.",
-      img: "",
+      img: "/services/waste-management.jpg",
     },
     {
       title: "Reception & Visitor Management",
       description:
         "Welcoming visitors with organized reception, screening, and guest services that enhance their experience.",
-      img: "",
+      img: "/services/visitor.jpg",
     },
     {
       title: "Minor Works & Repairs",
       description:
         "Handling small-scale repairs and refurbishments to keep your facility functional and attractive.",
-      img: "",
+      img: "/services/repairs.jpg",
     },
     {
       title: "Capital Projects & Upgrades",
       description:
         "Managing large-scale renovations and improvements to modernize and future-proof your facility.",
-      img: "",
+      img: "/services/renovation.jpg",
     },
   ];
 

@@ -13,16 +13,6 @@ import Process from "../../(sections)/process";
 import {
   ShieldCheck,
   PiggyBank,
-  Monitor,
-  Network,
-  Code,
-  Shield,
-  Cloud,
-  Headphones,
-  Compass,
-  RotateCcw,
-  ServerCog,
-  FileCheck2,
   Activity,
   Users,
   Expand,
@@ -59,61 +49,61 @@ const Page = () => {
       title: "Hardware Support",
       description:
         "Installation, troubleshooting, upgrades, and maintenance of desktops, laptops, servers, and other hardware devices.",
-      img: "",
+      img: "/services/support.jpg",
     },
     {
       title: "Network Management",
       description:
         "Monitoring, configuration, and optimization of your business network for seamless connectivity and performance.",
-      img: "",
+      img: "/services/It2.jpg",
     },
     {
       title: "Software Support",
       description:
         "Installation, updates, issue resolution, and license management for your critical business applications.",
-      img: "",
+      img: "/services/software-support.jpg",
     },
     {
       title: "Security Management",
       description:
         "Firewall setup, threat detection, antivirus management, and data protection solutions to safeguard your systems.",
-      img: "",
+      img: "/services/security-software.jpg",
     },
     {
       title: "Cloud Services",
       description:
         "Cloud migration, storage, and management solutions to ensure accessibility, scalability, and security.",
-      img: "",
+      img: "/services/cloud-services.jpg",
     },
     {
       title: "24/7 Help Desk",
       description:
         "Round-the-clock technical support for any IT-related issues, ensuring minimal downtime and fast resolutions.",
-      img: "",
+      img: "/services/callCenter.jpg",
     },
     {
       title: "IT Consultancy & Planning",
       description:
         "Strategic guidance to align your IT infrastructure with business goals, ensuring efficiency and scalability.",
-      img: "",
+      img: "/services/consultation.jpg",
     },
     {
       title: "Backup & Disaster Recovery",
       description:
         "Regular data backups and recovery plans to protect your business against unexpected data loss or system failures.",
-      img: "",
+      img: "/services/data-recovery.jpg",
     },
     {
       title: "IT Infrastructure Setup",
       description:
         "End-to-end setup of new office or remote IT infrastructure, including cabling, systems, and configuration.",
-      img: "",
+      img: "/services/office.jpg",
     },
     {
       title: "Vendor & License Management",
       description:
         "Handling of third-party software licenses, renewals, and vendor coordination for seamless operations.",
-      img: "",
+      img: "/services/licnese.jpg",
     },
   ];
 
