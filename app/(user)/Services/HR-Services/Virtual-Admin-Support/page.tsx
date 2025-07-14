@@ -125,7 +125,7 @@ const Page = () => {
       icon: Headphones,
     },
   ];
-  const { user, loading } = useAuth();
+  const { user, loading, googleSignIn } = useAuth();
   interface purchaseType {
     id: string;
     name: string;
@@ -306,8 +306,20 @@ const Page = () => {
       ],
     },
   ];
- 
-  if (loading) return <div>Loading...</div>;
+  const [shouldCheckout, setShouldCheckout] = useState(false);
+  const [checkoutData, setCheckoutData] = useState<{
+    price: number | string;
+    name: string;
+  } | null>(null);
+
+  useEffect(() => {
+    if (user && shouldCheckout && checkoutData) {
+      handleCheckout(checkoutData.price, checkoutData.name);
+      setShouldCheckout(false); // reset
+      setCheckoutData(null);
+    }
+  }, [user, shouldCheckout, checkoutData]);
+
   const handleCheckout = async (price: string | number, name: string) => {
     const stripe = await stripePromise;
 
@@ -327,7 +339,7 @@ const Page = () => {
       const errorText = await response.text();
       console.error("API error:", errorText);
       alert(`Error: ${errorText}`);
-      return; // stop further execution
+      return;
     }
 
     const { id } = await response.json();
@@ -342,7 +354,16 @@ const Page = () => {
     if (error) alert(error.message);
   };
 
-  console.log(purchases);
+  const handleSigninOrCheckout = (price: number | string, name: string) => {
+    if (!user) {
+      setShouldCheckout(true);
+      setCheckoutData({ price, name });
+      googleSignIn(); // assumed async internally
+    } else {
+      handleCheckout(price, name);
+    }
+  };
+
   return (
     <>
       <motion.div
@@ -477,7 +498,7 @@ const Page = () => {
                 </motion.button>
               ) : (
                 <motion.button
-                  onClick={() => handleCheckout(item.price, item.name)}
+                  onClick={() => handleSigninOrCheckout(item.price, item.name)}
                   initial={{
                     scale: 1,
                     backgroundColor: "transparent",
