@@ -306,7 +306,7 @@ const Page = () => {
       ],
     },
   ];
-
+ 
   if (loading) return <div>Loading...</div>;
   const handleCheckout = async (price: string | number, name: string) => {
     const stripe = await stripePromise;
