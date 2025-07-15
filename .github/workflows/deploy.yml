@@ -3,11 +3,36 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main # or your deployment branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      # Firebase Admin SDK
+      GOOGLE_TYPE: ${{ secrets.GOOGLE_TYPE }}
+      GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+      GOOGLE_PRIVATE_KEY_ID: ${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
+      GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+      GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_AUTH_URI: ${{ secrets.GOOGLE_AUTH_URI }}
+      GOOGLE_TOKEN_URI: ${{ secrets.GOOGLE_TOKEN_URI }}
+      GOOGLE_AUTH_PROVIDER_CERT_URL: ${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}
+      GOOGLE_CLIENT_CERT_URL: ${{ secrets.GOOGLE_CLIENT_CERT_URL }}
+      GOOGLE_UNIVERSE_DOMAIN: ${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}
+
+      # Stripe
+      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+      STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+      NEXT_PUBLIC_STRIPE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}
+
+      # SMTP
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_TO: ${{ secrets.SMTP_TO }}
 
     steps:
       - name: Checkout repository
