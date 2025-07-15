@@ -39,9 +39,12 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+        
       - name: Read values
         run: |
-          echo "GOOGLE_TYPE: $GOOGLE_TYPE, GOOGLE_PROJECT_ID: $GOOGLE_PROJECT_ID, SMTP_TO: $SMTP_TO"
+          echo "GOOGLE_TYPE: $GOOGLE_TYPE"
+          echo "GOOGLE_PROJECT_ID: $GOOGLE_PROJECT_ID"
+          echo "SMTP_TO: $SMTP_TO"
         
       - name: Set up SSH
         run: |
