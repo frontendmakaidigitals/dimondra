@@ -1,0 +1,32 @@
+name: Dimondra
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Dimondra
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy via SSH
+        run: |
+          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            cd ${{ secrets.VPS_PATH }}
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart nextjs-app
+          EOF
