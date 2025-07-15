@@ -52,7 +52,6 @@ jobs:
           GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
           # Add all necessary envs here...
         run: npm run build
-
       - name: Create .env.local file
         run: |
           echo "GOOGLE_TYPE=${{ secrets.GOOGLE_TYPE }}" >> .env.local
