@@ -23,7 +23,7 @@ jobs:
       - name: Deploy code to VPS
         run: |
           ssh -i ~/.ssh/id_rsa -p 22 root@62.72.35.235 << 'EOF'
-            cd /root/my-app  # <-- change this to your actual app directory
+            cd /root/Dimondra  # <-- change this to your actual app directory
             git pull origin main
             npm install
             npm run build
