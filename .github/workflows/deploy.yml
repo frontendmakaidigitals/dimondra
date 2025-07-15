@@ -1,4 +1,4 @@
-name: Dimondra
+name: Deploy to VPS
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy:
-    name: Dimondra
     runs-on: ubuntu-latest
 
     steps:
@@ -19,12 +18,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p 22 62.72.35.235 >> ~/.ssh/known_hosts
 
-      - name: Deploy via SSH
+      - name: Deploy to VPS
         run: |
-          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-            cd ${{ secrets.VPS_PATH }}
+          ssh -i ~/.ssh/id_rsa -p 22 root@62.72.35.235 << 'EOF'
+            cd /path/to/your/project
             git pull origin main
             npm install
             npm run build
