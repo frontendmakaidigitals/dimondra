@@ -3,13 +3,13 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main # or your deployment branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      # Firebase Admin SDK
+      # Firebase
       GOOGLE_TYPE: ${{ secrets.GOOGLE_TYPE }}
       GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
       GOOGLE_PRIVATE_KEY_ID: ${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
@@ -35,17 +35,9 @@ jobs:
       SMTP_TO: ${{ secrets.SMTP_TO }}
 
     steps:
-    
-
       - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: Read values
-        run: |
-          echo "GOOGLE_TYPE: $GOOGLE_TYPE"
-          echo "GOOGLE_PROJECT_ID: $GOOGLE_PROJECT_ID"
-          echo "SMTP_TO: $SMTP_TO"
-        
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
@@ -56,9 +48,29 @@ jobs:
       - name: Deploy code to VPS
         run: |
           ssh -i ~/.ssh/id_rsa -p 22 root@62.72.35.235 << 'EOF'
-            cd /root/Dimondra  # <-- change this to your actual app directory
+            cd /root/Dimondra
+            export GOOGLE_TYPE="${GOOGLE_TYPE}"
+            export GOOGLE_PROJECT_ID="${GOOGLE_PROJECT_ID}"
+            export GOOGLE_PRIVATE_KEY_ID="${GOOGLE_PRIVATE_KEY_ID}"
+            export GOOGLE_PRIVATE_KEY="${GOOGLE_PRIVATE_KEY}"
+            export GOOGLE_CLIENT_EMAIL="${GOOGLE_CLIENT_EMAIL}"
+            export GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID}"
+            export GOOGLE_AUTH_URI="${GOOGLE_AUTH_URI}"
+            export GOOGLE_TOKEN_URI="${GOOGLE_TOKEN_URI}"
+            export GOOGLE_AUTH_PROVIDER_CERT_URL="${GOOGLE_AUTH_PROVIDER_CERT_URL}"
+            export GOOGLE_CLIENT_CERT_URL="${GOOGLE_CLIENT_CERT_URL}"
+            export GOOGLE_UNIVERSE_DOMAIN="${GOOGLE_UNIVERSE_DOMAIN}"
+            export STRIPE_SECRET_KEY="${STRIPE_SECRET_KEY}"
+            export NEXT_PUBLIC_STRIPE_PUBLIC_KEY="${NEXT_PUBLIC_STRIPE_PUBLIC_KEY}"
+            export STRIPE_WEBHOOK_SECRET="${STRIPE_WEBHOOK_SECRET}"
+            export SMTP_USER="${SMTP_USER}"
+            export SMTP_PASS="${SMTP_PASS}"
+            export SMTP_HOST="${SMTP_HOST}"
+            export SMTP_PORT="${SMTP_PORT}"
+            export SMTP_TO="${SMTP_TO}"
+
             git pull origin main
             npm install --legacy-peer-deps
             npm run build
-            pm2 restart nextjs-app  # <-- or your PM2 process name
+            pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- run start
           EOF
