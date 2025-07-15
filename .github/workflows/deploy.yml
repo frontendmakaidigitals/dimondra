@@ -3,14 +3,14 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main
+      - main  # or your deployment branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up SSH
@@ -20,12 +20,12 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 22 62.72.35.235 >> ~/.ssh/known_hosts
 
-      - name: Deploy to VPS
+      - name: Deploy code to VPS
         run: |
           ssh -i ~/.ssh/id_rsa -p 22 root@62.72.35.235 << 'EOF'
-            cd /path/to/your/project
+            cd /root/my-app  # <-- change this to your actual app directory
             git pull origin main
             npm install
             npm run build
-            pm2 restart nextjs-app
+            pm2 restart nextjs-app  # <-- or your PM2 process name
           EOF
