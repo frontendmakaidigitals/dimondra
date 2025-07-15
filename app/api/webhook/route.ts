@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
-
 import nodemailer from "nodemailer";
 export const runtime = "nodejs";
 const transporter = nodemailer.createTransport({
@@ -26,7 +25,7 @@ if (!admin.apps.length) {
       type: process.env.GOOGLE_TYPE,
       project_id: process.env.GOOGLE_PROJECT_ID,
       private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
       client_email: process.env.GOOGLE_CLIENT_EMAIL,
       client_id: process.env.GOOGLE_CLIENT_ID,
       auth_uri: process.env.GOOGLE_AUTH_URI,
@@ -37,7 +36,7 @@ if (!admin.apps.length) {
     } as ServiceAccount),
   });
 }
-
+console.log("🔥 Firebase ENV project_id:", process.env.SMTP_TO);
 const firestore = admin.firestore();
 
 async function buffer(request: NextRequest) {

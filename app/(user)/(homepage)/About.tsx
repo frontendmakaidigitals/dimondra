@@ -8,6 +8,8 @@ import PopForm from "../app_chunks/PopFrom";
 const About = () => {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(ref, "center");
+  
+
   useSplitText({
     selector: ".aboutText",
     duration: 0.8,
