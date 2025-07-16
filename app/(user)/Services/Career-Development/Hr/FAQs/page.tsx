@@ -69,7 +69,7 @@ const Page = () => {
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
         <motion.img
           style={{ y: yTransform }}
-          src="/faq.jpg"
+          src="/faq.webp"
           alt=""
           className="w-full h-full object-cover object-top absolute inset-0 z-0"
         />

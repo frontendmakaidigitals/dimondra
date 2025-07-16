@@ -82,7 +82,7 @@ const CTA = ({
           </svg>
         </div>
         <img
-          src={"/bgOg.jpg"}
+          src={"/bgOg.webp"}
           alt={""}
           className="absolute inset-0 w-full h-full object-cover"
         />

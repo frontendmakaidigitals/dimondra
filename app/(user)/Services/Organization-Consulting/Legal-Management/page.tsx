@@ -22,49 +22,49 @@ const industrySectors = [
     title: "Technology & Startups",
     description:
       "Navigate IP protection, data privacy, and contract structuring with confidence in fast-paced innovation environments.",
-    imgUrl: "/services/Technology.jpg",
+    imgUrl: "/services/Technology.webp",
   },
   {
     title: "Retail & E-commerce",
     description:
       "Ensure legal compliance in commercial agreements, consumer rights, digital operations, and cross-border trade.",
-    imgUrl: "/services/retail.jpg",
+    imgUrl: "/services/retail.webp",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Support for regulatory approvals, licensing, clinical compliance, and patient data protection.",
-    imgUrl: "/services/healthcare.jpg",
+    imgUrl: "/services/healthcare.webp",
   },
   {
     title: "Financial Services & Fintech",
     description:
       "Legal guidance on licensing, anti-money laundering (AML), risk management, and regulatory reporting.",
-    imgUrl: "/services/financial-services.jpg",
+    imgUrl: "/services/financial-services.webp",
   },
   {
     title: "Manufacturing & Logistics",
     description:
       "Protect supply chain contracts, labor practices, and trade compliance across local and international markets.",
-    imgUrl: "/services/manufacturing.jpg",
+    imgUrl: "/services/manufacturing.webp",
   },
   {
     title: "Education & Nonprofits",
     description:
       "Ensure transparency, board governance, and regulatory adherence in purpose-driven organizations.",
-    imgUrl: "/services/education.jpg",
+    imgUrl: "/services/education.webp",
   },
   {
     title: "Professional Services",
     description:
       "Clear agreements, ethical compliance, and intellectual property protection for consultants, agencies, and advisory firms.",
-    imgUrl: "/services/consultation.jpg",
+    imgUrl: "/services/consultation.webp",
   },
   {
     title: "Real Estate & Construction",
     description:
       "Legal oversight for transactions, development contracts, zoning regulations, and dispute resolution.",
-    imgUrl: "/services/realestate.jpg",
+    imgUrl: "/services/realestate.webp",
   },
 ];
 
@@ -101,7 +101,7 @@ const serviceObj = [
   {
     title: "Legal Advisory, Governance, and Conflict Support",
     desc: "From coordinating with expert legal counsel to drafting internal policies and resolving disputes, this set of services ensures your organization is legally sound, well-governed, and ready to respond confidently to challenges.",
-    img: "/services/advisory-support.jpg",
+    img: "/services/advisory-support.webp",
     arr: [
       {
         title: "Liaison with External Legal Firms",
@@ -120,7 +120,7 @@ const serviceObj = [
   {
     title: "Trademark and Intellectual Property Assistance",
     desc: "Your brand assets: names, logos, content, and innovations, are vital to your business success. At Dimondra, we offer end-to-end support for protecting your intellectual property in the UAE and internationally.",
-    img: "/services/trademark.jpg",
+    img: "/services/trademark.webp",
     arr: [
       {
         title: "Trademark Registration (UAE & International)",
@@ -143,7 +143,7 @@ const serviceObj = [
   {
     title: "Regulatory Compliance Advisory",
     desc: "In today’s rapidly evolving legal environment, staying compliant isn’t optional, it’s essential. Our Regulatory Compliance Advisory service helps you navigate UAE laws, industry regulations, and global standards with confidence.",
-    img: "/services/law.jpg",
+    img: "/services/law.webp",
     arr: [
       {
         title: "Compliance Gap Assessments",
@@ -200,7 +200,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-2.jpg"}
+            src={"/bg-2.webp"}
             alt={""}
             className="w-full h-full  object-cover"
           />
@@ -233,7 +233,7 @@ const Page = () => {
         desc={
           "Our approach is proactive, people-focused, and fully aligned with regional and international standards. We simplify legal frameworks into actionable strategies to minimize risk, improve governance, and support long-term success. From contract drafting and IP protection to regulatory compliance and dispute resolution, we’re your trusted legal partner."
         }
-        img={"/services/legal-management.jpg"}
+        img={"/services/legal-management.webp"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"
@@ -294,7 +294,6 @@ const Page = () => {
           </ul>
         </div>
       </section>
-    
 
       <FAQ desc="" data={legalFAQs} />
       <HomeForm />

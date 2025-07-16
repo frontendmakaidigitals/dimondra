@@ -83,25 +83,25 @@ const Page = () => {
       title: "Initial Consultation",
       description:
         "We start by sitting down with you to understand your business, your goals, and any challenges you’re facing. From there, we create a clear plan to take care of your HR tasks in a way that fits your needs.",
-      imgUrl: "/services/consultation.jpg",
+      imgUrl: "/services/consultation.webp",
     },
     {
       title: "HR Process Management",
       description:
         "Once we’ve agreed on the plan, we put practical HR processes in place. These will help you support your team while making sure everything is aligned with UAE labor laws.",
-      imgUrl: "/services/processManangement.jpg",
+      imgUrl: "/services/processManangement.webp",
     },
     {
       title: "Performance Appraisals",
       description:
         "We help you track and review employee performance in a way that benefits both your staff and your business. Our guidance ensures fair rewards and the right compensation decisions.",
-      imgUrl: "/services/bonus.jpg",
+      imgUrl: "/services/bonus.webp",
     },
     {
       title: "Productive Workplace",
       description:
         "Our mission is to help you build a workplace where your people thrive. By supporting your employees, we help drive greater productivity and long-term success.",
-      imgUrl: "/services/workplace.jpg",
+      imgUrl: "/services/workplace.webp",
     },
   ];
 
@@ -181,7 +181,7 @@ const Page = () => {
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/services/hroperationshero.jpg"}
+          src={"/services/hroperationshero.webp"}
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">
@@ -214,7 +214,7 @@ const Page = () => {
             Typical Employee Journey in our Outsourced HR Services
           </h1>
         </div>
-        <img src={"/services/process.png"} alt={""} className="w-full" />
+        <img src={"/services/process.webp"} alt={""} className="w-full" />
       </div>
 
       <Process

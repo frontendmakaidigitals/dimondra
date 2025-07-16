@@ -69,9 +69,9 @@ const HeroSection = () => {
 
       <BgLayer color="bg-slate-900/50" />
       <div className="relative z-20 container w-full h-full flex justify-center items-center flex-col">
-        <p className="text-dimondra-white overflow-hidden spanText font-semibold">
+        <h3 className="text-dimondra-white overflow-hidden spanText font-semibold">
           #1 in the Market: Dimondra
-        </p>
+        </h3>
         <h1 className="max-w-4xl font-dmSans heroText leading-[2.4rem] lg:leading-[5.2rem] tracking-tight text-dimondra-white/80 text-center text-3xl lg:text-7xl font-[700] ">
           Empowering <span className="text-dimondra-teal">Businesses</span>,
           Enabling People.

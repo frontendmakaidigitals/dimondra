@@ -390,7 +390,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.jpg"
+                "https://blog.ipleaders.in/wp-content/uploads/2021/11/employee-rights-c979f0f79b1343e7ad58442bd7e17c60.webp"
               }
               alt="Protections Egypt"
               className="w-full h-[330px] lg:h-[400px] order-1 object-cover place-items-start"
@@ -447,7 +447,7 @@ const Page: React.FC = () => {
             </div>
             <img
               src={
-                "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.jpg"
+                "https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba4466e5d044016_1.webp"
               }
               alt="Termination Egypt"
               className="w-full h-[330px] lg:h-[400px] order-1 lg:order-2 object-cover place-items-start"

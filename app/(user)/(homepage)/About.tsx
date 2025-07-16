@@ -8,7 +8,6 @@ import PopForm from "../app_chunks/PopFrom";
 const About = () => {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(ref, "center");
-  
 
   useSplitText({
     selector: ".aboutText",
@@ -64,7 +63,7 @@ const About = () => {
             {/* Normal image without filter */}
             <img
               className="w-full h-full object-cover"
-              src="/media/homepage/aboutHero.avif"
+              src="/media/homepage/aboutHero.webp"
               alt=""
             />
           </motion.div>

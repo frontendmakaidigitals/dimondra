@@ -162,25 +162,25 @@ const Page = () => {
       title: "Sign-Up & Consultation",
       description:
         "Fill out a simple sign-up form and schedule a meeting. We’ll discuss your needs and define the tasks you want support with.",
-      imgUrl: "/services/consultation2.jpg",
+      imgUrl: "/services/consultation2.webp",
     },
     {
       title: "Choose Your Virtual Assistant",
       description:
         "Select the right assistant from our pool of experienced professionals. We’ll help match you with someone who fits your business.",
-      imgUrl: "/services/virtualAssistant.jpg",
+      imgUrl: "/services/virtualAssistant.webp",
     },
     {
       title: "Get Started Quickly",
       description:
         "Begin working with your Virtual Assistant within 24 hours to 1 week. We make onboarding smooth and simple.",
-      imgUrl: "/services/clock.jpg",
+      imgUrl: "/services/clock.webp",
     },
     {
       title: "Access Your Client Portal",
       description:
         "Use our secure portal to manage tasks and communicate easily. Stay updated and in control at all times.",
-      imgUrl: "/services/clientPortal.png",
+      imgUrl: "/services/clientPortal.webp",
     },
   ];
 
@@ -380,7 +380,7 @@ const Page = () => {
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-left-top w-full h-full object-cover"
-          src={"/services/virtualAdminHero.jpg"}
+          src={"/services/virtualAdminHero.webp"}
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">

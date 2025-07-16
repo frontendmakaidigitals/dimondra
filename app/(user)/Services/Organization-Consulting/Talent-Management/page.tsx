@@ -24,49 +24,49 @@ const industrySectors = [
     title: "Professional Services",
     description:
       "Helping consultancies, legal firms, and agencies recruit and retain high-impact talent.",
-    imgUrl: "/services/callCenter.jpg",
+    imgUrl: "/services/callCenter.webp",
   },
   {
     title: "Financial Services & Fintech",
     description:
       "Supporting agile workforce strategies in fast-paced, regulated environments.",
-    imgUrl: "/services/financial-services.jpg",
+    imgUrl: "/services/financial-services.webp",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Building clinical and non-clinical talent pipelines for resilient care delivery.",
-    imgUrl: "/services/healthcare.jpg",
+    imgUrl: "/services/healthcare.webp",
   },
   {
     title: "Technology & Software",
     description:
       "Driving skills development and engagement in competitive, innovation-driven teams.",
-    imgUrl: "/services/It2.jpg",
+    imgUrl: "/services/It2.webp",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "Enhancing workforce planning, safety training, and performance management.",
-    imgUrl: "/services/manufacturing.jpg",
+    imgUrl: "/services/manufacturing.webp",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "Aligning people, customer experience, and brand through strategic talent planning.",
-    imgUrl: "/services/retail.jpg",
+    imgUrl: "/services/retail.webp",
   },
   {
     title: "Education & Nonprofit",
     description:
       "Strengthening mission-aligned hiring, leadership development, and retention.",
-    imgUrl: "/services/education.jpg",
+    imgUrl: "/services/education.webp",
   },
   {
     title: "Government & Public Sector",
     description:
       "Enhancing performance and accountability through workforce modernization.",
-    imgUrl: "/services/govt.jpg",
+    imgUrl: "/services/govt.webp",
   },
 ];
 
@@ -102,7 +102,7 @@ const serviceObj = [
   {
     title: "Talent Management Services",
     desc: "We offer a robust suite of Talent Management solutions designed to align people strategies with organizational goals:",
-    img: "/services/talent-management.jpg",
+    img: "/services/talent-management.webp",
     arr: [
       {
         title: "Strategic Workforce Planning",
@@ -121,7 +121,7 @@ const serviceObj = [
   {
     title: "Leadership & Talent Growth Solutions",
     desc: "Empower your organization from the inside out. Dimondra’s solutions help you identify future leaders, develop key talent, and foster a culture where growth and engagement thrive.",
-    img: "/services/growth-people.jpg",
+    img: "/services/growth-people.webp",
     arr: [
       {
         title: "Succession Planning",
@@ -144,7 +144,7 @@ const serviceObj = [
   {
     title: "In-house Training Academy & Learning Needs Analysis",
     desc: "We help organizations design and implement in-house training academies tailored to their strategic goals. Our structured approach ensures relevant, high-impact learning experiences that strengthen skills, support growth, and enhance performance.",
-    img: "/services/training.jpg",
+    img: "/services/training.webp",
     arr: [
       {
         title: "Training Academy Design & Implementation",
@@ -212,7 +212,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-strategy.jpg"}
+            src={"/bg-strategy.webp"}
             alt={""}
             className="w-full h-full object-cover"
           />
@@ -244,7 +244,7 @@ const Page = () => {
         desc={
           "Your people are the foundation of your organization’s success. At Dimondra, we partner with you to create talent strategies that not only meet today’s needs but support future growth. Our comprehensive approach brings together workforce planning, performance management, leadership development, and employee engagement, helping you build a resilient, motivated, and future-ready team. We tailor our solutions to fit your unique culture and goals, whether you're scaling rapidly, navigating change, or strengthening leadership pipelines."
         }
-        img={"/services/callCenter2.jpg"}
+        img={"/services/callCenter2.webp"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"

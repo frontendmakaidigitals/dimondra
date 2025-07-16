@@ -120,7 +120,7 @@ const ApproachAndValues = () => {
           </div>
           <div className="rounded-3xl h-[350px] overflow-hidden shadow-lg">
             <img
-              src="/services/consultation.jpg"
+              src="/services/consultation.webp"
               alt="Collaborative approach"
               className="w-full h-full object-cover"
             />

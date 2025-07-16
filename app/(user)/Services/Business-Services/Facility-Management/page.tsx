@@ -91,61 +91,61 @@ const Page = () => {
       title: "Cleaning Services",
       description:
         "Providing thorough and consistent cleaning to keep your environment safe, hygienic, and welcoming.",
-      img: "/services/cleaning-services.jpg",
+      img: "/services/cleaning-services.webp",
     },
     {
       title: "Hard Services",
       description:
         "Maintaining your buildings through planned preventative maintenance, reactive repairs, and infrastructure improvements.",
-      img: "/services/maintenance.jpg",
+      img: "/services/maintenance.webp",
     },
     {
       title: "Pest Control",
       description:
         "Tailored pest management solutions to protect your facility from pests and maintain health standards.",
-      img: "/services/pest-control.jpg",
+      img: "/services/pest-control.webp",
     },
     {
       title: "Security Services",
       description:
         "Comprehensive security covering access control, visitor screening, monitoring, and emergency response.",
-      img: "/services/security.jpg",
+      img: "/services/security.webp",
     },
     {
       title: "Passenger Services",
       description:
         "Professional assistance for passengers, including wayfinding, customer support, and smooth facility navigation.",
-      img: "/services/support.jpg",
+      img: "/services/support.webp",
     },
     {
       title: "Carbon & Energy Management",
       description:
         "Optimizing energy consumption and managing carbon emissions to support sustainability goals.",
-      img: "/services/energy.jpg",
+      img: "/services/energy.webp",
     },
     {
       title: "Waste Management & Recycling",
       description:
         "Efficient collection, disposal, and recycling processes to minimize environmental impact and ensure compliance.",
-      img: "/services/waste-management.jpg",
+      img: "/services/waste-management.webp",
     },
     {
       title: "Reception & Visitor Management",
       description:
         "Welcoming visitors with organized reception, screening, and guest services that enhance their experience.",
-      img: "/services/visitor.jpg",
+      img: "/services/visitor.webp",
     },
     {
       title: "Minor Works & Repairs",
       description:
         "Handling small-scale repairs and refurbishments to keep your facility functional and attractive.",
-      img: "/services/repairs.jpg",
+      img: "/services/repairs.webp",
     },
     {
       title: "Capital Projects & Upgrades",
       description:
         "Managing large-scale renovations and improvements to modernize and future-proof your facility.",
-      img: "/services/renovation.jpg",
+      img: "/services/renovation.webp",
     },
   ];
 
@@ -224,7 +224,7 @@ const Page = () => {
         />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/services/facilityhero.jpg"}
+          src={"/services/facilityhero.webp"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -268,8 +268,8 @@ const Page = () => {
         description={
           "At Dimondra, we don’t just maintain spaces, we create environments where people and businesses thrive. As your dedicated facility management partner, we combine industry expertise with tailored service delivery to meet the unique needs of every site we manage. Whether it’s a high-traffic venue, a critical healthcare facility, or a fast-paced commercial space, we ensure everything runs efficiently, safely, and sustainably. From day-to-day operations to long-term infrastructure improvements, Dimondra is committed to raising standards and delivering results that support your success."
         }
-        img1={"/services/facility1.jpg"}
-        img2={"/services/facility2.jpg"}
+        img1={"/services/facility1.webp"}
+        img2={"/services/facility2.webp"}
       />
       <FAQ data={facilityManagementFAQs} desc={""} />
       <HomeForm />

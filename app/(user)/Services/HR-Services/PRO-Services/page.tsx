@@ -82,25 +82,25 @@ const Page = () => {
       title: "Strategy and Planning",
       description:
         "We work with you to choose the right business structure and activity for your company. Our team explains the steps, requirements, and timeline so you know exactly what to expect during the setup.",
-      imgUrl: "/services/planning.jpg", // Replace with actual image
+      imgUrl: "/services/planning.webp", // Replace with actual image
     },
     {
       title: "Incorporation",
       description:
         "Dimondra takes care of the full company setup process — from securing your business license and preparing legal documents to registering your company and handling visa files.",
-      imgUrl: "/services/Incorporation.jpg",
+      imgUrl: "/services/Incorporation.webp",
     },
     {
       title: "Bank Account Opening",
       description:
         "We guide you through opening your corporate bank account, helping you prepare the documents and meet the bank’s requirements for a smooth process.",
-      imgUrl: "/services/bankAccount.jpg",
+      imgUrl: "/services/bankAccount.webp",
     },
     {
       title: "Staying Compliant",
       description:
         "Our job doesn’t end at setup. We provide ongoing PRO support to make sure your company stays compliant with UAE laws, including renewals and government filings.",
-      imgUrl: "/services/compliant.jpg",
+      imgUrl: "/services/compliant.webp",
     },
   ];
   const coreBenefits = [
@@ -177,7 +177,7 @@ const Page = () => {
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/services/topTalentHero.jpg"}
+          src={"/services/topTalentHero.webp"}
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">

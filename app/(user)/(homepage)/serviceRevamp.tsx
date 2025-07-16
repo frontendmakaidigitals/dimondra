@@ -20,7 +20,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Briefcase,
       pos: "left",
-      img: "/media/homepage/services/hrOutsource.avif",
+      img: "/media/homepage/services/hrOutsource.webp",
     },
 
     {
@@ -30,7 +30,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: ClipboardList,
       pos: "left",
-      img: "/media/homepage/services/remote-workforce.avif",
+      img: "/media/homepage/services/remote-workforce.webp",
     },
     {
       title: "Executive Search",
@@ -39,7 +39,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: LifeBuoy,
       pos: "right",
-      img: "/media/homepage/services/executive-research.avif",
+      img: "/media/homepage/services/executive-research.webp",
     },
     {
       title: "RPO",
@@ -48,7 +48,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: Server,
       pos: "right",
-      img: "/media/homepage/services/rpo.avif",
+      img: "/media/homepage/services/rpo.webp",
     },
     {
       title: "Government Relations ",
@@ -57,7 +57,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: GraduationCap,
       pos: "left",
-      img: "/media/homepage/services/govt-relation.avif",
+      img: "/media/homepage/services/govt-relation.webp",
     },
     {
       title: "Business Support ",
@@ -66,7 +66,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/homepage/services/business-support.avif",
+      img: "/media/homepage/services/business-support.webp",
     },
     {
       title: "IT & Digital Services ",
@@ -75,7 +75,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/homepage/services/it-digital.avif",
+      img: "/media/homepage/services/it-digital.webp",
     },
     {
       title: "Strategy & Advisory",
@@ -84,7 +84,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/homepage/services/strategy-advisory.avif",
+      img: "/media/homepage/services/strategy-advisory.webp",
     },
     {
       title: "Workplace & Facilities Outsourcing Services ",
@@ -93,7 +93,7 @@ const ServiceRevamp = () => {
       row: "row-span-1",
       icon: BarChart3,
       pos: "right",
-      img: "/media/homepage/services/workplace-facilities.avif",
+      img: "/media/homepage/services/workplace-facilities.webp",
     },
   ];
 

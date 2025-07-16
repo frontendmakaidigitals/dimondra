@@ -16,49 +16,49 @@ const industrySectors = [
     title: "Technology & Software",
     description:
       "We help SaaS companies, IT service providers, and tech startups scale into new markets with robust go-to-market plans, compliance support, and partner networks.",
-    imgUrl: "/services/Technology.jpg",
+    imgUrl: "/services/Technology.webp",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Our team works with hospitals, clinics, pharma companies, and biotech firms to navigate complex regulatory frameworks and deliver high-impact market strategies.",
-    imgUrl: "/services/healthcare.jpg",
+    imgUrl: "/services/healthcare.webp",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "Whether you're launching a D2C brand or scaling a retail chain, we help align your business with local consumer behaviors and optimize your supply chain.",
-    imgUrl: "/services/retail.jpg",
+    imgUrl: "/services/retail.webp",
   },
   {
     title: "Professional Services",
     description:
       "From legal firms to consultancies and agencies, we support knowledge-based businesses in building scalable structures and accessing new client markets.",
-    imgUrl: "/services/talentHero.jpg",
+    imgUrl: "/services/talentHero.webp",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "We support manufacturers and supply chain operators with location analysis, licensing compliance, and strategic expansion into high-demand regions.",
-    imgUrl: "/services/manufacturing.jpg",
+    imgUrl: "/services/manufacturing.webp",
   },
   {
     title: "Financial Services",
     description:
       "Our consulting services help banks, fintech startups, and financial institutions navigate regulatory environments and launch with confidence across the GCC.",
-    imgUrl: "/services/financial-services.jpg",
+    imgUrl: "/services/financial-services.webp",
   },
   {
     title: "Education & Training",
     description:
       "We assist educational institutions, e-learning companies, and training providers in expanding their reach while ensuring content and delivery are locally relevant.",
-    imgUrl: "/services/education.jpg",
+    imgUrl: "/services/education.webp",
   },
   {
     title: "Energy & Sustainability",
     description:
       "For companies working in renewable energy, environmental tech, or infrastructure, we offer guidance on local policy, strategic partnerships, and project setup.",
-    imgUrl: "/services/telelcommunication.jpg",
+    imgUrl: "/services/telelcommunication.webp",
   },
 ];
 
@@ -94,7 +94,7 @@ const serviceObj = [
   {
     title: "Feasibility & Market Analysis",
     desc: "Launching a business or entering a new market requires insight, not guesswork. Our feasibility and market analysis services provide a complete picture of the risks, opportunities, and viability of your expansion plans. We assess demand, competition, regulation, cost, and profitability so you can move forward with clarity and confidence.",
-    img: "/services/retail.jpg",
+    img: "/services/retail.webp",
     arr: [
       {
         title: "Market Demand & Opportunity Assessment",
@@ -121,7 +121,7 @@ const serviceObj = [
   {
     title: "New Market Entry Advisory (UAE, KSA, GCC)",
     desc: "Expanding into the UAE, Saudi Arabia, or GCC markets involves navigating unique cultural, legal, and operational environments. Our advisory services equip you with the insights and tools needed to make informed decisions, reduce risks, and build a foundation for long-term success.",
-    img: "/services/map.jpg",
+    img: "/services/map.webp",
     arr: [
       {
         title: "Local Market Landscape Analysis",
@@ -144,7 +144,7 @@ const serviceObj = [
   {
     title: "Business Setup Strategy & Structuring Guidance",
     desc: "Setting up a business is more than paperwork’s about building a structure that supports long-term success. At Dimondra, we guide you through each strategic and legal decision to make sure your business is positioned for sustainable growth from day one.",
-    img: "/services/consultation.jpg",
+    img: "/services/consultation.webp",
     arr: [
       {
         title: "Company Formation Strategy",
@@ -167,7 +167,7 @@ const serviceObj = [
   {
     title: "Regulatory & Licensing Requirements Consulting",
     desc: "Every market has its own legal frameworks and licensing procedures, especially in highly regulated environments like the UAE, Saudi Arabia, and the GCC. Dimondra helps you stay on top of every requirement with end-to-end regulatory support and expert guidance.",
-    img: "/services/govt.jpg",
+    img: "/services/govt.webp",
     arr: [
       {
         title: "Trade License Selection & Guidance",
@@ -194,7 +194,7 @@ const serviceObj = [
   {
     title: "Go-to-Market Planning & Localization Strategy",
     desc: "Dimondra builds customized go-to-market plans that combine strategic positioning with cultural relevance to ensure your message, offer, and delivery resonate with local customers.",
-    img: "/services/facilityhero.jpg",
+    img: "/services/facilityhero.webp",
     arr: [
       {
         title: "Go-to-Market Strategy Design",
@@ -260,7 +260,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-2.jpg"}
+            src={"/bg-2.webp"}
             className="w-full h-full  object-cover"
             alt={""}
           />
@@ -292,7 +292,7 @@ const Page = () => {
         desc={
           "Dimondra empowers you to move into new markets with clarity and confidence. We provide expert support through feasibility studies, setup planning, licensing, go-to-market strategy, and local partnerships. With our guidance, you’ll enter new regions ready to succeed, backed by facts, not guesswork."
         }
-        img={"/services/consultation2.jpg"}
+        img={"/services/consultation2.webp"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"
@@ -353,7 +353,6 @@ const Page = () => {
           </ul>
         </div>
       </section>
-  
 
       <FAQ desc="" data={businessFAQs} />
       <HomeForm />

@@ -107,7 +107,7 @@ const Choose = () => {
             >
               <BgLayer color="z-10 bg-black/50" />
               <img
-                src={`/choose${index + 1}.jpg`}
+                src={`/choose${index + 1}.webp`}
                 className="w-full h-full object-cover absolute inset-0"
                 alt={""}
               />

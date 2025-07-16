@@ -97,69 +97,69 @@ const Page = () => {
     {
       title: "Inbound Call Center Services",
       description: `Dimondra provides reliable inbound call center solutions that elevate your customer service and drive meaningful engagement. Our skilled agents ensure every call is handled with care, turning inquiries into loyalty and building trust at every touchpoint.`,
-      img: "/services/callCenter.jpg",
+      img: "/services/callCenter.webp",
     },
     {
       title: "Outbound Call Center Solutions",
       description: `Our Outbound Call Center Services are designed to connect your business with the right audience, boosting customer acquisition, accelerating revenue, and enhancing loyalty. Whether you're a startup or a growing enterprise, our team helps you reach prospects and existing customers through targeted, high-impact calling strategies.`,
-      img: "/services/callCenter2.jpg",
+      img: "/services/callCenter2.webp",
     },
     {
       title: "AI-Powered Call Centers",
 
       description: `As one of the leading BPO companies in the region, Dimondra combines human expertise with cutting-edge AI tools like MindVoice and MindSpeech. These advanced technologies help harmonize accents, predict customer needs in real-time, and deliver an exceptional customer experience, every time.`,
-      img: "/services/data-centers.jpg",
+      img: "/services/data-centers.webp",
     },
     {
       title: "24/7 Customer Support / Helpdesk",
       description: `We offer round-the-clock customer service to handle questions, complaints, and requests whenever your customers need help. Our friendly and well-trained agents make sure every caller feels heard, valued, and supported, helping you build strong, lasting relationships.`,
 
-      img: "/services/callCenter1.jpg",
+      img: "/services/callCenter1.webp",
     },
     {
       title: "Sales Support – Before & After Purchase",
       description: `From helping potential buyers understand your products to following up after a sale, our team provides full support throughout the customer journey. We help boost conversions, answer questions, and create trust that leads to repeat business.`,
-      img: "/services/consultation.jpg",
+      img: "/services/consultation.webp",
     },
     {
       title: "Appointment Scheduling",
       description: `Our agents can manage your bookings and follow-ups, making sure appointments are set smoothly and on time. With professional handling, your team stays organized and your customers stay informed.`,
-      img: "/services/legal-management.jpg",
+      img: "/services/legal-management.webp",
     },
     {
       title: "Refund & Claims Handling",
       description: `We make returns and claims easier for both you and your customers. Our support team handles each case carefully and efficiently, ensuring quick resolutions and protecting your brand’s reputation.`,
-      img: "/services/processManangement.jpg",
+      img: "/services/processManangement.webp",
     },
     {
       title: "Loyalty Program Management",
       description: `Keep your customers coming back with engaging loyalty programs. We help you create and manage reward systems that make your audience feel appreciated and connected to your brand.`,
-      img: "/services/financial-services.jpg",
+      img: "/services/financial-services.webp",
     },
     {
       title: "Technical Support",
       description: `Got a product issue? Our skilled agents are ready to solve technical problems, whether it's software or hardware, ensuring your customers get the help they need without long wait times or confusion.`,
-      img: "/services/It2.jpg",
+      img: "/services/It2.webp",
     },
     {
       title: "Lead Generation",
       description: `Let us help you find and qualify the right prospects. Our lead generation services feed your sales team with high-potential leads so they can focus on closing deals and growing your business.`,
-      img: "/services/facilityhero.jpg",
+      img: "/services/facilityhero.webp",
     },
     {
       title: "Order Processing & Fulfillment",
       description: `We take care of the behind-the-scenes work, from order tracking to delivery coordination, so your customers enjoy a smooth and reliable shopping experience.`,
-      img: "/services/facility2.jpg",
+      img: "/services/facility2.webp",
     },
     {
       title: "Customer Complaints & Escalations",
       description: `Every complaint is a chance to improve. Our support team handles concerns with care and professionalism, resolving issues quickly and turning unhappy customers into loyal ones.`,
-      img: "/services/support.jpg",
+      img: "/services/support.webp",
     },
     {
       title: "Debt Collection Support",
       description: `Recovering payments doesn’t have to damage relationships. Our team handles collections respectfully and effectively, helping you improve your cash flow while maintaining a positive image.`,
-      img: "/services/debt-collection.jpg",
+      img: "/services/debt-collection.webp",
     },
   ];
 
@@ -216,7 +216,7 @@ const Page = () => {
         <BgLayer color="bg-slate-900/60 lg:bg-gradient-to-l from-transparent from-[0%] to-teal-950 to-[60%] z-[2]" />
         <img
           className="absolute inset-0 object-right-top w-full h-full object-cover"
-          src="/services/callCenterHero.jpg"
+          src="/services/callCenterHero.webp"
           alt="Talent Acquisition"
         />
         <div className="relative z-[3] w-full h-full">
@@ -260,8 +260,8 @@ const Page = () => {
       />
 
       <Advantage
-        img1="/services/callCenter1.jpg"
-        img2="/services/callCenter2.jpg"
+        img1="/services/callCenter1.webp"
+        img2="/services/callCenter2.webp"
         data={advantage}
         title="Dimondra – Your Trusted Call Center Outsourcing Partner"
         description="Dimondra is your trusted partner for reliable and future-ready call center outsourcing..."

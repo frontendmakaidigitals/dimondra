@@ -133,7 +133,7 @@ const PopForm = ({
             </button>
             <img
               alt={""}
-              src={"/services/facilityhero.jpg"}
+              src={"/services/facilityhero.webp"}
               className="w-full hidden lg:block h-full object-cover"
             />
 

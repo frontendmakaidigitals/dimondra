@@ -14,16 +14,14 @@ const CTA = ({
     <div className=" relative max-w-6xl mx-auto gap-9 mb-20 mt-10 flex flex-col-reverse  overflow-hidden lg:flex-row-reverse items-center  justify-between border border-slate-200 rounded-2xl">
       <img
         src={
-          "https://img.freepik.com/free-vector/blurred-turquoise-background-design_1107-187.jpg?semt=ais_hybrid&w=740"
+          "https://img.freepik.com/free-vector/blurred-turquoise-background-design_1107-187.webp?semt=ais_hybrid&w=740"
         }
         alt={"cta"}
         className="w-full h-full object-cover absolute inset-0 opacity-[.5]"
       />
       <div className="relative z-10 p-6 lg:p-0">
         {" "}
-        <div className=" w-full flex justify-center lg:justify-start">
-         
-        </div>
+        <div className=" w-full flex justify-center lg:justify-start"></div>
         <h2 className="mt-4 text-3xl font-[600] text-center lg:text-start">
           {title}
         </h2>
@@ -35,7 +33,7 @@ const CTA = ({
         </div>
       </div>
       <div className="w-full lg:w-[300px] relative z-10">
-        <img src={"/CTA.png"} alt={""} className={""} />
+        <img src={"/CTA.webp"} alt={""} className={""} />
       </div>
     </div>
   );

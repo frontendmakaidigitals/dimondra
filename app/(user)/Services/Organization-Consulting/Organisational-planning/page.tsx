@@ -16,49 +16,49 @@ const industrySectors = [
     title: "Professional Services",
     description:
       "Strategy firms, consultancies, marketing agencies, and legal practices—helping them grow through optimized processes and strategic alignment.",
-    imgUrl: "/services/topTalentHero.jpg",
+    imgUrl: "/services/topTalentHero.webp",
   },
   {
     title: "Financial Services & Fintech",
     description:
       "Banking, insurance, finance, and financial technology firms—empowering teams to adapt in a changing regulatory and tech-driven landscape.",
-    imgUrl: "/services/financial-services.jpg",
+    imgUrl: "/services/financial-services.webp",
   },
   {
     title: "Healthcare & Life Sciences",
     description:
       "Providers, labs, hospitals, and biotech companies—supporting quality improvement, training, and agile leadership in mission-driven environments.",
-    imgUrl: "/services/healthcare.jpg",
+    imgUrl: "/services/healthcare.webp",
   },
   {
     title: "Technology & Software",
     description:
       "SaaS companies, software development teams, and IT departments—enhancing productivity, cross-functional collaboration, and scaling practices.",
-    imgUrl: "/services/Technology.jpg",
+    imgUrl: "/services/Technology.webp",
   },
   {
     title: "Manufacturing & Industrial",
     description:
       "Production plants, industrial operations, and supply-chain organizations—streamlining workflows and improving operational outcomes.",
-    imgUrl: "/services/manufacturing.jpg",
+    imgUrl: "/services/manufacturing.webp",
   },
   {
     title: "Retail & Consumer Goods",
     description:
       "E‑commerce, retail chains, and consumer product companies—aligning people, structure, and processes to support customer‑centric growth.",
-    imgUrl: "/services/retail.jpg",
+    imgUrl: "/services/retail.webp",
   },
   {
     title: "Education & Nonprofit",
     description:
       "Educational institutions, nonprofit organizations, and mission-driven groups—building organizational resilience and optimizing resource allocation.",
-    imgUrl: "/services/education.jpg",
+    imgUrl: "/services/education.webp",
   },
   {
     title: "Government & Public Sector",
     description:
       "Federal, state, and municipal agencies, strengthening organizational strategy, change readiness, training, and performance measurement.",
-    imgUrl: "/services/govt.jpg",
+    imgUrl: "/services/govt.webp",
   },
 ];
 
@@ -112,7 +112,7 @@ const serviceObj = [
         desc: "Facilitate inclusive discussions and engagement with key stakeholders to build consensus, alignment, and commitment.",
       },
     ],
-    img: "/services/consultation.jpg",
+    img: "/services/consultation.webp",
   },
   {
     title: "Operational Improvement",
@@ -131,7 +131,7 @@ const serviceObj = [
         desc: "We help you measure, monitor, and optimize your outcomes to ensure long-term, sustainable success.",
       },
     ],
-    img: "/services/processManangement.jpg",
+    img: "/services/processManangement.webp",
   },
   {
     title: "Structural Design",
@@ -146,7 +146,7 @@ const serviceObj = [
         desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
       },
     ],
-    img: "/services/growth-people.jpg",
+    img: "/services/growth-people.webp",
   },
   {
     title: "Education and Training",
@@ -165,7 +165,7 @@ const serviceObj = [
         desc: "We maximize talent development investments by delivering focused training that enhances skills, boosts productivity, and supports long-term growth.",
       },
     ],
-    img: "/services/education.jpg",
+    img: "/services/education.webp",
   },
 ];
 
@@ -199,7 +199,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-2.jpg"}
+            src={"/bg-2.webp"}
             alt={""}
             className="w-full h-full  object-cover"
           />
@@ -230,7 +230,7 @@ const Page = () => {
         desc={
           "At Dimondra, we help organizations grow with purpose. Our approach combines strategic insight, continuous development, and people-focused planning to unlock long-term success. By aligning leadership, teams, and operational goals, we guide you in creating a clear roadmap for positive outcomes. Our focus on collaboration, adaptability, and a culture of continuous learning ensures your organization is not only prepared for change but positioned to thrive through it."
         }
-        img={"/services/roadmap.jpg"}
+        img={"/services/roadmap.webp"}
       />
       <AreaOfExpertise
         title="Areas of Expertise"
@@ -289,7 +289,6 @@ const Page = () => {
           </ul>
         </div>
       </section>
-      
 
       <FAQ desc="" data={organizationalFAQs} />
       <HomeForm />

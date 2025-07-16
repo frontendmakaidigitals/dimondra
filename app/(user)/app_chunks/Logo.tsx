@@ -8,7 +8,7 @@ const Logo = ({ className }: { className?: string }) => {
         <img
           alt="logo"
           className={clsx(`w-44`, className)}
-          src={"/Logo/Logo.png"}
+          src={"/Logo/Logo.webp"}
         />
       </Link>
     </>

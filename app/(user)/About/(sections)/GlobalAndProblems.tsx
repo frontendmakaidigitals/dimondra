@@ -113,7 +113,7 @@ const GlobalAndProblems = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/services/global.jpg"
+              src="/services/global.webp"
               alt="Global Reach"
               className="w-full h-full object-cover"
             />

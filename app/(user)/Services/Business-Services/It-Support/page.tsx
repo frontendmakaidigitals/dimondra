@@ -49,61 +49,61 @@ const Page = () => {
       title: "Hardware Support",
       description:
         "Installation, troubleshooting, upgrades, and maintenance of desktops, laptops, servers, and other hardware devices.",
-      img: "/services/support.jpg",
+      img: "/services/support.webp",
     },
     {
       title: "Network Management",
       description:
         "Monitoring, configuration, and optimization of your business network for seamless connectivity and performance.",
-      img: "/services/It2.jpg",
+      img: "/services/It2.webp",
     },
     {
       title: "Software Support",
       description:
         "Installation, updates, issue resolution, and license management for your critical business applications.",
-      img: "/services/software-support.jpg",
+      img: "/services/software-support.webp",
     },
     {
       title: "Security Management",
       description:
         "Firewall setup, threat detection, antivirus management, and data protection solutions to safeguard your systems.",
-      img: "/services/security-software.jpg",
+      img: "/services/security-software.webp",
     },
     {
       title: "Cloud Services",
       description:
         "Cloud migration, storage, and management solutions to ensure accessibility, scalability, and security.",
-      img: "/services/cloud-services.jpg",
+      img: "/services/cloud-services.webp",
     },
     {
       title: "24/7 Help Desk",
       description:
         "Round-the-clock technical support for any IT-related issues, ensuring minimal downtime and fast resolutions.",
-      img: "/services/callCenter.jpg",
+      img: "/services/callCenter.webp",
     },
     {
       title: "IT Consultancy & Planning",
       description:
         "Strategic guidance to align your IT infrastructure with business goals, ensuring efficiency and scalability.",
-      img: "/services/consultation.jpg",
+      img: "/services/consultation.webp",
     },
     {
       title: "Backup & Disaster Recovery",
       description:
         "Regular data backups and recovery plans to protect your business against unexpected data loss or system failures.",
-      img: "/services/data-recovery.jpg",
+      img: "/services/data-recovery.webp",
     },
     {
       title: "IT Infrastructure Setup",
       description:
         "End-to-end setup of new office or remote IT infrastructure, including cabling, systems, and configuration.",
-      img: "/services/office.jpg",
+      img: "/services/office.webp",
     },
     {
       title: "Vendor & License Management",
       description:
         "Handling of third-party software licenses, renewals, and vendor coordination for seamless operations.",
-      img: "/services/licnese.jpg",
+      img: "/services/licnese.webp",
     },
   ];
 
@@ -123,25 +123,25 @@ const Page = () => {
       title: "Assessment & Planning",
       description:
         "We audit your current IT environment, identify gaps, and build a tailored support plan.",
-      imgUrl: "/services/consultation.jpg", // Replace with your actual image path
+      imgUrl: "/services/consultation.webp", // Replace with your actual image path
     },
     {
       title: "Onboarding",
       description:
         "A seamless transition process with full documentation, system handover, and user alignment.",
-      imgUrl: "/services/onBoard.jpg",
+      imgUrl: "/services/onBoard.webp",
     },
     {
       title: "Monitoring & Support",
       description:
         "Our helpdesk and onsite engineers proactively monitor and resolve issues to minimize downtime.",
-      imgUrl: "/services/support.jpg",
+      imgUrl: "/services/support.webp",
     },
     {
       title: "Reporting",
       description:
         "Get regular reports, performance reviews, and service insights to keep you informed and in control.",
-      imgUrl: "/services/talentHero.jpg",
+      imgUrl: "/services/talentHero.webp",
     },
   ];
   const itBenefits = [
@@ -252,7 +252,7 @@ const Page = () => {
         />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/services/itSupport.jpg"}
+          src={"/services/itSupport.webp"}
           alt={"Talent Acquisition"}
         />
         <div className=" relative  z-[3] w-full h-full">
@@ -305,8 +305,8 @@ const Page = () => {
         description={
           "Dimondra provides reliable, flexible, and cost-effective IT services tailored to your business needs. Whether you require ongoing IT support, infrastructure management, or cybersecurity solutions, our expert teams deliver seamless service with minimal disruption. We help you stay focused on your core business while we take care of the technology that powers it."
         }
-        img1="/services/It1.jpg"
-        img2="/services/It2.jpg"
+        img1="/services/It1.webp"
+        img2="/services/It2.webp"
       />
       <FAQ data={itAmcFAQs} desc={""} />
       <HomeForm />

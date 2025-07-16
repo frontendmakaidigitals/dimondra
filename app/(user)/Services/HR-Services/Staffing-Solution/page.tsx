@@ -83,37 +83,37 @@ const Page = () => {
       title: "Energy & Resources",
       description:
         "As a premier recruitment partner for the UAE's oil and gas sector, we deliver exceptional services to staff vital roles. Our specialized division is dedicated to connecting leading energy companies with top-tier talent across the industry's diverse landscape.",
-      imgUrl: "/services/energy&resources.jpg",
+      imgUrl: "/services/energy&resources.webp",
     },
     {
       title: "Financial Services",
       description:
         "Entrust your hiring requirements to our expert recruitment specialists in the financial and banking industries. Our dedicated teams are committed to assisting businesses in securing highly qualified candidates for their permanent positions within the banking and finance sectors.",
-      imgUrl: "/services/financial-services.jpg",
+      imgUrl: "/services/financial-services.webp",
     },
     {
       title: "Technology & Engineering",
       description:
         "Dimondra provides unparalleled workforce consultancy for all your technology-related hiring needs. Sourcing top-tier network engineers, system architects, programmers, analysts, and other essential professionals is paramount for success in this dynamic field.",
-      imgUrl: "/services/Technology.jpg",
+      imgUrl: "/services/Technology.webp",
     },
     {
       title: "Healthcare",
       description:
         "As a leading healthcare recruitment firm, we specialize in identifying skilled physicians, nurses, and other medical professionals who perfectly align with your requirements. Our expertise lies in delivering specialized healthcare consulting and staffing solutions.",
-      imgUrl: "/services/healthcare.jpg",
+      imgUrl: "/services/healthcare.webp",
     },
     {
       title: "Audit & Finance",
       description:
         "As a top-tier accounting and finance recruitment agency, we are equipped to address all your staffing demands. We meticulously manage all hiring documentation and facilitate seamless, direct screenings with your most promising finance and accounting candidates.",
-      imgUrl: "/services/audit.jpg",
+      imgUrl: "/services/audit.webp",
     },
     {
       title: "Sales & Business Development",
       description:
         "We are committed to providing you with an outstanding staffing experience, from sourcing CVs for sales and marketing roles to filling executive positions in Dubai. Our extensive experience and professionalism in this area are consistently demonstrated through our results.",
-      imgUrl: "/services/business-development.jpg",
+      imgUrl: "/services/business-development.webp",
     },
   ];
 
@@ -123,28 +123,28 @@ const Page = () => {
       title: "Understand Your Vision",
       description:
         "We begin by thoroughly understanding your company's culture, strategic goals, and the specific requirements of the role. Through in-depth consultations, we gain insights into the ideal candidate profile.",
-      imgUrl: "/services/vision.jpg",
+      imgUrl: "/services/vision.webp",
     },
     {
       step: "Step 2",
       title: "Precision Talent Sourcing",
       description:
         "Our rigorous sourcing methods ensure we present you with a curated selection of candidates who not only meet but exceed your expectations.",
-      imgUrl: "/services/talentOutsource.jpg",
+      imgUrl: "/services/talentOutsource.webp",
     },
     {
       step: "Step 3",
       title: "Rigorous Vetting & Assessment",
       description:
         "Every candidate undergoes a comprehensive vetting process, including detailed interviews, skill assessments, and thorough background checks. We present you with a highly qualified and pre-screened individual.",
-      imgUrl: "/services/assesment.jpg",
+      imgUrl: "/services/assesment.webp",
     },
     {
       step: "Step 4",
       title: "Quick Integration & Support",
       description:
         "Our commitment extends beyond placement. We facilitate smooth onboarding and provide ongoing support to ensure the successful integration of your new hire. Dimondra remains your dedicated partner.",
-      imgUrl: "/services/support.jpg",
+      imgUrl: "/services/support.webp",
     },
   ];
   const services = [
@@ -222,7 +222,7 @@ const Page = () => {
         <BgLayer color={"bg-black/50 z-[5] "} />
         <img
           className="absolute inset-0 object-top w-full h-full object-cover"
-          src={"/services/talentHero.jpg"}
+          src={"/services/talentHero.webp"}
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">
@@ -251,7 +251,7 @@ const Page = () => {
         }
         data={recruitmentServices}
       />
-       
+
       <Process
         data={recruitmentSteps}
         heading={"Our Work Process at Dimondra Talent Solutions"}

@@ -83,12 +83,12 @@ const Page = () => {
           </div>
           <div>
             <img
-              src="/services/business-development.jpg"
+              src="/services/business-development.webp"
               alt=""
               className="rounded-lg"
               style={{
-                WebkitMaskImage: "url('/mask.png')",
-                maskImage: "url('/mask.png')",
+                WebkitMaskImage: "url('/mask.webp')",
+                maskImage: "url('/mask.webp')",
                 WebkitMaskSize: "100% 100%",
                 maskSize: "100% 100%",
                 WebkitMaskRepeat: "no-repeat",
@@ -130,7 +130,7 @@ const Page = () => {
         </div>
         <div className="order-2 lg:order-1 h-[320px] lg:h-[520px] overflow-hidden rounded-lg">
           <img
-            src={"/services/consultation.jpg"}
+            src={"/services/consultation.webp"}
             alt={""}
             className="w-full h-full object-cover"
           />
@@ -187,7 +187,7 @@ const Page = () => {
           </div>
           <div className="order-1 lg:order-2 h-[320px] lg:h-[520px] overflow-hidden rounded-lg">
             <img
-              src={"/services/consultation2.jpg"}
+              src={"/services/consultation2.webp"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -229,7 +229,7 @@ const Page = () => {
           </div>
           <div className=" h-[320px] lg:h-[680px] overflow-hidden rounded-lg">
             <img
-              src={"/services/facilityhero.jpg"}
+              src={"/services/facilityhero.webp"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -262,7 +262,7 @@ const Page = () => {
           </div>
           <div className="order-1 lg:order-2 h-[320px] lg:h-[550px] overflow-hidden rounded-lg">
             <img
-              src={"/services/processManangement.jpg"}
+              src={"/services/processManangement.webp"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -295,7 +295,7 @@ const Page = () => {
           </div>
           <div className=" h-[320px] lg:h-[550px] overflow-hidden rounded-lg">
             <img
-              src={"/services/why.jpg"}
+              src={"/services/why.webp"}
               alt={""}
               className="w-full h-full object-cover"
             />
@@ -305,7 +305,7 @@ const Page = () => {
         <div className="grid grid-cols-1 pb-[140px] lg:grid-cols-2 mt-[140px] place-items-center gap-12 container text-slate-50">
           <div className="order-2 lg:order-1 h-[320px] lg:h-[550px] rounded-lg">
             <img
-              src={"/services/compliant.jpg"}
+              src={"/services/compliant.webp"}
               alt={""}
               className="w-full object-cover h-[320px] lg:h-[550px] rounded-lg"
             />
@@ -356,7 +356,7 @@ const Page = () => {
           </p>
         </div>
         <img
-          src={"/services/career.jpg"}
+          src={"/services/career.webp"}
           alt={""}
           className="h-[320px] lg:h-[500px] "
         />
@@ -365,7 +365,7 @@ const Page = () => {
       <section className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-8 py-14 container mt-8">
         <div className="h-[320px] order-2 lg:order-1 lg:h-[640px]">
           <img
-            src={"/services/career-role.jpg"}
+            src={"/services/career-role.webp"}
             alt={""}
             className=" w-full h-full object-cover object-right"
           />
@@ -416,7 +416,7 @@ const Page = () => {
 
       <section className="container grid place-items-center grid-cols-1 mt-16 lg:grid-cols-2 gap-8 pb-24">
         <img
-          src={"/services/advisory.jpg"}
+          src={"/services/advisory.webp"}
           alt={""}
           className="h-[320px] lg:h-[450px]  object-cover"
         />
