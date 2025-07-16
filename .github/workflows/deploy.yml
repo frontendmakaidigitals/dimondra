@@ -6,73 +6,12 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    env:
-      # Firebase Admin SDK
-      GOOGLE_TYPE: ${{ secrets.GOOGLE_TYPE }}
-      GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-      GOOGLE_PRIVATE_KEY_ID: ${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
-      GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-      GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_AUTH_URI: ${{ secrets.GOOGLE_AUTH_URI }}
-      GOOGLE_TOKEN_URI: ${{ secrets.GOOGLE_TOKEN_URI }}
-      GOOGLE_AUTH_PROVIDER_CERT_URL: ${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}
-      GOOGLE_CLIENT_CERT_URL: ${{ secrets.GOOGLE_CLIENT_CERT_URL }}
-      GOOGLE_UNIVERSE_DOMAIN: ${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}
-
-      # Stripe
-      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-      STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
-      NEXT_PUBLIC_STRIPE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}
-
-      # SMTP
-      SMTP_USER: ${{ secrets.SMTP_USER }}
-      SMTP_PASS: ${{ secrets.SMTP_PASS }}
-      SMTP_HOST: ${{ secrets.SMTP_HOST }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
-      SMTP_TO: ${{ secrets.SMTP_TO }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Next.js app
-        env:
-          GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-          # Add all necessary envs here...
-        run: npm run build
-      - name: Create .env.local file
-        run: |
-          echo "GOOGLE_TYPE=${{ secrets.GOOGLE_TYPE }}" >> .env.local
-          echo "GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }}" >> .env.local
-          echo "GOOGLE_PRIVATE_KEY_ID=${{ secrets.GOOGLE_PRIVATE_KEY_ID }}" >> .env.local
-          echo "GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}" >> .env.local
-          echo "GOOGLE_CLIENT_EMAIL=${{ secrets.GOOGLE_CLIENT_EMAIL }}" >> .env.local
-          echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env.local
-          echo "GOOGLE_AUTH_URI=${{ secrets.GOOGLE_AUTH_URI }}" >> .env.local
-          echo "GOOGLE_TOKEN_URI=${{ secrets.GOOGLE_TOKEN_URI }}" >> .env.local
-          echo "GOOGLE_AUTH_PROVIDER_CERT_URL=${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}" >> .env.local
-          echo "GOOGLE_CLIENT_CERT_URL=${{ secrets.GOOGLE_CLIENT_CERT_URL }}" >> .env.local
-          echo "GOOGLE_UNIVERSE_DOMAIN=${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}" >> .env.local
-          echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}" >> .env.local
-          echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}" >> .env.local
-          echo "STRIPE_WEBHOOK_SECRET=${{ secrets.STRIPE_WEBHOOK_SECRET }}" >> .env.local
-          echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env.local
-          echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> .env.local
-          echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> .env.local
-          echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env.local
-          echo "SMTP_TO=${{ secrets.SMTP_TO }}" >> .env.local
 
       - name: Setup SSH key
         run: |
@@ -81,7 +20,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 22 ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy built project via rsync
+      - name: Rsync source code to VPS
         run: |
           rsync -avz --delete \
             --exclude='.git' \
@@ -89,12 +28,39 @@ jobs:
             -e "ssh -i ~/.ssh/id_rsa" \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }}:/root/Dimondra/
 
-      - name: Start or restart app with PM2
+      - name: SSH and build/start on VPS
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} "
-            cd /root/Dimondra &&
-            npm i sharp &&
-            pm2 delete nextjs-app || true &&
-            PORT=3000 pm2 start npm --name nextjs-app -- start &&
+          ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd /root/Dimondra
+
+            # Set environment variables in .env.local
+            cat > .env.local <<EOL
+            GOOGLE_TYPE=${{ secrets.GOOGLE_TYPE }}
+            GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }}
+            GOOGLE_PRIVATE_KEY_ID=${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
+            GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}
+            GOOGLE_CLIENT_EMAIL=${{ secrets.GOOGLE_CLIENT_EMAIL }}
+            GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+            GOOGLE_AUTH_URI=${{ secrets.GOOGLE_AUTH_URI }}
+            GOOGLE_TOKEN_URI=${{ secrets.GOOGLE_TOKEN_URI }}
+            GOOGLE_AUTH_PROVIDER_CERT_URL=${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}
+            GOOGLE_CLIENT_CERT_URL=${{ secrets.GOOGLE_CLIENT_CERT_URL }}
+            GOOGLE_UNIVERSE_DOMAIN=${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}
+            STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}
+            STRIPE_WEBHOOK_SECRET=${{ secrets.STRIPE_WEBHOOK_SECRET }}
+            NEXT_PUBLIC_STRIPE_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}
+            SMTP_USER=${{ secrets.SMTP_USER }}
+            SMTP_PASS=${{ secrets.SMTP_PASS }}
+            SMTP_HOST=${{ secrets.SMTP_HOST }}
+            SMTP_PORT=${{ secrets.SMTP_PORT }}
+            SMTP_TO=${{ secrets.SMTP_TO }}
+            EOL
+
+            # Build and start
+            npm ci --omit=dev
+            npm run build
+            npm i sharp
+            pm2 delete nextjs-app || true
+            PORT=3000 pm2 start npm --name nextjs-app -- start
             pm2 save
-          "
+          EOF
