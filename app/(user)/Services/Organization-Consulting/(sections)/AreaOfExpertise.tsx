@@ -35,9 +35,10 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
   data,
 }) => {
   return (
-    <section className="relative py-28 bg-gradient-to-br from-[#0f172a] via-[#0f172a] to-[#1e293b] overflow-hidden">
+    <section className="relative py-28 bg-dimondra-black overflow-hidden">
       {/* Decorative Background Gradient Circles */}
-      <div className="absolute top-[-100px] left-[20%] w-[400px] h-[400px] bg-gradient-to-tr from-teal-500/30 to-indigo-500/20 blur-[120px] rounded-full z-0" />
+      <div className="absolute top-[-100px] left-[20%] w-[400px] h-[400px] bg-gradient-to-tr from-teal-500/20 to-indigo-500/10 blur-[120px] rounded-full z-0" />
+      <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-emerald-500/5 to-emerald-500/5 blur-[100px] rounded-full z-0" />
       <div className="absolute bottom-[-120px] right-[10%] w-[300px] h-[300px] bg-gradient-to-tr from-emerald-500/30 to-emerald-500/20 blur-[100px] rounded-full z-0" />
 
       <div className="container relative z-10">
@@ -73,10 +74,10 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
               whileHover={{ scale: 1.03, rotateX: 1.5, rotateY: 1.5 }}
               className={cn(
                 `relative z-10 bg-white/10 hover:bg-white/20 transition-colors duration-300
-                 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-lg group`
+                 backdrop-blur-lg rounded-2xl border border-white/10 p-6 shadow-lg group`
               )}
             >
-              <div className="bg-teal-600 w-fit p-3 rounded-xl shadow-md">
+              <div className="bg-teal-700 w-fit p-3 rounded-xl shadow-md">
                 <Icon className="w-10 h-10 stroke-white" />
               </div>
 

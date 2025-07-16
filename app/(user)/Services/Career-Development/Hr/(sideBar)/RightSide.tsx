@@ -4,7 +4,7 @@ import React from "react";
 
 const RightSide = () => {
   return (
-    <aside className="bg-teal-700 w-full lg:sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
+    <aside className="bg-teal-800 w-full lg:sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
       <nav className="text-dimondra-white text-sm ">
         <h1 className="text-xl font-dmSans font-[700] tracking-tight">
           HRCI Certification Preparation Course Package

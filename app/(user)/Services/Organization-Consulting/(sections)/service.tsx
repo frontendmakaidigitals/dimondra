@@ -57,12 +57,14 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
                   {item.arr.map((item, index) => (
                     <CarouselItem key={index} className="pl-1 lg:basis-1/3 ">
                       <div className="p-1 h-full">
-                        <Card className="h-full flex flex-col">
+                        <Card className="h-full flex flex-col bg-teal-700">
                           <CardContent className="p-6 flex flex-col h-full">
-                            <h2 className="text-3xl font-[500] font-dmSans">
+                            <h2 className="text-3xl font-[500] font-dmSans text-dimondra-white">
                               {item.title}
                             </h2>
-                            <p className="mt-2">{item.desc}</p>
+                            <p className="mt-2 text-dimondra-white">
+                              {item.desc}
+                            </p>
                             {/* This pushes content up and ensures flex fill */}
                             <div className="flex-grow" />
                           </CardContent>

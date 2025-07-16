@@ -31,7 +31,7 @@ const Footer = () => {
     };
   }, []);
   return (
-    <footer className="text-dimondra-white overflow-hidden bg-gradient-to-tr to-gray-500 from-dimondra-black  relative">
+    <footer className="text-dimondra-white overflow-hidden bg-dimondra-black  relative">
       <div className="absolute inset-0 w-full h-full">
         <img
           src={"/topography.svg"}
@@ -84,6 +84,14 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
+                    href="/Services/HR-Services/Staffing-Solution"
+                    className="hover:underline"
+                  >
+                    Staffing Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/Services/Hr-Outsourcing/Hr-Operations"
                     className="hover:underline"
                   >
@@ -92,18 +100,19 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/Services/Business-Service/It-Support"
+                    href="/Services/HR-Services/Virtual-Admin-Support"
                     className="hover:underline"
                   >
-                    IT Support
+                    Virtual Admin Support
                   </Link>
                 </li>
+
                 <li>
                   <Link
-                    href="/Services/Business-Service/Facility-Management"
+                    href="/Services/Organization-Consulting/Talent-Management"
                     className="hover:underline"
                   >
-                    Facility Management
+                    Talent Management
                   </Link>
                 </li>
                 <li>
@@ -112,14 +121,6 @@ const Footer = () => {
                     className="hover:underline"
                   >
                     Career Advisory
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/Services/Business-Service/Digital-Marketing"
-                    className="hover:underline"
-                  >
-                    Digital Services
                   </Link>
                 </li>
               </ul>

@@ -25,7 +25,7 @@ const Sidebar = () => {
               <li>
                 <Link href={link.link} className="!w-full !h-full">
                   <button
-                    className={`p-2  text-start rounded-lg w-full ${path == link.link ? "bg-dimondra-tealDark text-slate-50" : " hover:bg-dimondra-teal/40"}`}
+                    className={`p-2  text-start rounded-lg w-full ${path == link.link ? "bg-teal-700 text-slate-50" : " hover:bg-teal-600 hover:text-dimondra-white"}`}
                   >
                     {link.title}
                   </button>
