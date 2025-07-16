@@ -14,7 +14,7 @@ const CTA = ({
     <div className=" relative max-w-6xl mx-auto gap-9 mb-20 mt-10 flex flex-col-reverse  overflow-hidden lg:flex-row-reverse items-center  justify-between border border-slate-200 rounded-2xl">
       <img
         src={
-          "https://img.freepik.com/free-vector/blurred-turquoise-background-design_1107-187.webp?semt=ais_hybrid&w=740"
+          "/ctaBG.webp"
         }
         alt={"cta"}
         className="w-full h-full object-cover absolute inset-0 opacity-[.5]"
