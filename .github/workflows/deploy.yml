@@ -87,11 +87,11 @@ jobs:
             --exclude='.git' \
             --exclude='node_modules' \
             -e "ssh -i ~/.ssh/id_rsa" \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/Dimondra/
+            ./ ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }}:/root/Dimondra/
 
       - name: Start or restart app with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+          ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} "
             cd /root/Dimondra &&
             npm i sharp &&
             pm2 delete nextjs-app || true &&
