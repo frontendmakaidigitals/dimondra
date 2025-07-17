@@ -99,12 +99,7 @@ const Sector = () => {
   const sectorRef = useRef<HTMLDivElement>(null);
   const inView = useElementInViewport(sectorRef, "center", true);
   return (
-    <div className="py-20 relative">
-      <img
-        src={"/sector.svg"}
-        alt={"sector bg"}
-        className="w-full absolute inset-0 h-full object-cover"
-      />
+    <div className="py-20 relative bg-teal-800">
       <div className="container  relative mx-auto px-4">
         <div className="max-w-2xl sectorTrigger">
           {" "}
@@ -122,7 +117,7 @@ const Sector = () => {
         </div>
         <div
           ref={sectorRef}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-14"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-20"
         >
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
