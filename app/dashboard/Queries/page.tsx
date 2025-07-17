@@ -19,6 +19,7 @@ export interface contacts {
   message: string;
   createdAt: Timestamp;
   name: string;
+  subject: string;
 }
 
 const Page = () => {
@@ -37,6 +38,7 @@ const Page = () => {
             message: Data.message,
             createdAt: Data.createdAt,
             name: Data.name,
+            subject: Data.subject,
             ...Data,
           };
         });
@@ -48,7 +50,7 @@ const Page = () => {
 
     fetchContact();
   }, []);
-  console.log(contact)
+  console.log(contact);
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-6">All Queries</h1>
@@ -59,6 +61,7 @@ const Page = () => {
           <TableColumn>Contact</TableColumn>
           <TableColumn>Country</TableColumn>
           <TableColumn>Email</TableColumn>
+          <TableColumn>Subject</TableColumn>
         </TableHeader>
         <TableBody>
           {contact.map((query: contacts) => (
@@ -70,6 +73,7 @@ const Page = () => {
               <TableCell>{query.contact}</TableCell>
               <TableCell>{query.countryCode}</TableCell>
               <TableCell>{query.email}</TableCell>
+              <TableCell>{query.subject}</TableCell>
             </TableRow>
           ))}
         </TableBody>
