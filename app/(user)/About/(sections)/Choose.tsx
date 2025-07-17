@@ -114,7 +114,9 @@ const Choose = () => {
                         <Icon className="size-[24px] p-1 text-teal-950 mt-[1px]" />
                       </div>
                     </div>
-                    <span className="text-dimondra-white font-quicksand font-[500]">{item.label}</span>
+                    <span className="text-dimondra-white font-quicksand font-[500]">
+                      {item.label}
+                    </span>
                   </li>
                 );
               })}
@@ -125,7 +127,7 @@ const Choose = () => {
           <BgLayer color={"bg-lime-300/30 blur-[12rem]"} />
           <div className=" absolute h-[350px] lg:h-[500px] top-5 left-0 w-[240px] lg:w-[280px] overflow-hidden rounded-[50px] lg:rounded-[90px]">
             <img
-              src="https://images.unsplash.com/photo-1627397159237-d2acb7f500af?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // replace with your local asset or URL
+              src="/services/email.webp"
               alt="Team High Five"
               className="w-full h-full object-cover"
             />
@@ -133,7 +135,7 @@ const Choose = () => {
 
           <div className="absolute h-[400px] lg:h-[500px] top-28 right-0 w-[240px] lg:w-[280px] overflow-hidden rounded-[50px] lg:rounded-[90px] grayscale">
             <img
-              src="https://images.unsplash.com/photo-1470608756445-2c9906b0680f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // replace with your local asset or URL
+              src="/services/talentHero.webp" // replace with your local asset or URL
               alt="Designer Portrait"
               className="w-full h-full object-cover"
             />
