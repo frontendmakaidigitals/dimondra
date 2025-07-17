@@ -135,17 +135,17 @@ export const siteConfig = {
     {
       label: "Locations",
       locations: [
-        { label: " KSA", link: "/Locations/KSA", img: "/locations/ksa.jpg" },
-        { label: "UAE", link: "/Locations/UAE", img: "/locations/uae.jpg" },
+        { label: " KSA", link: "/Locations/KSA", img: "/locations/ksa.webp" },
+        { label: "UAE", link: "/Locations/UAE", img: "/locations/uae.webp" },
         {
           label: " India",
           link: "/Locations/India",
-          img: "/locations/red-fort.jpg",
+          img: "/locations/red-fort.webp",
         },
         {
           label: " Egypt",
           link: "/Locations/Egypt",
-          img: "/locations/egypt.jpg",
+          img: "/locations/egypt.webp",
         },
       ],
     },
