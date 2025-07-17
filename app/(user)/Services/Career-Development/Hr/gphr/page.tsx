@@ -116,14 +116,17 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    Exam Length: 100 score questions (mostly multiple-choice) +
-                    (including 25 pretest questions)
+                    <strong>Exam Length:</strong> 100 score questions (mostly
+                    multiple-choice) + (including 25 pretest questions)
                   </li>
                   <li>
-                    Duration: 2 hours adn 15 minutes (plus 30 minutes
-                    administration time){" "}
+                    <strong>Duration:</strong> 2 hours adn 15 minutes (plus 30
+                    minutes administration time){" "}
                   </li>
-                  <li>Delivery: Online or at certified global test centers</li>
+                  <li>
+                    <strong>Delivery:</strong> Online or at certified global
+                    test centers
+                  </li>
                 </ul>
               </li>
               <li className="space-y-2">
@@ -131,11 +134,8 @@ const Page = () => {
                   How Much Does the GPHR™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD{" "}
-                  <span className="line-through  text-red-500 border-red-400">
-                    $500
-                  </span>{" "}
-                  <span>$400</span> &nbsp;
+                  <strong>Total Cost:</strong> USD Exam Fee*: $400 + Application
+                  Fee: $100
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -175,7 +175,17 @@ const Page = () => {
               </li>
             </ul>
           </div>
-          <RightSide />
+          <RightSide
+            Price={
+              <>
+                <span className="line-through  text-red-500 border-red-400">
+                  $500
+                </span>
+                &nbsp; &nbsp;
+                <span className="text-slate-950">$400</span>
+              </>
+            }
+          />
         </div>
       </section>
       <HomeForm />

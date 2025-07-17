@@ -112,16 +112,20 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4 space-y-1">
                   <li>
-                    Exam Length: 15 scored questions (multiple-choice questions)
-                    + 25 pretest questions
+                    <strong>Exam Length:</strong> 115 scored questions
+                    (multiple-choice questions) + 25 pretest questions
                   </li>
                   <li>
-                    Duration: 2 hours and 45 minutes (plus 30 minutes
-                    administration time)
+                    <strong>Duration:</strong> 2 hours and 45 minutes (plus 30
+                    minutes administration time)
                   </li>
-                  <li>Delivery: Online or at approved test centers globally</li>
                   <li>
-                    Language: English (with Spanish translation aid available)
+                    <strong>Delivery:</strong> Online or at approved test
+                    centers globally
+                  </li>
+                  <li>
+                    <strong>Language:</strong> English (with Spanish translation
+                    aid available)
                   </li>
                 </ul>
               </li>
@@ -130,14 +134,12 @@ const Page = () => {
                   How Much Does the SPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD{" "}
-                  <span className="line-through  text-red-500 border-red-400">
-                    $500
-                  </span>{" "}
-                  <span>$400</span> &nbsp;
+                  <strong>Total Cost:</strong> USD <strong>Total Cost:</strong>{" "}
+                  USD Exam Fee*: $400 + Application Fee: $100
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
+                  
                 </p>
                 <p className="text-sm font-quicksand">
                   **Note: Once your exam application is approved, fees are
@@ -173,7 +175,17 @@ const Page = () => {
               </li>
             </ul>
           </div>
-          <RightSide />
+          <RightSide
+            Price={
+              <>
+                <span className="line-through  text-red-500 border-red-400">
+                  $500
+                </span>
+                &nbsp; &nbsp;
+                <span className="text-slate-950">$400</span>
+              </>
+            }
+          />
         </div>
       </section>
       <HomeForm />

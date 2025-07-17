@@ -60,7 +60,7 @@ const Page = () => {
   }, []);
   return (
     <div className="pb-24">
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <Carousel
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}

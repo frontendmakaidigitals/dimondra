@@ -117,11 +117,8 @@ const Page = () => {
                   How Much Does the aPHRi™ Cost?
                 </h2>
                 <p>
-                  <strong>Total Cost:</strong> USD{" "}
-                  <span className="text-red-500 line-through border-red-400">
-                    400$
-                  </span>{" "}
-                  <span>300$</span> &nbsp;
+                  <strong>Total Cost:</strong> USD Exam Fee*: $300 + Application
+                  Fee: $100
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
@@ -143,7 +140,17 @@ const Page = () => {
               </li>
             </ul>
           </div>
-          <RightSide />
+          <RightSide
+            Price={
+              <>
+                <span className="line-through  text-red-500 border-red-400">
+                  $400
+                </span>
+                &nbsp; &nbsp;
+                <span className="text-slate-950">$300</span>
+              </>
+            }
+          />
         </div>
       </section>
       <HomeForm />

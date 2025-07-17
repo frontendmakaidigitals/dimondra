@@ -1,8 +1,15 @@
 "use client";
-import { Check, Book, LibraryBig, Brain, Train } from "lucide-react";
+import {
+  Check,
+  Book,
+  LibraryBig,
+  Brain,
+  Train,
+  DollarSign,
+} from "lucide-react";
 import React from "react";
 
-const RightSide = () => {
+const RightSide = ({ Price }: { Price: React.ReactNode }) => {
   return (
     <aside className="bg-teal-800 w-full lg:sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
       <nav className="text-dimondra-white text-sm ">
@@ -75,11 +82,16 @@ const RightSide = () => {
               </div>
               Case-Based Discussions & Practice Scenarios
             </li>
-            <li className="flex items-start gap-2">
-              <div>
-                <Train className="size-[16px] mt-[2px]" />
-              </div>
-              Exam Strategy Tips and Guidance
+
+            <li className="flex items-center gap-2">
+              <p className="flex justify-between items-center w-full bg-slate-100 px-3 py-2 rounded">
+                <span className="whitespace-nowrap flex items-center gap-2 text-slate-950">
+                  <DollarSign className="size-[16px] " /> Package Price
+                </span>
+                <span className="flex items-center justify-end border-l border-slate-500 pl-4">
+                  {Price}
+                </span>
+              </p>
             </li>
           </ul>
         </div>
