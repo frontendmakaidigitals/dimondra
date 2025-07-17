@@ -49,12 +49,14 @@ const HomeForm = () => {
     email: "",
     phone: { country: "", contact: "" },
     message: "",
+    subject: "",
   });
   interface formData {
     name: string;
     email: string;
     phone: { country: string; contact: string };
     message: string;
+    subject: string;
   }
   const [phoneError, setPhoneError] = useState(false);
 
@@ -71,6 +73,7 @@ const HomeForm = () => {
     data.append("countryCode", formData.phone.country);
     data.append("contact", formData.phone.contact);
     data.append("message", formData.message);
+    data.append("subject", formData.subject);
 
     try {
       const db = getFirestore();
@@ -95,6 +98,7 @@ const HomeForm = () => {
         countryCode: formData.phone.country,
         contact: formData.phone.contact,
         message: formData.message,
+        subject: formData.subject,
         createdAt: new Date(),
       });
 
@@ -104,6 +108,7 @@ const HomeForm = () => {
         email: "",
         phone: { country: "", contact: "" },
         message: "",
+        subject: "",
       });
       addToast({ title: "Form Sucessfully submitted", color: "success" });
     } catch (err) {
@@ -234,6 +239,26 @@ const HomeForm = () => {
                   ) : (
                     ""
                   )}
+                </label>
+              </div>
+              <div className="">
+                <label className="text-dimondra-white font-rubik font-[500] text-lg">
+                  Subject{" "}
+                  <Input
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
+                    value={formData.subject}
+                    classNames={{
+                      inputWrapper: ["bg-dimondra-white"],
+                      input: ["py-2"],
+                    }}
+                    isRequired
+                    className="w-full mt-[.4rem]"
+                    placeholder="Enter your subject"
+                    name="subject"
+                    size={"lg"}
+                  />
                 </label>
               </div>
               <div className="">

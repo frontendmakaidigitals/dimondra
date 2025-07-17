@@ -215,12 +215,14 @@ const Form = () => {
     email: "",
     phone: { country: "", contact: "" },
     message: "",
+    subject: "",
   });
   interface formData {
     name: string;
     email: string;
     phone: { country: string; contact: string };
     message: string;
+    subject: string;
   }
   const [phoneError, setPhoneError] = useState(false);
 
@@ -238,6 +240,7 @@ const Form = () => {
     data.append("countryCode", formData.phone.country);
     data.append("contact", formData.phone.contact);
     data.append("message", formData.message);
+    data.append("subject", formData.subject);
 
     try {
       const db = getFirestore();
@@ -249,6 +252,7 @@ const Form = () => {
         countryCode: formData.phone.country,
         contact: formData.phone.contact,
         message: formData.message,
+        subject: formData.subject,
         createdAt: new Date(),
       });
       const resp = await fetch("/api/email", {
@@ -260,6 +264,7 @@ const Form = () => {
           contact: formData.phone.contact,
           createdAt: new Date(),
           countryCode: formData.phone.country,
+          subject: formData.subject,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -386,6 +391,28 @@ const Form = () => {
             placeholder="junior@heroui.com"
             type="email"
             name="email"
+            size={"lg"}
+          />
+        </label>
+      </div>
+      <div className="w-full col-span-2">
+        <label className="text-dimondra-black font-[500]">
+          Subject{" "}
+          <Input
+            onChange={(e) =>
+              setFormData({ ...formData, subject: e.target.value })
+            }
+            value={formData.subject}
+            classNames={{
+              inputWrapper: [
+                " border bg-dimondra-teal/5 border-dimondra-gray/30",
+              ],
+              input: ["py-2"],
+            }}
+            isRequired
+            className="w-full mt-[.4rem]"
+            placeholder="Enter your subject"
+            name="subject"
             size={"lg"}
           />
         </label>

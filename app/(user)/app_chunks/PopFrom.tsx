@@ -24,12 +24,14 @@ const PopForm = ({
     email: "",
     phone: { country: "", contact: "" },
     message: "",
+    subject: "",
   });
   interface formData {
     name: string;
     email: string;
     phone: { country: string; contact: string };
     message: string;
+    subject: string;
   }
   const [phoneError, setPhoneError] = useState(false);
 
@@ -46,6 +48,7 @@ const PopForm = ({
     data.append("countryCode", formData.phone.country);
     data.append("contact", formData.phone.contact);
     data.append("message", formData.message);
+    data.append("subject", formData.subject);
 
     try {
       const db = getFirestore();
@@ -57,6 +60,7 @@ const PopForm = ({
         countryCode: formData.phone.country,
         contact: formData.phone.contact,
         message: formData.message,
+        subject: formData.subject,
         createdAt: new Date(),
       });
       const resp = await fetch("/api/email", {
@@ -66,6 +70,7 @@ const PopForm = ({
           email: formData.email,
           message: formData.message,
           contact: formData.phone.contact,
+          subject: formData.subject,
           createdAt: new Date(),
           countryCode: formData.phone.country,
         }),
@@ -226,6 +231,26 @@ const PopForm = ({
                       ) : (
                         ""
                       )}
+                    </label>
+                  </div>
+                  <div className="mt-5">
+                    <label className="text-dimondra-black font-[500]">
+                      Subject{" "}
+                      <Input
+                        onChange={(e) =>
+                          setFormData({ ...formData, subject: e.target.value })
+                        }
+                        value={formData.subject}
+                        classNames={{
+                          inputWrapper: ["bg-slate-100"],
+                          input: ["py-2"],
+                        }}
+                        isRequired
+                        className="w-full mt-[.4rem]"
+                        placeholder="Enter your subject"
+                        name="subject"
+                        size={"lg"}
+                      />
                     </label>
                   </div>
                   <div className="mt-5">
