@@ -21,7 +21,7 @@ const About = () => {
   });
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-[#00695C] pt-[55rem] lg:pt-52 pb-12">
+    <div className="bg-teal-800 pt-[55rem] lg:pt-52 pb-12">
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="container grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-12 ">
         <div
