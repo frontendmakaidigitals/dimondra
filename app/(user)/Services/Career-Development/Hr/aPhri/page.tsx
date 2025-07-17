@@ -99,15 +99,16 @@ const Page = () => {
                 </h2>
                 <ul className="list-disc ml-4">
                   <li>
-                    Exam Length: 65 scored questions + 25 pretest questions
+                    <strong>Exam Length:</strong> 65 scored questions + 25
+                    pretest questions
                   </li>
                   <li>
-                    Duration: 1 hours and 45 minutes (plus 30 minutes
-                    administration time)
+                    <strong>Duration:</strong> 1 hours and 45 minutes (plus 30
+                    minutes administration time)
                   </li>
                   <li>
-                    Delivery: Computer-based test at Pearson VUE centers or
-                    online.
+                    <strong>Delivery:</strong> Computer-based test at Pearson
+                    VUE centers or online.
                   </li>
                 </ul>
               </li>
@@ -118,9 +119,9 @@ const Page = () => {
                 <p>
                   <strong>Total Cost:</strong> USD{" "}
                   <span className="text-red-500 line-through border-red-400">
-                    300$
+                    400$
                   </span>{" "}
-                  <span>400$</span> &nbsp;
+                  <span>300$</span> &nbsp;
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
