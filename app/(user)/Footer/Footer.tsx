@@ -78,7 +78,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex lg:flex-row flex-col items-start gap-12">
+          <div className="flex lg:flex-row flex-col w-full items-start  gap-12">
             <div>
               <h4 className="text-lg font-semibold mb-4">Most Visits</h4>
               <ul className="space-y-2">

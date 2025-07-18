@@ -24,14 +24,13 @@ const Page = () => {
   return (
     <main>
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
+        <BgLayer />
         <motion.img
           style={{ y: yTransform }}
           src="https://images.unsplash.com/photo-1698047681452-08eba22d0c64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           className="w-full h-full object-cover object-top absolute inset-0 z-0"
         />
-
-        <BgLayer />
 
         {/* Foreground Text Content */}
         <div className="relative flex flex-col justify-end py-20 h-full z-10 container">
