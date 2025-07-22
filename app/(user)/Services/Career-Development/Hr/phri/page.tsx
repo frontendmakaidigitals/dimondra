@@ -61,7 +61,7 @@ const Page = () => {
             <h1 className="text-4xl font-dmSans max-w-3xl text-dimondra-black font-[600]">
               PHRi (Professional in Human Resources – International)
             </h1>
-            <img src={"/PHRI.webp"} alt={""} className="py-12" />
+            <img src={"/phri.png"} alt={""} className="py-12" />
             <ul className="space-y-7">
               <li className="space-y-2">
                 <h2 className="text-xl font-rubik font-[600]">
