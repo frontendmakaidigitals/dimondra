@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import BgLayer from "../../app_chunks/BgLayer";
+import { motion, AnimatePresence } from "motion/react";
 interface processProps {
   title: string;
   description: string;
@@ -22,6 +23,23 @@ const Process = ({
   heading: string;
   subHeading: string;
 }) => {
+
+  const childVariants = {
+    initial: {
+      height: 0,
+      opacity: 0,
+    },
+    hover: {
+      height: "auto",
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.19, 1, 0.22, 1] as [number, number, number, number],
+      },
+    },
+  };
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+
   return (
     <div className="my-28">
       <div className="container blogTrigger">
@@ -46,7 +64,11 @@ const Process = ({
                   key={index}
                   className="md:basis-1/2 pb-6 lg:basis-1/4"
                 >
-                  <div className="p-1 w-full relative">
+                  <motion.div
+                    onHoverStart={() => setHoveredIndex(index)}
+                    onHoverEnd={() => setHoveredIndex(null)}
+                    className="p-1 w-full relative"
+                  >
                     <Card className="w-full">
                       <CardContent className="w-full h-[350px] overflow-hidden !px-0 !py-0 flex flex-col justify-between relative">
                         <img
@@ -58,19 +80,28 @@ const Process = ({
                         <p className="text-5xl font-[600] relative z-10 text-white/80 p-3">
                           0{index + 1}
                         </p>
-                        <div className="relative z-10 bg-gradient-to-t from-slate-950/80 via-slate-800/80 to-transparent p-3">
-                          <div className="mt-3 ">
-                            <h3 className=" font-semibold text-dimondra-white font-rubik text-xl">
-                              {process.title}
-                            </h3>
-                            <p className="text-sm mt-2 font-quicksand text-dimondra-white font-[500]">
-                              {process.description}
-                            </p>
-                          </div>
-                        </div>
+                        <AnimatePresence>
+                          <motion.div className="relative z-10 bg-gradient-to-t from-slate-950/80 via-slate-800/80 to-transparent p-3">
+                            <motion.div className="mt-3 ">
+                              <motion.h3 className=" font-semibold text-dimondra-white font-rubik text-xl">
+                                {process.title}
+                              </motion.h3>
+                              <motion.p
+                                variants={childVariants}
+                                initial="initial"
+                                animate={
+                                  hoveredIndex === index ? "hover" : "initial"
+                                }
+                                className="text-sm mt-2 font-quicksand text-dimondra-white font-[500]"
+                              >
+                                {process.description}
+                              </motion.p>
+                            </motion.div>
+                          </motion.div>
+                        </AnimatePresence>
                       </CardContent>
                     </Card>
-                  </div>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>

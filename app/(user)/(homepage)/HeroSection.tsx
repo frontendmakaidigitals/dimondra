@@ -81,7 +81,7 @@ const HeroSection = () => {
           initial={{ filter: "blur(5px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
           transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.7 }}
-          className="text-dimondra-dark max-w-3xl text-center text-xs lg:text-sm px-3 py-2  rounded-lg font-medium mt-5 bg-slate-50"
+          className="text-dimondra-white max-w-3xl text-center text-xs lg:text-sm px-3 py-2  rounded-lg font-semibold mt-5 bg-slate-50/40  backdrop-blur-md backdrop-filter"
         >
           Comprehensive Back Office Solutions with Offshoring, Virtual Support,
           HR Excellence, Strategic Consulting, and Business Growth.

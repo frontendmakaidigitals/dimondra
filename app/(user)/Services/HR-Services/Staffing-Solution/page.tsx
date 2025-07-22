@@ -78,44 +78,7 @@ const Page = () => {
       icon: Globe2,
     },
   ];
-  const industries = [
-    {
-      title: "Energy & Resources",
-      description:
-        "As a premier recruitment partner for the UAE's oil and gas sector, we deliver exceptional services to staff vital roles. Our specialized division is dedicated to connecting leading energy companies with top-tier talent across the industry's diverse landscape.",
-      imgUrl: "/services/energy&resources.webp",
-    },
-    {
-      title: "Financial Services",
-      description:
-        "Entrust your hiring requirements to our expert recruitment specialists in the financial and banking industries. Our dedicated teams are committed to assisting businesses in securing highly qualified candidates for their permanent positions within the banking and finance sectors.",
-      imgUrl: "/services/financial-services.webp",
-    },
-    {
-      title: "Technology & Engineering",
-      description:
-        "Dimondra provides unparalleled workforce consultancy for all your technology-related hiring needs. Sourcing top-tier network engineers, system architects, programmers, analysts, and other essential professionals is paramount for success in this dynamic field.",
-      imgUrl: "/services/Technology.webp",
-    },
-    {
-      title: "Healthcare",
-      description:
-        "As a leading healthcare recruitment firm, we specialize in identifying skilled physicians, nurses, and other medical professionals who perfectly align with your requirements. Our expertise lies in delivering specialized healthcare consulting and staffing solutions.",
-      imgUrl: "/services/healthcare.webp",
-    },
-    {
-      title: "Audit & Finance",
-      description:
-        "As a top-tier accounting and finance recruitment agency, we are equipped to address all your staffing demands. We meticulously manage all hiring documentation and facilitate seamless, direct screenings with your most promising finance and accounting candidates.",
-      imgUrl: "/services/audit.webp",
-    },
-    {
-      title: "Sales & Business Development",
-      description:
-        "We are committed to providing you with an outstanding staffing experience, from sourcing CVs for sales and marketing roles to filling executive positions in Dubai. Our extensive experience and professionalism in this area are consistently demonstrated through our results.",
-      imgUrl: "/services/business-development.webp",
-    },
-  ];
+  
 
   const recruitmentSteps = [
     {
