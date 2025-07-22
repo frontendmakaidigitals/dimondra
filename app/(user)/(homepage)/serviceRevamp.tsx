@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
 import { useState } from "react";
+import { motion } from "motion/react";
 const ServiceRevamp = () => {
   const services = [
     {
@@ -116,12 +117,12 @@ const ServiceRevamp = () => {
         <h1 className="text-5xl serviceText font-dmSans leading-[3.6rem] lg:leading-[4rem] tracking-tighter text-center font-[600] text-dimondra-black">
           Empowering Your Business Vision
         </h1>
-        <div className="grid grid-cols-1 gap-12 mt-12">
+        <motion.div className="grid grid-cols-1 gap-12 mt-12">
           {services.map((service, index) => {
             const isOdd = index % 2 !== 0;
 
             return (
-              <div
+              <motion.div
                 key={index}
                 className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-10 p-6 rounded-3xl shadow-sm 
                   ${
@@ -131,8 +132,16 @@ const ServiceRevamp = () => {
                   }`}
               >
                 {/* Image */}
-                <div
-                  className={`overflow-hidden rounded-2xl shadow-md ${
+                <motion.div
+                  initial={{ opacity: 0, x: isOdd ? 100 : -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.1,
+                    ease: [0.19, 1, 0.22, 1],
+                  }}
+                  viewport={{ once: true }}
+                  className={`overflow-hidden relative z-20 rounded-2xl shadow-md ${
                     isOdd ? "order-2 lg:order-1" : "order-1 lg:order-2"
                   }`}
                 >
@@ -141,11 +150,19 @@ const ServiceRevamp = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
-                </div>
+                </motion.div>
 
                 {/* Text */}
-                <div
-                  className={`flex flex-col gap-4 ${
+                <motion.div
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.1,
+                    ease: [0.19, 1, 0.22, 1],
+                  }}
+                  className={`flex relative z-10 flex-col gap-4 ${
                     isOdd ? "order-2 lg:pr-8" : "order-1 lg:pl-8"
                   }`}
                 >
@@ -167,11 +184,11 @@ const ServiceRevamp = () => {
                       Learn more
                     </div>
                   </button>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
