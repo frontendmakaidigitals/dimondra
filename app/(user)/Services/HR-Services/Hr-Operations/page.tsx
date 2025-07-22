@@ -11,7 +11,7 @@ import Choose from "../../(sections)/choose";
 import { motion } from "motion/react";
 import PopForm from "@/app/(user)/app_chunks/PopFrom";
 import {
-  UserPlus,
+  UserPlus,    
   ServerCog,
   Wallet,
   AlertTriangle,
@@ -24,7 +24,7 @@ import {
   Scale,
 } from "lucide-react";
 
-const Page = () => {
+const Page = () => {   
   useSplitText({
     selector: ".talentHead",
     duration: 0.8,
