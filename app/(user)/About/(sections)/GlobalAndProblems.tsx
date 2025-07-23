@@ -1,24 +1,25 @@
 "use client";
 import { Settings, Users2, BarChart4, MonitorSmartphone } from "lucide-react";
 import { useSplitText } from "@/app/hooks/useSplitTExt";
+import BgLayer from "../../app_chunks/BgLayer";
 const problems = [
   {
-    icon: Users2,
+    img: '/services/advisory-support.webp',
     title: "Hiring & HR Complexity",
     desc: "From recruitment to compliance, we simplify human resources for all business sizes.",
   },
   {
-    icon: Settings,
+    img: '/services/processManangement.webp',
     title: "Operational Bottlenecks",
     desc: "We streamline daily tasks so you can focus on growth — not admin overload.",
   },
   {
-    icon: MonitorSmartphone,
+    img: '/services/cloud-services.webp',
     title: "Tech & IT Gaps",
     desc: "We deliver reliable IT support and infrastructure that scales with your business.",
   },
   {
-    icon: BarChart4,
+    img: '/services/roadmap.webp',
     title: "Expansion Challenges",
     desc: "Entering new markets? We guide your growth with proven strategy and execution.",
   },
@@ -136,31 +137,35 @@ const GlobalAndProblems = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {problems.map(({ title, icon: Icon, desc }, i) => (
+            {problems.map(({ title, img, desc }, i) => (
               <div
                 key={i}
-                className={`p-6 relative ${i % 2 === 1 ? "bg-black" : "bg-dimondra-white  border-gray-300"}  rounded-xl border  shadow hover:shadow-md transition duration-300`}
+                className="group relative w-full h-[340px] [perspective:1000px]"
               >
-                <div className="absolute top-10 blur-3xl left-1/2 -translate-x-1/2 w-24 h-24 bg-slate-50 rounded-full " />
-                <div className=" mb-4">
-                  <div
-                    className={` ${i % 2 === 1 ? "bg-slate-800" : "bg-teal-100"} w-fit p-2 rounded-xl`}
-                  >
-                    <Icon
-                      className={`w-8 h-8  ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-tealDark"}`}
+                <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front Side */}
+                  <div className="absolute inset-0 bg-white rounded-xl overflow-hidden border border-gray-200 shadow flex flex-col items-center justify-center [backface-visibility:hidden]">
+                    <img
+                      src={img}
+                      alt={title}
+                      className="w-full h-full object-cover"
                     />
+                    <BgLayer />
+                    <h4 className="text-xl font-dmSans absolute text-dimondra-white font-[500] p-2 bg-teal-700/40 backdrop-filter rounded-md backdrop-blur-lg text-center">
+                      {title}
+                    </h4>
                   </div>
-                  <h4
-                    className={`text-xl mt-4 ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} font-rubik font-[500] text-dimondra-black`}
-                  >
-                    {title}
-                  </h4>
+
+                  {/* Back Side */}
+                  <div className="absolute inset-0 bg-teal-700 rounded-xl border border-gray-200 shadow p-6 flex flex-col justify-center items-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <h4 className="text-2xl text-center font-semibold mb-2 text-dimondra-white">
+                      {title}
+                    </h4>
+                    <p className="text-sm  text-dimondra-white font-medium text-center">
+                      {desc}
+                    </p>
+                  </div>
                 </div>
-                <p
-                  className={` ${i % 2 === 1 ? "text-dimondra-white" : "text-dimondra-black"} text-sm font-quicksand font-[600] leading-relaxed`}
-                >
-                  {desc}
-                </p>
               </div>
             ))}
           </div>
