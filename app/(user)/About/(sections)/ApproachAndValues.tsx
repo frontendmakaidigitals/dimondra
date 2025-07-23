@@ -88,14 +88,14 @@ const ApproachAndValues = () => {
   });
 
   return (
-    <section className="bg-dimondra-black py-24 px-4 sm:px-8 lg:px-16">
+    <section className=" py-24 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto space-y-24">
         {/* Section Heading */}
         <div className="text-center trigger1 max-w-3xl mx-auto space-y-3">
-          <h2 className="text-5xl head1 font-dmSans font-[600] text-gray-50 tracking-tighter">
+          <h2 className="text-5xl head1 font-dmSans font-[600] text-gray-900 tracking-tighter">
             Our Approach & Values
           </h2>
-          <p className="para1 text-gray-200 font-quicksand font-[600] ">
+          <p className="para1 text-gray-800 font-quicksand font-[600] ">
             We do more than deliver services — we build long-term relationships
             based on trust, expertise, and shared vision.
           </p>
@@ -104,16 +104,16 @@ const ApproachAndValues = () => {
         {/* Our Approach */}
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div className="space-y-4">
-            <h3 className="text-4xl head2 font-rubik lg:text-5xl font-[500] text-dimondra-white">
+            <h3 className="text-4xl head2 font-rubik lg:text-5xl font-[500] text-dimondra-black">
               Our Approach
             </h3>
-            <p className="text-gray-50 para2 font-quicksand font-[600] leading-relaxed">
+            <p className="text-gray-900 para2 font-quicksand font-[600] leading-relaxed">
               At Dimondra, our philosophy is rooted in partnership. We take time
               to understand each client&nbsp;s unique business, challenges, and
               goals. No cookie-cutter solutions — just tailored support, real
               expertise, and lasting results.
             </p>
-            <p className="text-gray-50 para2 font-quicksand font-[600] leading-relaxed">
+            <p className="text-gray-950 para2 font-quicksand font-[600] leading-relaxed">
               From HR and IT to operations and strategy, our services are
               designed to reduce complexity, increase efficiency, and empower
               your team to thrive.
@@ -131,10 +131,10 @@ const ApproachAndValues = () => {
         {/* Our Values */}
         <div className="space-y-16 trigger2">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-3xl head2 font-dmSans font-[600] tracking-tighter text-dimondra-white  mb-2">
+            <h3 className="text-3xl head2 font-dmSans font-[600] tracking-tighter text-dimondra-black  mb-2">
               What We Stand For
             </h3>
-            <p className="text-gray-100 para3 font-quicksand font-[600]">
+            <p className="text-gray-800 para3 font-quicksand font-[600]">
               Our values shape how we think, work, and lead. They&nbsp;re more
               than words — they&nbsp;re the foundation of every decision we
               make.

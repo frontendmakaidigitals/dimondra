@@ -35,17 +35,15 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
   data,
 }) => {
   return (
-    <section className="relative py-28 bg-dimondra-black overflow-hidden">
+    <section className="relative py-28 overflow-hidden">
   
-  
-
       <div className="container relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl text-center font-dmSans font-semibold text-white"
+          className="text-5xl md:text-6xl text-center font-dmSans font-semibold text-dimondra-black"
         >
           {title}
         </motion.h2>
@@ -55,7 +53,7 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 text-slate-300 max-w-3xl mx-auto text-center text-base"
+          className="mt-4 text-slate-700 max-w-3xl mx-auto text-center text-base"
         >
           {desc}
         </motion.p>
@@ -71,7 +69,7 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
               variants={cardVariants}
               whileHover={{ scale: 1.03, rotateX: 1.5, rotateY: 1.5 }}
               className={cn(
-                `relative z-10 border hover:bg-white/20 transition-colors duration-300
+                `relative z-10 bg-teal-700 border hover:bg-teal-800/90 transition-colors duration-300
                  backdrop-blur-lg rounded-2xl border-white/10 p-6 shadow-lg group`
               )}
             >
