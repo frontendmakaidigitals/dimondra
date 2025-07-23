@@ -90,7 +90,7 @@ const GlobalAndProblems = () => {
     linesClass: "line-wrapper++",
   });
   return (
-    <section className="bg-gray-50 py-24 px-4 sm:px-8 lg:px-16">
+    <section className=" py-24 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto space-y-28">
         {/* Global Reach */}
         <div className="grid globalTrigger md:grid-cols-2 gap-14 items-center">
