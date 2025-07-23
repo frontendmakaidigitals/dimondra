@@ -63,7 +63,7 @@ const HeroSection = () => {
           playsInline
           loop
         >
-          <source src={"/media/homepage/hero/homeHero.mp4"} />
+          <source src={"/media/homepage/hero/heroBg.mp4"} />
         </motion.video>
       </div>
 
