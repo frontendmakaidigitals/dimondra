@@ -199,18 +199,18 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/services/training.webp"}
+            src={"/services/organisational-planning.jpg"}
             alt={""}
             className="w-full h-full  object-cover"
           />
         </div>
-        <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
+        <BgLayer color="bg-slate-900/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-6xl font-dmSans font-[600] max-w-3xl">
+          <h1 className="text-6xl font-dmSans font-[600] text-slate-50 max-w-3xl">
             Organizational Planning That Drives Sustainable Growth
           </h1>
 
-          <p className="max-w-3xl font-quicksand font-[600] mt-3">
+          <p className="max-w-3xl font-quicksand font-[600] mt-3 text-slate-50/80 ">
             At Dimondra, we help you align your people, processes, and
             priorities to build a stronger, more agile organization. Through
             tailored planning, we guide your leadership teams in creating a
@@ -219,7 +219,7 @@ const Page = () => {
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50"
+            className="px-5 py-[.4rem] bg-teal-700 rounded-md mt-5 text-slate-50"
           >
             Get started
           </button>

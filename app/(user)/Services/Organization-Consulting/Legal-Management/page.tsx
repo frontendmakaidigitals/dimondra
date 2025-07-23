@@ -200,18 +200,18 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/services/legal-management.webp"}
+            src={"/services/legal.jpg"}
             alt={""}
             className="w-full h-full  object-cover"
           />
         </div>
-        <BgLayer color="bg-gradient-to-t from-slate-800/40 via-transparent to-slate-800/60" />
+      <BgLayer color="bg-slate-900/60" />
         <div className="relative z-10 flex h-full flex-col justify-end container items-start py-16">
-          <h1 className="text-4xl lg:text-6xl font-dmSans font-[600] max-w-4xl">
+          <h1 className="text-4xl lg:text-6xl font-dmSans text-slate-50 font-[600] max-w-4xl">
             Legal Management That Protects and Empowers
           </h1>
 
-          <p className="max-w-4xl font-quicksand font-[600] mt-3">
+          <p className="max-w-4xl font-quicksand font-[600] mt-3 text-slate-50/80 ">
             At Dimondra, we provide end-to-end legal management solutions
             tailored to businesses operating in the UAE and beyond. Whether
             you&apos;re launching a startup, expanding across borders, or
@@ -222,7 +222,7 @@ const Page = () => {
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="px-5 py-[.4rem] bg-dimondra-black rounded-md mt-5 text-slate-50"
+            className="px-5 py-[.4rem] bg-teal-700 rounded-md mt-5 text-slate-50"
           >
             Get started
           </button>
