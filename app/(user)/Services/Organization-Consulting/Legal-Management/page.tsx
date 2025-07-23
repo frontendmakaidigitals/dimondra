@@ -200,7 +200,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-2.jpg"}
+            src={"/services/legal-management.webp"}
             alt={""}
             className="w-full h-full  object-cover"
           />

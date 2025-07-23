@@ -19,56 +19,7 @@ import {
   Repeat,
 } from "lucide-react";
 import AreaOfExpertise from "../(sections)/AreaOfExpertise";
-const industrySectors = [
-  {
-    title: "Professional Services",
-    description:
-      "Helping consultancies, legal firms, and agencies recruit and retain high-impact talent.",
-    imgUrl: "/services/callCenter.webp",
-  },
-  {
-    title: "Financial Services & Fintech",
-    description:
-      "Supporting agile workforce strategies in fast-paced, regulated environments.",
-    imgUrl: "/services/financial-services.webp",
-  },
-  {
-    title: "Healthcare & Life Sciences",
-    description:
-      "Building clinical and non-clinical talent pipelines for resilient care delivery.",
-    imgUrl: "/services/healthcare.webp",
-  },
-  {
-    title: "Technology & Software",
-    description:
-      "Driving skills development and engagement in competitive, innovation-driven teams.",
-    imgUrl: "/services/It2.webp",
-  },
-  {
-    title: "Manufacturing & Industrial",
-    description:
-      "Enhancing workforce planning, safety training, and performance management.",
-    imgUrl: "/services/manufacturing.webp",
-  },
-  {
-    title: "Retail & Consumer Goods",
-    description:
-      "Aligning people, customer experience, and brand through strategic talent planning.",
-    imgUrl: "/services/retail.webp",
-  },
-  {
-    title: "Education & Nonprofit",
-    description:
-      "Strengthening mission-aligned hiring, leadership development, and retention.",
-    imgUrl: "/services/education.webp",
-  },
-  {
-    title: "Government & Public Sector",
-    description:
-      "Enhancing performance and accountability through workforce modernization.",
-    imgUrl: "/services/govt.webp",
-  },
-];
+ 
 
 const TalentFAQs = [
   {
@@ -212,7 +163,7 @@ const Page = () => {
       <section className="relative overflow-hidden h-[85vh]">
         <div className="w-full h-full object-cover absolute inset-0">
           <img
-            src={"/bg-strategy.webp"}
+            src={"/services/processManangement.webp"}
             alt={""}
             className="w-full h-full object-cover"
           />
