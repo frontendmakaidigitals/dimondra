@@ -221,10 +221,8 @@ const Page = () => {
         />
         <div className="relative z-[3] w-full h-full">
           <div className="container tracking-tighter h-full flex flex-col items-start justify-end py-16 text-dimondra-white">
-            <p className="text-sm">HR Outsourcing Services in Dubai</p>
-            <p className="text-sm">
-              Customer Service & Contact Center Management
-            </p>
+          
+            
             <h2 className="text-3xl lg:text-5xl lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
               Enhance Customer Experience with World-Class Call Center Support
             </h2>

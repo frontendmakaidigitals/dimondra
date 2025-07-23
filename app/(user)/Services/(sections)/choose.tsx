@@ -41,7 +41,7 @@ const Choose = ({
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="mt-8 inline-block px-6 py-3 bg-dimondra-teal text-dimondra-black font-semibold rounded-xl shadow hover:scale-[1.03] transition-transform"
+            className="mt-8 inline-block px-6 text-sm py-3 bg-teal-700 text-slate-50 font-semibold rounded-xl shadow hover:scale-[1.03] transition-transform"
           >
             Get a Quote
           </button>
@@ -62,8 +62,8 @@ const Choose = ({
               transition={{ type: "spring", stiffness: 160, damping: 14 }}
               className="flex items-center gap-4 p-5 rounded-2xl bg-dimondra-white/5 backdrop-blur-md border border-dimondra-white/10 shadow hover:shadow-lg "
             >
-              <div className="p-2 rounded-full bg-dimondra-teal text-dimondra-black shadow-md">
-                <Icon size={24} />
+              <div className="p-2 rounded-full bg-teal-600 text-dimondra-black shadow-md">
+                <Icon size={24} className="text-slate-50" />
               </div>
               <p className="text-base text-dimondra-white leading-snug whitespace-normal break-words font-medium">
                 {title}
@@ -72,9 +72,7 @@ const Choose = ({
           ))}
         </motion.div>
       </div>
-
-      {/* Optional Background Effect */}
-      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-dimondra-teal/10 rounded-full blur-3xl z-0" />
+ 
     </section>
   );
 };

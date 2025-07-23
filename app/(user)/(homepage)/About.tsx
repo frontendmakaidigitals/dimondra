@@ -72,7 +72,8 @@ const About = () => {
           <h2 className="text-5xl tracking-tighter font-dmSans leading-[3.4rem] aboutText font-[600] mt-3">
             Helping Your Business Grow. Helping Your People Thrive
           </h2>
-          <p className="mt-5 font-quicksand font-[500] text-dimondra-white/80">
+          <p className="mt-5 font-quicksand font-[500] text-justify
+ text-dimondra-white/80">
             At Dimondra, we do more than just outsourcing; we partner with
             businesses to build smarter, stronger, and more efficient
             operations. With a deep understanding of what organizations need, we

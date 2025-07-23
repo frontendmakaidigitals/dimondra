@@ -36,10 +36,8 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
 }) => {
   return (
     <section className="relative py-28 bg-dimondra-black overflow-hidden">
-      {/* Decorative Background Gradient Circles */}
-      <div className="absolute top-[-100px] left-[20%] w-[400px] h-[400px] bg-gradient-to-tr from-teal-500/20 to-indigo-500/10 blur-[120px] rounded-full z-0" />
-      <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-emerald-500/5 to-emerald-500/5 blur-[100px] rounded-full z-0" />
-      <div className="absolute bottom-[-120px] right-[10%] w-[300px] h-[300px] bg-gradient-to-tr from-emerald-500/30 to-emerald-500/20 blur-[100px] rounded-full z-0" />
+  
+  
 
       <div className="container relative z-10">
         <motion.h2
