@@ -86,7 +86,7 @@ const Choose = () => {
     <div className="py-14 bg-teal-800">
       <div className="container grid chooseTrigger grid-cols-1  lg:grid-cols-[1fr_1fr] gap-6">
         <div className="w-full">
-          <h1 className="text-[3.5rem] font-dmSans chooseHead text-dimondra-white font-[600] tracking-tighter">
+          <h1 className="text-[3.4rem]  font-dmSans chooseHead text-dimondra-white font-[600] tracking-tighter">
             Why Choose Dimondra?
           </h1>
           <p className="mt-1 choosePara font-quicksand font-[600] text-dimondra-white">
@@ -127,15 +127,15 @@ const Choose = () => {
           <BgLayer color={"bg-lime-300/30 blur-[12rem]"} />
           <div className=" absolute h-[350px] lg:h-[500px] top-5 left-0 w-[240px] lg:w-[280px] overflow-hidden rounded-[50px] lg:rounded-[90px]">
             <img
-              src="/services/email.webp"
+              src="/services/callCenter2.webp"
               alt="Team High Five"
               className="w-full h-full object-cover"
             />
           </div>
 
-          <div className="absolute h-[400px] lg:h-[500px] top-28 right-0 w-[240px] lg:w-[280px] overflow-hidden rounded-[50px] lg:rounded-[90px] grayscale">
+          <div className="absolute h-[400px] lg:h-[500px] top-28 right-0 w-[240px] lg:w-[280px] overflow-hidden rounded-[50px] lg:rounded-[90px]">
             <img
-              src="/services/talentHero.webp" // replace with your local asset or URL
+              src="/services/vision.webp" // replace with your local asset or URL
               alt="Designer Portrait"
               className="w-full h-full object-cover"
             />
