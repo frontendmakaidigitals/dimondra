@@ -122,17 +122,17 @@ const PopForm = ({
   return (
     <AnimatePresence mode="wait">
       {isOpen ? (
-        <motion.div className=" z-[999] fixed inset-0 w-screen h-screen flex justify-center items-center bg-slate-900/70 ">
+        <motion.div className=" z-[999] overflow-auto fixed inset-0 w-screen h-screen flex justify-center items-center bg-slate-900/70 ">
           <motion.div
             initial={{ opacity: 0, scale: 0.7, y: 100 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.4, y: 100 }}
             transition={{ ease: [[0.165, 0.84, 0.44, 1]], duration: 0.6 }}
-            className="container w-full !p-0 grid grid-cols-1 lg:grid-cols-2 rounded-xl relative"
+            className="container w-full overflow-auto !p-0 grid grid-cols-1 lg:grid-cols-2 rounded-xl relative"
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="bg-slate-50 hover:bg-red-500 transition-colors duration-250  absolute p-1 cursor-pointer right-0 -top-8"
+              className="bg-slate-50 hover:bg-red-500 transition-colors duration-250  absolute p-1 cursor-pointer right-0 top-0 rounded-tr-lg"
             >
               <X className="  " />
             </button>
@@ -263,7 +263,7 @@ const PopForm = ({
                         value={formData.message}
                         className="w-full mt-[.4rem]"
                         maxRows={13}
-                        minRows={5}
+                        minRows={3}
                         placeholder="Enter your description"
                         isRequired
                         name="message"

@@ -110,16 +110,15 @@ const Page = () => {
       desc: "Visit our office locations",
       icon: Building,
       contact: [
-        "Jeddah, Dubai, UAE",
+        "UAE - SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia, Sharjah, U.A.E",
         "KSA, Riyadh – Olya Street – As Sahafa - 13321",
-        "SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia, Sharjah, U.A.E",
       ],
     },
     {
       title: "Call Us Directly",
       desc: "Available during working hours.",
       icon: Phone,
-      contact: "0562787553",
+      contact: "+97 15627 87553",
     },
   ];
 
