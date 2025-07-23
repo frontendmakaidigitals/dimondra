@@ -124,7 +124,7 @@ const AOE = [
     icon: Users,
   },
   {
-    title: "Talent Acquisition",
+    title: "Talent Management",
     desc: "From employer branding to interview design, we support you in building a hiring process that is inclusive, effective, and competitive, so you can consistently bring in the talent your organization needs to thrive.",
     icon: UserPlus,
   },
@@ -148,11 +148,7 @@ const AOE = [
     desc: "We analyze engagement trends, identify turnover risks, and develop programs to enhance employee satisfaction. From culture-building to recognition programs, we help you create an environment where people want to stay.",
     icon: Smile,
   },
-  {
-    title: "Change Management",
-    desc: "Whether you're launching new systems or restructuring teams, we help you manage the people side of change. Our approach emphasizes communication, readiness, and adoption, minimizing disruption and building buy-in.",
-    icon: Repeat,
-  },
+  
 ];
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
