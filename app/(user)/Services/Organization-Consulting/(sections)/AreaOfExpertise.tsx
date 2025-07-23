@@ -71,12 +71,12 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
               variants={cardVariants}
               whileHover={{ scale: 1.03, rotateX: 1.5, rotateY: 1.5 }}
               className={cn(
-                `relative z-10 bg-white/10 hover:bg-white/20 transition-colors duration-300
-                 backdrop-blur-lg rounded-2xl border border-white/10 p-6 shadow-lg group`
+                `relative z-10 border hover:bg-white/20 transition-colors duration-300
+                 backdrop-blur-lg rounded-2xl border-white/10 p-6 shadow-lg group`
               )}
             >
-              <div className="bg-teal-700 w-fit p-3 rounded-xl shadow-md">
-                <Icon className="w-10 h-10 stroke-white" />
+              <div className="bg-dimondra-white w-fit p-3 rounded-xl shadow-md">
+                <Icon className="w-10 h-10 stroke-dimondra-black" />
               </div>
 
               <div className="mt-6 space-y-2">
