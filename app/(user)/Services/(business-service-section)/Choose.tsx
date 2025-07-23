@@ -26,10 +26,10 @@ const Choose = ({ data, title, desc }: propsType) => {
             return (
               <div
                 key={idx}
-                className="p-6 border border-slate-400/70 rounded-xl shadow-sm hover:shadow-md transition"
+                className="p-5 border border-slate-400/70 rounded-xl shadow-sm hover:shadow-md transition"
               >
-                <div className="mb-4 text-primary">
-                  <Icon className="w-8 h-8 text-slate-50" />
+                <div className="mb-4 p-2 bg-dimondra-white w-fit rounded-lg text-primary">
+                  <Icon className="w-8 h-8 text-dimondra-black" />
                 </div>
                 <h3 className="text-xl font-semibold text-dimondra-white mb-2">{feature.title}</h3>
                 <p className="text-gray-300 text-sm">{feature.description}</p>

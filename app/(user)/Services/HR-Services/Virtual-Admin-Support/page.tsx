@@ -386,7 +386,7 @@ const Page = () => {
           alt={"Talent Acquisition"}
         />
         <div className="container  tracking-tighter h-full flex flex-col items-start justify-end py-16 relative z-10 text-dimondra-white">
-          <p>Virtual Admin Support Services in Dubai</p>
+         
           <h2 className="text-4xl lg:text-5xl font-dmSans tracking-tight leading-[3rem] lg:leading-[3.5rem] max-w-2xl talentHead font-[600]">
             Get expert virtual admin support whenever you need it.
           </h2>
