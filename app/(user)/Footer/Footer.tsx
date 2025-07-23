@@ -170,7 +170,19 @@ const Footer = () => {
                   <div className="flex items-start gap-2">
                     <MapPin className="w-5 h-5 mt-1 " />
                     <p className="max-w-[250px]">
-                      Office: 123 Sheikh Zayed Rd, Dubai, UAE
+                      Jeddah, Dubai, UAE
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 mt-1 " />
+                    <p className="max-w-[250px]">
+                       KSA, Riyadh – Olya Street – As Sahafa - 13321
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 mt-1 " />
+                    <p className="max-w-[250px]">
+                      SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia, Sharjah, U.A.E
                     </p>
                   </div>
                   <div className="flex items-center gap-2 mt-2 ">

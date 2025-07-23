@@ -107,9 +107,13 @@ const Page = () => {
     },
     {
       title: "Visit Our Office",
-      desc: "Visit our office location",
+      desc: "Visit our office locations",
       icon: Building,
-      contact: "Jeddah, Dubai, UAE",
+      contact: [
+        "Jeddah, Dubai, UAE",
+        "KSA, Riyadh – Olya Street – As Sahafa - 13321",
+        "SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia, Sharjah, U.A.E",
+      ],
     },
     {
       title: "Call Us Directly",
@@ -192,8 +196,20 @@ const Page = () => {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-lg font-[500]">{title}</h3>
-                  <p className="text-md mt-1 text-slate-600">{desc}</p>
-                  <p className="mt-2">{contact}</p>
+                  <p className="text-sm mt-1 text-slate-600">{desc}</p>
+                  {Array.isArray(contact) ? (
+                    <ul className="list-disc space-y-1 mt-2">
+                      {contact.map((item, index) => (
+                        <li key={index} className="text-md text-slate-900 mt-1">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-slate-900 font-[600] mt-1">
+                      {contact}
+                    </p>
+                  )}
                 </div>
               </div>
             );
