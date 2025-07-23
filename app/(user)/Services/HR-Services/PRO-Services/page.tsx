@@ -165,7 +165,7 @@ const Page = () => {
   return (
     <>
       <motion.div
-        animate={{ height: ["150vh", "70vh"] }}
+        animate={{ height: ["150vh", "85vh"] }}
         transition={{
           duration: 1.3,
           ease: [0.19, 1, 0.22, 1],

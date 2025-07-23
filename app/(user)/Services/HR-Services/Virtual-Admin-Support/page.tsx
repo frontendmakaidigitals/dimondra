@@ -49,10 +49,12 @@ import { db } from "@/config/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
 const Page = () => {
-  if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
-    throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
-  }
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+  // if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
+  //   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
+  //}
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ""
+  );
   useSplitText({
     selector: ".talentHead",
     duration: 0.8,
@@ -378,7 +380,7 @@ const Page = () => {
   return (
     <>
       <motion.div
-        animate={{ height: ["150vh", "70vh"] }}
+        animate={{ height: ["150vh", "85vh"] }}
         transition={{
           duration: 1.3,
           ease: [0.19, 1, 0.22, 1],
@@ -448,106 +450,114 @@ const Page = () => {
               }}
               viewport={{ once: true }}
               key={idx}
-              className={`rounded-xl overflow-hidden p-4 relative  backdrop-filter backdrop-blur-lg border border-slate-700 ${item.price.toLowerCase() === "custom" ? "bg-dimondra-tealDark text-slate-50" : "bg-white/40 text-black"}`}
+              className={`rounded-xl overflow-hidden p-4 relative flex flex-col h-full backdrop-filter backdrop-blur-lg border border-slate-700 ${
+                item.price.toLowerCase() === "custom"
+                  ? "bg-dimondra-tealDark text-slate-50"
+                  : "bg-white/40 text-black"
+              }`}
             >
+              {/* Background lights */}
               <div className="w-[800px] h-[70px] bg-white/50 blur-3xl rotate-[-20deg] top-12 absolute left-1/2 -translate-x-1/2" />
               <div className="w-[800px] h-[100px] bg-white/50 blur-3xl rotate-[-20deg] bottom-10 absolute left-1/2 -translate-x-1/2" />
-              <div className="flex justify-between items-center relative z-10">
-                <h2 className="font-dmSans font-[600] text-lg">{item.name}</h2>
-                {item.name.toLowerCase() === "full time" && (
-                  <p
-                    className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-bl
-                    from-[#84cc16]
-                    via-[#16a34a]
-                    to-[#0f766e]"
+
+              {/* Top content */}
+              <div className="relative z-10">
+                <div className="flex justify-between items-center">
+                  <h2 className="font-dmSans font-[600] text-lg">
+                    {item.name}
+                  </h2>
+                  {item.name.toLowerCase() === "full time" && (
+                    <p className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-bl from-[#84cc16] via-[#16a34a] to-[#0f766e]">
+                      Best Value
+                    </p>
+                  )}
+                  {item.name.toLowerCase() === "part time" && (
+                    <p className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-b from-[#06b6d4] via-[#2563eb] to-[#6366f1]">
+                      Most Popular
+                    </p>
+                  )}
+                </div>
+
+                <h2 className="text-5xl relative font-quicksand flex items-start gap-[2px] font-[500] mt-5">
+                  {item.orgPrice && (
+                    <>
+                      <span className="text-lg text-red-500 line-through">
+                        ${item.orgPrice}
+                      </span>{" "}
+                      &nbsp;
+                    </>
+                  )}
+                  <span className="text-xl mt-[2px] font-[400]">$</span>
+                  {item.price}
+                  <span className="text-xl mt-[6px] font-[400]">/month</span>
+                </h2>
+
+                <hr className="border-slate-800/30 my-6" />
+
+                <ul className="space-y-3 mt-6">
+                  {item.features.map((arr, id) => (
+                    <li
+                      key={id}
+                      className="flex font-quicksand font-[500] relative z-10 items-start gap-2"
+                    >
+                      <div className="mt-[2px] rounded-full p-1 bg-green-400">
+                        <Check className="size-[12px] stroke-green-100" />
+                      </div>{" "}
+                      {arr}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Bottom button */}
+              <div className="mt-auto relative z-10 pt-6">
+                {purchases.some(
+                  (purchase) =>
+                    purchase?.packageName?.toLowerCase() ===
+                    item.name.toLowerCase()
+                ) ? (
+                  <motion.button
+                    disabled
+                    style={{
+                      boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
+                    }}
+                    className="w-full !bg-[#00929b] !text-[#ffffff] font-rubik border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/10"
                   >
-                    Best Value
-                  </p>
-                )}
-                {item.name.toLowerCase() === "part time" && (
-                  <p
-                    className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-b
-                    from-[#06b6d4]
-                    via-[#2563eb]
-                    to-[#6366f1]"
-                  >
-                    Most Popular
-                  </p>
+                    Already Subscribed
+                  </motion.button>
+                ) : (
+                  <div className="relative group w-full">
+                    {/* Glow ring */}
+                    <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0"></div>
+
+                    <motion.button
+                      onClick={() =>
+                        handleSigninOrCheckout(item.price, item.name)
+                      }
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        duration: 0.35,
+                        ease: [0.165, 0.84, 0.44, 1],
+                      }}
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6)", // cyan → blue → violet
+                        boxShadow: `
+                            0 0 0 3px rgba(59, 130, 246, 0.2),           /* soft outer ring */
+                            0 12px 30px rgba(139, 92, 246, 0.4),         /* outer shadow */
+                            inset 0 -4px 10px rgba(255, 255, 255, 0.08)  /* glass inset */
+                          `,
+                        color: "#ffffff",
+                      }}
+                      className="relative z-10 w-full py-3 rounded-xl font-rubik text-md font-[400] text-white border border-white/10 backdrop-blur-sm flex items-center justify-center gap-2"
+                    >
+                      Subscribe Now
+                      <ArrowUpRight className="ml-1 size-5" />
+                    </motion.button>
+                  </div>
                 )}
               </div>
-              <h2
-                className={`text-5xl relative z-10 font-quicksand flex items-start gap-[2px] font-[500] mt-5`}
-              >
-                {item.orgPrice && (
-                  <>
-                    <span className="text-lg text-red-500 line-through">
-                      ${item.orgPrice}
-                    </span>{" "}
-                    &nbsp;
-                  </>
-                )}
-                <span className="text-xl mt-[2px] font-[400]">$</span>
-                {item.price}
-                <span className="text-xl mt-[6px] font-[400]">/month</span>
-              </h2>
-
-              <hr className="border-slate-800/30 my-6" />
-              {purchases.some(
-                (purchase) =>
-                  purchase?.packageName?.toLowerCase() ===
-                  item.name.toLowerCase()
-              ) ? (
-                <motion.button
-                  style={{
-                    boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
-                  }}
-                  disabled
-                  className={clsx(
-                    `w-full !bg-[#00929b] !text-[#ffffff] relative z-10 font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/10`
-                  )}
-                >
-                  Already Purchased
-                </motion.button>
-              ) : (
-                <motion.button
-                  onClick={() => handleSigninOrCheckout(item.price, item.name)}
-                  initial={{
-                    scale: 1,
-                    backgroundColor: "transparent",
-                    color: "#000000",
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#00929b",
-                    color: "#ffffff",
-                  }}
-                  transition={{ duration: 0.4, ease: [0.165, 0.84, 0.44, 1] }}
-                  style={{
-                    boxShadow: "inset 0 -4px 20px rgba(226, 232, 240, 0.4)",
-                  }}
-                  className={clsx(
-                    `w-full relative z-10 bg-dimondra-white font-rubik mt-6 border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/30`
-                  )}
-                >
-                  Get Started Today
-                  <ArrowUpRight />
-                </motion.button>
-              )}
-              <ul className="space-y-3 mt-6">
-                {item.features.map((arr, id) => (
-                  <li
-                    key={id}
-                    className="flex font-quicksand font-[500] relative z-10 items-start gap-2"
-                  >
-                    <div
-                      className={clsx(`mt-[2px] rounded-full p-1 bg-green-400`)}
-                    >
-                      <Check className={clsx(`size-[12px] stroke-green-100`)} />
-                    </div>{" "}
-                    {arr}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
