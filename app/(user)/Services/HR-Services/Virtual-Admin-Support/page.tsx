@@ -34,17 +34,7 @@ import {
   Check,
   ArrowUpRight,
 } from "lucide-react";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import clsx from "clsx";
+ 
 import { db } from "@/config/firebase";
 import { getDocs, collection } from "firebase/firestore";
 

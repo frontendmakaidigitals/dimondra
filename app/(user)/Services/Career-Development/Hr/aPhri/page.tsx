@@ -141,6 +141,8 @@ const Page = () => {
             </ul>
           </div>
           <RightSide
+            price={300}
+            name={'aphri'}
             Price={
               <>
                 <span className="line-through  text-red-500 border-red-400">
