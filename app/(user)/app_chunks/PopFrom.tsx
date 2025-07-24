@@ -117,22 +117,8 @@ const PopForm = ({
     };
   }, [isOpen]);
 
-  // ✳️ Close on outside click
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isOpen &&
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+  // ✳️ Close on 
+
 
   return (
     <AnimatePresence mode="wait">

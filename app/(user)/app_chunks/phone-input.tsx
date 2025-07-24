@@ -124,7 +124,7 @@ const CountrySelect = ({
  
   return (
     <Popover open={inputOpen} onOpenChange={setInputOpen} modal>
-      <PopoverTrigger asChild>
+      <PopoverTrigger  asChild>
         <Button
           type="button"
           variant="outline"
@@ -146,7 +146,7 @@ const CountrySelect = ({
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className="w-[300px] z-[9999] country-popover p-0">
         <Command>
           <CommandInput
             value={searchValue}
