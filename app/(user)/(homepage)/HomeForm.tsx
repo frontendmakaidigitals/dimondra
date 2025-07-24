@@ -162,7 +162,7 @@ const HomeForm = () => {
               <Headset className="size-8 text-dimondra-black" />
               <div className="text-dimondra-black">
                 <h4 className=" font-[600] text-lg">Phone Number</h4>
-                <p className="text-sm ">0562787553</p>
+                <p className="text-sm ">+971 5627 87553</p>
               </div>
             </div>
           </div>
