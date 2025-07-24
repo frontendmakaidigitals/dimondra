@@ -118,7 +118,7 @@ const Page = () => {
       title: "Call Us Directly",
       desc: "Available during working hours.",
       icon: Phone,
-      contact: "+971 5627 87553",
+      contact: "+971 56 278 7553",
     },
   ];
 
