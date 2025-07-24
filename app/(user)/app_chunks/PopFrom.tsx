@@ -2,14 +2,29 @@
 import React, { useState, FormEvent, useEffect, useRef } from "react";
 import { Input } from "@heroui/input";
 import { Textarea } from "@heroui/input";
-import { ArrowRight, Headset, Mail, X } from "lucide-react";
-
+import { ArrowRight, X } from "lucide-react";
+import { Select, SelectItem } from "@heroui/react";
 import { PhoneInput } from "../app_chunks/phone-input";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { motion } from "motion/react";
 import { AnimatePresence } from "framer-motion";
 import { Spinner } from "@heroui/spinner";
 import { addToast } from "@heroui/toast";
+const servicesList = [
+  { key: "hr-outsourcing", label: "HR Outsourcing" },
+  { key: "remote-workforce", label: "Remote Workforce" },
+  { key: "executive-search", label: "Executive Search" },
+  { key: "rpo", label: "RPO" },
+  { key: "government-relations", label: "Government Relations" },
+  { key: "business-support", label: "Business Support" },
+  { key: "it-digital-services", label: "IT & Digital Services" },
+  { key: "strategy-advisory", label: "Strategy & Advisory" },
+  {
+    key: "workplace-facilities",
+    label: "Workplace & Facilities Outsourcing Services",
+  },
+];
+
 const PopForm = ({
   isOpen,
   setIsOpen,
@@ -233,24 +248,36 @@ const PopForm = ({
                       )}
                     </label>
                   </div>
-                  <div className="mt-5">
-                    <label className="text-dimondra-black font-[500]">
+
+                  <div className="">
+                    <label
+                      htmlFor="subject"
+                      className="text-dimondra-white font-rubik font-[500] text-lg"
+                    >
                       Subject{" "}
-                      <Input
-                        onChange={(e) =>
-                          setFormData({ ...formData, subject: e.target.value })
-                        }
-                        value={formData.subject}
-                        classNames={{
-                          inputWrapper: ["bg-slate-100"],
-                          input: ["py-2"],
-                        }}
-                        isRequired
-                        className="w-full mt-[.4rem]"
-                        placeholder="Enter your subject"
-                        name="subject"
-                        size={"lg"}
-                      />
+                      <div>
+                        <Select
+                          id="subject"
+                          className="mt-[.4rem]"
+                          size="lg"
+                          label=""
+                          color="default"
+                          placeholder="Select a subject"
+                          selectedKeys={[formData.subject]} // optional: keeps selection in sync
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              subject: e.target.value,
+                            })
+                          }
+                        >
+                          {servicesList.map((service) => (
+                            <SelectItem key={service.key}>
+                              {service.label}
+                            </SelectItem>
+                          ))}
+                        </Select>
+                      </div>
                     </label>
                   </div>
                   <div className="mt-5">

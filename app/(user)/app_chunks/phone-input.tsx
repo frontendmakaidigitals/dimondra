@@ -120,10 +120,10 @@ const CountrySelect = ({
 }: CountrySelectProps) => {
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
   const [searchValue, setSearchValue] = React.useState("");
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [inputOpen, setInputOpen] = React.useState(false);
  
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen} modal>
+    <Popover open={inputOpen} onOpenChange={setInputOpen} modal>
       <PopoverTrigger asChild>
         <Button
           type="button"
@@ -177,7 +177,7 @@ const CountrySelect = ({
                       countryName={label}
                       selectedCountry={selectedCountry}
                       onChange={onChange}
-                      onSelectComplete={() => setIsOpen(false)}
+                      onSelectComplete={() => setInputOpen(false)}
                     />
                   ) : null
                 )}
