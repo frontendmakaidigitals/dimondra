@@ -169,7 +169,7 @@ const ServiceRevamp = () => {
                   <h2 className="text-3xl font-dmSans font-bold text-slate-900">
                     {service.title}
                   </h2>
-                  <p className="text-slate-700 font-quicksand font-[600]">
+                  <p className="text-slate-700 text-justify font-quicksand font-[600]">
                     {service.description}
                   </p>
 

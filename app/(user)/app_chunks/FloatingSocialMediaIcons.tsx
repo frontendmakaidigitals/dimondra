@@ -7,12 +7,6 @@ const FloatingSocialMediaIcons = () => {
     { icon: "/icon/facebook.svg", color: "#1877F2", name: "facebook" },
     { icon: "/icon/instagram.svg", color: "#E4405F", name: "instagram" },
     { icon: "/icon/linkedin.svg", color: "#0A66C2", name: "linkedin" },
-    {
-      icon: "/icon/whatsapp.svg",
-      color: "#212121",
-      name: "whatsapp",
-      link: "+971562787553",
-    },
     { icon: "/icon/email.svg", color: "#ffffff", name: "email" },
   ];
 
@@ -21,8 +15,8 @@ const FloatingSocialMediaIcons = () => {
 
   return (
     <div className="fixed top-1/2 z-[40] grid grid-cols-1 -translate-y-1/2 right-0 lg:left-0 lg:right-auto">
-      {socialIcons.map(({ icon, color, name, link }, idx) => {
-        const content = (
+      {socialIcons.map(({ icon, color, name }, idx) => {
+        return (
           <motion.div
             key={idx}
             onMouseEnter={() => setHoverId(idx)}
@@ -59,19 +53,6 @@ const FloatingSocialMediaIcons = () => {
               )}
             </AnimatePresence>
           </motion.div>
-        );
-
-        return link ? (
-          <a
-            key={idx}
-            href={`https://wa.me/${link.replace(/\D/g, "")}`} // removes + and non-digits
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {content}
-          </a>
-        ) : (
-          content
         );
       })}
     </div>

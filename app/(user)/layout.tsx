@@ -7,7 +7,7 @@ import Backtotop from "../(user)/app_chunks/Backtotop";
 import Footer from "../(user)/Footer/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 import FloatingSocialMediaIcons from "../(user)/app_chunks/FloatingSocialMediaIcons";
-
+import FloatingWhatsappIcon from "./app_chunks/FloatingWhatsappIcon";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -37,6 +37,7 @@ export default function RootLayout({
         <Header />
         <FloatingSocialMediaIcons />
         <PageLoader />
+        <FloatingWhatsappIcon />
         <Backtotop />
         {children}
         <Footer />
