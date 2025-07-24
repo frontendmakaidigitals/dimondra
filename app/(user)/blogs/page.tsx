@@ -58,6 +58,7 @@ const Page = () => {
 
     fetchBlogs();
   }, []);
+
   return (
     <div className="pb-24">
       <div className="w-full overflow-hidden">
@@ -173,7 +174,7 @@ export default Page;
 
 const BlogTopic = ({ blogs }: { blogs: Blog[] }) => {
   const [activeTopic, setActiveTopic] = useState("All");
-
+    console.log(blogs)
   const sortedBlogs = useMemo(() => {
     return [...blogs].sort((a, b) => {
       const bTime = b.createdAt?.toMillis?.() || 0;
@@ -201,7 +202,7 @@ const BlogTopic = ({ blogs }: { blogs: Blog[] }) => {
       : remainingBlogs.filter((blog) => blog.category === activeTopic);
   return (
     <div className="mt-2">
-      {filteredBlogs.length < 0 ? (
+      {filteredBlogs.length > 0 ? (
         <>
           <div className="flex flex-wrap gap-3 mb-8">
             {allTopics.map((topic) => (
