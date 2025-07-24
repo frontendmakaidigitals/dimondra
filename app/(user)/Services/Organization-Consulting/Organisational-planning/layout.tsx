@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: "Organizational Planning & Development Services | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    "Shape your business success with Dimondra’s Organizational Planning, offering structure design, workforce planning, and strategic HR solutions.",
 };
 
 import { ReactNode } from "react";

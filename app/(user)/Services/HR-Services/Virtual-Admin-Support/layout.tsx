@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: "Virtual Administrative Support Services | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    " Get reliable Virtual Admin Support from Dimondra, professional, efficient, and cost-effective assistance tailored to your business needs.",
 };
 
 import { ReactNode } from "react";

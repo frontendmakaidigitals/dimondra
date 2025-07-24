@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: " Career Advisory & Professional Development | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    " Get expert Career Advisory services with Dimondra—personalized guidance, CV support, and interview coaching to help you reach your goals.",
 };
 
 import { ReactNode } from "react";

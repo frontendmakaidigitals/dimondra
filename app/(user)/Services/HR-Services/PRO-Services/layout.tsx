@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: " PRO & Government Services in Dubai & UAE | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    " Simplify your visa, licensing, and government processes with Dimondra’s trusted PRO & Government Services for businesses in the UAE.",
 };
 
 import { ReactNode } from "react";

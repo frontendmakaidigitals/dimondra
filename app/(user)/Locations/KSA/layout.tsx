@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: "HR & Business Services in Saudi Arabia | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    "Dimondra delivers expert HR, staffing, and business consulting services in Saudi Arabia, supporting organizations with solutions designed for sustainable growth.",
 };
 
 import { ReactNode } from "react";

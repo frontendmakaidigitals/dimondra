@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: " Call Center & Customer Support Solutions | Dimondra",
+  title: "Insights & Resources | Dimondra Blog on HR, Business & Technology",
   description:
-    " Enhance customer service with Dimondra’s Call Center Support, offering professional inbound, outbound, and multilingual solutions across the UAE.",
+    "Stay updated with Dimondra’s Blog, featuring expert insights, tips, and industry trends on HR, business management, digital transformation, and more.",
 };
 
 import { ReactNode } from "react";

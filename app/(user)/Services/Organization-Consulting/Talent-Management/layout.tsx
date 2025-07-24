@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: " Talent Management & Succession Planning | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    "Unlock the full potential of your workforce with Dimondra’s Talent Management solutions, covering succession planning, career growth, and retention.",
 };
 
 import { ReactNode } from "react";

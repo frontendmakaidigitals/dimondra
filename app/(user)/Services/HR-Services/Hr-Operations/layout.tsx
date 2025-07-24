@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: " HR Operations & Outsourcing Services | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    " Streamline your HR Operations with Dimondra’s expert services, covering payroll, compliance, and employee relations for seamless workforce management.",
 };
 
 import { ReactNode } from "react";

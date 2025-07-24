@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: "Legal Management & Compliance Services | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    "Ensure legal compliance and risk management with Dimondra’s expert Legal Management services tailored for businesses in the UAE.",
 };
 
 import { ReactNode } from "react";

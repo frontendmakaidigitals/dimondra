@@ -1,8 +1,8 @@
 // This is the layout for the contact page
 export const metadata = {
-  title: "Our Team | Insight Vision – Your Marketing Partner",
+  title: "Staffing Solutions & Workforce Outsourcing | Dimondra",
   description:
-    "Discover Insight Vision, a marketing agency dedicated to driving business growth through innovative strategies, data-driven insights, and impactful digital solutions.",
+    "Access flexible, reliable Staffing Solutions with Dimondra, temporary, permanent, and project-based workforce outsourcing tailored to your business needs.",
 };
 
 import { ReactNode } from "react";
