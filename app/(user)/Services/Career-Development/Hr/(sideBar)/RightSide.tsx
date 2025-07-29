@@ -5,8 +5,26 @@ import { db } from "@/config/firebase";
 import { loadStripe } from "@stripe/stripe-js";
 import { getDocs, collection } from "firebase/firestore";
 import { useAuth } from "@/app/context/AuthContext";
-import {motion} from "motion/react";
-const RightSide = ({ Price, name, price }: { Price?: React.ReactNode, name?:string, price?:number }) => {
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { RadioGroup } from "@/components/ui/radio-group";
+import { motion } from "motion/react";
+const RightSide = ({
+  Price,
+  name,
+  price,
+}: {
+  Price?: React.ReactNode;
+  name?: string;
+  price?: number;
+}) => {
   // if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   //   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");
   //}
@@ -19,6 +37,7 @@ const RightSide = ({ Price, name, price }: { Price?: React.ReactNode, name?:stri
     packageName: string;
   }
   const [purchases, setPurchases] = useState<purchaseType[]>([]);
+  const [paymentMethod, setPaymentMethod] = useState("Stripe");
   useEffect(() => {
     if (user?.email) {
       const getUserPurchases = async () => {
@@ -47,62 +66,114 @@ const RightSide = ({ Price, name, price }: { Price?: React.ReactNode, name?:stri
 
   const [shouldCheckout, setShouldCheckout] = useState(false);
   const [checkoutData, setCheckoutData] = useState<{
-    price: number | string;
-    name: string;
-  } | null>(null);
+      price: number | string;
+      name: string;
+      method: string;
+    } | null>(null);
 
   useEffect(() => {
     if (user && shouldCheckout && checkoutData) {
-      handleCheckout(checkoutData.price, checkoutData.name);
+      handleCheckout(
+        checkoutData.price,
+        checkoutData.name,
+        checkoutData.method
+      );
       setShouldCheckout(false); // reset
       setCheckoutData(null);
     }
   }, [user, shouldCheckout, checkoutData]);
 
-  const handleCheckout = async (price: string | number, name: string) => {
-    const stripe = await stripePromise;
+  const handleCheckout = async (
+    price: string | number,
+    name: string,
+    method: string
+  ) => {
+    if (method === "Stripe") {
+      const stripe = await stripePromise;
 
-    const response = await fetch("/api/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: user?.email,
-        name: user?.displayName,
-        price: price,
-        packageName: name,
-      }),
-    });
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: user?.email,
+          name: user?.displayName,
+          price: price,
+          packageName: name,
+        }),
+      });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("API error:", errorText);
-      alert(`Error: ${errorText}`);
-      return;
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("API error:", errorText);
+        alert(`Error: ${errorText}`);
+        return;
+      }
+
+      const { id } = await response.json();
+
+      if (!stripe) {
+        alert("Stripe failed to load.");
+        return;
+      }
+
+      const { error } = await stripe.redirectToCheckout({ sessionId: id });
+
+      if (error) alert(error.message);
+    } else if (method === "PayPal") {
+      try {
+        const response = await fetch("/api/create-checkout-paypal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user?.email,
+            name: user?.displayName,
+            price: price,
+            packageName: name,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error("PayPal API error:", errorText);
+          alert(`Error: ${errorText}`);
+          return;
+        }
+
+        const { approvalUrl } = await response.json();
+
+        if (!approvalUrl) {
+          alert("Failed to retrieve PayPal approval URL.");
+          return;
+        }
+
+        window.location.href = approvalUrl;
+      } catch (err) {
+        console.error("PayPal redirect error:", err);
+        alert("PayPal checkout failed.");
+      }
+    } else {
+      alert("Invalid payment method selected.");
     }
-
-    const { id } = await response.json();
-
-    if (!stripe) {
-      alert("Stripe failed to load.");
-      return;
-    }
-
-    const { error } = await stripe.redirectToCheckout({ sessionId: id });
-
-    if (error) alert(error.message);
   };
 
-  const handleSigninOrCheckout = (price: number | string, name: string) => {
+ const handleSigninOrCheckout = (
+    price: number | string,
+    name: string,
+    method: string
+  ) => {
     if (!user) {
       setShouldCheckout(true);
-      setCheckoutData({ price, name });
+      setCheckoutData({ price, name, method });
       googleSignIn(); // assumed async internally
     } else {
-      handleCheckout(price, name);
+      handleCheckout(price, name, method);
     }
   };
+
   return (
     <aside className="bg-teal-800 w-full lg:sticky left-0 top-20  border-r rounded-md border-gray-200 p-6 space-y-6">
       <nav className="text-dimondra-white text-sm ">
@@ -187,25 +258,114 @@ const RightSide = ({ Price, name, price }: { Price?: React.ReactNode, name?:stri
             ) : null}
             {price && name ? (
               <li className="mt-3">
-                 {purchases.some(
+                {purchases.some(
                   (purchase) =>
-                    purchase?.packageName?.toLowerCase() ===
-                    name.toLowerCase()
+                    purchase?.packageName?.toLowerCase() === name.toLowerCase()
                 ) ? (
                   <motion.button
                     disabled
-                 
                     className="w-full !bg-dimondra-black !text-[#ffffff] font-rubik border py-[.6rem] flex items-center justify-center gap-2 rounded-xl border-slate-700/10"
                   >
                     Already Subscribed
                   </motion.button>
                 ) : (
-                    <button
-                  onClick={() => handleSigninOrCheckout(price, name)}
-                  className="w-full px-4 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 shadow-lg hover:scale-[1.03] transition-transform duration-300"
-                >
-                  Subscribe Now
-                </button>
+                  <div className="relative group w-full">
+                    {/* Glow ring */}
+                    <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0"></div>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button
+                          onClick={() =>
+                            handleSigninOrCheckout(price, name, paymentMethod)
+                          }
+                          className="w-full px-4 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 shadow-lg hover:scale-[1.03] transition-transform duration-300"
+                        >
+                          Subscribe Now
+                        </button>
+                        ;
+                      </DialogTrigger>
+
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>Select Your Payment Method</DialogTitle>
+                          <DialogDescription>
+                            Please choose your preferred payment option below to
+                            continue with the subscription.
+                          </DialogDescription>
+                        </DialogHeader>
+
+                        <RadioGroup
+                          defaultValue="Stripe"
+                          className="grid mt-4 grid-cols-2 gap-4"
+                        >
+                          {/* Stripe Option */}
+                          <div>
+                            <input
+                              onChange={(e) => setPaymentMethod(e.target.value)}
+                              type="radio"
+                              id="stripe"
+                              name="payment"
+                              value="Stripe"
+                              checked={paymentMethod === "Stripe"}
+                              className="peer hidden"
+                            />
+                            <label
+                              htmlFor="stripe"
+                              className="block cursor-pointer rounded-lg border border-muted bg-background p-4 text-center peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary transition"
+                            >
+                              <img
+                                src="/Stripe.png"
+                                alt="Stripe"
+                                className="mx-auto mb-3 h-10 w-auto object-contain"
+                              />
+                              <div className=" font-medium">Stripe</div>
+                              <p className="text-sm text-muted-foreground">
+                                Pay securely via card
+                              </p>
+                            </label>
+                          </div>
+
+                          {/* PayPal Option */}
+                          <div>
+                            <input
+                              onChange={(e) => setPaymentMethod(e.target.value)}
+                              type="radio"
+                              id="paypal"
+                              name="payment"
+                              value="PayPal"
+                              checked={paymentMethod === "PayPal"}
+                              className="peer hidden"
+                            />
+                            <label
+                              htmlFor="paypal"
+                              className="block cursor-pointer rounded-lg border border-muted bg-background p-4 text-center peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary transition"
+                            >
+                              <img
+                                src="/paypal.png"
+                                alt="PayPal"
+                                className="mx-auto mb-3 h-10 w-auto object-contain"
+                              />
+                              <div className=" font-medium">PayPal</div>
+                              <p className="text-sm text-muted-foreground">
+                                Use your PayPal account
+                              </p>
+                            </label>
+                          </div>
+                        </RadioGroup>
+
+                        <DialogFooter className="mt-6">
+                          <button
+                            className="px-4 py-[.4rem] bg-green-800 text-slate-50 rounded-lg"
+                            onClick={() =>
+                              handleSigninOrCheckout(price, name, paymentMethod)
+                            }
+                          >
+                            Continue
+                          </button>
+                        </DialogFooter>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
                 )}
               </li>
             ) : null}
