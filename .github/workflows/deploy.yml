@@ -34,6 +34,12 @@ jobs:
       SMTP_PORT: ${{ secrets.SMTP_PORT }}
       SMTP_TO: ${{ secrets.SMTP_TO }}
 
+      # Paypal
+      NEXT_PUBLIC_PAYPAL_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}
+      PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+      PAYPAL_API_URL: ${{ secrets.PAYPAL_API_URL }}
+
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -73,6 +79,10 @@ jobs:
           echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> .env.local
           echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env.local
           echo "SMTP_TO=${{ secrets.SMTP_TO }}" >> .env.local
+          echo "NEXT_PUBLIC_PAYPAL_CLIENT_ID=${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}" >> .env.local
+          echo "PAYPAL_CLIENT_SECRET=${{ secrets.PAYPAL_CLIENT_SECRET }}" >> .env.local
+          echo "PAYPAL_API_URL=${{ secrets.PAYPAL_API_URL }}" >> .env.local
+
 
       - name: Setup SSH key
         run: |
