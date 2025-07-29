@@ -2,17 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import * as admin from "firebase-admin";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 export const runtime = "nodejs";
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || "587"),
-  secure: false, // true if port is 465
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(
+  process.env.RESEND_API_KEY || "re_X5r2mbNL_ALcDw9cKjq8QGXbHVk6bBABT"
+);
 export const config = {
   api: {
     bodyParser: false,
@@ -92,15 +86,22 @@ export async function POST(request: NextRequest) {
         purchasedAt: new Date().toISOString(),
       });
 
-      await transporter.sendMail({
-        from: `"Your Company" <${process.env.SMTP_USER}>`,
-        to: email,
-        subject: "✅ Payment Successful",
+      const data = await resend.emails.send({
+        from:
+          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
+        to: ["connect.dimondra@gmail.com"],
+        subject: "Contact Form Submission",
         html: `
-            <h3>Hi ${name},</h3>
-            <p>Thank you for your payment of <strong>$${price}</strong>.</p>
-            <p>Your transaction has been successfully processed.</p>
-          `,
+          <div style="font-family: sans-serif; color: #333; padding: 16px;">
+            <h2 style="color: #0F766E;">Hello ${name},</h2>
+            <p>Thank you for your recent payment of <strong>$${price}</strong> for the <strong>${packageName}</strong> package.</p>
+            <p>Your transaction has been successfully processed and we’re excited to start working with you.</p>
+            <p>If you have any questions or need further assistance, feel free to reply to this email — we’re here to help.</p>
+            <br />
+            <p>Best regards,<br /><strong>Team Dimondra</strong></p>
+          </div>
+        `,
+        replyTo: email,
       });
     }
   }
@@ -112,20 +113,32 @@ export async function POST(request: NextRequest) {
     const email = session.customer_email;
     const name = session.metadata?.name;
     const packageName = session.metadata?.packageName;
-
+    const price = session.metadata?.price;
     if (email && name) {
-      await transporter.sendMail({
-        from: `"Your Company" <${process.env.SMTP_USER}>`,
-        to: email,
-        subject: "❌ Payment Failed",
+      await resend.emails.send({
+        from:
+          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
+        to: [email],
+        subject: "❌ Payment Failed – Please Try Again",
         html: `
-          <h3>Hi ${name},</h3>
-          <p>Unfortunately, your payment could not be processed.</p>
-          <p>Please try again or contact support.</p>
-        `,
-      });
+    <div style="font-family: Arial, sans-serif; padding: 24px; color: #333; background-color: #f9fafb;">
+      <h2 style="color: #dc2626;">Hello ${name},</h2>
+      <p>We're sorry, but your recent payment attempt of ${price} was <strong>unsuccessful</strong>.</p>
+      <p>This might be due to a temporary issue with your payment method or a network error.</p>
+      <p>Please try again using the payment link provided, or feel free to reach out if you need any help.</p>
 
-      console.log(`❌ Payment failed email sent to ${email}`);
+      <div style="margin: 24px 0;">
+        <a href="mailto:support@dimondra.com" style="padding: 12px 24px; background-color: #14b8a6; color: white; border-radius: 6px; text-decoration: none;">Contact Support</a>
+      </div>
+
+      <p>If you've already completed your payment, you may safely disregard this message.</p>
+
+      <br />
+      <p>Best regards,<br /><strong>Team Dimondra</strong></p>
+    </div>
+  `,
+        replyTo: email,
+      });
     }
   }
 
