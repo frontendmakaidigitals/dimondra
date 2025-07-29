@@ -635,7 +635,7 @@ const Page = () => {
                               className="block cursor-pointer rounded-lg border border-muted bg-background p-4 text-center peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-primary transition"
                             >
                               <img
-                                src="/stripe.png"
+                                src="/Stripe.png"
                                 alt="Stripe"
                                 className="mx-auto mb-3 h-10 w-auto object-contain"
                               />
