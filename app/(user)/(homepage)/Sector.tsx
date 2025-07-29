@@ -102,7 +102,7 @@ const Sector = () => {
           </h1>
           <p className="text-slate-50 sectorPara text-center font-quicksand font-[600] mt-4 lg:text-start">
             From technology to logistics, construction to finance — Dimondra
-            delivers strategic workforce solutions across industries. Here's
+            delivers strategic workforce solutions across industries. Here&apos;s
             where we shine:
           </p>
         </div>
