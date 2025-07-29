@@ -19,61 +19,56 @@ const sectors = [
     title: "Banking & Financial Services",
     description:
       "The financial sector is undergoing rapid change, requiring skilled professionals in areas like banking operations, wealth management, risk & compliance, and fintech solutions.",
-    linkText: "Learn more →",
     icon: Banknote,
   },
   {
     title: "Construction & Engineering",
     description:
       "We support major infrastructure, construction, and engineering projects by supplying skilled talent that drives progress and supports urban development across the region.",
-    linkText: "Learn more →",
     icon: Hammer,
   },
   {
     title: "Corporate Services",
     description:
-      "Our team specializes in placing top-tier talent across finance, HR, legal, strategy, and executive support roles—ensuring your core functions run seamlessly.",
-    linkText: "Learn more →",
+      "We place top-tier talent across finance, HR, legal, strategy, and executive roles—ensuring your core functions run seamlessly.",
     icon: Briefcase,
   },
   {
     title: "Commercial & Sales",
     description:
-      "Dimondra supports businesses by placing result-driven professionals in sales, account management, business development, and customer service to boost commercial growth.",
-    linkText: "Learn more →",
+      "We support growth by placing professionals in sales, business development, and customer success roles.",
     icon: ShoppingCart,
   },
   {
     title: "Hospitality, Retail & Events",
     description:
-      "With deep roots in the region’s vibrant service sectors, we provide tailored staffing solutions for hotels, restaurants, retail chains, and live event operations.",
-    linkText: "Learn more →",
+      "We provide staffing solutions for hotels, restaurants, retail chains, and live event operations.",
     icon: Hotel,
   },
   {
     title: "Pharmaceutical & Healthcare",
     description:
-      "Our healthcare and life sciences recruitment team connects providers with top professionals in clinical, regulatory, research, and pharmaceutical fields.",
-    linkText: "Learn more →",
+      "We connect providers with top professionals in clinical, regulatory, research, and pharmaceutical fields.",
     icon: Stethoscope,
   },
   {
     title: "Logistics & Supply Chain",
     description:
-      "We provide end-to-end recruitment solutions for logistics, warehousing, procurement, and distribution—helping businesses streamline operations and meet global demands.",
-    linkText: "Learn more →",
+      "We offer recruitment for logistics, procurement, and warehousing to support global supply chains.",
     icon: Truck,
   },
   {
     title: "Technology & Digital",
     description:
-      "Dimondra helps businesses stay ahead in the digital age by sourcing talent across software development, cybersecurity, data analytics, cloud solutions, and emerging tech, powering innovation and digital transformation. ",
-    linkText: "Learn more →",
+      "We source talent for software, cybersecurity, data, cloud, and emerging technologies.",
     icon: Cpu,
   },
 ];
 
 const Sector = () => {
+  const sectorRef = useRef<HTMLDivElement>(null);
+  const inView = useElementInViewport(sectorRef, "center", true);
+
   useSplitText({
     selector: ".sectorText",
     duration: 0.8,
@@ -84,6 +79,7 @@ const Sector = () => {
     type: "chars, lines",
     linesClass: "line-wrapper++",
   });
+
   useSplitText({
     selector: ".sectorPara",
     duration: 0.8,
@@ -96,54 +92,53 @@ const Sector = () => {
     delay: 1,
   });
 
-  const sectorRef = useRef<HTMLDivElement>(null);
-  const inView = useElementInViewport(sectorRef, "center", true);
   return (
     <div className="py-20 relative bg-teal-800">
-      <div className="container  relative mx-auto px-4">
-        <div className="max-w-2xl sectorTrigger">
-          {" "}
-          <h1 className="text-6xl sectorText font-dmSans tracking-tighter leading-[4.5rem] mt-1 text-center lg:text-start font-[600] text-dimondra-white">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="max-w-2xl sectorTrigger mx-auto lg:mx-0">
+          <h1 className="text-5xl lg:text-6xl sectorText font-dmSans tracking-tighter leading-[4.5rem] mt-1 text-center lg:text-start font-[600] text-dimondra-white">
             Sectors
           </h1>
-          <p className="text-slate-50 sectorPara text-center font-quicksand font-[600] lg:text-start">
-            From technology to logistics, construction to finance, Dimondra
-            delivers strategic recruitment and workforce solutions across a wide
-            array of industries. We understand the unique demands of each sector
-            and tailor our approach to meet the evolving needs of our clients.
-            Here&nbsp;s a glimpse into some of the industries where Dimondra
-            excels:
+          <p className="text-slate-50 sectorPara text-center font-quicksand font-[600] mt-4 lg:text-start">
+            From technology to logistics, construction to finance — Dimondra
+            delivers strategic workforce solutions across industries. Here's
+            where we shine:
           </p>
         </div>
+
+        {/* Cards */}
         <div
           ref={sectorRef}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20"
         >
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
+
             return (
               <motion.div
+                key={index}
                 animate={{
-                  scale: inView ? 1 : 0,
+                  scale: inView ? 1 : 0.95,
+                  opacity: inView ? 1 : 0,
                   transition: {
-                    duration: 1,
+                    duration: 0.6,
                     delay: index * 0.06,
-                    type: "spring",
+                    ease: [0.25, 0.8, 0.25, 1],
                   },
                 }}
-                whileHover={{ borderColor: "#14b8a6" }}
-                key={index}
-                className="flex relative  flex-col justify-between p-3 rounded-lg border border-slate-50/0  items-center text-center"
+                whileHover={{ y: -8, borderColor: "#14b8a6" }}
+                className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex flex-col items-center">
-                  <Icon className="w-16 h-16 text-slate-100 mb-4" />
-                  <h2 className="text-2xl text-slate-50 font-semibold font-dmSans tracking-tight">
+                <div className="flex flex-col items-center text-center h-full">
+                  <Icon className="w-12 h-12 text-white mb-4" />
+                  <h3 className="text-xl font-semibold font-dmSans text-white">
                     {sector.title}
-                  </h2>
+                  </h3>
+                  <p className="text-sm text-slate-100 mt-2 font-quicksand font-medium">
+                    {sector.description}
+                  </p>
                 </div>
-                <p className="text-slate-50 mt-3 font-quicksand font-[600]">
-                  {sector.description}
-                </p>
               </motion.div>
             );
           })}

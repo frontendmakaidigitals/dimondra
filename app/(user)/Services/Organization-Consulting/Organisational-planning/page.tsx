@@ -145,6 +145,10 @@ const serviceObj = [
         title: "Supporting HR Programs and Metrics",
         desc: "We create tailored HR programs to drive employee engagement, talent development, and performance, while establishing clear metrics to measure success.",
       },
+      {
+        title: "Role Clarification and Job Architecture",
+        desc: "We help define roles, responsibilities, and job levels across your organization to eliminate ambiguity, enhance accountability, and support fair compensation and career progression.",
+      },
     ],
     img: "/services/growth-people.webp",
   },

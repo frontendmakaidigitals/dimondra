@@ -2,36 +2,49 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PopForm from "../../app_chunks/PopFrom";
-import type { LucideIcon } from "lucide-react";
-
-interface chooseProps {
-  title: string;
-  icon: LucideIcon;
-}
 
 const Choose = ({
   title,
   desc,
-  data,
+  img,
 }: {
   title: string;
   desc: string;
-  data: chooseProps[];
+  img: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="relative py-24 bg-dimondra-black overflow-hidden">
+    <section className="relative overflow-hidden bg-dimondra-black">
       <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <div className="container relative z-10 flex flex-col lg:flex-row items-start gap-4">
-        {/* Left Content */}
+      {/* Desktop background image */}
+      <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-1/2 h-full z-0">
+        <img
+          src={img}
+          alt="Why Choose Us"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Mobile image block */}
+      <div className="lg:hidden w-full h-[300px] sm:h-[400px]">
+        <img
+          src={img}
+          alt="Why Choose Us"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto py-16 lg:py-24 px-4 flex flex-col lg:flex-row items-center lg:items-start gap-12">
+        {/* Left Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="max-w-3xl"
+          className="w-full lg:w-1/2"
         >
           <h2 className="text-4xl md:text-5xl font-dmSans font-bold tracking-tight text-dimondra-white leading-tight">
             {title}
@@ -41,38 +54,15 @@ const Choose = ({
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="mt-8 inline-block px-6 text-sm py-3 bg-teal-700 text-slate-50 font-semibold rounded-xl shadow hover:scale-[1.03] transition-transform"
+            className="mt-8 inline-block px-6 text-sm py-3 bg-teal-700 text-white font-semibold rounded-xl shadow hover:scale-[1.03] transition-transform"
           >
             Get a Quote
           </button>
         </motion.div>
 
-        {/* Features Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-xl"
-        >
-          {data.map(({ title, icon: Icon }, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -6, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 160, damping: 14 }}
-              className="flex items-center gap-4 p-5 rounded-2xl bg-dimondra-white/5 backdrop-blur-md border border-dimondra-white/10 shadow hover:shadow-lg "
-            >
-              <div className="p-2 rounded-full bg-teal-600 text-dimondra-black shadow-md">
-                <Icon size={24} className="text-slate-50" />
-              </div>
-              <p className="text-base text-dimondra-white leading-snug whitespace-normal break-words font-medium">
-                {title}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Spacer for layout on desktop */}
+        <div className="w-full lg:w-1/2 hidden lg:block" />
       </div>
- 
     </section>
   );
 };

@@ -228,7 +228,7 @@ const Page = () => {
         desc={
           "At Dimondra, we understand that managing HR can be time-consuming and complex, especially in a fast-moving business environment like Dubai. That's why we offer HR outsourcing solutions designed to make your life easier. By partnering with us, you gain access to a team of experienced HR professionals who not only understand the local laws and regulations but also bring practical insights that can help your business grow. We focus on delivering flexible, cost-effective services that match your exact needs, whether you’re looking for help with everyday HR tasks, project-based support, or expert advice on specific challenges. Our goal is to help you build a workplace where your employees feel supported, your processes run smoothly, and your business can achieve greater productivity without the stress of managing HR in-house. With Dimondra, you can stay focused on what matters most: driving your business forward."
         }
-        data={benefits}
+        img={'/services/hr.jpg'}
       />
       <FAQ
         data={hrFaqs}

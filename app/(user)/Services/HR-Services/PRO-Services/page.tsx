@@ -217,7 +217,7 @@ const Page = () => {
         desc={
           "At Dimondra, we make it simple for businesses to handle all government-related processes under one roof. From company formation and licensing to visa services and regulatory approvals, our experienced team ensures smooth, efficient, and compliant operations at every stage. We offer cost-effective solutions tailored to your business, backed by transparency, professionalism, and a commitment to delivering personal attention to every client. With Dimondra, you gain a reliable partner who understands the unique challenges of doing business in the UAE and helps you overcome them with confidence."
         }
-        data={coreBenefits}
+        img={'/services/pro.jpg'}
       />
       <FAQ
         data={proFAQ}

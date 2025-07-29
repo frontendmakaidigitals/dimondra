@@ -78,7 +78,6 @@ const Page = () => {
       icon: Globe2,
     },
   ];
-  
 
   const recruitmentSteps = [
     {
@@ -110,32 +109,6 @@ const Page = () => {
       imgUrl: "/services/support.webp",
     },
   ];
-const services = [
-  {
-    title: "Custom Talent Matching",
-    icon: Users, // Represents people/talent
-  },
-  {
-    title: "Efficient Sourcing",
-    icon: Search, // Represents search/sourcing
-  },
-  {
-    title: "Proven Results",
-    icon: CheckCircle, // Represents success/results
-  },
-  {
-    title: "Market Insight",
-    icon: LineChart, // Represents analytics/insights
-  },
-  {
-    title: "Seamless Onboarding",
-    icon: LogIn, // Represents entry/onboarding
-  },
-  {
-    title: "Growth Partnership",
-    icon: Handshake, // Represents partnership
-  },
-];
 
   const faqs = [
     {
@@ -231,7 +204,7 @@ const services = [
         desc={
           "When it comes to finding the right talent in the UAE, Dimondra stands out as your ideal partner. We believe in a truly systematic approach, which means we don't just look at resumes; we take the time to deeply understand your company's unique culture, core values, and the specific requirements of each role. This allows us to identify candidates who not only possess the necessary skills and experience but also integrate into your team and contribute positively from day one. Beyond just finding individuals, we offer an incredibly Efficient Process that is designed to save you valuable time and effort. From the initial in-depth screening of potential candidates to coordinating interviews, conducting thorough reference checks, and even assisting with the final negotiations, we manage every step of the recruitment journey. This approach ensures a smooth and effective hiring experience for you. Choosing Dimondra means choosing a partner dedicated to your success, delivering exceptional talent with integrity and efficiency."
         }
-        data={services}
+        img={"/services/staff.jpg"}
       />
       <FAQ
         data={faqs}
