@@ -2,7 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-const FloatingWhatsappIcon = () => {
+import { Phone } from "lucide-react";
+const FloatingPhoneIcon = () => {
   const number = "+971562787553";
 
   return (
@@ -10,19 +11,9 @@ const FloatingWhatsappIcon = () => {
       href={`https://wa.me/${number.replace(/\D/g, "")}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 left-8 z-50 group"
+      className="fixed bottom-24 right-12 z-50 group"
     >
-      <motion.div
-        animate={{ x: [0, -4, 4, -2, 2, 0] }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 0.6,
-          ease: "easeInOut",
-          repeatDelay: 2,
-        }}
-        className="relative w-14 h-14"
-      >
+      <div className="relative w-14 h-14">
         {/* Ripple effect */}
         <motion.span
           initial={{ x: "-50%", y: "-50%" }}
@@ -41,12 +32,12 @@ const FloatingWhatsappIcon = () => {
         />
 
         {/* WhatsApp icon with hover scaling */}
-        <div className="relative z-10 flex items-center justify-center w-full h-full bg-[#212121] rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-          <img src="/icon/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
+        <div className="relative z-10 flex items-center justify-center w-full bg-slate-50 h-full  rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+          <img src="/phone-call.png" alt="WhatsApp" className="w-full h-full" />
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 };
 
-export default FloatingWhatsappIcon;
+export default FloatingPhoneIcon;

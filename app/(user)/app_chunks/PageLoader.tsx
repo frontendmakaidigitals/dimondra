@@ -30,7 +30,7 @@ const Loader = () => {
     setIsLoading(true);
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 2800);
 
     return () => clearTimeout(timeout);
   }, [pathname]);
