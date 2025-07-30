@@ -71,7 +71,7 @@ const Loader = () => {
               }}
             >
               <MotionImage
-                src="/Logo/LogoIcon.webp"
+                src="/Logo/LogoIcon.png"
                 alt="Dimondra Logo"
                 fill
                 className="object-contain"
