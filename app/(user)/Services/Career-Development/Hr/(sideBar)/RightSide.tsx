@@ -66,10 +66,10 @@ const RightSide = ({
 
   const [shouldCheckout, setShouldCheckout] = useState(false);
   const [checkoutData, setCheckoutData] = useState<{
-      price: number | string;
-      name: string;
-      method: string;
-    } | null>(null);
+    price: number | string;
+    name: string;
+    method: string;
+  } | null>(null);
 
   useEffect(() => {
     if (user && shouldCheckout && checkoutData) {
@@ -160,7 +160,7 @@ const RightSide = ({
     }
   };
 
- const handleSigninOrCheckout = (
+  const handleSigninOrCheckout = (
     price: number | string,
     name: string,
     method: string
