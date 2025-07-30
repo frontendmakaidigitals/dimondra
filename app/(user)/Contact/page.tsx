@@ -415,8 +415,9 @@ const ContactInfo = () => {
           </address>
         </div>
 
-        <div className="w-full h-full ">
+        <div className="w-full h-full">
           <iframe
+            title="Google Map showing Sharjah Publishing City"
             className="w-full h-full rounded-xl"
             src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
             allowFullScreen
