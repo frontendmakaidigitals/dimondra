@@ -282,7 +282,6 @@ const RightSide = ({
                         >
                           Subscribe Now
                         </button>
-                        ;
                       </DialogTrigger>
 
                       <DialogContent>
