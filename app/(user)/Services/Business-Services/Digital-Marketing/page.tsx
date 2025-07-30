@@ -18,7 +18,6 @@ import {
   Rocket,
   Sparkles,
   Trophy,
-  BarChart3,
 } from "lucide-react";
 
 import FAQ from "../../../app_chunks/FAQ";
@@ -226,7 +225,6 @@ const Page = () => {
         "We’ve helped businesses across industries grow their traffic, leads, and revenue through tested digital methods.",
       icon: Trophy,
     },
-   
   ];
 
   const marketingHighlights = [

@@ -1,126 +1,103 @@
 "use client";
-import Image from "next/image";
+import React, { useState, useEffect, Suspense } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState, Suspense } from "react";
-const MotionImage = motion(Image);
-const PageLoader = () => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <Loader />
-  </Suspense>
-);
+import Image from "next/image";
 
-export default PageLoader;
+const MotionImage = motion(Image);
+
+const Loading = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Loader />
+    </Suspense>
+  );
+};
+
+export default Loading;
 
 const Loader = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [isMounted, setIsMounted] = useState(true);
-  const [isHardRefresh, setIsHardRefresh] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const query = searchParams.get("name");
 
   useEffect(() => {
-    setIsMounted(true); // Ensure we're on the client
-
-    const navEntry = performance.getEntriesByType(
-      "navigation"
-    )[0] as PerformanceNavigationTiming;
-    const isHard = navEntry?.type === "reload" || navEntry?.type === "navigate";
-    setIsHardRefresh(isHard);
-
     setIsLoading(true);
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2800);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [pathname, query]);
 
-    return () => clearTimeout(timeout);
-  }, [pathname]);
-
-  if (!isMounted) return null; // Avoid SSR hydration mismatch
   return (
     <AnimatePresence mode="wait">
-      {isLoading &&
-        (isHardRefresh ? (
-          <div className="fixed grid grid-cols-1 grid-rows-2 overflow-hidden inset-0 z-[99999] w-screen h-screen">
-            <motion.div
-              className="bg-white"
-              initial={{ y: 0 }}
-              animate={{ y: "-100%" }}
-              exit={{ y: "-100%" }}
-              transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] }}
-            />
-            <motion.div
-              className="bg-white"
-              initial={{ y: 0 }}
-              animate={{ y: "100%" }}
-              exit={{ y: "100%" }}
-              transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] }}
-            />
-          </div>
-        ) : (
-          <div className="fixed inset-0 z-[99999] bg-white flex items-center justify-center">
-            <div className="flex flex-col items-center justify-center space-y-4">
-              {/* Logo with motion animation */}
-              <motion.div
-                className="relative w-28 h-28"
-                animate={{
-                  rotate: [0, -2, 2, -1, 1, 0],
-                  x: [0, -2, 2, -1, 1, 0],
-                }}
-                transition={{
-                  duration: 0.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <MotionImage
-                  src="/Logo/LogoIcon.webp"
-                  alt="Dimondra Logo"
-                  fill
-                  className="object-contain"
-                />
-              </motion.div>
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-white"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Panels Animation */}
+          <motion.div
+            className="absolute top-0 left-0 w-full h-1/2 bg-white"
+            initial={{ y: 0 }}
+            animate={{ y: "-100%" }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] }}
+          />
+          <motion.div
+            className="absolute bottom-0 left-0 w-full h-1/2 bg-white"
+            initial={{ y: 0 }}
+            animate={{ y: "100%" }}
+            exit={{ y: "100%" }}
+            transition={{ duration: 0.8, ease: [0.175, 0.885, 0.32, 1.1] }}
+          />
 
-              {/* Shimmer slider below the image */}
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "5px",
-                  width: "80px",
-                  borderRadius: "2.5px",
-                  overflow: "hidden",
-                  transform: "translate3d(0, 0, 0)",
-                  backgroundColor: "rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    height: "100%",
-                    width: "100%",
-                    backgroundColor: "black",
-                    borderRadius: "2.5px",
-                    animation: "zoom 1.4s ease-in-out infinite",
-                  }}
-                />
-                <style>{`
-        @keyframes zoom {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
-              </div>
+          {/* Logo and shimmer animation */}
+          <div className="relative flex flex-col items-center justify-center space-y-4 z-10">
+            <motion.div
+              className="relative w-28 h-28"
+              animate={{
+                rotate: [0, -2, 2, -1, 1, 0],
+                x: [0, -2, 2, -1, 1, 0],
+              }}
+              transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <MotionImage
+                src="/Logo/LogoIcon.webp"
+                alt="Dimondra Logo"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* Shimmer Bar */}
+            <div className="relative h-[5px] w-[80px] rounded-[2.5px] overflow-hidden bg-black/10">
+              <div className="absolute inset-0 bg-black animate-zoom rounded-[2.5px]" />
+              <style>{`
+                @keyframes zoom {
+                  0% {
+                    transform: translateX(-100%);
+                  }
+                  100% {
+                    transform: translateX(100%);
+                  }
+                }
+                .animate-zoom {
+                  animation: zoom 1.4s ease-in-out infinite;
+                }
+              `}</style>
             </div>
           </div>
-        ))}
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 };
