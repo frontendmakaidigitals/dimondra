@@ -97,7 +97,7 @@ const Page = () => {
       title: "Online Reputation Management (ORM)",
       description:
         "Protect and enhance your brand’s online presence with strategic reputation and review management.",
-      img: "/services/review-managment.webp",
+      img: "/services/review-managment.jpg",
     },
     {
       title: "Conversion Rate Optimization (CRO)",
