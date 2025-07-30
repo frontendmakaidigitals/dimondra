@@ -226,12 +226,7 @@ const Page = () => {
         "We’ve helped businesses across industries grow their traffic, leads, and revenue through tested digital methods.",
       icon: Trophy,
     },
-    {
-      title: "Data-Driven Results",
-      description:
-        "We track, analyze, and optimize everything, delivering strategies that are accountable and ROI-focused.",
-      icon: BarChart3,
-    },
+   
   ];
 
   const marketingHighlights = [

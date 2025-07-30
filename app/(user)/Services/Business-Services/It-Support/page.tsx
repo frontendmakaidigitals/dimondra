@@ -181,18 +181,7 @@ const Page = () => {
         "Protect your business with our comprehensive cybersecurity protocols and compliance with standards like ISO, SOC II, and GDPR.",
       icon: ShieldCheck,
     },
-    {
-      title: "Customized IT Strategies",
-      description:
-        "We don’t just fix problems, we plan ahead. Our IT audits and roadmaps help you make smarter tech investments and long-term decisions.",
-      icon: Map,
-    },
-    {
-      title: "Focus on Core Business",
-      description:
-        "With Dimondra managing your tech, you free up time and resources to focus on what matters most: growing your business and serving your customers.",
-      icon: Briefcase,
-    },
+   
   ];
 
   const itAmcFAQs = [

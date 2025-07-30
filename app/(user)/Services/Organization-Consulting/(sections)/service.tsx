@@ -73,8 +73,12 @@ const Service = ({ data }: { data: ServiceCategory[] }) => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute -left-3" />
-                <CarouselNext className="absolute -right-3 " />
+                {item.arr.length > 3 ? (
+                  <>
+                    <CarouselPrevious className="absolute -left-3" />
+                    <CarouselNext className="absolute -right-3 " />
+                  </>
+                ) : null}
               </Carousel>
             </div>
           </div>

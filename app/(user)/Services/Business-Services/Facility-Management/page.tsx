@@ -198,18 +198,7 @@ const Page = () => {
         "We leverage smart systems, analytics, and automation to improve service delivery and reporting.",
       icon: Cpu,
     },
-    {
-      title: "Customised Strategies",
-      description:
-        "Every site is unique, so we tailor our facility management plan to fit your space, industry, and goals.",
-      icon: SlidersHorizontal,
-    },
-    {
-      title: "Focus on Sustainability",
-      description:
-        "Our practices aim to reduce waste, lower energy use, and promote greener operations.",
-      icon: Leaf,
-    },
+ 
   ];
   const [isOpen, setIsOpen] = useState(false);
 

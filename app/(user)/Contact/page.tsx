@@ -45,7 +45,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-full h-full flex items-center absolute inset-0 ">
+        <div className="w-full h-full hidden lg:flex items-center absolute inset-0 ">
           <img
             src={"/contactBG.png"}
             alt={""}
