@@ -11,18 +11,23 @@ import { AnimatePresence } from "framer-motion";
 import { Spinner } from "@heroui/spinner";
 import { addToast } from "@heroui/toast";
 const servicesList = [
-  { key: "hr-outsourcing", label: "HR Outsourcing" },
-  { key: "remote-workforce", label: "Remote Workforce" },
-  { key: "executive-search", label: "Executive Search" },
-  { key: "rpo", label: "RPO" },
-  { key: "government-relations", label: "Government Relations" },
-  { key: "business-support", label: "Business Support" },
-  { key: "it-digital-services", label: "IT & Digital Services" },
-  { key: "strategy-advisory", label: "Strategy & Advisory" },
+  { key: "Staffing Solution", value: "Staffing Solution" },
+  { key: "HR Operations", value: "HR Operations" },
+  { key: "Virtual Admin Support", value: "Virtual Admin Support" },
+  { key: "PRO & Government Services", value: "PRO & Government Services" },
+  { key: "Organizational Planning", value: "Organizational Planning" },
+  { key: "Talent Management", value: "Talent Management" },
+  { key: "Business Management", value: "Business Management" },
+  { key: "Legal Management", value: "Legal Management" },
   {
-    key: "workplace-facilities",
-    label: "Workplace & Facilities Outsourcing Services",
+    key: "HR Certifications (aPHRi, PHRi...)",
+    value: "HR Certifications (aPHRi, PHRi...)",
   },
+  { key: "Career Advisory", value: "Career Advisory" },
+  { key: "Call Center Support", value: "Call Center Support" },
+  { key: "Facility Management", value: "Facility Management" },
+  { key: "IT Support", value: "IT Support" },
+  { key: "Digital Services", value: "Digital Services" },
 ];
 
 const PopForm = ({
@@ -117,8 +122,7 @@ const PopForm = ({
     };
   }, [isOpen]);
 
-  // ✳️ Close on 
-
+  // ✳️ Close on
 
   return (
     <AnimatePresence mode="wait">
@@ -259,7 +263,7 @@ const PopForm = ({
                         >
                           {servicesList.map((service) => (
                             <SelectItem key={service.key}>
-                              {service.label}
+                              {service.value}
                             </SelectItem>
                           ))}
                         </Select>
