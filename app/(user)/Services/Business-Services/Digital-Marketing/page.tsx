@@ -72,7 +72,7 @@ const Page = () => {
       title: "Guest Posting",
       description:
         "Strengthen your SEO with high-authority backlinks through our premium guest post services.",
-      img: "/services/gues-post.jpg",
+      img: "/services/gues-post.webp",
     },
     {
       title: "Content Marketing",
