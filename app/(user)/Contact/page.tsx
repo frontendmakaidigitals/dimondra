@@ -4,8 +4,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
-import { Mail, Building, Phone } from "lucide-react";
-import { UserPlus, GraduationCap, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Select, SelectItem } from "@heroui/react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { PhoneInput } from "../app_chunks/phone-input";
 import { addToast } from "@heroui/toast";
@@ -14,114 +14,6 @@ import { Textarea } from "@heroui/input";
 import { motion, AnimatePresence } from "motion/react";
 import { Spinner } from "@heroui/spinner";
 const Page = () => {
-  const social = [
-    <>
-      <Link
-        href={
-          "https://www.instagram.com/insightvision.marketing?igsh=enp5bGcxc255MmJr"
-        }
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="white" // fill inside the shapes with white
-          stroke="rgba(0, 0, 0, 1)" // semi-transparent black lines
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-instagram-icon lucide-instagram"
-        >
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-        </svg>
-      </Link>
-    </>,
-    <>
-      <Link href={"https://www.facebook.com/share/1B8MhGwsoX/?mibextid=wwXIfr"}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="white" // fill inside the shapes with white
-          stroke="rgba(0, 0, 0, 1)"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-facebook-icon lucide-facebook"
-        >
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-        </svg>
-      </Link>
-    </>,
-    <>
-      <Link href={"https://www.linkedin.com/company/insight-vision-marketing/"}>
-        {" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="white" // fill inside the shapes with white
-          stroke="rgba(0, 0, 0, 1)"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-linkedin-icon lucide-linkedin"
-        >
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-          <rect width="4" height="12" x="2" y="9" />
-          <circle cx="4" cy="4" r="2" />
-        </svg>
-      </Link>
-    </>,
-  ];
-
-  const ourFeature = [
-    {
-      title: "Tailored Talent Acquisition",
-      desc: "We identify and recruit top talent aligned with your organizational goals, ensuring cultural and skill fit.",
-      icon: UserPlus, // Consider using an appropriate icon here
-    },
-    {
-      title: "Employee Onboarding & Training",
-      desc: "Streamlined onboarding processes and skill enhancement programs to help new hires integrate smoothly and grow quickly.",
-      icon: GraduationCap, // Use a training/learning related icon
-    },
-    {
-      title: "Compliance & HR Support",
-      desc: "Ensure your HR policies are compliant with labor laws while we provide continued HR support and conflict resolution.",
-      icon: ShieldCheck, // Icon indicating protection/compliance
-    },
-  ];
-
-  const contact = [
-    {
-      title: "Email Support",
-      desc: "Our Team responds in real time.",
-      icon: Mail,
-      contact: "Connect@dimondra.com",
-    },
-    {
-      title: "Visit Our Office",
-      desc: "Visit our office locations",
-      icon: Building,
-      contact: [
-        "UAE - SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia, Sharjah, U.A.E",
-        "KSA, Riyadh – Olya Street – As Sahafa - 13321",
-      ],
-    },
-    {
-      title: "Call Us Directly",
-      desc: "Available during working hours.",
-      icon: Phone,
-      contact: "+971 56 278 7553",
-    },
-  ];
-
   return (
     <div className="pb-28 relative pt-32">
       <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-slate-800/70 via-slate-800/40 to-transparent from-[1%] via-[1%] to-[98%]" />
@@ -138,8 +30,8 @@ const Page = () => {
         aria-hidden="true"
       />
 
-      <div className="container relative z-10 max-w-5xl grid-cols-1 grid lg:grid-cols-[1fr_1fr] gap-12 ">
-        <div>
+      <div className="max-w-7xl overflow-hidden mx-auto relative z-10 p-4  grid-cols-1 grid lg:grid-cols-[1fr_1fr]">
+        <div className="bg-slate-50 rounded-xl relative z-10 p-10">
           <div>
             <h2 className="text-5xl font-[600] font-dmSans tracking-tighter">
               Get in Touch
@@ -153,68 +45,15 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-full h-full flex items-center">
-          <div className="bg-[#5e8d9a] border-4 border-[#a9d3e0] flex rounded-2xl flex-col gap-2 p-2">
-            {ourFeature.map(({ title, icon: Icon, desc }, idx) => (
-              <div
-                key={idx}
-                className="space-y-2 p-5 bg-[#25515651] border border-teal-500/20 rounded-xl shadow-sm backdrop-blur-md"
-              >
-                <div className="flex items-center gap-3">
-                  <Icon className="w-6 h-6 text-teal-50" />
-                  <p className="font-semibold text-lg text-teal-50 font-rubik">
-                    {title}
-                  </p>
-                </div>
-                <p className="text-sm text-teal-50 font-quicksand font-[600]">
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="w-full h-full flex items-center absolute inset-0 ">
+          <img
+            src={"/contactBG.png"}
+            alt={""}
+            className="w-full h-full object-cover scale-[1.08]"
+          />
         </div>
       </div>
-      <div className="container mt-28 max-w-5xl">
-        <p className="text-[.7rem] border w-fit border-slate-500 rounded-full px-4 py-2">
-          Reach Out to Us
-        </p>
-        <h1 className="mt-5 text-3xl font-[700]">
-          We&apos;d Love to Hear From You.
-        </h1>
-        <p className=" mt-2">
-          Or just reach out manually to{" "}
-          <span className="text-indigo-500">connect@dimondra.com</span>
-        </p>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-11">
-          {contact.map(({ title, desc, icon: Icon, contact }, idx) => {
-            return (
-              <div key={idx} className="">
-                <div className="bg-dimondra-tealDark p-2 w-fit rounded-full">
-                  <Icon className="w-6 h-6 text-dimondra-white" />
-                </div>
-                <div className="mt-4">
-                  <h3 className="text-lg font-[500]">{title}</h3>
-                  <p className="text-sm mt-1 text-slate-600">{desc}</p>
-                  {Array.isArray(contact) ? (
-                    <ul className="list-disc space-y-1 mt-2">
-                      {contact.map((item, index) => (
-                        <li key={index} className="text-md text-slate-900 mt-1">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm text-slate-900 font-[600] mt-1">
-                      {contact}
-                    </p>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <ContactInfo />
     </div>
   );
 };
@@ -222,6 +61,20 @@ const Page = () => {
 export default Page;
 
 const Form = () => {
+  const servicesList = [
+    { key: "hr-outsourcing", label: "HR Outsourcing" },
+    { key: "remote-workforce", label: "Remote Workforce" },
+    { key: "executive-search", label: "Executive Search" },
+    { key: "rpo", label: "RPO" },
+    { key: "government-relations", label: "Government Relations" },
+    { key: "business-support", label: "Business Support" },
+    { key: "it-digital-services", label: "IT & Digital Services" },
+    { key: "strategy-advisory", label: "Strategy & Advisory" },
+    {
+      key: "workplace-facilities",
+      label: "Workplace & Facilities Outsourcing Services",
+    },
+  ];
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = React.useState({
@@ -297,7 +150,7 @@ const Form = () => {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-8"
+      className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-4"
     >
       <div className="w-full col-span-2 lg:col-span-1">
         <label className="text-dimondra-black font-[500]">
@@ -413,23 +266,27 @@ const Form = () => {
       <div className="w-full col-span-2">
         <label className="text-dimondra-black font-[500]">
           Subject{" "}
-          <Input
-            onChange={(e) =>
-              setFormData({ ...formData, subject: e.target.value })
-            }
-            value={formData.subject}
-            classNames={{
-              inputWrapper: [
-                " border bg-dimondra-teal/5 border-dimondra-gray/30",
-              ],
-              input: ["py-2"],
-            }}
-            isRequired
-            className="w-full mt-[.4rem]"
-            placeholder="Enter your subject"
-            name="subject"
-            size={"lg"}
-          />
+          <div>
+            <Select
+              id="subject"
+              className="mt-[.4rem]"
+              classNames={{
+                trigger: " border bg-dimondra-teal/5 border-dimondra-gray/30",
+              }}
+              size="lg"
+              label=""
+              color="default"
+              placeholder="Select a subject"
+              selectedKeys={[formData.subject]} // optional: keeps selection in sync
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
+            >
+              {servicesList.map((service) => (
+                <SelectItem key={service.key}>{service.label}</SelectItem>
+              ))}
+            </Select>
+          </div>
         </label>
       </div>
       <div className="w-full col-span-2">
@@ -507,5 +364,61 @@ const Form = () => {
         </AnimatePresence>
       </div>
     </form>
+  );
+};
+
+const ContactInfo = () => {
+  return (
+    <div className=" container mt-20">
+      <h2 className="text-2xl font-semibold mb-4">Office Information</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-5">
+        <div className="grid grid-col-1 lg:grid-cols-2 text-sm text-gray-700 w-full gap-4">
+          <div className=" bg-teal-700 rounded-xl p-4">
+            <Phone className="text-slate-50 mb-2 size-10" />
+            <span className="font-[500] text-dimondra-white text-[1.1rem]">
+              +971 56 278 7553
+            </span>
+          </div>
+          <div className=" bg-teal-700 rounded-xl p-4">
+            <Mail className="text-slate-50 mb-2 size-10" />
+            <span className="font-[500] text-dimondra-white text-[1.1rem]">
+              Connect@dimondra.com
+            </span>
+          </div>
+          <address
+            className="not-italic bg-teal-700 rounded-xl space-y-4 p-4 py-[0.7rem] col-span-2 text-dimondra-white"
+            aria-label="Our office locations"
+          >
+            <MapPin className="text-slate-50 mb-3 size-10" aria-hidden="true" />
+
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2 ml-3">
+                <span className="w-2 h-3 bg-dimondra-white rounded-full mt-1 shrink-0" />
+                <p className="font-medium text-[1.1rem]">
+                  UAE – SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia,
+                  Sharjah, U.A.E
+                </p>
+              </li>
+
+              <li className="flex items-start gap-2 ml-3">
+                <span className="w-2 h-3 bg-dimondra-white rounded-full mt-1 shrink-0" />
+                <p className="font-medium text-[1.1rem]">
+                  KSA – Riyadh – Olya Street – As Sahafa – 13321
+                </p>
+              </li>
+            </ul>
+          </address>
+        </div>
+
+        <div className="w-full h-full ">
+          <iframe
+            className="w-full h-full rounded-xl"
+            src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   );
 };
