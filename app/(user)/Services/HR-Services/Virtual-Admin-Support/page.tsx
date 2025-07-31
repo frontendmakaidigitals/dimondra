@@ -234,7 +234,7 @@ const Page = () => {
   const packages = [
     {
       name: "Full Time",
-      price: ".5",
+      price: "1",
       buttonText: "Start with Free",
       features: [
         "160 Hours per month",
