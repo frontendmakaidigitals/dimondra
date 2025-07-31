@@ -197,32 +197,7 @@ const Page = () => {
     },
   ];
 
-  const serviceBenefits = [
-    {
-      title: "Skilled Professionals",
-      icon: Users,
-    },
-    {
-      title: "Flexible Plans",
-      icon: Settings,
-    },
-    {
-      title: "Cost Effective",
-      icon: Wallet,
-    },
-    {
-      title: "Secure Systems",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Quick Onboarding",
-      icon: Rocket,
-    },
-    {
-      title: "Personalized Support",
-      icon: Handshake,
-    },
-  ];
+   
   const faqs = [
     {
       question: "What tasks can a Virtual Assistant handle?",
@@ -259,7 +234,7 @@ const Page = () => {
   const packages = [
     {
       name: "Full Time",
-      price: "899",
+      price: ".5",
       buttonText: "Start with Free",
       features: [
         "160 Hours per month",

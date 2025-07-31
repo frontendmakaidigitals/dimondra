@@ -116,11 +116,6 @@ const Page = () => {
               well-established certifications, including four internationally
               respected credentials, HRCI equips professionals at every stage of
               their HR career with qualifications that truly stand out.
-              <br />
-              <br /> In partnership with <strong>VHRS</strong>, HRCI&apos;s
-              exclusive representative in Vietnam, we offer the following four
-              international certifications tailored to different levels of HR
-              experience:
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mt-12">
               {certifications.map((certification, idx) => (

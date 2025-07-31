@@ -18,18 +18,6 @@ const Page = () => {
     <div className="pb-28 relative pt-32">
       <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-slate-800/70 via-slate-800/40 to-transparent from-[1%] via-[1%] to-[98%]" />
 
-      <div
-        className="absolute inset-0 
-                bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] 
-                [background-size:80px_80px] 
-                pointer-events-none 
-                z-0 
-                [mask-image:linear-gradient(to_right,transparent_20%,black)] 
-                [mask-repeat:no-repeat] 
-                [mask-size:100%_100%]"
-        aria-hidden="true"
-      />
-
       <div className="max-w-7xl overflow-hidden mx-auto relative z-10 p-4  grid-cols-1 grid lg:grid-cols-[1fr_1fr]">
         <div className="bg-slate-50 rounded-xl relative z-10 p-10">
           <div>
