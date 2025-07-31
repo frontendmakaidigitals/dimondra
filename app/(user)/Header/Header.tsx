@@ -1,11 +1,12 @@
 "use client";
 import Logo from "../app_chunks/Logo";
 import { siteConfig } from "@/config/site";
-import { ChevronDown, LogOut } from "lucide-react";
+import { ChevronDown, LayoutDashboard, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useScrollPosition } from "@/app/hooks/useScrollVal";
 import { motion, AnimatePresence } from "motion/react";
+import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import {
   Popover,
@@ -51,6 +52,7 @@ const Header = () => {
     };
   }, []);
   const [locationHovering, setLocationhovering] = useState(false);
+  const router = useRouter();
   return (
     <motion.header
       className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
@@ -319,7 +321,9 @@ const Header = () => {
                           className="rounded-full object-cover"
                         />
                       </div>
-                      <p className="text-sm">{user?.displayName?.split(" ")[0]}</p>
+                      <p className="text-sm">
+                        {user?.displayName?.split(" ")[0]}
+                      </p>
                     </div>
                   </PopoverTrigger>
                   <PopoverContent className="max-w-60">
@@ -340,6 +344,24 @@ const Header = () => {
                           <button>Sign out</button>
                         </div>
                       </div>
+                      {user.email ? (
+                        user.email.toLowerCase() ===
+                        "ismail.afify@gmail.com" ? (
+                          <div className="grid gap-1 hover:bg-slate-100 rounded-lg">
+                            <div
+                              role="button"
+                              tabIndex={0}
+                              onClick={() => router.push("/dashboard")}
+                              className="flex w-full p-2  gap-5"
+                            >
+                              <label htmlFor="width">
+                                <LayoutDashboard />
+                              </label>
+                              <button>Dashboard</button>
+                            </div>
+                          </div>
+                        ) : null
+                      ) : null}
                     </div>
                   </PopoverContent>
                 </Popover>
