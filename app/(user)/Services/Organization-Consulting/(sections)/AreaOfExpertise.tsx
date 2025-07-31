@@ -42,7 +42,7 @@ const AreaOfExpertise: React.FC<AreaOfExpertiseProps> = ({
   data,
 }) => {
   return (
-    <section className="relative py-28 overflow-hidden bg-white dark:bg-teal-900">
+    <section className="relative py-28 overflow-hidden dark:bg-teal-900">
       <div className="container relative z-10">
         {/* Section Title */}
         <motion.h2
