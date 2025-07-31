@@ -165,6 +165,7 @@ const RightSide = ({
     name: string,
     method: string
   ) => {
+    console.log("clicoed");
     if (!user) {
       setShouldCheckout(true);
       setCheckoutData({ price, name, method });
@@ -271,15 +272,10 @@ const RightSide = ({
                 ) : (
                   <div className="relative group w-full">
                     {/* Glow ring */}
-                    <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0"></div>
+
                     <Dialog>
                       <DialogTrigger asChild>
-                        <button
-                          onClick={() =>
-                            handleSigninOrCheckout(price, name, paymentMethod)
-                          }
-                          className="w-full px-4 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 shadow-lg hover:scale-[1.03] transition-transform duration-300"
-                        >
+                        <button className="w-full px-4 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 shadow-lg hover:scale-[1.03] transition-transform duration-300">
                           Subscribe Now
                         </button>
                       </DialogTrigger>
