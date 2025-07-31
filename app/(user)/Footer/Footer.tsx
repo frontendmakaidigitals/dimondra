@@ -45,23 +45,16 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-3">Follow Us</h4>
               <div className="flex space-x-4 ">
                 <Link
-                  href="/"
+                  href="https://www.facebook.com/share/19RRBYggDZ/?mibextid=wwXIfr"
                   className=" rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Facebook className="h-7 w-7 " />
                 </Link>
+
                 <Link
-                  href="/"
-                  className=" rounded-xl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram className="h-7  w-7 " />
-                </Link>
-                <Link
-                  href="/"
+                  href="https://www.linkedin.com/company/dimondra/"
                   className="rounded-xl"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -194,7 +187,26 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-3 py-3 relative z-10 bg-dimondra-tealDark text-slate-50 text-sm text-center">
+      <div className="w-full text-center mb-8">
+        <h4 className="text-white font-semibold mb-3">
+          Trusted Payment Partners
+        </h4>
+        <div className="flex items-center justify-center gap-6 flex-wrap">
+          <div className="p-2 bg-gray-50">
+            <img src="/Stripe.png" alt="Stripe" className="h-8" />
+          </div>
+          <div className="p-2 bg-gray-50">
+            <img src="/Visa.png" alt="Visa" className="h-8" />
+          </div>
+          <div className="p-2 bg-gray-50">
+            <img src="/mastercard.svg.png" alt="Mastercard" className="h-8" />
+          </div>
+          <div className="p-2 bg-gray-50">
+            <img src="/paypal.png" alt="PayPal" className="h-8" />
+          </div>{" "}
+        </div>
+      </div>
+      <div className=" py-3 relative z-10 bg-dimondra-tealDark text-slate-50 text-sm text-center">
         &copy; {new Date().getFullYear()} Dimondra. All rights reserved.
       </div>
     </footer>
