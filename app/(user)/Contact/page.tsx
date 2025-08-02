@@ -37,7 +37,7 @@ const Page = () => {
           <img
             src={"/contactBG.png"}
             alt={""}
-            className="w-full h-full object-cover scale-[1.08]"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>
