@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
+
 const FloatingWhatsappIcon = () => {
   const number = "+971562787553";
 
@@ -37,12 +38,12 @@ const FloatingWhatsappIcon = () => {
             ease: "easeInOut",
             repeatDelay: 0.2,
           }}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-green-500 rounded-full"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-green-500 rounded-full"
         />
 
         {/* WhatsApp icon with hover scaling */}
-        <div className="relative z-10 flex items-center justify-center w-full h-full bg-[#212121] rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
-          <img src="/icon/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
+        <div className="relative z-10 flex items-center justify-center w-full h-full bg-green-500 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+          <img src="/icon/whatsapp-white-icon.png" alt="WhatsApp" className="w-7 h-7" />
         </div>
       </motion.div>
     </Link>

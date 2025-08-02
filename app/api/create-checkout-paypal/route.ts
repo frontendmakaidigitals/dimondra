@@ -1,8 +1,29 @@
 import { NextResponse } from "next/server";
-
+import * as admin from "firebase-admin";
+import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
+import { Resend } from "resend";
 const PAYPAL_API_URL =
   process.env.PAYPAL_API_URL || "https://api-m.sandbox.paypal.com";
-
+const resend = new Resend(
+  process.env.RESEND_API_KEY || "re_X5r2mbNL_ALcDw9cKjq8QGXbHVk6bBABT"
+);
+if (!admin.apps.length) {
+  initializeApp({
+    credential: cert({
+      type: process.env.GOOGLE_TYPE,
+      project_id: process.env.GOOGLE_PROJECT_ID,
+      private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      auth_uri: process.env.GOOGLE_AUTH_URI,
+      token_uri: process.env.GOOGLE_TOKEN_URI,
+      auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_CERT_URL,
+      client_x509_cert_url: process.env.GOOGLE_CLIENT_CERT_URL,
+      universe_domain: process.env.GOOGLE_UNIVERSE_DOMAIN,
+    } as ServiceAccount),
+  });
+}
 async function getPayPalAccessToken() {
   const auth = Buffer.from(
     `${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}:${process.env.PAYPAL_CLIENT_SECRET}`
@@ -23,8 +44,6 @@ async function getPayPalAccessToken() {
 
 async function createPayPalOrder(
   {
-    email,
-    name,
     price,
     packageName,
   }: {
@@ -54,10 +73,10 @@ async function createPayPalOrder(
         },
       ],
       application_context: {
-        brand_name: "Your Company",
-        landing_page: "LOGIN",
+        brand_name: "Dimondra",
+        landing_page: "BILLING",
         user_action: "PAY_NOW",
-        return_url: `${process.env.NEXT_PUBLIC_SITE_URL}/payment/success`,
+        return_url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
         cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/payment/cancel`,
       },
     }),
@@ -67,6 +86,8 @@ async function createPayPalOrder(
 }
 
 async function capturePayPalOrder(orderID: string, accessToken: string) {
+  console.log("📦 Capturing Order:", orderID);
+
   const res = await fetch(
     `${PAYPAL_API_URL}/v2/checkout/orders/${orderID}/capture`,
     {
@@ -78,13 +99,21 @@ async function capturePayPalOrder(orderID: string, accessToken: string) {
     }
   );
 
-  return res.json();
+  const text = await res.text();
+  console.log("📦 Capture response text:", text);
+
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    console.error("❌ Failed to parse JSON:", err);
+    throw new Error("Invalid PayPal response");
+  }
 }
 
 export async function POST(request: Request) {
   try {
     const { email, name, price, packageName, orderID } = await request.json();
-
+    console.log(packageName, "this is pacakge name ✅", orderID);
     if (!email || !name || !price || !packageName) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -94,8 +123,9 @@ export async function POST(request: Request) {
 
     const accessToken = await getPayPalAccessToken();
 
+    // If orderID is present, we capture the payment
     if (orderID) {
-      // Capture step
+      console.log("order started");
       const captureData = await capturePayPalOrder(orderID, accessToken);
 
       if (captureData.status !== "COMPLETED") {
@@ -107,10 +137,42 @@ export async function POST(request: Request) {
         );
       }
 
+      // ✅ Save to Firestore
+      const userRef = admin
+        .firestore()
+        .collection("userPaymentInfo")
+        .doc(email);
+      const purchasesRef = userRef.collection("purchases");
+
+      await purchasesRef.add({
+        name,
+        price,
+        packageName,
+        purchasedAt: new Date().toISOString(),
+      });
+      console.log("✅ Firestore updated for", email);
+      // ✅ Send email
+      await resend.emails.send({
+        from:
+          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
+        to: [email],
+        subject: "✅ Payment Successful – Dimondra",
+        html: `
+          <div style="font-family: sans-serif; color: #333; padding: 16px;">
+            <h2 style="color: #0F766E;">Hello ${name},</h2>
+            <p>Thank you for your payment of <strong>$${price}</strong> for the <strong>${packageName}</strong> package.</p>
+            <p>We’ve successfully received your payment and we’re excited to start working with you!</p>
+            <br />
+            <p>Best regards,<br /><strong>Team Dimondra</strong></p>
+          </div>
+        `,
+        replyTo: email,
+      });
+
       return NextResponse.json(
         {
           success: true,
-          message: "Payment captured successfully",
+          message: "Payment captured and processed",
           data: {
             name,
             email,
@@ -122,25 +184,26 @@ export async function POST(request: Request) {
         },
         { status: 200 }
       );
-    } else {
-      // Create order
-      const orderData = await createPayPalOrder(
-        { email, name, price, packageName },
-        accessToken
-      );
-      const approvalUrl = orderData.links?.find(
-        (link: any) => link.rel === "approve"
-      )?.href;
-
-      if (!approvalUrl) {
-        return NextResponse.json(
-          { error: "No approval URL found" },
-          { status: 500 }
-        );
-      }
-
-      return NextResponse.json({ approvalUrl }, { status: 200 });
     }
+
+    // If no orderID: Create the PayPal order
+    const orderData = await createPayPalOrder(
+      { email, name, price, packageName },
+      accessToken
+    );
+
+    const approvalUrl = orderData.links?.find(
+      (link: any) => link.rel === "approve"
+    )?.href;
+
+    if (!approvalUrl) {
+      return NextResponse.json(
+        { error: "No approval URL found" },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ approvalUrl }, { status: 200 });
   } catch (error) {
     console.error("PayPal error:", error);
     return NextResponse.json(

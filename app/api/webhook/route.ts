@@ -30,7 +30,6 @@ if (!admin.apps.length) {
     } as ServiceAccount),
   });
 }
-console.log("🔥 Firebase ENV project_id:", process.env.SMTP_TO);
 const firestore = admin.firestore();
 
 async function buffer(request: NextRequest) {
