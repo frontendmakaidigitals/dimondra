@@ -84,14 +84,12 @@ export async function POST(request: NextRequest) {
         packageName,
         purchasedAt: new Date().toISOString(),
       });
-
-      const data = await resend.emails.send({
-        from:
-          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
-        to: ["connect.dimondra@gmail.com"],
+      await resend.emails.send({
+        from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
+        to: [email],
         subject: "Contact Form Submission",
         html: `
-          <div style="font-family: sans-serif; color: #333; padding: 16px;">
+     <div style="font-family: sans-serif; color: #333; padding: 16px;">
             <h2 style="color: #0F766E;">Hello ${name},</h2>
             <p>Thank you for your recent payment of <strong>$${price}</strong> for the <strong>${packageName}</strong> package.</p>
             <p>Your transaction has been successfully processed and we’re excited to start working with you.</p>
@@ -99,8 +97,23 @@ export async function POST(request: NextRequest) {
             <br />
             <p>Best regards,<br /><strong>Team Dimondra</strong></p>
           </div>
-        `,
-        replyTo: email,
+  `,
+      });
+
+      // Send internal copy to yourself
+      await resend.emails.send({
+        from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
+        to: ["connect.dimondra@gmail.com"],
+        subject: `🎉🧾 New Purchase - ${packageName}`,
+        html: `
+    <div style="font-family: sans-serif; color: #333; padding: 16px;">
+      <h2>New Purchase Notification</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Package:</strong> ${packageName}</p>
+      <p><strong>Price:</strong> $${price}</p>
+    </div>
+  `,
       });
     }
   }
