@@ -143,6 +143,7 @@ const Page = () => {
     id: string;
     packageName: string;
   }
+
   const [purchases, setPurchases] = useState<purchaseType[]>([]);
   useEffect(() => {
     if (user?.email) {
@@ -197,7 +198,6 @@ const Page = () => {
     },
   ];
 
-   
   const faqs = [
     {
       question: "What tasks can a Virtual Assistant handle?",
@@ -372,6 +372,9 @@ const Page = () => {
           alert(`Error: ${errorText}`);
           return;
         }
+
+        document.cookie = `user_email=${user?.email}; path=/`;
+        document.cookie = `user_name=${user?.displayName}; path=/`;
 
         const { approvalUrl } = await response.json();
 

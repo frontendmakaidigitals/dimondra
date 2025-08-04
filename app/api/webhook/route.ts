@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 const resend = new Resend(
   process.env.RESEND_API_KEY || "re_X5r2mbNL_ALcDw9cKjq8QGXbHVk6bBABT"
 );
+
 export const config = {
   api: {
     bodyParser: false,
@@ -30,6 +31,8 @@ if (!admin.apps.length) {
     } as ServiceAccount),
   });
 }
+console.log(admin.apps.length > 0, "started");
+
 const firestore = admin.firestore();
 
 async function buffer(request: NextRequest) {
@@ -38,6 +41,8 @@ async function buffer(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  console.log("⚡️ Stripe webhook triggered");
+
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: "2025-06-30.basil",
   });
@@ -45,7 +50,6 @@ export async function POST(request: NextRequest) {
   const sig = request.headers.get("stripe-signature");
 
   if (!sig) {
-    console.error("❌ Missing stripe-signature header");
     return NextResponse.json(
       { error: "Missing stripe-signature header" },
       { status: 400 }
@@ -61,14 +65,11 @@ export async function POST(request: NextRequest) {
       process.env.STRIPE_WEBHOOK_SECRET!
     );
   } catch (err) {
-    console.error("❌ Invalid signature", err);
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
-  // ✅ Payment successful
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
-
     const email = session.customer_email;
     const name = session.metadata?.name;
     const price = session.metadata?.price;
@@ -87,9 +88,9 @@ export async function POST(request: NextRequest) {
       await resend.emails.send({
         from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
         to: [email],
-        subject: "Contact Form Submission",
+        subject: `🎉 Purchase Confirmation - ${packageName}`,
         html: `
-     <div style="font-family: sans-serif; color: #333; padding: 16px;">
+          <div style="font-family: sans-serif; color: #333; padding: 16px;">
             <h2 style="color: #0F766E;">Hello ${name},</h2>
             <p>Thank you for your recent payment of <strong>$${price}</strong> for the <strong>${packageName}</strong> package.</p>
             <p>Your transaction has been successfully processed and we’re excited to start working with you.</p>
@@ -106,13 +107,13 @@ export async function POST(request: NextRequest) {
         to: ["connect.dimondra@gmail.com"],
         subject: `🎉🧾 New Purchase - ${packageName}`,
         html: `
-    <div style="font-family: sans-serif; color: #333; padding: 16px;">
-      <h2>New Purchase Notification</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Package:</strong> ${packageName}</p>
-      <p><strong>Price:</strong> $${price}</p>
-    </div>
+          <div style="font-family: sans-serif; color: #333; padding: 16px;">
+            <h2>New Purchase Notification</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Package:</strong> ${packageName}</p>
+            <p><strong>Price:</strong> $${price}</p>
+          </div>
   `,
       });
     }

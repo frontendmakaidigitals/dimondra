@@ -5,7 +5,7 @@ const nextConfig = {
       "example.com",
       "cdn.example.org",
       "images.unsplash.com",
-      "lh3.googleusercontent",
+      "lh3.googleusercontent.com",
     ], // Add allowed image domains here
   },
   async headers() {

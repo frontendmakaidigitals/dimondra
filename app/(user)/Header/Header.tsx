@@ -16,6 +16,7 @@ import {
 import { useState, useEffect } from "react";
 import { useAuth } from "@/app/context/AuthContext";
 import clsx from "clsx";
+import Image from "next/image";
 const Header = () => {
   const navMenu = siteConfig.navItems;
   const path = usePathname();
@@ -315,10 +316,12 @@ const Header = () => {
                   <PopoverTrigger asChild className="cursor-pointer">
                     <div className="flex items-center gap-2 bg-dimondra-black pl-1 py-1 pr-4 rounded-full">
                       <div className="size-9">
-                        <img
+                        <Image
                           src={user.photoURL}
                           alt="User"
                           className="rounded-full object-cover"
+                          width={50}
+                          height={50}
                         />
                       </div>
                       <p className="text-sm">

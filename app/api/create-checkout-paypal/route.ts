@@ -76,18 +76,24 @@ async function createPayPalOrder(
         brand_name: "Dimondra",
         landing_page: "BILLING",
         user_action: "PAY_NOW",
-        return_url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
-        cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/payment/cancel`,
+        return_url: `http://localhost:3000/payment/success`,
+        cancel_url: `http://localhost:3000/payment/cancel`,
       },
     }),
   });
 
-  return res.json();
+  const text = await res.text();
+  console.log("📥 PayPal order response:", text);
+
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    console.error("❌ Invalid PayPal order response JSON:", err);
+    throw new Error("Invalid response from PayPal when creating order");
+  }
 }
 
 async function capturePayPalOrder(orderID: string, accessToken: string) {
-  console.log("📦 Capturing Order:", orderID);
-
   const res = await fetch(
     `${PAYPAL_API_URL}/v2/checkout/orders/${orderID}/capture`,
     {
@@ -113,7 +119,7 @@ async function capturePayPalOrder(orderID: string, accessToken: string) {
 export async function POST(request: Request) {
   try {
     const { email, name, price, packageName, orderID } = await request.json();
-    console.log(packageName, "this is pacakge name ✅", orderID);
+
     if (!email || !name || !price || !packageName) {
       return NextResponse.json(
         { error: "Missing required fields" },
