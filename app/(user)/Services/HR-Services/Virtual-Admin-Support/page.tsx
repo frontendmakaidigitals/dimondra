@@ -375,6 +375,8 @@ const Page = () => {
 
         document.cookie = `user_email=${user?.email}; path=/`;
         document.cookie = `user_name=${user?.displayName}; path=/`;
+        document.cookie = `user_price=${price}; path=/`;
+        document.cookie = `user_packageName=${name}; path=/`;
 
         const { approvalUrl } = await response.json();
 

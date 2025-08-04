@@ -1,11 +1,13 @@
 import { cookies } from "next/headers";
 import SucessUi from "../(components)/Sucess-Ui";
-export default function Page({
+
+export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ token: string; PayerId: string }>;
+  searchParams: Promise<{ token?: string; PayerID?: string }>;
 }) {
-  const orderID = (await searchParams).token
+  const { token: orderID  } = await searchParams;
+
   if (!orderID) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -18,8 +20,9 @@ export default function Page({
   const email = cookieStore.get("user_email")?.value || "user@example.com";
   const name = cookieStore.get("user_name")?.value || "John Doe";
 
-  const price = "1.00";
-  const packageName = "Full Time";
+  const price = cookieStore.get("user_price")?.value || "user@example.com";
+  const packageName =
+    cookieStore.get("user_packageName")?.value || "user@example.com";
 
   let success = false;
 
@@ -45,9 +48,7 @@ export default function Page({
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       {success ? (
-        <>
-          <SucessUi />
-        </>
+        <SucessUi />
       ) : (
         <>
           <h1 className="text-2xl font-bold text-red-600">❌ Payment Failed</h1>
