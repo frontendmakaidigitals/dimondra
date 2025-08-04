@@ -46,7 +46,7 @@ import {
 import { RadioGroup } from "@/components/ui/radio-group";
 import { db } from "@/config/firebase";
 import { getDocs, collection } from "firebase/firestore";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+
 
 const Page = () => {
   // if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
