@@ -6,7 +6,7 @@ export default async function Page({
 }: {
   searchParams: Promise<{ token?: string; PayerID?: string }>;
 }) {
-  const { token: orderID  } = await searchParams;
+  const { token: orderID } = await searchParams;
 
   if (!orderID) {
     return (
@@ -25,7 +25,7 @@ export default async function Page({
     cookieStore.get("user_packageName")?.value || "user@example.com";
 
   let success = false;
-
+  console.log(email, name, price, packageName);
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_SITE_URL}/api/create-checkout-paypal`,
