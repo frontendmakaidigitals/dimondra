@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import * as admin from "firebase-admin";
 import { ServiceAccount, initializeApp, cert } from "firebase-admin/app";
 import { Resend } from "resend";
+export const runtime = "nodejs";
 const PAYPAL_API_URL =
   process.env.PAYPAL_API_URL || "https://api-m.sandbox.paypal.com";
 const resend = new Resend(

@@ -13,7 +13,6 @@ export const config = {
     bodyParser: false,
   },
 };
-
 if (!admin.apps.length) {
   initializeApp({
     credential: cert({
@@ -31,7 +30,6 @@ if (!admin.apps.length) {
     } as ServiceAccount),
   });
 }
-console.log(admin.apps.length > 0, "started");
 
 const firestore = admin.firestore();
 
