@@ -47,7 +47,6 @@ import { RadioGroup } from "@/components/ui/radio-group";
 import { db } from "@/config/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
-
 const Page = () => {
   // if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   //   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");

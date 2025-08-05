@@ -31,6 +31,11 @@ const items = [
     url: "dashboard/Queries",
     icon: MessageSquareQuote,
   },
+  {
+    title: "Packages",
+    url: "dashboard/Packages",
+    icon: MessageSquareQuote,
+  },
 ];
 
 export function AppSidebar() {
