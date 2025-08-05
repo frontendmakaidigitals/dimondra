@@ -670,16 +670,6 @@ const EditPackage = ({
             size="sm"
             value={form.price}
             onChange={(e) => handleChange("price", e.target.value)}
-            isInvalid={
-              form.price
-                ? Number(form.originalPrice) > Number(form.price)
-                : false
-            }
-            errorMessage={
-              Number(form.originalPrice) > Number(form.price)
-                ? "Original price should not be equal to or less then actual price"
-                : ""
-            }
           />
 
           <Input
