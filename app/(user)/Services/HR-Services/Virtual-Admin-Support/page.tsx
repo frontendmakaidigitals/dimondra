@@ -640,7 +640,7 @@ const Page = () => {
                             onClick={() =>
                               handleSigninOrCheckout(
                                 item.price,
-                                item.name,
+                                item.title,
                                 paymentMethod
                               )
                             }
