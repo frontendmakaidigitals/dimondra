@@ -1,4 +1,4 @@
-name: Deploy Dimondra to VPS
+name: Deploy Dimondra to VPS (Build on Host)
 
 on:
   push:
@@ -6,46 +6,38 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Next.js app
-        run: npm run build
-
-      - name: Setup SSH key
+      - name: 🔐 Setup SSH key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 22 ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy built project via rsync
+      - name: 🚚 Sync code to VPS (without node_modules or .env.local)
         run: |
           rsync -avz --delete \
             --exclude='.git' \
             --exclude='node_modules' \
+            --exclude='.next' \
+            --exclude='.env.local' \
             -e "ssh -i ~/.ssh/id_rsa" \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }}:/root/Dimondra/
 
-      - name: Start or restart app with PM2
+      - name: 🚀 Build and Start app on VPS with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} "
-            cd /root/Dimondra &&
-            npm i sharp &&
-            pm2 delete nextjs-app || true &&
-            PORT=3000 pm2 start npm --name nextjs-app -- start &&
+          ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd /root/Dimondra
+            npm install
+            npm run build
+            npm install sharp
+            pm2 delete nextjs-app || true
+            PORT=3000 pm2 start npm --name nextjs-app -- start
             pm2 save
-          "
+          EOF
