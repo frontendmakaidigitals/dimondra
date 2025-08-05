@@ -80,8 +80,8 @@ async function createPayPalOrder(
         brand_name: "Dimondra",
         landing_page: "BILLING",
         user_action: "PAY_NOW",
-        return_url: `http://localhost:3000/payment/success`,
-        cancel_url: `http://localhost:3000/payment/cancel`,
+        return_url: `https://dimondra.com/payment/success`,
+        cancel_url: `https://dimondra.com/payment/cancel`,
       },
     }),
   });
