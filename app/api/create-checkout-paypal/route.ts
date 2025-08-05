@@ -8,6 +8,9 @@ const PAYPAL_API_URL =
 const resend = new Resend(
   process.env.RESEND_API_KEY || "re_X5r2mbNL_ALcDw9cKjq8QGXbHVk6bBABT"
 );
+console.log("Client ID:", process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID);
+console.log("Client Secret:", process.env.PAYPAL_CLIENT_SECRET);
+
 if (!admin.apps.length) {
   initializeApp({
     credential: cert({

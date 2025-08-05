@@ -8,39 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      # Firebase Admin SDK
-      GOOGLE_TYPE: ${{ secrets.GOOGLE_TYPE }}
-      GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-      GOOGLE_PRIVATE_KEY_ID: ${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
-      GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-      GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_AUTH_URI: ${{ secrets.GOOGLE_AUTH_URI }}
-      GOOGLE_TOKEN_URI: ${{ secrets.GOOGLE_TOKEN_URI }}
-      GOOGLE_AUTH_PROVIDER_CERT_URL: ${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}
-      GOOGLE_CLIENT_CERT_URL: ${{ secrets.GOOGLE_CLIENT_CERT_URL }}
-      GOOGLE_UNIVERSE_DOMAIN: ${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}
 
-      # Stripe
-      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-      STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
-      NEXT_PUBLIC_STRIPE_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}
-
-      # SMTP
-      SMTP_USER: ${{ secrets.SMTP_USER }}
-      SMTP_PASS: ${{ secrets.SMTP_PASS }}
-      SMTP_HOST: ${{ secrets.SMTP_HOST }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
-      SMTP_TO: ${{ secrets.SMTP_TO }}
-
-      # Paypal
-      NEXT_PUBLIC_PAYPAL_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}
-      PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
-      PAYPAL_API_URL: ${{ secrets.PAYPAL_API_URL }}
-      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-
-      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -48,43 +16,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build Next.js app
-        env:
-          GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-          # Add all necessary envs here...
         run: npm run build
-      - name: Create .env.local file
-        run: |
-          echo "GOOGLE_TYPE=${{ secrets.GOOGLE_TYPE }}" >> .env.local
-          echo "GOOGLE_PROJECT_ID=${{ secrets.GOOGLE_PROJECT_ID }}" >> .env.local
-          echo "GOOGLE_PRIVATE_KEY_ID=${{ secrets.GOOGLE_PRIVATE_KEY_ID }}" >> .env.local
-          echo "GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}" >> .env.local
-          echo "GOOGLE_CLIENT_EMAIL=${{ secrets.GOOGLE_CLIENT_EMAIL }}" >> .env.local
-          echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env.local
-          echo "GOOGLE_AUTH_URI=${{ secrets.GOOGLE_AUTH_URI }}" >> .env.local
-          echo "GOOGLE_TOKEN_URI=${{ secrets.GOOGLE_TOKEN_URI }}" >> .env.local
-          echo "GOOGLE_AUTH_PROVIDER_CERT_URL=${{ secrets.GOOGLE_AUTH_PROVIDER_CERT_URL }}" >> .env.local
-          echo "GOOGLE_CLIENT_CERT_URL=${{ secrets.GOOGLE_CLIENT_CERT_URL }}" >> .env.local
-          echo "GOOGLE_UNIVERSE_DOMAIN=${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}" >> .env.local
-          echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}" >> .env.local
-          echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}" >> .env.local
-          echo "STRIPE_WEBHOOK_SECRET=${{ secrets.STRIPE_WEBHOOK_SECRET }}" >> .env.local
-          echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env.local
-          echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> .env.local
-          echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> .env.local
-          echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env.local
-          echo "SMTP_TO=${{ secrets.SMTP_TO }}" >> .env.local
-          echo "NEXT_PUBLIC_PAYPAL_CLIENT_ID=${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}" >> .env.local
-          echo "PAYPAL_CLIENT_SECRET=${{ secrets.PAYPAL_CLIENT_SECRET }}" >> .env.local
-          echo "PAYPAL_API_URL=${{ secrets.PAYPAL_API_URL }}" >> .env.local
-          echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env.local
-
 
       - name: Setup SSH key
         run: |
