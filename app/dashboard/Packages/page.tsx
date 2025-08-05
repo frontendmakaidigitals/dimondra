@@ -29,7 +29,7 @@ type SubscriptionCardProps = {
   id?: string;
 };
 
-export const frequency = [
+const frequency = [
   { key: "month", label: "month" },
   { key: "year", label: "year" },
 ];
