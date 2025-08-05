@@ -38,6 +38,7 @@ jobs:
       NEXT_PUBLIC_PAYPAL_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}
       PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
       PAYPAL_API_URL: ${{ secrets.PAYPAL_API_URL }}
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
       
     steps:
@@ -82,6 +83,7 @@ jobs:
           echo "NEXT_PUBLIC_PAYPAL_CLIENT_ID=${{ secrets.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}" >> .env.local
           echo "PAYPAL_CLIENT_SECRET=${{ secrets.PAYPAL_CLIENT_SECRET }}" >> .env.local
           echo "PAYPAL_API_URL=${{ secrets.PAYPAL_API_URL }}" >> .env.local
+          echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env.local
 
 
       - name: Setup SSH key
