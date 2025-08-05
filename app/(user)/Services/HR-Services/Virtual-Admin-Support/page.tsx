@@ -230,69 +230,57 @@ const Page = () => {
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
-  const packages = [
-    {
-      name: "Full Time",
-      price: "1",
-      buttonText: "Start with Free",
-      features: [
-        "160 Hours per month",
-        "Dedicated Assistant",
-        "Free replacement",
-        "Email and Chat Support",
-        "Phone Call Support",
-        "Customer Success Manager",
-        "Rigorous quality control and supervision",
-        "Your timezone – Any hours you want",
-      ],
+  type SubscriptionCardProps = {
+    title: string;
+    price: string;
+    originalPrice: string;
+    frequency: "month" | "year";
+    badge: string;
+    features: string[];
+    badgeColor: string;
+    id?: string;
+  };
 
-      orgPrice: "1999",
-    },
-    {
-      name: "Part Time",
-      price: "499",
-      buttonText: "Upgrade to Pro",
-      features: [
-        "80 Hours per month",
-        "Dedicated Assistant",
-        "Free replacement",
-        "Email and Chat Support",
-        "Phone Call Support",
-        "Customer Success Manager",
-        "Rigorous quality control and supervision",
-        "Your timezone – Any hours you want",
-      ],
-      orgPrice: "599",
-    },
-    {
-      name: "40 hours",
-      price: "299",
-      buttonText: "Contact Sales",
-      features: [
-        "40 Hours per month",
-        "Free replacement",
-        "Email and Chat Support",
-        "Phone Call Support",
-        "Customer Success Manager",
-        "Rigorous quality control and supervision",
-        "Your timezone – Any hours you want",
-      ],
-    },
-    {
-      name: "20 hours",
-      price: "199",
-      buttonText: "Contact Sales",
-      features: [
-        "40 Hours per month",
-        "Free replacement",
-        "Email and Chat Support",
-        "Phone Call Support",
-        "Customer Success Manager",
-        "Rigorous quality control and supervision",
-        "Your timezone – Any hours you want",
-      ],
-    },
-  ];
+  const [packages, setPackages] = useState<SubscriptionCardProps[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [fetchState, setFetchState] = useState(false);
+  useEffect(() => {
+    const fetchPackages = async () => {
+      setIsLoading(true);
+      try {
+        const snapshot = await getDocs(collection(db, "packages")); // fixed collection name
+        const packagesData: SubscriptionCardProps[] = snapshot.docs.map(
+          (doc) => {
+            const data = doc.data();
+
+            return {
+              id: doc.id,
+              title: data.title || "",
+              price: data.price || 0,
+              originalPrice: data.originalPrice || 0,
+              frequency: data.frequency || "month",
+              isBestValue: data.isBestValue || false,
+              features: data.features || [],
+              cta: data.cta || "",
+              badge: data.badge || "",
+              badgeColor: data.badgeColor || { key: "", val: "" },
+            };
+          }
+        );
+
+        setPackages(packagesData);
+        setIsLoading(false);
+
+        setFetchState(true);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+        setIsLoading(false);
+        setFetchState(false);
+      }
+    };
+
+    fetchPackages();
+  }, []);
   const [shouldCheckout, setShouldCheckout] = useState(false);
   const [checkoutData, setCheckoutData] = useState<{
     price: number | string;
@@ -480,11 +468,7 @@ const Page = () => {
               }}
               viewport={{ once: true }}
               key={idx}
-              className={`rounded-xl overflow-hidden p-4 relative flex flex-col h-full backdrop-filter backdrop-blur-lg border border-slate-700 ${
-                item.price.toLowerCase() === "custom"
-                  ? "bg-dimondra-tealDark text-slate-50"
-                  : "bg-white/40 text-black"
-              }`}
+              className={`rounded-xl overflow-hidden p-4 relative flex flex-col h-full backdrop-filter backdrop-blur-lg border border-slate-700 `}
             >
               {/* Background lights */}
               <div className="w-[800px] h-[70px] bg-white/50 blur-3xl rotate-[-20deg] top-12 absolute left-1/2 -translate-x-1/2" />
@@ -494,29 +478,26 @@ const Page = () => {
               <div className="relative z-10">
                 <div className="flex justify-between items-center">
                   <h2 className="font-dmSans font-[600] text-lg">
-                    {item.name}
+                    {item.title}
                   </h2>
-                  {item.name.toLowerCase() === "full time" && (
-                    <p className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-bl from-[#84cc16] via-[#16a34a] to-[#0f766e]">
-                      Best Value
+                  {item.badge ? (
+                    <p
+                      className={`text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] ${item.badgeColor}`}
+                    >
+                      {item.badge}
                     </p>
-                  )}
-                  {item.name.toLowerCase() === "part time" && (
-                    <p className="text-xs px-4 py-[.4rem] border rounded-full text-slate-100 font-rubik font-[500] bg-gradient-to-b from-[#06b6d4] via-[#2563eb] to-[#6366f1]">
-                      Most Popular
-                    </p>
-                  )}
+                  ) : null}
                 </div>
 
                 <h2 className="text-5xl relative font-quicksand flex items-start gap-[2px] font-[500] mt-5">
-                  {item.orgPrice && (
+                  {item.originalPrice ? (
                     <>
                       <span className="text-lg text-red-500 line-through">
-                        ${item.orgPrice}
+                        ${item.originalPrice}
                       </span>{" "}
                       &nbsp;
                     </>
-                  )}
+                  ) : null}
                   <span className="text-xl mt-[2px] font-[400]">$</span>
                   {item.price}
                   <span className="text-xl mt-[6px] font-[400]">/month</span>
@@ -544,7 +525,7 @@ const Page = () => {
                 {purchases.some(
                   (purchase) =>
                     purchase?.packageName?.toLowerCase() ===
-                    item.name.toLowerCase()
+                    item.title.toLowerCase()
                 ) ? (
                   <motion.button
                     disabled
