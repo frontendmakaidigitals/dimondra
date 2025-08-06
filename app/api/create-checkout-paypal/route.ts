@@ -106,7 +106,6 @@ async function capturePayPalOrder(orderID: string, accessToken: string) {
   );
 
   const text = await res.text();
-
   try {
     return JSON.parse(text);
   } catch (err) {
