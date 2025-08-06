@@ -9,7 +9,7 @@ const Head = () => {
     document.cookie = "admin-auth=; Max-Age=0; path=/"; // Clear the cookie
     router.push("/dashboard/login");
   };
-  const cleanedPath = path.replace(/^\/dashboard/, "");
+
   return (
     <header className="bg-white ">
       <div className="flex container py-4  justify-between items-center">

@@ -8,8 +8,6 @@ const PAYPAL_API_URL =
 const resend = new Resend(
   process.env.RESEND_API_KEY || "re_X5r2mbNL_ALcDw9cKjq8QGXbHVk6bBABT"
 );
-console.log("Client ID:", process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID);
-console.log("Client Secret:", process.env.PAYPAL_CLIENT_SECRET);
 
 if (!admin.apps.length) {
   initializeApp({
@@ -87,12 +85,10 @@ async function createPayPalOrder(
   });
 
   const text = await res.text();
-  console.log("📥 PayPal order response:", text);
 
   try {
     return JSON.parse(text);
   } catch (err) {
-    console.error("❌ Invalid PayPal order response JSON:", err);
     throw new Error("Invalid response from PayPal when creating order");
   }
 }
@@ -110,12 +106,10 @@ async function capturePayPalOrder(orderID: string, accessToken: string) {
   );
 
   const text = await res.text();
-  console.log("📦 Capture response text:", text);
 
   try {
     return JSON.parse(text);
   } catch (err) {
-    console.error("❌ Failed to parse JSON:", err);
     throw new Error("Invalid PayPal response");
   }
 }
@@ -123,7 +117,6 @@ async function capturePayPalOrder(orderID: string, accessToken: string) {
 export async function POST(request: Request) {
   try {
     const { email, name, price, packageName, orderID } = await request.json();
-
     if (!email || !name || !price || !packageName) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -132,10 +125,8 @@ export async function POST(request: Request) {
     }
 
     const accessToken = await getPayPalAccessToken();
-
     // If orderID is present, we capture the payment
     if (orderID) {
-      console.log("order started");
       const captureData = await capturePayPalOrder(orderID, accessToken);
 
       if (captureData.status !== "COMPLETED") {
@@ -160,11 +151,9 @@ export async function POST(request: Request) {
         packageName,
         purchasedAt: new Date().toISOString(),
       });
-      console.log("✅ Firestore updated for", email);
       // ✅ Send email
-      await resend.emails.send({
-        from:
-          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
+      const emailStatus1 = await resend.emails.send({
+        from: process.env.SMTP_USER || "noreply@dimondra.com",
         to: [email],
         subject: "✅ Payment Successful – Dimondra",
         html: `
@@ -176,7 +165,21 @@ export async function POST(request: Request) {
             <p>Best regards,<br /><strong>Team Dimondra</strong></p>
           </div>
         `,
-        replyTo: email,
+      });
+
+      const emailstatus2 = await resend.emails.send({
+        from: process.env.SMTP_USER || "noreply@dimondra.com",
+        to: ["connect.dimondra@gmail.com"],
+        subject: `🎉🧾 New Purchase - ${packageName}`,
+        html: `
+          <div style="font-family: sans-serif; color: #333; padding: 16px;">
+            <h2>New Purchase Notification</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Package:</strong> ${packageName}</p>
+            <p><strong>Price:</strong> $${price}</p>
+          </div>
+  `,
       });
 
       return NextResponse.json(

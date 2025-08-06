@@ -1,4 +1,4 @@
-import { Home, Play, Book, MessageSquareQuote } from "lucide-react";
+import { Home, Package, Book, MessageSquareQuote } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import Link from "next/link";
 import {
@@ -34,7 +34,7 @@ const items = [
   {
     title: "Packages",
     url: "dashboard/Packages",
-    icon: MessageSquareQuote,
+    icon: Package,
   },
 ];
 
