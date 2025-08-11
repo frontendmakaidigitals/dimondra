@@ -22,6 +22,12 @@ const FloatingSocialMediaIcons = () => {
       name: "email",
       link: "mailto:Connect@dimondra.com",
     },
+    {
+      icon: "/icon/instagram.svg",
+      color: "#ffffff",
+      name: "instagram",
+      link: "/",
+    },
   ];
 
   const [hoverId, setHoverId] = useState<number | null>(null);
