@@ -159,13 +159,13 @@ const RightSide = ({
       alert("Invalid payment method selected.");
     }
   };
-
+  const [clicked, setClicked] = useState(false);
   const handleSigninOrCheckout = (
     price: number | string,
     name: string,
     method: string
   ) => {
-    console.log("clicoed");
+    setClicked(true);
     if (!user) {
       setShouldCheckout(true);
       setCheckoutData({ price, name, method });
@@ -350,7 +350,8 @@ const RightSide = ({
 
                         <DialogFooter className="mt-6">
                           <button
-                            className="px-4 py-[.4rem] bg-green-800 text-slate-50 rounded-lg"
+                            disabled={clicked}
+                            className={`px-4 py-[.4rem] bg-green-800 text-slate-50 rounded-lg disabled:bg-slate-500`}
                             onClick={() =>
                               handleSigninOrCheckout(price, name, paymentMethod)
                             }

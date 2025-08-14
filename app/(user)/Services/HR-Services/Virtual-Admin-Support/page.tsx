@@ -244,6 +244,7 @@ const Page = () => {
   const [packages, setPackages] = useState<SubscriptionCardProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [fetchState, setFetchState] = useState(false);
+  const [clicked, setClicked] = useState(false);
   useEffect(() => {
     const fetchPackages = async () => {
       setIsLoading(true);
@@ -387,6 +388,7 @@ const Page = () => {
     name: string,
     method: string
   ) => {
+    setClicked(true);
     if (!user) {
       setShouldCheckout(true);
       setCheckoutData({ price, name, method });
@@ -450,7 +452,7 @@ const Page = () => {
         }
         img={"/services/vas.jpg"}
       />
-      <section className="py-12 relative">
+      <section className="py-12 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/5 bg-dimondra-teal/20 blur-3xl size-[300px] rounded-full" />
         <div className="absolute top-0 left-1/2 -translate-x-1/5 bg-dimondra-tealDark/20 blur-3xl size-[300px] rounded-full" />
         <h1 className="max-w-4xl relative z-10 mb-9 mx-auto text-center font-[600] text-6xl font-sans text-dimondra-black">
@@ -566,7 +568,7 @@ const Page = () => {
                         </motion.button>
                       </DialogTrigger>
 
-                      <DialogContent>
+                      <DialogContent className="max-w-[95%] lg:max-w-md">
                         <DialogHeader>
                           <DialogTitle>Select Your Payment Method</DialogTitle>
                           <DialogDescription>
@@ -636,7 +638,8 @@ const Page = () => {
 
                         <DialogFooter className="mt-6">
                           <button
-                            className="px-4 py-[.4rem] bg-green-800 text-slate-50 rounded-lg"
+                            disabled={clicked}
+                            className={`px-4 py-[.4rem] bg-green-800 text-slate-50 rounded-lg disabled:bg-slate-500`}
                             onClick={() =>
                               handleSigninOrCheckout(
                                 item.price,

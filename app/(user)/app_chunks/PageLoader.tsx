@@ -8,7 +8,7 @@ const MotionImage = motion(Image);
 
 const Loading = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div></div>}>
       <Loader />
     </Suspense>
   );
