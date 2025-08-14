@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
   console.log("⚡️ Stripe webhook triggered");
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: "2025-06-30.basil",
+    apiVersion: "2025-07-30.basil",
   });
   const buf = await buffer(request);
   const sig = request.headers.get("stripe-signature");
