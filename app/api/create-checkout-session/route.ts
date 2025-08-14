@@ -22,8 +22,8 @@ export async function POST(request: NextRequest) {
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000/Services/HR-Services/Virtual-Admin-Support",
-      cancel_url: "http://localhost:3000/Services/HR-Services/Virtual-Admin-Support",
+      success_url: "https://Dimondra.com/Services/HR-Services/Virtual-Admin-Support",
+      cancel_url: "https://Dimondra.com/Services/HR-Services/Virtual-Admin-Support",
 
       customer_email: email,
 
