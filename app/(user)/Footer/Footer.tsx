@@ -9,27 +9,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "../app_chunks/Logo";
-import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Set initial width (in case SSR or hydration mismatch)
-    handleResize();
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <footer className="text-dimondra-white overflow-hidden bg-dimondra-black relative">
       <div className="container relative z-10 py-16">
@@ -60,6 +41,14 @@ const Footer = () => {
                   rel="noopener noreferrer"
                 >
                   <Linkedin fill={""} className="h-7 w-7  " />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/dimondraco/"
+                  className="rounded-xl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-7 w-7 bg-dimondra-black " />
                 </Link>
               </div>
             </div>

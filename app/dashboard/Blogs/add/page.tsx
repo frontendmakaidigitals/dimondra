@@ -11,6 +11,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { Spinner } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { addToast } from "@heroui/react";
+import { Eye, Upload, User, Facebook, Twitter } from "lucide-react";
 const CLOUDINARY_UPLOAD_PRESET = "BlogsImages"; // 🔁 Replace this
 const CLOUDINARY_CLOUD_NAME = "dkqbwxnhs"; // 🔁 Replace this
 
@@ -183,7 +184,24 @@ export default function AddBlogPage() {
       });
     }
   };
-
+  const [showPreview, setShowPreview] = useState(false);
+  const handlePreview = () => {
+    if (
+      !blogData.title ||
+      !blogData.content ||
+      !blogData.image ||
+      !blogData.category ||
+      !blogData.author
+    ) {
+      addToast({
+        title: "Preview Error",
+        description: "Please fill in the title and content before previewing.",
+        color: "warning",
+      });
+      return;
+    }
+    setShowPreview(true);
+  };
   return (
     <div className="pb-10">
       <h1 className="text-2xl font-semibold">Add New Blog</h1>
@@ -307,39 +325,153 @@ export default function AddBlogPage() {
             </div>
           </div>
         </div>
-        <Button
-          disabled={loading}
-          type="submit"
-          onClick={handleSubmit}
-          size="lg"
-          className="py-6"
-        >
-          {loading ? (
-            <span className="flex items-center gap-2">
-              <Spinner color="default" size={"md"} variant="spinner" />
-              Uploading
-            </span>
-          ) : (
-            "Submit"
-          )}
-        </Button>
+        <div className="w-full flex justify-end gap-4">
+          {" "}
+          <Button
+            type="button"
+            onClick={handlePreview}
+            size="lg"
+            className="py-6 bg-blue-600 hover:bg-blue-700 text-slate-50 hover:shadow-md hover:scale-[1.02] transition-all duration-250"
+          >
+            <Eye /> Preview
+          </Button>
+          <Button
+            disabled={loading}
+            type="submit"
+            onClick={handleSubmit}
+            size="lg"
+            className="py-6 bg-teal-700 text-slate-50 hover:bg-teal-800 hover:shadow-md hover:scale-[1.02] transition-all duration-250"
+          >
+            {loading ? (
+              <span className="flex items-center gap-2">
+                <Spinner color="default" size={"md"} variant="spinner" />
+                Uploading
+              </span>
+            ) : (
+              <span className="flex items-center gap-2">
+                <Upload />
+                Submit
+              </span>
+            )}
+          </Button>
+        </div>
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="max-w-3xl text-white max-h-[90vh] overflow-auto p-4 !border-transparent !bg-transparent">
+            <DialogTitle>
+              {" "}
+              {blogData.image ? blogData.image.name : null}
+            </DialogTitle>
+            {imagePreview && (
+              <img
+                src={imagePreview}
+                alt="Full Preview"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+            )}
+          </DialogContent>
+        </Dialog>
       </form>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-3xl text-white max-h-[90vh] overflow-auto p-4 !border-transparent !bg-transparent">
-          <DialogTitle>
-            {" "}
-            {blogData.image ? blogData.image.name : null}
-          </DialogTitle>
-          {imagePreview && (
-            <img
-              src={imagePreview}
-              alt="Full Preview"
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-            />
-          )}
+      <Dialog open={showPreview} onOpenChange={setShowPreview}>
+        <DialogContent className="max-w-8xl  text-white max-h-full overflow-auto p-4 !border-transparent !bg-transparent">
+          <DialogTitle>Blog Preview: {blogData.title}</DialogTitle>
+          <PreviewBlog blog={blogData} imagePreview={imagePreview} />
         </DialogContent>
       </Dialog>
     </div>
   );
 }
+
+interface Blog {
+  author: string;
+  category: string;
+  content: string;
+  metaDesc: string;
+  metaTitle: string;
+  title: string;
+}
+const PreviewBlog = ({
+  blog,
+  imagePreview,
+}: {
+  blog: Blog;
+  imagePreview: string | null;
+}) => {
+  function calculateReadTime(text: string) {
+    const wordsPerMinute = 200; // average reading speed
+    const wordCount = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min read`;
+  }
+  return (
+    <div className="bg-[#eef7ff] py-10 ">
+      {/* Hero Section */}
+      <div className="container">
+        <div className="flex flex-col items-center">
+          <p className="p-2 text-xs bg-teal-100 text-teal-700 rounded-lg font-bold font-quicksand text-center mb-2">
+            {blog?.category}
+          </p>
+          <h1 className="text-6xl tracking-tighter font-[600] text-center">
+            {blog?.title}
+          </h1>
+        </div>
+
+        <div className="flex flex-col items-center mt-8">
+          <ul className="flex items-center gap-4 text-sm divide-x divide-slate-300">
+            <li className="flex items-center gap-3 ">
+              <div className="w-fit p-2 rounded-full bg-slate-200">
+                <User size={16} />
+              </div>
+              <p>{blog?.author}</p>
+            </li>
+            <li className="pl-3">{new Date().toDateString()}</li>
+
+            <li className="pl-3">
+              {blog?.content ? calculateReadTime(blog?.content) : null}
+            </li>
+          </ul>
+
+          <ul className="flex justify-center items-center mt-5">
+            <li className="flex items-center gap-3">
+              <button
+                disabled
+                className="px-4 flex disabled:bg-slate-200 disabled:text-slate-600 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg "
+              >
+                <Facebook /> Share
+              </button>
+              <button
+                disabled
+                className="px-4 disabled:bg-slate-200 disabled:text-slate-600 flex items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg "
+              >
+                <Twitter /> Tweet
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div className="w-full h-[580px] mt-12 rounded-xl overflow-hidden">
+          <img
+            src={imagePreview || ""}
+            alt={blog?.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-5xl mx-auto ">
+          <div className="mt-8">
+            {blog?.content ? (
+              <Editor
+                editorSerializedState={
+                  typeof blog.content === "string"
+                    ? JSON.parse(blog.content)
+                    : null
+                }
+                readOnly
+                blogPage={true}
+              />
+            ) : null}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

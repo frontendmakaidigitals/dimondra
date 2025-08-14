@@ -85,3 +85,30 @@ body {
 }
 
 
+/* Example: target the ContentEditable__root's content area */
+.ContentEditable__root p,
+.ContentEditable__root h1,
+.ContentEditable__root h2,
+.ContentEditable__root h3,
+.ContentEditable__root h4,
+.ContentEditable__root h5,
+.ContentEditable__root h6,
+.ContentEditable__root blockquote,
+.ContentEditable__root ul,
+.ContentEditable__root ol {
+  margin-top: 0.25em !important;     /* adjust to taste */
+  margin-bottom: 0.25em;  /* adjust to taste */
+  line-height: 1.4;
+  list-style: disc;
+}
+
+/* For completely tight spacing */
+.ContentEditable__root p,
+.ContentEditable__root h1,
+.ContentEditable__root h2,
+.ContentEditable__root h3,
+.ContentEditable__root h4,
+.ContentEditable__root h5,
+.ContentEditable__root h6 {
+  margin: 0;
+}

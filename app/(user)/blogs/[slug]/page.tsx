@@ -1,11 +1,13 @@
 "use client";
-import { User } from "lucide-react";
+import { User, Facebook, Twitter } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Blogs from "../../(homepage)/Blogs";
 import { db } from "@/config/firebase";
 import { collection, getDocs, Timestamp } from "firebase/firestore";
 import { useParams } from "next/navigation";
 import { Editor } from "@/components/blocks/editor-00/editor";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 const Page = () => {
   function slugify(text: string): string {
     return text
@@ -70,32 +72,75 @@ const Page = () => {
 
     fetchBlogs();
   }, []);
-  return (
-    <div>
-      {" "}
-      <div className="bg-teal-800">
-        <div className="h-[45vh] lg:h-[90dvh] max-w-xs lg:max-w-7xl container w-full relative">
-          <img
-            src={blog?.imageURL}
-            alt={blog?.title}
-            className="w-full rounded-lg h-[320px] lg:h-[650px] object-cover absolute bottom-0 translate-y-1/2 lg:translate-y-0 lg:top-1/3  left-1/2 -translate-x-1/2"
-          />
-        </div>
-      </div>
-      <div className="mt-[250px] container ">
-        <div className="flex items-center justify-between ">
-          <ul className="flex justify-start items-center gap-4">
-            <li className="p-2 text-xs bg-dimondra-black text-slate-50 rounded-lg">
-              {blog?.category}
-            </li>
-          </ul>
-          <p>{blog?.createdAt.toDate().toLocaleDateString()}</p>
-        </div>
+  function calculateReadTime(text: string) {
+    const wordsPerMinute = 200; // average reading speed
+    const wordCount = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min read`;
+  }
 
+  const pathname = usePathname();
+  const blogURL = `https://yourwebsite.com${pathname}`;
+  const blogTitle = blog?.title || "";
+
+  return (
+    <main className="pt-28 relative container ">
+      <div className="flex flex-col items-center">
+        <p className="p-2 text-xs bg-teal-100 text-teal-700 rounded-lg font-bold font-quicksand text-center mb-2">
+          {blog?.category}
+        </p>
+        <h1 className="text-6xl tracking-tighter font-[600] text-center">
+          {blog?.title}
+        </h1>
+      </div>
+
+      <div className="flex flex-col items-center mt-8">
+        <ul className="flex items-center gap-4 text-sm divide-x divide-slate-300">
+          <li className="flex items-center gap-3 ">
+            <div className="w-fit p-2 rounded-full bg-slate-200">
+              <User size={16} />
+            </div>
+            <p>{blog?.author}</p>
+          </li>
+          <li className="pl-3">{blog?.createdAt.toDate().toDateString()}</li>
+          <li className="pl-3">
+            {blog?.content ? calculateReadTime(blog?.content) : null}
+          </li>
+        </ul>
+
+        <ul className="flex justify-center items-center mt-5">
+          <li className="flex items-center gap-3">
+            <Link
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg  bg-[#1DA1F2]">
+                <Twitter /> Tweet
+              </button>
+            </Link>
+            <Link
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogURL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-4 text-slate-50 flex items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#1877F2]">
+                <Facebook /> Share
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="w-full h-[580px] mt-12 rounded-xl overflow-hidden">
+        <img
+          src={blog?.imageURL}
+          alt={blog?.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="max-w-5xl mx-auto ">
         <div className="mt-8">
-          <h1 className="text-6xl mb-9 tracking-tighter font-[500]">
-            {blog?.title}
-          </h1>
           {blog?.content ? (
             <Editor
               editorSerializedState={
@@ -107,16 +152,10 @@ const Page = () => {
               blogPage={true}
             />
           ) : null}
-          <div className="mt-12 flex items-center gap-3">
-            <div className="w-fit p-2 rounded-full bg-slate-200">
-              <User />
-            </div>
-            <p>{blog?.author}</p>
-          </div>
         </div>
-        <Blogs />
       </div>
-    </div>
+      <Blogs />
+    </main>
   );
 };
 

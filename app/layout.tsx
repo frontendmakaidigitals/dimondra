@@ -38,7 +38,7 @@ export default function RootLayout({
           quicksand.variable
         )}
       >
-        <ToastProvider />
+        <ToastProvider placement="top-right" />
         {children}
       </body>
     </html>

@@ -24,9 +24,9 @@ const FloatingSocialMediaIcons = () => {
     },
     {
       icon: "/icon/instagram.svg",
-      color: "#ffffff",
+      color: "#E4405F",
       name: "instagram",
-      link: "/",
+      link: "https://www.instagram.com/dimondraco/",
     },
   ];
 

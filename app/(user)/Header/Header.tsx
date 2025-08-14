@@ -24,13 +24,6 @@ const Header = () => {
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const { googleSignIn, user, logOut } = useAuth();
-  const handleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
   const handleSignOut = async () => {
     try {
       await logOut();
@@ -54,6 +47,7 @@ const Header = () => {
   }, []);
   const [locationHovering, setLocationhovering] = useState(false);
   const router = useRouter();
+  const isBlogPage = path.includes("/blogs/");
   return (
     <motion.header
       className={`py-3 navMenu mx-auto h-fit z-50 fixed origin-center  inset-0`}
@@ -75,7 +69,9 @@ const Header = () => {
           <Logo className="w-32 realtive z-10" />
         </motion.div>
 
-        <motion.div className="hidden lg:flex items-center space-x-6">
+        <motion.div
+          className={`hidden lg:flex items-center space-x-6 ${isBlogPage ? "!text-black" : ""}`}
+        >
           {navMenu.map((item, idx) => (
             <motion.div key={idx} className="relative text-sm">
               {item.href ? (
@@ -94,7 +90,7 @@ const Header = () => {
                   onMouseEnter={() => setLocationhovering(true)}
                   onMouseLeave={() => setLocationhovering(false)}
                 >
-                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-dimondra-black hover:text-dimondra-white">
+                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-dimondra-black hover:text-dimondra-white ">
                     {item.label}{" "}
                     <span className="inline-block ml-1 align-middle">
                       {<ChevronDown className="size-[18px]" />}
@@ -192,7 +188,7 @@ const Header = () => {
                     setIsMenuShowing(false);
                   }}
                 >
-                  <button className="rounded-lg px-3 py-[.6rem] hover:bg-dimondra-black hover:text-dimondra-white">
+                  <button className="rounded-lg px-3 py-[.6rem]  hover:bg-dimondra-black hover:text-dimondra-white">
                     {item.label}{" "}
                     <span className="inline-block ml-1 align-middle">
                       {<ChevronDown className="size-[18px]" />}

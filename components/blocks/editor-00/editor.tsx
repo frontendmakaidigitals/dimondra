@@ -6,7 +6,8 @@ import {
   InitialConfigType,
   LexicalComposer,
 } from "@lexical/react/LexicalComposer";
-
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { HistoryToolbarPlugin } from "@/components/editor/plugins/toolbar/history-toolbar-plugin";
 import { EditorState, SerializedEditorState } from "lexical";
 import { ClearEditorPlugin } from "@lexical/react/LexicalClearEditorPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
@@ -129,6 +130,7 @@ export function Plugins({
         <ToolbarPlugin>
           {({ blockType }) => (
             <div className="vertical-align-middle sticky top-0 z-10 flex gap-2 overflow-auto border-b p-1">
+              <HistoryToolbarPlugin />
               <BlockFormatDropDown>
                 <FormatParagraph />
                 <FormatHeading levels={["h1", "h2", "h3"]} />
@@ -184,6 +186,7 @@ export function Plugins({
         )}
         <ListPlugin />
         <CheckListPlugin />
+        <HistoryPlugin />
       </div>
       {!readOnly && (
         <ActionsPlugin>
