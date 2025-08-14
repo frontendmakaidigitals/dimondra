@@ -36,6 +36,11 @@ const items = [
     url: "dashboard/Packages",
     icon: Package,
   },
+  {
+    title: "Hr Packages",
+    url: "dashboard/Hr-Packages",
+    icon: Package,
+  },
 ];
 
 export function AppSidebar() {

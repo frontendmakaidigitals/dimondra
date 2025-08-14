@@ -5,6 +5,8 @@ import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
 import RightSide from "../(sideBar)/RightSide";
 import BgLayer from "../../../../app_chunks/BgLayer";
+import { db } from "@/config/firebase";
+import { query, where, getDocs, collection } from "firebase/firestore";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -19,7 +21,44 @@ const Page = () => {
     const top = sectionRef.current?.offsetTop || 0;
     setSectionTop(top);
   }, []);
+  const [packageData, setPackageData] = useState({
+    orgPrice: "",
+    discountedPrice: "",
+    label: "",
+    id: "",
+  });
 
+  useEffect(() => {
+    const fetchSinglePackage = async () => {
+      try {
+        const q = query(
+          collection(db, "hrPackages"),
+          where("label", "==", "aphri")
+        );
+
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          const firstDoc = snapshot.docs[0];
+          const data = firstDoc.data();
+          setPackageData({
+            id: firstDoc.id,
+            orgPrice: data.orgPrice ?? "",
+            discountedPrice: data.discountedPrice ?? "",
+            label: data.label ?? "",
+          });
+        } else {
+          console.log("No matching package found");
+        }
+      } catch (error) {
+        console.error("Error fetching package:", error);
+      }
+    };
+
+    fetchSinglePackage();
+  }, []);
+
+  console.log(packageData);
   return (
     <main>
       <section ref={sectionRef} className="relative h-[80vh] overflow-hidden">
@@ -142,14 +181,16 @@ const Page = () => {
           </div>
           <RightSide
             price={300}
-            name={'aphri'}
+            name={"aphri"}
             Price={
               <>
                 <span className="line-through  text-red-500 border-red-400">
-                  $400
+                  ${packageData.orgPrice}
                 </span>
                 &nbsp; &nbsp;
-                <span className="text-slate-950">$300</span>
+                <span className="text-slate-950">
+                  ${packageData.discountedPrice}
+                </span>
               </>
             }
           />

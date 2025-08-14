@@ -5,6 +5,8 @@ import HomeForm from "../../../../(homepage)/HomeForm";
 import { motion, useScroll, useTransform } from "motion/react";
 import BgLayer from "../../../../app_chunks/BgLayer";
 import RightSide from "../(sideBar)/RightSide";
+import { db } from "@/config/firebase";
+import { query, where, getDocs, collection } from "firebase/firestore";
 const Page = () => {
   const { scrollY } = useScroll();
   const [sectionTop, setSectionTop] = useState(0);
@@ -18,6 +20,43 @@ const Page = () => {
   useEffect(() => {
     const top = sectionRef.current?.offsetTop || 0;
     setSectionTop(top);
+  }, []);
+
+  const [packageData, setPackageData] = useState({
+    orgPrice: "",
+    discountedPrice: "",
+    label: "",
+    id: "",
+  });
+
+  useEffect(() => {
+    const fetchSinglePackage = async () => {
+      try {
+        const q = query(
+          collection(db, "hrPackages"),
+          where("label", "==", "gphr")
+        );
+
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          const firstDoc = snapshot.docs[0];
+          const data = firstDoc.data();
+          setPackageData({
+            id: firstDoc.id,
+            orgPrice: data.orgPrice ?? "",
+            discountedPrice: data.discountedPrice ?? "",
+            label: data.label ?? "",
+          });
+        } else {
+          console.log("No matching package found");
+        }
+      } catch (error) {
+        console.error("Error fetching package:", error);
+      }
+    };
+
+    fetchSinglePackage();
   }, []);
 
   return (
@@ -139,7 +178,6 @@ const Page = () => {
                   <span className="inline-block text-sm font-quicksand">
                     (This includes both the application and exam fees.)
                   </span>
-                  
                 </p>
                 <p className="text-sm font-quicksand">
                   **Note: Once your exam application is approved, fees are
@@ -181,10 +219,12 @@ const Page = () => {
             Price={
               <>
                 <span className="line-through  text-red-500 border-red-400">
-                  $500
+                  ${packageData.orgPrice}
                 </span>
                 &nbsp; &nbsp;
-                <span className="text-slate-950">$400</span>
+                <span className="text-slate-950">
+                  ${packageData.discountedPrice}
+                </span>
               </>
             }
           />
