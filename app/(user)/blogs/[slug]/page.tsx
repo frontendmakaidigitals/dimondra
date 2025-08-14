@@ -103,7 +103,7 @@ const Page = () => {
 
       <div className="flex flex-col items-center mt-8">
         {/* Blog Info */}
-        <ul className="flex flex-row lg:flex-col justify-between items-center gap-4 text-sm  sm:divide-y-0 sm:divide-x divide-slate-300 w-full  lg:px-0">
+        <ul className="flex flex-row  justify-between lg:justify-center items-center gap-4 text-sm  sm:divide-y-0 sm:divide-x divide-slate-300 w-full  lg:px-0">
           <li className="flex items-center gap-3 py-2 sm:py-0">
             <div>
               <User size={16} />
