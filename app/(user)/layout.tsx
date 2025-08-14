@@ -39,7 +39,7 @@ export default function RootLayout({
         <FloatingSocialMediaIcons />
         <PageLoader />
         <FloatingWhatsappIcon />
-
+        <FloatingPhoneIcon />
         <Backtotop />
         {children}
         <Footer />

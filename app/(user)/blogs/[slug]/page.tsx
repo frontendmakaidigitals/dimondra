@@ -1,5 +1,12 @@
 "use client";
-import { User, Facebook, Twitter } from "lucide-react";
+import {
+  User,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Calendar,
+} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Blogs from "../../(homepage)/Blogs";
 import { db } from "@/config/firebase";
@@ -89,50 +96,88 @@ const Page = () => {
         <p className="p-2 text-xs bg-teal-100 text-teal-700 rounded-lg font-bold font-quicksand text-center mb-2">
           {blog?.category}
         </p>
-        <h1 className="text-6xl tracking-tighter font-[600] text-center">
+        <h1 className="text-4xl lg:text-6xl tracking-tighter font-[600] text-center">
           {blog?.title}
         </h1>
       </div>
 
       <div className="flex flex-col items-center mt-8">
-        <ul className="flex items-center gap-4 text-sm divide-x divide-slate-300">
-          <li className="flex items-center gap-3 ">
-            <div className="w-fit p-2 rounded-full bg-slate-200">
+        {/* Blog Info */}
+        <ul className="flex flex-row lg:flex-col justify-between items-center gap-4 text-sm  sm:divide-y-0 sm:divide-x divide-slate-300 w-full  lg:px-0">
+          <li className="flex items-center gap-3 py-2 sm:py-0">
+            <div>
               <User size={16} />
             </div>
             <p>{blog?.author}</p>
           </li>
-          <li className="pl-3">{blog?.createdAt.toDate().toDateString()}</li>
-          <li className="pl-3">
+          <li className="flex items-center gap-2 py-2 sm:py-0 pl-0 sm:pl-3">
+            <div>
+              <Calendar size={"16"} />
+            </div>
+            {blog?.createdAt.toDate().toDateString()}
+          </li>
+          <li className="py-2 sm:py-0 pl-0 sm:pl-3 hidden lg:block">
             {blog?.content ? calculateReadTime(blog?.content) : null}
           </li>
         </ul>
 
-        <ul className="flex justify-center items-center mt-5">
-          <li className="flex items-center gap-3">
+        {/* Social Share Buttons */}
+        <ul className="grid grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:items-center mt-5 gap-3 w-full ">
+          <li className="w-full lg:w-auto">
             <Link
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full"
             >
-              <button className="px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg  bg-[#1DA1F2]">
+              <button className="w-full justify-center px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#1DA1F2]">
                 <Twitter /> Tweet
               </button>
             </Link>
+          </li>
+
+          <li className="w-full lg:w-auto">
             <Link
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogURL)}`}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full"
             >
-              <button className="px-4 text-slate-50 flex items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#1877F2]">
+              <button className="w-full justify-center px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#1877F2]">
                 <Facebook /> Share
+              </button>
+            </Link>
+          </li>
+
+          <li className="w-full lg:w-auto">
+            <Link
+              href={`https://www.instagram.com/?url=${encodeURIComponent(blogURL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <button className="w-full justify-center px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#E4405F]">
+                <Instagram /> Post
+              </button>
+            </Link>
+          </li>
+
+          <li className="w-full lg:w-auto">
+            <Link
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogURL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <button className="w-full justify-center px-4 flex text-slate-50 items-center gap-2 py-[.4rem] border border-slate-200 rounded-lg bg-[#0A66C2]">
+                <Linkedin /> Share
               </button>
             </Link>
           </li>
         </ul>
       </div>
 
-      <div className="w-full h-[580px] mt-12 rounded-xl overflow-hidden">
+      <div className="w-full h-[300px] lg:h-[580px] mt-12 rounded-xl overflow-hidden">
         <img
           src={blog?.imageURL}
           alt={blog?.title}

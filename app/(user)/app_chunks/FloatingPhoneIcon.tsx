@@ -1,19 +1,30 @@
 "use client";
-import React from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { Phone } from "lucide-react";
+import PopForm from "./PopFrom";
 const FloatingPhoneIcon = () => {
   const number = "+971562787553";
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setIsVisible(scrollTop > 100);
+    };
 
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Link
-      href={`https://wa.me/${number.replace(/\D/g, "")}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-24 right-12 z-50 group"
+    <motion.div
+      animate={{ bottom: isVisible ? "95px" : "25px" }}
+      className="fixed  right-12 z-50 group"
     >
-      <div className="relative w-14 h-14">
+      <PopForm isOpen={isOpen} setIsOpen={setIsOpen} />
+      <button onClick={() => setIsOpen(true)} className="relative w-12 h-12">
         {/* Ripple effect */}
         <motion.span
           initial={{ x: "-50%", y: "-50%" }}
@@ -35,8 +46,8 @@ const FloatingPhoneIcon = () => {
         <div className="relative z-10 flex items-center justify-center w-full bg-slate-50 h-full  rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
           <img src="/phone-call.png" alt="WhatsApp" className="w-full h-full" />
         </div>
-      </div>
-    </Link>
+      </button>
+    </motion.div>
   );
 };
 

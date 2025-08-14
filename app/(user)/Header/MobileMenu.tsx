@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { SiteConfig } from "@/config/site";
+import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -32,7 +33,8 @@ type MenuProps = {
 
 const MobileMenu = ({ menu }: MenuProps) => {
   const [showMenu, setShowMenu] = React.useState(false);
-
+  const path = usePathname();
+  const isBlogPage = path.includes("/blogs/");
   React.useEffect(() => {
     document.body.style.overflow = showMenu ? "hidden" : "auto";
     return () => {
@@ -44,7 +46,7 @@ const MobileMenu = ({ menu }: MenuProps) => {
     <>
       <motion.button
         onClick={() => setShowMenu(!showMenu)}
-        className="text-3xl absolute top-5 right-5 z-20"
+        className={`text-3xl absolute top-5 right-5 z-20 ${isBlogPage ? "text-black" : ""}`}
       >
         {showMenu ? <X /> : <Ham />}
       </motion.button>
