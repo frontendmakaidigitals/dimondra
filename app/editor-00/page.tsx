@@ -5,7 +5,7 @@ import { SerializedEditorState } from "lexical"
 
 import { Editor } from "@/components/blocks/editor-00/editor"
 
-export const initialValue = {
+const initialValue = {
   root: {
     children: [
       {
@@ -15,7 +15,7 @@ export const initialValue = {
             format: 0,
             mode: "normal",
             style: "",
-            text: "Hello World 🚀",
+            text: "Hello World",
             type: "text",
             version: 1,
           },
