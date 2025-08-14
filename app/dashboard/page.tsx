@@ -13,7 +13,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
@@ -43,6 +42,10 @@ export interface contacts {
 const DashboardPage = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [contact, setContact] = useState<contacts[]>([]);
+  const [paymentClient, setPaymentClient] = useState<{
+    stripe: number;
+    paypal: number;
+  }>();
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -86,7 +89,49 @@ const DashboardPage = () => {
 
     fetchContact();
   }, []);
+  useEffect(() => {
+    const fetchPayments = async () => {
+      try {
+        // Use collectionGroup to get all purchase documents across all users
+        const snapshot = await getDocs(collectionGroup(db, "purchases"));
 
+        const payments = snapshot.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            client: data.client,
+            amount: Number(data.price), // convert string to number
+          };
+        });
+
+        // Sum payments by client
+        const totalByClient = payments.reduce(
+          (acc, curr) => {
+            if (curr.client === "stripe") acc.stripe += curr.amount;
+            else if (curr.client === "paypal") acc.paypal += curr.amount;
+            return acc;
+          },
+          { stripe: 0, paypal: 0 }
+        );
+
+        setPaymentClient(totalByClient);
+      } catch (error) {
+        console.error("Error fetching payments:", error);
+      }
+    };
+
+    fetchPayments();
+  }, []);
+  function formatNumber(value: number) {
+    if (value >= 1_000_000_000) {
+      return (value / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "b";
+    } else if (value >= 1_000_000) {
+      return (value / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m";
+    } else if (value >= 1_000) {
+      return (value / 1_000).toFixed(1).replace(/\.0$/, "") + "k";
+    } else {
+      return value.toString();
+    }
+  }
   return (
     <div className="min-h-screen w-full ">
       <h1 className="text-2xl mb-3 font-[500]">
@@ -120,6 +165,25 @@ const DashboardPage = () => {
               <ArrowUpRight className="" />
             </span>
           </Link>
+        </div>
+        <div className="border border-slate-900/40 rounded-3xl p-4">
+          <h2 className="text-lg font-[600]">Paypal</h2>
+          <div className="flex items-center h-[70%]">
+            {" "}
+            <p className="text-7xl mt-4">
+              <span className="!text-3xl">$</span>
+              {paymentClient?.paypal ? formatNumber(paymentClient.paypal) : 0}
+            </p>
+          </div>
+        </div>
+        <div className="border border-slate-900/40 rounded-3xl p-4">
+          <h2 className="text-lg font-[600]">Stripe</h2>
+          <div className="flex items-center  h-[70%]">
+            <p className="text-7xl mt-4 ">
+              <span className="!text-3xl">$</span>
+              {paymentClient?.stripe ? formatNumber(paymentClient.stripe) : 0}
+            </p>
+          </div>
         </div>
       </div>
       <div className="mt-7">
@@ -199,7 +263,6 @@ function ChartAreaInteractive() {
 
     fetchPurchases();
   }, []);
-  // Time range filter
   const filteredData = chartData
     .filter((item) => {
       const itemDate = new Date(item.date);
@@ -222,8 +285,8 @@ function ChartAreaInteractive() {
     });
 
   return (
-    <Card className="pt-0">
-      <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
+    <Card className="pt-0 !bg-transparent !border-slate-900/40 shadow-none">
+      <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row ">
         <div className="grid flex-1 gap-1">
           <CardTitle>Package-wise Purchases ${totalRevenue}</CardTitle>
           <CardDescription>

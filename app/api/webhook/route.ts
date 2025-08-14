@@ -82,6 +82,7 @@ export async function POST(request: NextRequest) {
         price,
         packageName,
         purchasedAt: new Date().toISOString(),
+        client:'stripe'
       });
       await resend.emails.send({
         from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
