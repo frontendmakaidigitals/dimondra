@@ -87,7 +87,7 @@ const Page = () => {
   }
 
   const pathname = usePathname();
-  const blogURL = `https://yourwebsite.com${pathname}`;
+  const blogURL = `https://dimondra.com/${pathname}`;
   const blogTitle = blog?.title || "";
 
   return (
