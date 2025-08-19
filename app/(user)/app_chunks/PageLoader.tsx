@@ -75,7 +75,7 @@ const Loader = () => {
                 }
               `}</style>
             </div>
-          </div>f
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
