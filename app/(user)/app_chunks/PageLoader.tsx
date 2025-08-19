@@ -58,26 +58,6 @@ const Loader = () => {
 
           {/* Logo and shimmer animation */}
           <div className="relative flex flex-col items-center justify-center space-y-4 z-10">
-            <motion.div
-              className="relative w-28 h-28"
-              animate={{
-                rotate: [0, -2, 2, -1, 1, 0],
-                x: [0, -2, 2, -1, 1, 0],
-              }}
-              transition={{
-                duration: 0.8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <MotionImage
-                src="/Logo/LogoIcon.png"
-                alt="Dimondra Logo"
-                fill
-                className="object-contain"
-              />
-            </motion.div>
-
             {/* Shimmer Bar */}
             <div className="relative h-[5px] w-[80px] rounded-[2.5px] overflow-hidden bg-black/10">
               <div className="absolute inset-0 bg-black animate-zoom rounded-[2.5px]" />
@@ -95,7 +75,7 @@ const Loader = () => {
                 }
               `}</style>
             </div>
-          </div>
+          </div>f
         </motion.div>
       )}
     </AnimatePresence>
