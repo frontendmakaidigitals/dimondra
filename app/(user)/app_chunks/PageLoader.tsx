@@ -2,9 +2,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-
-const MotionImage = motion(Image);
 
 const Loading = () => {
   return (
@@ -21,7 +18,9 @@ const Loader = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const query = searchParams.get("name");
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     setIsLoading(true);
     const timer = setTimeout(() => {
