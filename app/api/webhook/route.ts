@@ -129,7 +129,7 @@ export async function POST(request: NextRequest) {
     if (email && name) {
       await resend.emails.send({
         from:
-          process.env.RESEND_FROM_EMAIL || "Dimondra <onboarding@resend.dev>",
+          process.env.SMTP_USER || "Dimondra <onboarding@resend.dev>",
         to: [email],
         subject: "❌ Payment Failed – Please Try Again",
         html: `
