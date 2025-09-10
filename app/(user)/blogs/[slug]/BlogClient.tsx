@@ -7,12 +7,15 @@ import {
   Instagram,
   Linkedin,
   Calendar,
+  Forward,
+  Plus,
 } from "lucide-react";
 import Link from "next/link";
+import { Popover, PopoverTrigger, PopoverContent } from "@heroui/popover";
 import { usePathname } from "next/navigation";
 import Blogs from "../../(homepage)/Blogs";
 import { Editor } from "@/components/blocks/editor-00/editor";
-
+import { Divider } from "@heroui/divider";
 export default function BlogClient({ blog }: { blog: any }) {
   const pathname = usePathname();
   const blogURL = `https://dimondra.com/${pathname}`;
@@ -31,7 +34,7 @@ export default function BlogClient({ blog }: { blog: any }) {
         <p className="p-2 text-xs bg-teal-100 text-teal-700 rounded-lg font-bold font-quicksand text-center mb-2">
           {blog?.category}
         </p>
-        <h1 className="text-4xl lg:text-6xl tracking-tighter font-[600] text-center">
+        <h1 className="text-4xl max-w-4xl lg:text-6xl tracking-tighter font-[600] text-center">
           {blog?.title}
         </h1>
       </div>
@@ -57,59 +60,84 @@ export default function BlogClient({ blog }: { blog: any }) {
         </ul>
 
         {/* Social Share Buttons */}
-        <ul className="grid grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:items-center mt-5 gap-3 w-full ">
-          <li className="w-full lg:w-auto">
-            <Link
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <button className="w-full justify-center p-2 flex text-slate-50 items-center gap-2  border border-slate-200 rounded-lg bg-[#1DA1F2]">
-                <Twitter />
+        <div className="w-full flex mt-8 justify-between max-w-md items-center gap-2 mx-auto ">
+          <Popover placement="bottom">
+            <PopoverTrigger className="">
+              <button className="flex text-sm bg-teal-950/20 font-[500] text-teal-900 px-4 py-[.5rem] rounded-lg items-center gap-1">
+                Follow us
+                <span>
+                  <Plus />
+                </span>
               </button>
-            </Link>
-          </li>
+            </PopoverTrigger>
+            <PopoverContent className="!w-52 bg-white/70 backdrop-filter backdrop-blur-lg">
+              <div className=" py-1 !w-full">
+                <button className="w-full  hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg ">
+                  <img src={"/whatsapp.png"} className="w-6" alt={""} />
+                  <span className="!text-[.8rem]">Follow on Whatsapp</span>
+                </button>
+                <Divider />
+                <button className="w-full  mt-1 hover:bg-slate-200 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg ">
+                  <img src={"/telegram.png"} className="w-6" alt={""} />
+                  <span className="!text-[.8rem]">Follow on Telegram</span>
+                </button>
+              </div>
+            </PopoverContent>
+          </Popover>
+          <ul className="grid grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:items-center gap-2  ">
+            <li className="w-full lg:w-auto">
+              <Link
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button className="w-full justify-center p-2 flex text-[#004D40] bg-teal-950/30 items-center gap-2  border border-slate-300  rounded-full ">
+                  <Twitter />
+                </button>
+              </Link>
+            </li>
 
-          <li className="w-full lg:w-auto">
-            <Link
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogURL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <button className="w-full justify-center p-2 flex text-slate-50 items-center gap-2  border border-slate-200 rounded-lg bg-[#1877F2]">
-                <Facebook />
-              </button>
-            </Link>
-          </li>
+            <li className="w-full lg:w-auto">
+              <Link
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogURL)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button className="w-full justify-center p-2 flex text-[#004D40] bg-teal-950/30 items-center gap-2  border border-slate-300  rounded-full ">
+                  <Facebook />
+                </button>
+              </Link>
+            </li>
 
-          <li className="w-full lg:w-auto">
-            <Link
-              href={`https://www.instagram.com/?url=${encodeURIComponent(blogURL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <button className="w-full justify-center p-2 flex text-slate-50 items-center gap-2  border border-slate-200 rounded-lg bg-[#E4405F]">
-                <Instagram />
-              </button>
-            </Link>
-          </li>
+            <li className="w-full lg:w-auto">
+              <Link
+                href={`https://www.instagram.com/?url=${encodeURIComponent(blogURL)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button className="w-full justify-center p-2 flex text-[#004D40] bg-teal-950/30 items-center gap-2  border border-slate-300  rounded-full ">
+                  <Instagram />
+                </button>
+              </Link>
+            </li>
 
-          <li className="w-full lg:w-auto">
-            <Link
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogURL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <button className="w-full justify-center p-2 flex text-slate-50 items-center gap-2  border border-slate-200 rounded-lg bg-[#0A66C2]">
-                <Linkedin />
-              </button>
-            </Link>
-          </li>
-        </ul>
+            <li className="w-full lg:w-auto">
+              <Link
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogURL)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <button className="w-full justify-center p-2 flex text-[#004D40] bg-teal-950/30 items-center gap-2  border border-slate-300  rounded-full ">
+                  <Linkedin />
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="w-full h-[300px] lg:h-[580px] mt-12 rounded-xl overflow-hidden">
@@ -119,7 +147,7 @@ export default function BlogClient({ blog }: { blog: any }) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="max-w-5xl mx-auto ">
+      <div className="max-w-3xl mx-auto ">
         <div className="mt-8">
           {blog?.content ? (
             <Editor
