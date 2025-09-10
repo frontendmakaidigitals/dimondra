@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
         price,
         packageName,
         purchasedAt: new Date().toISOString(),
-        client:'stripe'
+        client: "stripe",
       });
       await resend.emails.send({
         from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
       // Send internal copy to yourself
       await resend.emails.send({
         from: process.env.SMTP_USER || "Dimondra <noreply@dimondra.com>",
-        to: ["connect.dimondra@gmail.com"],
+        to: ["connect@dimondra.com"],
         subject: `🎉🧾 New Purchase - ${packageName}`,
         html: `
           <div style="font-family: sans-serif; color: #333; padding: 16px;">

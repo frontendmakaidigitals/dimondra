@@ -149,10 +149,10 @@ export async function POST(request: Request) {
         price,
         packageName,
         purchasedAt: new Date().toISOString(),
-        client: 'paypal'
+        client: "paypal",
       });
-      
-       await resend.emails.send({
+
+      await resend.emails.send({
         from: process.env.SMTP_USER || "noreply@dimondra.com",
         to: [email],
         subject: "✅ Payment Successful – Dimondra",
@@ -169,7 +169,7 @@ export async function POST(request: Request) {
 
       await resend.emails.send({
         from: process.env.SMTP_USER || "noreply@dimondra.com",
-        to: ["connect.dimondra@gmail.com"],
+        to: ["connect@dimondra.com"],
         subject: `🎉🧾 New Purchase - ${packageName}`,
         html: `
           <div style="font-family: sans-serif; color: #333; padding: 16px;">
