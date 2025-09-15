@@ -63,7 +63,7 @@ export default function BlogClient({ blog }: { blog: any }) {
         <div className="w-full max-w-2xl flex mt-8 justify-between items-center gap-2 mx-auto ">
           <Popover placement="bottom">
             <PopoverTrigger className="">
-              <button className="flex text-sm bg-teal-950/20 font-[500] text-teal-900 px-4 py-[.5rem] rounded-lg items-center gap-1">
+              <button className="flex text-sm bg-teal-950/20 font-[500] text-teal-900 px-3 lg:px-4 py-[.5rem] rounded-lg items-center gap-1">
                 Follow us
                 <span>
                   <Plus />
@@ -84,7 +84,7 @@ export default function BlogClient({ blog }: { blog: any }) {
               </div>
             </PopoverContent>
           </Popover>
-          <ul className="grid grid-cols-2 lg:flex lg:flex-wrap lg:justify-center lg:items-center gap-2  ">
+          <ul className="grid grid-cols-5 lg:flex lg:flex-wrap lg:justify-center lg:items-center gap-1  ">
             <li className="w-full lg:w-auto">
               <Link
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
