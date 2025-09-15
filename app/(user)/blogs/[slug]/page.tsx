@@ -56,7 +56,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: blog?.metaTitle || blog?.title || "Blog",
+    title: blog?.title || "Blog Title",
     description: blog?.metaDesc || "",
     openGraph: {
       title: blog?.metaTitle || blog?.title,

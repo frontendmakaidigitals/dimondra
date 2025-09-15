@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SuccessUi = () => {
   const router = useRouter();
@@ -13,7 +13,7 @@ const SuccessUi = () => {
     }, 1000);
 
     const redirect = setTimeout(() => {
-      router.push('/');
+      router.push("/");
     }, 5000);
 
     return () => {
@@ -44,10 +44,14 @@ const SuccessUi = () => {
         />
       </svg>
 
-      <h1 className="text-2xl font-bold text-green-600">✅ Payment Successful</h1>
+      <h1 className="text-2xl font-bold text-green-600">
+        ✅ Payment Successful
+      </h1>
       <p className="mt-2 text-gray-700">Thank you for your purchase!</p>
       <p className="mt-1 text-sm text-gray-500">
-        Redirecting to homepage in <span className="font-medium">{seconds}</span> second{seconds !== 1 && 's'}...
+        Redirecting to homepage in{" "}
+        <span className="font-medium">{seconds}</span> second
+        {seconds !== 1 && "s"}...
       </p>
     </div>
   );

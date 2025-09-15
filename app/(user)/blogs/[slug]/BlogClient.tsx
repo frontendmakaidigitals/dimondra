@@ -60,7 +60,7 @@ export default function BlogClient({ blog }: { blog: any }) {
         </ul>
 
         {/* Social Share Buttons */}
-        <div className="w-full flex mt-8 justify-between max-w-md items-center gap-2 mx-auto ">
+        <div className="w-full max-w-2xl flex mt-8 justify-between items-center gap-2 mx-auto ">
           <Popover placement="bottom">
             <PopoverTrigger className="">
               <button className="flex text-sm bg-teal-950/20 font-[500] text-teal-900 px-4 py-[.5rem] rounded-lg items-center gap-1">
@@ -136,6 +136,70 @@ export default function BlogClient({ blog }: { blog: any }) {
                 </button>
               </Link>
             </li>
+            <Popover placement="bottom">
+              <PopoverTrigger className="">
+                <button className="flex text-sm bg-teal-950/20 font-[500] text-teal-900 p-2 rounded-full items-center gap-1">
+                  <Forward />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="!w-52 bg-white/70 backdrop-filter backdrop-blur-lg">
+                <div className="py-1 !w-full">
+                  <Link
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogURL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg"
+                  >
+                    <img src={"/facebook.png"} className="w-6" alt="Facebook" />
+                    <span className="!text-[.8rem]">Facebook</span>
+                  </Link>
+                  <Divider />
+                  <Link
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blogTitle)}&url=${encodeURIComponent(blogURL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg"
+                  >
+                    <img
+                      src={"/twitter.png"}
+                      className="w-6"
+                      alt="Twitter / X"
+                    />
+                    <span className="!text-[.8rem]">X</span>
+                  </Link>
+                  <Divider />
+                  <Link
+                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(blogTitle)}%20${encodeURIComponent(blogURL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg"
+                  >
+                    <img src={"/whatsapp.png"} className="w-6" alt="WhatsApp" />
+                    <span className="!text-[.8rem]">Whatsapp</span>
+                  </Link>
+                  <Divider />
+                  <Link
+                    href={`mailto:?subject=${encodeURIComponent(blogTitle)}&body=${encodeURIComponent(blogURL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg"
+                  >
+                    <img src={"/mail.png"} className="w-6" alt="Email" />
+                    <span className="!text-[.8rem]">Email</span>
+                  </Link>
+                  <Divider />
+                  <Link
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(blogURL)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full hover:bg-slate-200 mb-1 justify-start p-2 flex text-slate-700 items-center gap-2 rounded-lg"
+                  >
+                    <img src={"/linkedin.png"} className="w-6" alt="LinkedIn" />
+                    <span className="!text-[.8rem]">Linkedin</span>
+                  </Link>
+                </div>
+              </PopoverContent>
+            </Popover>
           </ul>
         </div>
       </div>
