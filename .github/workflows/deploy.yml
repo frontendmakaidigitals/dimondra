@@ -1,4 +1,4 @@
-name: Deploy Dimondra to VPS (Build on Host)
+name: Deploy Script
 
 on:
   push:
