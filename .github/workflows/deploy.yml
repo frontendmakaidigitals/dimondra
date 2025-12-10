@@ -23,7 +23,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           
           # Create SSH config to prevent key confusion
-          cat > ~/.ssh/config << 'SSHCONFIG'
+          cat > ~/.ssh/config << EOF
           Host vps
             HostName ${{ secrets.SSH_HOST }}
             Port ${{ secrets.SSH_PORT }}
@@ -32,9 +32,13 @@ jobs:
             IdentitiesOnly yes
             StrictHostKeyChecking no
             UserKnownHostsFile /dev/null
-          SSHCONFIG
+          EOF
           
           chmod 600 ~/.ssh/config
+          
+          # Verify config was created
+          echo "SSH config created:"
+          cat ~/.ssh/config
 
       - name: 🛑 Disable SSH agent (prevents extra keys)
         run: |
@@ -54,7 +58,7 @@ jobs:
 
       - name: 🚀 Build and Start app on VPS with PM2
         run: |
-          ssh -F ~/.ssh/config vps << 'EOF'
+          ssh -F ~/.ssh/config vps << 'ENDSSH'
             cd /home/dimondra/Dimondra
             npm install
             npm run build
@@ -62,4 +66,4 @@ jobs:
             pm2 delete nextjs-app || true
             PORT=3000 pm2 start npm --name nextjs-app -- start
             pm2 save
-          EOF
+          ENDSSH
