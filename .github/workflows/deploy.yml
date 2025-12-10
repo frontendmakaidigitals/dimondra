@@ -27,17 +27,18 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }}" \
+            -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o IdentitiesOnly=yes" \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }}:/home/dimondra/Dimondra/
 
       - name: 🚀 Build and Start app on VPS with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd /home/dimondra/Dimondra
-            npm install
-            npm run build
-            npm install sharp
-            pm2 delete nextjs-app || true
-            PORT=3000 pm2 start npm --name nextjs-app -- start
-            pm2 save
-          EOF
+          ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o IdentitiesOnly=yes \
+            ${{ secrets.VPS_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+              cd /home/dimondra/Dimondra
+              npm install
+              npm run build
+              npm install sharp
+              pm2 delete nextjs-app || true
+              PORT=3000 pm2 start npm --name nextjs-app -- start
+              pm2 save
+            EOF
