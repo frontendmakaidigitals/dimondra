@@ -53,8 +53,11 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_ed25519" \
-            ./ dimondra@62.72.35.235:/home/***/Dimondra/
+            -e "ssh -p *** -i ~/.ssh/id_ed25519 \
+                -o StrictHostKeyChecking=no \
+                -o UserKnownHostsFile=/dev/null" \
+            ./ ***@***:/home/***/Dimondra/
+
 
 
       - name: 🚀 Build and Start app on VPS with PM2
