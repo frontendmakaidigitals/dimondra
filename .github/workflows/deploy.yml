@@ -35,10 +35,6 @@ jobs:
           EOF
           
           chmod 600 ~/.ssh/config
-          
-          # Verify config was created
-          echo "SSH config created:"
-          cat ~/.ssh/config
 
       - name: 🛑 Disable SSH agent (prevents extra keys)
         run: |
@@ -53,13 +49,14 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
+            --exclude='firebase-service-account.json' \
             -e "ssh -p ${{secrets.SSH_PORT}} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
             ./ ${{secrets.VPS_USER}}@${{secrets.SSH_HOST}}:/home/dimondra/dimondra/
 
       - name: 🚀 Build and Start app on VPS with PM2
         run: |
           ssh -F ~/.ssh/config vps << 'ENDSSH'
-            set -e  # Exit on any error
+            set -e
             cd /home/dimondra/dimondra
             
             # Kill any process using port 3000
