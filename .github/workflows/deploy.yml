@@ -45,7 +45,10 @@ jobs:
           eval "$(ssh-agent -k)" 2>/dev/null || true
           unset SSH_AUTH_SOCK
           unset SSH_AGENT_PID
-
+      - name: 🔍 Debug SSH setup
+        run: |
+            ls -la ~/.ssh/
+            cat ~/.ssh/config || echo "Config file missing"
       - name: 🚚 Sync code to VPS (without node_modules or .env.local)
         run: |
           rsync -avz --delete \
@@ -53,8 +56,8 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -F ~/.ssh/config" \
-            ./ vps:/home/dimondra/Dimondra/
+            -e "ssh -p ${{secrets.SSH_PORT}} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+            ./ ${{secrets.VPS_USER}}@${{secrets.SSH_HOST}}:/home/dimondra/Dimondra/
 
 
       - name: 🚀 Build and Start app on VPS with PM2
