@@ -19,8 +19,8 @@ jobs:
           chmod 700 ~/.ssh
           
           # Write SSH private key
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           
           # Create SSH config to prevent key confusion
           cat > ~/.ssh/config << EOF
@@ -28,7 +28,7 @@ jobs:
             HostName ${{ secrets.SSH_HOST }}
             Port ${{ secrets.SSH_PORT }}
             User ${{ secrets.VPS_USER }}
-            IdentityFile ~/.ssh/id_ed25519
+            IdentityFile ~/.ssh/id_rsa
             IdentitiesOnly yes
             StrictHostKeyChecking no
             UserKnownHostsFile /dev/null
@@ -53,11 +53,8 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -p *** -i ~/.ssh/id_ed25519 \
-                -o StrictHostKeyChecking=no \
-                -o UserKnownHostsFile=/dev/null" \
-            ./ ***@***:/home/***/Dimondra/
-
+            -e "ssh -p ${{secrets.SSH_PORT}} -i ~/.ssh/id_ed25519" \
+            ./ dimondra@62.72.35.235:/home/***/Dimondra/
 
 
       - name: 🚀 Build and Start app on VPS with PM2
