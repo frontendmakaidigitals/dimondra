@@ -57,17 +57,17 @@ jobs:
             --exclude='.next' \
             --exclude='.env.local' \
             -e "ssh -p ${{secrets.SSH_PORT}} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
-            ./ ${{secrets.VPS_USER}}@${{secrets.SSH_HOST}}:/home/dimondra/Dimondra/
+            ./ ${{secrets.VPS_USER}}@${{secrets.SSH_HOST}}:/home/dimondra/dimondra/
 
 
       - name: 🚀 Build and Start app on VPS with PM2
         run: |
           ssh -F ~/.ssh/config vps << 'ENDSSH'
-            cd /home/dimondra/Dimondra
+            cd /home/dimondra/dimondra
             npm install
             npm run build
             npm install sharp
-            pm2 delete nextjs-app || true
-            PORT=3000 pm2 start npm --name nextjs-app -- start
+            pm2 delete dimondra || true
+            PORT=3000 pm2 start npm --name dimondra -- start
             pm2 save
           ENDSSH
