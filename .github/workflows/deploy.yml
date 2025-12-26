@@ -19,8 +19,8 @@ jobs:
           chmod 700 ~/.ssh
           
           # Write SSH private key
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           
           # Create SSH config to prevent key confusion
           cat > ~/.ssh/config << EOF
@@ -28,7 +28,7 @@ jobs:
             HostName ${{ secrets.SSH_HOST }}
             Port ${{ secrets.SSH_PORT }}
             User ${{ secrets.VPS_USER }}
-            IdentityFile ~/.ssh/id_rsa
+            IdentityFile ~/.ssh/id_ed25519
             IdentitiesOnly yes
             StrictHostKeyChecking no
             UserKnownHostsFile /dev/null
