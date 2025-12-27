@@ -41,8 +41,9 @@ jobs:
             --exclude='node_modules' \
             --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -F ~/.ssh/config" \
+            -e "ssh -F /home/runner/.ssh/config" \
             ./ vps:/home/dimondra/dimondra/
+
 
       - name: 🚀 Build & Start (FAIL SAFE)
         run: |
