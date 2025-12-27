@@ -6,11 +6,18 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (!token) {
-    // Use relative URL instead of constructing with origin
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("next", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
   return NextResponse.next();
+}
+
+// Only run middleware on dashboard routes, exclude login
+export const config = {
+  matcher: [
+    '/dashboard/:path*',
+    // Add other protected routes here
+  ]
 }
