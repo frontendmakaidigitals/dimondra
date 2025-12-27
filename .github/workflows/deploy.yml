@@ -13,16 +13,14 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🔐 Setup SSH with config file
+      - name: 🔐 Setup SSH
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          
-          # Write SSH private key
+
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          
-          # Create SSH config to prevent key confusion
+
           cat > ~/.ssh/config << EOF
           Host vps
             HostName ${{ secrets.SSH_HOST }}
@@ -33,41 +31,42 @@ jobs:
             StrictHostKeyChecking no
             UserKnownHostsFile /dev/null
           EOF
-          
-          chmod 600 ~/.ssh/config
-          
-          # Verify config was created
-          echo "SSH config created:"
-          cat ~/.ssh/config
 
-      - name: 🛑 Disable SSH agent (prevents extra keys)
-        run: |
-          eval "$(ssh-agent -k)" 2>/dev/null || true
-          unset SSH_AUTH_SOCK
-          unset SSH_AGENT_PID
-      - name: 🔍 Debug SSH setup
-        run: |
-            ls -la ~/.ssh/
-            cat ~/.ssh/config || echo "Config file missing"
-      - name: 🚚 Sync code to VPS (without node_modules or .env.local)
+          chmod 600 ~/.ssh/config
+
+      - name: 🚚 Rsync project to VPS
         run: |
           rsync -avz --delete \
             --exclude='.git' \
             --exclude='node_modules' \
-            
+            --exclude='.next' \
             --exclude='.env.local' \
-            -e "ssh -p ${{secrets.SSH_PORT}} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
-            ./ ${{secrets.VPS_USER}}@${{secrets.SSH_HOST}}:/home/dimondra/dimondra/
+            -e "ssh -F ~/.ssh/config" \
+            ./ vps:/home/dimondra/dimondra/
 
-
-      - name: 🚀 Build and Start app on VPS with PM2
+      - name: 🚀 Build & Start (FAIL SAFE)
         run: |
           ssh -F ~/.ssh/config vps << 'ENDSSH'
+            set -e
+
             cd /home/dimondra/dimondra
-            npm install
-            npm run build
+
+            echo "Installing dependencies..."
+            npm ci
+
+            echo "Installing sharp..."
             npm install sharp
+
+            echo "Building Next.js..."
+            npm run build
+
+            echo "Build finished. Checking .next..."
+            test -d .next
+
+            echo "Restarting PM2..."
             pm2 delete dimondra || true
-            PORT=3000 pm2 start npm --name dimondra -- start
+            PORT=3000 pm2 start npm --name dimondra -- start --update-env
             pm2 save
+
+            echo "Deploy completed successfully"
           ENDSSH
