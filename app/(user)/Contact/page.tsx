@@ -388,7 +388,7 @@ const ContactInfo = () => {
               <li className="flex items-start gap-2 ml-3">
                 <span className="w-2 h-3 bg-dimondra-white rounded-full mt-1 shrink-0" />
                 <p className="font-medium text-[1.1rem]">
-                  UAE – SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia,
+                  UAE - SPC, E311, Sheikh Mohammed Bin Zayed Rd, Al Zahia,
                   Sharjah, U.A.E
                 </p>
               </li>
@@ -396,7 +396,15 @@ const ContactInfo = () => {
               <li className="flex items-start gap-2 ml-3">
                 <span className="w-2 h-3 bg-dimondra-white rounded-full mt-1 shrink-0" />
                 <p className="font-medium text-[1.1rem]">
-                  KSA – Riyadh – Olya Street – As Sahafa – 13321
+                  KSA - Al Rawdah District, King Abdullah Road Riyadh 13313 –
+                  8119, Saudi Arabia
+                </p>
+              </li>
+              <li className="flex items-start gap-2 ml-3">
+                <span className="w-2 h-3 bg-dimondra-white rounded-full mt-1 shrink-0" />
+                <p className="font-medium text-[1.1rem]">
+                  EGY - Building 49, 3rd District, 4th Neighborhood Buildings –
+                  Madinat El Shorouk, Cairo, Egypt.
                 </p>
               </li>
             </ul>

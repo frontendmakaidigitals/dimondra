@@ -7,6 +7,7 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+
 import Link from "next/link";
 import Logo from "../app_chunks/Logo";
 
@@ -156,16 +157,37 @@ const Footer = () => {
                       Sharjah, U.A.E
                     </p>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-5 h-5 mt-1 " />
-                    <p className="max-w-[250px]">
-                      KSA - Riyadh – Olya Street – As Sahafa - 13321
-                    </p>
-                  </div>
+
                   <div className="flex items-center gap-2 mt-2 ">
                     <Phone className="w-4 h-4" />
                     <span>+971 56 278 7553</span>
                   </div>
+                  <hr className="border-slate-100/40" />
+
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 mt-1 " />
+                    <p className="max-w-[250px]">
+                      KSA - Al Rawdah District, King Abdullah Road Riyadh 13313
+                      – 8119, Saudi Arabia
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2 ">
+                    <Phone className="w-4 h-4" />
+                    <span>+966 11 494 4444</span>
+                  </div>
+                  <hr className="border-slate-100/40" />
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 mt-1 " />
+                    <p className="max-w-[250px]">
+                      EGY - Building 49, 3rd District, 4th Neighborhood
+                      Buildings – Madinat El Shorouk, Cairo, Egypt.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2 ">
+                    <Phone className="w-4 h-4" />
+                    <span>+20 1000961220</span>
+                  </div>
+                  <hr className="border-slate-100/40" />
                   <div className="flex items-center gap-2 mt-1">
                     <Mail className="w-4 h-4" />
                     <span>Connect@dimondra.com</span>
