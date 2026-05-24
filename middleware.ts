@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-const baseUrl = 'http://dimondra.com/'
+const baseUrl = 'https://dimondra.com/'
 export function middleware(request: NextRequest) {
   const token = request.cookies.get("admin-auth")?.value;
   const { pathname } = request.nextUrl;

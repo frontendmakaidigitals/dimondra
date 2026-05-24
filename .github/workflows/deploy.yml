@@ -65,7 +65,7 @@ jobs:
             test -d .next
 
             echo "Restarting PM2..."
-            pm2 delete dimondra || true
+            pm2 kill                          # kill ALL daemons first
             PORT=3000 pm2 start npm --name dimondra -- start
             pm2 save
 
