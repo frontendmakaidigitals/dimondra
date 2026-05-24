@@ -70,4 +70,13 @@ jobs:
             pm2 save
 
             echo "Deploy completed successfully"
-          ENDSSH
+      - name: 🔍 Debug Middleware
+        run: |
+            ssh -F ~/.ssh/config vps << 'ENDSSH'
+              echo "=== middleware.ts source ==="
+              cat /home/dimondra/dimondra/middleware.ts
+
+              echo ""
+              echo "=== compiled middleware in .next ==="
+              cat /home/dimondra/dimondra/.next/server/middleware.js | grep -A5 -B5 "login"
+            ENDSSH
